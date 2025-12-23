@@ -48,7 +48,7 @@ jobs:
           mkdir -p docs
 
           # Generate documentation from all TTL files
-          ontospy gendocs *.ttl -o docs --type 2
+          ontospy gendocs . -o docs --type 2
 
       - name: Configure Git
         run: |
