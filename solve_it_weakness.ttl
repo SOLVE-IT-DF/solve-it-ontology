@@ -1,0 +1,106 @@
+@prefix : <https://ontology.solveit-df.org/> .
+@prefix solve-it: <https://ontology.solveit-df.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@base <https://ontology.solveit-df.org/> .
+
+#################################################################
+#    SOLVE-IT Weakness Module
+#    Potential problems and errors in digital forensic techniques
+#################################################################
+
+<https://ontology.solveit-df.org/weakness> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/weakness/1.0.0> ;
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.3.0> ;
+    dcterms:title "SOLVE-IT Weakness Module"@en ;
+    dcterms:description "Weaknesses and potential problems in digital forensic techniques, classified according to ASTM E3016-18 error categories."@en ;
+    dcterms:creator "SOLVE-IT Project" ;
+    owl:versionInfo "0.0.1" ;
+    rdfs:label "SOLVE-IT Weakness Module"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  SOLVE-IT Weakness
+solve-it:Weakness rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:label "SOLVE-IT Weakness"@en ;
+    rdfs:comment "A potential problem resulting from using a technique, classified according to ASTM E3016-18 error categories."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+solve-it:weaknessHasMitigation rdf:type owl:ObjectProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:label "weakness has mitigation"@en ;
+    rdfs:comment "Links a Weakness to mitigations that can prevent or minimize it."@en .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+solve-it:weaknessID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "weakness ID"@en ;
+    rdfs:comment "The unique identifier for a SOLVE-IT weakness (e.g., W1004)."@en .
+
+solve-it:weaknessName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "weakness name"@en ;
+    rdfs:comment "The name describing the weakness."@en .
+
+solve-it:weaknessINCOMP rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INCOMP"@en ;
+    rdfs:comment "Incompleteness error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solve-it:weaknessINAC_EX rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INAC-EX"@en ;
+    rdfs:comment "Inaccuracy-Execution error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solve-it:weaknessINAC_AS rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INAC-AS"@en ;
+    rdfs:comment "Inaccuracy-Assumption error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solve-it:weaknessINAC_ALT rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INAC-ALT"@en ;
+    rdfs:comment "Inaccuracy-Alteration error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solve-it:weaknessINAC_COR rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INAC-COR"@en ;
+    rdfs:comment "Inaccuracy-Corruption error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solve-it:weaknessMISINT rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "MISINT"@en ;
+    rdfs:comment "Misinterpretation error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solve-it:weaknessMitigationID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "mitigation ID reference"@en ;
+    rdfs:comment "Identifier for an associated mitigation (e.g., M1003)."@en .
+
+solve-it:weaknessReference rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "weakness reference"@en ;
+    rdfs:comment "Academic or professional reference for this weakness."@en .

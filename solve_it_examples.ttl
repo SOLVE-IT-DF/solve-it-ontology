@@ -1,0 +1,84 @@
+@prefix : <https://ontology.solveit-df.org/observable/> .
+@prefix solve-it: <https://ontology.solveit-df.org/> .
+@prefix solve-it-observable: <https://ontology.solveit-df.org/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/> .
+
+#################################################################
+#    SOLVE-IT Examples
+#    Example instances demonstrating the use of SOLVE-IT classes
+#################################################################
+
+<https://ontology.solveit-df.org/examples> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/examples/1.0.0> ;
+    owl:imports <https://ontology.solveit-df.org/> ;
+    rdfs:label "SOLVE-IT Examples"@en ;
+    rdfs:comment "Example instances demonstrating the SOLVE-IT ontology usage."@en .
+
+#################################################################
+#    Example VideoFrame Instance
+#################################################################
+
+:exampleFrame001 rdf:type solve-it-observable:VideoFrame ;
+    rdfs:label "Frame 001 from surveillance video"@en ;
+    solve-it-observable:hasVideoFrameFacet :frameFacet001 ;
+    solve-it-observable:extractedFromVideo :video001 .
+
+:frameFacet001 rdf:type solve-it-observable:VideoFrameFacet ;
+    solve-it-observable:frameNumber 1250 ;
+    solve-it-observable:timestamp "2024-11-14T10:30:45Z"^^xsd:dateTime ;
+    solve-it-observable:width 1920 ;
+    solve-it-observable:height 1080 .
+
+:video001 rdf:type uco-observable:File ;
+    rdfs:label "surveillance_camera_01.mp4"@en .
+
+#################################################################
+#    Example SOLVE-IT Technique Instance
+#################################################################
+
+:techniqueT1002 rdf:type solve-it:Technique ;
+    rdfs:label "Disk Imaging Technique"@en ;
+    solve-it:techniqueID "T1002" ;
+    solve-it:techniqueName "Disk imaging" ;
+    solve-it:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ into an imaging format. The could be from a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader." ;
+    solve-it:techniqueExample "dcfldd" ;
+    solve-it:techniqueExample "FTK Imager" ;
+    solve-it:techniqueExample "Magnet ACQUIRE" ;
+    solve-it:techniqueWeaknessID "W1004" ;
+    solve-it:techniqueWeaknessID "W1006" ;
+    solve-it:techniqueWeaknessID "W1007" ;
+    solve-it:techniqueCASEOutputClass "observable:Image" ;
+    solve-it:techniqueReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, 'Forensic Image Acquisition'" .
+
+#################################################################
+#    Example SOLVE-IT Weakness Instance
+#################################################################
+
+:weaknessW1004 rdf:type solve-it:Weakness ;
+    rdfs:label "Incomplete Sector Acquisition"@en ;
+    solve-it:weaknessID "W1004" ;
+    solve-it:weaknessName "Acquisition does not include all sectors from LBA0 to LBA max" ;
+    solve-it:weaknessINCOMP "x" ;
+    solve-it:weaknessINAC_EX "" ;
+    solve-it:weaknessINAC_AS "" ;
+    solve-it:weaknessINAC_ALT "" ;
+    solve-it:weaknessINAC_COR "" ;
+    solve-it:weaknessMISINT "" ;
+    solve-it:weaknessMitigationID "M1003" ;
+    solve-it:weaknessMitigationID "M1004" ;
+    solve-it:weaknessHasMitigation :mitigationM1003 ;
+    solve-it:weaknessHasMitigation :mitigationM1004 .
+
+#################################################################
+#    Example SOLVE-IT Mitigation Instance
+#################################################################
+
+:mitigationM1001 rdf:type solve-it:Mitigation ;
+    rdfs:label "Triage Results Review"@en ;
+    solve-it:mitigationID "M1001" ;
+    solve-it:mitigationName "Review of all triage results that are relied on during the full digital forensic examination" .

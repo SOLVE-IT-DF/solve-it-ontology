@@ -1,0 +1,59 @@
+@prefix : <https://ontology.solveit-df.org/> .
+@prefix solve-it: <https://ontology.solveit-df.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@base <https://ontology.solveit-df.org/> .
+
+#################################################################
+#    SOLVE-IT Mitigation Module
+#    Actions to prevent or minimize weaknesses
+#################################################################
+
+<https://ontology.solveit-df.org/mitigation> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/mitigation/1.0.0> ;
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.3.0> ;
+    dcterms:title "SOLVE-IT Mitigation Module"@en ;
+    dcterms:description "Mitigations that can be performed to prevent weaknesses from occurring or to minimize their impact."@en ;
+    dcterms:creator "SOLVE-IT Project" ;
+    owl:versionInfo "0.0.1" ;
+    rdfs:label "SOLVE-IT Mitigation Module"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  SOLVE-IT Mitigation
+solve-it:Mitigation rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:label "SOLVE-IT Mitigation"@en ;
+    rdfs:comment "An action that can be performed to prevent a weakness from occurring or to minimize its impact."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+#################################################################
+#    Data Properties
+#################################################################
+
+solve-it:mitigationID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Mitigation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mitigation ID"@en ;
+    rdfs:comment "The unique identifier for a SOLVE-IT mitigation (e.g., M1001)."@en .
+
+solve-it:mitigationName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Mitigation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mitigation name"@en ;
+    rdfs:comment "The name describing the mitigation action."@en .
+
+solve-it:mitigationReference rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Mitigation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mitigation reference"@en ;
+    rdfs:comment "Academic or professional reference for this mitigation."@en .

@@ -1,0 +1,113 @@
+@prefix : <https://ontology.solveit-df.org/> .
+@prefix solve-it: <https://ontology.solveit-df.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@base <https://ontology.solveit-df.org/> .
+
+#################################################################
+#    SOLVE-IT Technique Module
+#    Digital forensic techniques and their properties
+#################################################################
+
+<https://ontology.solveit-df.org/technique> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/technique/1.0.0> ;
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.3.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/action/1.3.0> ;
+    dcterms:title "SOLVE-IT Technique Module"@en ;
+    dcterms:description "Digital forensic techniques from the SOLVE-IT knowledge base, representing how one might achieve an objective by performing an action."@en ;
+    dcterms:creator "SOLVE-IT Project" ;
+    owl:versionInfo "0.0.1" ;
+    rdfs:label "SOLVE-IT Technique Module"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  SOLVE-IT Technique
+solve-it:Technique rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:label "SOLVE-IT Technique"@en ;
+    rdfs:comment "A digital forensic technique representing how one might achieve an objective by performing an action. Based on the SOLVE-IT knowledge base."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+solve-it:hasWeakness rdf:type owl:ObjectProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:label "has weakness"@en ;
+    rdfs:comment "Links a Technique to associated weaknesses (error categories from ASTM E3016-18)."@en .
+
+solve-it:hasMitigation rdf:type owl:ObjectProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:label "has mitigation"@en ;
+    rdfs:comment "Links a Technique to mitigations that prevent or minimize weaknesses."@en .
+
+solve-it:hasSubtechnique rdf:type owl:ObjectProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range solve-it:Technique ;
+    rdfs:label "has subtechnique"@en ;
+    rdfs:comment "Links a Technique to more specific subtechniques."@en .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+solve-it:techniqueID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique ID"@en ;
+    rdfs:comment "The unique identifier for a SOLVE-IT technique (e.g., T1002)."@en .
+
+solve-it:techniqueName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique name"@en ;
+    rdfs:comment "The name of the technique (e.g., 'Disk imaging')."@en .
+
+solve-it:techniqueDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique description"@en ;
+    rdfs:comment "A detailed description of how the technique is performed."@en .
+
+solve-it:techniqueSynonym rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique synonym"@en ;
+    rdfs:comment "Alternative names for this technique."@en .
+
+solve-it:techniqueDetails rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique details"@en ;
+    rdfs:comment "Additional details about the technique."@en .
+
+solve-it:techniqueExample rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique example"@en ;
+    rdfs:comment "Example tools or implementations of this technique (e.g., 'dcfldd', 'FTK Imager')."@en .
+
+solve-it:techniqueWeaknessID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "weakness ID"@en ;
+    rdfs:comment "Identifier for an associated weakness (e.g., W1004)."@en .
+
+solve-it:techniqueCASEOutputClass rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "CASE output class"@en ;
+    rdfs:comment "The CASE/UCO class that represents the output of this technique."@en .
+
+solve-it:techniqueReference rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique reference"@en ;
+    rdfs:comment "Academic or professional reference for this technique."@en .
