@@ -121,10 +121,17 @@ def create_redirect_html(local_name: str, entity_type: str, base_domain: str, mo
     # The target filename follows Ontospy's convention
     target_file = f"{prefix}-solveit-{normalized}.html"
 
+    # Determine the relative path from the nested folder structure
+    # Redirects are at docs/solveit/{module}/{name}/index.html
+    # Target is at docs/{prefix}-solveit-{normalized}.html
+    # So we need to go up 3 levels: ../../../
+    relative_path = f"../../../{target_file}"
+
     # Escape HTML
     escaped_name = html.escape(local_name)
     escaped_domain = html.escape(base_domain)
     escaped_file = html.escape(target_file)
+    escaped_relative = html.escape(relative_path)
 
     # Create the HTML content
     html_content = f"""<!DOCTYPE html>
@@ -133,11 +140,11 @@ def create_redirect_html(local_name: str, entity_type: str, base_domain: str, mo
     <meta charset="utf-8">
     <title>SOLVE-IT {escaped_name} - Redirecting...</title>
     <link rel="canonical" href="{escaped_domain}/{escaped_file}">
-    <meta http-equiv="refresh" content="0; url=../{escaped_file}">
-    <script>window.location.href = "../{escaped_file}";</script>
+    <meta http-equiv="refresh" content="0; url={escaped_relative}">
+    <script>window.location.href = "{escaped_relative}";</script>
 </head>
 <body>
-    <p>Redirecting to <a href="../{escaped_file}">SOLVE-IT {escaped_name} documentation</a>...</p>
+    <p>Redirecting to <a href="{escaped_relative}">SOLVE-IT {escaped_name} documentation</a>...</p>
 </body>
 </html>
 """
@@ -176,26 +183,48 @@ def generate_redirects(docs_dir: Path, base_domain: str = "https://ontology.solv
     # Create redirect folders for classes
     print("\nCreating redirect folders for classes...")
     for class_name in sorted(all_classes.keys()):
-        folder = docs_dir / class_name
-        folder.mkdir(exist_ok=True)
-
         module = all_classes[class_name]
+
+        # Create the nested folder structure: docs/solveit/{module}/{ClassName}
+        if module:
+            folder = docs_dir / "solveit" / module / class_name
+        else:
+            # Fallback for entities without module (shouldn't happen)
+            folder = docs_dir / class_name
+
+        folder.mkdir(parents=True, exist_ok=True)
+
         html_content = create_redirect_html(class_name, "class", base_domain, module)
         index_file = folder / "index.html"
         index_file.write_text(html_content, encoding='utf-8')
-        print(f"  Created {class_name}/index.html")
+
+        if module:
+            print(f"  Created solveit/{module}/{class_name}/index.html")
+        else:
+            print(f"  Created {class_name}/index.html")
 
     # Create redirect folders for properties
     print("\nCreating redirect folders for properties...")
     for prop_name in sorted(all_properties.keys()):
-        folder = docs_dir / prop_name
-        folder.mkdir(exist_ok=True)
-
         module = all_properties[prop_name]
+
+        # Create the nested folder structure: docs/solveit/{module}/{propertyName}
+        if module:
+            folder = docs_dir / "solveit" / module / prop_name
+        else:
+            # Fallback for entities without module (shouldn't happen)
+            folder = docs_dir / prop_name
+
+        folder.mkdir(parents=True, exist_ok=True)
+
         html_content = create_redirect_html(prop_name, "property", base_domain, module)
         index_file = folder / "index.html"
         index_file.write_text(html_content, encoding='utf-8')
-        print(f"  Created {prop_name}/index.html")
+
+        if module:
+            print(f"  Created solveit/{module}/{prop_name}/index.html")
+        else:
+            print(f"  Created {prop_name}/index.html")
 
     print(f"\n✓ Successfully created {len(all_classes) + len(all_properties)} redirect folders")
 
