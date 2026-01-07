@@ -47,6 +47,12 @@ solve-it-observable:DecryptionKey rdf:type owl:Class ;
     rdfs:label "Decryption Key"@en ;
     rdfs:comment "A cryptographic key intended for decryption."@en .
 
+###  UnlockPattern Observable Object
+solve-it-observable:UnlockPattern rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Unlock Pattern"@en ;
+    rdfs:comment "A pattern used to unlock a device, i.e. screen lock pattern."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
