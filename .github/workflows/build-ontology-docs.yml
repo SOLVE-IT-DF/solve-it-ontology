@@ -31,27 +31,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Wait for any in-progress Pages deployment to complete
-        run: |
-          echo "Waiting for any in-progress Pages deployments to complete..."
-          # Wait up to 5 minutes for Pages deployment
-          for i in {1..30}; do
-            # Check if there's an in-progress pages-build-deployment
-            STATUS=$(gh api repos/${{ github.repository }}/actions/runs \
-              --jq '.workflow_runs[] | select(.name == "pages-build-deployment" and .status == "in_progress") | .status' \
-              2>/dev/null | head -1)
-
-            if [ -z "$STATUS" ]; then
-              echo "No in-progress Pages deployment found. Proceeding..."
-              break
-            fi
-
-            echo "Pages deployment still in progress (check $i/30). Waiting 10 seconds..."
-            sleep 10
-          done
-        env:
-          GH_TOKEN: ${{ github.token }}
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
