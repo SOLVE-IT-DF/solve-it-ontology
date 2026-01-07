@@ -115,6 +115,12 @@ solve-it-observable:KeywordIndexingConfiguration rdf:type owl:Class ;
     rdfs:label "Keyword Indexing Configuration"@en ;
     rdfs:comment "Configuration settings used for keyword indexing during forensic analysis."@en .
 
+###  httpResponseHeader Observable Object
+solve-it-observable:httpResponseHeader rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "HTTP Response Header"@en ;
+    rdfs:comment "An HTTP response header containing multiple header fields from an HTTP server response."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
