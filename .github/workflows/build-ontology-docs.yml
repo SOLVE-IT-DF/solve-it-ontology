@@ -52,13 +52,13 @@ jobs:
           rm -rf docs
           mkdir -p docs
 
-          # Restore CNAME file
+          # Generate documentation from all TTL files
+          ontospy gendocs . -o docs --type 2
+
+          # Restore CNAME file after ontospy (which overwrites the docs directory)
           if [ -f CNAME.backup ]; then
             mv CNAME.backup docs/CNAME
           fi
-
-          # Generate documentation from all TTL files
-          ontospy gendocs . -o docs --type 2
 
       - name: Generate IRI redirects
         run: |
