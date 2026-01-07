@@ -88,7 +88,7 @@ solve-it-observable:TimelineEntry rdf:type owl:Class ;
 ###  HypothesisedEvent Analytic Result
 solve-it-observable:HypothesisedEvent rdf:type owl:Class ;
     rdfs:subClassOf uco-analysis:AnalyticResult ;
-    rdfs:label "Hypothesised Event"@en ;
+    rdfs:label "Hypothesized Event"@en ;
     rdfs:comment "An event that is hypothesised to have occurred."@en .
 
 ###  ForensicToolTagBasedReport Analytic Result
@@ -102,6 +102,18 @@ solve-it-observable:ClockOffset rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
     rdfs:label "Clock Offset"@en ;
     rdfs:comment "The time offset between a device clock and a reference time."@en .
+
+###  KeywordIndex Observable Object
+solve-it-observable:KeywordIndex rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Keyword Index"@en ;
+    rdfs:comment "An index of keywords created during forensic analysis."@en .
+
+###  KeywordIndexingConfiguration Observable Object
+solve-it-observable:KeywordIndexingConfiguration rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Keyword Indexing Configuration"@en ;
+    rdfs:comment "Configuration settings used for keyword indexing during forensic analysis."@en .
 
 #################################################################
 #    Object Properties
@@ -142,6 +154,12 @@ solve-it-observable:hasFile rdf:type owl:ObjectProperty ;
     rdfs:range uco-observable:File ;
     rdfs:label "has file"@en ;
     rdfs:comment "Links a ForensicToolTagBasedReport to tagged files."@en .
+
+solve-it-observable:hasConfiguration rdf:type owl:ObjectProperty ;
+    rdfs:domain solve-it-observable:KeywordIndex ;
+    rdfs:range solve-it-observable:KeywordIndexingConfiguration ;
+    rdfs:label "has configuration"@en ;
+    rdfs:comment "Links a KeywordIndex to its KeywordIndexingConfiguration."@en .
 
 #################################################################
 #    Data Properties
