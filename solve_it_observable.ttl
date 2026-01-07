@@ -65,6 +65,12 @@ solve-it-observable:RedactedArtifactSet rdf:type owl:Class ;
     rdfs:label "Redacted Artifact Set"@en ;
     rdfs:comment "A collection of artifacts post-redaction."@en .
 
+###  KeywordSearchResult Observable Object
+solve-it-observable:KeywordSearchResult rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Keyword Search Result"@en ;
+    rdfs:comment "A result from a keyword search operation during forensic analysis."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
