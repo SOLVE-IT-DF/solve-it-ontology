@@ -5,7 +5,7 @@ This script parses TTL files to extract classes and properties, then creates fol
 structures with index.html redirects so that IRIs resolve properly.
 """
 
-import os
+import html
 import re
 from pathlib import Path
 from typing import Set, Tuple
@@ -32,9 +32,9 @@ def normalize_filename(local_name: str) -> str:
     return normalized
 
 
-def parse_ttl_for_entities(ttl_file: Path, namespace: str) -> Tuple[Set[str], Set[str]]:
+def parse_ttl_for_entities(ttl_file: Path) -> Tuple[Set[str], Set[str]]:
     """
-    Parse a TTL file to extract classes and properties in the given namespace.
+    Parse a TTL file to extract classes and properties in the solve-it: namespace.
     Returns (classes, properties) as sets of local names.
     """
     classes = set()
@@ -89,22 +89,27 @@ def create_redirect_html(local_name: str, entity_type: str, base_domain: str) ->
     # The target filename follows Ontospy's convention
     target_file = f"{prefix}-solve-it{normalized}.html"
 
+    # Escape HTML
+    escaped_name = html.escape(local_name)
+    escaped_domain = html.escape(base_domain)
+    escaped_file = html.escape(target_file)
+
     # Create the HTML content
-    html = f"""<!DOCTYPE html>
+    html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>SOLVE-IT {local_name} - Redirecting...</title>
-    <link rel="canonical" href="{base_domain}/{target_file}">
-    <meta http-equiv="refresh" content="0; url=../{target_file}">
-    <script>window.location.href = "../{target_file}";</script>
+    <title>SOLVE-IT {escaped_name} - Redirecting...</title>
+    <link rel="canonical" href="{escaped_domain}/{escaped_file}">
+    <meta http-equiv="refresh" content="0; url=../{escaped_file}">
+    <script>window.location.href = "../{escaped_file}";</script>
 </head>
 <body>
-    <p>Redirecting to <a href="../{target_file}">SOLVE-IT {local_name} documentation</a>...</p>
+    <p>Redirecting to <a href="../{escaped_file}">SOLVE-IT {escaped_name} documentation</a>...</p>
 </body>
 </html>
 """
-    return html
+    return html_content
 
 
 def generate_redirects(docs_dir: Path, base_domain: str = "https://ontology.solveit-df.org"):
@@ -130,7 +135,7 @@ def generate_redirects(docs_dir: Path, base_domain: str = "https://ontology.solv
     print("Parsing TTL files...")
     for ttl_file in ttl_files:
         print(f"  Processing {ttl_file.name}...")
-        classes, properties = parse_ttl_for_entities(ttl_file, "solve-it:")
+        classes, properties = parse_ttl_for_entities(ttl_file)
         all_classes.update(classes)
         all_properties.update(properties)
 
