@@ -35,12 +35,6 @@ solve-it-observable:VideoFrame rdf:type owl:Class ;
     rdfs:label "Video Frame"@en ;
     rdfs:comment "A single frame extracted from a video file during forensic analysis."@en .
 
-###  VideoFrame Facet (for properties)
-solve-it-observable:VideoFrameFacet rdf:type owl:Class ;
-    rdfs:subClassOf uco-core:Facet ;
-    rdfs:label "Video Frame Facet"@en ;
-    rdfs:comment "Properties specific to a video frame."@en .
-
 ###  NetworkPacketCapture Observable Object
 solve-it-observable:NetworkPacketCapture rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
@@ -50,12 +44,6 @@ solve-it-observable:NetworkPacketCapture rdf:type owl:Class ;
 #################################################################
 #    Object Properties
 #################################################################
-
-solve-it-observable:hasVideoFrameFacet rdf:type owl:ObjectProperty ;
-    rdfs:domain solve-it-observable:VideoFrame ;
-    rdfs:range solve-it-observable:VideoFrameFacet ;
-    rdfs:label "has video frame facet"@en ;
-    rdfs:comment "Links a VideoFrame to its facet containing frame-specific properties."@en .
 
 solve-it-observable:extractedFromVideo rdf:type owl:ObjectProperty ;
     rdfs:domain solve-it-observable:VideoFrame ;
@@ -67,26 +55,20 @@ solve-it-observable:extractedFromVideo rdf:type owl:ObjectProperty ;
 #    Data Properties
 #################################################################
 
-solve-it-observable:frameNumber rdf:type owl:DatatypeProperty ;
-    rdfs:domain solve-it-observable:VideoFrameFacet ;
+solve-it-observable:videoFrameNumber rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it-observable:VideoFrame ;
     rdfs:range xsd:integer ;
     rdfs:label "frame number"@en ;
     rdfs:comment "The sequential number of this frame in the video."@en .
 
-solve-it-observable:timestamp rdf:type owl:DatatypeProperty ;
-    rdfs:domain solve-it-observable:VideoFrameFacet ;
-    rdfs:range xsd:dateTime ;
-    rdfs:label "timestamp"@en ;
-    rdfs:comment "The timestamp when this frame appears in the video."@en .
-
-solve-it-observable:width rdf:type owl:DatatypeProperty ;
-    rdfs:domain solve-it-observable:VideoFrameFacet ;
+solve-it-observable:videoFramePixelWidth rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it-observable:VideoFrame ;
     rdfs:range xsd:integer ;
     rdfs:label "width"@en ;
-    rdfs:comment "Frame width in pixels."@en .
+    rdfs:comment "Video frame width in pixels."@en .
 
-solve-it-observable:height rdf:type owl:DatatypeProperty ;
-    rdfs:domain solve-it-observable:VideoFrameFacet ;
+solve-it-observable:videoFramePixelHeight rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it-observable:VideoFrame ;
     rdfs:range xsd:integer ;
     rdfs:label "height"@en ;
-    rdfs:comment "Frame height in pixels."@en .
+    rdfs:comment "Video frame height in pixels."@en .
