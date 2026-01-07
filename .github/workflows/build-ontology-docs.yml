@@ -43,11 +43,6 @@ jobs:
 
       - name: Build documentation
         run: |
-          # Preserve CNAME file if it exists
-          if [ -f docs/CNAME ]; then
-            cp docs/CNAME CNAME.backup
-          fi
-
           # Create a clean docs directory
           rm -rf docs
           mkdir -p docs
@@ -55,10 +50,8 @@ jobs:
           # Generate documentation from all TTL files
           ontospy gendocs . -o docs --type 2
 
-          # Restore CNAME file after ontospy (which overwrites the docs directory)
-          if [ -f CNAME.backup ]; then
-            mv CNAME.backup docs/CNAME
-          fi
+          # Create CNAME file for GitHub Pages custom domain
+          echo "ontology.solveit-df.org" > docs/CNAME
 
       - name: Generate IRI redirects
         run: |
