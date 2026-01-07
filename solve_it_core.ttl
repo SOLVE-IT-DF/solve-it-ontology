@@ -21,11 +21,12 @@
                 <https://ontology.unifiedcyberontology.org/uco/observable/1.3.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/action/1.3.0> ,
                 <https://ontology.solveit-df.org/observable> ,
+                <https://ontology.solveit-df.org/analysis> ,
                 <https://ontology.solveit-df.org/technique> ,
                 <https://ontology.solveit-df.org/weakness> ,
                 <https://ontology.solveit-df.org/mitigation> ;
     dcterms:title "SOLVE-IT Digital Forensics Ontology"@en ;
-    dcterms:description "A modular ontology extending UCO/CASE for the SOLVE-IT digital forensics project. This core ontology imports modules for techniques, weaknesses, mitigations, and observables."@en ;
+    dcterms:description "A modular ontology extending UCO/CASE for the SOLVE-IT digital forensics project. This core ontology imports modules for techniques, weaknesses, mitigations, observables, and analysis."@en ;
     dcterms:creator "SOLVE-IT Project" ;
     owl:versionInfo "0.0.1" ;
     rdfs:label "SOLVE-IT Ontology"@en ;
