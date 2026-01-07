@@ -71,6 +71,18 @@ solve-it-observable:KeywordSearchResult rdf:type owl:Class ;
     rdfs:label "Keyword Search Result"@en ;
     rdfs:comment "A result from a keyword search operation during forensic analysis."@en .
 
+###  Timeline Observable Object
+solve-it-observable:Timeline rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Timeline"@en ;
+    rdfs:comment "A set of timeline entries extracted during forensic analysis."@en .
+
+###  TimelineEntry Observable Object
+solve-it-observable:TimelineEntry rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Timeline Entry"@en ;
+    rdfs:comment "A single entry in a forensic timeline."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -80,6 +92,12 @@ solve-it-observable:extractedFromVideo rdf:type owl:ObjectProperty ;
     rdfs:range uco-observable:File ;
     rdfs:label "extracted from video"@en ;
     rdfs:comment "Links a VideoFrame to the source video file."@en .
+
+solve-it-observable:hasTimelineEntry rdf:type owl:ObjectProperty ;
+    rdfs:domain solve-it-observable:Timeline ;
+    rdfs:range solve-it-observable:TimelineEntry ;
+    rdfs:label "has timeline entry"@en ;
+    rdfs:comment "Links a Timeline to its TimelineEntry instances."@en .
 
 #################################################################
 #    Data Properties
