@@ -1,5 +1,5 @@
-@prefix : <https://ontology.solveit-df.org/> .
-@prefix solve-it: <https://ontology.solveit-df.org/> .
+@prefix : <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,26 +8,214 @@
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
-@base <https://ontology.solveit-df.org/> .
+@base <https://ontology.solveit-df.org/solveit/core/> .
 
 #################################################################
 #    SOLVE-IT Core Ontology
 #    Main ontology file with imports and metadata
 #################################################################
 
-<https://ontology.solveit-df.org/> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/1.0.0> ;
+<https://ontology.solveit-df.org/solveit/core> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/core/1.0.0> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.3.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/observable/1.3.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/action/1.3.0> ,
-                <https://ontology.solveit-df.org/observable> ,
-                <https://ontology.solveit-df.org/analysis> ,
-                <https://ontology.solveit-df.org/technique> ,
-                <https://ontology.solveit-df.org/weakness> ,
-                <https://ontology.solveit-df.org/mitigation> ;
+                <https://ontology.solveit-df.org/solveit/observable> ,
+                <https://ontology.solveit-df.org/solveit/analysis> ;
     dcterms:title "SOLVE-IT Digital Forensics Ontology"@en ;
-    dcterms:description "A modular ontology extending UCO/CASE for the SOLVE-IT digital forensics project. This core ontology imports modules for techniques, weaknesses, mitigations, observables, and analysis."@en ;
+    dcterms:description "A modular ontology extending UCO/CASE for the SOLVE-IT digital forensics project. This core ontology defines fundamental SOLVE-IT classes (Technique, Weakness, Mitigation) and imports modules for observables and analysis."@en ;
     dcterms:creator "SOLVE-IT Project" ;
     owl:versionInfo "0.0.1" ;
     rdfs:label "SOLVE-IT Ontology"@en ;
-    rdfs:comment "Core ontology file - imports all SOLVE-IT modules. Use this file to import the complete SOLVE-IT ontology."@en .
+    rdfs:comment "Core ontology file with fundamental SOLVE-IT classes. Use this file to import the complete SOLVE-IT ontology."@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  SOLVE-IT Technique
+solveit-core:Technique rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:label "SOLVE-IT Technique"@en ;
+    rdfs:comment "A digital forensic technique representing how one might achieve an objective by performing an action. Based on the SOLVE-IT knowledge base."@en .
+
+###  SOLVE-IT Weakness
+solveit-core:Weakness rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:label "SOLVE-IT Weakness"@en ;
+    rdfs:comment "A potential problem resulting from using a technique, classified according to ASTM E3016-18 error categories."@en .
+
+###  SOLVE-IT Mitigation
+solveit-core:Mitigation rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:label "SOLVE-IT Mitigation"@en ;
+    rdfs:comment "An action that can be performed to prevent a weakness from occurring or to minimize its impact."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+solveit-core:hasWeakness rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:label "has weakness"@en ;
+    rdfs:comment "Links a Technique to associated weaknesses (error categories from ASTM E3016-18)."@en .
+
+solveit-core:hasMitigation rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:label "has mitigation"@en ;
+    rdfs:comment "Links a Technique to mitigations that prevent or minimize weaknesses."@en .
+
+solveit-core:hasSubtechnique rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range solveit-core:Technique ;
+    rdfs:label "has subtechnique"@en ;
+    rdfs:comment "Links a Technique to more specific subtechniques."@en .
+
+solveit-core:weaknessHasMitigation rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:label "weakness has mitigation"@en ;
+    rdfs:comment "Links a Weakness to mitigations that can prevent or minimize it."@en .
+
+#################################################################
+#    Data Properties - Technique
+#################################################################
+
+solveit-core:techniqueID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique ID"@en ;
+    rdfs:comment "The unique identifier for a SOLVE-IT technique (e.g., T1002)."@en .
+
+solveit-core:techniqueName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique name"@en ;
+    rdfs:comment "The name of the technique (e.g., 'Disk imaging')."@en .
+
+solveit-core:techniqueDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique description"@en ;
+    rdfs:comment "A detailed description of how the technique is performed."@en .
+
+solveit-core:techniqueSynonym rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique synonym"@en ;
+    rdfs:comment "Alternative names for this technique."@en .
+
+solveit-core:techniqueDetails rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique details"@en ;
+    rdfs:comment "Additional details about the technique."@en .
+
+solveit-core:techniqueExample rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique example"@en ;
+    rdfs:comment "Example tools or implementations of this technique (e.g., 'dcfldd', 'FTK Imager')."@en .
+
+solveit-core:techniqueWeaknessID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "weakness ID"@en ;
+    rdfs:comment "Identifier for an associated weakness (e.g., W1004)."@en .
+
+solveit-core:techniqueCASEOutputClass rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "CASE output class"@en ;
+    rdfs:comment "The CASE/UCO class that represents the output of this technique."@en .
+
+solveit-core:techniqueReference rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:string ;
+    rdfs:label "technique reference"@en ;
+    rdfs:comment "Academic or professional reference for this technique."@en .
+
+#################################################################
+#    Data Properties - Weakness
+#################################################################
+
+solveit-core:weaknessID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "weakness ID"@en ;
+    rdfs:comment "The unique identifier for a SOLVE-IT weakness (e.g., W1004)."@en .
+
+solveit-core:weaknessName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "weakness name"@en ;
+    rdfs:comment "The name describing the weakness."@en .
+
+solveit-core:weaknessINCOMP rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INCOMP"@en ;
+    rdfs:comment "Incompleteness error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solveit-core:weaknessINAC_EX rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INAC-EX"@en ;
+    rdfs:comment "Inaccuracy-Execution error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solveit-core:weaknessINAC_AS rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INAC-AS"@en ;
+    rdfs:comment "Inaccuracy-Assumption error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solveit-core:weaknessINAC_ALT rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INAC-ALT"@en ;
+    rdfs:comment "Inaccuracy-Alteration error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solveit-core:weaknessINAC_COR rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "INAC-COR"@en ;
+    rdfs:comment "Inaccuracy-Corruption error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solveit-core:weaknessMISINT rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "MISINT"@en ;
+    rdfs:comment "Misinterpretation error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+
+solveit-core:weaknessMitigationID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "mitigation ID reference"@en ;
+    rdfs:comment "Identifier for an associated mitigation (e.g., M1003)."@en .
+
+solveit-core:weaknessReference rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Weakness ;
+    rdfs:range xsd:string ;
+    rdfs:label "weakness reference"@en ;
+    rdfs:comment "Academic or professional reference for this weakness."@en .
+
+#################################################################
+#    Data Properties - Mitigation
+#################################################################
+
+solveit-core:mitigationID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Mitigation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mitigation ID"@en ;
+    rdfs:comment "The unique identifier for a SOLVE-IT mitigation (e.g., M1001)."@en .
+
+solveit-core:mitigationName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Mitigation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mitigation name"@en ;
+    rdfs:comment "The name describing the mitigation action."@en .
+
+solveit-core:mitigationReference rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Mitigation ;
+    rdfs:range xsd:string ;
+    rdfs:label "mitigation reference"@en ;
+    rdfs:comment "Academic or professional reference for this mitigation."@en .
