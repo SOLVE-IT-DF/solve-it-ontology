@@ -88,7 +88,7 @@ solve-it-observable:TimelineEntry rdf:type owl:Class ;
 ###  HypothesisedEvent Analytic Result
 solve-it-observable:HypothesisedEvent rdf:type owl:Class ;
     rdfs:subClassOf uco-analysis:AnalyticResult ;
-    rdfs:label "Hypothesized Event"@en ;
+    rdfs:label "Hypothesised Event"@en ;
     rdfs:comment "An event that is hypothesised to have occurred."@en .
 
 ###  ForensicToolTagBasedReport Analytic Result
