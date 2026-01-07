@@ -41,6 +41,12 @@ solve-it-observable:NetworkPacketCapture rdf:type owl:Class ;
     rdfs:label "Network Packet Capture"@en ;
     rdfs:comment "A network packet capture file."@en .
 
+###  DecryptionKey Observable Object
+solve-it-observable:DecryptionKey rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Decryption Key"@en ;
+    rdfs:comment "A cryptographic key intended for decryption."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
