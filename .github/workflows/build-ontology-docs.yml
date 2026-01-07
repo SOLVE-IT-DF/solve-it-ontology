@@ -43,12 +43,27 @@ jobs:
 
       - name: Build documentation
         run: |
+          # Preserve CNAME file if it exists
+          if [ -f docs/CNAME ]; then
+            cp docs/CNAME CNAME.backup
+          fi
+
           # Create a clean docs directory
           rm -rf docs
           mkdir -p docs
 
+          # Restore CNAME file
+          if [ -f CNAME.backup ]; then
+            mv CNAME.backup docs/CNAME
+          fi
+
           # Generate documentation from all TTL files
           ontospy gendocs . -o docs --type 2
+
+      - name: Generate IRI redirects
+        run: |
+          # Generate redirect folders for all classes and properties
+          python scripts/generate_iri_redirects.py
 
       - name: Configure Git
         run: |
