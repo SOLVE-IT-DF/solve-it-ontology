@@ -121,6 +121,12 @@ solve-it-observable:httpResponseHeader rdf:type owl:Class ;
     rdfs:label "HTTP Response Header"@en ;
     rdfs:comment "An HTTP response header containing multiple header fields from an HTTP server response."@en .
 
+###  DateTimeStamp Observable Object
+solve-it-observable:DateTimeStamp rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Date Time Stamp"@en ;
+    rdfs:comment "A timestamp observed in forensic analysis."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -200,3 +206,21 @@ solve-it-observable:clockOffsetKnownAt rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:dateTime ;
     rdfs:label "clock offset known at"@en ;
     rdfs:comment "The specific point in time when this clock offset was determined."@en .
+
+solve-it-observable:timestampValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it-observable:DateTimeStamp ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "timestamp value"@en ;
+    rdfs:comment "The date and time value of the timestamp."@en .
+
+solve-it-observable:timestampResolution rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it-observable:DateTimeStamp ;
+    rdfs:range xsd:string ;
+    rdfs:label "timestamp resolution"@en ;
+    rdfs:comment "The precision or resolution of the timestamp (e.g., seconds, milliseconds, microseconds)."@en .
+
+solve-it-observable:timestampTimezone rdf:type owl:DatatypeProperty ;
+    rdfs:domain solve-it-observable:DateTimeStamp ;
+    rdfs:range xsd:string ;
+    rdfs:label "timestamp timezone"@en ;
+    rdfs:comment "The timezone of the timestamp."@en .
