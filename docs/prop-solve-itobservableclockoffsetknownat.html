@@ -384,7 +384,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
               <li class="second-level" style="line-height: 20px;" id="sd_28"><a   href="prop-solve-itmitigationreference.html">solve-it:mitigationReference</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_29"><a   href="prop-solve-itobservableclockoffsetknownat.html">solve-it:observable/clockOffsetKnownAt</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_29"><a class="active"  href="prop-solve-itobservableclockoffsetknownat.html">solve-it:observable/clockOffsetKnownAt</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_56"><a   href="prop-solve-itobservablecontradictedby.html">solve-it:observable/contradictedBy</a></li>
           
@@ -412,7 +412,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
               <li class="second-level" style="line-height: 20px;" id="sd_36"><a   href="prop-solve-ittechniquedetails.html">solve-it:techniqueDetails</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_37"><a class="active"  href="prop-solve-ittechniqueexample.html">solve-it:techniqueExample</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_37"><a   href="prop-solve-ittechniqueexample.html">solve-it:techniqueExample</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_38"><a   href="prop-solve-ittechniqueid.html">solve-it:techniqueID</a></li>
           
@@ -549,7 +549,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-properties.html">Properties</a>
     </li>
       <li class="active">
-            solve-it:techniqueExample
+            solve-it:observable/clockOffsetKnownAt
         </li>
   </ol>
 
@@ -573,7 +573,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
             <h1>
 
-                solve-it:techniqueExample
+                solve-it:observable/clockOffsetKnownAt
                 
                     <small class="label label-info label-xs ">leaf node</small>
                   
@@ -592,7 +592,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                         <li><a href="entities-tree-properties.html">rdf:Property</a>
 
                           <ul>
-                            <li><a style="font-weight: bold;" title="'technique example' - Example tools or implementations of this technique (e.g., &#39;dcfldd&#39;, &#39;FTK Imager&#39;).">solve-it:techniqueExample</a>
+                            <li><a style="font-weight: bold;" title="'clock offset known at' - The specific point in time when this clock offset was determined.">solve-it:observable/clockOffsetKnownAt</a>
 
                             
                               </li>
@@ -616,7 +616,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
              <div class="panel-body">
 
-                 <code>https://ontology.solveit-df.org/techniqueExample</code>
+                 <code>https://ontology.solveit-df.org/observable/clockOffsetKnownAt</code>
              </div>
            </div>
             </div></div>
@@ -631,7 +631,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
              <div class="panel-body">
 
-                 technique example
+                 clock offset known at
              </div>
            </div>
             </div></div>
@@ -646,7 +646,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
 
-                <p>Example tools or implementations of this technique (e.g., &#39;dcfldd&#39;, &#39;FTK Imager&#39;).</p>
+                <p>The specific point in time when this clock offset was determined.</p>
             </div>
           </div>
            </div></div>
@@ -677,7 +677,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                      
                          
                          
-                              <a href="class-solve-ittechnique.html" title="https://ontology.solveit-df.org/Technique">solve-it:Technique</a>
+                              <a href="class-solve-itobservableclockoffset.html" title="https://ontology.solveit-df.org/observable/ClockOffset">solve-it:observable/ClockOffset</a>
                            
                            
                          
@@ -685,14 +685,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                    </td>
 
                     <td>
-                      solve-it:techniqueExample
+                      solve-it:observable/clockOffsetKnownAt
                     </td>
 
                     <td>
                       
                           
                           
-                               <a href="http://www.w3.org/2001/XMLSchema#string" target="_blank" title="http://www.w3.org/2001/XMLSchema#string">xsd:string</a>
+                               <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>
                              
                             
                           
@@ -716,14 +716,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
                     <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">solve-it:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">solve-it-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">solve-it</span><span class="p">:</span><span class="nt">techniqueExample</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">DatatypeProperty</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;technique example&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Example tools or implementations of this technique (e.g., &#39;dcfldd&#39;, &#39;FTK Imager&#39;).&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solve-it</span><span class="p">:</span><span class="nt">Technique</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">string</span> <span class="p">.</span>
+<span class="nn">solve-it-observable</span><span class="p">:</span><span class="nt">clockOffsetKnownAt</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">DatatypeProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;clock offset known at&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;The specific point in time when this clock offset was determined.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solve-it-observable</span><span class="p">:</span><span class="nt">ClockOffset</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -823,7 +823,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_37").offset().top - 100
+          scrollTop: $("#sd_29").offset().top - 100
       }, 100);
     });
 
