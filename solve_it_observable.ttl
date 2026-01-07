@@ -53,6 +53,18 @@ solve-it-observable:UnlockPattern rdf:type owl:Class ;
     rdfs:label "Unlock Pattern"@en ;
     rdfs:comment "A pattern used to unlock a device, i.e. screen lock pattern."@en .
 
+###  RedactedFileSet Observable Object
+solve-it-observable:RedactedFileSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Redacted File Set"@en ;
+    rdfs:comment "A collection of files post-redaction."@en .
+
+###  RedactedArtifactSet Observable Object
+solve-it-observable:RedactedArtifactSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Redacted Artifact Set"@en ;
+    rdfs:comment "A collection of artifacts post-redaction."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
