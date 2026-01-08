@@ -38,23 +38,23 @@
 #################################################################
 
 :techniqueT1002 rdf:type solveit-core:Technique ;
-    rdfs:label "Disk Imaging Technique"@en ;
+    rdfs:label "T1002: Disk imaging"@en ;
     solveit-core:techniqueID "T1002" ;
     solveit-core:techniqueName "Disk imaging" ;
     solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ into an imaging format. The could be from a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader." ;
-    solveit-core:techniqueExample "dcfldd" ;
-    solveit-core:techniqueExample "FTK Imager" ;
-    solveit-core:techniqueExample "Magnet ACQUIRE" ;
-    solveit-core:hasWeakness :weaknessW1004 ;
-    solveit-core:techniqueCASEOutputClass "observable:Image" ;
-    solveit-core:techniqueReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, 'Forensic Image Acquisition'" .
+    solveit-core:hasExample "dcfldd" ;
+    solveit-core:hasExample "FTK Imager" ;
+    solveit-core:hasExample "Magnet ACQUIRE" ;
+    solveit-core:hasPotentialWeakness :weaknessW1004 ;
+    solveit-core:techniqueCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
+    solveit-core:hasReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, 'Forensic Image Acquisition'" .
 
 #################################################################
 #    Example SOLVE-IT Weakness Instance
 #################################################################
 
 :weaknessW1004 rdf:type solveit-core:Weakness ;
-    rdfs:label "Incomplete Sector Acquisition"@en ;
+    rdfs:label "W1004: Acquisition does not include all sectors from LBA0 to LBA max"@en ;
     solveit-core:weaknessID "W1004" ;
     solveit-core:weaknessName "Acquisition does not include all sectors from LBA0 to LBA max" ;
     solveit-core:weaknessINCOMP "x" ;
@@ -63,17 +63,22 @@
     solveit-core:weaknessINAC_ALT "" ;
     solveit-core:weaknessINAC_COR "" ;
     solveit-core:weaknessMISINT "" ;
-    solveit-core:weaknessHasMitigation :mitigationM1003 ;
-    solveit-core:weaknessHasMitigation :mitigationM1004 .
+    solveit-core:hasPotentialMitigation :mitigationM1003 ;
+    solveit-core:hasPotentialMitigation :mitigationM1004 .
 
 #################################################################
-#    Example SOLVE-IT Mitigation Instance
+#    Example SOLVE-IT Mitigation Instances
 #################################################################
 
-:mitigationM1001 rdf:type solveit-core:Mitigation ;
-    rdfs:label "Triage Results Review"@en ;
-    solveit-core:mitigationID "M1001" ;
-    solveit-core:mitigationName "Review of all triage results that are relied on during the full digital forensic examination" .
+:mitigationM1003 rdf:type solveit-core:Mitigation ;
+    rdfs:label "M1003: Check image size corresponds with drive label"@en ;
+    solveit-core:mitigationID "M1003" ;
+    solveit-core:mitigationName "Check image size corresponds with drive label" .
+
+:mitigationM1004 rdf:type solveit-core:Mitigation ;
+    rdfs:label "M1004: Check hash of image matches hash of source device"@en ;
+    solveit-core:mitigationID "M1004" ;
+    solveit-core:mitigationName "Check hash of image matches hash of source device" .
 
 #################################################################
 #    Example UnlockPattern Instance

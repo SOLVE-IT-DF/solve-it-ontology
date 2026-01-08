@@ -55,15 +55,11 @@ solveit-core:Mitigation rdf:type owl:Class ;
 #    Object Properties
 #################################################################
 
-solveit-core:hasWeakness rdf:type owl:ObjectProperty ;
+solveit-core:hasPotentialWeakness rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Technique ;
-    rdfs:label "has weakness"@en ;
-    rdfs:comment "Links a Technique to associated weaknesses (error categories from ASTM E3016-18)."@en .
-
-solveit-core:hasMitigation rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-core:Technique ;
-    rdfs:label "has mitigation"@en ;
-    rdfs:comment "Links a Technique to mitigations that prevent or minimize weaknesses."@en .
+    rdfs:range solveit-core:Weakness ;
+    rdfs:label "has potential weakness"@en ;
+    rdfs:comment "Links a Technique to potential weaknesses (error categories from ASTM E3016-18) that may occur when using this technique."@en .
 
 solveit-core:hasSubtechnique rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Technique ;
@@ -71,10 +67,11 @@ solveit-core:hasSubtechnique rdf:type owl:ObjectProperty ;
     rdfs:label "has subtechnique"@en ;
     rdfs:comment "Links a Technique to more specific subtechniques."@en .
 
-solveit-core:weaknessHasMitigation rdf:type owl:ObjectProperty ;
+solveit-core:hasPotentialMitigation rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Weakness ;
-    rdfs:label "weakness has mitigation"@en ;
-    rdfs:comment "Links a Weakness to mitigations that can prevent or minimize it."@en .
+    rdfs:range solveit-core:Mitigation ;
+    rdfs:label "has potential mitigation"@en ;
+    rdfs:comment "Links a Weakness to mitigations that can potentially prevent or minimize it."@en .
 
 #################################################################
 #    Data Properties - Technique
@@ -98,41 +95,17 @@ solveit-core:techniqueDescription rdf:type owl:DatatypeProperty ;
     rdfs:label "technique description"@en ;
     rdfs:comment "A detailed description of how the technique is performed."@en .
 
-solveit-core:techniqueSynonym rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Technique ;
-    rdfs:range xsd:string ;
-    rdfs:label "technique synonym"@en ;
-    rdfs:comment "Alternative names for this technique."@en .
-
 solveit-core:techniqueDetails rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Technique ;
     rdfs:range xsd:string ;
     rdfs:label "technique details"@en ;
     rdfs:comment "Additional details about the technique."@en .
 
-solveit-core:techniqueExample rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Technique ;
-    rdfs:range xsd:string ;
-    rdfs:label "technique example"@en ;
-    rdfs:comment "Example tools or implementations of this technique (e.g., 'dcfldd', 'FTK Imager')."@en .
-
-solveit-core:techniqueWeaknessID rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Technique ;
-    rdfs:range xsd:string ;
-    rdfs:label "weakness ID"@en ;
-    rdfs:comment "Identifier for an associated weakness (e.g., W1004)."@en .
-
 solveit-core:techniqueCASEOutputClass rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Technique ;
-    rdfs:range xsd:string ;
+    rdfs:range xsd:anyURI ;
     rdfs:label "CASE output class"@en ;
-    rdfs:comment "The CASE/UCO class that represents the output of this technique."@en .
-
-solveit-core:techniqueReference rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Technique ;
-    rdfs:range xsd:string ;
-    rdfs:label "technique reference"@en ;
-    rdfs:comment "Academic or professional reference for this technique."@en .
+    rdfs:comment "The CASE/UCO class IRI that represents the output of this technique (e.g., https://ontology.unifiedcyberontology.org/uco/observable/Image)."@en .
 
 #################################################################
 #    Data Properties - Weakness
@@ -186,18 +159,6 @@ solveit-core:weaknessMISINT rdf:type owl:DatatypeProperty ;
     rdfs:label "MISINT"@en ;
     rdfs:comment "Misinterpretation error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
 
-solveit-core:weaknessMitigationID rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:string ;
-    rdfs:label "mitigation ID reference"@en ;
-    rdfs:comment "Identifier for an associated mitigation (e.g., M1003)."@en .
-
-solveit-core:weaknessReference rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:string ;
-    rdfs:label "weakness reference"@en ;
-    rdfs:comment "Academic or professional reference for this weakness."@en .
-
 #################################################################
 #    Data Properties - Mitigation
 #################################################################
@@ -214,8 +175,21 @@ solveit-core:mitigationName rdf:type owl:DatatypeProperty ;
     rdfs:label "mitigation name"@en ;
     rdfs:comment "The name describing the mitigation action."@en .
 
-solveit-core:mitigationReference rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Mitigation ;
+#################################################################
+#    Shared Data Properties
+#################################################################
+
+solveit-core:hasReference rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
-    rdfs:label "mitigation reference"@en ;
-    rdfs:comment "Academic or professional reference for this mitigation."@en .
+    rdfs:label "has reference"@en ;
+    rdfs:comment "Academic or professional reference citation. Can be used with Technique, Weakness, or Mitigation."@en .
+
+solveit-core:hasSynonym rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "has synonym"@en ;
+    rdfs:comment "Alternative name or synonym. Can be used with Technique, Weakness, or Mitigation."@en .
+
+solveit-core:hasExample rdf:type owl:DatatypeProperty ;
+    rdfs:range xsd:string ;
+    rdfs:label "has example"@en ;
+    rdfs:comment "Example tool, implementation, or instance. Can be used with Technique, Weakness, or Mitigation."@en .
