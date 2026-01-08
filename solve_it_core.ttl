@@ -73,6 +73,12 @@ solveit-core:hasPotentialMitigation rdf:type owl:ObjectProperty ;
     rdfs:label "has potential mitigation"@en ;
     rdfs:comment "Links a Weakness to mitigations that can potentially prevent or minimize it."@en .
 
+solveit-core:linksToTechnique rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-core:Mitigation ;
+    rdfs:range solveit-core:Technique ;
+    rdfs:label "links to technique"@en ;
+    rdfs:comment "Links a Mitigation to the Technique(s) it is relevant for or applies to."@en .
+
 #################################################################
 #    Data Properties - Technique
 #################################################################

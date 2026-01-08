@@ -49,6 +49,15 @@
     solveit-core:techniqueCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
     solveit-core:hasReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, 'Forensic Image Acquisition'" .
 
+:techniqueT1042 rdf:type solveit-core:Technique ;
+    rdfs:label "T1042: Disk image hash verification"@en ;
+    solveit-core:techniqueID "T1042" ;
+    solveit-core:techniqueName "Disk image hash verification" ;
+    solveit-core:techniqueDescription "Computing the hash function of the entire contents of a disk, recording it, and then subsequently computing the hash over any disk image created to detect if any content is different (adapted from Lyle 2002)" ;
+    solveit-core:hasReference "Kessler, G.C., 2016. The impact of MD5 file hash collisions on digital forensic imaging. Journal of digital forensics, security and law, 11(4), p.9." ;
+    solveit-core:hasReference "Kessler GC. The impact of SHA-1 file hash collisions on digital forensic imaging: A follow-up experiment. Journal of Digital Forensics, Security and Law. 2016;11(4):10." ;
+    solveit-core:hasReference "Lyle, J., 2002. Testing disk imaging tools. DFRWS USA 2002, https://dfrws.org/wp-content/uploads/2019/06/2002_USA_paper-testing_disk_imaging_tools.pdf" .
+
 #################################################################
 #    Example SOLVE-IT Weakness Instance
 #################################################################
@@ -78,7 +87,8 @@
 :mitigationM1004 rdf:type solveit-core:Mitigation ;
     rdfs:label "M1004: Check hash of image matches hash of source device"@en ;
     solveit-core:mitigationID "M1004" ;
-    solveit-core:mitigationName "Check hash of image matches hash of source device" .
+    solveit-core:mitigationName "Check hash of image matches hash of source device" ;
+    solveit-core:linksToTechnique :techniqueT1042 .
 
 #################################################################
 #    Example UnlockPattern Instance
