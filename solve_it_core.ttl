@@ -51,10 +51,10 @@ solveit-core:Mitigation rdf:type owl:Class ;
     rdfs:label "SOLVE-IT Mitigation"@en ;
     rdfs:comment "An action that can be performed to prevent a weakness from occurring or to minimize its impact."@en .
 
-###  SOLVE-IT Investigative Objective
-solveit-core:InvestigativeObjective rdf:type owl:Class ;
+###  SOLVE-IT Objective
+solveit-core:Objective rdf:type owl:Class ;
     rdfs:subClassOf uco-core:UcoObject ;
-    rdfs:label "SOLVE-IT Investigative Objective"@en ;
+    rdfs:label "SOLVE-IT Objective"@en ;
     rdfs:comment "A goal or objective in a digital forensic investigation that can be achieved through one or more techniques."@en .
 
 #################################################################
@@ -86,10 +86,10 @@ solveit-core:linksToTechnique rdf:type owl:ObjectProperty ;
     rdfs:comment "Links a Mitigation to the Technique(s) it is relevant for or applies to."@en .
 
 solveit-core:includesTechnique rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-core:InvestigativeObjective ;
+    rdfs:domain solveit-core:Objective ;
     rdfs:range solveit-core:Technique ;
     rdfs:label "includes technique"@en ;
-    rdfs:comment "Links an Investigative Objective to Techniques that can be used to achieve it."@en .
+    rdfs:comment "Links an Objective to Techniques that can be used to achieve it."@en .
 
 #################################################################
 #    Data Properties - Technique
@@ -206,20 +206,20 @@ solveit-core:mitigationDescription rdf:type owl:DatatypeProperty ;
     rdfs:comment "A detailed description of how the mitigation prevents or minimizes a weakness."@en .
 
 #################################################################
-#    Data Properties - Investigative Objective
+#    Data Properties - Objective
 #################################################################
 
 solveit-core:objectiveName rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:InvestigativeObjective ;
+    rdfs:domain solveit-core:Objective ;
     rdfs:range xsd:string ;
     rdfs:label "objective name"@en ;
-    rdfs:comment "The name of the investigative objective."@en .
+    rdfs:comment "The name of the objective."@en .
 
 solveit-core:objectiveDescription rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:InvestigativeObjective ;
+    rdfs:domain solveit-core:Objective ;
     rdfs:range xsd:string ;
     rdfs:label "objective description"@en ;
-    rdfs:comment "A detailed description of what this investigative objective seeks to achieve."@en .
+    rdfs:comment "A detailed description of what this objective seeks to achieve."@en .
 
 #################################################################
 #    Shared Data Properties

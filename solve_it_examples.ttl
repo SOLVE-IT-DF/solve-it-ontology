@@ -20,10 +20,10 @@
     rdfs:comment "Example instances demonstrating the SOLVE-IT ontology usage."@en .
 
 #################################################################
-#    Example SOLVE-IT Investigative Objective Instance
+#    Example SOLVE-IT Objective Instance
 #################################################################
 
-:objectiveAcquireData rdf:type solveit-core:InvestigativeObjective ;
+:objectiveAcquireData rdf:type solveit-core:Objective ;
     rdfs:label "Acquire data"@en ;
     solveit-core:objectiveName "Acquire data" ;
     solveit-core:objectiveDescription "Collect data from the identified evidence sources." ;
