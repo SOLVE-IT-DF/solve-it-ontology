@@ -156,10 +156,10 @@ solveit-observable:videoFramePixelHeight rdf:type owl:DatatypeProperty ;
     rdfs:label "height"@en ;
     rdfs:comment "Video frame height in pixels."@en .
 
-solveit-observable:offsetValue rdf:type owl:DatatypeProperty ;
+solveit-observable:clockOffsetValue rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-observable:ClockOffset ;
     rdfs:range xsd:decimal ;
-    rdfs:label "offset value"@en ;
+    rdfs:label "clock offset value"@en ;
     rdfs:comment "The clock offset value in seconds. Positive values indicate the clock is ahead, negative values indicate it is behind."@en .
 
 solveit-observable:clockOffsetKnownAt rdf:type owl:DatatypeProperty ;
