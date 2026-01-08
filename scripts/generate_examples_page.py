@@ -120,6 +120,20 @@ def format_value(value, g):
             return f'<a href="#{local_name}">{html.escape(qname)}</a>'
         return html.escape(qname)
 
+def get_instance_order(examples_file):
+    """Parse the TTL file to get the order of instance declarations."""
+    instance_order = []
+    with open(examples_file, 'r', encoding='utf-8') as f:
+        for line in f:
+            # Look for instance declarations like ":instanceName rdf:type"
+            if 'rdf:type' in line and not line.strip().startswith('#'):
+                # Extract the instance identifier
+                parts = line.strip().split()
+                if len(parts) >= 3 and parts[0].startswith(':'):
+                    instance_id = parts[0].rstrip(';')
+                    instance_order.append(instance_id)
+    return instance_order
+
 def generate_html(examples_file, output_file):
     """Generate the examples HTML page."""
 
@@ -127,8 +141,12 @@ def generate_html(examples_file, output_file):
     g = Graph()
     g.parse(examples_file, format="turtle")
 
-    # Group instances by class
+    # Get the order of instances from the TTL file
+    instance_order_ids = get_instance_order(examples_file)
+
+    # Group instances by class, preserving order
     instances_by_class = defaultdict(list)
+    instance_to_class = {}
 
     # Find all instances
     for s in g.subjects(RDF.type, None):
@@ -145,6 +163,7 @@ def generate_html(examples_file, output_file):
                class_str.startswith(str(SOLVEIT_ANALYSIS)) or \
                class_str.startswith(str(UCO_OBS)):
                 instances_by_class[class_uri].append(s)
+                instance_to_class[s] = class_uri
 
     # Start building HTML
     html_parts = []
@@ -226,72 +245,95 @@ def generate_html(examples_file, output_file):
         </div>
 """)
 
-    # Generate content for each class
-    for class_uri in sorted(instances_by_class.keys(), key=lambda x: str(x)):
-        class_qname = get_qname(class_uri, g)
-        class_link = get_class_link(class_uri)
-
-        html_parts.append(f'        <div class="class-section">\n')
-
-        if class_link:
-            html_parts.append(f'            <h2 class="class-title">Examples of <a href="{class_link}">{html.escape(class_qname)}</a></h2>\n')
-        else:
-            html_parts.append(f'            <h2 class="class-title">Examples of {html.escape(class_qname)}</h2>\n')
-
-        # Process each instance of this class
-        for instance_uri in sorted(instances_by_class[class_uri], key=lambda x: str(x)):
-            instance_id = str(instance_uri).split("/")[-1]
-
-            # Get label
-            label = None
-            for lbl in g.objects(instance_uri, RDFS.label):
-                label = str(lbl)
+    # Create ordered list of instances based on TTL file order
+    ordered_instances = []
+    for instance_id in instance_order_ids:
+        # Find the full URI for this instance
+        for instance_uri in instance_to_class.keys():
+            if str(instance_uri).endswith('/' + instance_id.lstrip(':')):
+                ordered_instances.append(instance_uri)
                 break
 
-            html_parts.append(f'            <div class="example-instance" id="{instance_id}">\n')
+    # Generate content, preserving TTL file order
+    current_class = None
+    for instance_uri in ordered_instances:
+        if instance_uri not in instance_to_class:
+            continue
 
-            if label:
-                html_parts.append(f'                <div class="instance-header">{html.escape(label)}</div>\n')
+        class_uri = instance_to_class[instance_uri]
+
+        # If we're starting a new class section, add the header
+        if class_uri != current_class:
+            if current_class is not None:
+                html_parts.append('        </div>\n')  # Close previous class section
+
+            class_qname = get_qname(class_uri, g)
+            class_link = get_class_link(class_uri)
+
+            html_parts.append(f'        <div class="class-section">\n')
+
+            if class_link:
+                html_parts.append(f'            <h2 class="class-title">Examples of <a href="{class_link}">{html.escape(class_qname)}</a></h2>\n')
             else:
-                html_parts.append(f'                <div class="instance-header">{html.escape(instance_id)}</div>\n')
+                html_parts.append(f'            <h2 class="class-title">Examples of {html.escape(class_qname)}</h2>\n')
 
-            html_parts.append(f'                <div class="instance-type">Instance URI: <code>{html.escape(str(instance_uri))}</code></div>\n')
+            current_class = class_uri
 
-            # Build property table
-            html_parts.append('                <table class="table table-bordered table-condensed property-table">\n')
-            html_parts.append('                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>\n')
-            html_parts.append('                    <tbody>\n')
+        # Process this instance
+        instance_id = str(instance_uri).split("/")[-1]
 
-            # Get all properties
-            properties = []
-            for p, o in g.predicate_objects(instance_uri):
-                # Skip rdf:type (already shown) and rdfs:label (already shown in header)
-                if p != RDF.type and p != RDFS.label:
-                    properties.append((p, o))
+        # Get label
+        label = None
+        for lbl in g.objects(instance_uri, RDFS.label):
+            label = str(lbl)
+            break
 
-            # Sort properties
-            properties.sort(key=lambda x: str(x[0]))
+        html_parts.append(f'            <div class="example-instance" id="{instance_id}">\n')
 
-            for prop, value in properties:
-                prop_qname = get_qname(prop, g)
-                prop_link = get_property_link(prop)
+        if label:
+            html_parts.append(f'                <div class="instance-header">{html.escape(label)}</div>\n')
+        else:
+            html_parts.append(f'                <div class="instance-header">{html.escape(instance_id)}</div>\n')
 
-                formatted_value = format_value(value, g)
+        html_parts.append(f'                <div class="instance-type">Instance URI: <code>{html.escape(str(instance_uri))}</code></div>\n')
 
-                html_parts.append('                        <tr>\n')
+        # Build property table
+        html_parts.append('                <table class="table table-bordered table-condensed property-table">\n')
+        html_parts.append('                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>\n')
+        html_parts.append('                    <tbody>\n')
 
-                if prop_link:
-                    html_parts.append(f'                            <td class="property-name"><a href="{prop_link}">{html.escape(prop_qname)}</a></td>\n')
-                else:
-                    html_parts.append(f'                            <td class="property-name">{html.escape(prop_qname)}</td>\n')
+        # Get all properties
+        properties = []
+        for p, o in g.predicate_objects(instance_uri):
+            # Skip rdf:type (already shown) and rdfs:label (already shown in header)
+            if p != RDF.type and p != RDFS.label:
+                properties.append((p, o))
 
-                html_parts.append(f'                            <td class="property-value">{formatted_value}</td>\n')
-                html_parts.append('                        </tr>\n')
+        # Sort properties
+        properties.sort(key=lambda x: str(x[0]))
 
-            html_parts.append('                    </tbody>\n')
-            html_parts.append('                </table>\n')
-            html_parts.append('            </div>\n')
+        for prop, value in properties:
+            prop_qname = get_qname(prop, g)
+            prop_link = get_property_link(prop)
 
+            formatted_value = format_value(value, g)
+
+            html_parts.append('                        <tr>\n')
+
+            if prop_link:
+                html_parts.append(f'                            <td class="property-name"><a href="{prop_link}">{html.escape(prop_qname)}</a></td>\n')
+            else:
+                html_parts.append(f'                            <td class="property-name">{html.escape(prop_qname)}</td>\n')
+
+            html_parts.append(f'                            <td class="property-value">{formatted_value}</td>\n')
+            html_parts.append('                        </tr>\n')
+
+        html_parts.append('                    </tbody>\n')
+        html_parts.append('                </table>\n')
+        html_parts.append('            </div>\n')
+
+    # Close the last class section
+    if current_class is not None:
         html_parts.append('        </div>\n')
 
     # HTML footer
