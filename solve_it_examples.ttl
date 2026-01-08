@@ -25,14 +25,10 @@
 
 :exampleFrame001 rdf:type solveit-observable:VideoFrame ;
     rdfs:label "Frame 001 from surveillance video"@en ;
-    solveit-observable:hasVideoFrameFacet :frameFacet001 ;
+    solveit-observable:videoFrameNumber 1250 ;
+    solveit-observable:videoFramePixelWidth 1920 ;
+    solveit-observable:videoFramePixelHeight 1080 ;
     solveit-observable:extractedFromVideo :video001 .
-
-:frameFacet001 rdf:type solveit-observable:VideoFrameFacet ;
-    solveit-observable:frameNumber 1250 ;
-    solveit-observable:timestamp "2024-11-14T10:30:45Z"^^xsd:dateTime ;
-    solveit-observable:width 1920 ;
-    solveit-observable:height 1080 .
 
 :video001 rdf:type uco-observable:File ;
     rdfs:label "surveillance_camera_01.mp4"@en .
@@ -49,9 +45,7 @@
     solveit-core:techniqueExample "dcfldd" ;
     solveit-core:techniqueExample "FTK Imager" ;
     solveit-core:techniqueExample "Magnet ACQUIRE" ;
-    solveit-core:techniqueWeaknessID "W1004" ;
-    solveit-core:techniqueWeaknessID "W1006" ;
-    solveit-core:techniqueWeaknessID "W1007" ;
+    solveit-core:hasWeakness :weaknessW1004 ;
     solveit-core:techniqueCASEOutputClass "observable:Image" ;
     solveit-core:techniqueReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, 'Forensic Image Acquisition'" .
 
@@ -69,8 +63,6 @@
     solveit-core:weaknessINAC_ALT "" ;
     solveit-core:weaknessINAC_COR "" ;
     solveit-core:weaknessMISINT "" ;
-    solveit-core:weaknessMitigationID "M1003" ;
-    solveit-core:weaknessMitigationID "M1004" ;
     solveit-core:weaknessHasMitigation :mitigationM1003 ;
     solveit-core:weaknessHasMitigation :mitigationM1004 .
 
