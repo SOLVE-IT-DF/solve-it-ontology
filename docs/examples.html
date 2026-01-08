@@ -73,41 +73,33 @@
             <p class="lead">Example instances demonstrating the use of SOLVE-IT classes and properties.</p>
         </div>
         <div class="class-section">
-            <h2 class="class-title">Examples of <a href="class-solveit-observablevideoframe.html">solveit-observable:VideoFrame</a></h2>
-            <div class="example-instance" id="exampleFrame001">
-                <div class="instance-header">Frame 001 from surveillance video</div>
-                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/exampleFrame001</code></div>
+            <h2 class="class-title">Examples of <a href="class-solveit-coreinvestigativeobjective.html">solveit-core:InvestigativeObjective</a></h2>
+            <div class="example-instance" id="objectiveAcquireData">
+                <div class="instance-header">Acquire data</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/objectiveAcquireData</code></div>
                 <table class="table table-bordered table-condensed property-table">
                     <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
                     <tbody>
                         <tr>
-                            <td class="property-name"><a href="prop-solveit-observableextractedfromvideo.html">solveit-observable:extractedFromVideo</a></td>
-                            <td class="property-value"><a href="#video001">https://ontology.solveit-df.org/solveit/examples/video001</a></td>
+                            <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
+                            <td class="property-value">"This objective can be achieved through multiple techniques including disk imaging (T1002), hash verification (T1042), and others not shown in these examples."@en</td>
                         </tr>
                         <tr>
-                            <td class="property-name"><a href="prop-solveit-observablevideoframenumber.html">solveit-observable:videoFrameNumber</a></td>
-                            <td class="property-value">"1250"^^xsd:integer</td>
+                            <td class="property-name"><a href="prop-solveit-coreincludestechnique.html">solveit-core:includesTechnique</a></td>
+                            <td class="property-value"><a href="#techniqueT1002">https://ontology.solveit-df.org/solveit/examples/techniqueT1002</a></td>
                         </tr>
                         <tr>
-                            <td class="property-name"><a href="prop-solveit-observablevideoframepixelheight.html">solveit-observable:videoFramePixelHeight</a></td>
-                            <td class="property-value">"1080"^^xsd:integer</td>
+                            <td class="property-name"><a href="prop-solveit-coreincludestechnique.html">solveit-core:includesTechnique</a></td>
+                            <td class="property-value"><a href="#techniqueT1042">https://ontology.solveit-df.org/solveit/examples/techniqueT1042</a></td>
                         </tr>
                         <tr>
-                            <td class="property-name"><a href="prop-solveit-observablevideoframepixelwidth.html">solveit-observable:videoFramePixelWidth</a></td>
-                            <td class="property-value">"1920"^^xsd:integer</td>
+                            <td class="property-name"><a href="prop-solveit-coreobjectivedescription.html">solveit-core:objectiveDescription</a></td>
+                            <td class="property-value">"Collect data from the identified evidence sources."</td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="class-section">
-            <h2 class="class-title">Examples of uco-observable:File</h2>
-            <div class="example-instance" id="video001">
-                <div class="instance-header">surveillance_camera_01.mp4</div>
-                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/video001</code></div>
-                <table class="table table-bordered table-condensed property-table">
-                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
-                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-coreobjectivename.html">solveit-core:objectiveName</a></td>
+                            <td class="property-value">"Acquire data"</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -331,6 +323,46 @@
                             <td class="property-name"><a href="prop-solveit-coremitigationname.html">solveit-core:mitigationName</a></td>
                             <td class="property-value">"Check hash of image matches hash of source device"</td>
                         </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-observablevideoframe.html">solveit-observable:VideoFrame</a></h2>
+            <div class="example-instance" id="exampleFrame001">
+                <div class="instance-header">Frame 001 from surveillance video</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/exampleFrame001</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observableextractedfromvideo.html">solveit-observable:extractedFromVideo</a></td>
+                            <td class="property-value"><a href="#video001">https://ontology.solveit-df.org/solveit/examples/video001</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablevideoframenumber.html">solveit-observable:videoFrameNumber</a></td>
+                            <td class="property-value">"1250"^^xsd:integer</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablevideoframepixelheight.html">solveit-observable:videoFramePixelHeight</a></td>
+                            <td class="property-value">"1080"^^xsd:integer</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablevideoframepixelwidth.html">solveit-observable:videoFramePixelWidth</a></td>
+                            <td class="property-value">"1920"^^xsd:integer</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of uco-observable:File</h2>
+            <div class="example-instance" id="video001">
+                <div class="instance-header">surveillance_camera_01.mp4</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/video001</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
                     </tbody>
                 </table>
             </div>
