@@ -20,18 +20,17 @@
     rdfs:comment "Example instances demonstrating the SOLVE-IT ontology usage."@en .
 
 #################################################################
-#    Example VideoFrame Instance
+#    Example SOLVE-IT Investigative Objective Instance
 #################################################################
 
-:exampleFrame001 rdf:type solveit-observable:VideoFrame ;
-    rdfs:label "Frame 001 from surveillance video"@en ;
-    solveit-observable:videoFrameNumber 1250 ;
-    solveit-observable:videoFramePixelWidth 1920 ;
-    solveit-observable:videoFramePixelHeight 1080 ;
-    solveit-observable:extractedFromVideo :video001 .
+:objectiveAcquireData rdf:type solveit-core:InvestigativeObjective ;
+    rdfs:label "Acquire data"@en ;
+    solveit-core:objectiveName "Acquire data" ;
+    solveit-core:objectiveDescription "Collect data from the identified evidence sources." ;
+    solveit-core:includesTechnique :techniqueT1002 ;
+    solveit-core:includesTechnique :techniqueT1042 ;
+    rdfs:comment "This objective can be achieved through multiple techniques including disk imaging (T1002), hash verification (T1042), and others not shown in these examples."@en .
 
-:video001 rdf:type uco-observable:File ;
-    rdfs:label "surveillance_camera_01.mp4"@en .
 
 #################################################################
 #    Example SOLVE-IT Technique Instance
@@ -104,6 +103,20 @@
     solveit-core:linksToTechnique :techniqueT1042 .
 
 #################################################################
+#    Example VideoFrame Instance
+#################################################################
+
+:exampleFrame001 rdf:type solveit-observable:VideoFrame ;
+    rdfs:label "Frame 001 from surveillance video"@en ;
+    solveit-observable:videoFrameNumber 1250 ;
+    solveit-observable:videoFramePixelWidth 1920 ;
+    solveit-observable:videoFramePixelHeight 1080 ;
+    solveit-observable:extractedFromVideo :video001 .
+
+:video001 rdf:type uco-observable:File ;
+    rdfs:label "surveillance_camera_01.mp4"@en .
+
+#################################################################
 #    Example UnlockPattern Instance
 #################################################################
 
@@ -111,3 +124,4 @@
     rdfs:label "Android unlock pattern from seized device"@en ;
     solveit-observable:unlockPatternSequence (1 4 7 8 9) ;
     rdfs:comment "Pattern extracted from /data/system/gesture.key representing an 'L' shape on 3x3 grid (down left column, across bottom row)."@en .
+
