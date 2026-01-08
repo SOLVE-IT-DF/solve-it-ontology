@@ -456,11 +456,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
               <li class="second-level" style="line-height: 20px;" id="sd_54"><a   href="prop-solveit-observabletimestampvalue.html">solveit-observable:timestampValue</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_69"><a   href="prop-solveit-observableunlockpatternsequence.html">solveit-observable:unlockPatternSequence</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_69"><a class="active"  href="prop-solveit-observableunlockpatternsequence.html">solveit-observable:unlockPatternSequence</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_55"><a   href="prop-solveit-observablevideoframenumber.html">solveit-observable:videoFrameNumber</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_56"><a class="active"  href="prop-solveit-observablevideoframepixelheight.html">solveit-observable:videoFramePixelHeight</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_56"><a   href="prop-solveit-observablevideoframepixelheight.html">solveit-observable:videoFramePixelHeight</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_57"><a   href="prop-solveit-observablevideoframepixelwidth.html">solveit-observable:videoFramePixelWidth</a></li>
           
@@ -567,7 +567,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-properties.html">Properties</a>
     </li>
       <li class="active">
-            solveit-observable:videoFramePixelHeight
+            solveit-observable:unlockPatternSequence
         </li>
   </ol>
 
@@ -591,7 +591,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
             <h1>
 
-                solveit-observable:videoFramePixelHeight
+                solveit-observable:unlockPatternSequence
                 
                     <small class="label label-info label-xs ">leaf node</small>
                   
@@ -610,7 +610,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                         <li><a href="entities-tree-properties.html">rdf:Property</a>
 
                           <ul>
-                            <li><a style="font-weight: bold;" title="'height' - Video frame height in pixels.">solveit-observable:videoFramePixelHeight</a>
+                            <li><a style="font-weight: bold;" title="'unlock pattern sequence' - An ordered list of grid positions (integers) representing the unlock pattern sequence. For example, a 3x3 grid uses positions 1-9.">solveit-observable:unlockPatternSequence</a>
 
                             
                               </li>
@@ -634,7 +634,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
              <div class="panel-body">
 
-                 <code>https://ontology.solveit-df.org/solveit/observable/videoFramePixelHeight</code>
+                 <code>https://ontology.solveit-df.org/solveit/observable/unlockPatternSequence</code>
              </div>
            </div>
             </div></div>
@@ -649,7 +649,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
              <div class="panel-body">
 
-                 height
+                 unlock pattern sequence
              </div>
            </div>
             </div></div>
@@ -664,7 +664,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
 
-                <p>Video frame height in pixels.</p>
+                <p>An ordered list of grid positions (integers) representing the unlock pattern sequence. For example, a 3x3 grid uses positions 1-9.</p>
             </div>
           </div>
            </div></div>
@@ -695,7 +695,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                      
                          
                          
-                              <a href="class-solveit-observablevideoframe.html" title="https://ontology.solveit-df.org/solveit/observable/VideoFrame">solveit-observable:VideoFrame</a>
+                              <a href="class-solveit-observableunlockpattern.html" title="https://ontology.solveit-df.org/solveit/observable/UnlockPattern">solveit-observable:UnlockPattern</a>
                            
                            
                          
@@ -703,14 +703,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                    </td>
 
                     <td>
-                      solveit-observable:videoFramePixelHeight
+                      solveit-observable:unlockPatternSequence
                     </td>
 
                     <td>
                       
                           
                           
-                               <a href="http://www.w3.org/2001/XMLSchema#integer" target="_blank" title="http://www.w3.org/2001/XMLSchema#integer">xsd:integer</a>
+                               <a href="http://www.w3.org/1999/02/22-rdf-syntax-ns#List" target="_blank" title="http://www.w3.org/1999/02/22-rdf-syntax-ns#List">rdf:List</a>
                              
                             
                           
@@ -733,15 +733,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 
 
                     <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">videoFramePixelHeight</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">DatatypeProperty</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;height&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Video frame height in pixels.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">VideoFrame</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">.</span>
+<span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">unlockPatternSequence</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;unlock pattern sequence&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;An ordered list of grid positions (integers) representing the unlock pattern sequence. For example, a 3x3 grid uses positions 1-9.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">UnlockPattern</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">rdf</span><span class="p">:</span><span class="nt">List</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -841,7 +841,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_56").offset().top - 100
+          scrollTop: $("#sd_69").offset().top - 100
       }, 100);
     });
 
