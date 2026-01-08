@@ -134,6 +134,12 @@ solveit-observable:hasConfiguration rdf:type owl:ObjectProperty ;
     rdfs:label "has configuration"@en ;
     rdfs:comment "Links a KeywordIndex to its KeywordIndexingConfiguration."@en .
 
+solveit-observable:unlockPatternSequence rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:UnlockPattern ;
+    rdfs:range rdf:List ;
+    rdfs:label "unlock pattern sequence"@en ;
+    rdfs:comment "An ordered list of grid positions (integers) representing the unlock pattern sequence. For example, a 3x3 grid uses positions 1-9."@en .
+
 #################################################################
 #    Data Properties
 #################################################################
