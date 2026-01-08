@@ -186,16 +186,22 @@ solveit-core:mitigationName rdf:type owl:DatatypeProperty ;
 #################################################################
 
 solveit-core:hasReference rdf:type owl:DatatypeProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( solveit-core:Technique
+                               solveit-core:Weakness
+                               solveit-core:Mitigation ) ] ;
     rdfs:range xsd:string ;
     rdfs:label "has reference"@en ;
-    rdfs:comment "Academic or professional reference citation. Can be used with Technique, Weakness, or Mitigation."@en .
+    rdfs:comment "Academic or professional reference citation for Technique, Weakness, or Mitigation."@en .
 
 solveit-core:hasSynonym rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
     rdfs:range xsd:string ;
     rdfs:label "has synonym"@en ;
-    rdfs:comment "Alternative name or synonym. Can be used with Technique, Weakness, or Mitigation."@en .
+    rdfs:comment "Alternative name or synonym for a Technique."@en .
 
 solveit-core:hasExample rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
     rdfs:range xsd:string ;
     rdfs:label "has example"@en ;
-    rdfs:comment "Example tool, implementation, or instance. Can be used with Technique, Weakness, or Mitigation."@en .
+    rdfs:comment "Example tool, implementation, or instance for a Technique."@en .
