@@ -48,6 +48,7 @@ jobs:
           mkdir -p docs
 
           # Generate documentation from all TTL files
+          # Note: --individuals flag causes template errors in ontospy 2.1.1
           ontospy gendocs . -o docs --type 2
 
           # Create CNAME file for GitHub Pages custom domain
@@ -57,6 +58,11 @@ jobs:
         run: |
           # Generate redirect folders for all classes and properties
           python scripts/generate_iri_redirects.py
+
+      - name: Generate examples page
+        run: |
+          # Generate HTML page documenting example instances
+          python scripts/generate_examples_page.py
 
       - name: Configure Git
         run: |
