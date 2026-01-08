@@ -73,42 +73,41 @@
             <p class="lead">Example instances demonstrating the use of SOLVE-IT classes and properties.</p>
         </div>
         <div class="class-section">
-            <h2 class="class-title">Examples of <a href="class-solveit-coremitigation.html">solveit-core:Mitigation</a></h2>
-            <div class="example-instance" id="mitigationM1003">
-                <div class="instance-header">M1003: Check image size corresponds with drive label</div>
-                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/mitigationM1003</code></div>
+            <h2 class="class-title">Examples of <a href="class-solveit-observablevideoframe.html">solveit-observable:VideoFrame</a></h2>
+            <div class="example-instance" id="exampleFrame001">
+                <div class="instance-header">Frame 001 from surveillance video</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/exampleFrame001</code></div>
                 <table class="table table-bordered table-condensed property-table">
                     <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
                     <tbody>
                         <tr>
-                            <td class="property-name"><a href="prop-solveit-coremitigationid.html">solveit-core:mitigationID</a></td>
-                            <td class="property-value">"M1003"</td>
+                            <td class="property-name"><a href="prop-solveit-observableextractedfromvideo.html">solveit-observable:extractedFromVideo</a></td>
+                            <td class="property-value"><a href="#video001">https://ontology.solveit-df.org/solveit/examples/video001</a></td>
                         </tr>
                         <tr>
-                            <td class="property-name"><a href="prop-solveit-coremitigationname.html">solveit-core:mitigationName</a></td>
-                            <td class="property-value">"Check image size corresponds with drive label"</td>
+                            <td class="property-name"><a href="prop-solveit-observablevideoframenumber.html">solveit-observable:videoFrameNumber</a></td>
+                            <td class="property-value">"1250"^^xsd:integer</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablevideoframepixelheight.html">solveit-observable:videoFramePixelHeight</a></td>
+                            <td class="property-value">"1080"^^xsd:integer</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablevideoframepixelwidth.html">solveit-observable:videoFramePixelWidth</a></td>
+                            <td class="property-value">"1920"^^xsd:integer</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="example-instance" id="mitigationM1004">
-                <div class="instance-header">M1004: Check hash of image matches hash of source device</div>
-                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/mitigationM1004</code></div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of uco-observable:File</h2>
+            <div class="example-instance" id="video001">
+                <div class="instance-header">surveillance_camera_01.mp4</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/video001</code></div>
                 <table class="table table-bordered table-condensed property-table">
                     <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
                     <tbody>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-corelinkstotechnique.html">solveit-core:linksToTechnique</a></td>
-                            <td class="property-value"><a href="#techniqueT1042">https://ontology.solveit-df.org/solveit/examples/techniqueT1042</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-coremitigationid.html">solveit-core:mitigationID</a></td>
-                            <td class="property-value">"M1004"</td>
-                        </tr>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-coremitigationname.html">solveit-core:mitigationName</a></td>
-                            <td class="property-value">"Check hash of image matches hash of source device"</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -247,6 +246,47 @@
             </div>
         </div>
         <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-coremitigation.html">solveit-core:Mitigation</a></h2>
+            <div class="example-instance" id="mitigationM1003">
+                <div class="instance-header">M1003: Check image size corresponds with drive label</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/mitigationM1003</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-coremitigationid.html">solveit-core:mitigationID</a></td>
+                            <td class="property-value">"M1003"</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-coremitigationname.html">solveit-core:mitigationName</a></td>
+                            <td class="property-value">"Check image size corresponds with drive label"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="example-instance" id="mitigationM1004">
+                <div class="instance-header">M1004: Check hash of image matches hash of source device</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/mitigationM1004</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-corelinkstotechnique.html">solveit-core:linksToTechnique</a></td>
+                            <td class="property-value"><a href="#techniqueT1042">https://ontology.solveit-df.org/solveit/examples/techniqueT1042</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-coremitigationid.html">solveit-core:mitigationID</a></td>
+                            <td class="property-value">"M1004"</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-coremitigationname.html">solveit-core:mitigationName</a></td>
+                            <td class="property-value">"Check hash of image matches hash of source device"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
             <h2 class="class-title">Examples of <a href="class-solveit-observableunlockpattern.html">solveit-observable:UnlockPattern</a></h2>
             <div class="example-instance" id="unlockPattern001">
                 <div class="instance-header">Android unlock pattern from seized device</div>
@@ -262,46 +302,6 @@
                             <td class="property-name"><a href="prop-solveit-observableunlockpatternsequence.html">solveit-observable:unlockPatternSequence</a></td>
                             <td class="property-value">( "1"^^xsd:integer "4"^^xsd:integer "7"^^xsd:integer "8"^^xsd:integer "9"^^xsd:integer )</td>
                         </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="class-section">
-            <h2 class="class-title">Examples of <a href="class-solveit-observablevideoframe.html">solveit-observable:VideoFrame</a></h2>
-            <div class="example-instance" id="exampleFrame001">
-                <div class="instance-header">Frame 001 from surveillance video</div>
-                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/exampleFrame001</code></div>
-                <table class="table table-bordered table-condensed property-table">
-                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
-                    <tbody>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-observableextractedfromvideo.html">solveit-observable:extractedFromVideo</a></td>
-                            <td class="property-value"><a href="#video001">https://ontology.solveit-df.org/solveit/examples/video001</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-observablevideoframenumber.html">solveit-observable:videoFrameNumber</a></td>
-                            <td class="property-value">"1250"^^xsd:integer</td>
-                        </tr>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-observablevideoframepixelheight.html">solveit-observable:videoFramePixelHeight</a></td>
-                            <td class="property-value">"1080"^^xsd:integer</td>
-                        </tr>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-observablevideoframepixelwidth.html">solveit-observable:videoFramePixelWidth</a></td>
-                            <td class="property-value">"1920"^^xsd:integer</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="class-section">
-            <h2 class="class-title">Examples of uco-observable:File</h2>
-            <div class="example-instance" id="video001">
-                <div class="instance-header">surveillance_camera_01.mp4</div>
-                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/video001</code></div>
-                <table class="table table-bordered table-condensed property-table">
-                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
-                    <tbody>
                     </tbody>
                 </table>
             </div>
