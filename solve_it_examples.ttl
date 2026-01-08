@@ -46,7 +46,7 @@
     solveit-core:hasExample "FTK Imager" ;
     solveit-core:hasExample "Magnet ACQUIRE" ;
     solveit-core:hasPotentialWeakness :weaknessW1004 ;
-    solveit-core:techniqueCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
     solveit-core:hasReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, 'Forensic Image Acquisition'" .
 
 :techniqueT1042 rdf:type solveit-core:Technique ;
@@ -58,6 +58,19 @@
     solveit-core:hasReference "Kessler GC. The impact of SHA-1 file hash collisions on digital forensic imaging: A follow-up experiment. Journal of Digital Forensics, Security and Law. 2016;11(4):10." ;
     solveit-core:hasReference "Lyle, J., 2002. Testing disk imaging tools. DFRWS USA 2002, https://dfrws.org/wp-content/uploads/2019/06/2002_USA_paper-testing_disk_imaging_tools.pdf" .
 
+:techniqueT1005 rdf:type solveit-core:Technique ;
+    rdfs:label "T1005: Crime scene searching"@en ;
+    solveit-core:techniqueID "T1005" ;
+    solveit-core:techniqueName "Crime scene searching" ;
+    solveit-core:techniqueDescription "The process of 'carefully documenting the conditions at a crime scene and identifying all relevant physical evidence.' (Birzer 2018)." ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/WearableDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
+    solveit-core:hasReference "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35." .
+
 #################################################################
 #    Example SOLVE-IT Weakness Instance
 #################################################################
@@ -66,12 +79,12 @@
     rdfs:label "W1004: Acquisition does not include all sectors from LBA0 to LBA max"@en ;
     solveit-core:weaknessID "W1004" ;
     solveit-core:weaknessName "Acquisition does not include all sectors from LBA0 to LBA max" ;
-    solveit-core:weaknessINCOMP "x" ;
-    solveit-core:weaknessINAC_EX "" ;
-    solveit-core:weaknessINAC_AS "" ;
-    solveit-core:weaknessINAC_ALT "" ;
-    solveit-core:weaknessINAC_COR "" ;
-    solveit-core:weaknessMISINT "" ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInMISINT false ;
     solveit-core:hasPotentialMitigation :mitigationM1003 ;
     solveit-core:hasPotentialMitigation :mitigationM1004 .
 

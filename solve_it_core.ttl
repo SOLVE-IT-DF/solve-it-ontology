@@ -107,11 +107,11 @@ solveit-core:techniqueDetails rdf:type owl:DatatypeProperty ;
     rdfs:label "technique details"@en ;
     rdfs:comment "Additional details about the technique."@en .
 
-solveit-core:techniqueCASEOutputClass rdf:type owl:DatatypeProperty ;
+solveit-core:hasCASEOutputClass rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Technique ;
     rdfs:range xsd:anyURI ;
-    rdfs:label "CASE output class"@en ;
-    rdfs:comment "The CASE/UCO class IRI that represents the output of this technique (e.g., https://ontology.unifiedcyberontology.org/uco/observable/Image)."@en .
+    rdfs:label "has CASE output class"@en ;
+    rdfs:comment "A CASE/UCO class IRI that represents an output of this technique. Multiple output classes can be specified (e.g., https://ontology.unifiedcyberontology.org/uco/observable/Image)."@en .
 
 #################################################################
 #    Data Properties - Weakness
@@ -129,41 +129,41 @@ solveit-core:weaknessName rdf:type owl:DatatypeProperty ;
     rdfs:label "weakness name"@en ;
     rdfs:comment "The name describing the weakness."@en .
 
-solveit-core:weaknessINCOMP rdf:type owl:DatatypeProperty ;
+solveit-core:mayResultInINCOMP rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:string ;
-    rdfs:label "INCOMP"@en ;
-    rdfs:comment "Incompleteness error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+    rdfs:range xsd:boolean ;
+    rdfs:label "may result in INCOMP"@en ;
+    rdfs:comment "Indicates if this weakness may result in an Incompleteness error (ASTM E3016-18 category)."@en .
 
-solveit-core:weaknessINAC_EX rdf:type owl:DatatypeProperty ;
+solveit-core:mayResultInINAC_EX rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:string ;
-    rdfs:label "INAC-EX"@en ;
-    rdfs:comment "Inaccuracy-Execution error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+    rdfs:range xsd:boolean ;
+    rdfs:label "may result in INAC-EX"@en ;
+    rdfs:comment "Indicates if this weakness may result in an Inaccuracy-Execution error (ASTM E3016-18 category)."@en .
 
-solveit-core:weaknessINAC_AS rdf:type owl:DatatypeProperty ;
+solveit-core:mayResultInINAC_AS rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:string ;
-    rdfs:label "INAC-AS"@en ;
-    rdfs:comment "Inaccuracy-Assumption error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+    rdfs:range xsd:boolean ;
+    rdfs:label "may result in INAC-AS"@en ;
+    rdfs:comment "Indicates if this weakness may result in an Inaccuracy-Assumption error (ASTM E3016-18 category)."@en .
 
-solveit-core:weaknessINAC_ALT rdf:type owl:DatatypeProperty ;
+solveit-core:mayResultInINAC_ALT rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:string ;
-    rdfs:label "INAC-ALT"@en ;
-    rdfs:comment "Inaccuracy-Alteration error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+    rdfs:range xsd:boolean ;
+    rdfs:label "may result in INAC-ALT"@en ;
+    rdfs:comment "Indicates if this weakness may result in an Inaccuracy-Alteration error (ASTM E3016-18 category)."@en .
 
-solveit-core:weaknessINAC_COR rdf:type owl:DatatypeProperty ;
+solveit-core:mayResultInINAC_COR rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:string ;
-    rdfs:label "INAC-COR"@en ;
-    rdfs:comment "Inaccuracy-Corruption error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+    rdfs:range xsd:boolean ;
+    rdfs:label "may result in INAC-COR"@en ;
+    rdfs:comment "Indicates if this weakness may result in an Inaccuracy-Corruption error (ASTM E3016-18 category)."@en .
 
-solveit-core:weaknessMISINT rdf:type owl:DatatypeProperty ;
+solveit-core:mayResultInMISINT rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:string ;
-    rdfs:label "MISINT"@en ;
-    rdfs:comment "Misinterpretation error category from ASTM E3016-18. Value 'x' indicates this category applies."@en .
+    rdfs:range xsd:boolean ;
+    rdfs:label "may result in MISINT"@en ;
+    rdfs:comment "Indicates if this weakness may result in a Misinterpretation error (ASTM E3016-18 category)."@en .
 
 #################################################################
 #    Data Properties - Mitigation
