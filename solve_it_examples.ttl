@@ -102,6 +102,53 @@
     solveit-core:mitigationName "Check hash of image matches hash of source device" ;
     solveit-core:linksToTechnique :techniqueT1042 .
 
+
+#################################################################
+#    Example PerformedTechnique Instance (Based on CASE Asgard)
+#################################################################
+
+###  Supporting objects for the investigative action
+:configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516 rdf:type uco-core:UcoObject ;
+    rdfs:label "Configured forensic tool"@en .
+
+:location-f67042d4-4963-4c31-9807-23662670004f rdf:type uco-core:UcoObject ;
+    rdfs:label "Bifrost Bridge"@en .
+
+:forensicexaminer-acf60326-de21-4a85-9909-692f1780470f rdf:type uco-core:UcoObject ;
+    rdfs:label "Forensic Examiner"@en .
+
+:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f rdf:type uco-observable:Device ;
+    rdfs:label "Suspect device"@en .
+
+:provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa rdf:type uco-core:UcoObject ;
+    rdfs:label "Chain of custody record"@en .
+
+:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:Image ;
+    rdfs:label "Forensic disk image"@en .
+
+:provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53 rdf:type uco-core:UcoObject ;
+    rdfs:label "Updated provenance record"@en .
+
+###  PerformedTechnique: Physical Device Acquisition (from CASE Asgard example)
+:investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "acquired" ;
+    uco-core:description "Suspect device physical acquisition" ;
+    # SOLVE-IT extensions
+    solveit-core:usesTechnique :techniqueT1002 ;  # Links to T1002: Disk imaging
+    solveit-core:appliedMitigation :mitigationM1004 ;  # Hash verification was applied
+    # CASE/UCO InvestigativeAction properties
+    uco-action:startTime "2019-03-30T22:17:31Z"^^xsd:dateTime ;
+    uco-action:endTime "2019-03-30T22:47:32Z"^^xsd:dateTime ;
+    uco-action:instrument :configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516 ;
+    uco-action:location :location-f67042d4-4963-4c31-9807-23662670004f ;
+    uco-action:performer :forensicexaminer-acf60326-de21-4a85-9909-692f1780470f ;
+    uco-action:object :device-9420af3b-4d3a-4239-88fc-d33feec8dc4f ,
+                      :provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa ;
+    uco-action:result :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ,
+                      :provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53 ;
+    rdfs:comment "Example of a PerformedTechnique based on the CASE Asgard example, demonstrating how a SOLVE-IT technique (T1002: Disk imaging) was executed during an investigation, including the applied mitigation (M1004: Hash verification)."@en .
+
+
 #################################################################
 #    Example VideoFrame Instance
 #################################################################
@@ -124,4 +171,3 @@
     rdfs:label "Android unlock pattern from seized device"@en ;
     solveit-observable:unlockPatternSequence (1 4 7 8 9) ;
     rdfs:comment "Pattern extracted from /data/system/gesture.key representing an 'L' shape on 3x3 grid (down left column, across bottom row)."@en .
-
