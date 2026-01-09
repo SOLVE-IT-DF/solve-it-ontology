@@ -63,7 +63,7 @@ solveit-core:Objective rdf:type owl:Class ;
 solveit-core:PerformedTechnique rdf:type owl:Class ;
     rdfs:subClassOf case-investigation:InvestigativeAction ;
     rdfs:label "Performed SOLVE-IT Technique"@en ;
-    rdfs:comment "An investigative action that represents the actual execution of a SOLVE-IT technique during an investigation. Extends InvestigativeAction to link the performance to the technique definition, applied mitigations, and any encountered weaknesses."@en .
+    rdfs:comment "An investigative action that represents the actual execution of a SOLVE-IT technique during an investigation. Extends InvestigativeAction to link the performance to the technique definition, and any applied mitigations."@en .
 
 #################################################################
 #    Object Properties
