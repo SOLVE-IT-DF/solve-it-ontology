@@ -1,0 +1,66 @@
+name: Generate Knowledge Base RDF
+
+on:
+  workflow_dispatch:
+  schedule:
+    # Run daily at 6:00 AM UTC
+    - cron: '0 6 * * *'
+
+permissions:
+  contents: write
+
+jobs:
+  generate-kb:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ontology repository
+        uses: actions/checkout@v4
+
+      - name: Checkout solve-it repository
+        uses: actions/checkout@v4
+        with:
+          repository: SOLVE-IT-DF/solve-it
+          # TODO: Change to 'main' once PR #263 is merged
+          ref: Adding-TTL-and-JSON-LD-outpu-script
+          path: solve-it
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r solve-it/requirements.txt
+
+      - name: Generate knowledge base RDF
+        run: |
+          # Generate machine-readable knowledge base in TTL and JSON-LD formats
+          mkdir -p docs/data
+          cd solve-it
+          PYTHONPATH=. python reporting_scripts/generate_rdf_from_kb.py \
+            --output-dir ../docs/data \
+            --format both
+          # Rename output files to expected names if needed
+          cd ../docs/data
+          if [ -f solveit_kb.ttl ]; then mv solveit_kb.ttl solveit-kb.ttl; fi
+          if [ -f solveit_kb.jsonld ]; then mv solveit_kb.jsonld solveit-kb.jsonld; fi
+
+      - name: Configure Git
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+      - name: Commit knowledge base files
+        run: |
+          git add docs/data/
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update knowledge base RDF files" \
+              -m "Generated solveit-kb.ttl and solveit-kb.jsonld from solve-it knowledge base" \
+              -m "Co-Authored-By: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
+            git push
+          fi
