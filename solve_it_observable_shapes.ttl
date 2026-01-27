@@ -1,0 +1,30 @@
+@prefix : <https://ontology.solveit-df.org/solveit/observable/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@base <https://ontology.solveit-df.org/solveit/observable/shapes/> .
+
+#################################################################
+#    SOLVE-IT Observable SHACL Shapes
+#    Validation constraints for SOLVE-IT observable objects
+#################################################################
+
+#################################################################
+#    TimelineEntry Shape
+#################################################################
+
+:TimelineEntryShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:TimelineEntry ;
+    rdfs:label "Timeline Entry Shape"@en ;
+    rdfs:comment "Validates that TimelineEntry has exactly one value of the correct type."@en ;
+    sh:property [
+        sh:path solveit-observable:timelineEntryValue ;
+        sh:or (
+            [ sh:class solveit-observable:DateTimeStamp ]
+            [ sh:class solveit-observable:ImplicitTimingInformation ]
+        ) ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "timelineEntryValue must be exactly one DateTimeStamp or ImplicitTimingInformation"@en ;
+    ] .
