@@ -72,6 +72,22 @@
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
     solveit-core:hasReference "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35." .
 
+:techniqueT1052 rdf:type solveit-core:Technique ;
+    rdfs:label "T1052: Timeline generation"@en ;
+    solveit-core:techniqueID "T1052" ;
+    solveit-core:techniqueName "Timeline generation" ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/TimelineEntry"^^xsd:anyURI .
+
+:techniqueT1060 rdf:type solveit-core:Technique ;
+    rdfs:label "T1060: Enumerate allocated files and folders"@en ;
+    solveit-core:techniqueID "T1060" ;
+    solveit-core:techniqueName "Enumerate allocated files and folders" ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI .
+
 #################################################################
 #    Example SOLVE-IT Weakness Instance
 #################################################################
@@ -173,3 +189,200 @@
     rdfs:label "Android unlock pattern from seized device"@en ;
     solveit-observable:unlockPatternSequence (1 4 7 8 9) ;
     rdfs:comment "Pattern extracted from /data/system/gesture.key representing an 'L' shape on 3x3 grid (down left column, across bottom row)."@en .
+
+#################################################################
+#    Example FAT Filesystem Timeline (Timestamps with Different Resolutions)
+#################################################################
+
+###  The FAT file being analysed (with standard UCO FileFacet timestamps)
+:fatFile001 rdf:type uco-observable:File ;
+    rdfs:label "REPORT.DOC"@en ;
+    uco-core:name "REPORT.DOC" ;
+    uco-core:hasFacet :fatFile001-fileFacet ;
+    rdfs:comment "A file on a FAT32 USB drive with typical FAT timestamp resolutions."@en .
+
+:fatFile001-fileFacet rdf:type uco-observable:FileFacet ;
+    uco-observable:fileName "REPORT.DOC" ;
+    uco-observable:creationTime "2024-06-15T14:32:05.12"^^xsd:dateTime ;
+    uco-observable:modifiedTime "2024-06-15T16:45:22"^^xsd:dateTime ;
+    uco-observable:accessedTime "2024-06-16T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "Standard UCO FileFacet with timestamps as simple xsd:dateTime values (no resolution/timezone metadata)."@en .
+
+###  DateTimeStamp instances with FAT-specific resolutions
+###  Note: FAT stores local time with no timezone information
+:fatFile001-createdTimestamp rdf:type solveit-observable:DateTimeStamp ;
+    rdfs:label "REPORT.DOC created timestamp"@en ;
+    solveit-observable:timestampValue "2024-06-15T14:32:05.12"^^xsd:dateTime ;
+    solveit-observable:timestampResolution "10ms" ;
+    solveit-observable:timestampTimezone "unknown" ;
+    rdfs:comment "FAT created time has 10ms resolution (2-second base plus hundredths byte)."@en .
+
+:fatFile001-modifiedTimestamp rdf:type solveit-observable:DateTimeStamp ;
+    rdfs:label "REPORT.DOC modified timestamp"@en ;
+    solveit-observable:timestampValue "2024-06-15T16:45:22"^^xsd:dateTime ;
+    solveit-observable:timestampResolution "2s" ;
+    solveit-observable:timestampTimezone "unknown" ;
+    rdfs:comment "FAT modified/write time has 2 second resolution."@en .
+
+:fatFile001-accessedTimestamp rdf:type solveit-observable:DateTimeStamp ;
+    rdfs:label "REPORT.DOC accessed timestamp"@en ;
+    solveit-observable:timestampValue "2024-06-16"^^xsd:date ;
+    solveit-observable:timestampResolution "1d" ;
+    solveit-observable:timestampTimezone "unknown" ;
+    rdfs:comment "FAT accessed time has 1 day resolution (date only, no time component)."@en .
+
+###  Timeline entries for FAT timestamps
+:fatFile001-timelineEntry-created rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "REPORT.DOC created"@en ;
+    solveit-observable:timelineEntryValue :fatFile001-createdTimestamp .
+
+:fatFile001-timelineEntry-modified rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "REPORT.DOC modified"@en ;
+    solveit-observable:timelineEntryValue :fatFile001-modifiedTimestamp .
+
+:fatFile001-timelineEntry-accessed rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "REPORT.DOC accessed"@en ;
+    solveit-observable:timelineEntryValue :fatFile001-accessedTimestamp .
+
+###  The FAT timestamp timeline
+:fatTimestampTimeline001 rdf:type solveit-observable:Timeline ;
+    rdfs:label "FAT filesystem timeline for REPORT.DOC"@en ;
+    solveit-observable:hasTimelineEntry :fatFile001-timelineEntry-created ,
+                                        :fatFile001-timelineEntry-modified ,
+                                        :fatFile001-timelineEntry-accessed ;
+    rdfs:comment "Timeline showing MAC times for a FAT file, demonstrating different timestamp resolutions."@en .
+
+###  Two-step provenance chain for timestamp timeline
+
+###  Step 1: T1060 Enumerate allocated files - extracts file with standard UCO timestamps
+:enumerateFilesAction001 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "enumerate-files" ;
+    uco-core:description "Enumeration of allocated files and folders from FAT32 USB drive" ;
+    solveit-core:usesTechnique :techniqueT1060 ;
+    uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
+    uco-action:result :fatFile001 ;
+    rdfs:comment "T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en .
+
+###  Step 2: T1052 Timeline generation - normalizes UCO timestamps into DateTimeStamps with resolution metadata
+:timelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "generate-timeline" ;
+    uco-core:description "Generation of forensic timeline from FAT filesystem metadata" ;
+    solveit-core:usesTechnique :techniqueT1052 ;
+    uco-action:object :fatFile001 ;
+    uco-action:result :fatFile001-timelineEntry-created ,
+                      :fatFile001-timelineEntry-modified ,
+                      :fatFile001-timelineEntry-accessed ,
+                      :fatTimestampTimeline001 ;
+    rdfs:comment "T1052: Timeline generation - takes files with UCO timestamps, creates TimelineEntries with DateTimeStamp values (including resolution/timezone metadata), and assembles them into a Timeline."@en .
+
+#################################################################
+#    Example Implicit Timing Timeline (Start Cluster Allocation Order)
+#################################################################
+
+###  FAT files for cluster allocation example (with cluster runs)
+:implicit_example_file001 rdf:type uco-observable:File ;
+    rdfs:label "BUDGET.XLS"@en ;
+    uco-core:name "BUDGET.XLS" ;
+    solveit-observable:hasClusterRun :implicit_example_file001-run1 ;
+    rdfs:comment "A spreadsheet file on a FAT32 USB drive (contiguous, single run)."@en .
+
+:implicit_example_file001-run1 rdf:type solveit-observable:ClusterRun ;
+    rdfs:label "BUDGET.XLS cluster run"@en ;
+    solveit-observable:runStartCluster 1024 ;
+    solveit-observable:runClusterCount 8 ;
+    rdfs:comment "Single contiguous run of 8 clusters."@en .
+
+:implicit_example_file002 rdf:type uco-observable:File ;
+    rdfs:label "MEMO.TXT"@en ;
+    uco-core:name "MEMO.TXT" ;
+    solveit-observable:hasClusterRun :implicit_example_file002-run1 ;
+    rdfs:comment "A text file on the FAT32 USB drive (contiguous, single run)."@en .
+
+:implicit_example_file002-run1 rdf:type solveit-observable:ClusterRun ;
+    rdfs:label "MEMO.TXT cluster run"@en ;
+    solveit-observable:runStartCluster 2048 ;
+    solveit-observable:runClusterCount 2 ;
+    rdfs:comment "Single contiguous run of 2 clusters."@en .
+
+:implicit_example_file003 rdf:type uco-observable:File ;
+    rdfs:label "PHOTO.JPG"@en ;
+    uco-core:name "PHOTO.JPG" ;
+    solveit-observable:hasClusterRun :implicit_example_file003-run1 ,
+                                     :implicit_example_file003-run2 ;
+    rdfs:comment "An image file on the FAT32 USB drive (fragmented, two runs)."@en .
+
+:implicit_example_file003-run1 rdf:type solveit-observable:ClusterRun ;
+    rdfs:label "PHOTO.JPG cluster run 1"@en ;
+    solveit-observable:runStartCluster 1536 ;
+    solveit-observable:runClusterCount 12 ;
+    rdfs:comment "First fragment: 12 clusters starting at 1536."@en .
+
+:implicit_example_file003-run2 rdf:type solveit-observable:ClusterRun ;
+    rdfs:label "PHOTO.JPG cluster run 2"@en ;
+    solveit-observable:runStartCluster 3072 ;
+    solveit-observable:runClusterCount 4 ;
+    rdfs:comment "Second fragment: 4 clusters starting at 3072."@en .
+
+###  ImplicitTimingInformation for start clusters (derived from first cluster run by T1052)
+:implicit_example_file001-startCluster rdf:type solveit-observable:ImplicitTimingInformation ;
+    rdfs:label "BUDGET.XLS start cluster"@en ;
+    solveit-observable:timingInformationValue 1024 ;
+    rdfs:comment "Start cluster derived from first run of BUDGET.XLS - lower cluster numbers generally indicate earlier allocation."@en .
+
+:implicit_example_file002-startCluster rdf:type solveit-observable:ImplicitTimingInformation ;
+    rdfs:label "MEMO.TXT start cluster"@en ;
+    solveit-observable:timingInformationValue 2048 ;
+    rdfs:comment "Start cluster derived from first run of MEMO.TXT."@en .
+
+:implicit_example_file003-startCluster rdf:type solveit-observable:ImplicitTimingInformation ;
+    rdfs:label "PHOTO.JPG start cluster"@en ;
+    solveit-observable:timingInformationValue 1536 ;
+    rdfs:comment "Start cluster derived from first run of PHOTO.JPG - between BUDGET.XLS and MEMO.TXT in allocation order."@en .
+
+###  Timeline entries for cluster allocation
+:implicit_example_file001-timelineEntry rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "BUDGET.XLS allocation"@en ;
+    solveit-observable:timelineEntryValue :implicit_example_file001-startCluster .
+
+:implicit_example_file002-timelineEntry rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "MEMO.TXT allocation"@en ;
+    solveit-observable:timelineEntryValue :implicit_example_file002-startCluster .
+
+:implicit_example_file003-timelineEntry rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "PHOTO.JPG allocation"@en ;
+    solveit-observable:timelineEntryValue :implicit_example_file003-startCluster .
+
+###  The cluster allocation timeline
+:clusterAllocationTimeline001 rdf:type solveit-observable:Timeline ;
+    rdfs:label "FAT cluster allocation timeline"@en ;
+    solveit-observable:hasTimelineEntry :implicit_example_file001-timelineEntry ,
+                                        :implicit_example_file002-timelineEntry ,
+                                        :implicit_example_file003-timelineEntry ;
+    rdfs:comment "Timeline based on start cluster numbers, providing implicit ordering information. Cluster order suggests BUDGET.XLS was allocated first, then PHOTO.JPG, then MEMO.TXT."@en .
+
+###  Two-step provenance chain for cluster allocation timeline
+
+###  Step 1: T1060 Enumerate allocated files - extracts files with cluster metadata
+:enumerateFilesAction002 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "enumerate-files" ;
+    uco-core:description "Enumeration of allocated files from FAT32 USB drive" ;
+    solveit-core:usesTechnique :techniqueT1060 ;
+    uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
+    uco-action:result :implicit_example_file001 ,
+                      :implicit_example_file002 ,
+                      :implicit_example_file003 ;
+    rdfs:comment "T1060: Enumerate allocated files - extracts file objects with directory entry metadata including start cluster."@en .
+
+###  Step 2: T1052 Timeline generation - creates timeline from cluster allocation order
+:clusterTimelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "generate-cluster-timeline" ;
+    uco-core:description "Generation of allocation order timeline from FAT cluster metadata" ;
+    solveit-core:usesTechnique :techniqueT1052 ;
+    uco-action:object :implicit_example_file001 ,
+                      :implicit_example_file002 ,
+                      :implicit_example_file003 ;
+    uco-action:result :implicit_example_file001-timelineEntry ,
+                      :implicit_example_file002-timelineEntry ,
+                      :implicit_example_file003-timelineEntry ,
+                      :clusterAllocationTimeline001 ;
+    rdfs:comment "T1052: Timeline generation - creates TimelineEntries with ImplicitTimingInformation values (start clusters) to show allocation order."@en .
