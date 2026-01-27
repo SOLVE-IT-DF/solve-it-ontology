@@ -82,6 +82,18 @@ solveit-observable:TimelineEntry rdf:type owl:Class ;
     rdfs:label "Timeline Entry"@en ;
     rdfs:comment "A single entry in a forensic timeline."@en .
 
+###  ImplicitTimingInformation Observable Object
+solveit-observable:ImplicitTimingInformation rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Implicit Timing Information"@en ;
+    rdfs:comment "A relative or implicit temporal indicator such as a sequence number, counter value, or ordering index, used when absolute timestamps are not available."@en .
+
+###  ClusterRun Observable Object
+solveit-observable:ClusterRun rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Cluster Run"@en ;
+    rdfs:comment "A contiguous run of clusters allocated to a file in a cluster-based file system (e.g., FAT, NTFS, exFAT). Multiple runs indicate file fragmentation."@en .
+
 ###  ClockOffset Observable Object
 solveit-observable:ClockOffset rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
@@ -134,11 +146,25 @@ solveit-observable:hasConfiguration rdf:type owl:ObjectProperty ;
     rdfs:label "has configuration"@en ;
     rdfs:comment "Links a KeywordIndex to its KeywordIndexingConfiguration."@en .
 
+solveit-observable:timelineEntryValue rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:TimelineEntry ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( solveit-observable:DateTimeStamp
+                               solveit-observable:ImplicitTimingInformation ) ] ;
+    rdfs:label "timeline entry value"@en ;
+    rdfs:comment "The temporal value of this timeline entry - either an absolute timestamp (DateTimeStamp) or relative ordering (ImplicitTimingInformation)."@en .
+
 solveit-observable:unlockPatternSequence rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:UnlockPattern ;
     rdfs:range rdf:List ;
     rdfs:label "unlock pattern sequence"@en ;
     rdfs:comment "An ordered list of grid positions (integers) representing the unlock pattern sequence. For example, a 3x3 grid uses positions 1-9."@en .
+
+solveit-observable:hasClusterRun rdf:type owl:ObjectProperty ;
+    rdfs:domain uco-observable:File ;
+    rdfs:range solveit-observable:ClusterRun ;
+    rdfs:label "has cluster run"@en ;
+    rdfs:comment "Links a file to its cluster allocation runs. A contiguous file has one run; a fragmented file has multiple runs."@en .
 
 #################################################################
 #    Data Properties
@@ -191,3 +217,21 @@ solveit-observable:timestampTimezone rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:label "timestamp timezone"@en ;
     rdfs:comment "The timezone of the timestamp."@en .
+
+solveit-observable:timingInformationValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ImplicitTimingInformation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "timing information value"@en ;
+    rdfs:comment "The numeric value representing relative ordering or sequence."@en .
+
+solveit-observable:runStartCluster rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ClusterRun ;
+    rdfs:range xsd:integer ;
+    rdfs:label "run start cluster"@en ;
+    rdfs:comment "The first cluster number in this contiguous run."@en .
+
+solveit-observable:runClusterCount rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ClusterRun ;
+    rdfs:range xsd:integer ;
+    rdfs:label "run cluster count"@en ;
+    rdfs:comment "The number of contiguous clusters in this run."@en .
