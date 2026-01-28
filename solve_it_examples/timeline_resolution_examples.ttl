@@ -8,6 +8,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @base <https://ontology.solveit-df.org/solveit/examples/> .
 
@@ -31,8 +33,22 @@
 #################################################################
 
 #################################################################
-#    Source forensic image
+#    Supporting objects for investigative actions
 #################################################################
+
+:examiner-john-smith rdf:type uco-identity:Person ;
+    rdfs:label "John Smith"@en ;
+    uco-core:name "John Smith" .
+
+:tool-acme-filesystem-parser rdf:type uco-tool:AnalyticTool ;
+    rdfs:label "ACME file system parser"@en ;
+    uco-core:name "ACME file system parser" ;
+    uco-tool:version "1.0" .
+
+:tool-acme-timeline-generator rdf:type uco-tool:AnalyticTool ;
+    rdfs:label "ACME timeline generator"@en ;
+    uco-core:name "ACME timeline generator" ;
+    uco-tool:version "0.42" .
 
 :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:Image ;
     rdfs:label "Forensic disk image"@en .
@@ -48,6 +64,10 @@
     uco-core:name "enumerate-files" ;
     uco-core:description "Enumeration of allocated files and folders from FAT32 USB drive" ;
     solveit-core:usesTechnique solveit-data:techniqueT1060 ;
+    uco-action:performer :examiner-john-smith ;
+    uco-action:instrument :tool-acme-filesystem-parser ;
+    uco-action:startTime "2026-01-28T10:00:00Z"^^xsd:dateTime ;
+    uco-action:endTime "2026-01-28T10:05:00Z"^^xsd:dateTime ;
     uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
     uco-action:result :fatFile001 ;
     rdfs:comment "T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en .
@@ -57,10 +77,14 @@
     uco-core:name "generate-timeline" ;
     uco-core:description "Generation of forensic timeline from FAT filesystem metadata" ;
     solveit-core:usesTechnique solveit-data:techniqueT1052 ;
+    uco-action:performer :examiner-john-smith ;
+    uco-action:instrument :tool-acme-timeline-generator ;
+    uco-action:startTime "2026-01-28T10:05:00Z"^^xsd:dateTime ;
+    uco-action:endTime "2026-01-28T10:06:00Z"^^xsd:dateTime ;
     uco-action:object :fatFile001 ;
-    uco-action:result :fatFile001-timelineEntry-created ,
-                      :fatFile001-timelineEntry-modified ,
-                      :fatFile001-timelineEntry-accessed ,
+    uco-action:result :timelineEntry001-fatFile001-created ,
+                      :timelineEntry002-fatFile001-modified ,
+                      :timelineEntry003-fatFile001-accessed ,
                       :fatTimestampTimeline001 ;
     rdfs:comment "T1052: Timeline generation - takes files with UCO timestamps, creates TimelineEntries with DateTimeStamp values (including resolution/timezone metadata), and assembles them into a Timeline."@en .
 
@@ -119,15 +143,15 @@
 #    to create TimelineEntries that make up a Timeline
 #################################################################
 
-:fatFile001-timelineEntry-created rdf:type solveit-observable:TimelineEntry ;
+:timelineEntry001-fatFile001-created rdf:type solveit-observable:TimelineEntry ;
     rdfs:label "REPORT.DOC created"@en ;
     solveit-observable:timelineEntryValue :fatFile001-createdTimestamp .
 
-:fatFile001-timelineEntry-modified rdf:type solveit-observable:TimelineEntry ;
+:timelineEntry002-fatFile001-modified rdf:type solveit-observable:TimelineEntry ;
     rdfs:label "REPORT.DOC modified"@en ;
     solveit-observable:timelineEntryValue :fatFile001-modifiedTimestamp .
 
-:fatFile001-timelineEntry-accessed rdf:type solveit-observable:TimelineEntry ;
+:timelineEntry003-fatFile001-accessed rdf:type solveit-observable:TimelineEntry ;
     rdfs:label "REPORT.DOC accessed"@en ;
     solveit-observable:timelineEntryValue :fatFile001-accessedTimestamp .
 
@@ -138,7 +162,7 @@
 
 :fatTimestampTimeline001 rdf:type solveit-observable:Timeline ;
     rdfs:label "FAT filesystem timeline for REPORT.DOC"@en ;
-    solveit-observable:hasTimelineEntry :fatFile001-timelineEntry-created ,
-                                        :fatFile001-timelineEntry-modified ,
-                                        :fatFile001-timelineEntry-accessed ;
+    solveit-observable:hasTimelineEntry :timelineEntry001-fatFile001-created ,
+                                        :timelineEntry002-fatFile001-modified ,
+                                        :timelineEntry003-fatFile001-accessed ;
     rdfs:comment "Timeline showing MAC times for a FAT file, demonstrating different timestamp resolutions."@en .

@@ -8,6 +8,8 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @base <https://ontology.solveit-df.org/solveit/examples/> .
 
@@ -31,14 +33,67 @@
 #################################################################
 
 #################################################################
-#    Source forensic image
+#    Supporting objects for investigative actions
 #################################################################
+
+:examiner-john-smith rdf:type uco-identity:Person ;
+    rdfs:label "John Smith"@en ;
+    uco-core:name "John Smith" .
+
+:tool-acme-filesystem-parser rdf:type uco-tool:AnalyticTool ;
+    rdfs:label "ACME file system parser"@en ;
+    uco-core:name "ACME file system parser" ;
+    uco-tool:version "1.0" .
+
+:tool-acme-timeline-generator rdf:type uco-tool:AnalyticTool ;
+    rdfs:label "ACME timeline generator"@en ;
+    uco-core:name "ACME timeline generator" ;
+    uco-tool:version "0.42" .
 
 :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:Image ;
     rdfs:label "Forensic disk image"@en .
 
 #################################################################
-#    FAT files with cluster run metadata
+#    Two-step provenance chain for cluster allocation timeline
+#    Step 1: T1060 extracts files along with cluster metadata
+#    Step 2: T1052 creates a timeline using cluster allocation order
+#################################################################
+
+###  Step 1: T1060 Enumerate allocated files - extracts files with cluster metadata
+:enumerateFilesAction002 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "enumerate-files" ;
+    uco-core:description "Enumeration of allocated files from FAT32 USB drive" ;
+    solveit-core:usesTechnique solveit-data:techniqueT1060 ;
+    uco-action:performer :examiner-john-smith ;
+    uco-action:instrument :tool-acme-filesystem-parser ;
+    uco-action:startTime "2026-01-28T11:00:00Z"^^xsd:dateTime ;
+    uco-action:endTime "2026-01-28T11:03:00Z"^^xsd:dateTime ;
+    uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
+    uco-action:result :implicit_example_file001 ,
+                      :implicit_example_file002 ,
+                      :implicit_example_file003 ;
+    rdfs:comment "T1060: Enumerate allocated files - extracts file objects with directory entry metadata including start cluster."@en .
+
+###  Step 2: T1052 Timeline generation - creates timeline from cluster allocation order
+:clusterTimelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "generate-cluster-timeline" ;
+    uco-core:description "Generation of allocation order timeline from FAT cluster metadata" ;
+    solveit-core:usesTechnique solveit-data:techniqueT1052 ;
+    uco-action:performer :examiner-john-smith ;
+    uco-action:instrument :tool-acme-timeline-generator ;
+    uco-action:startTime "2026-01-28T11:03:00Z"^^xsd:dateTime ;
+    uco-action:endTime "2026-01-28T11:04:00Z"^^xsd:dateTime ;
+    uco-action:object :implicit_example_file001 ,
+                      :implicit_example_file002 ,
+                      :implicit_example_file003 ;
+    uco-action:result :timelineEntry001-implicit_example_file001 ,
+                      :timelineEntry002-implicit_example_file002 ,
+                      :timelineEntry003-implicit_example_file003 ,
+                      :clusterAllocationTimeline001 ;
+    rdfs:comment "T1052: Timeline generation - creates TimelineEntries with ImplicitTimingInformation values (start clusters) to show allocation order."@en .
+
+#################################################################
+#    FAT files with cluster run metadata 
 #################################################################
 
 :implicit_example_file001 rdf:type uco-observable:File ;
@@ -108,15 +163,15 @@
 #    Timeline entries for cluster allocation
 #################################################################
 
-:implicit_example_file001-timelineEntry rdf:type solveit-observable:TimelineEntry ;
+:timelineEntry001-implicit_example_file001 rdf:type solveit-observable:TimelineEntry ;
     rdfs:label "BUDGET.XLS allocation"@en ;
     solveit-observable:timelineEntryValue :implicit_example_file001-startCluster .
 
-:implicit_example_file002-timelineEntry rdf:type solveit-observable:TimelineEntry ;
+:timelineEntry002-implicit_example_file002 rdf:type solveit-observable:TimelineEntry ;
     rdfs:label "MEMO.TXT allocation"@en ;
     solveit-observable:timelineEntryValue :implicit_example_file002-startCluster .
 
-:implicit_example_file003-timelineEntry rdf:type solveit-observable:TimelineEntry ;
+:timelineEntry003-implicit_example_file003 rdf:type solveit-observable:TimelineEntry ;
     rdfs:label "PHOTO.JPG allocation"@en ;
     solveit-observable:timelineEntryValue :implicit_example_file003-startCluster .
 
@@ -126,36 +181,7 @@
 
 :clusterAllocationTimeline001 rdf:type solveit-observable:Timeline ;
     rdfs:label "FAT cluster allocation timeline"@en ;
-    solveit-observable:hasTimelineEntry :implicit_example_file001-timelineEntry ,
-                                        :implicit_example_file002-timelineEntry ,
-                                        :implicit_example_file003-timelineEntry ;
+    solveit-observable:hasTimelineEntry :timelineEntry001-implicit_example_file001 ,
+                                        :timelineEntry002-implicit_example_file002 ,
+                                        :timelineEntry003-implicit_example_file003 ;
     rdfs:comment "Timeline based on start cluster numbers, providing implicit ordering information. Cluster order suggests BUDGET.XLS was allocated first, then PHOTO.JPG, then MEMO.TXT."@en .
-
-#################################################################
-#    Two-step provenance chain for cluster allocation timeline
-#################################################################
-
-###  Step 1: T1060 Enumerate allocated files - extracts files with cluster metadata
-:enumerateFilesAction002 rdf:type solveit-core:PerformedTechnique ;
-    uco-core:name "enumerate-files" ;
-    uco-core:description "Enumeration of allocated files from FAT32 USB drive" ;
-    solveit-core:usesTechnique solveit-data:techniqueT1060 ;
-    uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
-    uco-action:result :implicit_example_file001 ,
-                      :implicit_example_file002 ,
-                      :implicit_example_file003 ;
-    rdfs:comment "T1060: Enumerate allocated files - extracts file objects with directory entry metadata including start cluster."@en .
-
-###  Step 2: T1052 Timeline generation - creates timeline from cluster allocation order
-:clusterTimelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
-    uco-core:name "generate-cluster-timeline" ;
-    uco-core:description "Generation of allocation order timeline from FAT cluster metadata" ;
-    solveit-core:usesTechnique solveit-data:techniqueT1052 ;
-    uco-action:object :implicit_example_file001 ,
-                      :implicit_example_file002 ,
-                      :implicit_example_file003 ;
-    uco-action:result :implicit_example_file001-timelineEntry ,
-                      :implicit_example_file002-timelineEntry ,
-                      :implicit_example_file003-timelineEntry ,
-                      :clusterAllocationTimeline001 ;
-    rdfs:comment "T1052: Timeline generation - creates TimelineEntries with ImplicitTimingInformation values (start clusters) to show allocation order."@en .
