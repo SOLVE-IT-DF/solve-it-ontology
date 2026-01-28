@@ -16,7 +16,7 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/analysis> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/analysis/1.0.0> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/analysis/0.0.1> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.3.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/observable/1.3.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/analysis/1.3.0> ;
