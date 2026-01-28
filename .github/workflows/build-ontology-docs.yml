@@ -43,9 +43,19 @@ jobs:
 
       - name: Build documentation
         run: |
+          # Preserve docs/data (contains KB files from separate workflow)
+          if [ -d docs/data ]; then
+            mv docs/data /tmp/docs-data-backup
+          fi
+
           # Create a clean docs directory
           rm -rf docs
           mkdir -p docs
+
+          # Restore docs/data if it existed
+          if [ -d /tmp/docs-data-backup ]; then
+            mv /tmp/docs-data-backup docs/data
+          fi
 
           # Generate documentation from all TTL files
           # Note: --individuals flag causes template errors in ontospy 2.1.1
