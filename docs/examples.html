@@ -538,6 +538,87 @@
             </div>
         </div>
         <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-coreperformedtechnique.html">solveit-core:PerformedTechnique</a></h2>
+            <div class="example-instance" id="enumerateFilesAction001">
+                <div class="instance-header">enumerateFilesAction001</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/enumerateFilesAction001</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
+                            <td class="property-value">"T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-coreusestechnique.html">solveit-core:usesTechnique</a></td>
+                            <td class="property-value"><a href="#techniqueT1060">https://ontology.solveit-df.org/solveit/examples/techniqueT1060</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/object</td>
+                            <td class="property-value"><a href="#forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07">https://ontology.solveit-df.org/solveit/examples/forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
+                            <td class="property-value"><a href="#fatFile001">https://ontology.solveit-df.org/solveit/examples/fatFile001</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/description</td>
+                            <td class="property-value">"Enumeration of allocated files and folders from FAT32 USB drive"</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/name</td>
+                            <td class="property-value">"enumerate-files"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="example-instance" id="timelineGenerationAction001">
+                <div class="instance-header">timelineGenerationAction001</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/timelineGenerationAction001</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
+                            <td class="property-value">"T1052: Timeline generation - takes files with UCO timestamps, creates TimelineEntries with DateTimeStamp values (including resolution/timezone metadata), and assembles them into a Timeline."@en</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-coreusestechnique.html">solveit-core:usesTechnique</a></td>
+                            <td class="property-value"><a href="#techniqueT1052">https://ontology.solveit-df.org/solveit/examples/techniqueT1052</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/object</td>
+                            <td class="property-value"><a href="#fatFile001">https://ontology.solveit-df.org/solveit/examples/fatFile001</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
+                            <td class="property-value"><a href="#fatFile001-timelineEntry-created">https://ontology.solveit-df.org/solveit/examples/fatFile001-timelineEntry-created</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
+                            <td class="property-value"><a href="#fatFile001-timelineEntry-modified">https://ontology.solveit-df.org/solveit/examples/fatFile001-timelineEntry-modified</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
+                            <td class="property-value"><a href="#fatFile001-timelineEntry-accessed">https://ontology.solveit-df.org/solveit/examples/fatFile001-timelineEntry-accessed</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
+                            <td class="property-value"><a href="#fatTimestampTimeline001">https://ontology.solveit-df.org/solveit/examples/fatTimestampTimeline001</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/description</td>
+                            <td class="property-value">"Generation of forensic timeline from FAT filesystem metadata"</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/name</td>
+                            <td class="property-value">"generate-timeline"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
             <h2 class="class-title">Examples of uco-observable:File</h2>
             <div class="example-instance" id="fatFile001">
                 <div class="instance-header">REPORT.DOC</div>
@@ -736,87 +817,6 @@
                         <tr>
                             <td class="property-name"><a href="prop-solveit-observablehastimelineentry.html">solveit-observable:hasTimelineEntry</a></td>
                             <td class="property-value"><a href="#fatFile001-timelineEntry-accessed">https://ontology.solveit-df.org/solveit/examples/fatFile001-timelineEntry-accessed</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div class="class-section">
-            <h2 class="class-title">Examples of <a href="class-solveit-coreperformedtechnique.html">solveit-core:PerformedTechnique</a></h2>
-            <div class="example-instance" id="enumerateFilesAction001">
-                <div class="instance-header">enumerateFilesAction001</div>
-                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/enumerateFilesAction001</code></div>
-                <table class="table table-bordered table-condensed property-table">
-                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
-                    <tbody>
-                        <tr>
-                            <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
-                            <td class="property-value">"T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en</td>
-                        </tr>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-coreusestechnique.html">solveit-core:usesTechnique</a></td>
-                            <td class="property-value"><a href="#techniqueT1060">https://ontology.solveit-df.org/solveit/examples/techniqueT1060</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/object</td>
-                            <td class="property-value"><a href="#forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07">https://ontology.solveit-df.org/solveit/examples/forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
-                            <td class="property-value"><a href="#fatFile001">https://ontology.solveit-df.org/solveit/examples/fatFile001</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/description</td>
-                            <td class="property-value">"Enumeration of allocated files and folders from FAT32 USB drive"</td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/name</td>
-                            <td class="property-value">"enumerate-files"</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="example-instance" id="timelineGenerationAction001">
-                <div class="instance-header">timelineGenerationAction001</div>
-                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/timelineGenerationAction001</code></div>
-                <table class="table table-bordered table-condensed property-table">
-                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
-                    <tbody>
-                        <tr>
-                            <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
-                            <td class="property-value">"T1052: Timeline generation - takes files with UCO timestamps, creates TimelineEntries with DateTimeStamp values (including resolution/timezone metadata), and assembles them into a Timeline."@en</td>
-                        </tr>
-                        <tr>
-                            <td class="property-name"><a href="prop-solveit-coreusestechnique.html">solveit-core:usesTechnique</a></td>
-                            <td class="property-value"><a href="#techniqueT1052">https://ontology.solveit-df.org/solveit/examples/techniqueT1052</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/object</td>
-                            <td class="property-value"><a href="#fatFile001">https://ontology.solveit-df.org/solveit/examples/fatFile001</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
-                            <td class="property-value"><a href="#fatFile001-timelineEntry-created">https://ontology.solveit-df.org/solveit/examples/fatFile001-timelineEntry-created</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
-                            <td class="property-value"><a href="#fatFile001-timelineEntry-modified">https://ontology.solveit-df.org/solveit/examples/fatFile001-timelineEntry-modified</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
-                            <td class="property-value"><a href="#fatFile001-timelineEntry-accessed">https://ontology.solveit-df.org/solveit/examples/fatFile001-timelineEntry-accessed</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
-                            <td class="property-value"><a href="#fatTimestampTimeline001">https://ontology.solveit-df.org/solveit/examples/fatTimestampTimeline001</a></td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/description</td>
-                            <td class="property-value">"Generation of forensic timeline from FAT filesystem metadata"</td>
-                        </tr>
-                        <tr>
-                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/name</td>
-                            <td class="property-value">"generate-timeline"</td>
                         </tr>
                     </tbody>
                 </table>
