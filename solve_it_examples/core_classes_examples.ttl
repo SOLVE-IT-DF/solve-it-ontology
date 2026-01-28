@@ -1,0 +1,168 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Core Classes Examples
+#    Demonstrates Objective, Technique, Weakness, Mitigation,
+#    and PerformedTechnique usage
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/core> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/core/1.0.0> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/core> ;
+    rdfs:label "SOLVE-IT Core Classes Examples"@en ;
+    rdfs:comment "Example instances demonstrating the core SOLVE-IT ontology classes."@en .
+
+#################################################################
+#    Example SOLVE-IT Objective Instance
+#################################################################
+
+:objectiveAcquireData rdf:type solveit-core:Objective ;
+    rdfs:label "Acquire data"@en ;
+    solveit-core:objectiveName "Acquire data" ;
+    solveit-core:objectiveDescription "Collect data from the identified evidence sources." ;
+    solveit-core:includesTechnique :techniqueT1002 ;
+    solveit-core:includesTechnique :techniqueT1042 ;
+    rdfs:comment "This objective can be achieved through multiple techniques including disk imaging (T1002), hash verification (T1042), and others not shown in these examples."@en .
+
+
+#################################################################
+#    Example SOLVE-IT Technique Instances
+#################################################################
+
+:techniqueT1002 rdf:type solveit-core:Technique ;
+    rdfs:label "T1002: Disk imaging"@en ;
+    solveit-core:techniqueID "T1002" ;
+    solveit-core:techniqueName "Disk imaging" ;
+    solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ into an imaging format. The could be from a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader." ;
+    solveit-core:hasExample "dcfldd" ;
+    solveit-core:hasExample "FTK Imager" ;
+    solveit-core:hasExample "Magnet ACQUIRE" ;
+    solveit-core:hasPotentialWeakness :weaknessW1004 ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
+    solveit-core:hasReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, 'Forensic Image Acquisition'" .
+
+:techniqueT1042 rdf:type solveit-core:Technique ;
+    rdfs:label "T1042: Disk image hash verification"@en ;
+    solveit-core:techniqueID "T1042" ;
+    solveit-core:techniqueName "Disk image hash verification" ;
+    solveit-core:techniqueDescription "Computing the hash function of the entire contents of a disk, recording it, and then subsequently computing the hash over any disk image created to detect if any content is different (adapted from Lyle 2002)" ;
+    solveit-core:hasReference "Kessler, G.C., 2016. The impact of MD5 file hash collisions on digital forensic imaging. Journal of digital forensics, security and law, 11(4), p.9." ;
+    solveit-core:hasReference "Kessler GC. The impact of SHA-1 file hash collisions on digital forensic imaging: A follow-up experiment. Journal of Digital Forensics, Security and Law. 2016;11(4):10." ;
+    solveit-core:hasReference "Lyle, J., 2002. Testing disk imaging tools. DFRWS USA 2002, https://dfrws.org/wp-content/uploads/2019/06/2002_USA_paper-testing_disk_imaging_tools.pdf" .
+
+:techniqueT1005 rdf:type solveit-core:Technique ;
+    rdfs:label "T1005: Crime scene searching"@en ;
+    solveit-core:techniqueID "T1005" ;
+    solveit-core:techniqueName "Crime scene searching" ;
+    solveit-core:techniqueDescription "The process of 'carefully documenting the conditions at a crime scene and identifying all relevant physical evidence.' (Birzer 2018)." ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/WearableDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
+    solveit-core:hasReference "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35." .
+
+:techniqueT1052 rdf:type solveit-core:Technique ;
+    rdfs:label "T1052: Timeline generation"@en ;
+    solveit-core:techniqueID "T1052" ;
+    solveit-core:techniqueName "Timeline generation" ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/TimelineEntry"^^xsd:anyURI .
+
+:techniqueT1060 rdf:type solveit-core:Technique ;
+    rdfs:label "T1060: Enumerate allocated files and folders"@en ;
+    solveit-core:techniqueID "T1060" ;
+    solveit-core:techniqueName "Enumerate allocated files and folders" ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI .
+
+#################################################################
+#    Example SOLVE-IT Weakness Instance
+#################################################################
+
+:weaknessW1004 rdf:type solveit-core:Weakness ;
+    rdfs:label "W1004: Acquisition does not include all sectors from LBA0 to LBA max"@en ;
+    solveit-core:weaknessID "W1004" ;
+    solveit-core:weaknessName "Acquisition does not include all sectors from LBA0 to LBA max" ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:hasPotentialMitigation :mitigationM1003 ;
+    solveit-core:hasPotentialMitigation :mitigationM1004 .
+
+#################################################################
+#    Example SOLVE-IT Mitigation Instances
+#################################################################
+
+:mitigationM1003 rdf:type solveit-core:Mitigation ;
+    rdfs:label "M1003: Check image size corresponds with drive label"@en ;
+    solveit-core:mitigationID "M1003" ;
+    solveit-core:mitigationName "Check image size corresponds with drive label" .
+
+:mitigationM1004 rdf:type solveit-core:Mitigation ;
+    rdfs:label "M1004: Check hash of image matches hash of source device"@en ;
+    solveit-core:mitigationID "M1004" ;
+    solveit-core:mitigationName "Check hash of image matches hash of source device" ;
+    solveit-core:linksToTechnique :techniqueT1042 .
+
+
+#################################################################
+#    Example PerformedTechnique Instance (Based on CASE Asgard)
+#################################################################
+
+###  Supporting objects for the investigative action
+:configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516 rdf:type uco-core:UcoObject ;
+    rdfs:label "Configured forensic tool"@en .
+
+:location-f67042d4-4963-4c31-9807-23662670004f rdf:type uco-core:UcoObject ;
+    rdfs:label "Bifrost Bridge"@en .
+
+:forensicexaminer-acf60326-de21-4a85-9909-692f1780470f rdf:type uco-core:UcoObject ;
+    rdfs:label "Forensic Examiner"@en .
+
+:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f rdf:type uco-observable:Device ;
+    rdfs:label "Suspect device"@en .
+
+:provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa rdf:type uco-core:UcoObject ;
+    rdfs:label "Chain of custody record"@en .
+
+:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:Image ;
+    rdfs:label "Forensic disk image"@en .
+
+:provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53 rdf:type uco-core:UcoObject ;
+    rdfs:label "Updated provenance record"@en .
+
+###  PerformedTechnique: Physical Device Acquisition (from CASE Asgard example)
+:investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "acquired" ;
+    uco-core:description "Suspect device physical acquisition" ;
+    # SOLVE-IT extensions
+    solveit-core:usesTechnique :techniqueT1002 ;  # Links to T1002: Disk imaging
+    solveit-core:appliedMitigation :mitigationM1004 ;  # Hash verification was applied
+    # CASE/UCO InvestigativeAction properties
+    uco-action:startTime "2019-03-30T22:17:31Z"^^xsd:dateTime ;
+    uco-action:endTime "2019-03-30T22:47:32Z"^^xsd:dateTime ;
+    uco-action:instrument :configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516 ;
+    uco-action:location :location-f67042d4-4963-4c31-9807-23662670004f ;
+    uco-action:performer :forensicexaminer-acf60326-de21-4a85-9909-692f1780470f ;
+    uco-action:object :device-9420af3b-4d3a-4239-88fc-d33feec8dc4f ,
+                      :provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa ;
+    uco-action:result :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ,
+                      :provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53 ;
+    rdfs:comment "Example of a PerformedTechnique based on the CASE Asgard example, demonstrating how a SOLVE-IT technique (T1002: Disk imaging) was executed during an investigation, including the applied mitigation (M1004: Hash verification)."@en .

@@ -1,0 +1,149 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Timeline Examples - Different Resolutions
+#    Demonstrates FAT filesystem timestamps with varying precision
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/timeline-resolution> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/timeline-resolution/1.0.0> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
+    rdfs:label "SOLVE-IT Timeline Resolution Examples"@en ;
+    rdfs:comment "Example instances demonstrating Timeline usage with DateTimeStamp values of different resolutions (e.g., FAT filesystem)."@en .
+
+#################################################################
+#    Technique Definitions (referenced in provenance)
+#################################################################
+
+:techniqueT1052 rdf:type solveit-core:Technique ;
+    rdfs:label "T1052: Timeline generation"@en ;
+    solveit-core:techniqueID "T1052" ;
+    solveit-core:techniqueName "Timeline generation" .
+
+:techniqueT1060 rdf:type solveit-core:Technique ;
+    rdfs:label "T1060: Enumerate allocated files and folders"@en ;
+    solveit-core:techniqueID "T1060" ;
+    solveit-core:techniqueName "Enumerate allocated files and folders" .
+
+#################################################################
+#    Source forensic image
+#################################################################
+
+:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:Image ;
+    rdfs:label "Forensic disk image"@en .
+
+#################################################################
+#    Two-step provenance chain for timestamp timeline
+#    Step 1: T1060 extracts a file along with metadata (timestamps)
+#    Step 2: T1052 creates a timeline using data from the object
+#################################################################
+
+###  Step 1: T1060 Enumerate allocated files - extracts file with standard UCO timestamps
+:enumerateFilesAction001 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "enumerate-files" ;
+    uco-core:description "Enumeration of allocated files and folders from FAT32 USB drive" ;
+    solveit-core:usesTechnique :techniqueT1060 ;
+    uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
+    uco-action:result :fatFile001 ;
+    rdfs:comment "T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en .
+
+###  Step 2: T1052 Timeline generation - normalizes UCO timestamps into DateTimeStamps with resolution metadata
+:timelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "generate-timeline" ;
+    uco-core:description "Generation of forensic timeline from FAT filesystem metadata" ;
+    solveit-core:usesTechnique :techniqueT1052 ;
+    uco-action:object :fatFile001 ;
+    uco-action:result :fatFile001-timelineEntry-created ,
+                      :fatFile001-timelineEntry-modified ,
+                      :fatFile001-timelineEntry-accessed ,
+                      :fatTimestampTimeline001 ;
+    rdfs:comment "T1052: Timeline generation - takes files with UCO timestamps, creates TimelineEntries with DateTimeStamp values (including resolution/timezone metadata), and assembles them into a Timeline."@en .
+
+
+#################################################################
+#    The FAT file being analysed (with standard UCO FileFacet timestamps)
+#    This was produced by running an instance of T1060 (above)
+#################################################################
+
+:fatFile001 rdf:type uco-observable:File ;
+    rdfs:label "REPORT.DOC"@en ;
+    uco-core:name "REPORT.DOC" ;
+    uco-core:hasFacet :fatFile001-fileFacet ;
+    rdfs:comment "A file on a FAT32 USB drive with typical FAT timestamp resolutions."@en .
+
+:fatFile001-fileFacet rdf:type uco-observable:FileFacet ;
+    uco-observable:fileName "REPORT.DOC" ;
+    uco-observable:creationTime "2024-06-15T14:32:05.12"^^xsd:dateTime ;
+    uco-observable:modifiedTime "2024-06-15T16:45:22"^^xsd:dateTime ;
+    uco-observable:accessedTime "2024-06-16T00:00:00"^^xsd:dateTime ;
+    rdfs:comment "Standard UCO FileFacet with timestamps as simple xsd:dateTime values (no resolution/timezone metadata)."@en .
+
+#################################################################
+#    DateTimeStamp instances with FAT-specific resolutions
+#    Note: FAT stores local time with no timezone information
+#
+#    T1052 transforms the UCO timestamps and integrates them into
+#    a Timeline with TimelineEntries, adding specific resolution
+#    and timezone information
+#################################################################
+
+:fatFile001-createdTimestamp rdf:type solveit-observable:DateTimeStamp ;
+    rdfs:label "REPORT.DOC created timestamp"@en ;
+    solveit-observable:timestampValue "2024-06-15T14:32:05.12"^^xsd:dateTime ;
+    solveit-observable:timestampResolution "10ms" ;
+    solveit-observable:timestampTimezone "unknown" ;
+    rdfs:comment "FAT created time has 10ms resolution (2-second base plus hundredths byte)."@en .
+
+:fatFile001-modifiedTimestamp rdf:type solveit-observable:DateTimeStamp ;
+    rdfs:label "REPORT.DOC modified timestamp"@en ;
+    solveit-observable:timestampValue "2024-06-15T16:45:22"^^xsd:dateTime ;
+    solveit-observable:timestampResolution "2s" ;
+    solveit-observable:timestampTimezone "unknown" ;
+    rdfs:comment "FAT modified/write time has 2 second resolution."@en .
+
+:fatFile001-accessedTimestamp rdf:type solveit-observable:DateTimeStamp ;
+    rdfs:label "REPORT.DOC accessed timestamp"@en ;
+    solveit-observable:timestampValue "2024-06-16"^^xsd:date ;
+    solveit-observable:timestampResolution "1d" ;
+    solveit-observable:timestampTimezone "unknown" ;
+    rdfs:comment "FAT accessed time has 1 day resolution (date only, no time component)."@en .
+
+#################################################################
+#    Timeline entries for FAT timestamps
+#    As part of the timeline generation those timestamps are used
+#    to create TimelineEntries that make up a Timeline
+#################################################################
+
+:fatFile001-timelineEntry-created rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "REPORT.DOC created"@en ;
+    solveit-observable:timelineEntryValue :fatFile001-createdTimestamp .
+
+:fatFile001-timelineEntry-modified rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "REPORT.DOC modified"@en ;
+    solveit-observable:timelineEntryValue :fatFile001-modifiedTimestamp .
+
+:fatFile001-timelineEntry-accessed rdf:type solveit-observable:TimelineEntry ;
+    rdfs:label "REPORT.DOC accessed"@en ;
+    solveit-observable:timelineEntryValue :fatFile001-accessedTimestamp .
+
+#################################################################
+#    The resulting Timeline from running the T1052 instance above
+#    Made up of TimelineEntries, which contain DateTimeStamps
+#################################################################
+
+:fatTimestampTimeline001 rdf:type solveit-observable:Timeline ;
+    rdfs:label "FAT filesystem timeline for REPORT.DOC"@en ;
+    solveit-observable:hasTimelineEntry :fatFile001-timelineEntry-created ,
+                                        :fatFile001-timelineEntry-modified ,
+                                        :fatFile001-timelineEntry-accessed ;
+    rdfs:comment "Timeline showing MAC times for a FAT file, demonstrating different timestamp resolutions."@en .

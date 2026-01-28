@@ -1,0 +1,44 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Observable Examples
+#    Demonstrates VideoFrame and UnlockPattern usage
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/observables> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/observables/1.0.0> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
+    rdfs:label "SOLVE-IT Observable Examples"@en ;
+    rdfs:comment "Example instances demonstrating SOLVE-IT observable classes."@en .
+
+#################################################################
+#    Example VideoFrame Instance
+#################################################################
+
+:exampleFrame001 rdf:type solveit-observable:VideoFrame ;
+    rdfs:label "Frame 001 from surveillance video"@en ;
+    solveit-observable:videoFrameNumber 1250 ;
+    solveit-observable:videoFramePixelWidth 1920 ;
+    solveit-observable:videoFramePixelHeight 1080 ;
+    solveit-observable:extractedFromVideo :video001 .
+
+:video001 rdf:type uco-observable:File ;
+    rdfs:label "surveillance_camera_01.mp4"@en .
+
+#################################################################
+#    Example UnlockPattern Instance
+#################################################################
+
+:unlockPattern001 rdf:type solveit-observable:UnlockPattern ;
+    rdfs:label "Android unlock pattern from seized device"@en ;
+    solveit-observable:unlockPatternSequence (1 4 7 8 9) ;
+    rdfs:comment "Pattern extracted from /data/system/gesture.key representing an 'L' shape on 3x3 grid (down left column, across bottom row)."@en .
