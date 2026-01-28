@@ -18,10 +18,10 @@
 
 <https://ontology.solveit-df.org/solveit/core> rdf:type owl:Ontology ;
     owl:versionIRI <https://ontology.solveit-df.org/solveit/core/1.0.0> ;
-    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.3.0> ,
-                <https://ontology.unifiedcyberontology.org/uco/observable/1.3.0> ,
-                <https://ontology.unifiedcyberontology.org/uco/action/1.3.0> ,
-                <https://ontology.caseontology.org/case/investigation/1.3.0> ,
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.4.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/observable/1.4.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/action/1.4.0> ,                
+                <https://ontology.caseontology.org/case/investigation/1.4.0> ,
                 <https://ontology.solveit-df.org/solveit/observable> ,
                 <https://ontology.solveit-df.org/solveit/analysis> ;
     dcterms:title "SOLVE-IT Digital Forensics Ontology"@en ;
