@@ -1,6 +1,7 @@
 @prefix : <https://ontology.solveit-df.org/solveit/examples/> .
 @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
 @prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix solveit-data: <https://ontology.solveit-df.org/solveit/data/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -17,23 +18,17 @@
 
 <https://ontology.solveit-df.org/solveit/examples/timeline-resolution> rdf:type owl:Ontology ;
     owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/timeline-resolution/1.0.0> ;
-    owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/observable> ,
+                <https://ontology.solveit-df.org/solveit/data> ;
     rdfs:label "SOLVE-IT Timeline Resolution Examples"@en ;
-    rdfs:comment "Example instances demonstrating Timeline usage with DateTimeStamp values of different resolutions (e.g., FAT filesystem)."@en .
+    rdfs:comment "Example instances demonstrating Timeline usage with DateTimeStamp values of different resolutions (e.g., FAT filesystem). References techniques from the SOLVE-IT knowledge base."@en .
 
 #################################################################
-#    Technique Definitions (referenced in provenance)
+#    Techniques are referenced from the SOLVE-IT Knowledge Base:
+#    https://ontology.solveit-df.org/data/solve-it-kb.ttl
+#    - solveit-data:techniqueT1052 (Timeline generation)
+#    - solveit-data:techniqueT1060 (Enumerate allocated files and folders)
 #################################################################
-
-:techniqueT1052 rdf:type solveit-core:Technique ;
-    rdfs:label "T1052: Timeline generation"@en ;
-    solveit-core:techniqueID "T1052" ;
-    solveit-core:techniqueName "Timeline generation" .
-
-:techniqueT1060 rdf:type solveit-core:Technique ;
-    rdfs:label "T1060: Enumerate allocated files and folders"@en ;
-    solveit-core:techniqueID "T1060" ;
-    solveit-core:techniqueName "Enumerate allocated files and folders" .
 
 #################################################################
 #    Source forensic image
@@ -52,7 +47,7 @@
 :enumerateFilesAction001 rdf:type solveit-core:PerformedTechnique ;
     uco-core:name "enumerate-files" ;
     uco-core:description "Enumeration of allocated files and folders from FAT32 USB drive" ;
-    solveit-core:usesTechnique :techniqueT1060 ;
+    solveit-core:usesTechnique solveit-data:techniqueT1060 ;
     uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
     uco-action:result :fatFile001 ;
     rdfs:comment "T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en .
@@ -61,7 +56,7 @@
 :timelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
     uco-core:name "generate-timeline" ;
     uco-core:description "Generation of forensic timeline from FAT filesystem metadata" ;
-    solveit-core:usesTechnique :techniqueT1052 ;
+    solveit-core:usesTechnique solveit-data:techniqueT1052 ;
     uco-action:object :fatFile001 ;
     uco-action:result :fatFile001-timelineEntry-created ,
                       :fatFile001-timelineEntry-modified ,
