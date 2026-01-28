@@ -194,7 +194,34 @@
 #    Example FAT Filesystem Timeline (Timestamps with Different Resolutions)
 #################################################################
 
+### Two-step provenance chain for timestamp timeline
+### First T1060 extracts a file along with metadata such as timestamps
+### Then T1052 creates a timeline using data from the object
+
+###  Step 1: T1060 Enumerate allocated files - extracts file with standard UCO timestamps
+:enumerateFilesAction001 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "enumerate-files" ;
+    uco-core:description "Enumeration of allocated files and folders from FAT32 USB drive" ;
+    solveit-core:usesTechnique :techniqueT1060 ;
+    uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
+    uco-action:result :fatFile001 ;
+    rdfs:comment "T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en .
+
+###  Step 2: T1052 Timeline generation - normalizes UCO timestamps into DateTimeStamps with resolution metadata
+:timelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "generate-timeline" ;
+    uco-core:description "Generation of forensic timeline from FAT filesystem metadata" ;
+    solveit-core:usesTechnique :techniqueT1052 ;
+    uco-action:object :fatFile001 ;
+    uco-action:result :fatFile001-timelineEntry-created ,
+                      :fatFile001-timelineEntry-modified ,
+                      :fatFile001-timelineEntry-accessed ,
+                      :fatTimestampTimeline001 ;
+    rdfs:comment "T1052: Timeline generation - takes files with UCO timestamps, creates TimelineEntries with DateTimeStamp values (including resolution/timezone metadata), and assembles them into a Timeline."@en .
+
+
 ###  The FAT file being analysed (with standard UCO FileFacet timestamps)
+### This was produced by running an instance of T1060 (above)
 :fatFile001 rdf:type uco-observable:File ;
     rdfs:label "REPORT.DOC"@en ;
     uco-core:name "REPORT.DOC" ;
@@ -207,6 +234,9 @@
     uco-observable:modifiedTime "2024-06-15T16:45:22"^^xsd:dateTime ;
     uco-observable:accessedTime "2024-06-16T00:00:00"^^xsd:dateTime ;
     rdfs:comment "Standard UCO FileFacet with timestamps as simple xsd:dateTime values (no resolution/timezone metadata)."@en .
+
+### Now an instance of T1052 (above) transforms those timestamps and integrates into a 
+### Timeline with TimelineEntries, adding a specific resolution and timezone information
 
 ###  DateTimeStamp instances with FAT-specific resolutions
 ###  Note: FAT stores local time with no timezone information
@@ -232,6 +262,8 @@
     rdfs:comment "FAT accessed time has 1 day resolution (date only, no time component)."@en .
 
 ###  Timeline entries for FAT timestamps
+###  As part of the timeline generation those timestamps are used to create TimelineEntries
+###  that make up a Timeline
 :fatFile001-timelineEntry-created rdf:type solveit-observable:TimelineEntry ;
     rdfs:label "REPORT.DOC created"@en ;
     solveit-observable:timelineEntryValue :fatFile001-createdTimestamp .
@@ -244,7 +276,8 @@
     rdfs:label "REPORT.DOC accessed"@en ;
     solveit-observable:timelineEntryValue :fatFile001-accessedTimestamp .
 
-###  The FAT timestamp timeline
+###  This is the resulting Timeline from running the T1052 instance above -
+###  made up of TimelineEntries, which contain DateTimeStamps 
 :fatTimestampTimeline001 rdf:type solveit-observable:Timeline ;
     rdfs:label "FAT filesystem timeline for REPORT.DOC"@en ;
     solveit-observable:hasTimelineEntry :fatFile001-timelineEntry-created ,
@@ -252,28 +285,6 @@
                                         :fatFile001-timelineEntry-accessed ;
     rdfs:comment "Timeline showing MAC times for a FAT file, demonstrating different timestamp resolutions."@en .
 
-###  Two-step provenance chain for timestamp timeline
-
-###  Step 1: T1060 Enumerate allocated files - extracts file with standard UCO timestamps
-:enumerateFilesAction001 rdf:type solveit-core:PerformedTechnique ;
-    uco-core:name "enumerate-files" ;
-    uco-core:description "Enumeration of allocated files and folders from FAT32 USB drive" ;
-    solveit-core:usesTechnique :techniqueT1060 ;
-    uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
-    uco-action:result :fatFile001 ;
-    rdfs:comment "T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en .
-
-###  Step 2: T1052 Timeline generation - normalizes UCO timestamps into DateTimeStamps with resolution metadata
-:timelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
-    uco-core:name "generate-timeline" ;
-    uco-core:description "Generation of forensic timeline from FAT filesystem metadata" ;
-    solveit-core:usesTechnique :techniqueT1052 ;
-    uco-action:object :fatFile001 ;
-    uco-action:result :fatFile001-timelineEntry-created ,
-                      :fatFile001-timelineEntry-modified ,
-                      :fatFile001-timelineEntry-accessed ,
-                      :fatTimestampTimeline001 ;
-    rdfs:comment "T1052: Timeline generation - takes files with UCO timestamps, creates TimelineEntries with DateTimeStamp values (including resolution/timezone metadata), and assembles them into a Timeline."@en .
 
 #################################################################
 #    Example Implicit Timing Timeline (Start Cluster Allocation Order)
