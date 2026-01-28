@@ -134,15 +134,25 @@ def get_instance_order(examples_file):
                     instance_order.append(instance_id)
     return instance_order
 
-def generate_html(examples_file, output_file):
-    """Generate the examples HTML page."""
 
-    # Load the examples graph
+def get_instance_order_from_files(example_files):
+    """Parse multiple TTL files to get the order of instance declarations."""
+    instance_order = []
+    for examples_file in example_files:
+        instance_order.extend(get_instance_order(examples_file))
+    return instance_order
+
+def generate_html(example_files, output_file):
+    """Generate the examples HTML page from multiple example files."""
+
+    # Load all examples into a single graph
     g = Graph()
-    g.parse(examples_file, format="turtle")
+    for examples_file in example_files:
+        print(f"  Loading {examples_file.name}...")
+        g.parse(examples_file, format="turtle")
 
-    # Get the order of instances from the TTL file
-    instance_order_ids = get_instance_order(examples_file)
+    # Get the order of instances from all TTL files
+    instance_order_ids = get_instance_order_from_files(example_files)
 
     # Group instances by class, preserving order
     instances_by_class = defaultdict(list)
@@ -337,10 +347,11 @@ def generate_html(examples_file, output_file):
         html_parts.append('        </div>\n')
 
     # HTML footer
-    html_parts.append("""
+    file_list = ', '.join(f'<code>{f.name}</code>' for f in example_files)
+    html_parts.append(f"""
         <hr>
         <footer>
-            <p class="text-muted">Generated from <code>solve_it_examples.ttl</code></p>
+            <p class="text-muted">Generated from {file_list}</p>
         </footer>
     </div>
 </body>
@@ -358,14 +369,24 @@ def generate_html(examples_file, output_file):
 
 if __name__ == "__main__":
     project_root = Path(__file__).parent.parent
-    examples_file = project_root / "solve_it_examples.ttl"
+    examples_dir = project_root / "solve_it_examples"
     output_file = project_root / "docs" / "examples.html"
 
-    if not examples_file.exists():
-        print(f"Error: {examples_file} not found")
+    if not examples_dir.exists():
+        print(f"Error: {examples_dir} not found")
         exit(1)
+
+    # Find all TTL files in the examples directory
+    example_files = sorted(examples_dir.glob("*.ttl"))
+    if not example_files:
+        print(f"Error: No .ttl files found in {examples_dir}")
+        exit(1)
+
+    print(f"Found {len(example_files)} example file(s):")
+    for f in example_files:
+        print(f"  - {f.name}")
 
     if not output_file.parent.exists():
         output_file.parent.mkdir(parents=True, exist_ok=True)
 
-    generate_html(examples_file, output_file)
+    generate_html(example_files, output_file)
