@@ -125,6 +125,77 @@ solveit-observable:DateTimeStamp rdf:type owl:Class ;
     rdfs:comment "A timestamp observed in forensic analysis."@en .
 
 #################################################################
+#    Acquired Data Classes
+#################################################################
+
+###  AcquiredData Observable Object
+solveit-observable:AcquiredData rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Acquired Data"@en ;
+    rdfs:comment "Data that has been forensically collected from a source device or system. This is the parent class for all types of forensic data acquisition outputs."@en .
+
+###  BitstreamData Observable Object
+solveit-observable:BitstreamData rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ;
+    rdfs:label "Bitstream Data"@en ;
+    rdfs:comment "Raw bit-for-bit data read from a source medium. Represents the data in transit or memory before being written to a container or file."@en .
+
+###  ForensicImageContainer Observable Object
+solveit-observable:ForensicImageContainer rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ;
+    rdfs:label "Forensic Image Container"@en ;
+    rdfs:comment "A forensic image in a container format (e.g., E01, AFF4) that encapsulates acquired data along with embedded metadata such as case information, examiner identity, acquisition timestamps, hash values, compression settings, and encryption status."@en .
+
+###  FlatBitstreamFile Observable Object
+solveit-observable:FlatBitstreamFile rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ;
+    rdfs:label "Flat Bitstream File"@en ;
+    rdfs:comment "A raw/dd format image where the data is stored as a flat file with metadata stored separately in an accompanying file."@en .
+
+###  LiveDataCapture Observable Object
+solveit-observable:LiveDataCapture rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ;
+    rdfs:label "Live Data Capture"@en ;
+    rdfs:comment "Volatile or transient data captured from a running system at a specific point in time. Includes running processes, memory state, network connections, device interrogation data (e.g., ideviceinfo output), and system properties."@en .
+
+###  FileSystemExtraction Observable Object
+solveit-observable:FileSystemExtraction rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ,
+                    uco-observable:ArchiveFile ;
+    rdfs:label "File System Extraction"@en ;
+    rdfs:comment "Data obtained through direct access to a file system structure. Represents the actual files and folders as they exist on storage, applicable to any device type (mobile, desktop, embedded)."@en .
+
+###  ServiceBasedExtractionData Observable Object
+solveit-observable:ServiceBasedExtractionData rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ;
+    rdfs:label "Service-Based Extraction Data"@en ;
+    rdfs:comment "Data obtained by interacting with services provided by a device rather than direct storage access."@en .
+
+###  DeviceGeneratedBackup Observable Object
+solveit-observable:DeviceGeneratedBackup rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ServiceBasedExtractionData ;
+    rdfs:label "Device Generated Backup"@en ;
+    rdfs:comment "Data produced by a device's built-in backup mechanism (e.g., iTunes/Finder backup, Android backup). Content is determined by the device's backup logic and structured in the backup's native format."@en .
+
+###  AFCExtractionData Observable Object
+solveit-observable:AFCExtractionData rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ServiceBasedExtractionData ;
+    rdfs:label "AFC Extraction Data"@en ;
+    rdfs:comment "Data obtained via Apple File Conduit (AFC) service from iOS devices."@en .
+
+###  ADBPullData Observable Object
+solveit-observable:ADBPullData rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ServiceBasedExtractionData ;
+    rdfs:label "ADB Pull Data"@en ;
+    rdfs:comment "Data obtained via Android Debug Bridge (ADB) pull operations."@en .
+
+###  AcquisitionError Observable Object
+solveit-observable:AcquisitionError rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Acquisition Error"@en ;
+    rdfs:comment "Records errors encountered during data acquisition such as bad sectors, read timeouts, I/O errors, CRC errors, or media surface damage."@en .
+
+#################################################################
 #    Object Properties
 #################################################################
 
@@ -235,3 +306,6 @@ solveit-observable:runClusterCount rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:integer ;
     rdfs:label "run cluster count"@en ;
     rdfs:comment "The number of contiguous clusters in this run."@en .
+
+
+
