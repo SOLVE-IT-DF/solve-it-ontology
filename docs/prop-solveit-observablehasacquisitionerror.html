@@ -694,7 +694,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                         <li><a href="entities-tree-properties.html">rdf:Property</a>
 
                           <ul>
-                            <li><a style="font-weight: bold;" title="'has acquisition error' - Links acquired data to errors encountered during acquisition. Multiple errors can be recorded.">solveit-observable:hasAcquisitionError</a>
+                            <li><a style="font-weight: bold;" title="'has acquisition error' - Links a forensic image container or raw image info file to errors encountered during acquisition. Multiple errors can be recorded.">solveit-observable:hasAcquisitionError</a>
 
                             
                               </li>
@@ -748,7 +748,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
 
-                <p>Links acquired data to errors encountered during acquisition. Multiple errors can be recorded.</p>
+                <p>Links a forensic image container or raw image info file to errors encountered during acquisition. Multiple errors can be recorded.</p>
             </div>
           </div>
            </div></div>
@@ -779,7 +779,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                      
                          
                          
-                              <a href="class-solveit-observableacquireddata.html" title="https://ontology.solveit-df.org/solveit/observable/AcquiredData">solveit-observable:AcquiredData</a>
+                              <a>Blank node</a> (see implementation)
                            
                            
                          
@@ -817,13 +817,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 
 
                     <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 
 <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">hasAcquisitionError</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;has acquisition error&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Links acquired data to errors encountered during acquisition. Multiple errors can be recorded.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">AcquiredData</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Links a forensic image container or raw image info file to errors encountered during acquisition. Multiple errors can be recorded.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="p">[</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+            <span class="nn">owl</span><span class="p">:</span><span class="nt">unionOf</span> <span class="p">(</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ForensicImageContainer</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">RawImageInfoFile</span> <span class="p">)</span> <span class="p">]</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">AcquisitionError</span> <span class="p">.</span>
 </pre></div>
 
@@ -863,7 +865,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Thu, 29 Jan 2026 15:34:38 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 29 Jan 2026 15:41:14 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
