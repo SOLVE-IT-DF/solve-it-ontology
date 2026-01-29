@@ -64,6 +64,11 @@ jobs:
           # Create CNAME file for GitHub Pages custom domain
           echo "ontology.solveit-df.org" > docs/CNAME
 
+      - name: Fix external ontology links
+        run: |
+          # Rewrite links to UCO/CASE classes to point to official documentation
+          python scripts/fix_external_links.py docs
+
       - name: Generate IRI redirects
         run: |
           # Generate redirect folders for all classes and properties
