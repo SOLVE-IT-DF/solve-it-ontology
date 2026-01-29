@@ -69,15 +69,15 @@
 
 :damagedDriveImage rdf:type solveit-observable:ForensicImageContainer ;
     rdfs:label "Damaged USB Drive Image"@en ;
-    solveit-observable:hasAcquisitionError :usbError1 , :usbError2 .
+    solveit-observable:hasAcquisitionErrorRecord :usbError1 , :usbError2 .
 
-:usbError1 rdf:type solveit-observable:AcquisitionError ;
+:usbError1 rdf:type solveit-observable:AcquisitionErrorRecord ;
     rdfs:label "Bad sectors 1024-1030"@en ;
     solveit-observable:errorType "bad sector" ;
     solveit-observable:errorLocationStart 1024 ;
     solveit-observable:errorLocationEnd 1030 .
 
-:usbError2 rdf:type solveit-observable:AcquisitionError ;
+:usbError2 rdf:type solveit-observable:AcquisitionErrorRecord ;
     rdfs:label "Read timeout at sector 5000"@en ;
     solveit-observable:errorType "read timeout" ;
     solveit-observable:errorLocationStart 5000 .

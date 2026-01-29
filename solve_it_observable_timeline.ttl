@@ -51,7 +51,7 @@ solveit-observable:ImplicitTimingInformation rdf:type owl:Class ;
 
 ###  ClockOffset Observable Object
 solveit-observable:ClockOffset rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:subClassOf solveit-observable:AcquiredData ;
     rdfs:label "Clock Offset"@en ;
     rdfs:comment "The time offset between a device clock and a reference time."@en .
 
