@@ -16,8 +16,8 @@
 
 <https://ontology.solveit-df.org/solveit/observable> rdf:type owl:Ontology ;
     owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/0.0.1> ;
-    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.3.0> ,
-                <https://ontology.unifiedcyberontology.org/uco/observable/1.3.0> ,
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.4.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/observable/1.4.0> ,
                 <https://ontology.solveit-df.org/solveit/observable/acquisition> ,
                 <https://ontology.solveit-df.org/solveit/observable/timeline> ,
                 <https://ontology.solveit-df.org/solveit/observable/search> ;
