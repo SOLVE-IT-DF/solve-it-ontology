@@ -122,10 +122,12 @@ solveit-observable:hasInfoFile rdf:type owl:ObjectProperty ;
     rdfs:comment "Links a RawImageFile to its accompanying RawImageInfoFile containing metadata."@en .
 
 solveit-observable:hasAcquisitionError rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:AcquiredData ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( solveit-observable:ForensicImageContainer
+                                solveit-observable:RawImageInfoFile ) ] ;
     rdfs:range solveit-observable:AcquisitionError ;
     rdfs:label "has acquisition error"@en ;
-    rdfs:comment "Links acquired data to errors encountered during acquisition. Multiple errors can be recorded."@en .
+    rdfs:comment "Links a forensic image container or raw image info file to errors encountered during acquisition. Multiple errors can be recorded."@en .
 
 #################################################################
 #    Data Properties
