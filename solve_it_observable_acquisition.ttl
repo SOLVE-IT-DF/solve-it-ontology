@@ -67,7 +67,7 @@ solveit-observable:FileSystemExtraction rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:AcquiredData ,
                     uco-observable:ArchiveFile ;
     rdfs:label "File System Extraction"@en ;
-    rdfs:comment "Data obtained through direct access to a file system structure. Represents the actual files and folders as they exist on storage, applicable to any device type (mobile, desktop, embedded)."@en .
+    rdfs:comment "Data obtained through direct access to a file system structure. Represents the actual files and folders as they exist on storage, applicable to any device type (mobile, desktop, embedded). Live files only."@en .
 
 ###  ServiceBasedExtractionData Observable Object
 solveit-observable:ServiceBasedExtractionData rdf:type owl:Class ;
@@ -93,11 +93,11 @@ solveit-observable:ADBPullData rdf:type owl:Class ;
     rdfs:label "ADB Pull Data"@en ;
     rdfs:comment "Data obtained via Android Debug Bridge (ADB) pull operations."@en .
 
-###  AcquisitionError Observable Object
-solveit-observable:AcquisitionError rdf:type owl:Class ;
+###  AcquisitionErrorRecord Observable Object
+solveit-observable:AcquisitionErrorRecord rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Acquisition Error"@en ;
-    rdfs:comment "Records errors encountered during data acquisition such as bad sectors, read timeouts, I/O errors, CRC errors, or media surface damage."@en .
+    rdfs:label "Acquisition Error Record"@en ;
+    rdfs:comment "A record of an error encountered during data acquisition such as a bad sector, read timeout, I/O error, CRC error, or media surface damage."@en .
 
 #################################################################
 #    Object Properties
@@ -121,11 +121,11 @@ solveit-observable:hasInfoFile rdf:type owl:ObjectProperty ;
     rdfs:label "has info file"@en ;
     rdfs:comment "Links a RawImageFile to its accompanying RawImageInfoFile containing metadata."@en .
 
-solveit-observable:hasAcquisitionError rdf:type owl:ObjectProperty ;
+solveit-observable:hasAcquisitionErrorRecord rdf:type owl:ObjectProperty ;
     rdfs:domain [ a owl:Class ;
                   owl:unionOf ( solveit-observable:ForensicImageContainer
                                 solveit-observable:RawImageInfoFile ) ] ;
-    rdfs:range solveit-observable:AcquisitionError ;
+    rdfs:range solveit-observable:AcquisitionErrorRecord ;
     rdfs:label "has acquisition error"@en ;
     rdfs:comment "Links a forensic image container or raw image info file to errors encountered during acquisition. Multiple errors can be recorded."@en .
 
@@ -164,19 +164,19 @@ solveit-observable:embeddedNotes rdf:type owl:DatatypeProperty ;
     rdfs:comment "The notes stored within the forensic image container metadata."@en .
 
 solveit-observable:errorType rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:AcquisitionError ;
+    rdfs:domain solveit-observable:AcquisitionErrorRecord ;
     rdfs:range xsd:string ;
     rdfs:label "error type"@en ;
     rdfs:comment "The type of acquisition error (e.g., bad sector, read timeout, I/O error, CRC error)."@en .
 
 solveit-observable:errorLocationStart rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:AcquisitionError ;
+    rdfs:domain solveit-observable:AcquisitionErrorRecord ;
     rdfs:range xsd:integer ;
     rdfs:label "error location start"@en ;
     rdfs:comment "The starting location of the error (e.g., sector number, byte offset)."@en .
 
 solveit-observable:errorLocationEnd rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:AcquisitionError ;
+    rdfs:domain solveit-observable:AcquisitionErrorRecord ;
     rdfs:range xsd:integer ;
     rdfs:label "error location end"@en ;
     rdfs:comment "The ending location of the error (e.g., sector number, byte offset). If omitted, the error is at a single location."@en .
