@@ -60,7 +60,6 @@ solveit-observable:hasConfiguration rdf:type owl:ObjectProperty ;
     rdfs:comment "Links a KeywordIndex to its KeywordIndexingConfiguration."@en .
 
 solveit-observable:hasClusterRun rdf:type owl:ObjectProperty ;
-    rdfs:domain uco-observable:File ;
     rdfs:range solveit-observable:ClusterRun ;
     rdfs:label "has cluster run"@en ;
     rdfs:comment "Links a file to its cluster allocation runs. A contiguous file has one run; a fragmented file has multiple runs."@en .
