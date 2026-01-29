@@ -17,9 +17,12 @@
 <https://ontology.solveit-df.org/solveit/observable> rdf:type owl:Ontology ;
     owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/0.0.1> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.3.0> ,
-                <https://ontology.unifiedcyberontology.org/uco/observable/1.3.0> ;
+                <https://ontology.unifiedcyberontology.org/uco/observable/1.3.0> ,
+                <https://ontology.solveit-df.org/solveit/observable/acquisition> ,
+                <https://ontology.solveit-df.org/solveit/observable/timeline> ,
+                <https://ontology.solveit-df.org/solveit/observable/search> ;
     dcterms:title "SOLVE-IT Observable Module"@en ;
-    dcterms:description "Observable objects for SOLVE-IT digital forensics, including video frames and other forensic artifacts."@en ;
+    dcterms:description "Observable objects for SOLVE-IT digital forensics, including video frames and other forensic artifacts. This module imports sub-modules for acquisition, timeline, and search observables."@en ;
     dcterms:creator "SOLVE-IT Project" ;
     owl:versionInfo "0.0.1" ;
     rdfs:label "SOLVE-IT Observable Module"@en .
@@ -64,65 +67,23 @@ solveit-observable:RedactedArtifactSet rdf:type owl:Class ;
     rdfs:label "Redacted Artifact Set"@en ;
     rdfs:comment "A collection of artifacts post-redaction."@en .
 
-###  KeywordSearchResult Observable Object
-solveit-observable:KeywordSearchResult rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Keyword Search Result"@en ;
-    rdfs:comment "A result from a keyword search operation during forensic analysis."@en .
-
-###  Timeline Observable Object
-solveit-observable:Timeline rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Timeline"@en ;
-    rdfs:comment "A set of timeline entries extracted during forensic analysis."@en .
-
-###  TimelineEntry Observable Object
-solveit-observable:TimelineEntry rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Timeline Entry"@en ;
-    rdfs:comment "A single entry in a forensic timeline."@en .
-
-###  ImplicitTimingInformation Observable Object
-solveit-observable:ImplicitTimingInformation rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Implicit Timing Information"@en ;
-    rdfs:comment "A relative or implicit temporal indicator such as a sequence number, counter value, or ordering index, used when absolute timestamps are not available."@en .
-
-###  ClusterRun Observable Object
-solveit-observable:ClusterRun rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Cluster Run"@en ;
-    rdfs:comment "A contiguous run of clusters allocated to a file in a cluster-based file system (e.g., FAT, NTFS, exFAT). Multiple runs indicate file fragmentation."@en .
-
-###  ClockOffset Observable Object
-solveit-observable:ClockOffset rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Clock Offset"@en ;
-    rdfs:comment "The time offset between a device clock and a reference time."@en .
-
-###  KeywordIndex Observable Object
-solveit-observable:KeywordIndex rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Keyword Index"@en ;
-    rdfs:comment "An index of keywords created during forensic analysis."@en .
-
-###  KeywordIndexingConfiguration Observable Object
-solveit-observable:KeywordIndexingConfiguration rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Keyword Indexing Configuration"@en ;
-    rdfs:comment "Configuration settings used for keyword indexing during forensic analysis."@en .
-
 ###  httpResponseHeader Observable Object
 solveit-observable:httpResponseHeader rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
     rdfs:label "HTTP Response Header"@en ;
     rdfs:comment "An HTTP response header containing multiple header fields from an HTTP server response."@en .
 
-###  DateTimeStamp Observable Object
-solveit-observable:DateTimeStamp rdf:type owl:Class ;
+###  WriteProtectedDeviceInterface Observable Object
+solveit-observable:WriteProtectedDeviceInterface rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Date Time Stamp"@en ;
-    rdfs:comment "A timestamp observed in forensic analysis."@en .
+    rdfs:label "Write Protected Device Interface"@en ;
+    rdfs:comment "A logical interface to a storage device that has been accessed in a write-protected manner, either via a hardware write blocker, software write blocking, or a read-only boot environment."@en .
+
+###  HashVerificationResult Observable Object
+solveit-observable:HashVerificationResult rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Hash Verification Result"@en ;
+    rdfs:comment "The result of comparing hash values to verify data integrity, typically comparing a source hash against a computed hash of acquired or copied data."@en .
 
 #################################################################
 #    Object Properties
@@ -134,37 +95,11 @@ solveit-observable:extractedFromVideo rdf:type owl:ObjectProperty ;
     rdfs:label "extracted from video"@en ;
     rdfs:comment "Links a VideoFrame to the source video file."@en .
 
-solveit-observable:hasTimelineEntry rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:Timeline ;
-    rdfs:range solveit-observable:TimelineEntry ;
-    rdfs:label "has timeline entry"@en ;
-    rdfs:comment "Links a Timeline to its TimelineEntry instances."@en .
-
-solveit-observable:hasConfiguration rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:KeywordIndex ;
-    rdfs:range solveit-observable:KeywordIndexingConfiguration ;
-    rdfs:label "has configuration"@en ;
-    rdfs:comment "Links a KeywordIndex to its KeywordIndexingConfiguration."@en .
-
-solveit-observable:timelineEntryValue rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:TimelineEntry ;
-    rdfs:range [ a owl:Class ;
-                 owl:unionOf ( solveit-observable:DateTimeStamp
-                               solveit-observable:ImplicitTimingInformation ) ] ;
-    rdfs:label "timeline entry value"@en ;
-    rdfs:comment "The temporal value of this timeline entry - either an absolute timestamp (DateTimeStamp) or relative ordering (ImplicitTimingInformation)."@en .
-
 solveit-observable:unlockPatternSequence rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:UnlockPattern ;
     rdfs:range rdf:List ;
     rdfs:label "unlock pattern sequence"@en ;
     rdfs:comment "An ordered list of grid positions (integers) representing the unlock pattern sequence. For example, a 3x3 grid uses positions 1-9."@en .
-
-solveit-observable:hasClusterRun rdf:type owl:ObjectProperty ;
-    rdfs:domain uco-observable:File ;
-    rdfs:range solveit-observable:ClusterRun ;
-    rdfs:label "has cluster run"@en ;
-    rdfs:comment "Links a file to its cluster allocation runs. A contiguous file has one run; a fragmented file has multiple runs."@en .
 
 #################################################################
 #    Data Properties
@@ -188,50 +123,8 @@ solveit-observable:videoFramePixelHeight rdf:type owl:DatatypeProperty ;
     rdfs:label "height"@en ;
     rdfs:comment "Video frame height in pixels."@en .
 
-solveit-observable:clockOffsetValue rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClockOffset ;
-    rdfs:range xsd:decimal ;
-    rdfs:label "clock offset value"@en ;
-    rdfs:comment "The clock offset value in seconds. Positive values indicate the clock is ahead, negative values indicate it is behind."@en .
-
-solveit-observable:clockOffsetKnownAt rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClockOffset ;
-    rdfs:range xsd:dateTime ;
-    rdfs:label "clock offset known at"@en ;
-    rdfs:comment "The specific point in time when this clock offset was determined."@en .
-
-solveit-observable:timestampValue rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:DateTimeStamp ;
-    rdfs:range xsd:dateTime ;
-    rdfs:label "timestamp value"@en ;
-    rdfs:comment "The date and time value of the timestamp."@en .
-
-solveit-observable:timestampResolution rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:DateTimeStamp ;
-    rdfs:range xsd:string ;
-    rdfs:label "timestamp resolution"@en ;
-    rdfs:comment "The precision or resolution of the timestamp (e.g., seconds, milliseconds, microseconds)."@en .
-
-solveit-observable:timestampTimezone rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:DateTimeStamp ;
-    rdfs:range xsd:string ;
-    rdfs:label "timestamp timezone"@en ;
-    rdfs:comment "The timezone of the timestamp."@en .
-
-solveit-observable:timingInformationValue rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ImplicitTimingInformation ;
-    rdfs:range xsd:decimal ;
-    rdfs:label "timing information value"@en ;
-    rdfs:comment "The numeric value representing relative ordering or sequence."@en .
-
-solveit-observable:runStartCluster rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClusterRun ;
-    rdfs:range xsd:integer ;
-    rdfs:label "run start cluster"@en ;
-    rdfs:comment "The first cluster number in this contiguous run."@en .
-
-solveit-observable:runClusterCount rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClusterRun ;
-    rdfs:range xsd:integer ;
-    rdfs:label "run cluster count"@en ;
-    rdfs:comment "The number of contiguous clusters in this run."@en .
+solveit-observable:verificationPassed rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:HashVerificationResult ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "verification passed"@en ;
+    rdfs:comment "Indicates whether the hash verification was successful (true) or failed (false)."@en .

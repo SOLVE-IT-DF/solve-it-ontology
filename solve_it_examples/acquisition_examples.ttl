@@ -1,0 +1,94 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Acquisition Examples
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/acquisition> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/acquisition/1.0.0> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
+    rdfs:label "SOLVE-IT Acquisition Examples"@en ;
+    rdfs:comment "Example instances demonstrating forensic acquisition classes."@en .
+
+#################################################################
+#    Comprehensive Workflow Example
+#
+#    Disk imaging workflow using SOLVE-IT techniques:
+#    1. Laptop -> [T1112: Physical disk removal] -> Disk
+#    2. Disk -> [T1012: Hardware write blocker] -> WriteProtectedDeviceInterface
+#    3. WriteProtectedDeviceInterface -> [T10XX: Read bitstream] -> BitstreamData
+#    4. BitstreamData -> [T1025: Write to container] -> ForensicImageContainer
+#    5. ForensicImageContainer -> [T1042: Hash verification] -> HashVerificationResult
+#################################################################
+
+:seizedLaptop rdf:type uco-observable:Laptop ;
+    rdfs:label "Seized Dell Latitude 5520"@en .
+
+:removedDisk rdf:type uco-observable:Disk ;
+    rdfs:label "Samsung 500GB SSD"@en .
+
+:writeBlockedInterface rdf:type solveit-observable:WriteProtectedDeviceInterface ;
+    rdfs:label "Tableau T35u Write-Protected Interface"@en .
+
+:acquiredBitstream rdf:type solveit-observable:BitstreamData ;
+    rdfs:label "Bitstream from Samsung SSD"@en .
+
+:laptopForensicImage rdf:type solveit-observable:ForensicImageContainer ;
+    rdfs:label "Laptop SSD Forensic Image"@en ;
+    solveit-observable:embeddedCaseNumber "2024-CF-001234" ;
+    solveit-observable:embeddedEvidenceNumber "E001" ;
+    solveit-observable:embeddedExaminerName "Jane Smith" ;
+    solveit-observable:embeddedDescription "Dell Latitude 5520 - Samsung 500GB SSD" ;
+    solveit-observable:embeddedNotes "Acquired using Tableau T35u write blocker." ;
+    solveit-observable:hasPart :image-segment-E01 , :image-segment-E02 , :image-segment-E03 ;
+    solveit-observable:contains :acquiredBitstream .
+
+:image-segment-E01 rdf:type uco-observable:File ;
+    rdfs:label "laptop_ssd.E01"@en .
+
+:image-segment-E02 rdf:type uco-observable:File ;
+    rdfs:label "laptop_ssd.E02"@en .
+
+:image-segment-E03 rdf:type uco-observable:File ;
+    rdfs:label "laptop_ssd.E03"@en .
+
+:imageHashVerification rdf:type solveit-observable:HashVerificationResult ;
+    rdfs:label "Post-acquisition hash verification"@en ;
+    solveit-observable:verificationPassed true .
+
+#################################################################
+#    Simple Example: Acquisition with Errors
+#################################################################
+
+:damagedDriveImage rdf:type solveit-observable:ForensicImageContainer ;
+    rdfs:label "Damaged USB Drive Image"@en ;
+    solveit-observable:hasAcquisitionError :usbError1 , :usbError2 .
+
+:usbError1 rdf:type solveit-observable:AcquisitionError ;
+    rdfs:label "Bad sectors 1024-1030"@en ;
+    solveit-observable:errorType "bad sector" ;
+    solveit-observable:errorLocationStart 1024 ;
+    solveit-observable:errorLocationEnd 1030 .
+
+:usbError2 rdf:type solveit-observable:AcquisitionError ;
+    rdfs:label "Read timeout at sector 5000"@en ;
+    solveit-observable:errorType "read timeout" ;
+    solveit-observable:errorLocationStart 5000 .
+
+#################################################################
+#    Simple Example: Raw Image with Info File
+#################################################################
+
+:serverRawImage rdf:type solveit-observable:RawImageFile ;
+    rdfs:label "server_hdd.dd"@en ;
+    solveit-observable:hasInfoFile :serverRawImageInfo .
+
+:serverRawImageInfo rdf:type solveit-observable:RawImageInfoFile ;
+    rdfs:label "server_hdd.dd.info"@en .

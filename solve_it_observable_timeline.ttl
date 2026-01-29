@@ -1,0 +1,114 @@
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/solveit/observable/> .
+
+#################################################################
+#    SOLVE-IT Observable Timeline Module
+#    Classes for timeline and temporal information
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/observable/timeline> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/timeline/0.0.1> ;
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/observable/1.3.0> ;
+    dcterms:title "SOLVE-IT Observable Timeline Module"@en ;
+    dcterms:description "Classes for forensic timeline analysis including timestamps, timeline entries, and temporal ordering."@en ;
+    dcterms:creator "SOLVE-IT Project" ;
+    owl:versionInfo "0.0.1" ;
+    rdfs:label "SOLVE-IT Observable Timeline Module"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  Timeline Observable Object
+solveit-observable:Timeline rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Timeline"@en ;
+    rdfs:comment "A set of timeline entries extracted during forensic analysis."@en .
+
+###  TimelineEntry Observable Object
+solveit-observable:TimelineEntry rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Timeline Entry"@en ;
+    rdfs:comment "A single entry in a forensic timeline."@en .
+
+###  DateTimeStamp Observable Object
+solveit-observable:DateTimeStamp rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Date Time Stamp"@en ;
+    rdfs:comment "A timestamp observed in forensic analysis."@en .
+
+###  ImplicitTimingInformation Observable Object
+solveit-observable:ImplicitTimingInformation rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Implicit Timing Information"@en ;
+    rdfs:comment "A relative or implicit temporal indicator such as a sequence number, counter value, or ordering index, used when absolute timestamps are not available."@en .
+
+###  ClockOffset Observable Object
+solveit-observable:ClockOffset rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Clock Offset"@en ;
+    rdfs:comment "The time offset between a device clock and a reference time."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+solveit-observable:hasTimelineEntry rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:Timeline ;
+    rdfs:range solveit-observable:TimelineEntry ;
+    rdfs:label "has timeline entry"@en ;
+    rdfs:comment "Links a Timeline to its TimelineEntry instances."@en .
+
+solveit-observable:timelineEntryValue rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:TimelineEntry ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( solveit-observable:DateTimeStamp
+                               solveit-observable:ImplicitTimingInformation ) ] ;
+    rdfs:label "timeline entry value"@en ;
+    rdfs:comment "The temporal value of this timeline entry - either an absolute timestamp (DateTimeStamp) or relative ordering (ImplicitTimingInformation)."@en .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+solveit-observable:clockOffsetValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ClockOffset ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "clock offset value"@en ;
+    rdfs:comment "The clock offset value in seconds. Positive values indicate the clock is ahead, negative values indicate it is behind."@en .
+
+solveit-observable:clockOffsetKnownAt rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ClockOffset ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "clock offset known at"@en ;
+    rdfs:comment "The specific point in time when this clock offset was determined."@en .
+
+solveit-observable:timestampValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DateTimeStamp ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "timestamp value"@en ;
+    rdfs:comment "The date and time value of the timestamp."@en .
+
+solveit-observable:timestampResolution rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DateTimeStamp ;
+    rdfs:range xsd:string ;
+    rdfs:label "timestamp resolution"@en ;
+    rdfs:comment "The precision or resolution of the timestamp (e.g., seconds, milliseconds, microseconds)."@en .
+
+solveit-observable:timestampTimezone rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DateTimeStamp ;
+    rdfs:range xsd:string ;
+    rdfs:label "timestamp timezone"@en ;
+    rdfs:comment "The timezone of the timestamp."@en .
+
+solveit-observable:timingInformationValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ImplicitTimingInformation ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "timing information value"@en ;
+    rdfs:comment "The numeric value representing relative ordering or sequence."@en .
