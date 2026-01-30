@@ -124,6 +124,12 @@ solveit-observable:DateTimeStamp rdf:type owl:Class ;
     rdfs:label "Date Time Stamp"@en ;
     rdfs:comment "A timestamp observed in forensic analysis."@en .
 
+###  DateTimeRange Observable Object
+solveit-observable:DateTimeRange rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Date Time Range"@en ;
+    rdfs:comment "A time interval with start and end boundaries. Exactly one start property (inclusive or exclusive) and exactly one end property (inclusive or exclusive) must be specified. See SHACL shapes for validation."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -150,9 +156,10 @@ solveit-observable:timelineEntryValue rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:TimelineEntry ;
     rdfs:range [ a owl:Class ;
                  owl:unionOf ( solveit-observable:DateTimeStamp
+                               solveit-observable:DateTimeRange
                                solveit-observable:ImplicitTimingInformation ) ] ;
     rdfs:label "timeline entry value"@en ;
-    rdfs:comment "The temporal value of this timeline entry - either an absolute timestamp (DateTimeStamp) or relative ordering (ImplicitTimingInformation)."@en .
+    rdfs:comment "The temporal value of this timeline entry - an absolute timestamp (DateTimeStamp), a time interval (DateTimeRange), or relative ordering (ImplicitTimingInformation)."@en .
 
 solveit-observable:unlockPatternSequence rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:UnlockPattern ;
@@ -217,6 +224,30 @@ solveit-observable:timestampTimezone rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:label "timestamp timezone"@en ;
     rdfs:comment "The timezone of the timestamp."@en .
+
+solveit-observable:startTimeInclusive rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DateTimeRange ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "start time inclusive"@en ;
+    rdfs:comment "The interval starts at this time (inclusive, i.e., >= this value)."@en .
+
+solveit-observable:startTimeExclusive rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DateTimeRange ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "start time exclusive"@en ;
+    rdfs:comment "The interval starts after this time (exclusive, i.e., > this value)."@en .
+
+solveit-observable:endTimeInclusive rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DateTimeRange ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "end time inclusive"@en ;
+    rdfs:comment "The interval ends at this time (inclusive, i.e., <= this value)."@en .
+
+solveit-observable:endTimeExclusive rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DateTimeRange ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "end time exclusive"@en ;
+    rdfs:comment "The interval ends before this time (exclusive, i.e., < this value)."@en .
 
 solveit-observable:timingInformationValue rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-observable:ImplicitTimingInformation ;

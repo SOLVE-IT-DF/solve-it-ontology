@@ -1,0 +1,58 @@
+@prefix : <https://ontology.solveit-df.org/solveit/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+
+#################################################################
+#    SOLVE-IT SHACL Shapes
+#    Validation constraints for SOLVE-IT observable classes
+#################################################################
+
+###  DateTimeRange Shape
+###  Validates that exactly one start boundary and exactly one end boundary is specified
+:DateTimeRangeShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:DateTimeRange ;
+    rdfs:label "Date Time Range Shape"@en ;
+    rdfs:comment "Validates DateTimeRange instances have exactly one start and one end boundary."@en ;
+
+    # Exactly one start boundary (inclusive XOR exclusive)
+    sh:xone (
+        [
+            sh:property [
+                sh:path solveit-observable:startTimeInclusive ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+                sh:datatype xsd:dateTime ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:path solveit-observable:startTimeExclusive ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+                sh:datatype xsd:dateTime ;
+            ]
+        ]
+    ) ;
+
+    # Exactly one end boundary (inclusive XOR exclusive)
+    sh:xone (
+        [
+            sh:property [
+                sh:path solveit-observable:endTimeInclusive ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+                sh:datatype xsd:dateTime ;
+            ]
+        ]
+        [
+            sh:property [
+                sh:path solveit-observable:endTimeExclusive ;
+                sh:minCount 1 ;
+                sh:maxCount 1 ;
+                sh:datatype xsd:dateTime ;
+            ]
+        ]
+    ) .
