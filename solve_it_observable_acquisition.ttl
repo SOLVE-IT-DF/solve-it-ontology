@@ -93,6 +93,13 @@ solveit-observable:ADBPullData rdf:type owl:Class ;
     rdfs:label "ADB Pull Data"@en ;
     rdfs:comment "Data obtained via Android Debug Bridge (ADB) pull operations."@en .
 
+###  DeviceScreenshot Observable Object
+solveit-observable:DeviceScreenshot rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ,
+                    uco-observable:RasterPicture ;
+    rdfs:label "Device Screenshot"@en ;
+    rdfs:comment "A screenshot image captured from a device screen during forensic acquisition."@en .
+
 ###  AcquisitionErrorRecord Observable Object
 solveit-observable:AcquisitionErrorRecord rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
