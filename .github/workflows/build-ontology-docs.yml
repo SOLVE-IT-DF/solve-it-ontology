@@ -52,14 +52,14 @@ jobs:
           rm -rf docs
           mkdir -p docs
 
-          # Restore docs/data if it existed
-          if [ -d /tmp/docs-data-backup ]; then
-            mv /tmp/docs-data-backup docs/data
-          fi
-
           # Generate documentation from all TTL files
           # Note: --individuals flag causes template errors in ontospy 2.1.1
           ontospy gendocs . -o docs --type 2
+
+          # Restore docs/data AFTER ontospy (which may clean the output dir)
+          if [ -d /tmp/docs-data-backup ]; then
+            mv /tmp/docs-data-backup docs/data
+          fi
 
           # Create CNAME file for GitHub Pages custom domain
           echo "ontology.solveit-df.org" > docs/CNAME
