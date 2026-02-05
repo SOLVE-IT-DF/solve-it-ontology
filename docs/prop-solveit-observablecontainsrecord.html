@@ -494,13 +494,13 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
               <li class="second-level" style="line-height: 20px;" id="sd_79"><a   href="prop-solveit-coreweaknessname.html">solveit-core:weaknessName</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_80"><a class="active"  href="prop-solveit-observableclockoffsetknownat.html">solveit-observable:clockOffsetKnownAt</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_80"><a   href="prop-solveit-observableclockoffsetknownat.html">solveit-observable:clockOffsetKnownAt</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_81"><a   href="prop-solveit-observableclockoffsetvalue.html">solveit-observable:clockOffsetValue</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_111"><a   href="prop-solveit-observablecontains.html">solveit-observable:contains</a></li>
           
-              <li class="second-level" style="line-height: 20px;" id="sd_112"><a   href="prop-solveit-observablecontainsrecord.html">solveit-observable:containsRecord</a></li>
+              <li class="second-level" style="line-height: 20px;" id="sd_112"><a class="active"  href="prop-solveit-observablecontainsrecord.html">solveit-observable:containsRecord</a></li>
           
               <li class="second-level" style="line-height: 20px;" id="sd_82"><a   href="prop-solveit-observableembeddedcasenumber.html">solveit-observable:embeddedCaseNumber</a></li>
           
@@ -659,7 +659,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-properties.html">Properties</a>
     </li>
       <li class="active">
-            solveit-observable:clockOffsetKnownAt
+            solveit-observable:containsRecord
         </li>
   </ol>
 
@@ -683,7 +683,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
             <h1>
 
-                solveit-observable:clockOffsetKnownAt
+                solveit-observable:containsRecord
                 
                     <small class="label label-info label-xs ">leaf node</small>
                   
@@ -702,7 +702,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                         <li><a href="entities-tree-properties.html">rdf:Property</a>
 
                           <ul>
-                            <li><a style="font-weight: bold;" title="'clock offset known at' - The specific point in time when this clock offset was determined.">solveit-observable:clockOffsetKnownAt</a>
+                            <li><a style="font-weight: bold;" title="'contains record' - Links an AcquisitionRecordFile to the error records it contains.">solveit-observable:containsRecord</a>
 
                             
                               </li>
@@ -726,7 +726,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
              <div class="panel-body">
 
-                 <code>https://ontology.solveit-df.org/solveit/observable/clockOffsetKnownAt</code>
+                 <code>https://ontology.solveit-df.org/solveit/observable/containsRecord</code>
              </div>
            </div>
             </div></div>
@@ -741,7 +741,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
              </div>
              <div class="panel-body">
 
-                 clock offset known at
+                 contains record
              </div>
            </div>
             </div></div>
@@ -756,7 +756,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
 
-                <p>The specific point in time when this clock offset was determined.</p>
+                <p>Links an AcquisitionRecordFile to the error records it contains.</p>
             </div>
           </div>
            </div></div>
@@ -787,7 +787,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                      
                          
                          
-                              <a href="class-solveit-observableclockoffset.html" title="https://ontology.solveit-df.org/solveit/observable/ClockOffset">solveit-observable:ClockOffset</a>
+                              <a href="class-solveit-observableacquisitionrecordfile.html" title="https://ontology.solveit-df.org/solveit/observable/AcquisitionRecordFile">solveit-observable:AcquisitionRecordFile</a>
                            
                            
                          
@@ -795,15 +795,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                    </td>
 
                     <td>
-                      solveit-observable:clockOffsetKnownAt
+                      solveit-observable:containsRecord
                     </td>
 
                     <td>
                       
                           
                           
-                               <a href="http://www.w3.org/2001/XMLSchema#dateTime" target="_blank" title="http://www.w3.org/2001/XMLSchema#dateTime">xsd:dateTime</a>
-                             
+                               <a href="class-solveit-observableacquisitionerrorrecord.html" title="https://ontology.solveit-df.org/solveit/observable/AcquisitionErrorRecord">solveit-observable:AcquisitionErrorRecord</a>
+                            
                             
                           
                       
@@ -827,13 +827,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                     <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">clockOffsetKnownAt</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">DatatypeProperty</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;clock offset known at&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;The specific point in time when this clock offset was determined.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ClockOffset</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">.</span>
+<span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">containsRecord</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;contains record&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Links an AcquisitionRecordFile to the error records it contains.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">AcquisitionRecordFile</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">AcquisitionErrorRecord</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -933,7 +932,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_80").offset().top - 100
+          scrollTop: $("#sd_112").offset().top - 100
       }, 100);
     });
 
