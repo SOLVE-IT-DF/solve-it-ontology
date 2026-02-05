@@ -100,11 +100,19 @@ solveit-observable:DeviceScreenshot rdf:type owl:Class ;
     rdfs:label "Device Screenshot"@en ;
     rdfs:comment "A screenshot image captured from a device screen during forensic acquisition."@en .
 
+###  AcquisitionRecordFile Observable Object
+solveit-observable:AcquisitionRecordFile rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:File ;
+    rdfs:label "Acquisition Record File"@en ;
+    rdfs:comment "A file containing records generated during a data acquisition process, such as error logs or acquisition status reports."@en .
+
 ###  AcquisitionErrorRecord Observable Object
 solveit-observable:AcquisitionErrorRecord rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
     rdfs:label "Acquisition Error Record"@en ;
     rdfs:comment "A record of an error encountered during data acquisition such as a bad sector, read timeout, I/O error, CRC error, or media surface damage."@en .
+
+
 
 #################################################################
 #    Object Properties
@@ -135,6 +143,12 @@ solveit-observable:hasAcquisitionErrorRecord rdf:type owl:ObjectProperty ;
     rdfs:range solveit-observable:AcquisitionErrorRecord ;
     rdfs:label "has acquisition error"@en ;
     rdfs:comment "Links a forensic image container or raw image info file to errors encountered during acquisition. Multiple errors can be recorded."@en .
+
+solveit-observable:containsRecord rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:AcquisitionRecordFile ;
+    rdfs:range solveit-observable:AcquisitionErrorRecord ;
+    rdfs:label "contains record"@en ;
+    rdfs:comment "Links an AcquisitionRecordFile to the error records it contains."@en .
 
 #################################################################
 #    Data Properties
