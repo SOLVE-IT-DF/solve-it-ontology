@@ -38,14 +38,12 @@
         :techniqueT1016,
         :techniqueT1017,
         :techniqueT1018,
-        :techniqueT1019,
         :techniqueT1020,
         :techniqueT1022,
         :techniqueT1023,
         :techniqueT1024,
         :techniqueT1025,
         :techniqueT1026,
-        :techniqueT1027,
         :techniqueT1028,
         :techniqueT1029,
         :techniqueT1030,
@@ -53,7 +51,12 @@
         :techniqueT1111,
         :techniqueT1112,
         :techniqueT1113,
-        :techniqueT1114 ;
+        :techniqueT1114,
+        :techniqueT1157,
+        :techniqueT1159,
+        :techniqueT1160,
+        :techniqueT1162,
+        :techniqueT1163 ;
     solveit-core:objectiveDescription "Collect data from the identified evidence sources." ;
     solveit-core:objectiveName "Acquire data" .
 
@@ -69,7 +72,8 @@
         :techniqueT1038,
         :techniqueT1039,
         :techniqueT1040,
-        :techniqueT1041 ;
+        :techniqueT1041,
+        :techniqueT1158 ;
     solveit-core:objectiveDescription "Attempt to gain access to protected data sources or other restricted data." ;
     solveit-core:objectiveName "Gain access" .
 
@@ -295,13 +299,14 @@
 
 :mitigationM1019 a solveit-core:Mitigation ;
     rdfs:label "M1019: Consider if file system acquisition is possible/permitted"@en ;
+    solveit-core:linksToTechnique :techniqueT1020 ;
     solveit-core:mitigationID "M1019" ;
     solveit-core:mitigationName "Consider if file system acquisition is possible/permitted" .
 
 :mitigationM1020 a solveit-core:Mitigation ;
-    rdfs:label "M1020: Compare app data extracted with full list of installed apps"@en ;
+    rdfs:label "M1020: Compare data extracted with full list of installed apps"@en ;
     solveit-core:mitigationID "M1020" ;
-    solveit-core:mitigationName "Compare app data extracted with full list of installed apps" .
+    solveit-core:mitigationName "Compare data extracted with full list of installed apps" .
 
 :mitigationM1021 a solveit-core:Mitigation ;
     rdfs:label "M1021: Verify the disk image integrity with multiple hash algorithms e.g. MD5 and SHA1 (Kessler 2016)"@en ;
@@ -1041,6 +1046,20 @@
     solveit-core:mitigationID "M1230" ;
     solveit-core:mitigationName "Ensure that daylight savings offsets that are applied to timestamps are correct" .
 
+:mitigationM1232 a solveit-core:Mitigation ;
+    rdfs:label "M1232: Configure device to enable required service"@en ;
+    solveit-core:hasReference "Android (2025), Android Debug Bridge (adb), https://developer.android.com/tools/adb",
+        "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" ;
+    solveit-core:linksToTechnique :techniqueT1158 ;
+    solveit-core:mitigationID "M1232" ;
+    solveit-core:mitigationName "Configure device to enable required service" .
+
+:mitigationM1237 a solveit-core:Mitigation ;
+    rdfs:label "M1237: Ensure that archive format used can handle sufficiently large files"@en ;
+    solveit-core:hasReference "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64" ;
+    solveit-core:mitigationID "M1237" ;
+    solveit-core:mitigationName "Ensure that archive format used can handle sufficiently large files" .
+
 :techniqueT1001 a solveit-core:Technique ;
     rdfs:label "T1001: Triage"@en ;
     solveit-core:hasCASEOutputClass "https://cacontology.projectvic.org/forensics#priorityClassification"^^xsd:anyURI ;
@@ -1215,34 +1234,17 @@
 :techniqueT1019 a solveit-core:Technique ;
     rdfs:label "T1019: Mobile backup extraction"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
-    solveit-core:hasExample "Elcomsoft iOS Forensic Toolkit - can trigger an iOS backup",
-        "Magnet Acquire - A quick acquisition using this product collects an iOS backup, along with some other data. " ;
+    solveit-core:hasExample "Extraction of an iOS backup",
+        "Use of ADB to generate an Android backup" ;
     solveit-core:hasPotentialWeakness :weaknessW1037,
         :weaknessW1038,
         :weaknessW1039,
         :weaknessW1040,
-        :weaknessW1041 ;
-    solveit-core:hasReference "todo" ;
-    solveit-core:techniqueDescription "Using the backup capability of the device to extract data from a mobile device (todo better definition)" ;
+        :weaknessW1041,
+        :weaknessW1270 ;
+    solveit-core:techniqueDescription "Using the backup capability of a device to extract a subset of its contents" ;
     solveit-core:techniqueID "T1019" ;
     solveit-core:techniqueName "Mobile backup extraction" .
-
-:techniqueT1020 a solveit-core:Technique ;
-    rdfs:label "T1020: Mobile file system extraction"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessW1159,
-        :weaknessW1160,
-        :weaknessW1161,
-        :weaknessW1162,
-        :weaknessW1163,
-        :weaknessW1164 ;
-    solveit-core:hasReference "Cellebrite (undated), Full File System Extraction - Mobile Device Forensics, https://cellebrite.com/en/glossary/full-file-system-extraction-mobile-device-forensics/",
-        "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169.",
-        "Magnet (2024) Revealing hidden data: Full file system extractions uncovered, https://www.magnetforensics.com/blog/revealing-hidden-data-full-file-system-extractions-uncovered/" ;
-    solveit-core:techniqueDescription "Accessing the file system(s) of the device and extracting a set of files (full or partial depending on level of access)" ;
-    solveit-core:techniqueDetails "Note that Fukami et al (2021) states \"In order to conduct effective file system extraction, rooting the device is required.\" See T1040. Usually results in a zip/tar file. Rooting may provide access to the file system, but files may still be encrypted. Attacking the user pin, usually on device, using T1034, or T1035 may be necessary, unless the PIN can be obtained from the device user (T1037)" ;
-    solveit-core:techniqueID "T1020" ;
-    solveit-core:techniqueName "Mobile file system extraction" .
 
 :techniqueT1021 a solveit-core:Technique ;
     rdfs:label "T1021: Configuration file examination"@en ;
@@ -1261,18 +1263,16 @@
     solveit-core:techniqueName "Mobile device screenshot based capture" .
 
 :techniqueT1023 a solveit-core:Technique ;
-    rdfs:label "T1023: Cloud data collection using account details"@en ;
+    rdfs:label "T1023: Cloud data collection to access data via a live web page using credentials"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
-    solveit-core:hasReference "todo" ;
     solveit-core:techniqueID "T1023" ;
-    solveit-core:techniqueName "Cloud data collection using account details" .
+    solveit-core:techniqueName "Cloud data collection to access data via a live web page using credentials" .
 
 :techniqueT1024 a solveit-core:Technique ;
-    rdfs:label "T1024: Cloud data collection via request"@en ;
+    rdfs:label "T1024: Cloud data collection via submission of request to service provider"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
-    solveit-core:hasReference "todo" ;
     solveit-core:techniqueID "T1024" ;
-    solveit-core:techniqueName "Cloud data collection via request" .
+    solveit-core:techniqueName "Cloud data collection via submission of request to service provider" .
 
 :techniqueT1025 a solveit-core:Technique ;
     rdfs:label "T1025: Writing data to a forensic image format"@en ;
@@ -1300,12 +1300,13 @@ The imaged data may be split into several linked container formats. e.g. e01, e0
     solveit-core:techniqueName "Writing data to a forensic image format" .
 
 :techniqueT1026 a solveit-core:Technique ;
-    rdfs:label "T1026: Writing data in standard archive format"@en ;
+    rdfs:label "T1026: Writing data to standard archive format"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessW1165 ;
+    solveit-core:hasPotentialWeakness :weaknessW1165,
+        :weaknessW1275 ;
     solveit-core:techniqueDescription "Storing acquired data in a standard archive format such as rar, tar or zip" ;
     solveit-core:techniqueID "T1026" ;
-    solveit-core:techniqueName "Writing data in standard archive format" .
+    solveit-core:techniqueName "Writing data to standard archive format" .
 
 :techniqueT1027 a solveit-core:Technique ;
     rdfs:label "T1027: Data read using JTAG"@en ;
@@ -1351,13 +1352,6 @@ The imaged data may be split into several linked container formats. e.g. e01, e0
     solveit-core:hasReference "todo" ;
     solveit-core:techniqueID "T1032" ;
     solveit-core:techniqueName "Side channel" .
-
-:techniqueT1033 a solveit-core:Technique ;
-    rdfs:label "T1033: Extraction of account details from an accessible device"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI ;
-    solveit-core:hasReference "todo" ;
-    solveit-core:techniqueID "T1033" ;
-    solveit-core:techniqueName "Extraction of account details from an accessible device" .
 
 :techniqueT1036 a solveit-core:Technique ;
     rdfs:label "T1036: Smudge attack"@en ;
@@ -2507,6 +2501,67 @@ This might involve questions such as:
     solveit-core:techniqueID "T1156" ;
     solveit-core:techniqueName "Functional-based event reconstruction" .
 
+:techniqueT1157 a solveit-core:Technique ;
+    rdfs:label "T1157: Extract device data using exposed service"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Call"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/SMSMessage"^^xsd:anyURI ;
+    solveit-core:hasExample "Android Debug Bridge (ADB) provides command line access when USB debugging is enabled on Android devices",
+        "Extraction of data by querying Content Providers on Android (via ADB)",
+        "Extraction of data using AFC on iOS",
+        "Media Transfer Protocol (MTP)" ;
+    solveit-core:hasPotentialWeakness :weaknessW1037,
+        :weaknessW1040,
+        :weaknessW1041,
+        :weaknessW1271,
+        :weaknessW1272,
+        :weaknessW1273 ;
+    solveit-core:hasSubtechnique :techniqueT1019 ;
+    solveit-core:techniqueDescription "Use an exposed service on a device to extract data. This represents several of the mobile data extraction methods e.g. Query content providers (android), AFC (iOS)." ;
+    solveit-core:techniqueID "T1157" ;
+    solveit-core:techniqueName "Extract device data using exposed service" .
+
+:techniqueT1159 a solveit-core:Technique ;
+    rdfs:label "T1159: Extract mobile data via deployed agent"@en ;
+    solveit-core:hasExample "Belkasoft",
+        "Elcomsoft" ;
+    solveit-core:hasPotentialWeakness :weaknessW1276 ;
+    solveit-core:hasReference "Belkasoft https://belkasoft.com/agent_based_ios_acquisition",
+        "Elcomsoft 20203 https://blog.elcomsoft.com/2023/07/ios-device-acquisition-installing-the-extraction-agent/" ;
+    solveit-core:techniqueDescription "Deploy software to a mobile device that can carry out some function, either collect data with available permissions or attempt further exploitation e.g. sandbox escape." ;
+    solveit-core:techniqueDetails "While Android agents can be sideloaded with adb, deploying agents on iOS may require a developer account. Output may be equivalent of a file system acquisition if an exploit is successful. Otherwise data such as contacts would be extracted." ;
+    solveit-core:techniqueID "T1159" ;
+    solveit-core:techniqueName "Extract mobile data via deployed agent" .
+
+:techniqueT1160 a solveit-core:Technique ;
+    rdfs:label "T1160: Collect data with 'cloud backup restore' approach"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"^^xsd:anyURI ;
+    solveit-core:hasReference "Geus, J., Gruber, J., Wozar, J. and Freiling, F., 2025. From sync to seizure: A binary instrumentation-based evaluation of the iCloud backup process. Forensic Science International: Digital Investigation, 54, p.301978." ;
+    solveit-core:techniqueDescription "Restore a device's cloud backup to a donor device, then subsequently use a local acquisition approach on that donor device, e.g. T1019/T1020" ;
+    solveit-core:techniqueID "T1160" ;
+    solveit-core:techniqueName "Collect data with 'cloud backup restore' approach" .
+
+:techniqueT1162 a solveit-core:Technique ;
+    rdfs:label "T1162: Read data from a device via In-System Programming (ISP)"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
+    solveit-core:hasReference "https://en.wikipedia.org/wiki/In-system_programming" ;
+    solveit-core:hasSubtechnique :techniqueT1027 ;
+    solveit-core:hasSynonym "ISCP",
+        "In-circuit serial Programming" ;
+    solveit-core:techniqueID "T1162" ;
+    solveit-core:techniqueName "Read data from a device via In-System Programming (ISP)" .
+
+:techniqueT1163 a solveit-core:Technique ;
+    rdfs:label "T1163: Automated screenshot-based capture of a mobile device"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshot"^^xsd:anyURI ;
+    solveit-core:hasReference "https://github.com/prosch88/ALEX",
+        "https://github.com/prosch88/UFADE" ;
+    solveit-core:techniqueDescription "Programmatically controlling a mobile device while capturing screenshots of the display." ;
+    solveit-core:techniqueID "T1163" ;
+    solveit-core:techniqueName "Automated screenshot-based capture of a mobile device" .
+
 :weaknessW1001 a solveit-core:Weakness ;
     rdfs:label "W1001: Excluding a device that contains relevant information"@en ;
     solveit-core:mayResultInINAC_ALT false ;
@@ -2926,19 +2981,6 @@ This might involve questions such as:
     solveit-core:weaknessID "W1036" ;
     solveit-core:weaknessName "Overwriting relevant data with changes caused by running the live tools" .
 
-:weaknessW1037 a solveit-core:Weakness ;
-    rdfs:label "W1037: Presenting data as complete, that is in reality a partial set"@en ;
-    solveit-core:hasPotentialMitigation :mitigationM1016,
-        :mitigationM1020 ;
-    solveit-core:mayResultInINAC_ALT false ;
-    solveit-core:mayResultInINAC_AS false ;
-    solveit-core:mayResultInINAC_COR false ;
-    solveit-core:mayResultInINAC_EX false ;
-    solveit-core:mayResultInINCOMP false ;
-    solveit-core:mayResultInMISINT true ;
-    solveit-core:weaknessID "W1037" ;
-    solveit-core:weaknessName "Presenting data as complete, that is in reality a partial set" .
-
 :weaknessW1038 a solveit-core:Weakness ;
     rdfs:label "W1038: Backup process returns an incomplete set of backup data"@en ;
     solveit-core:mayResultInINAC_ALT false ;
@@ -2960,31 +3002,6 @@ This might involve questions such as:
     solveit-core:mayResultInMISINT false ;
     solveit-core:weaknessID "W1039" ;
     solveit-core:weaknessName "Backup data collection overwrites important data" .
-
-:weaknessW1040 a solveit-core:Weakness ;
-    rdfs:label "W1040: Not considering SD Card acquisition in addition to backup"@en ;
-    solveit-core:hasPotentialMitigation :mitigationM1017,
-        :mitigationM1018 ;
-    solveit-core:mayResultInINAC_ALT false ;
-    solveit-core:mayResultInINAC_AS false ;
-    solveit-core:mayResultInINAC_COR false ;
-    solveit-core:mayResultInINAC_EX false ;
-    solveit-core:mayResultInINCOMP true ;
-    solveit-core:mayResultInMISINT false ;
-    solveit-core:weaknessID "W1040" ;
-    solveit-core:weaknessName "Not considering SD Card acquisition in addition to backup" .
-
-:weaknessW1041 a solveit-core:Weakness ;
-    rdfs:label "W1041: Not considering file system acquisition as alternative"@en ;
-    solveit-core:hasPotentialMitigation :mitigationM1019 ;
-    solveit-core:mayResultInINAC_ALT false ;
-    solveit-core:mayResultInINAC_AS false ;
-    solveit-core:mayResultInINAC_COR false ;
-    solveit-core:mayResultInINAC_EX false ;
-    solveit-core:mayResultInINCOMP true ;
-    solveit-core:mayResultInMISINT false ;
-    solveit-core:weaknessID "W1041" ;
-    solveit-core:weaknessName "Not considering file system acquisition as alternative" .
 
 :weaknessW1042 a solveit-core:Weakness ;
     rdfs:label "W1042: Disk image was tampered with, but manipulated to have a collision with original hash"@en ;
@@ -4284,7 +4301,8 @@ This might involve questions such as:
         :mitigationM1092,
         :mitigationM1093,
         :mitigationM1094,
-        :mitigationM1205 ;
+        :mitigationM1205,
+        :mitigationM1231 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4300,7 +4318,8 @@ This might involve questions such as:
         :mitigationM1095,
         :mitigationM1096,
         :mitigationM1097,
-        :mitigationM1205 ;
+        :mitigationM1205,
+        :mitigationM1231 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4314,7 +4333,8 @@ This might involve questions such as:
     rdfs:label "W1139: System locks after X failed dictionary attempts"@en ;
     solveit-core:hasPotentialMitigation :mitigationM1094,
         :mitigationM1095,
-        :mitigationM1097 ;
+        :mitigationM1097,
+        :mitigationM1231 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR true ;
@@ -4328,7 +4348,8 @@ This might involve questions such as:
     rdfs:label "W1140: Failing to determine password as it is not in the search space"@en ;
     solveit-core:hasPotentialMitigation :mitigationM1097,
         :mitigationM1098,
-        :mitigationM1099 ;
+        :mitigationM1099,
+        :mitigationM1231 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4343,7 +4364,8 @@ This might involve questions such as:
     solveit-core:hasPotentialMitigation :mitigationM1097,
         :mitigationM1098,
         :mitigationM1099,
-        :mitigationM1100 ;
+        :mitigationM1100,
+        :mitigationM1231 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4357,7 +4379,8 @@ This might involve questions such as:
     rdfs:label "W1142: System locks after X failed brute force attempts"@en ;
     solveit-core:hasPotentialMitigation :mitigationM1097,
         :mitigationM1098,
-        :mitigationM1099 ;
+        :mitigationM1099,
+        :mitigationM1231 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR true ;
@@ -5884,6 +5907,100 @@ This might involve questions such as:
     solveit-core:weaknessID "W1269" ;
     solveit-core:weaknessName "Failure to apply time offset to a timeline entry" .
 
+:weaknessW1270 a solveit-core:Weakness ;
+    rdfs:label "W1270: Inability to create a device backup due to locked device"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1097,
+        :mitigationM1234,
+        :mitigationM1235,
+        :mitigationM1236 ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1270" ;
+    solveit-core:weaknessName "Inability to create a device backup due to locked device" .
+
+:weaknessW1271 a solveit-core:Weakness ;
+    rdfs:label "W1271: Inability to access required service as it is not enabled"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1232 ;
+    solveit-core:hasReference "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/",
+        "Belkasoft (undated) Dealing with Apple's USB Restricted Mode, https://belkasoft.com/dealing_with_usb_restricted_mode" ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1271" ;
+    solveit-core:weaknessName "Inability to access required service as it is not enabled" .
+
+:weaknessW1272 a solveit-core:Weakness ;
+    rdfs:label "W1272: Failure to preserve all relevant timestamps of files obtained using exposed services on a device"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1233 ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1272" ;
+    solveit-core:weaknessName "Failure to preserve all relevant timestamps of files obtained using exposed services on a device" .
+
+:weaknessW1273 a solveit-core:Weakness ;
+    rdfs:label "W1273: Failure to preserve full resolution of all relevant timestamps of files obtained using exposed services on a device"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1233 ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1273" ;
+    solveit-core:weaknessName "Failure to preserve full resolution of all relevant timestamps of files obtained using exposed services on a device" .
+
+:weaknessW1274 a solveit-core:Weakness ;
+    rdfs:label "W1274: Inability to enable required service due to locked device"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1097,
+        :mitigationM1233,
+        :mitigationM1234,
+        :mitigationM1235,
+        :mitigationM1236 ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1274" ;
+    solveit-core:weaknessName "Inability to enable required service due to locked device" .
+
+:weaknessW1275 a solveit-core:Weakness ;
+    rdfs:label "W1275: Failure to store data due to size limitations of archive format used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1237 ;
+    solveit-core:hasReference "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64" ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1275" ;
+    solveit-core:weaknessName "Failure to store data due to size limitations of archive format used" .
+
+:weaknessW1276 a solveit-core:Weakness ;
+    rdfs:label "W1276: Relevant data is overwritten by deploying an agent to a mobile device"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1014 ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1276" ;
+    solveit-core:weaknessName "Relevant data is overwritten by deploying an agent to a mobile device" .
+
 :mitigationM1003 a solveit-core:Mitigation ;
     rdfs:label "M1003: Check image size corresponds with drive label"@en ;
     solveit-core:mitigationID "M1003" ;
@@ -5919,12 +6036,6 @@ This might involve questions such as:
     solveit-core:hasReference "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 6" ;
     solveit-core:mitigationID "M1013" ;
     solveit-core:mitigationName "Consider memory acquisition and offline analysis instead" .
-
-:mitigationM1014 a solveit-core:Mitigation ;
-    rdfs:label "M1014: Test and document changes made by the tools used"@en ;
-    solveit-core:hasReference "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5" ;
-    solveit-core:mitigationID "M1014" ;
-    solveit-core:mitigationName "Test and document changes made by the tools used" .
 
 :mitigationM1015 a solveit-core:Mitigation ;
     rdfs:label "M1015: Use tools only if changes made are to locations where relevant evidence is unlikely to be located."@en ;
@@ -6098,6 +6209,24 @@ This might involve questions such as:
     solveit-core:mitigationID "M1225" ;
     solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" .
 
+:mitigationM1234 a solveit-core:Mitigation ;
+    rdfs:label "M1234: Exploit device to facilitate password/pincode attacks"@en ;
+    solveit-core:linksToTechnique :techniqueT1040 ;
+    solveit-core:mitigationID "M1234" ;
+    solveit-core:mitigationName "Exploit device to facilitate password/pincode attacks" .
+
+:mitigationM1235 a solveit-core:Mitigation ;
+    rdfs:label "M1235: Attempt to obtain password/pincode with brute force attacks"@en ;
+    solveit-core:linksToTechnique :techniqueT1034 ;
+    solveit-core:mitigationID "M1235" ;
+    solveit-core:mitigationName "Attempt to obtain password/pincode with brute force attacks" .
+
+:mitigationM1236 a solveit-core:Mitigation ;
+    rdfs:label "M1236: Attempt to obtain password/pincode with dictionary attacks"@en ;
+    solveit-core:linksToTechnique :techniqueT1035 ;
+    solveit-core:mitigationID "M1236" ;
+    solveit-core:mitigationName "Attempt to obtain password/pincode with dictionary attacks" .
+
 :techniqueT1006 a solveit-core:Technique ;
     rdfs:label "T1006: Digital sniffer dogs"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
@@ -6145,37 +6274,29 @@ This might involve questions such as:
     solveit-core:techniqueID "T1013" ;
     solveit-core:techniqueName "Software write blockers" .
 
-:techniqueT1034 a solveit-core:Technique ;
-    rdfs:label "T1034: Brute force attack"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessW1140,
-        :weaknessW1141,
-        :weaknessW1142 ;
-    solveit-core:hasReference "Kanta, A., Coray, S., Coisel, I. and Scanlon, M., 2021. How viable is password cracking in digital forensic investigation? Analyzing the guessability of over 3.9 billion real-world accounts. Forensic Science International: Digital Investigation, 37, p.301186." ;
-    solveit-core:hasSynonym "exhaustive password search" ;
-    solveit-core:techniqueDescription "A brute force attack, or exhaustive search is a password cracking approach where every combination of characters is tested until the correct one is found. This method is \"guaranteed to work\" given infinite time and resources which in a real-life scenario is not feasible." ;
-    solveit-core:techniqueDetails "Brute force attack involves trying every possible combination in a defined search space to find the correct value. The search space could be limited to just numbers, for example in the case of a 4-digit PIN number, or alphanumerical values or even the full ASCII character set. The larger the search space, the longer it takes to complete a brute force attack." ;
-    solveit-core:techniqueID "T1034" ;
-    solveit-core:techniqueName "Brute force attack" .
+:techniqueT1020 a solveit-core:Technique ;
+    rdfs:label "T1020: Mobile file system extraction"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessW1159,
+        :weaknessW1160,
+        :weaknessW1161,
+        :weaknessW1162,
+        :weaknessW1163,
+        :weaknessW1164 ;
+    solveit-core:hasReference "Cellebrite (undated), Full File System Extraction - Mobile Device Forensics, https://cellebrite.com/en/glossary/full-file-system-extraction-mobile-device-forensics/",
+        "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169.",
+        "Magnet (2024) Revealing hidden data: Full file system extractions uncovered, https://www.magnetforensics.com/blog/revealing-hidden-data-full-file-system-extractions-uncovered/" ;
+    solveit-core:techniqueDescription "Accessing the file system(s) of the device and extracting a set of files (full or partial depending on level of access)" ;
+    solveit-core:techniqueDetails "Note that Fukami et al (2021) states \"In order to conduct effective file system extraction, rooting the device is required.\" See T1040. Usually results in a zip/tar file. Rooting may provide access to the file system, but files may still be encrypted. Attacking the user pin, usually on device, using T1034, or T1035 may be necessary, unless the PIN can be obtained from the device user (T1037)" ;
+    solveit-core:techniqueID "T1020" ;
+    solveit-core:techniqueName "Mobile file system extraction" .
 
-:techniqueT1037 a solveit-core:Technique ;
-    rdfs:label "T1037: Obtain password from suspect"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
-    solveit-core:hasReference "todo" ;
-    solveit-core:techniqueID "T1037" ;
-    solveit-core:techniqueName "Obtain password from suspect" .
-
-:techniqueT1040 a solveit-core:Technique ;
-    rdfs:label "T1040: Use mobile device exploit"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/isPrivileged"^^xsd:anyURI ;
-    solveit-core:hasExample "",
-        "Checkra1n, https://checkra.in" ;
-    solveit-core:hasPotentialWeakness :weaknessW1157,
-        :weaknessW1158 ;
-    solveit-core:hasReference "Grover, J., 2013. Android forensics: Automated data collection and reporting from a mobile device. Digital Investigation, 10, pp.S12-S20." ;
-    solveit-core:techniqueDescription "A process that typically exploits a security flaw in a specific device or operating system to enable users to perform higher privileged functions on a device (derived from Grover 2013)" ;
-    solveit-core:techniqueID "T1040" ;
-    solveit-core:techniqueName "Use mobile device exploit" .
+:techniqueT1033 a solveit-core:Technique ;
+    rdfs:label "T1033: Extraction of credential from an accessible device"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "Accessing a device with limited or no security to obtain a credential (e.g. password, PIN, token) that can be used to access another device or service." ;
+    solveit-core:techniqueID "T1033" ;
+    solveit-core:techniqueName "Extraction of credential from an accessible device" .
 
 :techniqueT1042 a solveit-core:Technique ;
     rdfs:label "T1042: Disk image hash verification"@en ;
@@ -6319,6 +6440,15 @@ This might involve questions such as:
     solveit-core:techniqueID "T1153" ;
     solveit-core:techniqueName "Apply offset to a timestamp" .
 
+:techniqueT1158 a solveit-core:Technique ;
+    rdfs:label "T1158: Configure device to enable a service needed for data extraction"@en ;
+    solveit-core:hasExample "Turn on developer mode to make use of Android Debug Bridge (ADB)" ;
+    solveit-core:hasPotentialWeakness :weaknessW1274 ;
+    solveit-core:hasReference "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" ;
+    solveit-core:techniqueDescription "Change a setting on a device such that a service needed for data extraction is enabled. This may require a user PIN that can be obtained using other techniques." ;
+    solveit-core:techniqueID "T1158" ;
+    solveit-core:techniqueName "Configure device to enable a service needed for data extraction" .
+
 :weaknessW1011 a solveit-core:Weakness ;
     rdfs:label "W1011: Suggesting the existence of a device that does not exist"@en ;
     solveit-core:hasPotentialMitigation :mitigationM1027,
@@ -6343,6 +6473,44 @@ This might involve questions such as:
     solveit-core:mayResultInMISINT false ;
     solveit-core:weaknessID "W1032" ;
     solveit-core:weaknessName "Not all memory is acquired" .
+
+:weaknessW1037 a solveit-core:Weakness ;
+    rdfs:label "W1037: Presenting data as complete, that is in reality a partial set"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1016,
+        :mitigationM1020 ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP false ;
+    solveit-core:mayResultInMISINT true ;
+    solveit-core:weaknessID "W1037" ;
+    solveit-core:weaknessName "Presenting data as complete, that is in reality a partial set" .
+
+:weaknessW1040 a solveit-core:Weakness ;
+    rdfs:label "W1040: Not considering SD Card acquisition in addition to other extractions performed"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1017,
+        :mitigationM1018 ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1040" ;
+    solveit-core:weaknessName "Not considering SD Card acquisition in addition to other extractions performed" .
+
+:weaknessW1041 a solveit-core:Weakness ;
+    rdfs:label "W1041: Not considering file system acquisition as alternative"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1019 ;
+    solveit-core:mayResultInINAC_ALT false ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP true ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1041" ;
+    solveit-core:weaknessName "Not considering file system acquisition as alternative" .
 
 :weaknessW1059 a solveit-core:Weakness ;
     rdfs:label "W1059: Excessive keyword results returned from case-type wordlists such that careful review of all results is impractical"@en ;
@@ -6417,6 +6585,12 @@ This might involve questions such as:
     solveit-core:hasReference "Lennox-Steele, A., & Nisbet, A. (2016). A forensic examination of several mobile device Faraday bags & materials to test their effectiveness. In Valli, C. (Ed.). (2016). The Proceedings of 14th Australian Digital Forensics Conference, 5-6 December 2016, Edith Cowan University, Perth, Australia. (pp 34-41)." ;
     solveit-core:mitigationID "M1002" ;
     solveit-core:mitigationName "Testing of the faraday environment to be used" .
+
+:mitigationM1014 a solveit-core:Mitigation ;
+    rdfs:label "M1014: Test and document changes made by the tools used"@en ;
+    solveit-core:hasReference "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5" ;
+    solveit-core:mitigationID "M1014" ;
+    solveit-core:mitigationName "Test and document changes made by the tools used" .
 
 :mitigationM1039 a solveit-core:Mitigation ;
     rdfs:label "M1039: Hash matching to reduce need for manual review"@en ;
@@ -6499,17 +6673,41 @@ This might involve questions such as:
     solveit-core:mitigationID "M1224" ;
     solveit-core:mitigationName "Check for location artifacts to infer the time zone at a specific moment" .
 
-:techniqueT1035 a solveit-core:Technique ;
-    rdfs:label "T1035: Dictionary attack"@en ;
+:mitigationM1233 a solveit-core:Mitigation ;
+    rdfs:label "M1233: Test data extraction methods against reference data with known timestamps"@en ;
+    solveit-core:mitigationID "M1233" ;
+    solveit-core:mitigationName "Test data extraction methods against reference data with known timestamps" .
+
+:techniqueT1034 a solveit-core:Technique ;
+    rdfs:label "T1034: Brute force attack"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessW1137,
-        :weaknessW1138,
-        :weaknessW1139 ;
-    solveit-core:hasReference "Kanta, A., Coisel, I. and Scanlon, M., 2021, December. PCWQ: A framework for evaluating password cracking wordlist quality. In International Conference on Digital Forensics and Cyber Crime (pp. 159-175). Cham: Springer International Publishing." ;
-    solveit-core:techniqueDescription "A dictionary attack is a password cracking technique where an attacker uses a list of passwords, called a dictionary, to attempt to guess a password." ;
-    solveit-core:techniqueDetails "Dictionary attacks use list compiled common passwords that are likely to be used by people, such as dictionary words, names, common patterns or existing lists of popular or leaked passwords.  Therefore, success depends on the quality and of dictionary list." ;
-    solveit-core:techniqueID "T1035" ;
-    solveit-core:techniqueName "Dictionary attack" .
+    solveit-core:hasPotentialWeakness :weaknessW1140,
+        :weaknessW1141,
+        :weaknessW1142 ;
+    solveit-core:hasReference "Kanta, A., Coray, S., Coisel, I. and Scanlon, M., 2021. How viable is password cracking in digital forensic investigation? Analyzing the guessability of over 3.9 billion real-world accounts. Forensic Science International: Digital Investigation, 37, p.301186." ;
+    solveit-core:hasSynonym "exhaustive password search" ;
+    solveit-core:techniqueDescription "A brute force attack, or exhaustive search is a password cracking approach where every combination of characters is tested until the correct one is found. This method is \"guaranteed to work\" given infinite time and resources which in a real-life scenario is not feasible." ;
+    solveit-core:techniqueDetails "Brute force attack involves trying every possible combination in a defined search space to find the correct value. The search space could be limited to just numbers, for example in the case of a 4-digit PIN number, or alphanumerical values or even the full ASCII character set. The larger the search space, the longer it takes to complete a brute force attack." ;
+    solveit-core:techniqueID "T1034" ;
+    solveit-core:techniqueName "Brute force attack" .
+
+:techniqueT1037 a solveit-core:Technique ;
+    rdfs:label "T1037: Obtain password from the device owner"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
+    solveit-core:techniqueID "T1037" ;
+    solveit-core:techniqueName "Obtain password from the device owner" .
+
+:techniqueT1040 a solveit-core:Technique ;
+    rdfs:label "T1040: Use mobile device exploit"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/isPrivileged"^^xsd:anyURI ;
+    solveit-core:hasExample "",
+        "Checkra1n, https://checkra.in" ;
+    solveit-core:hasPotentialWeakness :weaknessW1157,
+        :weaknessW1158 ;
+    solveit-core:hasReference "Grover, J., 2013. Android forensics: Automated data collection and reporting from a mobile device. Digital Investigation, 10, pp.S12-S20." ;
+    solveit-core:techniqueDescription "A process that typically exploits a security flaw in a specific device or operating system to enable users to perform higher privileged functions on a device (derived from Grover 2013)" ;
+    solveit-core:techniqueID "T1040" ;
+    solveit-core:techniqueName "Use mobile device exploit" .
 
 :techniqueT1125 a solveit-core:Technique ;
     rdfs:label "T1125: Keyword search (live)"@en ;
@@ -6561,6 +6759,18 @@ This might involve questions such as:
     solveit-core:mitigationID "M1026" ;
     solveit-core:mitigationName "Testing of backup parsing method" .
 
+:techniqueT1035 a solveit-core:Technique ;
+    rdfs:label "T1035: Dictionary attack"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessW1137,
+        :weaknessW1138,
+        :weaknessW1139 ;
+    solveit-core:hasReference "Kanta, A., Coisel, I. and Scanlon, M., 2021, December. PCWQ: A framework for evaluating password cracking wordlist quality. In International Conference on Digital Forensics and Cyber Crime (pp. 159-175). Cham: Springer International Publishing." ;
+    solveit-core:techniqueDescription "A dictionary attack is a password cracking technique where an attacker uses a list of passwords, called a dictionary, to attempt to guess a password." ;
+    solveit-core:techniqueDetails "Dictionary attacks use list compiled common passwords that are likely to be used by people, such as dictionary words, names, common patterns or existing lists of popular or leaked passwords.  Therefore, success depends on the quality and of dictionary list." ;
+    solveit-core:techniqueID "T1035" ;
+    solveit-core:techniqueName "Dictionary attack" .
+
 :techniqueT1124 a solveit-core:Technique ;
     rdfs:label "T1124: Keyword search (indexed)"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
@@ -6581,11 +6791,6 @@ This might involve questions such as:
     rdfs:label "M1029: Testing of keyword indexing component of tool"@en ;
     solveit-core:mitigationID "M1029" ;
     solveit-core:mitigationName "Testing of keyword indexing component of tool" .
-
-:mitigationM1097 a solveit-core:Mitigation ;
-    rdfs:label "M1097: Attempt to obtain password from the suspect"@en ;
-    solveit-core:mitigationID "M1097" ;
-    solveit-core:mitigationName "Attempt to obtain password from the suspect" .
 
 :mitigationM1154 a solveit-core:Mitigation ;
     rdfs:label "M1154: Testing for live message recovery from AI companion app"@en ;
@@ -6637,6 +6842,18 @@ This might involve questions such as:
     rdfs:label "M1162: Testing of deleted call record recovery from AI companion app"@en ;
     solveit-core:mitigationID "M1162" ;
     solveit-core:mitigationName "Testing of deleted call record recovery from AI companion app" .
+
+:mitigationM1231 a solveit-core:Mitigation ;
+    rdfs:label "M1231: Obtain possible passwords/PIN codes from other devices with limited security"@en ;
+    solveit-core:linksToTechnique :techniqueT1033 ;
+    solveit-core:mitigationID "M1231" ;
+    solveit-core:mitigationName "Obtain possible passwords/PIN codes from other devices with limited security" .
+
+:mitigationM1097 a solveit-core:Mitigation ;
+    rdfs:label "M1097: Attempt to obtain password/passcode from the device owner"@en ;
+    solveit-core:linksToTechnique :techniqueT1037 ;
+    solveit-core:mitigationID "M1097" ;
+    solveit-core:mitigationName "Attempt to obtain password/passcode from the device owner" .
 
 :mitigationM1056 a solveit-core:Mitigation ;
     rdfs:label "M1056: Correlation of message data from third party data (another participant in message thread)"@en ;
