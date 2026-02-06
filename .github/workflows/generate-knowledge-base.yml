@@ -21,8 +21,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: SOLVE-IT-DF/solve-it
-          # TODO: Change to 'main' once PR #263 is merged
-          ref: Adding-TTL-and-JSON-LD-outpu-script
+          ref: main
           path: solve-it
 
       - name: Set up Python
