@@ -5963,7 +5963,6 @@ This might involve questions such as:
 :weaknessW1274 a solveit-core:Weakness ;
     rdfs:label "W1274: Inability to enable required service due to locked device"@en ;
     solveit-core:hasPotentialMitigation :mitigationM1097,
-        :mitigationM1233,
         :mitigationM1234,
         :mitigationM1235,
         :mitigationM1236 ;
@@ -6208,6 +6207,11 @@ This might involve questions such as:
     solveit-core:linksToTechnique :techniqueT1134 ;
     solveit-core:mitigationID "M1225" ;
     solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" .
+
+:mitigationM1233 a solveit-core:Mitigation ;
+    rdfs:label "M1233: Test data extraction methods against reference data with known timestamps"@en ;
+    solveit-core:mitigationID "M1233" ;
+    solveit-core:mitigationName "Test data extraction methods against reference data with known timestamps" .
 
 :mitigationM1234 a solveit-core:Mitigation ;
     rdfs:label "M1234: Exploit device to facilitate password/pincode attacks"@en ;
@@ -6672,11 +6676,6 @@ This might involve questions such as:
     rdfs:label "M1224: Check for location artifacts to infer the time zone at a specific moment"@en ;
     solveit-core:mitigationID "M1224" ;
     solveit-core:mitigationName "Check for location artifacts to infer the time zone at a specific moment" .
-
-:mitigationM1233 a solveit-core:Mitigation ;
-    rdfs:label "M1233: Test data extraction methods against reference data with known timestamps"@en ;
-    solveit-core:mitigationID "M1233" ;
-    solveit-core:mitigationName "Test data extraction methods against reference data with known timestamps" .
 
 :techniqueT1034 a solveit-core:Technique ;
     rdfs:label "T1034: Brute force attack"@en ;
