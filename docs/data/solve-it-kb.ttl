@@ -411,18 +411,18 @@
     solveit-core:mitigationName "Analyze web browser memory for web browsing activity" .
 
 :mitigationM1068 a solveit-core:Mitigation ;
-    rdfs:label "M1068: Use of digital sniffer dogs"@en ;
+    rdfs:label "M1068: Use digital sniffer dogs to assist in locating evidence"@en ;
     solveit-core:hasReference "Petersen, S.J. and Schoon, A., 2022. Dogs as Detectors for Hidden Digital Storage Devices: A Pilot Study from the National Police of The Netherlands. In Canines (pp. 535-557). Jenny Stanford Publishing." ;
     solveit-core:linksToTechnique :techniqueT1006 ;
     solveit-core:mitigationID "M1068" ;
-    solveit-core:mitigationName "Use of digital sniffer dogs" .
+    solveit-core:mitigationName "Use digital sniffer dogs to assist in locating evidence" .
 
 :mitigationM1069 a solveit-core:Mitigation ;
-    rdfs:label "M1069: Use of SyncTriage approach to determine existence other syncronised devices"@en ;
+    rdfs:label "M1069: Use a SyncTriage style approach to determine existence other synchronized devices"@en ;
     solveit-core:hasReference "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140." ;
     solveit-core:linksToTechnique :techniqueT1007 ;
     solveit-core:mitigationID "M1069" ;
-    solveit-core:mitigationName "Use of SyncTriage approach to determine existence other syncronised devices" .
+    solveit-core:mitigationName "Use a SyncTriage style approach to determine existence other synchronized devices" .
 
 :mitigationM1070 a solveit-core:Mitigation ;
     rdfs:label "M1070: Ensure hash algorithm(s) used are resistant to collisions through data manipulation"@en ;
@@ -1046,19 +1046,25 @@
     solveit-core:mitigationID "M1230" ;
     solveit-core:mitigationName "Ensure that daylight savings offsets that are applied to timestamps are correct" .
 
-:mitigationM1232 a solveit-core:Mitigation ;
-    rdfs:label "M1232: Configure device to enable required service"@en ;
-    solveit-core:hasReference "Android (2025), Android Debug Bridge (adb), https://developer.android.com/tools/adb",
-        "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" ;
-    solveit-core:linksToTechnique :techniqueT1158 ;
-    solveit-core:mitigationID "M1232" ;
-    solveit-core:mitigationName "Configure device to enable required service" .
-
 :mitigationM1237 a solveit-core:Mitigation ;
     rdfs:label "M1237: Ensure that archive format used can handle sufficiently large files"@en ;
     solveit-core:hasReference "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64" ;
     solveit-core:mitigationID "M1237" ;
     solveit-core:mitigationName "Ensure that archive format used can handle sufficiently large files" .
+
+:mitigationM1238 a solveit-core:Mitigation ;
+    rdfs:label "M1238: Configure device to enable required service"@en ;
+    solveit-core:hasReference "Android (2025), Android Debug Bridge (adb), https://developer.android.com/tools/adb",
+        "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" ;
+    solveit-core:linksToTechnique :techniqueT1158 ;
+    solveit-core:mitigationID "M1238" ;
+    solveit-core:mitigationName "Configure device to enable required service" .
+
+:mitigationM1239 a solveit-core:Mitigation ;
+    rdfs:label "M1239: Obtain possible passwords/PIN codes from other devices with limited security"@en ;
+    solveit-core:linksToTechnique :techniqueT1033 ;
+    solveit-core:mitigationID "M1239" ;
+    solveit-core:mitigationName "Obtain possible passwords/PIN codes from other devices with limited security" .
 
 :techniqueT1001 a solveit-core:Technique ;
     rdfs:label "T1001: Triage"@en ;
@@ -1129,7 +1135,7 @@
     solveit-core:techniqueName "Selective data acquisition" .
 
 :techniqueT1005 a solveit-core:Technique ;
-    rdfs:label "T1005: Crime scene searching"@en ;
+    rdfs:label "T1005: Conduct a search of a crime scene"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI,
@@ -1137,10 +1143,17 @@
         "https://ontology.unifiedcyberontology.org/uco/observable/WearableDevice"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1114 ;
-    solveit-core:hasReference "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35." ;
+    solveit-core:hasReference "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35.",
+        "Forensic Science Regulator (2025) Incident scene examination (FSR-GUI-0006). GOV.UK. Available at: https://www.gov.uk/government/publications/incident-scene-examination-fsr-gui-0006" ;
+    solveit-core:hasSynonym "Crime scene examination",
+        "Crime scene investigation",
+        "Crime scene processing",
+        "Incident scene examination",
+        "Scene search" ;
     solveit-core:techniqueDescription "The process of 'carefully documenting the conditions at a crime scene and identifying all relevant physical evidence.' (Birzer 2018)." ;
+    solveit-core:techniqueDetails "The UK's Forensic Science Regulator (FSR) guidance refers to \"Incident scene examination\" which takes a holistic approach and considers an incident scene in conjunction with the requirements of an investigation and the criminal justice system. The aim of incident scene examination is to identify and locate, or note the absence of, physical material which has relevance and significance to inform the investigation including, where relevant, the reconstruction of past events." ;
     solveit-core:techniqueID "T1005" ;
-    solveit-core:techniqueName "Crime scene searching" .
+    solveit-core:techniqueName "Conduct a search of a crime scene" .
 
 :techniqueT1008 a solveit-core:Technique ;
     rdfs:label "T1008: Profiling network traffic"@en ;
@@ -3997,7 +4010,9 @@ This might involve questions such as:
 :weaknessW1114 a solveit-core:Weakness ;
     rdfs:label "W1114: Failure to locate a relevant device at a physical crime scene"@en ;
     solveit-core:hasPotentialMitigation :mitigationM1068,
-        :mitigationM1069 ;
+        :mitigationM1069,
+        :mitigationM1231,
+        :mitigationM1232 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -5965,7 +5980,9 @@ This might involve questions such as:
     solveit-core:hasPotentialMitigation :mitigationM1097,
         :mitigationM1234,
         :mitigationM1235,
-        :mitigationM1236 ;
+        :mitigationM1236,
+        :mitigationM1238,
+        :mitigationM1239 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -6207,6 +6224,13 @@ This might involve questions such as:
     solveit-core:linksToTechnique :techniqueT1134 ;
     solveit-core:mitigationID "M1225" ;
     solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" .
+
+:mitigationM1232 a solveit-core:Mitigation ;
+    rdfs:label "M1232: Adopt a systematic search pattern"@en ;
+    solveit-core:hasReference "Fisher & Fisher. 2012, Techniques of Crime Scene Investigation, Eighth Edition, p82" ;
+    solveit-core:mitigationDescription "According to Fisher & Fisher (2012): \"Criminal investigation texts recommend a variety of search patterns: the strip or lane search, grid search, spiral search, and quadrant search. \" " ;
+    solveit-core:mitigationID "M1232" ;
+    solveit-core:mitigationName "Adopt a systematic search pattern" .
 
 :mitigationM1233 a solveit-core:Mitigation ;
     rdfs:label "M1233: Test data extraction methods against reference data with known timestamps"@en ;
@@ -6842,17 +6866,18 @@ This might involve questions such as:
     solveit-core:mitigationID "M1162" ;
     solveit-core:mitigationName "Testing of deleted call record recovery from AI companion app" .
 
-:mitigationM1231 a solveit-core:Mitigation ;
-    rdfs:label "M1231: Obtain possible passwords/PIN codes from other devices with limited security"@en ;
-    solveit-core:linksToTechnique :techniqueT1033 ;
-    solveit-core:mitigationID "M1231" ;
-    solveit-core:mitigationName "Obtain possible passwords/PIN codes from other devices with limited security" .
-
 :mitigationM1097 a solveit-core:Mitigation ;
     rdfs:label "M1097: Attempt to obtain password/passcode from the device owner"@en ;
     solveit-core:linksToTechnique :techniqueT1037 ;
     solveit-core:mitigationID "M1097" ;
     solveit-core:mitigationName "Attempt to obtain password/passcode from the device owner" .
+
+:mitigationM1231 a solveit-core:Mitigation ;
+    rdfs:label "M1231: Make use of 'paired searching'"@en ;
+    solveit-core:hasReference "Fisher & Fisher. 2012, Techniques of Crime Scene Investigation, Eighth Edition, p82" ;
+    solveit-core:mitigationDescription "According to Fisher & Fisher (2012): \"Indoor crime scene searches are best done with two persons. One easy way of accomplishing a search in a room is to divide it in half. Each investigator searches one half. After they have done a thorough search, they switch halves.\" " ;
+    solveit-core:mitigationID "M1231" ;
+    solveit-core:mitigationName "Make use of 'paired searching'" .
 
 :mitigationM1056 a solveit-core:Mitigation ;
     rdfs:label "M1056: Correlation of message data from third party data (another participant in message thread)"@en ;
