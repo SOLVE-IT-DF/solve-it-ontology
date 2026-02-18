@@ -83,9 +83,9 @@ solveit-tool-profile:PerformerTarget rdf:type solveit-tool-profile:ConditionTarg
 
 solveit-tool-profile:profileFor rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-tool-profile:ToolCapabilityProfile ;
-    rdfs:range uco-core:UcoObject ;
+    rdfs:range uco-tool:Tool ;
     rdfs:label "profile for"@en ;
-    rdfs:comment "Links a ToolCapabilityProfile to the tool it describes."@en .
+    rdfs:comment "Links to the tool that this profile describes. That tool object also potentially contains the tool version that this applies to."@en .
 
 solveit-tool-profile:supportsTechnique rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-tool-profile:ToolCapabilityProfile ;
@@ -126,12 +126,6 @@ solveit-tool-profile:conditionTarget rdf:type owl:ObjectProperty ;
 #################################################################
 #    Data Properties
 #################################################################
-
-solveit-tool-profile:toolVersion rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-tool-profile:ToolCapabilityProfile ;
-    rdfs:range xsd:string ;
-    rdfs:label "tool version"@en ;
-    rdfs:comment "The version of the tool this profile describes."@en .
 
 solveit-tool-profile:publishedBy rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-tool-profile:ToolCapabilityProfile ;
