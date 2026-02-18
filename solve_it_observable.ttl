@@ -85,6 +85,12 @@ solveit-observable:HashVerificationResult rdf:type owl:Class ;
     rdfs:label "Hash Verification Result"@en ;
     rdfs:comment "The result of comparing hash values to verify data integrity, typically comparing a source hash against a computed hash of acquired or copied data."@en .
 
+###  ApplicationFiles Observable Object
+solveit-observable:ApplicationFiles rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:label "Application Files"@en ;
+    rdfs:comment "A contextual compilation of files associated with a specific application version. Groups the files belonging to a particular application (e.g. WhatsApp v13.2 database files) for forensic examination."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -100,6 +106,18 @@ solveit-observable:unlockPatternSequence rdf:type owl:ObjectProperty ;
     rdfs:range rdf:List ;
     rdfs:label "unlock pattern sequence"@en ;
     rdfs:comment "An ordered list of grid positions (integers) representing the unlock pattern sequence. For example, a 3x3 grid uses positions 1-9."@en .
+
+solveit-observable:sourceApplication rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:ApplicationFiles ;
+    rdfs:range uco-observable:Application ;
+    rdfs:label "source application"@en ;
+    rdfs:comment "The application associated with these files."@en .
+
+solveit-observable:hasFile rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:ApplicationFiles ;
+    rdfs:range uco-observable:File ;
+    rdfs:label "has file"@en ;
+    rdfs:comment "A file belonging to this application file set."@en .
 
 #################################################################
 #    Data Properties

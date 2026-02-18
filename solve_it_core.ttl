@@ -23,7 +23,8 @@
                 <https://ontology.unifiedcyberontology.org/uco/action/1.4.0> ,                
                 <https://ontology.caseontology.org/case/investigation/1.4.0> ,
                 <https://ontology.solveit-df.org/solveit/observable> ,
-                <https://ontology.solveit-df.org/solveit/analysis> ;
+                <https://ontology.solveit-df.org/solveit/analysis> ,
+                <https://ontology.solveit-df.org/solveit/tool-profile> ;
     dcterms:title "SOLVE-IT Digital Forensics Ontology"@en ;
     dcterms:description "A modular ontology extending UCO/CASE for the SOLVE-IT digital forensics project. This core ontology defines fundamental SOLVE-IT classes (Technique, Weakness, Mitigation) and imports modules for observables and analysis."@en ;
     dcterms:creator "SOLVE-IT Project" ;
@@ -37,7 +38,7 @@
 
 ###  SOLVE-IT Technique
 solveit-core:Technique rdf:type owl:Class ;
-    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:subClassOf case-investigation:InvestigativeAction ;
     rdfs:label "SOLVE-IT Technique"@en ;
     rdfs:comment "A digital forensic technique representing how one might achieve an objective by performing an action. Based on the SOLVE-IT knowledge base."@en .
 

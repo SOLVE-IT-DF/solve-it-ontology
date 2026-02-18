@@ -3,6 +3,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @base <https://ontology.solveit-df.org/solveit/observable/shapes/> .
 
 #################################################################
@@ -27,4 +28,24 @@
         sh:minCount 1 ;
         sh:maxCount 1 ;
         sh:message "timelineEntryValue must be exactly one DateTimeStamp or ImplicitTimingInformation"@en ;
+    ] .
+
+#################################################################
+#    ApplicationFiles Shape
+#################################################################
+
+:ApplicationFilesShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:ApplicationFiles ;
+    rdfs:label "Application Files Shape"@en ;
+    rdfs:comment "Validates that ApplicationFiles has at most one sourceApplication and zero or more files."@en ;
+    sh:property [
+        sh:path solveit-observable:sourceApplication ;
+        sh:class uco-observable:Application ;
+        sh:maxCount 1 ;
+        sh:message "sourceApplication must reference at most one uco-observable:Application"@en ;
+    ] ;
+    sh:property [
+        sh:path solveit-observable:hasFile ;
+        sh:class uco-observable:File ;
+        sh:message "hasFile must reference uco-observable:File instances"@en ;
     ] .
