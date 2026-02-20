@@ -7,6 +7,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix cacontology-forensics: <https://cacontology.projectvic.org/forensics#> .
 @base <https://ontology.solveit-df.org/solveit/observable/> .
 
 #################################################################
@@ -55,17 +56,23 @@ solveit-observable:UnlockPattern rdf:type owl:Class ;
     rdfs:label "Unlock Pattern"@en ;
     rdfs:comment "A pattern used to unlock a device, i.e. screen lock pattern."@en .
 
+###  FilteredFileSet Observable Object
+solveit-observable:FilteredFileSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:label "Filtered File Set"@en ;
+    rdfs:comment "A subset of files selected from a larger collection by some filtering criteria, such as file type, path, date range, or relevance to an investigation."@en .
+
 ###  RedactedFileSet Observable Object
 solveit-observable:RedactedFileSet rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:subClassOf solveit-observable:FilteredFileSet ;
     rdfs:label "Redacted File Set"@en ;
-    rdfs:comment "A collection of files post-redaction."@en .
+    rdfs:comment "A subset of files reduced by a redaction process to remove sensitive or privileged content before disclosure."@en .
 
 ###  RedactedArtifactSet Observable Object
 solveit-observable:RedactedArtifactSet rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
     rdfs:label "Redacted Artifact Set"@en ;
-    rdfs:comment "A collection of artifacts post-redaction."@en .
+    rdfs:comment "A collection of artifacts reduced by a redaction process to remove sensitive or privileged content before disclosure."@en .
 
 ###  httpResponseHeader Observable Object
 solveit-observable:httpResponseHeader rdf:type owl:Class ;
@@ -73,9 +80,15 @@ solveit-observable:httpResponseHeader rdf:type owl:Class ;
     rdfs:label "HTTP Response Header"@en ;
     rdfs:comment "An HTTP response header containing multiple header fields from an HTTP server response."@en .
 
+###  DeviceInterface Observable Object
+solveit-observable:DeviceInterface rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Device Interface"@en ;
+    rdfs:comment "A logical interface representing a direct connection to a storage device, such as a USB, SATA."@en .
+
 ###  WriteProtectedDeviceInterface Observable Object
 solveit-observable:WriteProtectedDeviceInterface rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:subClassOf solveit-observable:DeviceInterface ;
     rdfs:label "Write Protected Device Interface"@en ;
     rdfs:comment "A logical interface to a storage device that has been accessed in a write-protected manner, either via a hardware write blocker, software write blocking, or a read-only boot environment."@en .
 
@@ -90,6 +103,23 @@ solveit-observable:ApplicationFiles rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
     rdfs:label "Application Files"@en ;
     rdfs:comment "A contextual compilation of files associated with a specific application version. Groups the files belonging to a particular application (e.g. WhatsApp v13.2 database files) for forensic examination."@en .
+
+###  DeviceSet Observable Object
+solveit-observable:DeviceSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:ContextualCompilation ;
+    rdfs:label "Device Set"@en ;
+    rdfs:comment "A contextual compilation of devices that are associated in some way, such as devices belonging to the same suspect, devices seized from the same location, or devices connected to the same network."@en .
+
+###  PrioritizedDeviceSet Observable Object
+solveit-observable:PrioritizedDeviceSet rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:DeviceSet ;
+    rdfs:label "Prioritized Device Set"@en ;
+    rdfs:comment "A device set where each device has been triaged and assigned a priority classification. Contains PrioritizedDeviceEntry instances that pair each device with its priority."@en .
+
+###  PrioritizedDeviceEntry
+solveit-observable:PrioritizedDeviceEntry rdf:type owl:Class ;
+    rdfs:label "Prioritized Device Entry"@en ;
+    rdfs:comment "An entry pairing a device with its triage priority classification."@en .
 
 #################################################################
 #    Object Properties
@@ -107,6 +137,29 @@ solveit-observable:unlockPatternSequence rdf:type owl:ObjectProperty ;
     rdfs:label "unlock pattern sequence"@en ;
     rdfs:comment "An ordered list of grid positions (integers) representing the unlock pattern sequence. For example, a 3x3 grid uses positions 1-9."@en .
 
+solveit-observable:hasDevice rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:DeviceSet ;
+    rdfs:range uco-observable:Device ;
+    rdfs:label "has device"@en ;
+    rdfs:comment "A device belonging to this device set."@en .
+
+solveit-observable:hasEntry rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:PrioritizedDeviceSet ;
+    rdfs:range solveit-observable:PrioritizedDeviceEntry ;
+    rdfs:label "has entry"@en ;
+    rdfs:comment "A prioritized device entry in this set."@en .
+
+solveit-observable:entryDevice rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:PrioritizedDeviceEntry ;
+    rdfs:range uco-observable:Device ;
+    rdfs:label "entry device"@en ;
+    rdfs:comment "The device in this prioritized entry."@en .
+
+solveit-observable:entryPriority rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:PrioritizedDeviceEntry ;
+    rdfs:label "entry priority"@en ;
+    rdfs:comment "The triage priority classification for this device, using cacontology-forensics:priorityClassification values."@en .
+
 solveit-observable:sourceApplication rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:ApplicationFiles ;
     rdfs:range uco-observable:Application ;
@@ -114,10 +167,12 @@ solveit-observable:sourceApplication rdf:type owl:ObjectProperty ;
     rdfs:comment "The application associated with these files."@en .
 
 solveit-observable:hasFile rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:ApplicationFiles ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( solveit-observable:ApplicationFiles
+                                solveit-observable:FilteredFileSet ) ] ;
     rdfs:range uco-observable:File ;
     rdfs:label "has file"@en ;
-    rdfs:comment "A file belonging to this application file set."@en .
+    rdfs:comment "A file belonging to this file set."@en .
 
 #################################################################
 #    Data Properties
