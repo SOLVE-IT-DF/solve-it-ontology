@@ -67,7 +67,13 @@ jobs:
       - name: Fix external ontology links
         run: |
           # Rewrite links to UCO/CASE classes to point to official documentation
-          python scripts/fix_external_links.py docs
+          # Auto-discovers class names from TTL sources; fails if any are unknown
+          python scripts/fix_external_links.py docs .
+
+      - name: Validate external links
+        run: |
+          # Check that all external UCO/CASE links use correct CamelCase
+          python scripts/validate_external_links.py docs
 
       - name: Generate IRI redirects
         run: |
