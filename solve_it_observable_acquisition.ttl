@@ -66,7 +66,7 @@ solveit-observable:LiveDataCapture rdf:type owl:Class ;
 ###  FileSystemExtraction Observable Object
 solveit-observable:FileSystemExtraction rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:AcquiredData ,
-                    uco-observable:ArchiveFile ;
+                    solveit-observable:FileSet ;
     rdfs:label "File System Extraction"@en ;
     rdfs:comment "Data obtained through direct access to a file system structure. Represents the actual files and folders as they exist on storage, applicable to any device type (mobile, desktop, embedded). Live files only."@en .
 
