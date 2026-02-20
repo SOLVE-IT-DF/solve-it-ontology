@@ -1,0 +1,87 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix solveit-data: <https://ontology.solveit-df.org/solveit/data/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Device Triage Examples
+#    Demonstrates DeviceSet, PrioritizedDeviceSet, and triage workflow
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/triaged-devices> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/triaged-devices/0.0.1> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/observable> ,
+                <https://ontology.solveit-df.org/solveit/core> ,
+                <https://ontology.solveit-df.org/solveit/data> ;
+    rdfs:label "SOLVE-IT Device Triage Examples"@en ;
+    rdfs:comment "Example instances demonstrating device triage workflow: grouping seized devices into a DeviceSet, applying triage (T1001), and producing a PrioritizedDeviceSet with per-device priorities."@en .
+
+#################################################################
+#    Example Device Triage
+#
+#    Three devices seized from a scene are grouped into a DeviceSet.
+#    A triage process (T1001) is applied, producing a
+#    PrioritizedDeviceSet where each device is assigned a priority.
+#################################################################
+
+###  The three seized devices
+:device-suspect-phone rdf:type uco-observable:Device ;
+    rdfs:label "Suspect's mobile phone (iPhone 14)"@en .
+
+:device-suspect-laptop rdf:type uco-observable:Device ;
+    rdfs:label "Suspect's laptop (Dell XPS 15)"@en .
+
+:device-shared-tablet rdf:type uco-observable:Device ;
+    rdfs:label "Shared household tablet (iPad Air)"@en .
+
+###  Initial DeviceSet — devices grouped by seizure context
+:seized-device-set rdf:type solveit-observable:DeviceSet ;
+    rdfs:label "Devices seized from 42 Oak Street"@en ;
+    solveit-observable:hasDevice :device-suspect-phone ,
+                                :device-suspect-laptop ,
+                                :device-shared-tablet .
+
+###  Examiner
+:examiner-1 rdf:type uco-core:UcoObject ;
+    rdfs:label "Forensic Examiner"@en .
+
+###  Triage action — examiner applies T1001 to the device set
+:triage-action rdf:type solveit-core:PerformedTechnique ;
+    uco-core:name "Device triage" ;
+    uco-core:description "Examiner triaged seized devices based on case relevance and expected evidentiary value" ;
+    solveit-core:usesTechnique solveit-data:techniqueT1001 ;  # T1001: Triage
+    uco-action:performer :examiner-1 ;
+    uco-action:startTime "2026-02-16T10:00:00Z"^^xsd:dateTime ;
+    uco-action:endTime "2026-02-16T10:45:00Z"^^xsd:dateTime ;
+    uco-action:object :seized-device-set ;
+    uco-action:result :prioritized-device-set .
+
+###  Result — PrioritizedDeviceSet with per-device priorities
+:prioritized-device-set rdf:type solveit-observable:PrioritizedDeviceSet ;
+    rdfs:label "Triaged devices from 42 Oak Street"@en ;
+    solveit-observable:hasEntry :priority-entry-phone ,
+                               :priority-entry-laptop ,
+                               :priority-entry-tablet .
+
+:priority-entry-phone rdf:type solveit-observable:PrioritizedDeviceEntry ;
+    solveit-observable:entryDevice :device-suspect-phone ;
+    solveit-observable:entryPriority "high" ;
+    rdfs:comment "Primary communication device"@en .
+
+:priority-entry-laptop rdf:type solveit-observable:PrioritizedDeviceEntry ;
+    solveit-observable:entryDevice :device-suspect-laptop ;
+    solveit-observable:entryPriority "medium" ;
+    rdfs:comment "Work laptop"@en .
+
+:priority-entry-tablet rdf:type solveit-observable:PrioritizedDeviceEntry ;
+    solveit-observable:entryDevice :device-shared-tablet ;
+    solveit-observable:entryPriority "low" ;
+    rdfs:comment "Shared household device"@en .
