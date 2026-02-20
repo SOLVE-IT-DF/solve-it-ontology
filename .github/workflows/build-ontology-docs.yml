@@ -18,6 +18,8 @@ on:
       - '**.ttl'
       - '**.owl'
       - '**.rdf'
+      - 'scripts/**'
+      - '.github/workflows/build-ontology-docs.yml'
   workflow_dispatch:
 
 permissions:
