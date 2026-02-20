@@ -6,6 +6,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @base <https://ontology.solveit-df.org/solveit/observable/> .
 
 #################################################################
@@ -52,7 +53,7 @@ solveit-observable:RawImageFile rdf:type owl:Class ;
 
 ###  RawImageInfoFile Observable Object
 solveit-observable:RawImageInfoFile rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:File ;
+    rdfs:subClassOf solveit-observable:AcquisitionRecordFile ;
     rdfs:label "Raw Image Info File"@en ;
     rdfs:comment "A sidecar file containing metadata for a raw/dd forensic image, including hash values, case information, evidence numbers, examiner details, and acquisition notes. Compensates for the lack of embedded metadata in raw image formats."@en .
 
@@ -144,11 +145,23 @@ solveit-observable:hasAcquisitionErrorRecord rdf:type owl:ObjectProperty ;
     rdfs:label "has acquisition error"@en ;
     rdfs:comment "Links a forensic image container or raw image info file to errors encountered during acquisition. Multiple errors can be recorded."@en .
 
-solveit-observable:containsRecord rdf:type owl:ObjectProperty ;
+solveit-observable:containsErrorRecord rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:AcquisitionRecordFile ;
     rdfs:range solveit-observable:AcquisitionErrorRecord ;
-    rdfs:label "contains record"@en ;
+    rdfs:label "contains error record"@en ;
     rdfs:comment "Links an AcquisitionRecordFile to the error records it contains."@en .
+
+solveit-observable:containsSourceHash rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:AcquisitionRecordFile ;
+    rdfs:range uco-types:Hash ;
+    rdfs:label "contains source hash"@en ;
+    rdfs:comment "A hash value computed from the source device or media before or during acquisition."@en .
+
+solveit-observable:containsDestinationHash rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:AcquisitionRecordFile ;
+    rdfs:range uco-types:Hash ;
+    rdfs:label "contains destination hash"@en ;
+    rdfs:comment "A hash value computed from the acquired image or data after acquisition."@en .
 
 #################################################################
 #    Data Properties
@@ -183,6 +196,18 @@ solveit-observable:embeddedNotes rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:label "embedded notes"@en ;
     rdfs:comment "The notes stored within the forensic image container metadata."@en .
+
+solveit-observable:containsStartTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:AcquisitionRecordFile ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "contains start time"@en ;
+    rdfs:comment "The acquisition start time as recorded in the acquisition record."@en .
+
+solveit-observable:containsEndTime rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:AcquisitionRecordFile ;
+    rdfs:range xsd:dateTime ;
+    rdfs:label "contains end time"@en ;
+    rdfs:comment "The acquisition end time as recorded in the acquisition record."@en .
 
 solveit-observable:errorType rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-observable:AcquisitionErrorRecord ;
