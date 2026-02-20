@@ -1531,10 +1531,198 @@
                 </table>
             </div>
         </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of uco-observable:Device</h2>
+            <div class="example-instance" id="device-suspect-phone">
+                <div class="instance-header">Suspect&#x27;s mobile phone (iPhone 14)</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/device-suspect-phone</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="example-instance" id="device-suspect-laptop">
+                <div class="instance-header">Suspect&#x27;s laptop (Dell XPS 15)</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/device-suspect-laptop</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+            <div class="example-instance" id="device-shared-tablet">
+                <div class="instance-header">Shared household tablet (iPad Air)</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/device-shared-tablet</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-observabledeviceset.html">solveit-observable:DeviceSet</a></h2>
+            <div class="example-instance" id="seized-device-set">
+                <div class="instance-header">Devices seized from 42 Oak Street</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/seized-device-set</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablehasdevice.html">solveit-observable:hasDevice</a></td>
+                            <td class="property-value"><a href="#device-suspect-phone">https://ontology.solveit-df.org/solveit/examples/device-suspect-phone</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablehasdevice.html">solveit-observable:hasDevice</a></td>
+                            <td class="property-value"><a href="#device-suspect-laptop">https://ontology.solveit-df.org/solveit/examples/device-suspect-laptop</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablehasdevice.html">solveit-observable:hasDevice</a></td>
+                            <td class="property-value"><a href="#device-shared-tablet">https://ontology.solveit-df.org/solveit/examples/device-shared-tablet</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-coreperformedtechnique.html">solveit-core:PerformedTechnique</a></h2>
+            <div class="example-instance" id="triage-action">
+                <div class="instance-header">triage-action</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/triage-action</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-coreusestechnique.html">solveit-core:usesTechnique</a></td>
+                            <td class="property-value">https://ontology.solveit-df.org/solveit/data/techniqueT1001</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/endTime</td>
+                            <td class="property-value">"2026-02-16T10:45:00+00:00"^^xsd:dateTime</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/object</td>
+                            <td class="property-value"><a href="#seized-device-set">https://ontology.solveit-df.org/solveit/examples/seized-device-set</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/performer</td>
+                            <td class="property-value"><a href="#examiner-1">https://ontology.solveit-df.org/solveit/examples/examiner-1</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/result</td>
+                            <td class="property-value"><a href="#prioritized-device-set">https://ontology.solveit-df.org/solveit/examples/prioritized-device-set</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/startTime</td>
+                            <td class="property-value">"2026-02-16T10:00:00+00:00"^^xsd:dateTime</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/description</td>
+                            <td class="property-value">"Examiner triaged seized devices based on case relevance and expected evidentiary value"</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name">https://ontology.unifiedcyberontology.org/uco/core/name</td>
+                            <td class="property-value">"Device triage"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-observableprioritizeddeviceset.html">solveit-observable:PrioritizedDeviceSet</a></h2>
+            <div class="example-instance" id="prioritized-device-set">
+                <div class="instance-header">Triaged devices from 42 Oak Street</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/prioritized-device-set</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablehasentry.html">solveit-observable:hasEntry</a></td>
+                            <td class="property-value"><a href="#priority-entry-phone">https://ontology.solveit-df.org/solveit/examples/priority-entry-phone</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablehasentry.html">solveit-observable:hasEntry</a></td>
+                            <td class="property-value"><a href="#priority-entry-laptop">https://ontology.solveit-df.org/solveit/examples/priority-entry-laptop</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablehasentry.html">solveit-observable:hasEntry</a></td>
+                            <td class="property-value"><a href="#priority-entry-tablet">https://ontology.solveit-df.org/solveit/examples/priority-entry-tablet</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-observableprioritizeddeviceentry.html">solveit-observable:PrioritizedDeviceEntry</a></h2>
+            <div class="example-instance" id="priority-entry-phone">
+                <div class="instance-header">priority-entry-phone</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/priority-entry-phone</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
+                            <td class="property-value">"Primary communication device"@en</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observableentrydevice.html">solveit-observable:entryDevice</a></td>
+                            <td class="property-value"><a href="#device-suspect-phone">https://ontology.solveit-df.org/solveit/examples/device-suspect-phone</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observableentrypriority.html">solveit-observable:entryPriority</a></td>
+                            <td class="property-value">"high"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="example-instance" id="priority-entry-laptop">
+                <div class="instance-header">priority-entry-laptop</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/priority-entry-laptop</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
+                            <td class="property-value">"Work laptop"@en</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observableentrydevice.html">solveit-observable:entryDevice</a></td>
+                            <td class="property-value"><a href="#device-suspect-laptop">https://ontology.solveit-df.org/solveit/examples/device-suspect-laptop</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observableentrypriority.html">solveit-observable:entryPriority</a></td>
+                            <td class="property-value">"medium"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="example-instance" id="priority-entry-tablet">
+                <div class="instance-header">priority-entry-tablet</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/priority-entry-tablet</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
+                            <td class="property-value">"Shared household device"@en</td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observableentrydevice.html">solveit-observable:entryDevice</a></td>
+                            <td class="property-value"><a href="#device-shared-tablet">https://ontology.solveit-df.org/solveit/examples/device-shared-tablet</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observableentrypriority.html">solveit-observable:entryPriority</a></td>
+                            <td class="property-value">"low"</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
 
         <hr>
         <footer>
-            <p class="text-muted">Generated from <code>acquisition_examples.ttl</code>, <code>core_classes_examples.ttl</code>, <code>observable_examples.ttl</code>, <code>timeline_resolution_examples.ttl</code>, <code>timeline_sequence_examples.ttl</code></p>
+            <p class="text-muted">Generated from <code>acquisition_examples.ttl</code>, <code>core_classes_examples.ttl</code>, <code>observable_examples.ttl</code>, <code>timeline_resolution_examples.ttl</code>, <code>timeline_sequence_examples.ttl</code>, <code>triaged_devices_examples.ttl</code></p>
         </footer>
     </div>
 </body>
