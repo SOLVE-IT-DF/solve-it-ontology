@@ -140,6 +140,12 @@ solveit-core:techniqueDetails rdf:type owl:DatatypeProperty ;
     rdfs:label "technique details"@en ;
     rdfs:comment "Additional details about the technique."@en .
 
+solveit-core:hasCASEInputClass rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Technique ;
+    rdfs:range xsd:anyURI ;
+    rdfs:label "has CASE input class"@en ;
+    rdfs:comment "A CASE/UCO class IRI that represents an expected input to this technique. Multiple input classes can be specified (e.g., https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface)."@en .
+
 solveit-core:hasCASEOutputClass rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Technique ;
     rdfs:range xsd:anyURI ;
