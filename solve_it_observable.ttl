@@ -56,17 +56,23 @@ solveit-observable:UnlockPattern rdf:type owl:Class ;
     rdfs:label "Unlock Pattern"@en ;
     rdfs:comment "A pattern used to unlock a device, i.e. screen lock pattern."@en .
 
+###  FilteredFileSet Observable Object
+solveit-observable:FilteredFileSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:label "Filtered File Set"@en ;
+    rdfs:comment "A subset of files selected from a larger collection by some filtering criteria, such as file type, path, date range, or relevance to an investigation."@en .
+
 ###  RedactedFileSet Observable Object
 solveit-observable:RedactedFileSet rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:subClassOf solveit-observable:FilteredFileSet ;
     rdfs:label "Redacted File Set"@en ;
-    rdfs:comment "A collection of files post-redaction."@en .
+    rdfs:comment "A subset of files reduced by a redaction process to remove sensitive or privileged content before disclosure."@en .
 
 ###  RedactedArtifactSet Observable Object
 solveit-observable:RedactedArtifactSet rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
     rdfs:label "Redacted Artifact Set"@en ;
-    rdfs:comment "A collection of artifacts post-redaction."@en .
+    rdfs:comment "A collection of artifacts reduced by a redaction process to remove sensitive or privileged content before disclosure."@en .
 
 ###  httpResponseHeader Observable Object
 solveit-observable:httpResponseHeader rdf:type owl:Class ;
@@ -161,10 +167,12 @@ solveit-observable:sourceApplication rdf:type owl:ObjectProperty ;
     rdfs:comment "The application associated with these files."@en .
 
 solveit-observable:hasFile rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:ApplicationFiles ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( solveit-observable:ApplicationFiles
+                                solveit-observable:FilteredFileSet ) ] ;
     rdfs:range uco-observable:File ;
     rdfs:label "has file"@en ;
-    rdfs:comment "A file belonging to this application file set."@en .
+    rdfs:comment "A file belonging to this file set."@en .
 
 #################################################################
 #    Data Properties
