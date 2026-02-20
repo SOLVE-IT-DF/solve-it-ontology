@@ -71,17 +71,22 @@ else
     echo ""
 fi
 
-# Step 2: Fix external links
+# Step 2: Set docs title
+echo "--- Setting docs title ---"
+python3 scripts/set_docs_title.py "$DOCS_DIR"
+echo ""
+
+# Step 3: Fix external links
 echo "--- Fixing external ontology links ---"
 python3 scripts/fix_external_links.py "$DOCS_DIR" .
 echo ""
 
-# Step 3: Validate external links
+# Step 4: Validate external links
 echo "--- Validating external links ---"
 python3 scripts/validate_external_links.py "$DOCS_DIR"
 echo ""
 
-# Step 4: Generate IRI redirects (only if in-place — these write to docs/)
+# Step 5: Generate IRI redirects (only if in-place — these write to docs/)
 if [ "$IN_PLACE" = true ]; then
     echo "--- Generating IRI redirects ---"
     python3 scripts/generate_iri_redirects.py

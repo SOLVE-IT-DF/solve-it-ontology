@@ -19,7 +19,7 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/examples/timeline-sequence> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/timeline-sequence/1.0.0> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/timeline-sequence/0.0.1> ;
     owl:imports <https://ontology.solveit-df.org/solveit/observable> ,
                 <https://ontology.solveit-df.org/solveit/data> ;
     rdfs:label "SOLVE-IT Timeline Sequence Examples"@en ;

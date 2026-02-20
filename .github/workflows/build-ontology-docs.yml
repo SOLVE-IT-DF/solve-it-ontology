@@ -66,6 +66,11 @@ jobs:
           # Create CNAME file for GitHub Pages custom domain
           echo "ontology.solveit-df.org" > docs/CNAME
 
+      - name: Set docs title
+        run: |
+          # Replace ontospy's generic title with versioned SOLVE-IT title
+          python scripts/set_docs_title.py docs
+
       - name: Fix external ontology links
         run: |
           # Rewrite links to UCO/CASE classes to point to official documentation

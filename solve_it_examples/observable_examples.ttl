@@ -15,7 +15,7 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/examples/observables> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/observables/1.0.0> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/observables/0.0.1> ;
     owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
     rdfs:label "SOLVE-IT Observable Examples"@en ;
     rdfs:comment "Example instances demonstrating SOLVE-IT observable classes."@en .
