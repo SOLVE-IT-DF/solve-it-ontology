@@ -56,9 +56,15 @@ solveit-observable:UnlockPattern rdf:type owl:Class ;
     rdfs:label "Unlock Pattern"@en ;
     rdfs:comment "A pattern used to unlock a device, i.e. screen lock pattern."@en .
 
+###  FileSet Observable Object
+solveit-observable:FileSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:label "File Set"@en ;
+    rdfs:comment "A contextual compilation of files grouped together for some purpose, such as filtering, extraction, or association with an application."@en .
+
 ###  FilteredFileSet Observable Object
 solveit-observable:FilteredFileSet rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:subClassOf solveit-observable:FileSet ;
     rdfs:label "Filtered File Set"@en ;
     rdfs:comment "A subset of files selected from a larger collection by some filtering criteria, such as file type, path, date range, or relevance to an investigation."@en .
 
@@ -100,7 +106,7 @@ solveit-observable:HashVerificationResult rdf:type owl:Class ;
 
 ###  ApplicationFiles Observable Object
 solveit-observable:ApplicationFiles rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:subClassOf solveit-observable:FileSet ;
     rdfs:label "Application Files"@en ;
     rdfs:comment "A contextual compilation of files associated with a specific application version. Groups the files belonging to a particular application (e.g. WhatsApp v13.2 database files) for forensic examination."@en .
 
@@ -167,9 +173,7 @@ solveit-observable:sourceApplication rdf:type owl:ObjectProperty ;
     rdfs:comment "The application associated with these files."@en .
 
 solveit-observable:hasFile rdf:type owl:ObjectProperty ;
-    rdfs:domain [ a owl:Class ;
-                  owl:unionOf ( solveit-observable:ApplicationFiles
-                                solveit-observable:FilteredFileSet ) ] ;
+    rdfs:domain solveit-observable:FileSet ;
     rdfs:range uco-observable:File ;
     rdfs:label "has file"@en ;
     rdfs:comment "A file belonging to this file set."@en .
