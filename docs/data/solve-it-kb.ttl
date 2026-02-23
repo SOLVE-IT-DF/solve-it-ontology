@@ -1068,7 +1068,8 @@
 
 :techniqueT1001 a solveit-core:Technique ;
     rdfs:label "T1001: Triage"@en ;
-    solveit-core:hasCASEOutputClass "https://cacontology.projectvic.org/forensics#priorityClassification"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/PrioritizedDeviceSet"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1001,
         :weaknessW1002,
         :weaknessW1003 ;
@@ -1081,7 +1082,9 @@
 
 :techniqueT1002 a solveit-core:Technique ;
     rdfs:label "T1002: Disk imaging"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamData"^^xsd:anyURI ;
     solveit-core:hasExample "FTK Imager",
         "Magnet ACQUIRE",
         "dcfldd" ;
@@ -1095,30 +1098,38 @@
         :weaknessW1136,
         :weaknessW1143 ;
     solveit-core:hasReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, “Forensic Image Acquisition" ;
-    solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ into an imaging format. The could be from a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader. " ;
+    solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ to a bitstream that can be stored in a image format (T1025). " ;
+    solveit-core:techniqueDetails "The process could be applied to a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader. This data needs to be stored as a container file (T1025). Logs would also usually be created recording the details of the imaging process and any errors that occured." ;
     solveit-core:techniqueID "T1002" ;
     solveit-core:techniqueName "Disk imaging" .
 
 :techniqueT1003 a solveit-core:Technique ;
     rdfs:label "T1003: Memory imaging"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
-    solveit-core:hasExample "FTK Imager - Can capture both RAM and the pagefile of the system" ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Memory"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RawImageFile"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/RawImageInfoFile"^^xsd:anyURI ;
+    solveit-core:hasExample "FTK Imager" ;
     solveit-core:hasPotentialWeakness :weaknessW1029,
         :weaknessW1030,
         :weaknessW1031,
         :weaknessW1032,
         :weaknessW1033 ;
     solveit-core:hasReference "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33.",
+        "Kornblum, J.D., 2007. Using every part of the buffalo in Windows memory analysis. Digital Investigation, 4(1), pp.24-29.",
         "Latzo, T., Palutke, R. and Freiling, F., 2019. A universal taxonomy and survey of forensic memory acquisition techniques. Digital Investigation, 28, 56-69." ;
     solveit-core:hasSynonym "RAM dump",
         "RAM imaging",
         "memory dump" ;
     solveit-core:techniqueDescription "Involves creating a copy of the live memory data of a running system" ;
+    solveit-core:techniqueDetails "Collection of Pagefile may also be useful (Kornblum 2007)." ;
     solveit-core:techniqueID "T1003" ;
     solveit-core:techniqueName "Memory imaging" .
 
 :techniqueT1004 a solveit-core:Technique ;
-    rdfs:label "T1004: Selective data acquisition"@en ;
+    rdfs:label "T1004: Selective file acquisition"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"^^xsd:anyURI ;
     solveit-core:hasExample "FTK Imager - allows an AD1 logical container to be created of a selected subset of files within a previewed data source." ;
     solveit-core:hasPotentialWeakness :weaknessW1017,
         :weaknessW1018,
@@ -1128,19 +1139,15 @@
         :weaknessW1022,
         :weaknessW1023,
         :weaknessW1024 ;
-    solveit-core:hasReference "todo" ;
     solveit-core:hasSynonym "Logical imaging" ;
-    solveit-core:techniqueDescription "Previewing a data source and selecting a subset of the data for collection into a container such as a tar/zip file or a forensic image format." ;
+    solveit-core:techniqueDescription "Previewing a data source and selecting a subset of the files for extraction into a container such as a tar/zip file or a forensic image format." ;
     solveit-core:techniqueID "T1004" ;
-    solveit-core:techniqueName "Selective data acquisition" .
+    solveit-core:techniqueName "Selective file acquisition" .
 
 :techniqueT1005 a solveit-core:Technique ;
     rdfs:label "T1005: Conduct a search of a crime scene"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI,
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceSet"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/WearableDevice"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1114 ;
     solveit-core:hasReference "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35.",
@@ -1157,13 +1164,11 @@
 
 :techniqueT1008 a solveit-core:Technique ;
     rdfs:label "T1008: Profiling network traffic"@en ;
-    solveit-core:hasReference "todo" ;
     solveit-core:techniqueID "T1008" ;
     solveit-core:techniqueName "Profiling network traffic" .
 
 :techniqueT1009 a solveit-core:Technique ;
     rdfs:label "T1009: Locate cloud account identifiers"@en ;
-    solveit-core:hasReference "todo" ;
     solveit-core:techniqueID "T1009" ;
     solveit-core:techniqueName "Locate cloud account identifiers" .
 
@@ -1289,26 +1294,19 @@
 
 :techniqueT1025 a solveit-core:Technique ;
     rdfs:label "T1025: Writing data to a forensic image format"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamData"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/RawImageFile"^^xsd:anyURI ;
     solveit-core:hasExample "2009 M57-Jean - Data is supplied as a ‘multi-volume Expert Witness file’ - i.e. split EnCase E01 & E02 image files (https://digitalcorpora.org/corpora/scenarios/m57-jean/)",
         "FTK Imager: This tool can be used to acquire data from block devices in various image formats including RAW, EWF, and AFF",
         "Magnet Acquire: This tool can be used to acquire data from block devices in various image formats including RAW and EWF.",
         "libewf: This open source library allows access to the EWF format. The accompanying ewftools proves tools to verify, inspect and create EWF images. " ;
     solveit-core:hasPotentialWeakness :weaknessW1043 ;
-    solveit-core:hasReference "todo" ;
     solveit-core:hasSynonym "Disk image container",
         "image file" ;
-    solveit-core:techniqueDescription "Storage of data recovered from a digital device. Popular formats are RAW, EWF, AFF4 and some proprietary logical formats from other tool vendors. " ;
-    solveit-core:techniqueDetails """Formats:
-
-Raw: 
-
-EWF:
-
-AFF: 
-
-
-The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc.""" ;
+    solveit-core:techniqueDescription "Storage of data recovered from a digital device in various formats which might include bitstream data or a logical set of files" ;
+    solveit-core:techniqueDetails "Bitstream data that would result from disk imaging would be stored in formats such as: RAW, EWF, AFF4. For sets of files that are extracted there are proprietary logical formats from tool vendors. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc." ;
     solveit-core:techniqueID "T1025" ;
     solveit-core:techniqueName "Writing data to a forensic image format" .
 
@@ -1334,11 +1332,10 @@ The imaged data may be split into several linked container formats. e.g. e01, e0
     solveit-core:techniqueName "Chip-off" .
 
 :techniqueT1029 a solveit-core:Technique ;
-    rdfs:label "T1029: Data read from desoldered eMMC"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
-    solveit-core:hasReference "todo" ;
+    rdfs:label "T1029: Access data from a desoldered eMMC via a chip reader"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamData"^^xsd:anyURI ;
     solveit-core:techniqueID "T1029" ;
-    solveit-core:techniqueName "Data read from desoldered eMMC" .
+    solveit-core:techniqueName "Access data from a desoldered eMMC via a chip reader" .
 
 :techniqueT1030 a solveit-core:Technique ;
     rdfs:label "T1030: Data read from unmanaged NAND"@en ;
@@ -2105,8 +2102,8 @@ Facebook Messenger
 
 :techniqueT1112 a solveit-core:Technique ;
     rdfs:label "T1112: Physical disk identification and removal"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Disk"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1174,
         :weaknessW1175,
         :weaknessW1176 ;
@@ -6267,12 +6264,8 @@ This might involve questions such as:
     solveit-core:techniqueName "Digital sniffer dogs" .
 
 :techniqueT1007 a solveit-core:Technique ;
-    rdfs:label "T1007: SyncTriage-based approach"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/WearableDevice"^^xsd:anyURI ;
+    rdfs:label "T1007: Use a SyncTriage-based approach to detect existence of devices"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
     solveit-core:hasExample "SyncTriage - https://bitbucket.org/chrishargreaves/synctriage" ;
     solveit-core:hasPotentialWeakness :weaknessW1008,
         :weaknessW1009,
@@ -6282,10 +6275,12 @@ This might involve questions such as:
     solveit-core:hasReference "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140." ;
     solveit-core:techniqueDescription "A technique developed in Hargreaves & Marshall (2018) whereby synchronisation artefacts on a device are examined and used to identify the existence of a related device. Also sometimes used to infer activity that occurred on an inaccessible or unavailable device. " ;
     solveit-core:techniqueID "T1007" ;
-    solveit-core:techniqueName "SyncTriage-based approach" .
+    solveit-core:techniqueName "Use a SyncTriage-based approach to detect existence of devices" .
 
 :techniqueT1012 a solveit-core:Technique ;
-    rdfs:label "T1012: Hardware write blockers"@en ;
+    rdfs:label "T1012: Connect storage medium via hardware write blocker"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1118,
         :weaknessW1119,
         :weaknessW1120 ;
@@ -6293,14 +6288,16 @@ This might involve questions such as:
     solveit-core:techniqueDescription "A hardware write blocking device [should] prevent any change to data in the user area of a hard drive while allowing access to all data on a hard drive. (Lyle 2006)" ;
     solveit-core:techniqueDetails "Note that \"Sometimes it may be desirable to change a drive configuration to obtain access to otherwise hidden sectors, for example, such as within an HPA (host protected area).\" (Lyle 2006) " ;
     solveit-core:techniqueID "T1012" ;
-    solveit-core:techniqueName "Hardware write blockers" .
+    solveit-core:techniqueName "Connect storage medium via hardware write blocker" .
 
 :techniqueT1013 a solveit-core:Technique ;
-    rdfs:label "T1013: Software write blockers"@en ;
+    rdfs:label "T1013: Use software write blockers to provide read only access to storage media"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasReference "NIST (2006) NIST SP 800-86 Guide to Integrating Forensic Techniques into Incident Response, https://doi.org/10.6028/NIST.SP.800-86" ;
     solveit-core:techniqueDescription "Use of a software-based tool that prevents a computer from writing to computer storage media connected to it (NIST 2006)" ;
     solveit-core:techniqueID "T1013" ;
-    solveit-core:techniqueName "Software write blockers" .
+    solveit-core:techniqueName "Use software write blockers to provide read only access to storage media" .
 
 :techniqueT1020 a solveit-core:Technique ;
     rdfs:label "T1020: Mobile file system extraction"@en ;
@@ -6380,7 +6377,8 @@ This might involve questions such as:
 
 :techniqueT1113 a solveit-core:Technique ;
     rdfs:label "T1113: Access internal storage via bootable environment"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/BlockDeviceNode"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI ;
     solveit-core:hasExample "PALADIN Forensic - is a modified “live” Linux distribution based on Ubuntu that simplifies various forensics tasks in a forensically sound manner via the PALADIN Toolbox.",
         "WinFE - Windows Forensic Environment, is forensically sound, bootable Windows operation system that can be burned into USB and plug the USB into suspected device. Then, after changing boot order, booting to the USB to create forensic images from the tested Windows, MacOS and Linux systems." ;
     solveit-core:hasPotentialWeakness :weaknessW1177,
