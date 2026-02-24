@@ -74,9 +74,15 @@ solveit-observable:RedactedFileSet rdf:type owl:Class ;
     rdfs:label "Redacted File Set"@en ;
     rdfs:comment "A subset of files reduced by a redaction process to remove sensitive or privileged content before disclosure."@en .
 
+###  ArtifactSet Observable Object
+solveit-observable:ArtifactSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:label "Artifact Set"@en ;
+    rdfs:comment "A contextual compilation of forensic artifacts grouped together for some purpose, such as filtering, redaction, or association with an investigation."@en .
+
 ###  RedactedArtifactSet Observable Object
 solveit-observable:RedactedArtifactSet rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:subClassOf solveit-observable:ArtifactSet ;
     rdfs:label "Redacted Artifact Set"@en ;
     rdfs:comment "A collection of artifacts reduced by a redaction process to remove sensitive or privileged content before disclosure."@en .
 
@@ -96,7 +102,13 @@ solveit-observable:DeviceInterface rdf:type owl:Class ;
 solveit-observable:WriteProtectedDeviceInterface rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:DeviceInterface ;
     rdfs:label "Write Protected Device Interface"@en ;
-    rdfs:comment "A logical interface to a storage device that has been accessed in a write-protected manner, either via a hardware write blocker, software write blocking, or a read-only boot environment."@en .
+    rdfs:comment "A logical interface to a storage device that has been interfaced with in a write-protected manner, either via a hardware write blocker, software write blocking, or a read-only boot environment."@en .
+
+###  ReadWriteDeviceInterface Observable Object
+solveit-observable:ReadWriteDeviceInterface rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:DeviceInterface ;
+    rdfs:label "Read Write Device Interface"@en ;
+    rdfs:comment "A logical interface to a storage device that has been interfaced with in a read-write manner, as yet, without write protection."@en .
 
 ###  HashVerificationResult Observable Object
 solveit-observable:HashVerificationResult rdf:type owl:Class ;
@@ -177,6 +189,12 @@ solveit-observable:hasFile rdf:type owl:ObjectProperty ;
     rdfs:range uco-observable:File ;
     rdfs:label "has file"@en ;
     rdfs:comment "A file belonging to this file set."@en .
+
+solveit-observable:hasArtifact rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:ArtifactSet ;
+    rdfs:range uco-observable:ObservableObject ;
+    rdfs:label "has artifact"@en ;
+    rdfs:comment "An artifact belonging to this artifact set."@en .
 
 #################################################################
 #    Data Properties
