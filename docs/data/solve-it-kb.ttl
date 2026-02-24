@@ -230,11 +230,6 @@
     solveit-core:objectiveDescription "Create documentation about techniques used and findings." ;
     solveit-core:objectiveName "Produce documentation" .
 
-:techniqueT1000 a solveit-core:Technique ;
-    rdfs:label "T1000: Placeholder"@en ;
-    solveit-core:techniqueID "T1000" ;
-    solveit-core:techniqueName "Placeholder" .
-
 :weaknessW1150 a solveit-core:Weakness ;
     rdfs:label "W1150: Misinterpreting events from automated processes as user generated ones"@en ;
     solveit-core:hasReference "Jens-Petter Sandvik, André Årnes, 2018. The reliability of clocks as digital evidence under low voltage conditions. Digital Investigation, 24, pp.S10-S17." ;
