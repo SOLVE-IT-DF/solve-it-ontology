@@ -1,0 +1,295 @@
+@prefix : <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/solveit/observable/> .
+
+#################################################################
+#    SOLVE-IT SQLite Module
+#    SQLite database structures for digital forensic analysis
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/observable/sqlite> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/sqlite/0.0.1> ;
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.4.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/observable/1.4.0> ;
+    dcterms:title "SOLVE-IT SQLite Module"@en ;
+    dcterms:description "SQLite database structural representation for digital forensic analysis, including logical structure (tables, schemas, records), physical structure (pages), and WAL/journal representations."@en ;
+    dcterms:creator "SOLVE-IT Project" ;
+    owl:versionInfo "0.0.1" ;
+    rdfs:label "SOLVE-IT SQLite Module"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+###  SQLiteDatabase Observable Object
+solveit-observable:SQLiteDatabase rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:File ;
+    rdfs:label "SQLite Database"@en ;
+    rdfs:comment "A SQLite database file stored on disk."@en .
+
+###  SQLiteTable Observable Object
+solveit-observable:SQLiteTable rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "SQLite Table"@en ;
+    rdfs:comment "A table within a SQLite database."@en .
+
+###  SQLiteSchema Observable Object
+solveit-observable:SQLiteSchema rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "SQLite Schema"@en ;
+    rdfs:comment "The schema definition for a SQLite table."@en .
+
+###  SQLiteFieldDefinition Observable Object
+solveit-observable:SQLiteFieldDefinition rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "SQLite Field Definition"@en ;
+    rdfs:comment "A column definition within a SQLite schema."@en .
+
+###  SQLitePage Observable Object
+solveit-observable:SQLitePage rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "SQLite Page"@en ;
+    rdfs:comment "A physical storage page within a SQLite database file."@en .
+
+###  SQLiteRecord Observable Object
+solveit-observable:SQLiteRecord rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "SQLite Record"@en ;
+    rdfs:comment "A record (row) within a SQLite table."@en .
+
+###  SQLiteField Observable Object
+solveit-observable:SQLiteField rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "SQLite Field"@en ;
+    rdfs:comment "A field (cell) within a SQLite record."@en .
+
+###  SQLiteWAL Observable Object
+solveit-observable:SQLiteWAL rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:File ;
+    rdfs:label "SQLite WAL"@en ;
+    rdfs:comment "A Write-Ahead Log file associated with a SQLite database."@en .
+
+###  SQLiteWALFrame Observable Object
+solveit-observable:SQLiteWALFrame rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "SQLite WAL Frame"@en ;
+    rdfs:comment "A single frame within a SQLite WAL, containing a version of a database page."@en .
+
+###  SQLiteJournal Observable Object
+solveit-observable:SQLiteJournal rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:File ;
+    rdfs:label "SQLite Journal"@en ;
+    rdfs:comment "A rollback journal file associated with a SQLite database, containing pre-modification page images."@en .
+
+###  SQLiteJournalPageImage Observable Object
+solveit-observable:SQLiteJournalPageImage rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "SQLite Journal Page Image"@en ;
+    rdfs:comment "A stored copy of a database page as it existed before modification, held in the rollback journal."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+solveit-observable:hasTable rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteDatabase ;
+    rdfs:range solveit-observable:SQLiteTable ;
+    rdfs:label "has table"@en ;
+    rdfs:comment "Links a SQLite database to a table it contains."@en .
+
+solveit-observable:hasPage rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteDatabase ;
+    rdfs:range solveit-observable:SQLitePage ;
+    rdfs:label "has page"@en ;
+    rdfs:comment "Links a SQLite database to a physical storage page."@en .
+
+solveit-observable:hasWAL rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteDatabase ;
+    rdfs:range solveit-observable:SQLiteWAL ;
+    rdfs:label "has WAL"@en ;
+    rdfs:comment "Links a SQLite database to its Write-Ahead Log."@en .
+
+solveit-observable:hasJournal rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteDatabase ;
+    rdfs:range solveit-observable:SQLiteJournal ;
+    rdfs:label "has journal"@en ;
+    rdfs:comment "Links a SQLite database to its rollback journal."@en .
+
+solveit-observable:hasSchema rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteTable ;
+    rdfs:range solveit-observable:SQLiteSchema ;
+    rdfs:label "has schema"@en ;
+    rdfs:comment "Links a SQLite table to its schema definition."@en .
+
+solveit-observable:hasRecord rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteTable ;
+    rdfs:range solveit-observable:SQLiteRecord ;
+    rdfs:label "has record"@en ;
+    rdfs:comment "Links a SQLite table to a record it contains."@en .
+
+solveit-observable:hasFieldDefinition rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteSchema ;
+    rdfs:range solveit-observable:SQLiteFieldDefinition ;
+    rdfs:label "has field definition"@en ;
+    rdfs:comment "Links a SQLite schema to a column definition."@en .
+
+solveit-observable:hasField rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteRecord ;
+    rdfs:range solveit-observable:SQLiteField ;
+    rdfs:label "has field"@en ;
+    rdfs:comment "Links a SQLite record to a field it contains."@en .
+
+solveit-observable:recoveredFromPage rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteRecord ;
+    rdfs:range solveit-observable:SQLitePage ;
+    rdfs:label "recovered from page"@en ;
+    rdfs:comment "The page from which this record was physically recovered."@en .
+
+solveit-observable:definedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteField ;
+    rdfs:range solveit-observable:SQLiteFieldDefinition ;
+    rdfs:label "defined by"@en ;
+    rdfs:comment "Links a field value to its schema field definition."@en .
+
+solveit-observable:hasBlobContent rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteField ;
+    rdfs:range uco-observable:SQLiteBlob ;
+    rdfs:label "has blob content"@en ;
+    rdfs:comment "Links to a CASE SQLiteBlob for binary field content."@en .
+
+solveit-observable:containsDataFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLitePage ;
+    rdfs:range solveit-observable:SQLiteTable ;
+    rdfs:label "contains data from"@en ;
+    rdfs:comment "This page stores row data from the specified table."@en .
+
+solveit-observable:containsMetadataFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLitePage ;
+    rdfs:range solveit-observable:SQLiteTable ;
+    rdfs:label "contains metadata from"@en ;
+    rdfs:comment "This page stores B-tree structural metadata for the specified table."@en .
+
+solveit-observable:hasChildPage rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLitePage ;
+    rdfs:range solveit-observable:SQLitePage ;
+    rdfs:label "has child page"@en ;
+    rdfs:comment "Links a B-tree interior page to its child pages."@en .
+
+solveit-observable:hasFrame rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteWAL ;
+    rdfs:range solveit-observable:SQLiteWALFrame ;
+    rdfs:label "has frame"@en ;
+    rdfs:comment "Links a WAL to a frame it contains."@en .
+
+solveit-observable:containsPageVersion rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteWALFrame ;
+    rdfs:range solveit-observable:SQLitePage ;
+    rdfs:label "contains page version"@en ;
+    rdfs:comment "Links a WAL frame to the page version it contains."@en .
+
+solveit-observable:hasPageImage rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteJournal ;
+    rdfs:range solveit-observable:SQLiteJournalPageImage ;
+    rdfs:label "has page image"@en ;
+    rdfs:comment "Links a rollback journal to a page image it contains."@en .
+
+solveit-observable:originalVersionOf rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SQLiteJournalPageImage ;
+    rdfs:range solveit-observable:SQLitePage ;
+    rdfs:label "original version of"@en ;
+    rdfs:comment "Links a journal page image to the database page it represents the pre-modification state of."@en .
+
+#################################################################
+#    Data Properties
+#################################################################
+
+solveit-observable:journalMode rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteDatabase ;
+    rdfs:range xsd:string ;
+    rdfs:label "journal mode"@en ;
+    rdfs:comment "The SQLite journal mode: DELETE, TRUNCATE, PERSIST, MEMORY, WAL, or OFF."@en .
+
+solveit-observable:fieldName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteFieldDefinition ;
+    rdfs:range xsd:string ;
+    rdfs:label "field name"@en ;
+    rdfs:comment "The column name in the schema."@en .
+
+solveit-observable:fieldType rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteFieldDefinition ;
+    rdfs:range xsd:string ;
+    rdfs:label "field type"@en ;
+    rdfs:comment "SQLite type affinity: TEXT, INTEGER, REAL, BLOB, NULL."@en .
+
+solveit-observable:fieldIndex rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteFieldDefinition ;
+    rdfs:range xsd:integer ;
+    rdfs:label "field index"@en ;
+    rdfs:comment "Zero-based position within the schema."@en .
+
+solveit-observable:isPrimaryKey rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteFieldDefinition ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is primary key"@en ;
+    rdfs:comment "Whether this field is the primary key."@en .
+
+solveit-observable:pageNumber rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLitePage ;
+    rdfs:range xsd:integer ;
+    rdfs:label "page number"@en ;
+    rdfs:comment "The page number within the database file."@en .
+
+solveit-observable:pageType rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLitePage ;
+    rdfs:range xsd:string ;
+    rdfs:label "page type"@en ;
+    rdfs:comment "e.g. b-tree leaf, b-tree interior, overflow, freelist."@en .
+
+solveit-observable:fieldContentText rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteField ;
+    rdfs:range xsd:string ;
+    rdfs:label "field content text"@en ;
+    rdfs:comment "Text content of this field."@en .
+
+solveit-observable:fieldContentInteger rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteField ;
+    rdfs:range xsd:integer ;
+    rdfs:label "field content integer"@en ;
+    rdfs:comment "Integer content of this field."@en .
+
+solveit-observable:fieldContentReal rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteField ;
+    rdfs:range xsd:double ;
+    rdfs:label "field content real"@en ;
+    rdfs:comment "Real number content of this field."@en .
+
+solveit-observable:fieldContentNull rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteField ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "field content null"@en ;
+    rdfs:comment "True if this field contains a NULL value."@en .
+
+solveit-observable:frameNumber rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteWALFrame ;
+    rdfs:range xsd:integer ;
+    rdfs:label "frame number"@en ;
+    rdfs:comment "The sequence number of this frame within the WAL."@en .
+
+solveit-observable:framePageNumber rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteWALFrame ;
+    rdfs:range xsd:integer ;
+    rdfs:label "frame page number"@en ;
+    rdfs:comment "The database page number that this frame contains a version of."@en .
+
+solveit-observable:journalPageNumber rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteJournalPageImage ;
+    rdfs:range xsd:integer ;
+    rdfs:label "journal page number"@en ;
+    rdfs:comment "The database page number this image is a pre-modification copy of."@en .

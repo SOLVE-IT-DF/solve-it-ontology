@@ -1,0 +1,101 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT SQLite Examples
+#    A minimal "Hello, World!" database demonstrating core SQLite classes
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/sqlite> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/sqlite/1.0.0> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
+    rdfs:label "SOLVE-IT SQLite Examples"@en ;
+    rdfs:comment "Minimal example: a hello.db with one table and two records."@en .
+
+#################################################################
+#    Database, Table, Schema & Field Definitions
+#################################################################
+
+:helloDb rdf:type solveit-observable:SQLiteDatabase ;
+    rdfs:label "hello.db"@en ;
+    solveit-observable:journalMode "DELETE" ;
+    solveit-observable:hasTable :greetings ;
+    solveit-observable:hasPage :page1 , :page2 .
+
+:greetings rdf:type solveit-observable:SQLiteTable ;
+    rdfs:label "greetings"@en ;
+    solveit-observable:hasSchema :greetingsSchema ;
+    solveit-observable:hasRecord :row1 , :row2 .
+
+:greetingsSchema rdf:type solveit-observable:SQLiteSchema ;
+    rdfs:label "greetings schema"@en ;
+    solveit-observable:hasFieldDefinition :colId , :colMessage .
+
+:colId rdf:type solveit-observable:SQLiteFieldDefinition ;
+    rdfs:label "id column"@en ;
+    solveit-observable:fieldName "id" ;
+    solveit-observable:fieldType "INTEGER" ;
+    solveit-observable:fieldIndex 0 ;
+    solveit-observable:isPrimaryKey true .
+
+:colMessage rdf:type solveit-observable:SQLiteFieldDefinition ;
+    rdfs:label "message column"@en ;
+    solveit-observable:fieldName "message" ;
+    solveit-observable:fieldType "TEXT" ;
+    solveit-observable:fieldIndex 1 ;
+    solveit-observable:isPrimaryKey false .
+
+#################################################################
+#    Pages
+#################################################################
+
+:page1 rdf:type solveit-observable:SQLitePage ;
+    rdfs:label "Page 1 — root"@en ;
+    solveit-observable:pageNumber 1 ;
+    solveit-observable:pageType "b-tree interior" ;
+    solveit-observable:containsMetadataFrom :greetings ;
+    solveit-observable:hasChildPage :page2 .
+
+:page2 rdf:type solveit-observable:SQLitePage ;
+    rdfs:label "Page 2 — leaf"@en ;
+    solveit-observable:pageNumber 2 ;
+    solveit-observable:pageType "b-tree leaf" ;
+    solveit-observable:containsDataFrom :greetings .
+
+#################################################################
+#    Records & Fields
+#################################################################
+
+:row1 rdf:type solveit-observable:SQLiteRecord ;
+    rdfs:label "Row 1"@en ;
+    solveit-observable:hasField :row1_id , :row1_message .
+
+:row1_id rdf:type solveit-observable:SQLiteField ;
+    rdfs:label "id = 1"@en ;
+    solveit-observable:definedBy :colId ;
+    solveit-observable:fieldContentInteger 1 .
+
+:row1_message rdf:type solveit-observable:SQLiteField ;
+    rdfs:label "message = 'Hello, World!'"@en ;
+    solveit-observable:definedBy :colMessage ;
+    solveit-observable:fieldContentText "Hello, World!" .
+
+:row2 rdf:type solveit-observable:SQLiteRecord ;
+    rdfs:label "Row 2"@en ;
+    solveit-observable:hasField :row2_id , :row2_message .
+
+:row2_id rdf:type solveit-observable:SQLiteField ;
+    rdfs:label "id = 2"@en ;
+    solveit-observable:definedBy :colId ;
+    solveit-observable:fieldContentInteger 2 .
+
+:row2_message rdf:type solveit-observable:SQLiteField ;
+    rdfs:label "message = 'Bonjour, le monde!'"@en ;
+    solveit-observable:definedBy :colMessage ;
+    solveit-observable:fieldContentText "Bonjour, le monde!" .
