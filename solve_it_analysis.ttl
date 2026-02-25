@@ -30,11 +30,23 @@
 #    Classes
 #################################################################
 
-###  HypothesisedEvent Analytic Result
-solveit-analysis:HypothesisedEvent rdf:type owl:Class ;
+###  Hypothesis Analytic Result
+solveit-analysis:Hypothesis rdf:type owl:Class ;
     rdfs:subClassOf uco-analysis:AnalyticResult ;
+    rdfs:label "Hypothesis"@en ;
+    rdfs:comment "A proposition or explanation put forward for consideration during forensic analysis, which may be supported or contradicted by observable artifacts."@en .
+
+###  HypothesisedEvent
+solveit-analysis:HypothesisedEvent rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:Hypothesis ;
     rdfs:label "Hypothesised Event"@en ;
     rdfs:comment "An event that is hypothesised to have occurred."@en .
+
+###  HypothesisedDevice
+solveit-analysis:HypothesisedDevice rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:Hypothesis ;
+    rdfs:label "Hypothesised Device"@en ;
+    rdfs:comment "A device that is hypothesised to have been involved, such as a device inferred from artifacts but not yet physically identified or examined."@en .
 
 ###  ForensicToolTagBasedReport Analytic Result
 solveit-analysis:ForensicToolTagBasedReport rdf:type owl:Class ;
@@ -47,16 +59,16 @@ solveit-analysis:ForensicToolTagBasedReport rdf:type owl:Class ;
 #################################################################
 
 solveit-analysis:supportedBy rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-analysis:HypothesisedEvent ;
+    rdfs:domain solveit-analysis:Hypothesis ;
     rdfs:range uco-observable:ObservableObject ;
     rdfs:label "supported by"@en ;
-    rdfs:comment "Links a HypothesisedEvent to artifacts that support the hypothesis."@en .
+    rdfs:comment "Links a Hypothesis to artifacts that support the hypothesis."@en .
 
 solveit-analysis:contradictedBy rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-analysis:HypothesisedEvent ;
+    rdfs:domain solveit-analysis:Hypothesis ;
     rdfs:range uco-observable:ObservableObject ;
     rdfs:label "contradicted by"@en ;
-    rdfs:comment "Links a HypothesisedEvent to artifacts that contradict the hypothesis."@en .
+    rdfs:comment "Links a Hypothesis to artifacts that contradict the hypothesis."@en .
 
 solveit-analysis:hasArtifact rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:ForensicToolTagBasedReport ;
