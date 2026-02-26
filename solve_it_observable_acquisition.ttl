@@ -45,6 +45,18 @@ solveit-observable:ForensicImageContainer rdf:type owl:Class ;
     rdfs:label "Forensic Image Container"@en ;
     rdfs:comment "A forensic image in a container format (e.g., E01, AFF4) that encapsulates acquired data along with embedded metadata such as case information, examiner identity, acquisition timestamps, hash values, compression settings, and encryption status."@en .
 
+###  ForensicImageContainerWithBitstream Observable Object
+solveit-observable:ForensicImageContainerWithBitstream rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ForensicImageContainer ;
+    rdfs:label "Forensic Image Container With Bitstream"@en ;
+    rdfs:comment "A forensic image container that encapsulates a bitstream (bit-for-bit) copy of a source medium, such as a full disk image in E01 or AFF4 format."@en .
+
+###  ForensicImageContainerWithLogicalData Observable Object
+solveit-observable:ForensicImageContainerWithLogicalData rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ForensicImageContainer ;
+    rdfs:label "Forensic Image Container With Logical Data"@en ;
+    rdfs:comment "A forensic image container that encapsulates a logical collection of files rather than a bitstream copy, such as a logical image in L01 or ZIP format."@en .
+
 ###  RawImageFile Observable Object
 solveit-observable:RawImageFile rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:AcquiredData ;
