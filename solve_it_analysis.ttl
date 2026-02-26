@@ -8,6 +8,7 @@
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
 @base <https://ontology.solveit-df.org/solveit/analysis/> .
 
 #################################################################
@@ -69,6 +70,14 @@ solveit-analysis:contradictedBy rdf:type owl:ObjectProperty ;
     rdfs:range uco-observable:ObservableObject ;
     rdfs:label "contradicted by"@en ;
     rdfs:comment "Links a Hypothesis to artifacts that contradict the hypothesis."@en .
+
+solveit-analysis:hypothesisedDateTime rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-analysis:HypothesisedEvent ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( solveit-observable:DateTimeStamp
+                               solveit-observable:DateTimeRange ) ] ;
+    rdfs:label "hypothesised date time"@en ;
+    rdfs:comment "The date and time at which the hypothesised event is believed to have occurred - either an absolute timestamp (DateTimeStamp) or a time interval (DateTimeRange)."@en .
 
 solveit-analysis:hasArtifact rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:ForensicToolTagBasedReport ;
