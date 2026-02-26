@@ -122,6 +122,12 @@ solveit-observable:ApplicationFiles rdf:type owl:Class ;
     rdfs:label "Application Files"@en ;
     rdfs:comment "A contextual compilation of files associated with a specific application version. Groups the files belonging to a particular application (e.g. WhatsApp v13.2 database files) for forensic examination."@en .
 
+###  BrowserCacheData Observable Object
+solveit-observable:BrowserCacheData rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Browser Cache Data"@en ;
+    rdfs:comment "The locally cached data stored by a web browser to improve performance. This may include cached web pages, images, scripts, and associated metadata. The storage format varies by browser (e.g. Chrome simple cache, Firefox cache2, SQLite indexes)."@en .
+
 ###  DeviceSet Observable Object
 solveit-observable:DeviceSet rdf:type owl:Class ;
     rdfs:subClassOf uco-core:ContextualCompilation ;
