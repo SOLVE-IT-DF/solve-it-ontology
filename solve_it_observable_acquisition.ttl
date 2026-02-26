@@ -37,7 +37,25 @@ solveit-observable:AcquiredData rdf:type owl:Class ;
 solveit-observable:BitstreamData rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:AcquiredData ;
     rdfs:label "Bitstream Data"@en ;
+    rdfs:comment "Bit-for-bit data representing the complete content of a storage medium or device. This is the general class for bitstream data at any stage of the forensic process."@en .
+
+###  BitstreamDataRead Observable Object
+solveit-observable:BitstreamDataRead rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:BitstreamData ;
+    rdfs:label "Bitstream Data Read"@en ;
     rdfs:comment "Raw bit-for-bit data read from a source medium. Represents the data in transit or memory before being written to a container or file."@en .
+
+###  BitstreamDataStored Observable Object
+solveit-observable:BitstreamDataStored rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:BitstreamData ;
+    rdfs:label "Bitstream Data Stored"@en ;
+    rdfs:comment "Bitstream data as stored within a forensic image container. This is the encapsulated bitstream content that may have been compressed or otherwise processed by the container format."@en .
+
+###  BitstreamDataExtracted Observable Object
+solveit-observable:BitstreamDataExtracted rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:BitstreamData ;
+    rdfs:label "Bitstream Data Extracted"@en ;
+    rdfs:comment "Bitstream data extracted (decoded) from a forensic image container. Represents the bitstream after it has been read back out of a container format such as E01 or AFF4."@en .
 
 ###  ForensicImageContainer Observable Object
 solveit-observable:ForensicImageContainer rdf:type owl:Class ;

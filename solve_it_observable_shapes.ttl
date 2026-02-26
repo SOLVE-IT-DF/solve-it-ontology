@@ -50,18 +50,18 @@
 
 
 #################################################################
-#    ApplicationFiles Shape
+#    ForensicImageContainerWithBitstream Shape
 #################################################################
 
 :ForensicImageContainerWithBitstreamShape a sh:NodeShape ;
     sh:targetClass solveit-observable:ForensicImageContainerWithBitstream ;
     rdfs:label "Forensic Image Container With Bitstream Shape"@en ;
-    rdfs:comment "Validates that a ForensicImageContainerWithBitstream contains BitstreamData."@en ;
+    rdfs:comment "Validates that a ForensicImageContainerWithBitstream contains BitstreamDataStored."@en ;
     sh:property [
         sh:path solveit-observable:contains ;
-        sh:class solveit-observable:BitstreamData ;
+        sh:class solveit-observable:BitstreamDataStored ;
         sh:minCount 1 ;
-        sh:message "contains must reference at least one BitstreamData instance"@en ;
+        sh:message "contains must reference at least one BitstreamDataStored instance"@en ;
     ] .
 
 #################################################################
