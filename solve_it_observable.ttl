@@ -32,6 +32,18 @@
 #    Classes
 #################################################################
 
+###  Bitstream Observable Object
+solveit-observable:Bitstream rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Bitstream"@en ;
+    rdfs:comment "A sequential, complete bit-for-bit copy of a storage medium (LBA0 to LBAmax). Represents data in transit from a capture process to a storage format."@en .
+
+###  BitstreamRandomAccessed Observable Object
+solveit-observable:BitstreamRandomAccessed rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Bitstream Random Accessed"@en ;
+    rdfs:comment "Random access to sector-level data, whether from a live device or a decoded forensic image container. Enables partition parsing, filesystem traversal, and logical operations."@en .
+
 ###  VideoFrame Observable Object
 solveit-observable:VideoFrame rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
@@ -103,6 +115,12 @@ solveit-observable:WriteProtectedDeviceInterface rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:DeviceInterface ;
     rdfs:label "Write Protected Device Interface"@en ;
     rdfs:comment "A logical interface to a storage device that has been interfaced with in a write-protected manner, either via a hardware write blocker, software write blocking, or a read-only boot environment."@en .
+
+###  LiveOSDeviceInterface Observable Object
+solveit-observable:LiveOSDeviceInterface rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:DeviceInterface ;
+    rdfs:label "Live OS Device Interface"@en ;
+    rdfs:comment "Access to a block device via the operating system on a live, running system. Provides sector-level access to storage without relying on the OS for file system parsing."@en .
 
 ###  ReadWriteDeviceInterface Observable Object
 solveit-observable:ReadWriteDeviceInterface rdf:type owl:Class ;

@@ -33,12 +33,6 @@ solveit-observable:AcquiredData rdf:type owl:Class ;
     rdfs:label "Acquired Data"@en ;
     rdfs:comment "Data that has been forensically collected from a source device or system. This is the parent class for all types of forensic data acquisition outputs."@en .
 
-###  BitstreamData Observable Object
-solveit-observable:BitstreamData rdf:type owl:Class ;
-    rdfs:subClassOf solveit-observable:AcquiredData ;
-    rdfs:label "Bitstream Data"@en ;
-    rdfs:comment "Bit-for-bit data representing the complete content of a storage medium or device. This is the general class for bitstream data at any stage of the forensic process."@en .
-
 ###  ForensicImageContainer Observable Object
 solveit-observable:ForensicImageContainer rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:AcquiredData ;
