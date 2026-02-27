@@ -50,28 +50,28 @@
 
 
 #################################################################
-#    ForensicImageContainerWithBitstream Shape
+#    PhysicalImageContainer Shape
 #################################################################
 
-:ForensicImageContainerWithBitstreamShape a sh:NodeShape ;
-    sh:targetClass solveit-observable:ForensicImageContainerWithBitstream ;
+:PhysicalImageContainerShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:PhysicalImageContainer ;
     rdfs:label "Forensic Image Container With Bitstream Shape"@en ;
-    rdfs:comment "Validates that a ForensicImageContainerWithBitstream contains BitstreamDataStored."@en ;
+    rdfs:comment "Validates that a PhysicalImageContainer contains BitstreamData."@en ;
     sh:property [
         sh:path solveit-observable:contains ;
-        sh:class solveit-observable:BitstreamDataStored ;
+        sh:class solveit-observable:BitstreamData ;
         sh:minCount 1 ;
-        sh:message "contains must reference at least one BitstreamDataStored instance"@en ;
+        sh:message "contains must reference at least one BitstreamData instance"@en ;
     ] .
 
 #################################################################
-#    ForensicImageContainerWithLogicalData Shape
+#    LogicalImageContainer Shape
 #################################################################
 
-:ForensicImageContainerWithLogicalDataShape a sh:NodeShape ;
-    sh:targetClass solveit-observable:ForensicImageContainerWithLogicalData ;
+:LogicalImageContainerShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:LogicalImageContainer ;
     rdfs:label "Forensic Image Container With Logical Data Shape"@en ;
-    rdfs:comment "Validates that a ForensicImageContainerWithLogicalData contains a FileSet."@en ;
+    rdfs:comment "Validates that a LogicalImageContainer contains a FileSet."@en ;
     sh:property [
         sh:path solveit-observable:contains ;
         sh:class solveit-observable:FileSet ;

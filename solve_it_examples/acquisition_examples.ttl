@@ -23,8 +23,8 @@
 #    Disk imaging workflow using SOLVE-IT techniques:
 #    1. Laptop -> [T1112: Physical disk removal] -> Disk
 #    2. Disk -> [T1012: Hardware write blocker] -> WriteProtectedDeviceInterface
-#    3. WriteProtectedDeviceInterface -> [T10XX: Read bitstream] -> BitstreamDataRead
-#    4. BitstreamDataRead -> [T1025: Write to container] -> ForensicImageContainerWithBitstream (contains BitstreamDataStored)
+#    3. WriteProtectedDeviceInterface -> [T10XX: Read bitstream] -> BitstreamData
+#    4. BitstreamData -> [T1025: Write to container] -> PhysicalImageContainer
 #    5. ForensicImageContainer -> [T1042: Hash verification] -> HashVerificationResult
 #################################################################
 
@@ -37,13 +37,10 @@
 :writeBlockedInterface rdf:type solveit-observable:WriteProtectedDeviceInterface ;
     rdfs:label "Tableau T35u Write-Protected Interface"@en .
 
-:acquiredBitstream rdf:type solveit-observable:BitstreamDataRead ;
-    rdfs:label "Bitstream read from Samsung SSD"@en .
+:acquiredBitstream rdf:type solveit-observable:BitstreamData ;
+    rdfs:label "Bitstream from Samsung SSD"@en .
 
-:storedBitstream rdf:type solveit-observable:BitstreamDataStored ;
-    rdfs:label "Bitstream stored in forensic image"@en .
-
-:laptopForensicImage rdf:type solveit-observable:ForensicImageContainerWithBitstream ;
+:laptopForensicImage rdf:type solveit-observable:PhysicalImageContainer ;
     rdfs:label "Laptop SSD Forensic Image"@en ;
     solveit-observable:embeddedCaseNumber "2024-CF-001234" ;
     solveit-observable:embeddedEvidenceNumber "E001" ;
@@ -51,7 +48,7 @@
     solveit-observable:embeddedDescription "Dell Latitude 5520 - Samsung 500GB SSD" ;
     solveit-observable:embeddedNotes "Acquired using Tableau T35u write blocker." ;
     solveit-observable:hasPart :image-segment-E01 , :image-segment-E02 , :image-segment-E03 ;
-    solveit-observable:contains :storedBitstream .
+    solveit-observable:contains :acquiredBitstream .
 
 :image-segment-E01 rdf:type uco-observable:File ;
     rdfs:label "laptop_ssd.E01"@en .
