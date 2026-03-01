@@ -19,12 +19,9 @@ def load_ontology_definitions(project_root):
     """Load all ontology TTL files and extract defined classes and properties."""
     g = Graph()
 
-    # Load all ontology files (not examples)
-    ontology_files = [
-        project_root / "solve_it_core.ttl",
-        project_root / "solve_it_observable.ttl",
-        project_root / "solve_it_analysis.ttl"
-    ]
+    # Load all ontology files (not examples or shapes)
+    ontology_files = sorted(project_root.glob("solve_it_*.ttl"))
+    ontology_files = [f for f in ontology_files if "shapes" not in f.name]
 
     for ttl_file in ontology_files:
         if ttl_file.exists():

@@ -1,0 +1,41 @@
+name: Validate Ontology
+
+on:
+  push:
+    branches:
+      - main
+      - master
+    paths:
+      - '**.ttl'
+      - 'scripts/validate_*.py'
+      - '.github/workflows/validate-ontology.yml'
+  pull_request:
+    branches:
+      - main
+      - master
+    paths:
+      - '**.ttl'
+      - 'scripts/validate_*.py'
+      - '.github/workflows/validate-ontology.yml'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install rdflib
+
+      - name: Validate ontology and SHACL shapes
+        run: python scripts/validate_ontology.py
+
+      - name: Validate examples against ontology
+        run: python scripts/validate_examples.py
