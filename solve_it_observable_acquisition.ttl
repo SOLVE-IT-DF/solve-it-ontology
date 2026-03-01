@@ -100,12 +100,17 @@ solveit-observable:ADBPullData rdf:type owl:Class ;
     rdfs:label "ADB Pull Data"@en ;
     rdfs:comment "Data obtained via Android Debug Bridge (ADB) pull operations."@en .
 
-###  DeviceScreenshot Observable Object
-solveit-observable:DeviceScreenshot rdf:type owl:Class ;
-    rdfs:subClassOf solveit-observable:AcquiredData ,
-                    uco-observable:RasterPicture ;
-    rdfs:label "Device Screenshot"@en ;
-    rdfs:comment "A screenshot image captured from a device screen during forensic acquisition."@en .
+###  DeviceScreenshotCapture Observable Object
+solveit-observable:DeviceScreenshotCapture rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ;
+    rdfs:label "Device Screenshot Capture"@en ;
+    rdfs:comment "The acquisition of a screenshot from a device screen. Contains the captured image (RasterPicture)."@en .
+
+###  ClockOffsetCapture Observable Object
+solveit-observable:ClockOffsetCapture rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:AcquiredData ;
+    rdfs:label "Clock Offset Capture"@en ;
+    rdfs:comment "The acquisition of a clock offset measurement from a device. Contains the ClockOffsetMeasurement recording the measured difference between the device clock and a reference time source."@en .
 
 ###  AcquisitionRecordFile Observable Object
 solveit-observable:AcquisitionRecordFile rdf:type owl:Class ;

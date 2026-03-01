@@ -113,6 +113,36 @@
     ] .
 
 #################################################################
+#    DeviceScreenshotCapture Shape
+#################################################################
+
+:DeviceScreenshotCaptureShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:DeviceScreenshotCapture ;
+    rdfs:label "Device Screenshot Capture Shape"@en ;
+    rdfs:comment "Validates that a DeviceScreenshotCapture contains a RasterPicture."@en ;
+    sh:property [
+        sh:path solveit-observable:contains ;
+        sh:class uco-observable:RasterPicture ;
+        sh:minCount 1 ;
+        sh:message "contains must reference at least one RasterPicture instance"@en ;
+    ] .
+
+#################################################################
+#    ClockOffsetCapture Shape
+#################################################################
+
+:ClockOffsetCaptureShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:ClockOffsetMeasurementCapture ;
+    rdfs:label "Clock Offset Capture Shape"@en ;
+    rdfs:comment "Validates that a ClockOffsetCapture contains a ClockOffset."@en ;
+    sh:property [
+        sh:path solveit-observable:contains ;
+        sh:class solveit-observable:ClockOffsetMeasurement ;
+        sh:minCount 1 ;
+        sh:message "contains must reference at least one ClockOffsetMeasurement instance"@en ;
+    ] .
+
+#################################################################
 #    ApplicationFiles Shape
 #################################################################
 

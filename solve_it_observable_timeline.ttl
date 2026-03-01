@@ -56,10 +56,10 @@ solveit-observable:DateTimeRange rdf:type owl:Class ;
     rdfs:comment "A time interval with start and end boundaries. Exactly one start property (inclusive or exclusive) and exactly one end property (inclusive or exclusive) must be specified. See SHACL shapes for validation."@en .
 
 ###  ClockOffset Observable Object
-solveit-observable:ClockOffset rdf:type owl:Class ;
-    rdfs:subClassOf solveit-observable:AcquiredData ;
-    rdfs:label "Clock Offset"@en ;
-    rdfs:comment "The time offset between a device clock and a reference time."@en .
+solveit-observable:ClockOffsetMeasurement rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Clock Offset Measurement"@en ;
+    rdfs:comment "The measured difference between a device clock and a reference time source. Records what was compared, the offset value, and when the comparison was made."@en .
 
 #################################################################
 #    Object Properties
@@ -80,18 +80,30 @@ solveit-observable:timelineEntryValue rdf:type owl:ObjectProperty ;
     rdfs:label "timeline entry value"@en ;
     rdfs:comment "The temporal value of this timeline entry - an absolute timestamp (DateTimeStamp), a time interval (DateTimeRange), or relative ordering (ImplicitTimingInformation)."@en .
 
+solveit-observable:measuredClock rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:ClockOffsetMeasurement ;
+    rdfs:range uco-observable:ObservableObject ;
+    rdfs:label "measured clock"@en ;
+    rdfs:comment "The device or system whose clock was measured."@en .
+
 #################################################################
 #    Data Properties
 #################################################################
 
+solveit-observable:referenceTimeSource rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ClockOffsetMeasurement ;
+    rdfs:range xsd:string ;
+    rdfs:label "reference time source"@en ;
+    rdfs:comment "The reference time source used for comparison (e.g., NTP server, GPS time, examiner's calibrated watch)."@en .
+
 solveit-observable:clockOffsetValue rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClockOffset ;
+    rdfs:domain solveit-observable:ClockOffsetMeasurement ;
     rdfs:range xsd:decimal ;
     rdfs:label "clock offset value"@en ;
     rdfs:comment "The clock offset value in seconds. Positive values indicate the clock is ahead, negative values indicate it is behind."@en .
 
 solveit-observable:clockOffsetKnownAt rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClockOffset ;
+    rdfs:domain solveit-observable:ClockOffsetMeasurement ;
     rdfs:range xsd:dateTime ;
     rdfs:label "clock offset known at"@en ;
     rdfs:comment "The specific point in time when this clock offset was determined."@en .
