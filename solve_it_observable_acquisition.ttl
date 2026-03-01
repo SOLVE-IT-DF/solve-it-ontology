@@ -51,11 +51,11 @@ solveit-observable:LogicalImageContainer rdf:type owl:Class ;
     rdfs:label "Logical Image Container"@en ;
     rdfs:comment "A forensic image container that encapsulates a logical collection of files rather than a bitstream copy, such as a logical image in L01 or ZIP format."@en .
 
-###  RawImageFile Observable Object
-solveit-observable:RawImageFile rdf:type owl:Class ;
+###  RawImage Observable Object
+solveit-observable:RawImage rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:AcquiredData ;
-    rdfs:label "Raw Image File"@en ;
-    rdfs:comment "A raw/dd format forensic image where the bitstream data is stored as a flat file without container metadata. Typically accompanied by a RawImageInfoFile containing hashes, case information, and acquisition details."@en .
+    rdfs:label "Raw Image"@en ;
+    rdfs:comment "A raw/dd format forensic image containing a bitstream without container metadata. Typically accompanied by a RawImageInfoFile containing hashes, case information, and acquisition details."@en .
 
 ###  RawImageInfoFile Observable Object
 solveit-observable:RawImageInfoFile rdf:type owl:Class ;
@@ -125,23 +125,29 @@ solveit-observable:AcquisitionErrorRecord rdf:type owl:Class ;
 #    Object Properties
 #################################################################
 
-solveit-observable:hasPart rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:ForensicImageContainer ;
-    rdfs:range uco-observable:File ;
-    rdfs:label "has part"@en ;
-    rdfs:comment "Links a ForensicImageContainer to its constituent segment files (e.g., .E01, .E02, .E03 for split EnCase images)."@en .
-
 solveit-observable:contains rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:ForensicImageContainer ;
+    rdfs:domain solveit-observable:AcquiredData ;
     rdfs:range uco-observable:ObservableObject ;
     rdfs:label "contains"@en ;
-    rdfs:comment "The logical content encapsulated within the forensic image container, such as bitstream data, files, or metadata."@en .
+    rdfs:comment "The logical content encapsulated within the acquired data, such as bitstream data, files, or metadata."@en .
+
+solveit-observable:acquiredFrom rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:AcquiredData ;
+    rdfs:range uco-observable:ObservableObject ;
+    rdfs:label "acquired from"@en ;
+    rdfs:comment "The source from which the data was acquired, such as a device, device interface, or storage medium."@en .
+
+solveit-observable:storedIn rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:AcquiredData ;
+    rdfs:range uco-observable:File ;
+    rdfs:label "stored in"@en ;
+    rdfs:comment "The file or files in which the acquired data is physically stored (e.g., .E01 segment files, a .dd file, a backup archive)."@en .
 
 solveit-observable:hasInfoFile rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:RawImageFile ;
+    rdfs:domain solveit-observable:RawImage ;
     rdfs:range solveit-observable:RawImageInfoFile ;
     rdfs:label "has info file"@en ;
-    rdfs:comment "Links a RawImageFile to its accompanying RawImageInfoFile containing metadata."@en .
+    rdfs:comment "Links a RawImage to its accompanying RawImageInfoFile containing metadata."@en .
 
 solveit-observable:hasAcquisitionErrorRecord rdf:type owl:ObjectProperty ;
     rdfs:domain [ a owl:Class ;

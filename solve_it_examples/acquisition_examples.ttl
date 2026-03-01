@@ -23,9 +23,9 @@
 #    Disk imaging workflow using SOLVE-IT techniques:
 #    1. Laptop -> [T1112: Physical disk removal] -> Disk
 #    2. Disk -> [T1012: Hardware write blocker] -> WriteProtectedDeviceInterface
-#    3. WriteProtectedDeviceInterface -> [T10XX: Read bitstream] -> BitstreamData
-#    4. BitstreamData -> [T1025: Write to container] -> PhysicalImageContainer
-#    5. ForensicImageContainer -> [T1042: Hash verification] -> HashVerificationResult
+#    3. WriteProtectedDeviceInterface -> [T1002: Disk imaging] -> Bitstream
+#    4. Bitstream -> [T1025: Write to container] -> PhysicalImageContainer
+#    5. PhysicalImageContainer -> [T1042: Hash verification] -> HashVerificationResult
 #################################################################
 
 :seizedLaptop rdf:type uco-observable:Laptop ;
@@ -37,7 +37,7 @@
 :writeBlockedInterface rdf:type solveit-observable:WriteProtectedDeviceInterface ;
     rdfs:label "Tableau T35u Write-Protected Interface"@en .
 
-:acquiredBitstream rdf:type solveit-observable:BitstreamData ;
+:acquiredBitstream rdf:type solveit-observable:Bitstream ;
     rdfs:label "Bitstream from Samsung SSD"@en .
 
 :laptopForensicImage rdf:type solveit-observable:PhysicalImageContainer ;
@@ -47,7 +47,8 @@
     solveit-observable:embeddedExaminerName "Jane Smith" ;
     solveit-observable:embeddedDescription "Dell Latitude 5520 - Samsung 500GB SSD" ;
     solveit-observable:embeddedNotes "Acquired using Tableau T35u write blocker." ;
-    solveit-observable:hasPart :image-segment-E01 , :image-segment-E02 , :image-segment-E03 ;
+    solveit-observable:acquiredFrom :writeBlockedInterface ;
+    solveit-observable:storedIn :image-segment-E01 , :image-segment-E02 , :image-segment-E03 ;
     solveit-observable:contains :acquiredBitstream .
 
 :image-segment-E01 rdf:type uco-observable:File ;
@@ -86,9 +87,13 @@
 #    Simple Example: Raw Image with Info File
 #################################################################
 
-:serverRawImage rdf:type solveit-observable:RawImageFile ;
-    rdfs:label "server_hdd.dd"@en ;
+:serverRawImage rdf:type solveit-observable:RawImage ;
+    rdfs:label "Server HDD Raw Image"@en ;
+    solveit-observable:storedIn :serverRawImageFile ;
     solveit-observable:hasInfoFile :serverRawImageInfo .
+
+:serverRawImageFile rdf:type uco-observable:File ;
+    rdfs:label "server_hdd.dd"@en .
 
 :serverRawImageInfo rdf:type solveit-observable:RawImageInfoFile ;
     rdfs:label "server_hdd.dd.info"@en .

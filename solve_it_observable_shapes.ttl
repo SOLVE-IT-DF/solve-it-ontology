@@ -68,6 +68,39 @@
 #    LogicalImageContainer Shape
 #################################################################
 
+:ForensicImageContainerShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:ForensicImageContainer ;
+    rdfs:label "Forensic Image Container Shape"@en ;
+    rdfs:comment "Validates that a ForensicImageContainer contains a Bitstream or FileSet."@en ;
+    sh:property [
+        sh:path solveit-observable:contains ;
+        sh:or (
+            [ sh:class solveit-observable:Bitstream ]
+            [ sh:class solveit-observable:FileSet ]
+        ) ;
+        sh:minCount 1 ;
+        sh:message "contains must reference at least one Bitstream or FileSet instance"@en ;
+    ] .
+
+#################################################################
+#    RawImage Shape
+#################################################################
+
+:RawImageShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:RawImage ;
+    rdfs:label "Raw Image Shape"@en ;
+    rdfs:comment "Validates that a RawImage contains a Bitstream."@en ;
+    sh:property [
+        sh:path solveit-observable:contains ;
+        sh:class solveit-observable:Bitstream ;
+        sh:minCount 1 ;
+        sh:message "contains must reference at least one Bitstream instance"@en ;
+    ] .
+
+#################################################################
+#    LogicalImageContainer Shape
+#################################################################
+
 :LogicalImageContainerShape a sh:NodeShape ;
     sh:targetClass solveit-observable:LogicalImageContainer ;
     rdfs:label "Logical Image Container Shape"@en ;
