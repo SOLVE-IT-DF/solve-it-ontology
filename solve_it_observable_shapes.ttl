@@ -132,9 +132,9 @@
 #################################################################
 
 :ClockOffsetCaptureShape a sh:NodeShape ;
-    sh:targetClass solveit-observable:ClockOffsetMeasurementCapture ;
+    sh:targetClass solveit-observable:ClockOffsetCapture ;
     rdfs:label "Clock Offset Capture Shape"@en ;
-    rdfs:comment "Validates that a ClockOffsetCapture contains a ClockOffset."@en ;
+    rdfs:comment "Validates that a ClockOffsetCapture contains a ClockOffsetMeasurement."@en ;
     sh:property [
         sh:path solveit-observable:contains ;
         sh:class solveit-observable:ClockOffsetMeasurement ;
