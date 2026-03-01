@@ -76,17 +76,30 @@ def get_instance_type(g, instance):
     types = list(g.objects(URIRef(instance), RDF.type))
     return [str(t) for t in types]
 
+def is_subclass_of(subclass_uri, superclass_uri, ontology_graph, visited=None):
+    """Check if subclass_uri is a (transitive) subclass of superclass_uri."""
+    if visited is None:
+        visited = set()
+    if subclass_uri in visited:
+        return False
+    visited.add(subclass_uri)
+    for parent in ontology_graph.objects(subclass_uri, RDFS.subClassOf):
+        if parent == superclass_uri:
+            return True
+        if is_subclass_of(parent, superclass_uri, ontology_graph, visited):
+            return True
+    return False
+
+
 def is_instance_of_class_or_subclass(instance_types, target_class, ontology_graph):
-    """Check if instance is of target class or its subclass."""
+    """Check if instance is of target class or a (transitive) subclass."""
     if not instance_types:
         return False
+    target_uri = URIRef(target_class)
     for inst_type in instance_types:
         if inst_type == target_class:
             return True
-        # Check if inst_type is a subclass of target_class
-        inst_type_uri = URIRef(inst_type)
-        target_uri = URIRef(target_class)
-        if (inst_type_uri, RDFS.subClassOf, target_uri) in ontology_graph:
+        if is_subclass_of(URIRef(inst_type), target_uri, ontology_graph):
             return True
     return False
 
