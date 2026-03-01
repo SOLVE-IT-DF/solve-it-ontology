@@ -38,10 +38,16 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Ontospy
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install ontospy
+          pip install rdflib ontospy
+
+      - name: Validate ontology and SHACL shapes
+        run: python scripts/validate_ontology.py
+
+      - name: Validate examples against ontology
+        run: python scripts/validate_examples.py
 
       - name: Build documentation
         run: |
