@@ -1,4 +1,4 @@
-name: Build Ontology Documentation
+name: Validate and Build Ontology Documentation
 
 on:
   push:
@@ -9,7 +9,7 @@ on:
       - '**.ttl'
       - '**.owl'
       - '**.rdf'
-      - '.github/workflows/build-ontology-docs.yml'
+      - '.github/workflows/validate-and-build-docs.yml'
   pull_request:
     branches:
       - main
@@ -19,7 +19,7 @@ on:
       - '**.owl'
       - '**.rdf'
       - 'scripts/**'
-      - '.github/workflows/build-ontology-docs.yml'
+      - '.github/workflows/validate-and-build-docs.yml'
   workflow_dispatch:
 
 permissions:
