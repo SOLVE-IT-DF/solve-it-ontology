@@ -893,7 +893,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Clock Offset Capture Shape' - Validates that a ClockOffsetCapture contains a ClockOffset.">default1:ClockOffsetCaptureShape</a>
+                <li><a style="font-weight: bold;" title="'Clock Offset Capture Shape' - Validates that a ClockOffsetCapture contains a ClockOffsetMeasurement.">default1:ClockOffsetCaptureShape</a>
                   
                 </li>
               </ul>
@@ -946,7 +946,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that a ClockOffsetCapture contains a ClockOffset.</p>
+              <p>Validates that a ClockOffsetCapture contains a ClockOffsetMeasurement.</p>
             </div>
           </div>
         </div>
@@ -960,11 +960,88 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Target Classes (1)</h3>
+            </div>
+            <div class="panel-body">
+              
+                <li><a href="class-solveit-observableclockoffsetcapture.html">solveit-observable:ClockOffsetCapture</a></li>
+                
+            </div>
+          </div>
+        </div>
+      </div>
+    
 
 
     
     
     
+           
+         
+        <div class="row">
+          <div class="col-md-12">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Shape Properties</h3>
+              </div>
+              <div class="panel-body" style="overflow: auto;">
+                <p>Instances of solveit-observable:ClockOffsetCapture can have the following properties:</p>
+              </div>
+              <table class="table table-bordered" style="overflow: auto;">
+                <tr class="table-classproperties">   
+                    <th><p style="text-align:center;">PROPERTY</p></th>
+                    <th><p style="text-align:center;">MIN COUNT</p></th>
+                    <th><p style="text-align:center;">MAX COUNT</p></th>
+                    <th><p style="text-align:center;">TYPE</p></th>
+                </tr>
+                   
+                  <tr>
+                     
+                      <td colspan="5">
+                        <small class="label label-info label-xs">solveit-observable:ClockOffsetCapture</small>
+                      </td>
+                        
+                    
+                  </tr>
+                   
+                  <tr>
+                       
+                      <td>   
+                        
+                          <a class="propcolor" title="solveit-observable:contains" href="prop-solveit-observablecontains.html">solveit-observable:contains</a>
+                        
+                      </td>
+ 
+                      <td>     
+                        1
+                      </td>
+ 
+                      <td>     
+                        
+                      </td>
+                        
+                      <td>     
+                        
+                        
+                          
+                            <a title="solveit-observable:ClockOffsetMeasurement" href="class-solveit-observableclockoffsetmeasurement.html" class="rdfclass">solveit-observable:ClockOffsetMeasurement</a>
+                           
+                          <br>
+                        
+                      </td>
+                    
+                  </tr>
+                
+
+              </table>
+            </div>
+          </div>
+        </div>
+      
     
     
 
@@ -985,12 +1062,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="nn">default1</span><span class="p">:</span><span class="nt">ClockOffsetCaptureShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Clock Offset Capture Shape&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Validates that a ClockOffsetCapture contains a ClockOffset.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Validates that a ClockOffsetCapture contains a ClockOffsetMeasurement.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
     <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ClockOffsetMeasurement</span> <span class="p">;</span>
             <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;contains must reference at least one ClockOffsetMeasurement instance&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
             <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
             <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">contains</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ClockOffsetMeasurementCapture</span> <span class="p">.</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ClockOffsetCapture</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -1020,7 +1097,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Sun, 01 Mar 2026 20:22:52 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Sun, 01 Mar 2026 21:05:37 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
@@ -1081,7 +1158,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_304").offset().top - 100
+          scrollTop: $("#sd_297").offset().top - 100
       }, 100);
     });
 
