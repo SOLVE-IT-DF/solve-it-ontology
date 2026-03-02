@@ -50,7 +50,7 @@ solveit-core:Weakness rdf:type owl:Class ;
 
 ###  SOLVE-IT Mitigation
 solveit-core:Mitigation rdf:type owl:Class ;
-    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:subClassOf case-investigation:InvestigativeAction ;
     rdfs:label "SOLVE-IT Mitigation"@en ;
     rdfs:comment "An action that can be performed to prevent a weakness from occurring or to minimize its impact."@en .
 
