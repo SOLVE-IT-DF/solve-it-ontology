@@ -865,7 +865,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            default1:ApplicationFilesShape
+            :LogicalImageContainerShape
         </li>
   </ol>
 
@@ -878,7 +878,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        default1:ApplicationFilesShape
+        :LogicalImageContainerShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -893,7 +893,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Application Files Shape' - Validates that ApplicationFiles has at most one sourceApplication and zero or more files.">default1:ApplicationFilesShape</a>
+                <li><a style="font-weight: bold;" title="'Logical Image Container Shape' - Validates that a LogicalImageContainer contains a FileSet.">:LogicalImageContainerShape</a>
                   
                 </li>
               </ul>
@@ -913,7 +913,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/observable/shapes/ApplicationFilesShape</code>
+            <code>https://ontology.solveit-df.org/solveit/observable/shapes/LogicalImageContainerShape</code>
           </div>
         </div>
       </div>
@@ -929,7 +929,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            Application Files Shape
+            Logical Image Container Shape
           </div>
           </div>
         </div>
@@ -946,7 +946,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that ApplicationFiles has at most one sourceApplication and zero or more files.</p>
+              <p>Validates that a LogicalImageContainer contains a FileSet.</p>
             </div>
           </div>
         </div>
@@ -968,7 +968,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
               
-                <li><a href="class-solveit-observableapplicationfiles.html">solveit-observable:ApplicationFiles</a></li>
+                <li><a href="class-solveit-observablelogicalimagecontainer.html">solveit-observable:LogicalImageContainer</a></li>
                 
             </div>
           </div>
@@ -989,7 +989,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 <h3 class="panel-title">Shape Properties</h3>
               </div>
               <div class="panel-body" style="overflow: auto;">
-                <p>Instances of solveit-observable:ApplicationFiles can have the following properties:</p>
+                <p>Instances of solveit-observable:LogicalImageContainer can have the following properties:</p>
               </div>
               <table class="table table-bordered" style="overflow: auto;">
                 <tr class="table-classproperties">   
@@ -1002,7 +1002,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                   <tr>
                      
                       <td colspan="5">
-                        <small class="label label-info label-xs">solveit-observable:ApplicationFiles</small>
+                        <small class="label label-info label-xs">solveit-observable:LogicalImageContainer</small>
                       </td>
                         
                     
@@ -1012,53 +1012,57 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                        
                       <td>   
                         
-                          <a class="propcolor" title="solveit-observable:hasFile" href="prop-solveit-observablehasfile.html">solveit-observable:hasFile</a>
-                        
-                      </td>
- 
-                      <td>     
-                        
-                      </td>
- 
-                      <td>     
-                        
-                      </td>
-                        
-                      <td>     
-                        
-                        
-                          
-                            <a title="uco-observable:File" href="https://ontology.unifiedcyberontology.org/uco/observable/File" target="_blank" class="rdfclass">uco-observable:File</a>
-                           
-                          <br>
-                        
-                      </td>
-                    
-                  </tr>
-                   
-                  <tr>
-                       
-                      <td>   
-                        
-                          <a class="propcolor" title="solveit-observable:sourceApplication" href="prop-solveit-observablesourceapplication.html">solveit-observable:sourceApplication</a>
-                        
-                      </td>
- 
-                      <td>     
+                          <a class="propcolor" title="solveit-observable:contains" href="prop-solveit-observablecontains.html">solveit-observable:contains</a>
                         
                       </td>
  
                       <td>     
                         1
                       </td>
+ 
+                      <td>     
+                        
+                      </td>
                         
                       <td>     
                         
                         
                           
-                            <a title="uco-observable:Application" href="https://ontology.unifiedcyberontology.org/uco/observable/Application" target="_blank" class="rdfclass">uco-observable:Application</a>
+                            <a title="solveit-observable:FileSet" href="class-solveit-observablefileset.html" class="rdfclass">solveit-observable:FileSet</a>
                            
                           <br>
+                        
+                      </td>
+                    
+                  </tr>
+                   
+                  <tr>
+                     
+                      <td colspan="5">
+                        <small class="label label-info label-xs">solveit-observable:ForensicImageContainer</small>
+                      </td>
+                        
+                    
+                  </tr>
+                   
+                  <tr>
+                       
+                      <td>   
+                        
+                          <a class="propcolor" title="solveit-observable:contains" href="prop-solveit-observablecontains.html">solveit-observable:contains</a>
+                        
+                      </td>
+ 
+                      <td>     
+                        1
+                      </td>
+ 
+                      <td>     
+                        
+                      </td>
+                        
+                      <td>     
+                        
                         
                       </td>
                     
@@ -1082,24 +1086,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default1:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">uco-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.unifiedcyberontology.org/uco/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">default1</span><span class="p">:</span><span class="nt">ApplicationFilesShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Application Files Shape&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Validates that ApplicationFiles has at most one sourceApplication and zero or more files.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">Application</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;sourceApplication must reference at most one uco-observable:Application&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">sourceApplication</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">File</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;hasFile must reference uco-observable:File instances&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">hasFile</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ApplicationFiles</span> <span class="p">.</span>
+<span class="p">:</span><span class="nt">LogicalImageContainerShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Logical Image Container Shape&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Validates that a LogicalImageContainer contains a FileSet.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">FileSet</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;contains must reference at least one FileSet instance&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">contains</span> <span class="p">]</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">LogicalImageContainer</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -1129,7 +1129,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Sun, 01 Mar 2026 21:51:34 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Mon, 02 Mar 2026 11:56:56 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
@@ -1190,7 +1190,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_297").offset().top - 100
+          scrollTop: $("#sd_296").offset().top - 100
       }, 100);
     });
 
