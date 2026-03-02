@@ -100,10 +100,10 @@ solveit-core:includesTechnique rdf:type owl:ObjectProperty ;
     rdfs:label "includes technique"@en ;
     rdfs:comment "Links an Objective to Techniques that can be used to achieve it."@en .
 
-solveit-core:usesTechnique rdf:type owl:ObjectProperty ;
+solveit-core:usedTechnique rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:PerformedTechnique ;
     rdfs:range solveit-core:Technique ;
-    rdfs:label "uses technique"@en ;
+    rdfs:label "used technique"@en ;
     rdfs:comment "Links a PerformedTechnique to the specific SOLVE-IT Technique definition that was executed."@en .
 
 solveit-core:appliedMitigation rdf:type owl:ObjectProperty ;

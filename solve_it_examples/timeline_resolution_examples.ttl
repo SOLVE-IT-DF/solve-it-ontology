@@ -63,7 +63,7 @@
 :enumerateFilesAction001 rdf:type solveit-core:PerformedTechnique ;
     uco-core:name "enumerate-files" ;
     uco-core:description "Enumeration of allocated files and folders from FAT32 USB drive" ;
-    solveit-core:usesTechnique solveit-data:techniqueT1060 ;
+    solveit-core:usedTechnique solveit-data:techniqueT1060 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-filesystem-parser ;
     uco-action:startTime "2026-01-28T10:00:00Z"^^xsd:dateTime ;
@@ -76,7 +76,7 @@
 :timelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
     uco-core:name "generate-timeline" ;
     uco-core:description "Generation of forensic timeline from FAT filesystem metadata" ;
-    solveit-core:usesTechnique solveit-data:techniqueT1052 ;
+    solveit-core:usedTechnique solveit-data:techniqueT1052 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-timeline-generator ;
     uco-action:startTime "2026-01-28T10:05:00Z"^^xsd:dateTime ;

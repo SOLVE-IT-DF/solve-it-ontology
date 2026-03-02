@@ -153,7 +153,7 @@
     uco-core:name "acquired" ;
     uco-core:description "Suspect device physical acquisition" ;
     # SOLVE-IT extensions
-    solveit-core:usesTechnique :techniqueT1002 ;  # Links to T1002: Disk imaging
+    solveit-core:usedTechnique :techniqueT1002 ;  # Links to T1002: Disk imaging
     solveit-core:appliedMitigation :mitigationM1004 ;  # Hash verification was applied
     # CASE/UCO InvestigativeAction properties
     uco-action:startTime "2019-03-30T22:17:31Z"^^xsd:dateTime ;
