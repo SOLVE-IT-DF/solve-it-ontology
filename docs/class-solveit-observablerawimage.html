@@ -895,7 +895,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <li>
                 <a href="class-solveit-observableacquireddata.html" title="'Acquired Data' - Data that has been forensically collected from a source device or system. This is the parent class for all types..">solveit-observable:AcquiredData</a>
                   <ul>
-                    <li><a style="font-weight: bold;" title="'Raw Image' - A raw/dd format forensic image containing a bitstream without container metadata. Typically accompanied by a RawImageInfoFile containing hashes, case information,..">solveit-observable:RawImage</a>
+                    <li><a style="font-weight: bold;" title="'Raw Image' - A raw forensic image containing a bitstream without container metadata. Unlike a ForensicImageContainer (e.g. E01, AFF4), a raw image has..">solveit-observable:RawImage</a>
                     
                   </li>
                 </ul>
@@ -948,7 +948,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>A raw/dd format forensic image containing a bitstream without container metadata. Typically accompanied by a RawImageInfoFile containing hashes, case information, and acquisition details.</p>
+              <p>A raw forensic image containing a bitstream without container metadata. Unlike a ForensicImageContainer (e.g. E01, AFF4), a raw image has no embedded metadata. It may be stored across one or more files (e.g. split .dd segments) referenced via storedIn. Typically accompanied by a RawImageInfoFile containing hashes, case information, and acquisition details.</p>
             </div>
           </div>
         </div>
@@ -989,7 +989,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
               
-                <li><a href="shape-rawimageshape.html" title="https://ontology.solveit-df.org/solveit/observable/shapes/RawImageShape">:RawImageShape</a></li>
+                <li><a href="shape-default1rawimageshape.html" title="https://ontology.solveit-df.org/solveit/observable/shapes/RawImageShape">default1:RawImageShape</a></li>
               
             </div>
           </div>
@@ -1239,7 +1239,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">RawImage</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Raw Image&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;A raw/dd format forensic image containing a bitstream without container metadata. Typically accompanied by a RawImageInfoFile containing hashes, case information, and acquisition details.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;A raw forensic image containing a bitstream without container metadata. Unlike a ForensicImageContainer (e.g. E01, AFF4), a raw image has no embedded metadata. It may be stored across one or more files (e.g. split .dd segments) referenced via storedIn. Typically accompanied by a RawImageInfoFile containing hashes, case information, and acquisition details.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">AcquiredData</span> <span class="p">.</span>
 </pre></div>
 
@@ -1270,7 +1270,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Mon, 02 Mar 2026 12:04:59 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Tue, 03 Mar 2026 09:53:06 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
