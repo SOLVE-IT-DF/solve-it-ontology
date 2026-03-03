@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.0.4</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.0.5</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -276,7 +276,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.0.4</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.0.5</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -882,7 +882,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            default1:RawImageShape
+            :ForensicImageContainerShape
         </li>
   </ol>
 
@@ -895,7 +895,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        default1:RawImageShape
+        :ForensicImageContainerShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -910,7 +910,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Raw Image Shape' - Validates that a RawImage contains a Bitstream.">default1:RawImageShape</a>
+                <li><a style="font-weight: bold;" title="'Forensic Image Container Shape' - Validates that a ForensicImageContainer contains a Bitstream or FileSet.">:ForensicImageContainerShape</a>
                   
                 </li>
               </ul>
@@ -930,7 +930,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/observable/shapes/RawImageShape</code>
+            <code>https://ontology.solveit-df.org/solveit/observable/shapes/ForensicImageContainerShape</code>
           </div>
         </div>
       </div>
@@ -946,7 +946,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            Raw Image Shape
+            Forensic Image Container Shape
           </div>
           </div>
         </div>
@@ -963,7 +963,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that a RawImage contains a Bitstream.</p>
+              <p>Validates that a ForensicImageContainer contains a Bitstream or FileSet.</p>
             </div>
           </div>
         </div>
@@ -985,7 +985,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
               
-                <li><a href="class-solveit-observablerawimage.html">solveit-observable:RawImage</a></li>
+                <li><a href="class-solveit-observableforensicimagecontainer.html">solveit-observable:ForensicImageContainer</a></li>
                 
             </div>
           </div>
@@ -1006,7 +1006,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 <h3 class="panel-title">Shape Properties</h3>
               </div>
               <div class="panel-body" style="overflow: auto;">
-                <p>Instances of solveit-observable:RawImage can have the following properties:</p>
+                <p>Instances of solveit-observable:ForensicImageContainer can have the following properties:</p>
               </div>
               <table class="table table-bordered" style="overflow: auto;">
                 <tr class="table-classproperties">   
@@ -1019,7 +1019,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                   <tr>
                      
                       <td colspan="5">
-                        <small class="label label-info label-xs">solveit-observable:RawImage</small>
+                        <small class="label label-info label-xs">solveit-observable:ForensicImageContainer</small>
                       </td>
                         
                     
@@ -1044,11 +1044,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                       <td>     
                         
                         
-                          
-                            <a title="solveit-observable:Bitstream" href="class-solveit-observablebitstream.html" class="rdfclass">solveit-observable:Bitstream</a>
-                           
-                          <br>
-                        
                       </td>
                     
                   </tr>
@@ -1071,20 +1066,21 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default1:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">default1</span><span class="p">:</span><span class="nt">RawImageShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Raw Image Shape&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Validates that a RawImage contains a Bitstream.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">Bitstream</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;contains must reference at least one Bitstream instance&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+<span class="p">:</span><span class="nt">ForensicImageContainerShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;Forensic Image Container Shape&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Validates that a ForensicImageContainer contains a Bitstream or FileSet.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">&quot;contains must reference at least one Bitstream or FileSet instance&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
             <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">or</span> <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">Bitstream</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">FileSet</span> <span class="p">]</span> <span class="p">)</span> <span class="p">;</span>
             <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">contains</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">RawImage</span> <span class="p">.</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ForensicImageContainer</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -1114,7 +1110,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 03 Mar 2026 10:52:59 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Tue, 03 Mar 2026 11:54:52 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
@@ -1175,7 +1171,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_314").offset().top - 100
+          scrollTop: $("#sd_307").offset().top - 100
       }, 100);
     });
 

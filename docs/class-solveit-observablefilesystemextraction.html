@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.0.4</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.0.5</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -276,7 +276,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.0.4</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.0.5</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -912,16 +912,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <li>
                 <a href="class-solveit-observableacquireddata.html" title="'Acquired Data' - Data that has been forensically collected from a source device or system. This is the parent class for all types..">solveit-observable:AcquiredData</a>
                   <ul>
-                    <li><a style="font-weight: bold;" title="'File System Extraction' - Data obtained through direct access to a file system structure. Represents the actual files and folders as they exist on..">solveit-observable:FileSystemExtraction</a>
-                    
-                  </li>
-                </ul>
-              </li>
-            
-              <li>
-                <a href="class-solveit-observablefileset.html" title="'File Set' - A contextual compilation of files grouped together for some purpose, such as filtering, extraction, or association with an application.">solveit-observable:FileSet</a>
-                  <ul>
-                    <li><a style="font-weight: bold;" title="'File System Extraction' - Data obtained through direct access to a file system structure. Represents the actual files and folders as they exist on..">solveit-observable:FileSystemExtraction</a>
+                    <li><a style="font-weight: bold;" title="'File System Extraction' - Data obtained through direct access to a file system structure. Represents the files and folders as they existed on the..">solveit-observable:FileSystemExtraction</a>
                     
                   </li>
                 </ul>
@@ -974,7 +965,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Data obtained through direct access to a file system structure. Represents the actual files and folders as they exist on storage, applicable to any device type (mobile, desktop, embedded). Live files only.</p>
+              <p>Data obtained through direct access to a file system structure. Represents the files and folders as they existed on the device or storage, applicable to any device type (mobile, desktop, embedded). Live files only.</p>
             </div>
           </div>
         </div>
@@ -988,7 +979,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Superclasses (4)</h3>
+              <h3 class="panel-title">Superclasses (2)</h3>
             </div>
             <div class="panel-body">
               
@@ -996,10 +987,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                   <li><a href="class-solveit-observableacquireddata.html" title="https://ontology.solveit-df.org/solveit/observable/AcquiredData">solveit-observable:AcquiredData</a></li>
                 
                   <li><a href="https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject" target="_blank" title="https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject">uco-observable:ObservableObject</a></li>
-                
-                  <li><a href="class-solveit-observablefileset.html" title="https://ontology.solveit-df.org/solveit/observable/FileSet">solveit-observable:FileSet</a></li>
-                
-                  <li><a href="https://ontology.unifiedcyberontology.org/uco/core/ContextualCompilation" target="_blank" title="https://ontology.unifiedcyberontology.org/uco/core/ContextualCompilation">uco-core:ContextualCompilation</a></li>
                 
               
             </div>
@@ -1111,38 +1098,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                   
                 
               
-                
-                  
-                      <tr class="table-inheritanceinfo">
-                        <th colspan="4" class="treeinfo">
-                          <span class="label label-default">From class <a title="solveit-observable:FileSet" href="class-solveit-observablefileset.html" class="fromclass_link">solveit-observable:FileSet</a></span>
-                        </th>
-                      </tr>
-                    
-                      <tr>
-                        <td class="firsttd">
-                          <a class="propcolor" title="solveit-observable:hasFile" href="prop-solveit-observablehasfile.html">solveit-observable:hasFile</a>
-                        </td>
-                        <td class="secondtd">
-                          <i>owl:ObjectProperty<i>
-                        </td>
-                        <td class="thirdtd">
-                          <span>A file belonging to this file set.</span>
-                        </td>
-                        <td class="fourthtd">
-                          
-                            
-                                
-                                  <a title="uco-observable:File" href="https://ontology.unifiedcyberontology.org/uco/observable/File" target="_blank" class="rdfclass">uco-observable:File</a>
-                                
-                            
-                          
-                        </td>
-                      </tr>
-                    
-                  
-                
-              
             </table>
           </div>
         </div>
@@ -1169,9 +1124,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">FileSystemExtraction</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">&quot;File System Extraction&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Data obtained through direct access to a file system structure. Represents the actual files and folders as they exist on storage, applicable to any device type (mobile, desktop, embedded). Live files only.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">AcquiredData</span><span class="p">,</span>
-        <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">FileSet</span> <span class="p">.</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">&quot;Data obtained through direct access to a file system structure. Represents the files and folders as they existed on the device or storage, applicable to any device type (mobile, desktop, embedded). Live files only.&quot;</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">AcquiredData</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -1201,7 +1155,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 03 Mar 2026 10:52:58 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Tue, 03 Mar 2026 11:54:52 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
