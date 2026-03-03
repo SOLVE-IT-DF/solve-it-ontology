@@ -97,6 +97,9 @@ jobs:
           # Replace ontospy's generic title with versioned SOLVE-IT title
           python scripts/set_docs_title.py docs
 
+      - name: Add GitHub link to docs
+        run: python scripts/add_github_link.py docs
+
       - name: Fix external ontology links
         run: |
           # Rewrite links to UCO/CASE classes to point to official documentation
