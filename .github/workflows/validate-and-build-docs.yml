@@ -9,6 +9,7 @@ on:
       - '**.ttl'
       - '**.owl'
       - '**.rdf'
+      - 'VERSION'
       - '.github/workflows/validate-and-build-docs.yml'
   pull_request:
     branches:
@@ -18,6 +19,7 @@ on:
       - '**.ttl'
       - '**.owl'
       - '**.rdf'
+      - 'VERSION'
       - 'scripts/**'
       - '.github/workflows/validate-and-build-docs.yml'
   workflow_dispatch:
@@ -48,6 +50,24 @@ jobs:
 
       - name: Validate examples against ontology
         run: python scripts/validate_examples.py
+
+      - name: Check if VERSION was manually changed
+        id: version-check
+        if: github.event_name == 'push'
+        run: |
+          if git diff HEAD~1 --name-only | grep -q '^VERSION$'; then
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Bump patch version and sync to TTL files
+        if: (github.event_name == 'push' && steps.version-check.outputs.changed != 'true') || github.event_name == 'workflow_dispatch'
+        run: python scripts/sync_version.py --bump-patch
+
+      - name: Sync version to TTL files
+        if: github.event_name == 'pull_request' || (github.event_name == 'push' && steps.version-check.outputs.changed == 'true')
+        run: python scripts/sync_version.py
 
       - name: Build documentation
         run: |
@@ -106,7 +126,7 @@ jobs:
       - name: Commit documentation changes
         if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
         run: |
-          git add docs/
+          git add docs/ solve_it_*.ttl VERSION
           if git diff --staged --quiet; then
             echo "No changes to commit"
           else
