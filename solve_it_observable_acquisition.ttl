@@ -86,7 +86,19 @@ solveit-observable:ServiceBasedExtractionData rdf:type owl:Class ;
 solveit-observable:DeviceGeneratedBackup rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:ServiceBasedExtractionData ;
     rdfs:label "Device Generated Backup"@en ;
-    rdfs:comment "Data produced by a device's built-in backup mechanism (e.g., iTunes/Finder backup, Android backup). Content is determined by the device's backup logic and structured in the backup's native format."@en .
+    rdfs:comment "Data produced by a device's built-in backup mechanism. Content is determined by the device's backup logic and structured in the backup's native format."@en .
+
+###  iOSDeviceGeneratedBackup Observable Object
+solveit-observable:iOSDeviceGeneratedBackup rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:DeviceGeneratedBackup ;
+    rdfs:label "iOS Device Generated Backup"@en ;
+    rdfs:comment "Data produced by the iOS backup mechanism via iTunes, Finder, or libimobiledevice. Contains a manifest database (Manifest.db), file blobs identified by domain-path hashes, and metadata plists including device information and backup status."@en .
+
+###  AndroidDeviceGeneratedBackup Observable Object
+solveit-observable:AndroidDeviceGeneratedBackup rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:DeviceGeneratedBackup ;
+    rdfs:label "Android Device Generated Backup"@en ;
+    rdfs:comment "Data produced by Android's backup mechanism (e.g., adb backup). Potentially contains application data, shared storage, and system settings in the Android backup format (.ab file)."@en .
 
 ###  AFCExtractionData Observable Object
 solveit-observable:AFCExtractionData rdf:type owl:Class ;
@@ -99,6 +111,18 @@ solveit-observable:ADBPullData rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:ServiceBasedExtractionData ;
     rdfs:label "ADB Pull Data"@en ;
     rdfs:comment "Data obtained via Android Debug Bridge (ADB) pull operations."@en .
+
+###  AppleUnifiedLogArchive Observable Object
+solveit-observable:AppleUnifiedLogArchive rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ServiceBasedExtractionData ;
+    rdfs:label "Apple Unified Log Archive"@en ;
+    rdfs:comment "Data obtained by collecting Apple Unified Logs from a macOS or iOS device."@en .
+
+###  ContentQueryData Observable Object
+solveit-observable:ContentQueryData rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ServiceBasedExtractionData ;
+    rdfs:label "Content Query Data"@en ;
+    rdfs:comment "Data obtained from an Android device by querying content providers via an ADB shell connection (e.g., adb shell content query). Content providers expose structured data such as contacts, call logs, SMS messages, and settings without requiring direct file system access."@en .
 
 ###  DeviceScreenshotCapture Observable Object
 solveit-observable:DeviceScreenshotCapture rdf:type owl:Class ;
@@ -213,6 +237,24 @@ solveit-observable:embeddedNotes rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:string ;
     rdfs:label "embedded notes"@en ;
     rdfs:comment "The notes stored within the forensic image container metadata."@en .
+
+solveit-observable:backupFormatVersion rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DeviceGeneratedBackup ;
+    rdfs:range xsd:string ;
+    rdfs:label "backup format version"@en ;
+    rdfs:comment "The version of the backup format used to produce the backup (e.g., iOS backup version 3.3, Android backup format v5)."@en .
+
+solveit-observable:encryptedOnGeneration rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DeviceGeneratedBackup ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "encrypted on generation"@en ;
+    rdfs:comment "Whether the backup was encrypted at the time it was generated. A backup encrypted on generation may contain a richer dataset (e.g., iOS encrypted backups include keychain and health data) even if a decrypted copy is subsequently produced."@en .
+
+solveit-observable:isEncrypted rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:DeviceGeneratedBackup ;
+    rdfs:range xsd:boolean ;
+    rdfs:label "is encrypted"@en ;
+    rdfs:comment "Whether the backup is currently in an encrypted state. Used alongside encryptedOnGeneration to distinguish between a backup that is still encrypted and one that has been decrypted for analysis."@en .
 
 solveit-observable:containsStartTime rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-observable:AcquisitionRecordFile ;
