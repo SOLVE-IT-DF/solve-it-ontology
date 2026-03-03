@@ -37,7 +37,7 @@ solveit-observable:AcquiredData rdf:type owl:Class ;
 solveit-observable:ForensicImageContainer rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:AcquiredData ;
     rdfs:label "Forensic Image Container"@en ;
-    rdfs:comment "A forensic image in a container format (e.g., E01, AFF4) that encapsulates acquired data along with embedded metadata such as case information, examiner identity, acquisition timestamps, hash values, compression settings, and encryption status."@en .
+    rdfs:comment "A forensic image in a container format that encapsulates acquired data, potentially compressed or encrypted, along with embedded metadata such as case information, examiner identity, acquisition timestamps, hash values, compression settings, and encryption status. It may be stored across one or more files referenced via storedIn."@en .
 
 ###  PhysicalImageContainer Observable Object
 solveit-observable:PhysicalImageContainer rdf:type owl:Class ;
@@ -55,7 +55,7 @@ solveit-observable:LogicalImageContainer rdf:type owl:Class ;
 solveit-observable:RawImage rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:AcquiredData ;
     rdfs:label "Raw Image"@en ;
-    rdfs:comment "A raw/dd format forensic image containing a bitstream without container metadata. Typically accompanied by a RawImageInfoFile containing hashes, case information, and acquisition details."@en .
+    rdfs:comment "A raw forensic image containing a bitstream without container metadata. Unlike a ForensicImageContainer (e.g. E01, AFF4), a raw image has no embedded metadata. It may be stored across one or more files (e.g. split .dd segments) referenced via storedIn. Typically accompanied by a RawImageInfoFile containing hashes, case information, and acquisition details."@en .
 
 ###  RawImageInfoFile Observable Object
 solveit-observable:RawImageInfoFile rdf:type owl:Class ;
