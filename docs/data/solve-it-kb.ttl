@@ -3,34 +3,70 @@
 @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-:objective01 a solveit-core:Objective ;
-    rdfs:label "Find potential digital evidence sources"@en ;
-    solveit-core:includesTechnique :techniqueT1005,
-        :techniqueT1006,
-        :techniqueT1007,
-        :techniqueT1008,
-        :techniqueT1009 ;
-    solveit-core:objectiveDescription "Locate sources of digital evidence that may be relevant to the investigation." ;
-    solveit-core:objectiveName "Find potential digital evidence sources" .
+:objectiveDFO-1001 a solveit-core:Objective ;
+    rdfs:label "DFO-1001: Reconstruct events"@en ;
+    solveit-core:includesTechnique :techniqueT1087,
+        :techniqueT1088,
+        :techniqueT1117,
+        :techniqueT1154,
+        :techniqueT1155,
+        :techniqueT1156 ;
+    solveit-core:objectiveDescription "Use available digital evidence to formulate and test hypotheses about events." ;
+    solveit-core:objectiveID "DFO-1001" ;
+    solveit-core:objectiveName "Reconstruct events" ;
+    solveit-core:sortOrder 17 .
 
-:objective02 a solveit-core:Objective ;
-    rdfs:label "Prioritize digital evidence sources"@en ;
+:objectiveDFO-1002 a solveit-core:Objective ;
+    rdfs:label "DFO-1002: Extract artifacts, or content of specific types"@en ;
+    solveit-core:includesTechnique :techniqueT1021,
+        :techniqueT1052,
+        :techniqueT1053,
+        :techniqueT1056,
+        :techniqueT1071,
+        :techniqueT1076,
+        :techniqueT1099,
+        :techniqueT1100,
+        :techniqueT1120 ;
+    solveit-core:objectiveDescription "Process data to extract artifacts or stored content of specific types." ;
+    solveit-core:objectiveID "DFO-1002" ;
+    solveit-core:objectiveName "Extract artifacts, or content of specific types" ;
+    solveit-core:sortOrder 11 .
+
+:objectiveDFO-1003 a solveit-core:Objective ;
+    rdfs:label "DFO-1003: Review content for relevance"@en ;
+    solveit-core:includesTechnique :techniqueT1054,
+        :techniqueT1055,
+        :techniqueT1079,
+        :techniqueT1080,
+        :techniqueT1081,
+        :techniqueT1082 ;
+    solveit-core:objectiveDescription "Review potentially relevant content to determine its significance or meaning." ;
+    solveit-core:objectiveID "DFO-1003" ;
+    solveit-core:objectiveName "Review content for relevance" ;
+    solveit-core:sortOrder 13 .
+
+:objectiveDFO-1004 a solveit-core:Objective ;
+    rdfs:label "DFO-1004: Conduct research"@en ;
+    solveit-core:includesTechnique :techniqueT1089,
+        :techniqueT1090,
+        :techniqueT1095,
+        :techniqueT1101,
+        :techniqueT1119 ;
+    solveit-core:objectiveDescription "Conduct research to gain additional knowledge to support the acquisition, extraction, or interpretation of digital evidence." ;
+    solveit-core:objectiveID "DFO-1004" ;
+    solveit-core:objectiveName "Conduct research" ;
+    solveit-core:sortOrder 18 .
+
+:objectiveDFO-1005 a solveit-core:Objective ;
+    rdfs:label "DFO-1005: Prioritize digital evidence sources"@en ;
     solveit-core:includesTechnique :techniqueT1001 ;
     solveit-core:objectiveDescription "Rank the evidence sources based on their relevance and potential value to the investigation." ;
-    solveit-core:objectiveName "Prioritize digital evidence sources" .
+    solveit-core:objectiveID "DFO-1005" ;
+    solveit-core:objectiveName "Prioritize digital evidence sources" ;
+    solveit-core:sortOrder 2 .
 
-:objective03 a solveit-core:Objective ;
-    rdfs:label "Preserve digital evidence"@en ;
-    solveit-core:includesTechnique :techniqueT1010,
-        :techniqueT1011,
-        :techniqueT1012,
-        :techniqueT1013,
-        :techniqueT1110 ;
-    solveit-core:objectiveDescription "Ensure the integrity and authenticity of digital evidence is maintained." ;
-    solveit-core:objectiveName "Preserve digital evidence" .
-
-:objective04 a solveit-core:Objective ;
-    rdfs:label "Acquire data"@en ;
+:objectiveDFO-1006 a solveit-core:Objective ;
+    rdfs:label "DFO-1006: Acquire data"@en ;
     solveit-core:includesTechnique :techniqueT1002,
         :techniqueT1003,
         :techniqueT1004,
@@ -57,73 +93,55 @@
         :techniqueT1160,
         :techniqueT1162,
         :techniqueT1163,
-        :techniqueT1164 ;
-    solveit-core:objectiveDescription "Collect data from the identified evidence sources." ;
-    solveit-core:objectiveName "Acquire data" .
-
-:objective05 a solveit-core:Objective ;
-    rdfs:label "Gain access"@en ;
-    solveit-core:includesTechnique :techniqueT1031,
-        :techniqueT1032,
-        :techniqueT1033,
-        :techniqueT1034,
-        :techniqueT1035,
-        :techniqueT1036,
-        :techniqueT1037,
-        :techniqueT1038,
-        :techniqueT1039,
-        :techniqueT1040,
-        :techniqueT1041,
-        :techniqueT1158,
+        :techniqueT1164,
         :techniqueT1166 ;
-    solveit-core:objectiveDescription "Attempt to gain access to protected data sources or other restricted data." ;
-    solveit-core:objectiveName "Gain access" .
+    solveit-core:objectiveDescription "Collect data from the identified evidence sources." ;
+    solveit-core:objectiveID "DFO-1006" ;
+    solveit-core:objectiveName "Acquire data" ;
+    solveit-core:sortOrder 4 .
 
-:objective06 a solveit-core:Objective ;
-    rdfs:label "Read data from digital evidence storage formats"@en ;
-    solveit-core:includesTechnique :techniqueT1042,
-        :techniqueT1043,
-        :techniqueT1044,
-        :techniqueT1045,
-        :techniqueT1102 ;
-    solveit-core:objectiveDescription "Access data within digital evidence containers such as disk images, memory dumps, or archive formats." ;
-    solveit-core:objectiveName "Read data from digital evidence storage formats" .
-
-:objective07 a solveit-core:Objective ;
-    rdfs:label "Reduce data under consideration"@en ;
+:objectiveDFO-1007 a solveit-core:Objective ;
+    rdfs:label "DFO-1007: Reduce data under consideration"@en ;
     solveit-core:includesTechnique :techniqueT1046,
         :techniqueT1047,
         :techniqueT1048 ;
     solveit-core:objectiveDescription "Filter the data to be considered in the investigation for practical, legal, or privacy protection reasons." ;
-    solveit-core:objectiveName "Reduce data under consideration" .
+    solveit-core:objectiveID "DFO-1007" ;
+    solveit-core:objectiveName "Reduce data under consideration" ;
+    solveit-core:sortOrder 7 .
 
-:objective08 a solveit-core:Objective ;
-    rdfs:label "Access partitions, volumes and file systems data"@en ;
-    solveit-core:includesTechnique :techniqueT1059,
-        :techniqueT1060,
-        :techniqueT1061,
-        :techniqueT1062,
-        :techniqueT1063 ;
-    solveit-core:objectiveDescription "Process core data storage structures such as partitions, volumes, and file systems, recovering content and metadata." ;
-    solveit-core:objectiveName "Access partitions, volumes and file systems data" .
+:objectiveDFO-1008 a solveit-core:Objective ;
+    rdfs:label "DFO-1008: Establish identities"@en ;
+    solveit-core:includesTechnique :techniqueT1084,
+        :techniqueT1085 ;
+    solveit-core:objectiveDescription "Attempt to link data or devices to individuals." ;
+    solveit-core:objectiveID "DFO-1008" ;
+    solveit-core:objectiveName "Establish identities" ;
+    solveit-core:sortOrder 15 .
 
-:objective09 a solveit-core:Objective ;
-    rdfs:label "Extract artifacts stored by the operating system"@en ;
-    solveit-core:includesTechnique :techniqueT1065,
-        :techniqueT1066,
-        :techniqueT1067,
-        :techniqueT1068,
-        :techniqueT1083,
-        :techniqueT1096,
-        :techniqueT1097,
-        :techniqueT1098,
-        :techniqueT1116,
-        :techniqueT1149 ;
-    solveit-core:objectiveDescription "Process data stored by the operating system to extract digital forensic artifacts." ;
-    solveit-core:objectiveName "Extract artifacts stored by the operating system" .
+:objectiveDFO-1009 a solveit-core:Objective ;
+    rdfs:label "DFO-1009: Create visualizations"@en ;
+    solveit-core:includesTechnique :techniqueT1103,
+        :techniqueT1115 ;
+    solveit-core:objectiveDescription "Display information using visual representations to assist with analysis." ;
+    solveit-core:objectiveID "DFO-1009" ;
+    solveit-core:objectiveName "Create visualizations" ;
+    solveit-core:sortOrder 16 .
 
-:objective10 a solveit-core:Objective ;
-    rdfs:label "Extract artifacts stored by applications"@en ;
+:objectiveDFO-1010 a solveit-core:Objective ;
+    rdfs:label "DFO-1010: Preserve digital evidence"@en ;
+    solveit-core:includesTechnique :techniqueT1010,
+        :techniqueT1011,
+        :techniqueT1012,
+        :techniqueT1013,
+        :techniqueT1110 ;
+    solveit-core:objectiveDescription "Ensure the integrity and authenticity of digital evidence is maintained." ;
+    solveit-core:objectiveID "DFO-1010" ;
+    solveit-core:objectiveName "Preserve digital evidence" ;
+    solveit-core:sortOrder 3 .
+
+:objectiveDFO-1011 a solveit-core:Objective ;
+    rdfs:label "DFO-1011: Extract artifacts stored by applications"@en ;
     solveit-core:includesTechnique :techniqueT1069,
         :techniqueT1070,
         :techniqueT1072,
@@ -138,45 +156,103 @@
         :techniqueT1109,
         :techniqueT1133 ;
     solveit-core:objectiveDescription "Process data stored by the applications to extract digital forensic artifacts." ;
-    solveit-core:objectiveName "Extract artifacts stored by applications" .
+    solveit-core:objectiveID "DFO-1011" ;
+    solveit-core:objectiveName "Extract artifacts stored by applications" ;
+    solveit-core:sortOrder 10 .
 
-:objective11 a solveit-core:Objective ;
-    rdfs:label "Extract artifacts, or content of specific types"@en ;
-    solveit-core:includesTechnique :techniqueT1021,
-        :techniqueT1052,
-        :techniqueT1053,
-        :techniqueT1056,
-        :techniqueT1071,
-        :techniqueT1076,
-        :techniqueT1099,
-        :techniqueT1100,
-        :techniqueT1120 ;
-    solveit-core:objectiveDescription "Process data to extract artifacts or stored content of specific types." ;
-    solveit-core:objectiveName "Extract artifacts, or content of specific types" .
-
-:objective12 a solveit-core:Objective ;
-    rdfs:label "Locate potentially relevant content"@en ;
+:objectiveDFO-1012 a solveit-core:Objective ;
+    rdfs:label "DFO-1012: Locate potentially relevant content"@en ;
     solveit-core:includesTechnique :techniqueT1049,
         :techniqueT1050,
         :techniqueT1051,
         :techniqueT1086,
         :techniqueT1118 ;
     solveit-core:objectiveDescription "Attempt to find digital artifacts relevant to the investigation." ;
-    solveit-core:objectiveName "Locate potentially relevant content" .
+    solveit-core:objectiveID "DFO-1012" ;
+    solveit-core:objectiveName "Locate potentially relevant content" ;
+    solveit-core:sortOrder 12 .
 
-:objective13 a solveit-core:Objective ;
-    rdfs:label "Review content for relevance"@en ;
-    solveit-core:includesTechnique :techniqueT1054,
-        :techniqueT1055,
-        :techniqueT1079,
-        :techniqueT1080,
-        :techniqueT1081,
-        :techniqueT1082 ;
-    solveit-core:objectiveDescription "Review potentially relevant content to determine its significance or meaning." ;
-    solveit-core:objectiveName "Review content for relevance" .
+:objectiveDFO-1013 a solveit-core:Objective ;
+    rdfs:label "DFO-1013: Access partitions, volumes and file systems data"@en ;
+    solveit-core:includesTechnique :techniqueT1059,
+        :techniqueT1060,
+        :techniqueT1061,
+        :techniqueT1062,
+        :techniqueT1063 ;
+    solveit-core:objectiveDescription "Process core data storage structures such as partitions, volumes, and file systems, recovering content and metadata." ;
+    solveit-core:objectiveID "DFO-1013" ;
+    solveit-core:objectiveName "Access partitions, volumes and file systems data" ;
+    solveit-core:sortOrder 8 .
 
-:objective14 a solveit-core:Objective ;
-    rdfs:label "Detect anti-forensics and other anomalies"@en ;
+:objectiveDFO-1014 a solveit-core:Objective ;
+    rdfs:label "DFO-1014: Find potential digital evidence sources"@en ;
+    solveit-core:includesTechnique :techniqueT1005,
+        :techniqueT1006,
+        :techniqueT1007,
+        :techniqueT1008,
+        :techniqueT1009 ;
+    solveit-core:objectiveDescription "Locate sources of digital evidence that may be relevant to the investigation." ;
+    solveit-core:objectiveID "DFO-1014" ;
+    solveit-core:objectiveName "Find potential digital evidence sources" ;
+    solveit-core:sortOrder 1 .
+
+:objectiveDFO-1015 a solveit-core:Objective ;
+    rdfs:label "DFO-1015: Prepare for a digital investigation"@en ;
+    solveit-core:objectiveDescription "Conduct activities in preparation of conducting a digital investigation" ;
+    solveit-core:objectiveID "DFO-1015" ;
+    solveit-core:objectiveName "Prepare for a digital investigation" ;
+    solveit-core:sortOrder 0 .
+
+:objectiveDFO-1016 a solveit-core:Objective ;
+    rdfs:label "DFO-1016: Gain access"@en ;
+    solveit-core:includesTechnique :techniqueT1031,
+        :techniqueT1032,
+        :techniqueT1033,
+        :techniqueT1034,
+        :techniqueT1035,
+        :techniqueT1036,
+        :techniqueT1037,
+        :techniqueT1038,
+        :techniqueT1039,
+        :techniqueT1040,
+        :techniqueT1041,
+        :techniqueT1158 ;
+    solveit-core:objectiveDescription "Attempt to gain access to protected data sources or other restricted data." ;
+    solveit-core:objectiveID "DFO-1016" ;
+    solveit-core:objectiveName "Gain access" ;
+    solveit-core:sortOrder 5 .
+
+:objectiveDFO-1017 a solveit-core:Objective ;
+    rdfs:label "DFO-1017: Extract artifacts stored by the operating system"@en ;
+    solveit-core:includesTechnique :techniqueT1065,
+        :techniqueT1066,
+        :techniqueT1067,
+        :techniqueT1068,
+        :techniqueT1083,
+        :techniqueT1096,
+        :techniqueT1097,
+        :techniqueT1098,
+        :techniqueT1116,
+        :techniqueT1149 ;
+    solveit-core:objectiveDescription "Process data stored by the operating system to extract digital forensic artifacts." ;
+    solveit-core:objectiveID "DFO-1017" ;
+    solveit-core:objectiveName "Extract artifacts stored by the operating system" ;
+    solveit-core:sortOrder 9 .
+
+:objectiveDFO-1018 a solveit-core:Objective ;
+    rdfs:label "DFO-1018: Read data from digital evidence storage formats"@en ;
+    solveit-core:includesTechnique :techniqueT1042,
+        :techniqueT1043,
+        :techniqueT1044,
+        :techniqueT1045,
+        :techniqueT1102 ;
+    solveit-core:objectiveDescription "Access data within digital evidence containers such as disk images, memory dumps, or archive formats." ;
+    solveit-core:objectiveID "DFO-1018" ;
+    solveit-core:objectiveName "Read data from digital evidence storage formats" ;
+    solveit-core:sortOrder 6 .
+
+:objectiveDFO-1019 a solveit-core:Objective ;
+    rdfs:label "DFO-1019: Detect anti-forensics and other anomalies"@en ;
     solveit-core:includesTechnique :techniqueT1057,
         :techniqueT1058,
         :techniqueT1128,
@@ -185,52 +261,21 @@
         :techniqueT1131,
         :techniqueT1132 ;
     solveit-core:objectiveDescription "Search for indicators of anti-forensic techniques or other anomalies such as malware, which could affect interpretation." ;
-    solveit-core:objectiveName "Detect anti-forensics and other anomalies" .
+    solveit-core:objectiveID "DFO-1019" ;
+    solveit-core:objectiveName "Detect anti-forensics and other anomalies" ;
+    solveit-core:sortOrder 14 .
 
-:objective15 a solveit-core:Objective ;
-    rdfs:label "Establish identities"@en ;
-    solveit-core:includesTechnique :techniqueT1084,
-        :techniqueT1085 ;
-    solveit-core:objectiveDescription "Attempt to link data or devices to individuals." ;
-    solveit-core:objectiveName "Establish identities" .
-
-:objective16 a solveit-core:Objective ;
-    rdfs:label "Create visualizations"@en ;
-    solveit-core:includesTechnique :techniqueT1103,
-        :techniqueT1115 ;
-    solveit-core:objectiveDescription "Display information using visual representations to assist with analysis." ;
-    solveit-core:objectiveName "Create visualizations" .
-
-:objective17 a solveit-core:Objective ;
-    rdfs:label "Reconstruct events"@en ;
-    solveit-core:includesTechnique :techniqueT1087,
-        :techniqueT1088,
-        :techniqueT1117,
-        :techniqueT1154,
-        :techniqueT1155,
-        :techniqueT1156 ;
-    solveit-core:objectiveDescription "Use available digital evidence to formulate and test hypotheses about events." ;
-    solveit-core:objectiveName "Reconstruct events" .
-
-:objective18 a solveit-core:Objective ;
-    rdfs:label "Conduct research"@en ;
-    solveit-core:includesTechnique :techniqueT1089,
-        :techniqueT1090,
-        :techniqueT1095,
-        :techniqueT1101,
-        :techniqueT1119 ;
-    solveit-core:objectiveDescription "Conduct research to gain additional knowledge to support the acquisition, extraction, or interpretation of digital evidence." ;
-    solveit-core:objectiveName "Conduct research" .
-
-:objective19 a solveit-core:Objective ;
-    rdfs:label "Produce documentation"@en ;
+:objectiveDFO-1020 a solveit-core:Objective ;
+    rdfs:label "DFO-1020: Produce documentation"@en ;
     solveit-core:includesTechnique :techniqueT1014,
         :techniqueT1091,
         :techniqueT1092,
         :techniqueT1093,
         :techniqueT1094 ;
     solveit-core:objectiveDescription "Create documentation about techniques used and findings." ;
-    solveit-core:objectiveName "Produce documentation" .
+    solveit-core:objectiveID "DFO-1020" ;
+    solveit-core:objectiveName "Produce documentation" ;
+    solveit-core:sortOrder 19 .
 
 :weaknessW1150 a solveit-core:Weakness ;
     rdfs:label "W1150: Misinterpreting events from automated processes as user generated ones"@en ;

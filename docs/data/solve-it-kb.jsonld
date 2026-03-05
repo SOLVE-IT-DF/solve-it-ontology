@@ -5595,53 +5595,232 @@
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective01",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Find potential digital evidence sources"
+        "@value": "DFO-1001: Reconstruct events"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1005"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1087"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1006"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1088"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1009"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1117"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1008"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1154"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1007"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1155"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1156"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
       {
-        "@value": "Locate sources of digital evidence that may be relevant to the investigation."
+        "@value": "Use available digital evidence to formulate and test hypotheses about events."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1001"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
-        "@value": "Find potential digital evidence sources"
+        "@value": "Reconstruct events"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 17
       }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective02",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1002",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Prioritize digital evidence sources"
+        "@value": "DFO-1002: Extract artifacts, or content of specific types"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1021"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1071"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1076"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1100"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1099"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1052"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1053"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1056"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1120"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Process data to extract artifacts or stored content of specific types."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1002"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Extract artifacts, or content of specific types"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 11
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1003",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1003: Review content for relevance"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1054"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1055"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1079"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1080"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1081"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1082"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Review potentially relevant content to determine its significance or meaning."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1003"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Review content for relevance"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 13
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1004",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1004: Conduct research"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1090"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1095"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1089"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1101"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1119"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Conduct research to gain additional knowledge to support the acquisition, extraction, or interpretation of digital evidence."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1004"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Conduct research"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 18
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1005",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1005: Prioritize digital evidence sources"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
@@ -5654,60 +5833,32 @@
         "@value": "Rank the evidence sources based on their relevance and potential value to the investigation."
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1005"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
         "@value": "Prioritize digital evidence sources"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 2
+      }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective03",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1006",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Preserve digital evidence"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1011"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1010"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1012"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1013"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1110"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
-      {
-        "@value": "Ensure the integrity and authenticity of digital evidence is maintained."
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
-      {
-        "@value": "Preserve digital evidence"
-      }
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective04",
-    "@type": [
-      "https://ontology.solveit-df.org/solveit/core/Objective"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Acquire data"
+        "@value": "DFO-1006: Acquire data"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
@@ -5791,66 +5942,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1164"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
-      {
-        "@value": "Collect data from the identified evidence sources."
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
-      {
-        "@value": "Acquire data"
-      }
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective05",
-    "@type": [
-      "https://ontology.solveit-df.org/solveit/core/Objective"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Gain access"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1039"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1034"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1035"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1033"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1031"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1041"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1038"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1032"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1036"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1037"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1040"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1158"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1166"
@@ -5858,63 +5949,35 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
       {
-        "@value": "Attempt to gain access to protected data sources or other restricted data."
+        "@value": "Collect data from the identified evidence sources."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1006"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
-        "@value": "Gain access"
+        "@value": "Acquire data"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 4
       }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective06",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1007",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Read data from digital evidence storage formats"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1045"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1042"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1043"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1044"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1102"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
-      {
-        "@value": "Access data within digital evidence containers such as disk images, memory dumps, or archive formats."
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
-      {
-        "@value": "Read data from digital evidence storage formats"
-      }
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective07",
-    "@type": [
-      "https://ontology.solveit-df.org/solveit/core/Objective"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Reduce data under consideration"
+        "@value": "DFO-1007: Reduce data under consideration"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
@@ -5933,114 +5996,164 @@
         "@value": "Filter the data to be considered in the investigation for practical, legal, or privacy protection reasons."
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1007"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
         "@value": "Reduce data under consideration"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 7
+      }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective08",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1008",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Access partitions, volumes and file systems data"
+        "@value": "DFO-1008: Establish identities"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1062"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1084"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1061"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1063"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1059"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1060"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1085"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
       {
-        "@value": "Process core data storage structures such as partitions, volumes, and file systems, recovering content and metadata."
+        "@value": "Attempt to link data or devices to individuals."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1008"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
-        "@value": "Access partitions, volumes and file systems data"
+        "@value": "Establish identities"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 15
       }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective09",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1009",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Extract artifacts stored by the operating system"
+        "@value": "DFO-1009: Create visualizations"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1067"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1103"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1065"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1097"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1066"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1068"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1096"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1098"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1083"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1116"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1149"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1115"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
       {
-        "@value": "Process data stored by the operating system to extract digital forensic artifacts."
+        "@value": "Display information using visual representations to assist with analysis."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1009"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
-        "@value": "Extract artifacts stored by the operating system"
+        "@value": "Create visualizations"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 16
       }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective10",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1010",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Extract artifacts stored by applications"
+        "@value": "DFO-1010: Preserve digital evidence"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1011"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1010"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1012"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1013"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1110"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Ensure the integrity and authenticity of digital evidence is maintained."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1010"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Preserve digital evidence"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 3
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1011",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1011: Extract artifacts stored by applications"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
@@ -6089,72 +6202,32 @@
         "@value": "Process data stored by the applications to extract digital forensic artifacts."
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1011"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
         "@value": "Extract artifacts stored by applications"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 10
+      }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective11",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1012",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Extract artifacts, or content of specific types"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1021"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1071"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1076"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1100"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1099"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1052"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1053"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1056"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1120"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
-      {
-        "@value": "Process data to extract artifacts or stored content of specific types."
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
-      {
-        "@value": "Extract artifacts, or content of specific types"
-      }
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective12",
-    "@type": [
-      "https://ontology.solveit-df.org/solveit/core/Objective"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Locate potentially relevant content"
+        "@value": "DFO-1012: Locate potentially relevant content"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
@@ -6179,63 +6252,351 @@
         "@value": "Attempt to find digital artifacts relevant to the investigation."
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1012"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
         "@value": "Locate potentially relevant content"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 12
+      }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective13",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1013",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Review content for relevance"
+        "@value": "DFO-1013: Access partitions, volumes and file systems data"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1054"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1062"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1055"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1061"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1079"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1063"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1080"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1059"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1081"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1082"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
       {
-        "@value": "Review potentially relevant content to determine its significance or meaning."
+        "@value": "Process core data storage structures such as partitions, volumes, and file systems, recovering content and metadata."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1013"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
-        "@value": "Review content for relevance"
+        "@value": "Access partitions, volumes and file systems data"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 8
       }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective14",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1014",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Detect anti-forensics and other anomalies"
+        "@value": "DFO-1014: Find potential digital evidence sources"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1005"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1006"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1009"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1008"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1007"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Locate sources of digital evidence that may be relevant to the investigation."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1014"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Find potential digital evidence sources"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 1
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1015",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1015: Prepare for a digital investigation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Conduct activities in preparation of conducting a digital investigation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1015"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Prepare for a digital investigation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 0
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1016",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1016: Gain access"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1039"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1034"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1035"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1033"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1031"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1041"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1038"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1032"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1036"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1037"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1040"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1158"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Attempt to gain access to protected data sources or other restricted data."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1016"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Gain access"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 5
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1017",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1017: Extract artifacts stored by the operating system"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1067"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1065"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1097"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1066"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1068"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1096"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1098"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1083"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1116"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1149"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Process data stored by the operating system to extract digital forensic artifacts."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1017"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Extract artifacts stored by the operating system"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 9
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1018",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1018: Read data from digital evidence storage formats"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1045"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1042"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1043"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1044"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1102"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Access data within digital evidence containers such as disk images, memory dumps, or archive formats."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1018"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Read data from digital evidence storage formats"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 6
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1019",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1019: Detect anti-forensics and other anomalies"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
@@ -6266,162 +6627,32 @@
         "@value": "Search for indicators of anti-forensic techniques or other anomalies such as malware, which could affect interpretation."
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1019"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
         "@value": "Detect anti-forensics and other anomalies"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 14
+      }
     ]
   },
   {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective15",
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1020",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
     ],
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Establish identities"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1084"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1085"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
-      {
-        "@value": "Attempt to link data or devices to individuals."
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
-      {
-        "@value": "Establish identities"
-      }
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective16",
-    "@type": [
-      "https://ontology.solveit-df.org/solveit/core/Objective"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Create visualizations"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1103"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1115"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
-      {
-        "@value": "Display information using visual representations to assist with analysis."
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
-      {
-        "@value": "Create visualizations"
-      }
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective17",
-    "@type": [
-      "https://ontology.solveit-df.org/solveit/core/Objective"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Reconstruct events"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1087"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1088"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1117"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1154"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1155"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1156"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
-      {
-        "@value": "Use available digital evidence to formulate and test hypotheses about events."
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
-      {
-        "@value": "Reconstruct events"
-      }
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective18",
-    "@type": [
-      "https://ontology.solveit-df.org/solveit/core/Objective"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Conduct research"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1090"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1095"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1089"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1101"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1119"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
-      {
-        "@value": "Conduct research to gain additional knowledge to support the acquisition, extraction, or interpretation of digital evidence."
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
-      {
-        "@value": "Conduct research"
-      }
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/data/objective19",
-    "@type": [
-      "https://ontology.solveit-df.org/solveit/core/Objective"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Produce documentation"
+        "@value": "DFO-1020: Produce documentation"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
@@ -6446,9 +6677,20 @@
         "@value": "Create documentation about techniques used and findings."
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1020"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
         "@value": "Produce documentation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 19
       }
     ]
   },
