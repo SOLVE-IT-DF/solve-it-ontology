@@ -26,7 +26,9 @@
         :techniqueT1076,
         :techniqueT1099,
         :techniqueT1100,
-        :techniqueT1120 ;
+        :techniqueT1120,
+        :techniqueT1167,
+        :techniqueT1169 ;
     solveit-core:objectiveDescription "Process data to extract artifacts or stored content of specific types." ;
     solveit-core:objectiveID "DFO-1002" ;
     solveit-core:objectiveName "Extract artifacts, or content of specific types" ;
@@ -94,7 +96,9 @@
         :techniqueT1162,
         :techniqueT1163,
         :techniqueT1164,
-        :techniqueT1166 ;
+        :techniqueT1166,
+        :techniqueT1171,
+        :techniqueT1175 ;
     solveit-core:objectiveDescription "Collect data from the identified evidence sources." ;
     solveit-core:objectiveID "DFO-1006" ;
     solveit-core:objectiveName "Acquire data" ;
@@ -178,7 +182,8 @@
         :techniqueT1060,
         :techniqueT1061,
         :techniqueT1062,
-        :techniqueT1063 ;
+        :techniqueT1063,
+        :techniqueT1168 ;
     solveit-core:objectiveDescription "Process core data storage structures such as partitions, volumes, and file systems, recovering content and metadata." ;
     solveit-core:objectiveID "DFO-1013" ;
     solveit-core:objectiveName "Access partitions, volumes and file systems data" ;
@@ -245,7 +250,11 @@
         :techniqueT1043,
         :techniqueT1044,
         :techniqueT1045,
-        :techniqueT1102 ;
+        :techniqueT1102,
+        :techniqueT1170,
+        :techniqueT1172,
+        :techniqueT1173,
+        :techniqueT1174 ;
     solveit-core:objectiveDescription "Access data within digital evidence containers such as disk images, memory dumps, or archive formats." ;
     solveit-core:objectiveID "DFO-1018" ;
     solveit-core:objectiveName "Read data from digital evidence storage formats" ;
@@ -540,6 +549,7 @@
 
 :mitigationM1091 a solveit-core:Mitigation ;
     rdfs:label "M1091: Use a brute force attack instead"@en ;
+    solveit-core:linksToTechnique :techniqueT1034 ;
     solveit-core:mitigationID "M1091" ;
     solveit-core:mitigationName "Use a brute force attack instead" .
 
@@ -1099,6 +1109,7 @@
     solveit-core:hasReference "Android (2025), Android Debug Bridge (adb), https://developer.android.com/tools/adb",
         "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" ;
     solveit-core:linksToTechnique :techniqueT1158 ;
+    solveit-core:mitigationDescription "For example turning on Developer Mode on Android to enable ADB" ;
     solveit-core:mitigationID "M1238" ;
     solveit-core:mitigationName "Configure device to enable required service" .
 
@@ -1132,7 +1143,7 @@
     rdfs:label "T1002: Disk imaging"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamData"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
     solveit-core:hasExample "FTK Imager",
         "Magnet ACQUIRE",
         "dcfldd" ;
@@ -1154,8 +1165,7 @@
 :techniqueT1003 a solveit-core:Technique ;
     rdfs:label "T1003: Memory imaging"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Memory"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RawImageFile"^^xsd:anyURI,
-        "https://ontology.solveit-df.org/solveit/observable/RawImageInfoFile"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
     solveit-core:hasExample "FTK Imager" ;
     solveit-core:hasPotentialWeakness :weaknessW1029,
         :weaknessW1030,
@@ -1175,9 +1185,8 @@
 
 :techniqueT1004 a solveit-core:Technique ;
     rdfs:label "T1004: Selective file acquisition"@en ;
-    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"^^xsd:anyURI,
-        "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"^^xsd:anyURI ;
     solveit-core:hasExample "FTK Imager - allows an AD1 logical container to be created of a selected subset of files within a previewed data source." ;
     solveit-core:hasPotentialWeakness :weaknessW1017,
         :weaknessW1018,
@@ -1188,7 +1197,8 @@
         :weaknessW1023,
         :weaknessW1024 ;
     solveit-core:hasSynonym "Logical imaging" ;
-    solveit-core:techniqueDescription "Previewing a data source and selecting a subset of the files for extraction into a container such as a tar/zip file or a forensic image format." ;
+    solveit-core:techniqueDescription "Views a set of files (typically via direct access from previewing) and acquires a subset of them." ;
+    solveit-core:techniqueDetails "This selection of files would subsequently be stored into a container such as a tar/zip file or a forensic image format." ;
     solveit-core:techniqueID "T1004" ;
     solveit-core:techniqueName "Selective file acquisition" .
 
@@ -1299,7 +1309,8 @@
 
 :techniqueT1019 a solveit-core:Technique ;
     rdfs:label "T1019: Mobile backup extraction"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"^^xsd:anyURI ;
     solveit-core:hasExample "Extraction of an iOS backup",
         "Use of ADB to generate an Android backup" ;
     solveit-core:hasPotentialWeakness :weaknessW1037,
@@ -1323,6 +1334,8 @@
 
 :techniqueT1022 a solveit-core:Technique ;
     rdfs:label "T1022: Mobile device screenshot based capture"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"^^xsd:anyURI ;
     solveit-core:hasReference "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169." ;
     solveit-core:techniqueDescription "An examiner directly manipulates the target mobile device using the device's input interface (i.e., keypads and buttons), and records the content shown on the display of the device. (Fukami et al 2021)" ;
     solveit-core:techniqueID "T1022" ;
@@ -1341,11 +1354,10 @@
     solveit-core:techniqueName "Cloud data collection via submission of request to service provider" .
 
 :techniqueT1025 a solveit-core:Technique ;
-    rdfs:label "T1025: Writing data to a forensic image format"@en ;
-    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamData"^^xsd:anyURI,
-        "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"^^xsd:anyURI,
-        "https://ontology.solveit-df.org/solveit/observable/RawImageFile"^^xsd:anyURI ;
+    rdfs:label "T1025: Writing bitstream data to a forensic image format"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/RawImage"^^xsd:anyURI ;
     solveit-core:hasExample "2009 M57-Jean - Data is supplied as a ‘multi-volume Expert Witness file’ - i.e. split EnCase E01 & E02 image files (https://digitalcorpora.org/corpora/scenarios/m57-jean/)",
         "FTK Imager: This tool can be used to acquire data from block devices in various image formats including RAW, EWF, and AFF",
         "Magnet Acquire: This tool can be used to acquire data from block devices in various image formats including RAW and EWF.",
@@ -1353,17 +1365,20 @@
     solveit-core:hasPotentialWeakness :weaknessW1043 ;
     solveit-core:hasSynonym "Disk image container",
         "image file" ;
-    solveit-core:techniqueDescription "Storage of data recovered from a digital device in various formats which might include bitstream data or a logical set of files" ;
-    solveit-core:techniqueDetails "Bitstream data that would result from disk imaging would be stored in formats such as: RAW, EWF, AFF4. For sets of files that are extracted there are proprietary logical formats from tool vendors. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc." ;
+    solveit-core:techniqueDescription "Storage of bitstream data recovered from a digital device" ;
+    solveit-core:techniqueDetails "Bitstream data that would result from disk imaging would be stored in formats such as: RAW, EWF, AFF4. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc." ;
     solveit-core:techniqueID "T1025" ;
-    solveit-core:techniqueName "Writing data to a forensic image format" .
+    solveit-core:techniqueName "Writing bitstream data to a forensic image format" .
 
 :techniqueT1026 a solveit-core:Technique ;
     rdfs:label "T1026: Writing data to standard archive format"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/FileSystemExtraction"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1165,
         :weaknessW1275 ;
     solveit-core:techniqueDescription "Storing acquired data in a standard archive format such as rar, tar or zip" ;
+    solveit-core:techniqueDetails "This is commonly used with mobile file system extractions, but mobile backups can also sometimes be compressed into an archive." ;
     solveit-core:techniqueID "T1026" ;
     solveit-core:techniqueName "Writing data to standard archive format" .
 
@@ -1381,7 +1396,7 @@
 
 :techniqueT1029 a solveit-core:Technique ;
     rdfs:label "T1029: Access data from a desoldered eMMC via a chip reader"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamData"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
     solveit-core:techniqueID "T1029" ;
     solveit-core:techniqueName "Access data from a desoldered eMMC via a chip reader" .
 
@@ -1439,46 +1454,42 @@
     solveit-core:techniqueName "Pin2Pwn" .
 
 :techniqueT1043 a solveit-core:Technique ;
-    rdfs:label "T1043: Decode forensic image container format"@en ;
-    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamData"^^xsd:anyURI,
-        "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    rdfs:label "T1043: Access forensic image content (bitstream)"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI ;
     solveit-core:hasExample "Advanced Forensic Format (AFF)",
         "Expert Witness Format (EWF)" ;
     solveit-core:hasPotentialWeakness :weaknessW1121,
         :weaknessW1122,
         :weaknessW1123,
         :weaknessW1259 ;
-    solveit-core:hasReference "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68.",
-        "Im, S., Park, H., Joun, J., Lee, S. and Park, J., 2024. Revisiting logical image formats for future digital forensics: A comprehensive analysis on L01 and AFF4-L. Forensic Science International: Digital Investigation, 50" ;
     solveit-core:hasSynonym "Read forensic format",
         "Read forensic image" ;
     solveit-core:techniqueDescription "The decoding of a forensic format such as EWF such that the raw sectors can be accessed by a forensic tool (typically performed on-the-fly internally in a tool.)" ;
-    solveit-core:techniqueDetails """For example a EWF (Expert Witness Format) needs to be processed to expose the equivalent RAW image sectors. 
-
-This also includes decoding logical formats such as L01, AD1, CTR, or AFF4-L. The output here is not an image file but rather a set of files and their metadata.
-
-This technique would not need to be used when working with a RAW image format directly.""" ;
+    solveit-core:techniqueDetails "For example a EWF (Expert Witness Format) needs to be processed to expose the equivalent RAW image sectors." ;
     solveit-core:techniqueID "T1043" ;
-    solveit-core:techniqueName "Decode forensic image container format" .
+    solveit-core:techniqueName "Access forensic image content (bitstream)" .
 
 :techniqueT1044 a solveit-core:Technique ;
     rdfs:label "T1044: Mobile backup decoding"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/filePath"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasExample "adb backup decoding",
+        "iOS backup decoding" ;
     solveit-core:hasPotentialWeakness :weaknessW1046,
         :weaknessW1047,
         :weaknessW1048,
         :weaknessW1049,
         :weaknessW1050,
         :weaknessW1051 ;
-    solveit-core:hasReference "todo" ;
+    solveit-core:techniqueDescription "Processing an extracted mobile device backup to access the files contained within." ;
     solveit-core:techniqueID "T1044" ;
     solveit-core:techniqueName "Mobile backup decoding" .
 
 :techniqueT1045 a solveit-core:Technique ;
     rdfs:label "T1045: Decode standard archive format"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1185 ;
     solveit-core:techniqueDescription "Extract files from a common archive format e.g. TAR, RAR, ZIP" ;
     solveit-core:techniqueID "T1045" ;
@@ -1621,9 +1632,8 @@ This technique would not need to be used when working with a RAW image format di
 
 :techniqueT1059 a solveit-core:Technique ;
     rdfs:label "T1059: Identify partitions"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/partitionLength"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/partitionOffset"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"^^xsd:anyURI ;
     solveit-core:hasExample "Hargreaves, Nelson and Casey (2024) provides a dataset with a deleted but recoverable partition that can be used for tool evaluation." ;
     solveit-core:hasPotentialWeakness :weaknessW1063,
         :weaknessW1064,
@@ -1642,25 +1652,8 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
 
 :techniqueT1060 a solveit-core:Technique ;
     rdfs:label "T1060: Enumerate allocated files and folders"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Directory"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/allocationStatus"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/extInodeID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/fileName"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/filePath"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/metadataChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameAccessedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameCreatedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameModifiedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameRecordChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftRecordChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerSID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ownerSID"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasExample "The Sleuth Kit - allows parsing of file system structures",
         "X-Ways Forensics - allows parsing of file system structures" ;
     solveit-core:hasPotentialWeakness :weaknessW1068,
@@ -1839,11 +1832,9 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:techniqueName "Email examination" .
 
 :techniqueT1071 a solveit-core:Technique ;
-    rdfs:label "T1071: Database examination"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/SQLiteBlob"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/recordFieldName"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/recordFieldValue"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/recordRowID"^^xsd:anyURI ;
+    rdfs:label "T1071: SQLite database examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/SQLiteDatabase"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/SQLiteTable"^^xsd:anyURI ;
     solveit-core:hasExample "sqlite-forensic-corpus (2018), https://faui1-files.cs.fau.de/public/sqlite-forensic-corpus/" ;
     solveit-core:hasPotentialWeakness :weaknessW1166,
         :weaknessW1167,
@@ -1853,9 +1844,9 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
         :weaknessW1171 ;
     solveit-core:hasReference "Nemetz, S., Schmitt, S. and Freiling, F., 2018. A standardized corpus for SQLite database forensics. Digital Investigation, 24, pp.S121-S130." ;
     solveit-core:hasSynonym "database forensics" ;
-    solveit-core:techniqueDescription "Examination of a database file(s) to extract information from within" ;
+    solveit-core:techniqueDescription "Examination of a SQLite database file(s) to extract information from within." ;
     solveit-core:techniqueID "T1071" ;
-    solveit-core:techniqueName "Database examination" .
+    solveit-core:techniqueName "SQLite database examination" .
 
 :techniqueT1072 a solveit-core:Technique ;
     rdfs:label "T1072: Chat app examination"@en ;
@@ -2189,11 +2180,6 @@ Facebook Messenger
 
 :techniqueT1116 a solveit-core:Technique ;
     rdfs:label "T1116: Determine connected devices"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/WearableDevice"^^xsd:anyURI ;
     solveit-core:hasExample "ADB connected hosts",
         "USB connected devices",
         "iOS Backups from a computer" ;
@@ -2207,9 +2193,7 @@ Facebook Messenger
 
 :techniqueT1117 a solveit-core:Technique ;
     rdfs:label "T1117: Time-based event reconstruction"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/core/endTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/core/startTime"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/hypothesisedDateTime"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1148,
         :weaknessW1149,
         :weaknessW1266 ;
@@ -2220,6 +2204,7 @@ Facebook Messenger
 
 :techniqueT1118 a solveit-core:Technique ;
     rdfs:label "T1118: Locate relevant files by path"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
     solveit-core:hasExample "Autopsy Interesting Files module",
         "Pattern matching in ALEAPP/iLEAPP to trigger specific plugins" ;
@@ -2232,8 +2217,9 @@ Facebook Messenger
     solveit-core:techniqueName "Locate relevant files by path" .
 
 :techniqueT1120 a solveit-core:Technique ;
-    rdfs:label "T1120: Automated artifact extraction"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult"^^xsd:anyURI ;
+    rdfs:label "T1120: Automated artifact extraction from app data"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ApplicationFiles"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI ;
     solveit-core:hasExample "Axiom",
         "Hansken",
         "aLEAPP",
@@ -2242,10 +2228,10 @@ Facebook Messenger
         :weaknessW1190,
         :weaknessW1258 ;
     solveit-core:hasSynonym "Automated trace extraction" ;
-    solveit-core:techniqueDescription "The use of automation to extract pieces of data that are potentially useful for a digital forensic investigation" ;
+    solveit-core:techniqueDescription "The use of automation to extract pieces of data that are potentially useful for a digital forensic investigation from app data." ;
     solveit-core:techniqueDetails "Artifacts extracted may be a direct mapping to lower levels of abstraction e.g. a database field 'message content' may map to an artifact 'message content', but in many cases, automated interpretation is applied where a field such as 'flag' containing numeric values, may be mapped to more meaningful text strings in the extracted artifact." ;
     solveit-core:techniqueID "T1120" ;
-    solveit-core:techniqueName "Automated artifact extraction" .
+    solveit-core:techniqueName "Automated artifact extraction from app data" .
 
 :techniqueT1121 a solveit-core:Technique ;
     rdfs:label "T1121: Keyword indexing"@en ;
@@ -2378,10 +2364,10 @@ Facebook Messenger
 
 :techniqueT1137 a solveit-core:Technique ;
     rdfs:label "T1137: Browser history examination"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/URLHistory"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/URLHistoryEntry"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/URLVisit"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/visitTime"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/SQLiteDatabase"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/URLHistory"^^xsd:anyURI ;
+    solveit-core:hasExample "History for Chrome",
+        "places.sqlite for Firefox" ;
     solveit-core:hasPotentialWeakness :weaknessW1108,
         :weaknessW1109,
         :weaknessW1110,
@@ -2393,8 +2379,8 @@ Facebook Messenger
         :weaknessW1246 ;
     solveit-core:hasSynonym "internet history examination",
         "web history examination" ;
-    solveit-core:techniqueDescription "The examination of artifacts of webpages visited" ;
-    solveit-core:techniqueDetails "These are typically what are displayed in the address bar, with data typically stored within a locally stored database." ;
+    solveit-core:techniqueDescription "The examination of the history component of a web browser." ;
+    solveit-core:techniqueDetails "Typically this would involve the examination of data in one or more SQLite tables." ;
     solveit-core:techniqueID "T1137" ;
     solveit-core:techniqueName "Browser history examination" .
 
@@ -2541,7 +2527,7 @@ Facebook Messenger
 
 :techniqueT1155 a solveit-core:Technique ;
     rdfs:label "T1155: Operation-based event reconstruction"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"^^xsd:anyURI ;
     solveit-core:hasSynonym "Action-based event reconstruction",
         "Activity-based event reconstruction" ;
     solveit-core:techniqueDescription "The process of reconstructing that an operation occurred on a digital system" ;
@@ -2566,11 +2552,8 @@ This might involve questions such as:
 
 :techniqueT1157 a solveit-core:Technique ;
     rdfs:label "T1157: Extract device data using exposed service"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/Call"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/SMSMessage"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ServiceBasedExtractionData"^^xsd:anyURI ;
     solveit-core:hasExample "Android Debug Bridge (ADB) provides command line access when USB debugging is enabled on Android devices",
         "Extraction of data by querying Content Providers on Android (via ADB)",
         "Extraction of data using AFC on iOS",
@@ -2588,6 +2571,8 @@ This might involve questions such as:
 
 :techniqueT1159 a solveit-core:Technique ;
     rdfs:label "T1159: Extract mobile data via deployed agent"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ServiceBasedExtractionData"^^xsd:anyURI ;
     solveit-core:hasExample "Belkasoft",
         "Elcomsoft" ;
     solveit-core:hasPotentialWeakness :weaknessW1276 ;
@@ -2618,7 +2603,8 @@ This might involve questions such as:
 
 :techniqueT1163 a solveit-core:Technique ;
     rdfs:label "T1163: Automated screenshot-based capture of a mobile device"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshot"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"^^xsd:anyURI ;
     solveit-core:hasReference "https://github.com/prosch88/ALEX",
         "https://github.com/prosch88/UFADE" ;
     solveit-core:techniqueDescription "Programmatically controlling a mobile device while capturing screenshots of the display." ;
@@ -2629,8 +2615,7 @@ This might involve questions such as:
     rdfs:label "T1164: Direct data read from a block device"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamData"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessW1012 ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI ;
     solveit-core:techniqueDescription "Rather than imaging a block device, this involves accessing it directly without the expectation of saving block data to a forensic image format." ;
     solveit-core:techniqueDetails "This would typically be followed by processing of the data that is read to then provide a live view of partitions and file systems, and facilitates logical file extraction or any other direct operations on the data." ;
     solveit-core:techniqueID "T1164" ;
@@ -2645,6 +2630,104 @@ This might involve questions such as:
     solveit-core:techniqueDescription "This technique describes the occasions where it is necessary to connect directly to a disk without a hardware write blocker. This would typically then involve a subseqeunt software write blocker, which then presents a write protected interface." ;
     solveit-core:techniqueID "T1166" ;
     solveit-core:techniqueName "Connect directly to storage media" .
+
+:techniqueT1167 a solveit-core:Technique ;
+    rdfs:label "T1167: Extract search terms from URLs"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/URL"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/URLHistory"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/urlHistoryEntry"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/keywordSearchTerm"^^xsd:anyURI ;
+    solveit-core:hasExample "DuckDuckGo search URLs",
+        "Google search URLs" ;
+    solveit-core:hasReference "Horsman, G., 2019. A forensic examination of online search facility URL record structures. Journal of forensic sciences, 64(1), pp.236-242." ;
+    solveit-core:techniqueDescription "Parsing a URL and extracting search terms from the parameters." ;
+    solveit-core:techniqueDetails """These may be `q=` strings or some other encoded parameters. 
+
+This would include web search URLs such as Google searches but could also include search terms entered into other sites such as travel or shopping sites.""" ;
+    solveit-core:techniqueID "T1167" ;
+    solveit-core:techniqueName "Extract search terms from URLs" .
+
+:techniqueT1168 a solveit-core:Technique ;
+    rdfs:label "T1168: Identify volumes"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "From a partition or data from a full disk, identify volumes and extract file systems." ;
+    solveit-core:techniqueID "T1168" ;
+    solveit-core:techniqueName "Identify volumes" .
+
+:techniqueT1169 a solveit-core:Technique ;
+    rdfs:label "T1169: Filter files related to an application"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ApplicationFiles"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "This technique takes a set of files and determines which are related to a specified application." ;
+    solveit-core:techniqueDetails "A research process informs the set of files that are likely to be relevant to a particular application." ;
+    solveit-core:techniqueID "T1169" ;
+    solveit-core:techniqueName "Filter files related to an application" .
+
+:techniqueT1170 a solveit-core:Technique ;
+    rdfs:label "T1170: Decode forensic image format (logical)"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/LogicalImageContainer"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasExample "AD1",
+        "AFF4-L",
+        "CTR",
+        "L01" ;
+    solveit-core:hasReference "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68.",
+        "Im, S., Park, H., Joun, J., Lee, S. and Park, J., 2024. Revisiting logical image formats for future digital forensics: A comprehensive analysis on L01 and AFF4-L. Forensic Science International: Digital Investigation, 50" ;
+    solveit-core:hasSynonym "Logical image decoding",
+        "Read logical image" ;
+    solveit-core:techniqueDescription "Decodes logical image formats such as L01, AD1, CTR, or AFF4-L. The output here is not an image file but rather a set of files and their metadata." ;
+    solveit-core:techniqueID "T1170" ;
+    solveit-core:techniqueName "Decode forensic image format (logical)" .
+
+:techniqueT1171 a solveit-core:Technique ;
+    rdfs:label "T1171: Access file system via live operating system"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "This involves accessing a live system and relying on the operating system's parsing of the file system to access files." ;
+    solveit-core:techniqueID "T1171" ;
+    solveit-core:techniqueName "Access file system via live operating system" .
+
+:techniqueT1172 a solveit-core:Technique ;
+    rdfs:label "T1172: Access raw image content"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/RawImage"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI ;
+    solveit-core:hasSynonym "read dd file" ;
+    solveit-core:techniqueDescription "This technique reads data from a raw image e.g. a dd image." ;
+    solveit-core:techniqueDetails "This provides the 'raw' equivalent of reading data from a forensic image container e.g. EWF. This provides random access to the bitstream so the stored sectors can be processed further." ;
+    solveit-core:techniqueID "T1172" ;
+    solveit-core:techniqueName "Access raw image content" .
+
+:techniqueT1173 a solveit-core:Technique ;
+    rdfs:label "T1173: Extract data from captured screenshots"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "Processing a screenshot captured from a device to extract data for further processing." ;
+    solveit-core:techniqueDetails "When data has been captured from devices as screenshots, data can be extracted from them using OCR techniques to incorporate into the broader case data e..g to make searchable." ;
+    solveit-core:techniqueID "T1173" ;
+    solveit-core:techniqueName "Extract data from captured screenshots" .
+
+:techniqueT1174 a solveit-core:Technique ;
+    rdfs:label "T1174: Read evidential files stored directly on local file system"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ADBPullData"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/AFCExtractionData"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "Represents reading files that have been acquired or extracted directly to the local file system." ;
+    solveit-core:techniqueDetails "For example an ADB pull command against a directory can result in a set of files copied to the local file system. This represents reading those files directly to extract information." ;
+    solveit-core:techniqueID "T1174" ;
+    solveit-core:techniqueName "Read evidential files stored directly on local file system" .
+
+:techniqueT1175 a solveit-core:Technique ;
+    rdfs:label "T1175: Extract data using content queries"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/AndroidPhone"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Call"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:hasReference "Google (2025) Content provider basics. Available at: https://developer.android.com/guide/topics/providers/content-provider-basics." ;
+    solveit-core:techniqueDescription "Use of content queries on Android devices via adb to extract specific pieces of data exposed by content providers." ;
+    solveit-core:techniqueID "T1175" ;
+    solveit-core:techniqueName "Extract data using content queries" .
 
 :weaknessW1001 a solveit-core:Weakness ;
     rdfs:label "W1001: Excluding a device that contains relevant information"@en ;
@@ -2769,6 +2852,19 @@ This might involve questions such as:
     solveit-core:mayResultInMISINT false ;
     solveit-core:weaknessID "W1010" ;
     solveit-core:weaknessName "Misattributing activity to the wrong device" .
+
+:weaknessW1012 a solveit-core:Weakness ;
+    rdfs:label "W1012: Interaction with the target devices to read data causes changes"@en ;
+    solveit-core:hasPotentialMitigation :mitigationM1007,
+        :mitigationM1008 ;
+    solveit-core:mayResultInINAC_ALT true ;
+    solveit-core:mayResultInINAC_AS false ;
+    solveit-core:mayResultInINAC_COR false ;
+    solveit-core:mayResultInINAC_EX false ;
+    solveit-core:mayResultInINCOMP false ;
+    solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessID "W1012" ;
+    solveit-core:weaknessName "Interaction with the target devices to read data causes changes" .
 
 :weaknessW1013 a solveit-core:Weakness ;
     rdfs:label "W1013: Acquisition includes extra bytes"@en ;
@@ -4797,6 +4893,7 @@ This might involve questions such as:
     solveit-core:mayResultInINAC_EX true ;
     solveit-core:mayResultInINCOMP true ;
     solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessDescription "Missing reference data means inference of event that did not happen" ;
     solveit-core:weaknessID "W1172" ;
     solveit-core:weaknessName "Relevant reference data missed as its necessity was not known at time of preservation" .
 
@@ -4870,6 +4967,7 @@ This might involve questions such as:
     solveit-core:mayResultInINAC_EX false ;
     solveit-core:mayResultInINCOMP true ;
     solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessDescription "System configuration may not permit alternative booting e.g., Secureboot is enabled" ;
     solveit-core:weaknessID "W1178" ;
     solveit-core:weaknessName "Inability to load the forensic bootable environment due to system configuration" .
 
@@ -4882,6 +4980,7 @@ This might involve questions such as:
     solveit-core:mayResultInINAC_EX false ;
     solveit-core:mayResultInINCOMP true ;
     solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessDescription "For example this may be due to missing drivers" ;
     solveit-core:weaknessID "W1179" ;
     solveit-core:weaknessName "Failure to detect internal disk from bootable environment" .
 
@@ -5992,6 +6091,7 @@ This might involve questions such as:
     solveit-core:mayResultInINAC_EX false ;
     solveit-core:mayResultInINCOMP true ;
     solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessDescription "In most cases to create a backup the passcode must be provided to unlock the device." ;
     solveit-core:weaknessID "W1270" ;
     solveit-core:weaknessName "Inability to create a device backup due to locked device" .
 
@@ -6006,6 +6106,7 @@ This might involve questions such as:
     solveit-core:mayResultInINAC_EX false ;
     solveit-core:mayResultInINCOMP true ;
     solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessDescription "For example, Developer Mode may not be enabled on an Android device, or iOS services stopped due to USB Restricted Mode" ;
     solveit-core:weaknessID "W1271" ;
     solveit-core:weaknessName "Inability to access required service as it is not enabled" .
 
@@ -6060,6 +6161,7 @@ This might involve questions such as:
     solveit-core:mayResultInINAC_EX false ;
     solveit-core:mayResultInINCOMP true ;
     solveit-core:mayResultInMISINT false ;
+    solveit-core:weaknessDescription "Some archive file formats have limitations on the size of files that can be contained within them (Wikipedia 2026). If this is not considered and compensated for then large files that need to be stored may be skipped or cause other errors." ;
     solveit-core:weaknessID "W1275" ;
     solveit-core:weaknessName "Failure to store data due to size limitations of archive format used" .
 
@@ -6362,7 +6464,8 @@ This might involve questions such as:
 
 :techniqueT1020 a solveit-core:Technique ;
     rdfs:label "T1020: Mobile file system extraction"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSystemExtraction"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1159,
         :weaknessW1160,
         :weaknessW1161,
@@ -6428,7 +6531,7 @@ This might involve questions such as:
 
 :techniqueT1111 a solveit-core:Technique ;
     rdfs:label "T1111: Recording system clock offset"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ClockOffset"^^xsd:anyURI,
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ClockOffsetCapture"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/systemTime"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1173 ;
     solveit-core:techniqueDescription "Recording a system clock compared with trusted time source" ;
@@ -6490,7 +6593,6 @@ This might involve questions such as:
 
 :techniqueT1134 a solveit-core:Technique ;
     rdfs:label "T1134: Use time anchors to estimate clock offset"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ClockOffset"^^xsd:anyURI ;
     solveit-core:hasExample "Browser caches often contain local timestamps and those derived from external servers",
         "Email headers often record timestamps derived from external mail servers as well as timestamps generated by the local system time",
         "Missed call or voicemail notification messages often include a timestamp derived from an external time source, e.g., missed call from XX on 2018-06-06 at 01:32:49 pm, which can be compared to the local file system time the message was received",
@@ -6548,19 +6650,6 @@ This might involve questions such as:
     solveit-core:mayResultInMISINT false ;
     solveit-core:weaknessID "W1011" ;
     solveit-core:weaknessName "Suggesting the existence of a device that does not exist" .
-
-:weaknessW1012 a solveit-core:Weakness ;
-    rdfs:label "W1012: Interaction with the target devices to read data causes changes"@en ;
-    solveit-core:hasPotentialMitigation :mitigationM1007,
-        :mitigationM1008 ;
-    solveit-core:mayResultInINAC_ALT true ;
-    solveit-core:mayResultInINAC_AS false ;
-    solveit-core:mayResultInINAC_COR false ;
-    solveit-core:mayResultInINAC_EX false ;
-    solveit-core:mayResultInINCOMP false ;
-    solveit-core:mayResultInMISINT false ;
-    solveit-core:weaknessID "W1012" ;
-    solveit-core:weaknessName "Interaction with the target devices to read data causes changes" .
 
 :weaknessW1032 a solveit-core:Weakness ;
     rdfs:label "W1032: Not all memory is acquired"@en ;
@@ -6786,19 +6875,6 @@ This might involve questions such as:
     solveit-core:techniqueID "T1012" ;
     solveit-core:techniqueName "Connect storage medium via hardware write blocker" .
 
-:techniqueT1034 a solveit-core:Technique ;
-    rdfs:label "T1034: Brute force attack"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessW1140,
-        :weaknessW1141,
-        :weaknessW1142 ;
-    solveit-core:hasReference "Kanta, A., Coray, S., Coisel, I. and Scanlon, M., 2021. How viable is password cracking in digital forensic investigation? Analyzing the guessability of over 3.9 billion real-world accounts. Forensic Science International: Digital Investigation, 37, p.301186." ;
-    solveit-core:hasSynonym "exhaustive password search" ;
-    solveit-core:techniqueDescription "A brute force attack, or exhaustive search is a password cracking approach where every combination of characters is tested until the correct one is found. This method is \"guaranteed to work\" given infinite time and resources which in a real-life scenario is not feasible." ;
-    solveit-core:techniqueDetails "Brute force attack involves trying every possible combination in a defined search space to find the correct value. The search space could be limited to just numbers, for example in the case of a 4-digit PIN number, or alphanumerical values or even the full ASCII character set. The larger the search space, the longer it takes to complete a brute force attack." ;
-    solveit-core:techniqueID "T1034" ;
-    solveit-core:techniqueName "Brute force attack" .
-
 :techniqueT1037 a solveit-core:Technique ;
     rdfs:label "T1037: Obtain password from the device owner"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
@@ -6832,9 +6908,10 @@ This might involve questions such as:
 
 :techniqueT1138 a solveit-core:Technique ;
     rdfs:label "T1138: Browser cache examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BrowserCacheData"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/httpResponseHeader"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/SQLiteBlob"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/URL"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/httpRequestHeader"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessW1252 ;
     solveit-core:hasSynonym "internet cache examination",
@@ -6866,6 +6943,19 @@ This might involve questions such as:
     rdfs:label "M1026: Testing of backup parsing method"@en ;
     solveit-core:mitigationID "M1026" ;
     solveit-core:mitigationName "Testing of backup parsing method" .
+
+:techniqueT1034 a solveit-core:Technique ;
+    rdfs:label "T1034: Brute force attack"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessW1140,
+        :weaknessW1141,
+        :weaknessW1142 ;
+    solveit-core:hasReference "Kanta, A., Coray, S., Coisel, I. and Scanlon, M., 2021. How viable is password cracking in digital forensic investigation? Analyzing the guessability of over 3.9 billion real-world accounts. Forensic Science International: Digital Investigation, 37, p.301186." ;
+    solveit-core:hasSynonym "exhaustive password search" ;
+    solveit-core:techniqueDescription "A brute force attack, or exhaustive search is a password cracking approach where every combination of characters is tested until the correct one is found. This method is \"guaranteed to work\" given infinite time and resources which in a real-life scenario is not feasible." ;
+    solveit-core:techniqueDetails "Brute force attack involves trying every possible combination in a defined search space to find the correct value. The search space could be limited to just numbers, for example in the case of a 4-digit PIN number, or alphanumerical values or even the full ASCII character set. The larger the search space, the longer it takes to complete a brute force attack." ;
+    solveit-core:techniqueID "T1034" ;
+    solveit-core:techniqueName "Brute force attack" .
 
 :techniqueT1035 a solveit-core:Technique ;
     rdfs:label "T1035: Dictionary attack"@en ;

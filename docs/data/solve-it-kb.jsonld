@@ -2133,6 +2133,11 @@
         "@value": "M1091: Use a brute force attack instead"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1034"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
       {
         "@value": "M1091"
@@ -5529,6 +5534,11 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1158"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "For example turning on Developer Mode on Android to enable ADB"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
       {
         "@value": "M1238"
@@ -5685,6 +5695,12 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1120"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1167"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1169"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -5945,6 +5961,12 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1166"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1171"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1175"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -6295,6 +6317,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1060"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1168"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -6564,6 +6589,18 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1102"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1170"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1172"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1173"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1174"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -6781,7 +6818,7 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamData"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/Bitstream"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -6870,11 +6907,7 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/RawImageFile"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/RawImageInfoFile"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/Bitstream"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -6956,17 +6989,13 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -7007,7 +7036,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Previewing a data source and selecting a subset of the files for extraction into a container such as a tar/zip file or a forensic image format."
+        "@value": "Views a set of files (typically via direct access from previewing) and acquires a subset of them."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This selection of files would subsequently be stored into a container such as a tar/zip file or a forensic image format."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -7685,10 +7719,16 @@
         "@value": "T1019: Mobile backup extraction"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -7746,10 +7786,16 @@
         "@value": "T1020: Mobile file system extraction"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSystemExtraction"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -7857,6 +7903,18 @@
         "@value": "T1022: Mobile device screenshot based capture"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
         "@value": "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169."
@@ -7942,27 +8000,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "T1025: Writing data to a forensic image format"
+        "@value": "T1025: Writing bitstream data to a forensic image format"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamData"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/Bitstream"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/RawImageFile"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/RawImage"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -7994,12 +8048,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Storage of data recovered from a digital device in various formats which might include bitstream data or a logical set of files"
+        "@value": "Storage of bitstream data recovered from a digital device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "Bitstream data that would result from disk imaging would be stored in formats such as: RAW, EWF, AFF4. For sets of files that are extracted there are proprietary logical formats from tool vendors. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc."
+        "@value": "Bitstream data that would result from disk imaging would be stored in formats such as: RAW, EWF, AFF4. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -8009,7 +8063,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Writing data to a forensic image format"
+        "@value": "Writing bitstream data to a forensic image format"
       }
     ]
   },
@@ -8022,6 +8076,16 @@
       {
         "@language": "en",
         "@value": "T1026: Writing data to standard archive format"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSystemExtraction"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -8041,6 +8105,11 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "Storing acquired data in a standard archive format such as rar, tar or zip"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This is commonly used with mobile file system extractions, but mobile backups can also sometimes be compressed into an archive."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -8122,7 +8191,7 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamData"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/Bitstream"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -8673,23 +8742,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "T1043: Decode forensic image container format"
+        "@value": "T1043: Access forensic image content (bitstream)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamData"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -8714,14 +8779,6 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessW1259"
       }
     ],
-    "https://ontology.solveit-df.org/solveit/core/hasReference": [
-      {
-        "@value": "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68."
-      },
-      {
-        "@value": "Im, S., Park, H., Joun, J., Lee, S. and Park, J., 2024. Revisiting logical image formats for future digital forensics: A comprehensive analysis on L01 and AFF4-L. Forensic Science International: Digital Investigation, 50"
-      }
-    ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
         "@value": "Read forensic format"
@@ -8737,7 +8794,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "For example a EWF (Expert Witness Format) needs to be processed to expose the equivalent RAW image sectors. \n\nThis also includes decoding logical formats such as L01, AD1, CTR, or AFF4-L. The output here is not an image file but rather a set of files and their metadata.\n\nThis technique would not need to be used when working with a RAW image format directly."
+        "@value": "For example a EWF (Expert Witness Format) needs to be processed to expose the equivalent RAW image sectors."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -8747,7 +8804,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Decode forensic image container format"
+        "@value": "Access forensic image content (bitstream)"
       }
     ]
   },
@@ -8762,14 +8819,24 @@
         "@value": "T1044: Mobile backup decoding"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "adb backup decoding"
       },
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/filePath"
+        "@value": "iOS backup decoding"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -8792,9 +8859,9 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessW1051"
       }
     ],
-    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "todo"
+        "@value": "Processing an extracted mobile device backup to access the files contained within."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -8819,10 +8886,16 @@
         "@value": "T1045: Decode standard archive format"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -9456,18 +9529,16 @@
         "@value": "T1059: Identify partitions"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/partitionOffset"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/partitionLength"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -9537,82 +9608,16 @@
         "@value": "T1060: Enumerate allocated files and folders"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Directory"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/allocationStatus"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/extInodeID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/filePath"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/fileName"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/metadataChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftRecordChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameModifiedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameAccessedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameCreatedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameRecordChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerSID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ownerSID"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -10357,25 +10362,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "T1071: Database examination"
+        "@value": "T1071: SQLite database examination"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/SQLiteDatabase"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/recordFieldName"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/recordFieldValue"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/recordRowID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/SQLiteBlob"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/SQLiteTable"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -10415,7 +10414,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Examination of a database file(s) to extract information from within"
+        "@value": "Examination of a SQLite database file(s) to extract information from within."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -10425,7 +10424,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Database examination"
+        "@value": "SQLite database examination"
       }
     ]
   },
@@ -11830,7 +11829,7 @@
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/ClockOffset"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ClockOffsetCapture"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -12094,28 +12093,6 @@
         "@value": "T1116: Determine connected devices"
       }
     ],
-    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Computer"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/WearableDevice"
-      }
-    ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
       {
         "@value": "USB connected devices"
@@ -12173,15 +12150,7 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/core/startTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/core/endTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/core/confidence"
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/hypothesisedDateTime"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -12225,6 +12194,12 @@
       {
         "@language": "en",
         "@value": "T1118: Locate relevant files by path"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12349,13 +12324,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "T1120: Automated artifact extraction"
+        "@value": "T1120: Automated artifact extraction from app data"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ApplicationFiles"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -12390,7 +12371,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "The use of automation to extract pieces of data that are potentially useful for a digital forensic investigation"
+        "@value": "The use of automation to extract pieces of data that are potentially useful for a digital forensic investigation from app data."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
@@ -12405,7 +12386,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Automated artifact extraction"
+        "@value": "Automated artifact extraction from app data"
       }
     ]
   },
@@ -13159,12 +13140,6 @@
         "@value": "T1134: Use time anchors to estimate clock offset"
       }
     ],
-    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/ClockOffset"
-      }
-    ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
       {
         "@value": "Browser caches often contain local timestamps and those derived from external servers"
@@ -13238,22 +13213,24 @@
         "@value": "T1137: Browser history examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/SQLiteDatabase"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/URLHistory"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "places.sqlite for Firefox"
       },
       {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/URLVisit"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/URLHistoryEntry"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/visitTime"
+        "@value": "History for Chrome"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -13295,12 +13272,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "The examination of artifacts of webpages visited"
+        "@value": "The examination of the history component of a web browser."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "These are typically what are displayed in the address bar, with data typically stored within a locally stored database."
+        "@value": "Typically this would involve the examination of data in one or more SQLite tables."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13325,14 +13302,20 @@
         "@value": "T1138: Browser cache examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/BrowserCacheData"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/URL"
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/SQLiteBlob"
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -14123,7 +14106,7 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/core/confidence"
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -14212,26 +14195,16 @@
         "@value": "T1157: Extract device data using exposed service"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Contact"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Call"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/SMSMessage"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ServiceBasedExtractionData"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -14340,6 +14313,18 @@
       {
         "@language": "en",
         "@value": "T1159: Extract mobile data via deployed agent"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ServiceBasedExtractionData"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -14479,10 +14464,16 @@
         "@value": "T1163: Automated screenshot-based capture of a mobile device"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshot"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -14533,12 +14524,7 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamData"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessW1012"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -14607,6 +14593,459 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Connect directly to storage media"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1167",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1167: Extract search terms from URLs"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/URLHistory"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/urlHistoryEntry"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/URL"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/keywordSearchTerm"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Google search URLs"
+      },
+      {
+        "@value": "DuckDuckGo search URLs"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@value": "Horsman, G., 2019. A forensic examination of online search facility URL record structures. Journal of forensic sciences, 64(1), pp.236-242."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Parsing a URL and extracting search terms from the parameters."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "These may be `q=` strings or some other encoded parameters. \n\nThis would include web search URLs such as Google searches but could also include search terms entered into other sites such as travel or shopping sites."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1167"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Extract search terms from URLs"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1168",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1168: Identify volumes"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "From a partition or data from a full disk, identify volumes and extract file systems."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1168"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Identify volumes"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1169",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1169: Filter files related to an application"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ApplicationFiles"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "This technique takes a set of files and determines which are related to a specified application."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "A research process informs the set of files that are likely to be relevant to a particular application."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1169"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Filter files related to an application"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1170",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1170: Decode forensic image format (logical)"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/LogicalImageContainer"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "L01"
+      },
+      {
+        "@value": "AD1"
+      },
+      {
+        "@value": "CTR"
+      },
+      {
+        "@value": "AFF4-L"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@value": "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68."
+      },
+      {
+        "@value": "Im, S., Park, H., Joun, J., Lee, S. and Park, J., 2024. Revisiting logical image formats for future digital forensics: A comprehensive analysis on L01 and AFF4-L. Forensic Science International: Digital Investigation, 50"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Logical image decoding"
+      },
+      {
+        "@value": "Read logical image"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Decodes logical image formats such as L01, AD1, CTR, or AFF4-L. The output here is not an image file but rather a set of files and their metadata."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1170"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Decode forensic image format (logical)"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1171",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1171: Access file system via live operating system"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Computer"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "This involves accessing a live system and relying on the operating system's parsing of the file system to access files."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1171"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Access file system via live operating system"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1172",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1172: Access raw image content"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/RawImage"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "read dd file"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "This technique reads data from a raw image e.g. a dd image."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This provides the 'raw' equivalent of reading data from a forensic image container e.g. EWF. This provides random access to the bitstream so the stored sectors can be processed further."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1172"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Access raw image content"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1173",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1173: Extract data from captured screenshots"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Message"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Contact"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Processing a screenshot captured from a device to extract data for further processing."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "When data has been captured from devices as screenshots, data can be extracted from them using OCR techniques to incorporate into the broader case data e..g to make searchable."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1173"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Extract data from captured screenshots"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1174",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1174: Read evidential files stored directly on local file system"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ADBPullData"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/AFCExtractionData"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Represents reading files that have been acquired or extracted directly to the local file system."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "For example an ADB pull command against a directory can result in a set of files copied to the local file system. This represents reading those files directly to extract information."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1174"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Read evidential files stored directly on local file system"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueT1175",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "T1175: Extract data using content queries"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/AndroidPhone"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Message"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Call"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@value": "Google (2025) Content provider basics. Available at: https://developer.android.com/guide/topics/providers/content-provider-basics."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Use of content queries on Android devices via adb to extract specific pieces of data exposed by content providers."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "T1175"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Extract data using content queries"
       }
     ]
   },
@@ -26084,6 +26523,11 @@
         "@value": false
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Missing reference data means inference of event that did not happen"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
       {
         "@value": "W1172"
@@ -26461,6 +26905,11 @@
         "@value": false
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "System configuration may not permit alternative booting e.g., Secureboot is enabled"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
       {
         "@value": "W1178"
@@ -26522,6 +26971,11 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#boolean",
         "@value": false
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "For example this may be due to missing drivers"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -32299,6 +32753,11 @@
         "@value": false
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "In most cases to create a backup the passcode must be provided to unlock the device."
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
       {
         "@value": "W1270"
@@ -32368,6 +32827,11 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#boolean",
         "@value": false
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "For example, Developer Mode may not be enabled on an Android device, or iOS services stopped due to USB Restricted Mode"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -32640,6 +33104,11 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#boolean",
         "@value": false
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Some archive file formats have limitations on the size of files that can be contained within them (Wikipedia 2026). If this is not considered and compensated for then large files that need to be stored may be skipped or cause other errors."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
