@@ -1,0 +1,105 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-wa: <https://ontology.solveit-df.org/solveit/weakness-assessment/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Weakness Assessment Examples
+#    Demonstrates WeaknessEvaluation and WeaknessEvaluationSet
+#    usage with Likelihood x Impact and RPN scoring
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/weakness-assessment> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/weakness-assessment/0.0.1> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/core> ,
+                <https://ontology.solveit-df.org/solveit/weakness-assessment> ;
+    rdfs:label "SOLVE-IT Weakness Assessment Examples"@en ;
+    rdfs:comment "Example instances demonstrating weakness risk assessment using the SOLVE-IT Weakness Assessment module."@en .
+
+#################################################################
+#    Referenced Technique and Weaknesses
+#################################################################
+
+:techniqueT1002 rdf:type solveit-core:Technique ;
+    rdfs:label "T1002: Disk imaging"@en ;
+    solveit-core:techniqueID "T1002" ;
+    solveit-core:techniqueName "Disk imaging" ;
+    solveit-core:hasPotentialWeakness :weaknessW1014 ,
+                                     :weaknessW1015 .
+
+:weaknessW1014 rdf:type solveit-core:Weakness ;
+    rdfs:label "W1014: Imaging process changes original data"@en ;
+    solveit-core:weaknessID "W1014" ;
+    solveit-core:weaknessName "Imaging process changes original data" .
+
+:weaknessW1015 rdf:type solveit-core:Weakness ;
+    rdfs:label "W1015: Powering on SSD results in sectors being wiped by TRIM operation"@en ;
+    solveit-core:weaknessID "W1015" ;
+    solveit-core:weaknessName "Powering on SSD results in sectors being wiped by TRIM operation" .
+
+#################################################################
+#    Evaluator Identity
+#################################################################
+
+:evaluator-jane-doe rdf:type uco-identity:Identity ;
+    uco-core:name "Jane Doe" ;
+    rdfs:label "Jane Doe"@en .
+
+#################################################################
+#    Example WeaknessEvaluation — Likelihood x Impact only
+#    Assessing W1014 (Imaging process changes original data)
+#################################################################
+
+:evaluation-W1014-diskimaging rdf:type solveit-wa:WeaknessEvaluation ;
+    rdfs:label "Evaluation of W1014 for disk imaging"@en ;
+    solveit-wa:evaluatesWeakness :weaknessW1014 ;
+    solveit-wa:likelihoodRating 3 ;
+    solveit-wa:likelihoodRationale "Without mitigation, connecting a device for imaging is very likely to cause writes to source media through OS auto-mounting, filesystem journaling, or tool behaviour." ;
+    solveit-wa:impactRating 3 ;
+    solveit-wa:impactRationale "Effects of modifications to data is hard to quantify but will raise serious questions about evidential completeness, integrity and also quality and processes used." ;
+    solveit-wa:liImpactScore 9 ;
+    solveit-wa:evaluationContext "Traditional HDD acquisition" ;
+    rdfs:comment "Likelihood x Impact assessment only (no detection difficulty). Score: 3 x 3 = 9."@en .
+
+#################################################################
+#    Example WeaknessEvaluation — Full RPN scoring
+#    Assessing W1015 (SSD TRIM wipes sectors on power-on)
+#################################################################
+
+:evaluation-W1015-diskimaging rdf:type solveit-wa:WeaknessEvaluation ;
+    rdfs:label "Evaluation of W1015 for disk imaging"@en ;
+    solveit-wa:evaluatesWeakness :weaknessW1015 ;
+    solveit-wa:likelihoodRating 3 ;
+    solveit-wa:likelihoodRationale "TRIM is enabled by default on most modern SSDs and operating systems. Powering on the device will trigger garbage collection." ;
+    solveit-wa:impactRating 2 ;
+    solveit-wa:impactRationale "DeleNon allocated file content in trimmed sectors will be irrecoverably lost, but allocated data and filesystem metadata are unaffected." ;
+    solveit-wa:detectDifficultyRating 3 ;
+    solveit-wa:detectDifficultyRationale "TRIM operations are silent and leave no log. It is difficult to determine whether data loss has occurred without a prior reference image." ;
+    solveit-wa:liImpactScore 6 ;
+    solveit-wa:rpnScore 18 ;
+    solveit-wa:evaluationContext "SSD acquisition without prior imaging" ;
+    solveit-wa:evaluationNotes "Risk can be mitigated by imaging via a write-blocker or by removing the SSD and connecting it through an interface that does not pass TRIM commands." ;
+    rdfs:comment "Full RPN assessment. Likelihood(3) x Impact(2) x DetectionDifficulty(3) = RPN 18."@en .
+
+#################################################################
+#    Example WeaknessEvaluationSet
+#    Groups the above evaluations into an assessment session
+#    scoped to T1002 (Disk imaging)
+#################################################################
+
+:evaluationset-diskimaging-2025 rdf:type solveit-wa:WeaknessEvaluationSet ;
+    rdfs:label "Disk imaging weakness assessment 2025"@en ;
+    solveit-wa:evaluationSetName "Disk Imaging Risk Assessment" ;
+    solveit-wa:evaluationSetDescription "Assessment of weaknesses associated with disk imaging (T1002) in a traditional HDD acquisition context." ;
+    solveit-wa:evaluationDate "2025-03-01"^^xsd:date ;
+    solveit-wa:evaluatedBy :evaluator-jane-doe ;
+    solveit-wa:scopedToTechnique :techniqueT1002 ;
+    solveit-wa:hasEvaluation :evaluation-W1014-diskimaging ,
+                             :evaluation-W1015-diskimaging ;
+    rdfs:comment "An evaluation set grouping two weakness assessments for disk imaging. Demonstrates both LI-only and full RPN scoring within a single set."@en .

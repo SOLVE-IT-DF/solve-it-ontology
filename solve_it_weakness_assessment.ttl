@@ -1,0 +1,237 @@
+@prefix : <https://ontology.solveit-df.org/solveit/weakness-assessment/> .
+@prefix solveit-wa: <https://ontology.solveit-df.org/solveit/weakness-assessment/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@base <https://ontology.solveit-df.org/solveit/weakness-assessment/> .
+
+#################################################################
+#    SOLVE-IT Weakness Assessment Module
+#    Risk-based weakness assessment using Likelihood x Impact
+#    and FMEA/RPN scoring frameworks
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/weakness-assessment> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/weakness-assessment/0.0.5> ;
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.4.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/analysis/1.4.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/identity/1.4.0> ,
+                <https://ontology.solveit-df.org/solveit/core> ;
+    dcterms:title "SOLVE-IT Weakness Assessment Module"@en ;
+    dcterms:description "Risk-based weakness assessment providing Likelihood x Impact (ISO 31000) and FMEA/RPN scoring frameworks for SOLVE-IT weaknesses."@en ;
+    dcterms:creator "SOLVE-IT Project" ;
+    owl:versionInfo "0.0.5" ;
+    rdfs:label "SOLVE-IT Weakness Assessment Module"@en .
+
+#################################################################
+#    Classes
+#################################################################
+
+### WeaknessEvaluation
+solveit-wa:WeaknessEvaluation rdf:type owl:Class ;
+    rdfs:subClassOf uco-analysis:AnalyticResult ;
+    rdfs:label "Weakness Evaluation"@en ;
+    rdfs:comment "A risk assessment of a single SOLVE-IT weakness, capturing likelihood, impact, and optionally detectability ratings with computed scores."@en .
+
+### WeaknessEvaluationSet
+solveit-wa:WeaknessEvaluationSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:ContextualCompilation ;
+    rdfs:label "Weakness Evaluation Set"@en ;
+    rdfs:comment "A collection of weakness evaluations scoped to a technique or context, with authorship and date metadata. Represents one assessment session."@en .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+solveit-wa:evaluatesWeakness rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range solveit-core:Weakness ;
+    rdfs:label "evaluates weakness"@en ;
+    rdfs:comment "Links a weakness evaluation to the specific weakness being assessed."@en .
+
+solveit-wa:hasEvaluation rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluationSet ;
+    rdfs:range solveit-wa:WeaknessEvaluation ;
+    rdfs:label "has evaluation"@en ;
+    rdfs:comment "Links an evaluation set to its constituent weakness evaluations."@en .
+
+solveit-wa:scopedToTechnique rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluationSet ;
+    rdfs:range solveit-core:Technique ;
+    rdfs:label "scoped to technique"@en ;
+    rdfs:comment "Optionally scopes an evaluation set to a specific technique context."@en .
+
+solveit-wa:evaluatedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluationSet ;
+    rdfs:range uco-identity:Identity ;
+    rdfs:label "evaluated by"@en ;
+    rdfs:comment "The identity (person or organisation) that performed the evaluation."@en .
+
+#################################################################
+#    Data Properties — WeaknessEvaluation
+#################################################################
+
+solveit-wa:likelihoodRating rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "likelihood rating"@en ;
+    rdfs:comment "The likelihood that this weakness will manifest. Integer score 1-3 (1=Low, 2=Medium, 3=High)."@en .
+
+solveit-wa:likelihoodRationale rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:string ;
+    rdfs:label "likelihood rationale"@en ;
+    rdfs:comment "Justification for the assigned likelihood rating."@en .
+
+solveit-wa:impactRating rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "impact rating"@en ;
+    rdfs:comment "The impact if this weakness manifests. Integer score 1-3 (1=Low, 2=Medium, 3=High)."@en .
+
+solveit-wa:impactRationale rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:string ;
+    rdfs:label "impact rationale"@en ;
+    rdfs:comment "Justification for the assigned impact rating."@en .
+
+solveit-wa:detectDifficultyRating rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "detection difficulty rating"@en ;
+    rdfs:comment "How difficult the weakness is to detect. Integer score 1-3 (1=Low/easy to detect, 2=Medium, 3=High/hard to detect)."@en .
+
+solveit-wa:detectDifficultyRationale rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:string ;
+    rdfs:label "detection difficulty rationale"@en ;
+    rdfs:comment "Justification for the assigned detection difficulty rating."@en .
+
+solveit-wa:liImpactScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "likelihood x impact score"@en ;
+    rdfs:comment "Computed score from Likelihood x Impact (range 1-9). Low=1, Medium=2, High=3."@en .
+
+solveit-wa:rpnScore rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:integer ;
+    rdfs:label "RPN score"@en ;
+    rdfs:comment "Risk Priority Number: Likelihood x Impact x Detection Difficulty (range 1-27). Only present when detection difficulty is rated."@en .
+
+solveit-wa:evaluationContext rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:string ;
+    rdfs:label "evaluation context"@en ;
+    rdfs:comment "Free-text context for the evaluation such as tool, platform, or case type."@en .
+
+solveit-wa:evaluationNotes rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluation ;
+    rdfs:range xsd:string ;
+    rdfs:label "evaluation notes"@en ;
+    rdfs:comment "Free-text rationale or caveats about the evaluation."@en .
+
+#################################################################
+#    Data Properties — WeaknessEvaluationSet
+#################################################################
+
+solveit-wa:evaluationSetName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluationSet ;
+    rdfs:range xsd:string ;
+    rdfs:label "evaluation set name"@en ;
+    rdfs:comment "Descriptive label for the evaluation set."@en .
+
+solveit-wa:evaluationSetDescription rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluationSet ;
+    rdfs:range xsd:string ;
+    rdfs:label "evaluation set description"@en ;
+    rdfs:comment "Context or purpose of the evaluation set."@en .
+
+solveit-wa:evaluationDate rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluationSet ;
+    rdfs:range xsd:date ;
+    rdfs:label "evaluation date"@en ;
+    rdfs:comment "Date when the assessment was performed."@en .
+
+#################################################################
+#    SHACL Shapes
+#################################################################
+
+### WeaknessEvaluationShape
+solveit-wa:WeaknessEvaluationShape a sh:NodeShape ;
+    sh:targetClass solveit-wa:WeaknessEvaluation ;
+    rdfs:label "Weakness Evaluation Shape"@en ;
+    sh:property [
+        sh:path solveit-wa:evaluatesWeakness ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:class solveit-core:Weakness ;
+        sh:name "evaluates weakness" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:likelihoodRating ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 3 ;
+        sh:name "likelihood rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:impactRating ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 3 ;
+        sh:name "impact rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:detectDifficultyRating ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 3 ;
+        sh:name "detection difficulty rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:liImpactScore ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 9 ;
+        sh:name "likelihood x impact score" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:rpnScore ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:integer ;
+        sh:minInclusive 1 ;
+        sh:maxInclusive 27 ;
+        sh:name "RPN score" ;
+    ] .
+
+### WeaknessEvaluationSetShape
+solveit-wa:WeaknessEvaluationSetShape a sh:NodeShape ;
+    sh:targetClass solveit-wa:WeaknessEvaluationSet ;
+    rdfs:label "Weakness Evaluation Set Shape"@en ;
+    sh:property [
+        sh:path solveit-wa:hasEvaluation ;
+        sh:minCount 1 ;
+        sh:class solveit-wa:WeaknessEvaluation ;
+        sh:name "has evaluation" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:evaluatedBy ;
+        sh:minCount 1 ;
+        sh:class uco-identity:Identity ;
+        sh:name "evaluated by" ;
+    ] .

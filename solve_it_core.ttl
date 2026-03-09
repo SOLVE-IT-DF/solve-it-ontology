@@ -24,7 +24,8 @@
                 <https://ontology.caseontology.org/case/investigation/1.4.0> ,
                 <https://ontology.solveit-df.org/solveit/observable> ,
                 <https://ontology.solveit-df.org/solveit/analysis> ,
-                <https://ontology.solveit-df.org/solveit/tool-profile> ;
+                <https://ontology.solveit-df.org/solveit/tool-profile> ,
+                <https://ontology.solveit-df.org/solveit/weakness-assessment> ;
     dcterms:title "SOLVE-IT Digital Forensics Ontology"@en ;
     dcterms:description "A modular ontology extending UCO/CASE for the SOLVE-IT digital forensics project. This core ontology defines fundamental SOLVE-IT classes (Technique, Weakness, Mitigation) and imports modules for observables and analysis."@en ;
     dcterms:creator "SOLVE-IT Project" ;
