@@ -140,11 +140,83 @@ solveit-observable:ApplicationFiles rdf:type owl:Class ;
     rdfs:label "Application Files"@en ;
     rdfs:comment "A contextual compilation of files associated with a specific application version. Groups the files belonging to a particular application (e.g. WhatsApp v13.2 database files) for forensic examination."@en .
 
+###  BrowserAppFiles Observable Object
+solveit-observable:BrowserAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Browser App Files"@en ;
+    rdfs:comment "Files associated with a web browser application, including browsing history, bookmarks, cookies, saved passwords, session data, and extensions."@en .
+
 ###  BrowserCacheData Observable Object
 solveit-observable:BrowserCacheData rdf:type owl:Class ;
-    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:subClassOf solveit-observable:BrowserAppFiles ;
     rdfs:label "Browser Cache Data"@en ;
     rdfs:comment "The locally cached data stored by a web browser to improve performance. This may include cached web pages, images, scripts, and associated metadata. The storage format varies by browser (e.g. Chrome simple cache, Firefox cache2, SQLite indexes)."@en .
+
+###  CalendarAppFiles Observable Object
+solveit-observable:CalendarAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Calendar App Files"@en ;
+    rdfs:comment "Files associated with a calendar application, including events, appointments, invitations, recurring schedules, and attendee data (e.g. Apple Calendar, Google Calendar, Outlook Calendar)."@en .
+
+###  ChatAppFiles Observable Object
+solveit-observable:ChatAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Chat App Files"@en ;
+    rdfs:comment "Files associated with a messaging or chat application, including message databases, media attachments, contact lists, and encryption key material (e.g. WhatsApp, Signal, Telegram)."@en .
+
+###  AiChatAppFiles Observable Object
+solveit-observable:AiChatAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "AI Chat App Files"@en ;
+    rdfs:comment "Files associated with an AI chatbot or assistant application, including conversation histories, prompt logs, cached model responses, and user preference data (e.g. ChatGPT, Claude, Gemini)."@en .
+
+###  EmailAppFiles Observable Object
+solveit-observable:EmailAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Email App Files"@en ;
+    rdfs:comment "Files associated with an email client application, including message stores, mailbox databases, attachments, contact data, and account configuration (e.g. Outlook, Apple Mail, Gmail app)."@en .
+
+###  HealthAppFiles Observable Object
+solveit-observable:HealthAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Health App Files"@en ;
+    rdfs:comment "Files associated with a health or fitness tracking application, including activity logs, heart rate data, sleep records, workout history, and medical records (e.g. Apple Health, Google Fit, Fitbit)."@en .
+
+###  MapsAppFiles Observable Object
+solveit-observable:MapsAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Maps App Files"@en ;
+    rdfs:comment "Files associated with a mapping application, including search history, saved locations, offline map tiles, and location history (e.g. Google Maps, Apple Maps, Waze)."@en .
+
+###  NavigationAppFiles Observable Object
+solveit-observable:NavigationAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Navigation App Files"@en ;
+    rdfs:comment "Files associated with a turn-by-turn navigation application, including route history, recent destinations, favourite locations, and trip logs (e.g. Waze, TomTom, Garmin)."@en .
+
+###  PhotosAppFiles Observable Object
+solveit-observable:PhotosAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Photos App Files"@en ;
+    rdfs:comment "Files associated with a photos or gallery management application, including image and video databases, album metadata, facial recognition data, location tags, and editing history (e.g. Apple Photos, Google Photos, Samsung Gallery)."@en .
+
+###  PaymentAppFiles Observable Object
+solveit-observable:PaymentAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Payment App Files"@en ;
+    rdfs:comment "Files associated with a mobile payment or digital wallet application, including transaction history, linked accounts, merchant data, and receipts (e.g. Apple Pay, Google Pay, PayPal, Venmo)."@en .
+
+###  RemindersAppFiles Observable Object
+solveit-observable:RemindersAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Reminders App Files"@en ;
+    rdfs:comment "Files associated with a reminders or to-do list application, including task lists, due dates, recurring reminders, and completion history (e.g. Apple Reminders, Google Tasks, Todoist)."@en .
+
+###  SocialMediaAppFiles Observable Object
+solveit-observable:SocialMediaAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Social Media App Files"@en ;
+    rdfs:comment "Files associated with a social media application, including posts, direct messages, friend/follower lists, media uploads, and notification data (e.g. Instagram, Facebook, TikTok, X)."@en .
 
 ###  DeviceSet Observable Object
 solveit-observable:DeviceSet rdf:type owl:Class ;
