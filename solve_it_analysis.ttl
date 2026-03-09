@@ -43,6 +43,24 @@ solveit-analysis:HypothesisedEvent rdf:type owl:Class ;
     rdfs:label "Hypothesised Event"@en ;
     rdfs:comment "An event that is hypothesised to have occurred."@en .
 
+###  HypothesisedWebSearch
+solveit-analysis:HypothesisedWebSearch rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:HypothesisedEvent ;
+    rdfs:label "Hypothesised Web Search"@en ;
+    rdfs:comment "A web search that is hypothesised to have been performed, potentially inferred from browser history fragments, cached results, or suggested search terms. Use uco-observable:keywordSearchTerm for the search query."@en .
+
+###  HypothesisedCommunication
+solveit-analysis:HypothesisedCommunication rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:HypothesisedEvent ;
+    rdfs:label "Hypothesised Communication"@en ;
+    rdfs:comment "A communication that is hypothesised to have occurred between parties, potentially inferred from partial message records, contact patterns, or metadata fragments. Use uco-observable:from and uco-observable:to for the parties involved."@en .
+
+###  HypothesisedRelationship
+solveit-analysis:HypothesisedRelationship rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:Hypothesis ;
+    rdfs:label "Hypothesised Relationship"@en ;
+    rdfs:comment "A relationship between entities that is hypothesised to exist, such as an inferred association between persons, accounts, devices, or locations based on co-occurrence patterns, shared identifiers, or behavioural analysis."@en .
+
 ###  HypothesisedDevice
 solveit-analysis:HypothesisedDevice rdf:type owl:Class ;
     rdfs:subClassOf solveit-analysis:Hypothesis ;
@@ -78,6 +96,12 @@ solveit-analysis:hypothesisedDateTime rdf:type owl:ObjectProperty ;
                                solveit-observable:DateTimeRange ) ] ;
     rdfs:label "hypothesised date time"@en ;
     rdfs:comment "The date and time at which the hypothesised event is believed to have occurred - either an absolute timestamp (DateTimeStamp) or a time interval (DateTimeRange)."@en .
+
+solveit-analysis:hypothesisedServiceName rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-analysis:HypothesisedEvent ;
+    rdfs:range xsd:string ;
+    rdfs:label "hypothesised service name"@en ;
+    rdfs:comment "The name of the service or platform hypothesised to have been used (e.g. Google, WhatsApp, iMessage)."@en .
 
 solveit-analysis:hasArtifact rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:ForensicToolTagBasedReport ;
