@@ -41,7 +41,8 @@
         :techniqueDFT-1079,
         :techniqueDFT-1080,
         :techniqueDFT-1081,
-        :techniqueDFT-1082 ;
+        :techniqueDFT-1082,
+        :techniqueDFT-1176 ;
     solveit-core:objectiveDescription "Review potentially relevant content to determine its significance or meaning." ;
     solveit-core:objectiveID "DFO-1003" ;
     solveit-core:objectiveName "Review content for relevance" ;
@@ -2693,6 +2694,14 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:techniqueDescription "Use of content queries on Android devices via adb to extract specific pieces of data exposed by content providers." ;
     solveit-core:techniqueID "DFT-1175" ;
     solveit-core:techniqueName "Extract data using content queries" .
+
+:techniqueDFT-1176 a solveit-core:Technique ;
+    rdfs:label "DFT-1176: Identification of synthetic images"@en ;
+    solveit-core:hasSynonym "Deepfake Detection, Synthetic Image Detection, Image Source Attribution, Image Authentication, Image Source Classification" ;
+    solveit-core:techniqueDescription "Classification of images with respect to their origin, i.e., whether they are synthetically generated or naturally captured by a camera." ;
+    solveit-core:techniqueDetails "An image is analyzed using a method from the subtechniques. The output can be a classifier-predicted score of how many traces of synthetic origin can be found in an image, or extracted traces from the image that aid the analyst in their assessment of the image origin." ;
+    solveit-core:techniqueID "DFT-1176" ;
+    solveit-core:techniqueName "Identification of synthetic images" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
