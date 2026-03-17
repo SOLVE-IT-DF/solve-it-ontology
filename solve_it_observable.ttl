@@ -212,6 +212,12 @@ solveit-observable:RemindersAppFiles rdf:type owl:Class ;
     rdfs:label "Reminders App Files"@en ;
     rdfs:comment "Files associated with a reminders or to-do list application, including task lists, due dates, recurring reminders, and completion history (e.g. Apple Reminders, Google Tasks, Todoist)."@en .
 
+###  GamingAppFiles Observable Object
+solveit-observable:GamingAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Gaming App Files"@en ;
+    rdfs:comment "Files associated with a gaming application, including save data, player profiles, in-app purchase records, chat logs, friend lists, and gameplay statistics (e.g. Steam, Xbox, PlayStation, Epic Games, Roblox, mobile games)."@en .
+
 ###  SocialMediaAppFiles Observable Object
 solveit-observable:SocialMediaAppFiles rdf:type owl:Class ;
     rdfs:subClassOf solveit-observable:ApplicationFiles ;
