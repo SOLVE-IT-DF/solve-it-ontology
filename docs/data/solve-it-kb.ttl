@@ -1411,12 +1411,12 @@
     solveit-core:techniqueName "Rainbow table-based password attack" .
 
 :techniqueDFT-1039 a solveit-core:Technique ;
-    rdfs:label "DFT-1039: App downgrade"@en ;
+    rdfs:label "DFT-1039: Downgrade apps to facilitate data extraction"@en ;
     solveit-core:hasReference "https://support.mobiledit.com/portal/en/kb/articles/app-downgrade",
         "https://www.oxygenforensics.com/en/resources/downgrade-method-what-should-be-known-before-the-procedure/" ;
     solveit-core:techniqueDescription "Downgrading an app to a version in which data is available e.g. via a backup method" ;
     solveit-core:techniqueID "DFT-1039" ;
-    solveit-core:techniqueName "App downgrade" .
+    solveit-core:techniqueName "Downgrade apps to facilitate data extraction" .
 
 :techniqueDFT-1041 a solveit-core:Technique ;
     rdfs:label "DFT-1041: Pin2Pwn"@en ;
@@ -6435,7 +6435,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:mitigationName "Attempt to obtain password/pincode with dictionary attacks" .
 
 :techniqueDFT-1006 a solveit-core:Technique ;
-    rdfs:label "DFT-1006: Digital sniffer dogs"@en ;
+    rdfs:label "DFT-1006: Use digital sniffer dogs to locate digital devices"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1005 ;
@@ -6443,7 +6443,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasSynonym "Digital Storage Device Dogs" ;
     solveit-core:techniqueDescription "The use of canines to locate obscured digital storage devices." ;
     solveit-core:techniqueID "DFT-1006" ;
-    solveit-core:techniqueName "Digital sniffer dogs" .
+    solveit-core:techniqueName "Use digital sniffer dogs to locate digital devices" .
 
 :techniqueDFT-1007 a solveit-core:Technique ;
     rdfs:label "DFT-1007: Use a SyncTriage-based approach to detect existence of devices"@en ;

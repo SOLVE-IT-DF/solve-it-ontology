@@ -7215,7 +7215,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1006: Digital sniffer dogs"
+        "@value": "DFT-1006: Use digital sniffer dogs to locate digital devices"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -7255,7 +7255,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Digital sniffer dogs"
+        "@value": "Use digital sniffer dogs to locate digital devices"
       }
     ]
   },
@@ -8603,7 +8603,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1039: App downgrade"
+        "@value": "DFT-1039: Downgrade apps to facilitate data extraction"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -8626,7 +8626,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "App downgrade"
+        "@value": "Downgrade apps to facilitate data extraction"
       }
     ]
   },
