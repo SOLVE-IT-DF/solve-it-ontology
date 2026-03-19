@@ -97,12 +97,7 @@
     rdfs:label "W1004: Acquisition does not include all sectors from LBA0 to LBA max"@en ;
     solveit-core:weaknessID "W1004" ;
     solveit-core:weaknessName "Acquisition does not include all sectors from LBA0 to LBA max" ;
-    solveit-core:mayResultInINCOMP true ;
-    solveit-core:mayResultInINAC_EX false ;
-    solveit-core:mayResultInINAC_AS false ;
-    solveit-core:mayResultInINAC_ALT false ;
-    solveit-core:mayResultInINAC_COR false ;
-    solveit-core:mayResultInMISINT false ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:hasPotentialMitigation :mitigationM1003 ;
     solveit-core:hasPotentialMitigation :mitigationM1004 .
 
