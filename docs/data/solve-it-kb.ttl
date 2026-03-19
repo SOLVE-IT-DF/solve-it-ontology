@@ -3,6 +3,12 @@
 @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+:mitigationDFM-1240 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1240: Check for indications of disk backed memory pages"@en ;
+    solveit-core:hasReference :citationDFCite-1143 ;
+    solveit-core:mitigationID "DFM-1240" ;
+    solveit-core:mitigationName "Check for indications of disk backed memory pages" .
+
 :objectiveDFO-1001 a solveit-core:Objective ;
     rdfs:label "DFO-1001: Reconstruct events"@en ;
     solveit-core:includesTechnique :techniqueDFT-1087,
@@ -301,6 +307,548 @@
     solveit-core:objectiveName "Store acquired data" ;
     solveit-core:sortOrder 7 .
 
+:citationDFCite-1001 a solveit-core:Citation ;
+    rdfs:label "DFCite-1001" ;
+    solveit-core:citationBibtex """@misc{brignoni_aleapp_adb_hosts,
+  author = {Brignoni, Alexis},
+  title = {ALEAPP adb\\_hosts.py},
+  year = {n.d.},
+  url = {https://github.com/abrignoni/ALEAPP/blob/main/scripts/artifacts/adb_hosts.py},
+  note = {Android Logs Events And Protobuf Parser (ALEAPP) artifact script}
+}""" ;
+    solveit-core:citationID "DFCite-1001" ;
+    solveit-core:citationPlaintext "None" .
+
+:citationDFCite-1002 a solveit-core:Citation ;
+    rdfs:label "DFCite-1002" ;
+    solveit-core:citationBibtex """@article{alam2024sift,
+  title={SIFT: Sifting file types—application of explainable artificial intelligence in cyber forensics},
+  author={Alam, Shahid and Demir, Alper Kamil},
+  journal={Cybersecurity},
+  volume={7},
+  number={1},
+  pages={52},
+  year={2024},
+  publisher={Springer}
+}""" ;
+    solveit-core:citationID "DFCite-1002" ;
+    solveit-core:citationPlaintext "None" .
+
+:citationDFCite-1003 a solveit-core:Citation ;
+    rdfs:label "DFCite-1003" ;
+    solveit-core:citationBibtex """@misc{android_adb,
+  author = {{Android Developers}},
+  title = {Android Debug Bridge (adb)},
+  year = {2025},
+  url = {https://developer.android.com/tools/adb},
+  note = {Official Android developer documentation for ADB}
+}""" ;
+    solveit-core:citationID "DFCite-1003" ;
+    solveit-core:citationPlaintext "Android (2025), Android Debug Bridge (adb), https://developer.android.com/tools/adb" .
+
+:citationDFCite-1005 a solveit-core:Citation ;
+    rdfs:label "DFCite-1005" ;
+    solveit-core:citationID "DFCite-1005" ;
+    solveit-core:citationPlaintext "Apple (2025) View and restore past versions of documents on Mac https://support.apple.com/en-gb/guide/mac-help/mh40710/mac" .
+
+:citationDFCite-1006 a solveit-core:Citation ;
+    rdfs:label "DFCite-1006" ;
+    solveit-core:citationID "DFCite-1006" ;
+    solveit-core:citationPlaintext "Autopsy Interesting File module, https://sleuthkit.org/autopsy/docs/user-docs/3.1/interesting_page.html" .
+
+:citationDFCite-1007 a solveit-core:Citation ;
+    rdfs:label "DFCite-1007" ;
+    solveit-core:citationID "DFCite-1007" ;
+    solveit-core:citationPlaintext "Basis Technology (2015), Extension Mismatch Detector Module, https://sleuthkit.org/autopsy/docs/user-docs/3.1/extension_mismatch_detector_page.html" .
+
+:citationDFCite-1008 a solveit-core:Citation ;
+    rdfs:label "DFCite-1008" ;
+    solveit-core:citationID "DFCite-1008" ;
+    solveit-core:citationPlaintext "Basis Technology 2019, Reporting, https://sleuthkit.org/autopsy/docs/user-docs/4.12.0/reporting_page.html" .
+
+:citationDFCite-1009 a solveit-core:Citation ;
+    rdfs:label "DFCite-1009" ;
+    solveit-core:citationID "DFCite-1009" ;
+    solveit-core:citationPlaintext "Basis Technology 2019, Tagging, https://sleuthkit.org/autopsy/docs/user-docs/4.12.0/tagging_page.html" .
+
+:citationDFCite-1010 a solveit-core:Citation ;
+    rdfs:label "DFCite-1010" ;
+    solveit-core:citationID "DFCite-1010" ;
+    solveit-core:citationPlaintext "Basis Technology 2020, Autopsy User Documentation: Geolocation Overview, https://sleuthkit.org/autopsy/docs/user-docs/4.13.0/geolocation_page.html" .
+
+:citationDFCite-1011 a solveit-core:Citation ;
+    rdfs:label "DFCite-1011" ;
+    solveit-core:citationID "DFCite-1011" ;
+    solveit-core:citationPlaintext "Basis Technology 2025, PhotoRec Carver Module, https://sleuthkit.org/autopsy/docs/user-docs/4.22.0/photorec_carver_page.html" .
+
+:citationDFCite-1012 a solveit-core:Citation ;
+    rdfs:label "DFCite-1012" ;
+    solveit-core:citationID "DFCite-1012" ;
+    solveit-core:citationPlaintext "Bayor, L., Weinert, C., Maier, C. and Weitzel, T., 2025. Social-Oriented Communication with AI Companions: Benefits, Costs, and Contextual Patterns. Business & Information Systems Engineering, pp.1-19." .
+
+:citationDFCite-1013 a solveit-core:Citation ;
+    rdfs:label "DFCite-1013" ;
+    solveit-core:citationID "DFCite-1013" ;
+    solveit-core:citationPlaintext "Beebe, N.L. and Clark, J.G., 2007. Digital forensic text string searching: Improving information retrieval effectiveness by thematically clustering search results. Digital investigation, 4, pp.49-54." .
+
+:citationDFCite-1015 a solveit-core:Citation ;
+    rdfs:label "DFCite-1015" ;
+    solveit-core:citationID "DFCite-1015" ;
+    solveit-core:citationPlaintext "Belkasoft (undated) Dealing with Apple's USB Restricted Mode, https://belkasoft.com/dealing_with_usb_restricted_mode" .
+
+:citationDFCite-1016 a solveit-core:Citation ;
+    rdfs:label "DFCite-1016" ;
+    solveit-core:citationID "DFCite-1016" ;
+    solveit-core:citationPlaintext "Belkasoft https://belkasoft.com/agent_based_ios_acquisition" .
+
+:citationDFCite-1017 a solveit-core:Citation ;
+    rdfs:label "DFCite-1017" ;
+    solveit-core:citationID "DFCite-1017" ;
+    solveit-core:citationPlaintext "Berggren at al. (2014) TimeSketch, https://timesketch.org" .
+
+:citationDFCite-1018 a solveit-core:Citation ;
+    rdfs:label "DFCite-1018" ;
+    solveit-core:citationID "DFCite-1018" ;
+    solveit-core:citationPlaintext "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35." .
+
+:citationDFCite-1019 a solveit-core:Citation ;
+    rdfs:label "DFCite-1019" ;
+    solveit-core:citationID "DFCite-1019" ;
+    solveit-core:citationPlaintext "Breitinger, F., Studiawan, H. and Hargreaves, C., 2025. SoK: Timeline based event reconstruction for digital forensics: Terminology, methodology, and current challenges." .
+
+:citationDFCite-1023 a solveit-core:Citation ;
+    rdfs:label "DFCite-1023" ;
+    solveit-core:citationID "DFCite-1023" ;
+    solveit-core:citationPlaintext "Campbell, W., 2013. Volatile memory acquisition tools–A comparison across taint and correctness. 11th Australian Digital Forensics Conference. Edith Cowan University, Perth, Western Australia." .
+
+:citationDFCite-1027 a solveit-core:Citation ;
+    rdfs:label "DFCite-1027" ;
+    solveit-core:citationID "DFCite-1027" ;
+    solveit-core:citationPlaintext "Casey, E. and Jaquet-Chiffelle, D.O., 2019. Do identities matter?. Policing: A Journal of Policy and Practice, 13(1), pp.21-34." .
+
+:citationDFCite-1028 a solveit-core:Citation ;
+    rdfs:label "DFCite-1028" ;
+    solveit-core:citationID "DFCite-1028" ;
+    solveit-core:citationPlaintext "Casey, E., 2011. Digital evidence and computer crime: Forensic science, computers, and the internet. Academic press, Section 8.1.2" .
+
+:citationDFCite-1029 a solveit-core:Citation ;
+    rdfs:label "DFCite-1029" ;
+    solveit-core:citationID "DFCite-1029" ;
+    solveit-core:citationPlaintext "Casey, E., 2011. Digital evidence and computer crime: Forensic science, computers, and the internet. Academic press, Section 8.1.3" .
+
+:citationDFCite-1031 a solveit-core:Citation ;
+    rdfs:label "DFCite-1031" ;
+    solveit-core:citationID "DFCite-1031" ;
+    solveit-core:citationPlaintext "Cellebrite (undated), Full File System Extraction - Mobile Device Forensics, https://cellebrite.com/en/glossary/full-file-system-extraction-mobile-device-forensics/" .
+
+:citationDFCite-1033 a solveit-core:Citation ;
+    rdfs:label "DFCite-1033" ;
+    solveit-core:citationID "DFCite-1033" ;
+    solveit-core:citationPlaintext "Claij-Swart et al. (2025), PUMA (Programmable Utility for Mobile Automation), https://github.com/NetherlandsForensicInstitute/puma" .
+
+:citationDFCite-1034 a solveit-core:Citation ;
+    rdfs:label "DFCite-1034" ;
+    solveit-core:citationID "DFCite-1034" ;
+    solveit-core:citationPlaintext "Claij-Swart, A.A., Oudsen, E., Timbermont, B., Hargreaves, C. and Voigt, L.L., 2025. Automatically generating digital forensic reference data triggered by mobile application updates. Forensic Science International: Digital Investigation, 54, p.301985." .
+
+:citationDFCite-1036 a solveit-core:Citation ;
+    rdfs:label "DFCite-1036" ;
+    solveit-core:citationID "DFCite-1036" ;
+    solveit-core:citationPlaintext "DSTL Digital Forensics Bulletin, TRIM & Garbage Collection on SSDs, Edition 27, July 2024 DSTL/PUB160897, https://mailchi.mp/3b5bda81ff5f/digital-forensic-bulletin-edition27-trim-and-garbage-collection-on-ssds9445401" .
+
+:citationDFCite-1037 a solveit-core:Citation ;
+    rdfs:label "DFCite-1037" ;
+    solveit-core:citationID "DFCite-1037" ;
+    solveit-core:citationPlaintext "Dickinson (2020) ‘Privacy by design – 10 ways MSAB can help you meet the challenges.’ MSAB Blog. Available at: https://www.msab.com/blog/privacy-by-design-10-ways-msab-can-help-you-meet-the-challenges/" .
+
+:citationDFCite-1038 a solveit-core:Citation ;
+    rdfs:label "DFCite-1038" ;
+    solveit-core:citationID "DFCite-1038" ;
+    solveit-core:citationPlaintext "Digital Detective Knowledgebase https://kb.digital-detective.net/display/BF" .
+
+:citationDFCite-1040 a solveit-core:Citation ;
+    rdfs:label "DFCite-1040" ;
+    solveit-core:citationID "DFCite-1040" ;
+    solveit-core:citationPlaintext "Dubettier, A., Gernot, T., Giguet, E. and Rosenberger, C., 2023. File type identification tools for digital investigations. Forensic Science International: Digital Investigation, 46, p.301574." .
+
+:citationDFCite-1041 a solveit-core:Citation ;
+    rdfs:label "DFCite-1041" ;
+    solveit-core:citationID "DFCite-1041" ;
+    solveit-core:citationPlaintext "Elcomsoft 20203 https://blog.elcomsoft.com/2023/07/ios-device-acquisition-installing-the-extraction-agent/" .
+
+:citationDFCite-1042 a solveit-core:Citation ;
+    rdfs:label "DFCite-1042" ;
+    solveit-core:citationID "DFCite-1042" ;
+    solveit-core:citationPlaintext "Elcomsoft 2021, Forensically Sound checkm8 Based Extraction of iPhone 5s, 6, 6s and SE, https://blog.elcomsoft.com/2021/05/checkm8-based-extraction-of-iphone-5s-6-6s-and-se/" .
+
+:citationDFCite-1044 a solveit-core:Citation ;
+    rdfs:label "DFCite-1044" ;
+    solveit-core:citationID "DFCite-1044" ;
+    solveit-core:citationPlaintext "Forensic Science Regulator (2025) Incident scene examination (FSR-GUI-0006). GOV.UK. Available at: https://www.gov.uk/government/publications/incident-scene-examination-fsr-gui-0006" .
+
+:citationDFCite-1046 a solveit-core:Citation ;
+    rdfs:label "DFCite-1046" ;
+    solveit-core:citationID "DFCite-1046" ;
+    solveit-core:citationPlaintext "Geus, J., Gruber, J., Wozar, J. and Freiling, F., 2025. From sync to seizure: A binary instrumentation-based evaluation of the iCloud backup process. Forensic Science International: Digital Investigation, 54, p.301978." .
+
+:citationDFCite-1047 a solveit-core:Citation ;
+    rdfs:label "DFCite-1047" ;
+    solveit-core:citationID "DFCite-1047" ;
+    solveit-core:citationPlaintext "Google (2025) Content provider basics. Available at: https://developer.android.com/guide/topics/providers/content-provider-basics." .
+
+:citationDFCite-1048 a solveit-core:Citation ;
+    rdfs:label "DFCite-1048" ;
+    solveit-core:citationID "DFCite-1048" ;
+    solveit-core:citationPlaintext "Grenier (2023) PhotoRec, https://www.cgsecurity.org/wiki/PhotoRec" .
+
+:citationDFCite-1050 a solveit-core:Citation ;
+    rdfs:label "DFCite-1050" ;
+    solveit-core:citationID "DFCite-1050" ;
+    solveit-core:citationPlaintext "Groß, T., Dirauf, R. and Freiling, F., 2020, May. Systematic analysis of browser history evidence. In 2020 13th International Conference on Systematic Approaches to Digital Forensic Engineering (SADFE) (pp. 1-12). IEEE." .
+
+:citationDFCite-1051 a solveit-core:Citation ;
+    rdfs:label "DFCite-1051" ;
+    solveit-core:citationID "DFCite-1051" ;
+    solveit-core:citationPlaintext "Gruhn, M. and Freiling, F.C., 2016. Evaluating atomicity, and integrity of correct memory acquisition methods. Digital Investigation, 16, S1-S10." .
+
+:citationDFCite-1054 a solveit-core:Citation ;
+    rdfs:label "DFCite-1054" ;
+    solveit-core:citationID "DFCite-1054" ;
+    solveit-core:citationPlaintext "Hargreaves & Chivers 2008b. Avoiding Live Imaging of Large Encrypted Volumes by Recovering Keys from Memory, Proceedings from 3rd Advances in Computer Security and Forensics" .
+
+:citationDFCite-1055 a solveit-core:Citation ;
+    rdfs:label "DFCite-1055" ;
+    solveit-core:citationID "DFCite-1055" ;
+    solveit-core:citationPlaintext "Hargreaves & Drury, 2025, Forensic Analysis of AI Applications: A Replika \"AI Companion\" example, WSDF 2025" .
+
+:citationDFCite-1056 a solveit-core:Citation ;
+    rdfs:label "DFCite-1056" ;
+    solveit-core:citationID "DFCite-1056" ;
+    solveit-core:citationPlaintext "Hargreaves, C. and Chivers, H., 2008, March. Recovery of encryption keys from memory using a linear scan. In 2008 Third International Conference on Availability, Reliability and Security (pp. 1369-1376). IEEE." .
+
+:citationDFCite-1059 a solveit-core:Citation ;
+    rdfs:label "DFCite-1059" ;
+    solveit-core:citationID "DFCite-1059" ;
+    solveit-core:citationPlaintext "Hargreaves, C., Chivers, H. and Titheridge, D., 2008. Windows Vista and digital investigations. Digital Investigation, 5(1-2), pp.34-48." .
+
+:citationDFCite-1061 a solveit-core:Citation ;
+    rdfs:label "DFCite-1061" ;
+    solveit-core:citationID "DFCite-1061" ;
+    solveit-core:citationPlaintext "Hargreaves, C., Repository for 'An abstract model for digital forensic analysis tools - A foundation for systematic error mitigation analysis', https://github.com/chrishargreaves/digital-forensic-tool-abstractions/tree/main" .
+
+:citationDFCite-1063 a solveit-core:Citation ;
+    rdfs:label "DFCite-1063" ;
+    solveit-core:citationID "DFCite-1063" ;
+    solveit-core:citationPlaintext "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 6" .
+
+:citationDFCite-1065 a solveit-core:Citation ;
+    rdfs:label "DFCite-1065" ;
+    solveit-core:citationID "DFCite-1065" ;
+    solveit-core:citationPlaintext "Horsman, G., 2019. A forensic examination of online search facility URL record structures. Journal of forensic sciences, 64(1), pp.236-242." .
+
+:citationDFCite-1066 a solveit-core:Citation ;
+    rdfs:label "DFCite-1066" ;
+    solveit-core:citationID "DFCite-1066" ;
+    solveit-core:citationPlaintext "Horsman, G., 2020. The challenge of identifying historic ‘private browsing’sessions on suspect devices. Forensic Science International: Digital Investigation, 34, p.300980." .
+
+:citationDFCite-1067 a solveit-core:Citation ;
+    rdfs:label "DFCite-1067" ;
+    solveit-core:citationID "DFCite-1067" ;
+    solveit-core:citationPlaintext "Hoy, J., 2023. Forensic radio survey techniques for cell site analysis. John Wiley & Sons." .
+
+:citationDFCite-1069 a solveit-core:Citation ;
+    rdfs:label "DFCite-1069" ;
+    solveit-core:citationID "DFCite-1069" ;
+    solveit-core:citationPlaintext "Im, S., Park, H., Joun, J., Lee, S. and Park, J., 2024. Revisiting logical image formats for future digital forensics: A comprehensive analysis on L01 and AFF4-L. Forensic Science International: Digital Investigation, 50" .
+
+:citationDFCite-1072 a solveit-core:Citation ;
+    rdfs:label "DFCite-1072" ;
+    solveit-core:citationID "DFCite-1072" ;
+    solveit-core:citationPlaintext "Jenny Ottmann, Üsame Cengiz, Frank Breitinger, and Felix Freiling, 2023. As if Time Had Stopped – Checking Memory Dumps for Quasi-Instantaneous Consistency. In Proceedings of the Digital Forensics Research Conference USA (DFRWS USA), Baltimore, MD, July 2023." .
+
+:citationDFCite-1073 a solveit-core:Citation ;
+    rdfs:label "DFCite-1073" ;
+    solveit-core:citationID "DFCite-1073" ;
+    solveit-core:citationPlaintext "Jens-Petter Sandvik, André Årnes, 2018. The reliability of clocks as digital evidence under low voltage conditions. Digital Investigation, 24, pp.S10-S17." .
+
+:citationDFCite-1074 a solveit-core:Citation ;
+    rdfs:label "DFCite-1074" ;
+    solveit-core:citationID "DFCite-1074" ;
+    solveit-core:citationPlaintext "Kanta, A. and Hargreaves, C., 2025, August. Measuring the effectiveness of keyword lists in digital forensics. In Proceedings of the 20th International Conference on Availability, Reliability and Security." .
+
+:citationDFCite-1075 a solveit-core:Citation ;
+    rdfs:label "DFCite-1075" ;
+    solveit-core:citationID "DFCite-1075" ;
+    solveit-core:citationPlaintext "Kanta, A., Coisel, I. and Scanlon, M., 2021, December. PCWQ: A framework for evaluating password cracking wordlist quality. In International Conference on Digital Forensics and Cyber Crime (pp. 159-175). Cham: Springer International Publishing." .
+
+:citationDFCite-1077 a solveit-core:Citation ;
+    rdfs:label "DFCite-1077" ;
+    solveit-core:citationID "DFCite-1077" ;
+    solveit-core:citationPlaintext "Kanta, A., Coray, S., Coisel, I. and Scanlon, M., 2021. How viable is password cracking in digital forensic investigation? Analyzing the guessability of over 3.9 billion real-world accounts. Forensic Science International: Digital Investigation, 37, p.301186." .
+
+:citationDFCite-1078 a solveit-core:Citation ;
+    rdfs:label "DFCite-1078" ;
+    solveit-core:citationID "DFCite-1078" ;
+    solveit-core:citationPlaintext "Karampidis, K. and Papadourakis, G., 2017. File type identification-computational intelligence for digital forensics. Journal of Digital Forensics, Security and Law, 12(2), p.6." .
+
+:citationDFCite-1079 a solveit-core:Citation ;
+    rdfs:label "DFCite-1079" ;
+    solveit-core:citationID "DFCite-1079" ;
+    solveit-core:citationPlaintext "Kemmerich, T., Junge, F., Kuntze, N., Rudolph, C., Endicott-Popovsky, B. and Großkopf, L., 2014. Generation and handling of hard drive duplicates as piece of evidence." .
+
+:citationDFCite-1080 a solveit-core:Citation ;
+    rdfs:label "DFCite-1080" ;
+    solveit-core:citationID "DFCite-1080" ;
+    solveit-core:citationPlaintext "Kent, K., Chevalier, S., Grance, T. & Dang, H. (2006) Guide to Integrating Forensic Techniques into Incident Response. NIST Special Publication 800‑86. National Institute of Standards and Technology (NIST). Available at: https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-86.pdf" .
+
+:citationDFCite-1081 a solveit-core:Citation ;
+    rdfs:label "DFCite-1081" ;
+    solveit-core:citationID "DFCite-1081" ;
+    solveit-core:citationPlaintext "Kessler GC. The impact of SHA-1 file hash collisions on digital forensic imaging: A follow-up experiment. Journal of Digital Forensics, Security and Law. 2016;11(4):10." .
+
+:citationDFCite-1083 a solveit-core:Citation ;
+    rdfs:label "DFCite-1083" ;
+    solveit-core:citationID "DFCite-1083" ;
+    solveit-core:citationPlaintext "Kessler, G.C., 2016. The impact of MD5 file hash collisions on digital forensic imaging. Journal of digital forensics, security and law, 11(4), p.9." .
+
+:citationDFCite-1084 a solveit-core:Citation ;
+    rdfs:label "DFCite-1084" ;
+    solveit-core:citationID "DFCite-1084" ;
+    solveit-core:citationPlaintext "Kornblum, J.D., 2007. Using every part of the buffalo in Windows memory analysis. Digital Investigation, 4(1), pp.24-29." .
+
+:citationDFCite-1087 a solveit-core:Citation ;
+    rdfs:label "DFCite-1087" ;
+    solveit-core:citationID "DFCite-1087" ;
+    solveit-core:citationPlaintext "Leschke, T.R. and Nicholas, C., 2013, October. Change-link 2.0: a digital forensic tool for visualizing changes to shadow volume data. In Proceedings of the Tenth Workshop on Visualization for Cyber Security (pp. 17-24)." .
+
+:citationDFCite-1088 a solveit-core:Citation ;
+    rdfs:label "DFCite-1088" ;
+    solveit-core:citationID "DFCite-1088" ;
+    solveit-core:citationPlaintext "Lyle, J., 2002. Testing disk imaging tools. DFRWS USA 2002, https://dfrws.org/wp-content/uploads/2019/06/2002_USA_paper-testing_disk_imaging_tools.pdf" .
+
+:citationDFCite-1090 a solveit-core:Citation ;
+    rdfs:label "DFCite-1090" ;
+    solveit-core:citationID "DFCite-1090" ;
+    solveit-core:citationPlaintext "Magazinius, J., Rios, B.K. and Sabelfeld, A., 2013, November. Polyglots: crossing origins by crossing formats. In Proceedings of the 2013 ACM SIGSAC conference on Computer & communications security (pp. 753-764)." .
+
+:citationDFCite-1091 a solveit-core:Citation ;
+    rdfs:label "DFCite-1091" ;
+    solveit-core:citationID "DFCite-1091" ;
+    solveit-core:citationPlaintext "Magnet (2024) Revealing hidden data: Full file system extractions uncovered, https://www.magnetforensics.com/blog/revealing-hidden-data-full-file-system-extractions-uncovered/" .
+
+:citationDFCite-1092 a solveit-core:Citation ;
+    rdfs:label "DFCite-1092" ;
+    solveit-core:citationID "DFCite-1092" ;
+    solveit-core:citationPlaintext "Magnet 2020, Using the Geolocation Data Filter in Magnet AXIOM & AXIOM Cyber, https://www.magnetforensics.com/blog/using-the-geolocation-data-filter-in-magnet-axiom-axiom-cyber/" .
+
+:citationDFCite-1093 a solveit-core:Citation ;
+    rdfs:label "DFCite-1093" ;
+    solveit-core:citationID "DFCite-1093" ;
+    solveit-core:citationPlaintext "Magnet 2024, Moving in the right direction with Animated maps, https://www.magnetforensics.com/blog/moving-in-the-right-direction-with-animated-maps/" .
+
+:citationDFCite-1094 a solveit-core:Citation ;
+    rdfs:label "DFCite-1094" ;
+    solveit-core:citationID "DFCite-1094" ;
+    solveit-core:citationPlaintext "Magnet Forensics (2019) Magnet Axiom Wordlist Generator. Magnet Forensics. Available at: https://www.magnetforensics.com/resources/magnet-axiom-wordlist-generator/" .
+
+:citationDFCite-1095 a solveit-core:Citation ;
+    rdfs:label "DFCite-1095" ;
+    solveit-core:citationID "DFCite-1095" ;
+    solveit-core:citationPlaintext "Magnet Forensics (2019) Utilizing AXIOM Wordlist Generator to Optimize Handset Lock Code Breaking, Magnet Forensics, Available at: https://www.magnetforensics.com/blog/utilizing-axiom-wordlist-generator-to-optimize-handset-lock-code-breaking/" .
+
+:citationDFCite-1096 a solveit-core:Citation ;
+    rdfs:label "DFCite-1096" ;
+    solveit-core:citationID "DFCite-1096" ;
+    solveit-core:citationPlaintext "Martignoni, L., Fattori, A., Paleari, R. and Cavallaro, L., 2010. Live and trustworthy forensic analysis of commodity production systems. In International Workshop on Recent Advances in Intrusion Detection (pp. 297-316). Berlin, Heidelberg: Springer Berlin Heidelberg." .
+
+:citationDFCite-1097 a solveit-core:Citation ;
+    rdfs:label "DFCite-1097" ;
+    solveit-core:citationID "DFCite-1097" ;
+    solveit-core:citationPlaintext "McGee, J. (2022). An Alternate Location for Deleted SMS/iMessage Data in Apple Devices. DFIR Review. Retrieved from https://dfir.pubpub.org/pub/yp6efc8q" .
+
+:citationDFCite-1098 a solveit-core:Citation ;
+    rdfs:label "DFCite-1098" ;
+    solveit-core:citationID "DFCite-1098" ;
+    solveit-core:citationPlaintext "McQuaid, J. (2017) Using Keywords with Magnet AXIOM, Magnet Forensics, https://www.magnetforensics.com/blog/using-keywords-with-magnet-axiom/" .
+
+:citationDFCite-1099 a solveit-core:Citation ;
+    rdfs:label "DFCite-1099" ;
+    solveit-core:citationID "DFCite-1099" ;
+    solveit-core:citationPlaintext "Mendoza, A., Kumar, A., Midcap, D., Cho, H. and Varol, C., 2015. BrowStEx: A tool to aggregate browser storage artifacts for forensic analysis. Digital investigation, 14, pp.63-75." .
+
+:citationDFCite-1100 a solveit-core:Citation ;
+    rdfs:label "DFCite-1100" ;
+    solveit-core:citationID "DFCite-1100" ;
+    solveit-core:citationPlaintext "Metz (2011), Windows Search forensics, https://www.forensicfocus.com/articles/windows-search-forensics/" .
+
+:citationDFCite-1101 a solveit-core:Citation ;
+    rdfs:label "DFCite-1101" ;
+    solveit-core:citationID "DFCite-1101" ;
+    solveit-core:citationPlaintext "Mozillazine (2017), Profiles.ini file, https://kb.mozillazine.org/Profiles.ini_file" .
+
+:citationDFCite-1102 a solveit-core:Citation ;
+    rdfs:label "DFCite-1102" ;
+    solveit-core:citationID "DFCite-1102" ;
+    solveit-core:citationPlaintext "NIST (2006) NIST SP 800-86 Guide to Integrating Forensic Techniques into Incident Response, https://doi.org/10.6028/NIST.SP.800-86" .
+
+:citationDFCite-1104 a solveit-core:Citation ;
+    rdfs:label "DFCite-1104" ;
+    solveit-core:citationID "DFCite-1104" ;
+    solveit-core:citationPlaintext "Nemetz, S., Schmitt, S. and Freiling, F., 2018. A standardized corpus for SQLite database forensics. Digital Investigation, 24, pp.S121-S130." .
+
+:citationDFCite-1105 a solveit-core:Citation ;
+    rdfs:label "DFCite-1105" ;
+    solveit-core:citationID "DFCite-1105" ;
+    solveit-core:citationPlaintext "New msgstore – Who ‘Dis? A Look At An Updated WhatsApp On Android, https://thebinaryhick.blog/2022/06/09/new-msgstore-who-dis-a-look-at-an-updated-whatsapp-on-android/" .
+
+:citationDFCite-1106 a solveit-core:Citation ;
+    rdfs:label "DFCite-1106" ;
+    solveit-core:citationID "DFCite-1106" ;
+    solveit-core:citationPlaintext "Nikkel, B., 2009. Forensic analysis of GPT disks and GUID partition tables. Digital Investigation, 6(1-2), pp.39-47." .
+
+:citationDFCite-1107 a solveit-core:Citation ;
+    rdfs:label "DFCite-1107" ;
+    solveit-core:citationID "DFCite-1107" ;
+    solveit-core:citationPlaintext "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, “Forensic Image Acquisition" .
+
+:citationDFCite-1108 a solveit-core:Citation ;
+    rdfs:label "DFCite-1108" ;
+    solveit-core:citationID "DFCite-1108" ;
+    solveit-core:citationPlaintext "Oh, J., Lee, S. and Lee, S., 2011. Advanced evidence collection and analysis of web browser activity. Digital investigation, 8, pp.S62-S70." .
+
+:citationDFCite-1109 a solveit-core:Citation ;
+    rdfs:label "DFCite-1109" ;
+    solveit-core:citationID "DFCite-1109" ;
+    solveit-core:citationPlaintext "Oh, J., Lee, S. and Lee, S., 2011. Advanced evidence collection and analysis of web browser activity. Digital investigation, 8, pp.S62-S70., section 3.6" .
+
+:citationDFCite-1110 a solveit-core:Citation ;
+    rdfs:label "DFCite-1110" ;
+    solveit-core:citationID "DFCite-1110" ;
+    solveit-core:citationPlaintext "Ottmann, J., Breitinger, F. and Freiling, F., 2024. An experimental assessment of inconsistencies in memory forensics. ACM Transactions on Privacy and Security (TOPS). 27, 2:1–2:29." .
+
+:citationDFCite-1112 a solveit-core:Citation ;
+    rdfs:label "DFCite-1112" ;
+    solveit-core:citationID "DFCite-1112" ;
+    solveit-core:citationPlaintext "Paladin Forensic Suite, https://sumuri.com/software/paladin/" .
+
+:citationDFCite-1115 a solveit-core:Citation ;
+    rdfs:label "DFCite-1115" ;
+    solveit-core:citationID "DFCite-1115" ;
+    solveit-core:citationPlaintext "Roussev, V., Quates, C. and Martell, R., 2013. Real-time digital forensics and triage. Digital Investigation, 10(2), pp.158-167." .
+
+:citationDFCite-1116 a solveit-core:Citation ;
+    rdfs:label "DFCite-1116" ;
+    solveit-core:citationID "DFCite-1116" ;
+    solveit-core:citationPlaintext "Rzepka, L., Ottmann, J., Freiling, F. and Baier, H., 2024. Causal Inconsistencies are Normal in Windows Memory Dumps (too). Digital Threats: Research and Practice." .
+
+:citationDFCite-1117 a solveit-core:Citation ;
+    rdfs:label "DFCite-1117" ;
+    solveit-core:citationID "DFCite-1117" ;
+    solveit-core:citationPlaintext "Schneider, J., Eichhorn, M., Dreier, L.M. and Hargreaves, C., 2024. Applying digital stratigraphy to the problem of recycled storage media. Forensic Science International: Digital Investigation, 49, p.301761." .
+
+:citationDFCite-1118 a solveit-core:Citation ;
+    rdfs:label "DFCite-1118" ;
+    solveit-core:citationID "DFCite-1118" ;
+    solveit-core:citationPlaintext "Spichiger, H. and Adelstein, F., 2025. Preserving meaning of evidence from evolving systems. Forensic Science International: Digital Investigation, 52, p.301867." .
+
+:citationDFCite-1119 a solveit-core:Citation ;
+    rdfs:label "DFCite-1119" ;
+    solveit-core:citationID "DFCite-1119" ;
+    solveit-core:citationPlaintext "Spichiger, H., 2025. Please mind the gap: A taxonomy for addressing the issue of linking person, account and device. Science & Justice, p.101314." .
+
+:citationDFCite-1120 a solveit-core:Citation ;
+    rdfs:label "DFCite-1120" ;
+    solveit-core:citationID "DFCite-1120" ;
+    solveit-core:citationPlaintext "Sreeja, S.C. and Balan, C., 2016, October. Forensic analysis of volume shadow copy in windows 7. In 2016 International Conference on Emerging Technological Trends (ICETT) (pp. 1-6). IEEE." .
+
+:citationDFCite-1121 a solveit-core:Citation ;
+    rdfs:label "DFCite-1121" ;
+    solveit-core:citationID "DFCite-1121" ;
+    solveit-core:citationPlaintext "Tart, M., Brodie, I., Gleed, N. and Matthews, J., 2012. Historic cell site analysis–Overview of principles and survey methodologies. Digital Investigation, 8(3-4), pp.185-193." .
+
+:citationDFCite-1122 a solveit-core:Citation ;
+    rdfs:label "DFCite-1122" ;
+    solveit-core:citationID "DFCite-1122" ;
+    solveit-core:citationPlaintext "The Zeitgeist Project (2021) https://zeitgeist.freedesktop.org" .
+
+:citationDFCite-1123 a solveit-core:Citation ;
+    rdfs:label "DFCite-1123" ;
+    solveit-core:citationID "DFCite-1123" ;
+    solveit-core:citationPlaintext "Time is not on our side when it comes to Messages in iOS 11, https://smarterforensics.com/2017/09/time-is-not-on-our-side-when-it-comes-to-messages-in-ios-11/" .
+
+:citationDFCite-1125 a solveit-core:Citation ;
+    rdfs:label "DFCite-1125" ;
+    solveit-core:citationID "DFCite-1125" ;
+    solveit-core:citationPlaintext "Tyler, J., 2012 p50. XDA Developers' Android Hacker's Toolkit: The Complete Guide to Rooting, ROMs and Theming. John Wiley & Sons" .
+
+:citationDFCite-1126 a solveit-core:Citation ;
+    rdfs:label "DFCite-1126" ;
+    solveit-core:citationID "DFCite-1126" ;
+    solveit-core:citationPlaintext "V, Kethareswaran; Khurana, Surinder Singh; Singh, Parvinder (2021), “File Carving based Digital Forensic Tools Testing Data Sets (Contiguous Files)”, Mendeley Data, V3, doi: 10.17632/2kh2bdsp5b.3" .
+
+:citationDFCite-1127 a solveit-core:Citation ;
+    rdfs:label "DFCite-1127" ;
+    solveit-core:citationID "DFCite-1127" ;
+    solveit-core:citationPlaintext "Vanini, C., Hargreaves, C.J., van Beek, H. and Breitinger, F., 2024. Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction. Forensic Science International: Digital Investigation, 49, p.301759." .
+
+:citationDFCite-1129 a solveit-core:Citation ;
+    rdfs:label "DFCite-1129" ;
+    solveit-core:citationID "DFCite-1129" ;
+    solveit-core:citationPlaintext "Waits, C., Akinyele, J.A., Nolan, R. and Rogers, L., 2008. Computer forensics: results of live response inquiry vs. memory image analysis. CERT program, CMU/SEI-2008-TN-017." .
+
+:citationDFCite-1131 a solveit-core:Citation ;
+    rdfs:label "DFCite-1131" ;
+    solveit-core:citationID "DFCite-1131" ;
+    solveit-core:citationPlaintext "Wilson-Kovacs, D., 2020. Effective resource management in digital forensics: An exploratory analysis of triage practices in four English constabularies. Policing: an international journal, 43(1), pp.77-90." .
+
+:citationDFCite-1132 a solveit-core:Citation ;
+    rdfs:label "DFCite-1132" ;
+    solveit-core:citationID "DFCite-1132" ;
+    solveit-core:citationPlaintext "WinFE, https://www.winfe.net" .
+
+:citationDFCite-1136 a solveit-core:Citation ;
+    rdfs:label "DFCite-1136" ;
+    solveit-core:citationID "DFCite-1136" ;
+    solveit-core:citationPlaintext "https://en.wikipedia.org/wiki/In-system_programming" .
+
+:citationDFCite-1137 a solveit-core:Citation ;
+    rdfs:label "DFCite-1137" ;
+    solveit-core:citationID "DFCite-1137" ;
+    solveit-core:citationPlaintext "https://github.com/prosch88/ALEX" .
+
+:citationDFCite-1138 a solveit-core:Citation ;
+    rdfs:label "DFCite-1138" ;
+    solveit-core:citationID "DFCite-1138" ;
+    solveit-core:citationPlaintext "https://github.com/prosch88/UFADE" .
+
+:citationDFCite-1139 a solveit-core:Citation ;
+    rdfs:label "DFCite-1139" ;
+    solveit-core:citationID "DFCite-1139" ;
+    solveit-core:citationPlaintext "https://support.mobiledit.com/portal/en/kb/articles/app-downgrade" .
+
+:citationDFCite-1141 a solveit-core:Citation ;
+    rdfs:label "DFCite-1141" ;
+    solveit-core:citationID "DFCite-1141" ;
+    solveit-core:citationPlaintext "https://www.opswat.com/blog/accurate-file-type-detection-powered-by-ai" .
+
+:citationDFCite-1142 a solveit-core:Citation ;
+    rdfs:label "DFCite-1142" ;
+    solveit-core:citationID "DFCite-1142" ;
+    solveit-core:citationPlaintext "https://www.oxygenforensics.com/en/resources/downgrade-method-what-should-be-known-before-the-procedure/" .
+
+:citationDFCite-1143 a solveit-core:Citation ;
+    rdfs:label "DFCite-1143" ;
+    solveit-core:citationBibtex """@inproceedings{gruhn2015windows,
+  title={Windows NT pagefile. sys virtual memory analysis},
+  author={Gruhn, Michael},
+  booktitle={2015 Ninth International Conference on IT Security Incident Management \\& IT Forensics},
+  pages={3--18},
+  year={2015},
+  organization={IEEE}
+}""" ;
+    solveit-core:citationID "DFCite-1143" ;
+    solveit-core:citationPlaintext "Gruhn, M., 2015, May. Windows NT pagefile. sys virtual memory analysis. In 2015 Ninth International Conference on IT Security Incident Management & IT Forensics (pp. 3-18). IEEE." .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -374,13 +922,13 @@
 
 :mitigationDFM-1043 a solveit-core:Mitigation ;
     rdfs:label "DFM-1043: Scan for orphaned EPTs"@en ;
-    solveit-core:hasReference "X-Ways - Provides an option called ‘Scan for Lost Partitions’ which explicitly scans for deleted partitions in unallocated space (X-Ways 2024)" ;
+    solveit-core:hasReference :citationDFCite-1135 ;
     solveit-core:mitigationID "DFM-1043" ;
     solveit-core:mitigationName "Scan for orphaned EPTs" .
 
 :mitigationDFM-1044 a solveit-core:Mitigation ;
     rdfs:label "DFM-1044: Scan for Volume Boot Records in unpartitioned space"@en ;
-    solveit-core:hasReference "X-Ways - Provides an option called ‘Scan for Lost Partitions’ which explicitly scans for deleted partitions in unallocated space (X-Ways 2024)" ;
+    solveit-core:hasReference :citationDFCite-1135 ;
     solveit-core:mitigationID "DFM-1044" ;
     solveit-core:mitigationName "Scan for Volume Boot Records in unpartitioned space" .
 
@@ -417,7 +965,7 @@
 
 :mitigationDFM-1061 a solveit-core:Mitigation ;
     rdfs:label "DFM-1061: Use digital stratigraphy to attempt to attribute data within a specific file system"@en ;
-    solveit-core:hasReference "Schneider, J., Eichhorn, M., Dreier, L.M. and Hargreaves, C., 2024. Applying digital stratigraphy to the problem of recycled storage media. Forensic Science International: Digital Investigation, 49, p.301761." ;
+    solveit-core:hasReference :citationDFCite-1117 ;
     solveit-core:mitigationID "DFM-1061" ;
     solveit-core:mitigationName "Use digital stratigraphy to attempt to attribute data within a specific file system" .
 
@@ -428,27 +976,27 @@
 
 :mitigationDFM-1066 a solveit-core:Mitigation ;
     rdfs:label "DFM-1066: Attempt to reconstruct browser activity from other areas of disk"@en ;
-    solveit-core:hasReference "Chivers, H., 2014. Private browsing: A window of forensic opportunity. Digital Investigation, 11(1), pp.20-29." ;
+    solveit-core:hasReference :citationDFCite-1032 ;
     solveit-core:mitigationID "DFM-1066" ;
     solveit-core:mitigationName "Attempt to reconstruct browser activity from other areas of disk" .
 
 :mitigationDFM-1067 a solveit-core:Mitigation ;
     rdfs:label "DFM-1067: Analyze web browser memory for web browsing activity"@en ;
-    solveit-core:hasReference "Chivers, H., 2014. Private browsing: A window of forensic opportunity. Digital Investigation, 11(1), pp.20-29." ;
+    solveit-core:hasReference :citationDFCite-1032 ;
     solveit-core:linksToTechnique :techniqueDFT-1105 ;
     solveit-core:mitigationID "DFM-1067" ;
     solveit-core:mitigationName "Analyze web browser memory for web browsing activity" .
 
 :mitigationDFM-1068 a solveit-core:Mitigation ;
     rdfs:label "DFM-1068: Use digital sniffer dogs to assist in locating evidence"@en ;
-    solveit-core:hasReference "Petersen, S.J. and Schoon, A., 2022. Dogs as Detectors for Hidden Digital Storage Devices: A Pilot Study from the National Police of The Netherlands. In Canines (pp. 535-557). Jenny Stanford Publishing." ;
+    solveit-core:hasReference :citationDFCite-1114 ;
     solveit-core:linksToTechnique :techniqueDFT-1006 ;
     solveit-core:mitigationID "DFM-1068" ;
     solveit-core:mitigationName "Use digital sniffer dogs to assist in locating evidence" .
 
 :mitigationDFM-1069 a solveit-core:Mitigation ;
     rdfs:label "DFM-1069: Use a SyncTriage style approach to determine existence other synchronized devices"@en ;
-    solveit-core:hasReference "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140." ;
+    solveit-core:hasReference :citationDFCite-1057 ;
     solveit-core:linksToTechnique :techniqueDFT-1007 ;
     solveit-core:mitigationID "DFM-1069" ;
     solveit-core:mitigationName "Use a SyncTriage style approach to determine existence other synchronized devices" .
@@ -460,7 +1008,7 @@
 
 :mitigationDFM-1071 a solveit-core:Mitigation ;
     rdfs:label "DFM-1071: Thorough testing of write blocker against multiple targets to ensure that writes are not possible."@en ;
-    solveit-core:hasReference "Lyle, J.R., 2006. A strategy for testing hardware write block devices. digital investigation, 3, pp.3-9." ;
+    solveit-core:hasReference :citationDFCite-1089 ;
     solveit-core:mitigationID "DFM-1071" ;
     solveit-core:mitigationName "Thorough testing of write blocker against multiple targets to ensure that writes are not possible." .
 
@@ -476,7 +1024,7 @@
 
 :mitigationDFM-1074 a solveit-core:Mitigation ;
     rdfs:label "DFM-1074: Validate image hash against one stored externally to the image in a trusted location."@en ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mitigationID "DFM-1074" ;
     solveit-core:mitigationName "Validate image hash against one stored externally to the image in a trusted location." .
 
@@ -487,7 +1035,7 @@
 
 :mitigationDFM-1077 a solveit-core:Mitigation ;
     rdfs:label "DFM-1077: Ensure potential secondary locations for stored message content are reviewed."@en ;
-    solveit-core:hasReference "McGee, J. (2022). An Alternate Location for Deleted SMS/iMessage Data in Apple Devices. DFIR Review. Retrieved from https://dfir.pubpub.org/pub/yp6efc8q" ;
+    solveit-core:hasReference :citationDFCite-1097 ;
     solveit-core:mitigationID "DFM-1077" ;
     solveit-core:mitigationName "Ensure potential secondary locations for stored message content are reviewed." .
 
@@ -503,20 +1051,20 @@
 
 :mitigationDFM-1086 a solveit-core:Mitigation ;
     rdfs:label "DFM-1086: Acquire the parts of memory with interconnected data first, before proceeding with a sequential acquisition."@en ;
-    solveit-core:hasReference "Pagani, F., Fedorov, O. and Balzarotti, D., 2019. Introducing the temporal dimension to memory forensics. ACM Transactions on Privacy and Security (TOPS), 22(2), 1-21." ;
+    solveit-core:hasReference :citationDFCite-1111 ;
     solveit-core:mitigationID "DFM-1086" ;
     solveit-core:mitigationName "Acquire the parts of memory with interconnected data first, before proceeding with a sequential acquisition." .
 
 :mitigationDFM-1087 a solveit-core:Mitigation ;
     rdfs:label "DFM-1087: Acquire memory from outside of the target system for example using direct memory access (DMA) devices"@en ;
-    solveit-core:hasReference "Latzo, T., Palutke, R. and Freiling, F., 2019. A universal taxonomy and survey of forensic memory acquisition techniques. Digital Investigation, 28, 56-69." ;
+    solveit-core:hasReference :citationDFCite-1085 ;
     solveit-core:mitigationID "DFM-1087" ;
     solveit-core:mitigationName "Acquire memory from outside of the target system for example using direct memory access (DMA) devices" .
 
 :mitigationDFM-1088 a solveit-core:Mitigation ;
     rdfs:label "DFM-1088: If applicable, leverage hardware virtualization utilities to add a hypervisor to the system, i.e., virtualize the original system. This allows to either freeze the system before the acquisition or, if the system should not be completely frozen, to copy pages before they are modified."@en ;
-    solveit-core:hasReference "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33.",
-        "Martignoni, L., Fattori, A., Paleari, R. and Cavallaro, L., 2010. Live and trustworthy forensic analysis of commodity production systems. In International Workshop on Recent Advances in Intrusion Detection (pp. 297-316). Berlin, Heidelberg: Springer Berlin Heidelberg." ;
+    solveit-core:hasReference :citationDFCite-1025,
+        :citationDFCite-1096 ;
     solveit-core:mitigationID "DFM-1088" ;
     solveit-core:mitigationName "If applicable, leverage hardware virtualization utilities to add a hypervisor to the system, i.e., virtualize the original system. This allows to either freeze the system before the acquisition or, if the system should not be completely frozen, to copy pages before they are modified." .
 
@@ -548,7 +1096,7 @@
 
 :mitigationDFM-1102 a solveit-core:Mitigation ;
     rdfs:label "DFM-1102: Apply techniques to read remapped sectors"@en ;
-    solveit-core:hasReference "Turner, P. The Remapped/Reallocated Sector Conundrum, Presentation at DFRWS US 2024, https://www.dfrws.org/wp-content/uploads/2023/07/turner-remappedsectors.pdf" ;
+    solveit-core:hasReference :citationDFCite-1124 ;
     solveit-core:mitigationID "DFM-1102" ;
     solveit-core:mitigationName "Apply techniques to read remapped sectors" .
 
@@ -639,26 +1187,26 @@
 
 :mitigationDFM-1122 a solveit-core:Mitigation ;
     rdfs:label "DFM-1122: Apply non-allocated record recovery to database file(s)"@en ;
-    solveit-core:hasReference "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103." ;
+    solveit-core:hasReference :citationDFCite-1113 ;
     solveit-core:mitigationID "DFM-1122" ;
     solveit-core:mitigationName "Apply non-allocated record recovery to database file(s)" .
 
 :mitigationDFM-1123 a solveit-core:Mitigation ;
     rdfs:label "DFM-1123: Apply system-wide record recovery for non-allocated database record data structures"@en ;
-    solveit-core:hasReference "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103." ;
+    solveit-core:hasReference :citationDFCite-1113 ;
     solveit-core:mitigationID "DFM-1123" ;
     solveit-core:mitigationName "Apply system-wide record recovery for non-allocated database record data structures" .
 
 :mitigationDFM-1124 a solveit-core:Mitigation ;
     rdfs:label "DFM-1124: Examine database contents with and without Write Ahead Log (WAL) files applied"@en ;
-    solveit-core:hasReference "Caithness 2012, The Forensic Implications of SQLite’s Write Ahead Log, https://digitalinvestigation.wordpress.com/2012/05/04/the-forensic-implications-of-sqlites-write-ahead-log/",
-        "Caithness 2024, Time travelling with SQLite Journals and WAL, https://www.cclsolutionsgroup.com/post/time-travelling-with-sqlite-journals-and-wal" ;
+    solveit-core:hasReference :citationDFCite-1021,
+        :citationDFCite-1022 ;
     solveit-core:mitigationID "DFM-1124" ;
     solveit-core:mitigationName "Examine database contents with and without Write Ahead Log (WAL) files applied" .
 
 :mitigationDFM-1125 a solveit-core:Mitigation ;
     rdfs:label "DFM-1125: Examine database journal files"@en ;
-    solveit-core:hasReference "Caithness 2024, Time travelling with SQLite Journals and WAL, https://www.cclsolutionsgroup.com/post/time-travelling-with-sqlite-journals-and-wal" ;
+    solveit-core:hasReference :citationDFCite-1022 ;
     solveit-core:mitigationID "DFM-1125" ;
     solveit-core:mitigationName "Examine database journal files" .
 
@@ -689,13 +1237,13 @@
 
 :mitigationDFM-1132 a solveit-core:Mitigation ;
     rdfs:label "DFM-1132: Use a Trusted Bootable Environment that supports decryption of the internal disk"@en ;
-    solveit-core:hasReference "Casey et al (2011) The growing impact of full disk encryption on digital forensics, https://www.sciencedirect.com/science/article/abs/pii/S1742287611000727?via%3Dihub" ;
+    solveit-core:hasReference :citationDFCite-1026 ;
     solveit-core:mitigationID "DFM-1132" ;
     solveit-core:mitigationName "Use a Trusted Bootable Environment that supports decryption of the internal disk" .
 
 :mitigationDFM-1133 a solveit-core:Mitigation ;
     rdfs:label "DFM-1133: Acquire the encrypted contents of the internal disk and decrypt the copy within a virtualized environment"@en ;
-    solveit-core:hasReference "Casey et al (2011) The growing impact of full disk encryption on digital forensics, https://www.sciencedirect.com/science/article/abs/pii/S1742287611000727?via%3Dihub" ;
+    solveit-core:hasReference :citationDFCite-1026 ;
     solveit-core:mitigationID "DFM-1133" ;
     solveit-core:mitigationName "Acquire the encrypted contents of the internal disk and decrypt the copy within a virtualized environment" .
 
@@ -822,7 +1370,7 @@
 
 :mitigationDFM-1173 a solveit-core:Mitigation ;
     rdfs:label "DFM-1173: Check logging settings so the bounds of logging are known"@en ;
-    solveit-core:hasReference "https://www.crowdstrike.com/en-us/guides/syslog-logging/advanced-concepts/" ;
+    solveit-core:hasReference :citationDFCite-1140 ;
     solveit-core:mitigationID "DFM-1173" ;
     solveit-core:mitigationName "Check logging settings so the bounds of logging are known" .
 
@@ -880,7 +1428,7 @@
 
 :mitigationDFM-1189 a solveit-core:Mitigation ;
     rdfs:label "DFM-1189: Conduct experiments to determine if content from the page in question is cached only when viewed in the browser"@en ;
-    solveit-core:hasReference "Horsman, G., 2018. I didn't see that! An examination of internet browser cache behaviour following website visits. Digital Investigation, 25, pp.105-113." ;
+    solveit-core:hasReference :citationDFCite-1064 ;
     solveit-core:mitigationID "DFM-1189" ;
     solveit-core:mitigationName "Conduct experiments to determine if content from the page in question is cached only when viewed in the browser" .
 
@@ -891,7 +1439,7 @@
 
 :mitigationDFM-1191 a solveit-core:Mitigation ;
     rdfs:label "DFM-1191: Ensure that profile configuration is examined rather than just folders within the standard profile folder"@en ;
-    solveit-core:hasReference "Mozillazine (2017), Profiles.ini file, https://kb.mozillazine.org/Profiles.ini_file" ;
+    solveit-core:hasReference :citationDFCite-1101 ;
     solveit-core:linksToTechnique :techniqueDFT-1143 ;
     solveit-core:mitigationID "DFM-1191" ;
     solveit-core:mitigationName "Ensure that profile configuration is examined rather than just folders within the standard profile folder" .
@@ -952,34 +1500,34 @@
 
 :mitigationDFM-1206 a solveit-core:Mitigation ;
     rdfs:label "DFM-1206: Ensure that tools used clearly separate fact from interpretation"@en ;
-    solveit-core:hasReference "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence." ;
+    solveit-core:hasReference :citationDFCite-1070 ;
     solveit-core:mitigationID "DFM-1206" ;
     solveit-core:mitigationName "Ensure that tools used clearly separate fact from interpretation" .
 
 :mitigationDFM-1207 a solveit-core:Mitigation ;
     rdfs:label "DFM-1207: Ensure training is in place for tool operators to separate fact from interpretation within the tool used"@en ;
-    solveit-core:hasReference "ISO 21043-5:2025 - Forensic sciences — Part 5: Reporting",
-        "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence." ;
+    solveit-core:hasReference :citationDFCite-1068,
+        :citationDFCite-1070 ;
     solveit-core:mitigationID "DFM-1207" ;
     solveit-core:mitigationName "Ensure training is in place for tool operators to separate fact from interpretation within the tool used" .
 
 :mitigationDFM-1208 a solveit-core:Mitigation ;
     rdfs:label "DFM-1208: Review critical findings from tools to ensure they are facts, or if they are an automated interpretation, ensure that any uncertainty is considered"@en ;
-    solveit-core:hasReference "ISO 21043-5:2025 - Forensic sciences — Part 5: Reporting",
-        "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence." ;
+    solveit-core:hasReference :citationDFCite-1068,
+        :citationDFCite-1070 ;
     solveit-core:mitigationID "DFM-1208" ;
     solveit-core:mitigationName "Review critical findings from tools to ensure they are facts, or if they are an automated interpretation, ensure that any uncertainty is considered" .
 
 :mitigationDFM-1209 a solveit-core:Mitigation ;
     rdfs:label "DFM-1209: Ensure that tools used present the uncertainty associated with automated interpretation of data"@en ;
-    solveit-core:hasReference "ISO 21043-5:2025 - Forensic sciences — Part 5: Reporting",
-        "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence." ;
+    solveit-core:hasReference :citationDFCite-1068,
+        :citationDFCite-1070 ;
     solveit-core:mitigationID "DFM-1209" ;
     solveit-core:mitigationName "Ensure that tools used present the uncertainty associated with automated interpretation of data" .
 
 :mitigationDFM-1210 a solveit-core:Mitigation ;
     rdfs:label "DFM-1210: Use a forensic image format with internal integrity and continuity metadata"@en ;
-    solveit-core:hasReference "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68." ;
+    solveit-core:hasReference :citationDFCite-1035 ;
     solveit-core:mitigationID "DFM-1210" ;
     solveit-core:mitigationName "Use a forensic image format with internal integrity and continuity metadata" .
 
@@ -1078,14 +1626,14 @@
 
 :mitigationDFM-1237 a solveit-core:Mitigation ;
     rdfs:label "DFM-1237: Ensure that archive format used can handle sufficiently large files"@en ;
-    solveit-core:hasReference "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64" ;
+    solveit-core:hasReference :citationDFCite-1130 ;
     solveit-core:mitigationID "DFM-1237" ;
     solveit-core:mitigationName "Ensure that archive format used can handle sufficiently large files" .
 
 :mitigationDFM-1238 a solveit-core:Mitigation ;
     rdfs:label "DFM-1238: Configure device to enable required service"@en ;
-    solveit-core:hasReference "Android (2025), Android Debug Bridge (adb), https://developer.android.com/tools/adb",
-        "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" ;
+    solveit-core:hasReference :citationDFCite-1003,
+        :citationDFCite-1004 ;
     solveit-core:linksToTechnique :techniqueDFT-1158 ;
     solveit-core:mitigationDescription "For example turning on Developer Mode on Android to enable ADB" ;
     solveit-core:mitigationID "DFM-1238" ;
@@ -1110,10 +1658,10 @@
     solveit-core:hasPotentialWeakness :weaknessDFW-1001,
         :weaknessDFW-1002,
         :weaknessDFW-1003 ;
-    solveit-core:hasReference "Roussev, V., Quates, C. and Martell, R., 2013. Real-time digital forensics and triage. Digital Investigation, 10(2), pp.158-167.",
-        "Wilson-Kovacs, D., 2020. Effective resource management in digital forensics: An exploratory analysis of triage practices in four English constabularies. Policing: an international journal, 43(1), pp.77-90." ;
-    solveit-core:techniqueDescription "Digital forensic triage is a partial forensic examination conducted under (significant) time and resource constraints. (Roussev et al 2013)." ;
-    solveit-core:techniqueDetails "Involves the ranking of apprehended digital items in terms of their importance to a case and likelihood that the contain the data require (Wilson-Kovacs 2020). It can involve multiple techniques to identify devices of most interest such as keyword searching, hash matching, media review etc." ;
+    solveit-core:hasReference :citationDFCite-1115,
+        :citationDFCite-1131 ;
+    solveit-core:techniqueDescription "Digital forensic triage is a partial forensic examination conducted under (significant) time and resource constraints [DFCite-1115]." ;
+    solveit-core:techniqueDetails "Involves the ranking of apprehended digital items in terms of their importance to a case and likelihood that they contain the data required [DFCite-1131]. It can involve multiple techniques to identify devices of most interest such as keyword searching, hash matching, media review etc." ;
     solveit-core:techniqueID "DFT-1001" ;
     solveit-core:techniqueName "Triage" .
 
@@ -1135,7 +1683,7 @@
         :weaknessDFW-1136,
         :weaknessDFW-1143,
         :weaknessDFW-1278 ;
-    solveit-core:hasReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, “Forensic Image Acquisition" ;
+    solveit-core:hasReference :citationDFCite-1107 ;
     solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ to a bitstream that can be stored in a image format (T1025). " ;
     solveit-core:techniqueDetails "The process could be applied to a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader. This data needs to be stored as a container file (T1025). Logs would also usually be created recording the details of the imaging process and any errors that occured." ;
     solveit-core:techniqueID "DFT-1002" ;
@@ -1151,9 +1699,9 @@
         :weaknessDFW-1031,
         :weaknessDFW-1032,
         :weaknessDFW-1033 ;
-    solveit-core:hasReference "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33.",
-        "Kornblum, J.D., 2007. Using every part of the buffalo in Windows memory analysis. Digital Investigation, 4(1), pp.24-29.",
-        "Latzo, T., Palutke, R. and Freiling, F., 2019. A universal taxonomy and survey of forensic memory acquisition techniques. Digital Investigation, 28, 56-69." ;
+    solveit-core:hasReference :citationDFCite-1025,
+        :citationDFCite-1084,
+        :citationDFCite-1085 ;
     solveit-core:hasSynonym "RAM dump",
         "RAM imaging",
         "memory dump" ;
@@ -1187,8 +1735,8 @@
         "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1114 ;
-    solveit-core:hasReference "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35.",
-        "Forensic Science Regulator (2025) Incident scene examination (FSR-GUI-0006). GOV.UK. Available at: https://www.gov.uk/government/publications/incident-scene-examination-fsr-gui-0006" ;
+    solveit-core:hasReference :citationDFCite-1018,
+        :citationDFCite-1044 ;
     solveit-core:hasSynonym "Crime scene examination",
         "Crime scene investigation",
         "Crime scene processing",
@@ -1214,7 +1762,7 @@
     solveit-core:hasPotentialWeakness :weaknessDFW-1115,
         :weaknessDFW-1116,
         :weaknessDFW-1117 ;
-    solveit-core:hasReference "Lennox-Steele, A., & Nisbet, A. (2016). A forensic examination of several mobile device Faraday bags & materials to test their effectiveness. In Valli, C. (Ed.). (2016). The Proceedings of 14th Australian Digital Forensics Conference, 5-6 December 2016, Edith Cowan University, Perth, Australia. (pp 34-41)." ;
+    solveit-core:hasReference :citationDFCite-1086 ;
     solveit-core:techniqueDescription "Place a device in an environment designed to shield a mobile phone or small digital device from radio waves entering the environment and reaching the device, and to stop radio waves escaping from the environment (adapted from Lennox-Steele & Nisbet (2016))" ;
     solveit-core:techniqueDetails "Environment should block: mobile network, Wi-Fi, and Bluetooth and all other RF." ;
     solveit-core:techniqueID "DFT-1010" ;
@@ -1258,8 +1806,8 @@
     solveit-core:hasPotentialWeakness :weaknessDFW-1034,
         :weaknessDFW-1035,
         :weaknessDFW-1036 ;
-    solveit-core:hasReference "Kent, K., Chevalier, S., Grance, T. & Dang, H. (2006) Guide to Integrating Forensic Techniques into Incident Response. NIST Special Publication 800‑86. National Institute of Standards and Technology (NIST). Available at: https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-86.pdf ",
-        "Waits, C., Akinyele, J.A., Nolan, R. and Rogers, L., 2008. Computer forensics: results of live response inquiry vs. memory image analysis. CERT program, CMU/SEI-2008-TN-017." ;
+    solveit-core:hasReference :citationDFCite-1080,
+        :citationDFCite-1129 ;
     solveit-core:hasSynonym "Live response data collection",
         "Volatile data collection" ;
     solveit-core:techniqueDescription "Running commands on a live system to collect specific pieces of information e.g. running processes or open ports" ;
@@ -1312,7 +1860,7 @@
     rdfs:label "DFT-1022: Mobile device screenshot based capture"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"^^xsd:anyURI ;
-    solveit-core:hasReference "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169." ;
+    solveit-core:hasReference :citationDFCite-1045 ;
     solveit-core:techniqueDescription "An examiner directly manipulates the target mobile device using the device's input interface (i.e., keypads and buttons), and records the content shown on the display of the device. (Fukami et al 2021)" ;
     solveit-core:techniqueID "DFT-1022" ;
     solveit-core:techniqueName "Mobile device screenshot based capture" .
@@ -1386,9 +1934,9 @@
         "Volatility - the plug in ‘trucryptmaster’ attempts to recover Truecrypt 7.1a master keys." ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1044,
         :weaknessDFW-1045 ;
-    solveit-core:hasReference "Halderman, J.A., Schoen, S.D., Heninger, N., Clarkson, W., Paul, W., Calandrino, J.A., Feldman, A.J., Appelbaum, J. and Felten, E.W., 2009. Lest we remember: cold-boot attacks on encryption keys. Communications of the ACM, 52(5), pp.91-98.",
-        "Hargreaves & Chivers 2008b. Avoiding Live Imaging of Large Encrypted Volumes by Recovering Keys from Memory, Proceedings from 3rd Advances in Computer Security and Forensics ",
-        "Hargreaves, C. and Chivers, H., 2008, March. Recovery of encryption keys from memory using a linear scan. In 2008 Third International Conference on Availability, Reliability and Security (pp. 1369-1376). IEEE." ;
+    solveit-core:hasReference :citationDFCite-1053,
+        :citationDFCite-1054,
+        :citationDFCite-1056 ;
     solveit-core:techniqueDescription "This describes the technique whereby an attempt is made to extract key material from memory, or a memory acquisition of a running system to fascinate the decryption of some data " ;
     solveit-core:techniqueID "DFT-1031" ;
     solveit-core:techniqueName "Key recovery from memory" .
@@ -1412,8 +1960,8 @@
 
 :techniqueDFT-1039 a solveit-core:Technique ;
     rdfs:label "DFT-1039: Downgrade apps to facilitate data extraction"@en ;
-    solveit-core:hasReference "https://support.mobiledit.com/portal/en/kb/articles/app-downgrade",
-        "https://www.oxygenforensics.com/en/resources/downgrade-method-what-should-be-known-before-the-procedure/" ;
+    solveit-core:hasReference :citationDFCite-1139,
+        :citationDFCite-1142 ;
     solveit-core:techniqueDescription "Downgrading an app to a version in which data is available e.g. via a backup method" ;
     solveit-core:techniqueID "DFT-1039" ;
     solveit-core:techniqueName "Downgrade apps to facilitate data extraction" .
@@ -1483,7 +2031,7 @@
 :techniqueDFT-1048 a solveit-core:Technique ;
     rdfs:label "DFT-1048: Privacy protection via partial processing"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RedactedArtifactSet"^^xsd:anyURI ;
-    solveit-core:hasReference "Dickinson (2020) ‘Privacy by design – 10 ways MSAB can help you meet the challenges.’ MSAB Blog. Available at: https://www.msab.com/blog/privacy-by-design-10-ways-msab-can-help-you-meet-the-challenges/" ;
+    solveit-core:hasReference :citationDFCite-1037 ;
     solveit-core:techniqueDescription "Limiting the scope of file processing based on type, date or other criteria to protect privacy." ;
     solveit-core:techniqueDetails "The files may still be present in the data set or removed, or made in accessible but the core of the technique to to provide a limited set of artifacts, compared with full processing." ;
     solveit-core:techniqueID "DFT-1048" ;
@@ -1496,9 +2044,9 @@
         :weaknessDFW-1058,
         :weaknessDFW-1059,
         :weaknessDFW-1196 ;
-    solveit-core:hasReference "Beebe, N.L. and Clark, J.G., 2007. Digital forensic text string searching: Improving information retrieval effectiveness by thematically clustering search results. Digital investigation, 4, pp.49-54.",
-        "Beebe, N.L. and Liu, L., 2014. Ranking algorithms for digital forensic string search hits. Digital Investigation, 11, pp.S124-S132.",
-        "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31" ;
+    solveit-core:hasReference :citationDFCite-1013,
+        :citationDFCite-1014,
+        :citationDFCite-1103 ;
     solveit-core:hasSubtechnique :techniqueDFT-1121,
         :techniqueDFT-1122,
         :techniqueDFT-1123,
@@ -1539,8 +2087,8 @@
         :weaknessDFW-1147,
         :weaknessDFW-1151,
         :weaknessDFW-1269 ;
-    solveit-core:hasReference "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755.",
-        "Hargreaves, C. and Patterson, J., 2012. An automated timeline reconstruction approach for digital forensic investigations. Digital Investigation, 9, pp.S69-S79." ;
+    solveit-core:hasReference :citationDFCite-1039,
+        :citationDFCite-1058 ;
     solveit-core:hasSubtechnique :techniqueDFT-1153 ;
     solveit-core:hasSynonym "timelining" ;
     solveit-core:techniqueDescription "The extraction and normalisation of timestamps from a data source into a set of timeline entries" ;
@@ -1579,7 +2127,7 @@
     rdfs:label "DFT-1057: Search for indicators of steganography"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/path"^^xsd:anyURI ;
-    solveit-core:hasReference "Kessler, G.C., 2007. Anti-forensics and the digital investigator." ;
+    solveit-core:hasReference :citationDFCite-1082 ;
     solveit-core:techniqueDescription "Searching for the presence of current or historical steganography software on a system" ;
     solveit-core:techniqueID "DFT-1057" ;
     solveit-core:techniqueName "Search for indicators of steganography" .
@@ -1588,7 +2136,7 @@
     rdfs:label "DFT-1058: Search for mismatched file extensions"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/extension"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/filePath"^^xsd:anyURI ;
-    solveit-core:hasReference "Basis Technology (2015), Extension Mismatch Detector Module, https://sleuthkit.org/autopsy/docs/user-docs/3.1/extension_mismatch_detector_page.html" ;
+    solveit-core:hasReference :citationDFCite-1007 ;
     solveit-core:techniqueDescription "Checking the content of a file against its file extension to identify mismatches." ;
     solveit-core:techniqueDetails "This results in a file path of an identified file, but also highlights the extension that the file has, and the file extension(s) that are expected" ;
     solveit-core:techniqueID "DFT-1058" ;
@@ -1604,8 +2152,8 @@
         :weaknessDFW-1065,
         :weaknessDFW-1066,
         :weaknessDFW-1067 ;
-    solveit-core:hasReference "Carrier, B., 2005. File system forensic analysis. Addison-Wesley Professional.",
-        "Nikkel, B., 2009. Forensic analysis of GPT disks and GUID partition tables. Digital Investigation, 6(1-2), pp.39-47." ;
+    solveit-core:hasReference :citationDFCite-1024,
+        :citationDFCite-1106 ;
     solveit-core:hasSynonym "media management analysis" ;
     solveit-core:techniqueDescription "Partitions are defined as ‘allocated contiguous sets of sectors from storage media’. This involves recovering the list of partitions that exist on a storage media." ;
     solveit-core:techniqueDetails """Partitions schemes include: MBR, GPT, APM. Some schemes such as GPT have records of the partitions in a single area (plus a backup partition table), others such as MBR make use of Extended Partition Tables (EPTs) that are scattered throughout the disk.
@@ -1637,8 +2185,8 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
         :weaknessDFW-1082,
         :weaknessDFW-1083,
         :weaknessDFW-1084 ;
-    solveit-core:hasReference "Carrier, B., 2005. File system forensic analysis. Addison-Wesley Professional.",
-        "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873." ;
+    solveit-core:hasReference :citationDFCite-1024,
+        :citationDFCite-1030 ;
     solveit-core:hasSynonym "file system parsing" ;
     solveit-core:techniqueDescription "This involves parsing the live file system data structures and reconstructing the file system of the target media or device." ;
     solveit-core:techniqueID "DFT-1060" ;
@@ -1667,7 +2215,7 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
         "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerSID"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/ownerSID"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1133 ;
-    solveit-core:hasReference "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873." ;
+    solveit-core:hasReference :citationDFCite-1030 ;
     solveit-core:hasSubtechnique :techniqueDFT-1064,
         :techniqueDFT-1150 ;
     solveit-core:hasSynonym "Deleted data recovery",
@@ -1692,8 +2240,8 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:hasPotentialWeakness :weaknessDFW-1129,
         :weaknessDFW-1130,
         :weaknessDFW-1131 ;
-    solveit-core:hasReference "Dubettier, A., Gernot, T., Giguet, E. and Rosenberger, C., 2023. File type identification tools for digital investigations. Forensic Science International: Digital Investigation, 46, p.301574.",
-        "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1040,
+        :citationDFCite-1060 ;
     solveit-core:techniqueDescription "Applying a process that identifies the types of files." ;
     solveit-core:techniqueDetails "This could be via extension, although files may have been renamed, and so this is unreliable, so other means such as examining a file signature or other techniques are used (Dubettier et al 2023)" ;
     solveit-core:techniqueID "DFT-1063" ;
@@ -1713,8 +2261,8 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
         :weaknessDFW-1105,
         :weaknessDFW-1106,
         :weaknessDFW-1107 ;
-    solveit-core:hasReference "Basis Technology 2025, PhotoRec Carver Module, https://sleuthkit.org/autopsy/docs/user-docs/4.22.0/photorec_carver_page.html",
-        "Grenier (2023) PhotoRec, https://www.cgsecurity.org/wiki/PhotoRec" ;
+    solveit-core:hasReference :citationDFCite-1011,
+        :citationDFCite-1048 ;
     solveit-core:techniqueDescription "The process of recovering files from non-allocated space using only the structural properties of files." ;
     solveit-core:techniqueDetails "File carving should result in not just the file content, but the offset in which it was found and the offset base (i.e. the disk, volume, or offset within another file). This approach uses internal files structural information only - if residual file system metadata is used then the complementary technique T1150 is more applicable." ;
     solveit-core:techniqueID "DFT-1064" ;
@@ -1727,8 +2275,8 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:hasExample "Spotlight",
         "Windows Search",
         "Zeitgeist" ;
-    solveit-core:hasReference "Metz (2011), Windows Search forensics, https://www.forensicfocus.com/articles/windows-search-forensics/",
-        "The Zeitgeist Project (2021) https://zeitgeist.freedesktop.org" ;
+    solveit-core:hasReference :citationDFCite-1100,
+        :citationDFCite-1122 ;
     solveit-core:techniqueDescription "Examine information from operating system artifacts relating to content indexing and search capabilities e.g. Windows Desktop Search" ;
     solveit-core:techniqueDetails "For example the Windows Search database '...contains vast amount of values about various of artifacts found on a Windows system, e.g. files and directories, emails, appointments, attachments, images, audio and video' (Metz 2011)" ;
     solveit-core:techniqueID "DFT-1065" ;
@@ -1765,8 +2313,8 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:hasPotentialWeakness :weaknessDFW-1113,
         :weaknessDFW-1250,
         :weaknessDFW-1251 ;
-    solveit-core:hasReference "Digital Detective Knowledgebase https://kb.digital-detective.net/display/BF",
-        "Oh, J., Lee, S. and Lee, S., 2011. Advanced evidence collection and analysis of web browser activity. Digital investigation, 8, pp.S62-S70." ;
+    solveit-core:hasReference :citationDFCite-1038,
+        :citationDFCite-1108 ;
     solveit-core:hasSubtechnique :techniqueDFT-1137,
         :techniqueDFT-1138,
         :techniqueDFT-1139,
@@ -1802,7 +2350,7 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
         :weaknessDFW-1169,
         :weaknessDFW-1170,
         :weaknessDFW-1171 ;
-    solveit-core:hasReference "Nemetz, S., Schmitt, S. and Freiling, F., 2018. A standardized corpus for SQLite database forensics. Digital Investigation, 24, pp.S121-S130." ;
+    solveit-core:hasReference :citationDFCite-1104 ;
     solveit-core:hasSynonym "database forensics" ;
     solveit-core:techniqueDescription "Examination of a SQLite database file(s) to extract information from within." ;
     solveit-core:techniqueID "DFT-1071" ;
@@ -1852,6 +2400,7 @@ Facebook Messenger
 
 :techniqueDFT-1074 a solveit-core:Technique ;
     rdfs:label "DFT-1074: Social network app examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/SocialMediaAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Post"^^xsd:anyURI ;
@@ -1860,6 +2409,8 @@ Facebook Messenger
 
 :techniqueDFT-1075 a solveit-core:Technique ;
     rdfs:label "DFT-1075: Maps/travel app examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/MapsAppFiles"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/NavigationAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1075" ;
     solveit-core:techniqueName "Maps/travel app examination" .
 
@@ -1885,6 +2436,7 @@ Facebook Messenger
 
 :techniqueDFT-1077 a solveit-core:Technique ;
     rdfs:label "DFT-1077: Photos app examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/PhotosAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1077" ;
     solveit-core:techniqueName "Photos app examination" .
 
@@ -1937,10 +2489,10 @@ Facebook Messenger
         "TimeSketch (Berggren et al. 2014)" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1148,
         :weaknessDFW-1266 ;
-    solveit-core:hasReference "Berggren at al. (2014) TimeSketch, https://timesketch.org",
-        "Breitinger, F., Studiawan, H. and Hargreaves, C., 2025. SoK: Timeline based event reconstruction for digital forensics: Terminology, methodology, and current challenges.",
-        "Casey, E., 2011. Digital evidence and computer crime: Forensic science, computers, and the internet. Academic press, Section 8.1.2",
-        "Hargreaves, C. and Patterson, J., 2012. An automated timeline reconstruction approach for digital forensic investigations. Digital Investigation, 9, pp.S69-S79." ;
+    solveit-core:hasReference :citationDFCite-1017,
+        :citationDFCite-1019,
+        :citationDFCite-1028,
+        :citationDFCite-1058 ;
     solveit-core:hasSubtechnique :techniqueDFT-1134 ;
     solveit-core:hasSynonym "Temporal Analysis" ;
     solveit-core:techniqueDescription "The process of searching, filtering, sorting, highlighting, or aggregating timeline entries to determine which are relevant for event reconstruction, or to identify times of interest (adapted from Breitinger et al. 2025)" ;
@@ -1962,7 +2514,7 @@ Facebook Messenger
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/Relationship"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/core/kindOfRelationship"^^xsd:anyURI ;
-    solveit-core:hasReference "Casey, E., 2011. Digital evidence and computer crime: Forensic science, computers, and the internet. Academic press, Section 8.1.3" ;
+    solveit-core:hasReference :citationDFCite-1029 ;
     solveit-core:hasSynonym "Connection-based event reconstruction",
         "Relational analysis" ;
     solveit-core:techniqueDescription "The process of determining the existence and nature of relationships between entities during event reconstruction" ;
@@ -1992,8 +2544,8 @@ Facebook Messenger
     solveit-core:hasPotentialWeakness :weaknessDFW-1152,
         :weaknessDFW-1153,
         :weaknessDFW-1154 ;
-    solveit-core:hasReference "Basis Technology 2019, Reporting, https://sleuthkit.org/autopsy/docs/user-docs/4.12.0/reporting_page.html",
-        "Basis Technology 2019, Tagging, https://sleuthkit.org/autopsy/docs/user-docs/4.12.0/tagging_page.html" ;
+    solveit-core:hasReference :citationDFCite-1008,
+        :citationDFCite-1009 ;
     solveit-core:hasSynonym "Produce bookmark-based automated report" ;
     solveit-core:techniqueDescription "Generate a report in PDF, HTML or other format that compiles tagged (or bookmarked) items from a case into a package that can be reviewed." ;
     solveit-core:techniqueID "DFT-1092" ;
@@ -2049,8 +2601,8 @@ Facebook Messenger
 
 :techniqueDFT-1101 a solveit-core:Technique ;
     rdfs:label "DFT-1101: Cell site survey"@en ;
-    solveit-core:hasReference "Hoy, J., 2023. Forensic radio survey techniques for cell site analysis. John Wiley & Sons.",
-        "Tart, M., Brodie, I., Gleed, N. and Matthews, J., 2012. Historic cell site analysis–Overview of principles and survey methodologies. Digital Investigation, 8(3-4), pp.185-193." ;
+    solveit-core:hasReference :citationDFCite-1067,
+        :citationDFCite-1121 ;
     solveit-core:techniqueDescription "Taking measurements to assess which cells actually provide service at a specific location (adapted from Tart et al 2012)." ;
     solveit-core:techniqueDetails "Can involve: spot sample, location survey, area survey, cell survey (Tart et al 2012)" ;
     solveit-core:techniqueID "DFT-1101" ;
@@ -2081,16 +2633,19 @@ Facebook Messenger
 
 :techniqueDFT-1107 a solveit-core:Technique ;
     rdfs:label "DFT-1107: Health/Fitness app examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/HealthAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1107" ;
     solveit-core:techniqueName "Health/Fitness app examination" .
 
 :techniqueDFT-1108 a solveit-core:Technique ;
     rdfs:label "DFT-1108: Reminders app examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/RemindersAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1108" ;
     solveit-core:techniqueName "Reminders app examination" .
 
 :techniqueDFT-1109 a solveit-core:Technique ;
     rdfs:label "DFT-1109: Payment app examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/PaymentAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1109" ;
     solveit-core:techniqueName "Payment app examination" .
 
@@ -2109,7 +2664,7 @@ Facebook Messenger
     rdfs:label "DFT-1114: Memory Acquisition via Cold Boot Attack"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1032 ;
-    solveit-core:hasReference "Halderman, J.A., Schoen, S.D., Heninger, N., Clarkson, W., Paul, W., Calandrino, J.A., Feldman, A.J., Appelbaum, J. and Felten, E.W., 2009. Lest we remember: cold-boot attacks on encryption keys. Communications of the ACM, 52(5), pp.91-98." ;
+    solveit-core:hasReference :citationDFCite-1053 ;
     solveit-core:hasSynonym "Cold Boot Attack",
         "Extracting RAM data using Cold Boot Attack" ;
     solveit-core:techniqueDescription "Extracting volatile memory (RAM) from a powered-off system by quickly rebooting or transferring the memory module to another system before residual data fades. Cooling the memory modules can significantly slow down data decay, preserving critical data such as encryption keys or passwords." ;
@@ -2121,9 +2676,9 @@ Facebook Messenger
     rdfs:label "DFT-1115: Visualisation of geolocation information"@en ;
     solveit-core:hasExample "Autopsy Geolocation view (Basis Technology 2020)",
         "Magnet Axiom 'World map view' (Magnet 2020)" ;
-    solveit-core:hasReference "Basis Technology 2020, Autopsy User Documentation: Geolocation Overview, https://sleuthkit.org/autopsy/docs/user-docs/4.13.0/geolocation_page.html",
-        "Magnet 2020, Using the Geolocation Data Filter in Magnet AXIOM & AXIOM Cyber, https://www.magnetforensics.com/blog/using-the-geolocation-data-filter-in-magnet-axiom-axiom-cyber/",
-        "Magnet 2024, Moving in the right direction with Animated maps, https://www.magnetforensics.com/blog/moving-in-the-right-direction-with-animated-maps/" ;
+    solveit-core:hasReference :citationDFCite-1010,
+        :citationDFCite-1092,
+        :citationDFCite-1093 ;
     solveit-core:techniqueDescription "Presenting points or paths visually using extracted data, typically on a map" ;
     solveit-core:techniqueID "DFT-1115" ;
     solveit-core:techniqueName "Visualisation of geolocation information" .
@@ -2136,7 +2691,7 @@ Facebook Messenger
     solveit-core:hasPotentialWeakness :weaknessDFW-1011,
         :weaknessDFW-1183,
         :weaknessDFW-1184 ;
-    solveit-core:hasReference "ALEAPP abd_hots.py, https://github.com/abrignoni/ALEAPP/blob/main/scripts/artifacts/adb_hosts.py" ;
+    solveit-core:hasReference :citationDFCite-1001 ;
     solveit-core:techniqueDescription "Examine artifacts and extract indicators of devices that have been connected to the target device." ;
     solveit-core:techniqueID "DFT-1116" ;
     solveit-core:techniqueName "Determine connected devices" .
@@ -2161,7 +2716,7 @@ Facebook Messenger
     solveit-core:hasPotentialWeakness :weaknessDFW-1186,
         :weaknessDFW-1187,
         :weaknessDFW-1188 ;
-    solveit-core:hasReference "Autopsy Interesting File module, https://sleuthkit.org/autopsy/docs/user-docs/3.1/interesting_page.html" ;
+    solveit-core:hasReference :citationDFCite-1006 ;
     solveit-core:techniqueDescription "Use the path of file name to determine potential relevance of artefact" ;
     solveit-core:techniqueID "DFT-1118" ;
     solveit-core:techniqueName "Locate relevant files by path" .
@@ -2223,8 +2778,8 @@ Facebook Messenger
     solveit-core:hasPotentialWeakness :weaknessDFW-1193,
         :weaknessDFW-1194,
         :weaknessDFW-1195 ;
-    solveit-core:hasReference "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31",
-        "X-Ways (2025), X-Ways Manual: Simultaneous Search (section 5.10), https://www.x-ways.net/winhex/manual.pdf" ;
+    solveit-core:hasReference :citationDFCite-1103,
+        :citationDFCite-1134 ;
     solveit-core:hasSynonym "live search" ;
     solveit-core:techniqueDescription "Searching for keywords over the raw data on a sector by sector basis" ;
     solveit-core:techniqueID "DFT-1126" ;
@@ -2251,7 +2806,7 @@ Facebook Messenger
 :techniqueDFT-1131 a solveit-core:Technique ;
     rdfs:label "DFT-1131: Search for indicators of trail obfuscation"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Application"^^xsd:anyURI ;
-    solveit-core:hasReference "Kessler, G.C., 2007. Anti-forensics and the digital investigator." ;
+    solveit-core:hasReference :citationDFCite-1082 ;
     solveit-core:techniqueDescription "Searching for the presence of current or historical trail obfuscation on a system" ;
     solveit-core:techniqueID "DFT-1131" ;
     solveit-core:techniqueName "Search for indicators of trail obfuscation" .
@@ -2259,7 +2814,7 @@ Facebook Messenger
 :techniqueDFT-1132 a solveit-core:Technique ;
     rdfs:label "DFT-1132: Search for indicators of artifact wiping"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Application"^^xsd:anyURI ;
-    solveit-core:hasReference "Kessler, G.C., 2007. Anti-forensics and the digital investigator." ;
+    solveit-core:hasReference :citationDFCite-1082 ;
     solveit-core:hasSynonym "artifact scrubbing" ;
     solveit-core:techniqueDescription "Searching for the presence of current or historical artifact wiping" ;
     solveit-core:techniqueID "DFT-1132" ;
@@ -2305,8 +2860,8 @@ Facebook Messenger
         :weaknessDFW-1225,
         :weaknessDFW-1226,
         :weaknessDFW-1227 ;
-    solveit-core:hasReference "Bayor, L., Weinert, C., Maier, C. and Weitzel, T., 2025. Social-Oriented Communication with AI Companions: Benefits, Costs, and Contextual Patterns. Business & Information Systems Engineering, pp.1-19.",
-        "Hargreaves & Drury, 2025, Forensic Analysis of AI Applications: A Replika \"AI Companion\" example, WSDF 2025" ;
+    solveit-core:hasReference :citationDFCite-1012,
+        :citationDFCite-1055 ;
     solveit-core:techniqueDescription "The forensic examination of the artifacts describing the configuration or the interaction with an AI companion app or service." ;
     solveit-core:techniqueDetails "An AI companion is defined as \"a type of generative AI-based conversational agent (CA) explicitly designed for companionship and friendship with a human user (Strohmann et al. 2022; Pentina et al. 2023)\" (Bayor et al 2025)." ;
     solveit-core:techniqueID "DFT-1133" ;
@@ -2386,7 +2941,7 @@ Facebook Messenger
 
 :techniqueDFT-1148 a solveit-core:Technique ;
     rdfs:label "DFT-1148: Browser web storage examination"@en ;
-    solveit-core:hasReference "Mendoza, A., Kumar, A., Midcap, D., Cho, H. and Varol, C., 2015. BrowStEx: A tool to aggregate browser storage artifacts for forensic analysis. Digital investigation, 14, pp.63-75." ;
+    solveit-core:hasReference :citationDFCite-1099 ;
     solveit-core:hasSynonym "HTML5 storage examination",
         "browser storage examination",
         "local storage examination",
@@ -2403,10 +2958,10 @@ Facebook Messenger
         "https://ontology.unifiedcyberontology.org/uco/observable/version"^^xsd:anyURI ;
     solveit-core:hasExample "MacOS \"Revert to\" feature",
         "Volume Shadow Service (VSS)" ;
-    solveit-core:hasReference "Apple (2025) View and restore past versions of documents on Mac https://support.apple.com/en-gb/guide/mac-help/mh40710/mac",
-        "Hargreaves, C., Chivers, H. and Titheridge, D., 2008. Windows Vista and digital investigations. Digital Investigation, 5(1-2), pp.34-48.",
-        "Leschke, T.R. and Nicholas, C., 2013, October. Change-link 2.0: a digital forensic tool for visualizing changes to shadow volume data. In Proceedings of the Tenth Workshop on Visualization for Cyber Security (pp. 17-24).",
-        "Sreeja, S.C. and Balan, C., 2016, October. Forensic analysis of volume shadow copy in windows 7. In 2016 International Conference on Emerging Technological Trends (ICETT) (pp. 1-6). IEEE." ;
+    solveit-core:hasReference :citationDFCite-1005,
+        :citationDFCite-1059,
+        :citationDFCite-1087,
+        :citationDFCite-1120 ;
     solveit-core:hasSynonym "'Revert to...' feature examination",
         "macOS 'Versions' examination",
         "previous versions",
@@ -2444,8 +2999,8 @@ Facebook Messenger
         :weaknessDFW-1254,
         :weaknessDFW-1255,
         :weaknessDFW-1256 ;
-    solveit-core:hasReference "Carrier, B., 2005. File system forensic analysis. Addison-Wesley Professional.",
-        "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873." ;
+    solveit-core:hasReference :citationDFCite-1024,
+        :citationDFCite-1030 ;
     solveit-core:techniqueDescription "Use metadata that remains in the file system to recover non-allocated files" ;
     solveit-core:techniqueID "DFT-1150" ;
     solveit-core:techniqueName "Recover non-allocated files using residual file metadata" .
@@ -2455,7 +3010,7 @@ Facebook Messenger
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
     solveit-core:hasExample "Using Keywords with Magnet AXIOM (McQuaid 2017)" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1257 ;
-    solveit-core:hasReference "McQuaid, J. (2017) Using Keywords with Magnet AXIOM, Magnet Forensics, https://www.magnetforensics.com/blog/using-keywords-with-magnet-axiom/" ;
+    solveit-core:hasReference :citationDFCite-1098 ;
     solveit-core:hasSynonym "search artifacts only" ;
     solveit-core:techniqueDescription "Keyword searching only applied over extracted artifacts" ;
     solveit-core:techniqueDetails "This limited scope search may be performed within tools themselves e.g. McQuaid (2017), or within an exported packaged report." ;
@@ -2468,8 +3023,8 @@ Facebook Messenger
         "https://ontology.unifiedcyberontology.org/uco/identity/Person"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1150 ;
-    solveit-core:hasReference "Casey, E. and Jaquet-Chiffelle, D.O., 2019. Do identities matter?. Policing: A Journal of Policy and Practice, 13(1), pp.21-34.",
-        "Spichiger, H., 2025. Please mind the gap: A taxonomy for addressing the issue of linking person, account and device. Science & Justice, p.101314." ;
+    solveit-core:hasReference :citationDFCite-1027,
+        :citationDFCite-1119 ;
     solveit-core:hasSynonym "Resolving the person-account gap,",
         "Resolving the person-device gap" ;
     solveit-core:techniqueDescription "The process of attempting to link an identity (account, person etc.) to a reconstructed event" ;
@@ -2528,8 +3083,8 @@ This might involve questions such as:
     solveit-core:hasExample "Belkasoft",
         "Elcomsoft" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1276 ;
-    solveit-core:hasReference "Belkasoft https://belkasoft.com/agent_based_ios_acquisition",
-        "Elcomsoft 20203 https://blog.elcomsoft.com/2023/07/ios-device-acquisition-installing-the-extraction-agent/" ;
+    solveit-core:hasReference :citationDFCite-1016,
+        :citationDFCite-1041 ;
     solveit-core:techniqueDescription "Deploy software to a mobile device that can carry out some function, either collect data with available permissions or attempt further exploitation e.g. sandbox escape." ;
     solveit-core:techniqueDetails "While Android agents can be sideloaded with adb, deploying agents on iOS may require a developer account. Output may be equivalent of a file system acquisition if an exploit is successful. Otherwise data such as contacts would be extracted." ;
     solveit-core:techniqueID "DFT-1159" ;
@@ -2538,7 +3093,7 @@ This might involve questions such as:
 :techniqueDFT-1160 a solveit-core:Technique ;
     rdfs:label "DFT-1160: Collect data with 'cloud backup restore' approach"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"^^xsd:anyURI ;
-    solveit-core:hasReference "Geus, J., Gruber, J., Wozar, J. and Freiling, F., 2025. From sync to seizure: A binary instrumentation-based evaluation of the iCloud backup process. Forensic Science International: Digital Investigation, 54, p.301978." ;
+    solveit-core:hasReference :citationDFCite-1046 ;
     solveit-core:techniqueDescription "Restore a device's cloud backup to a donor device, then subsequently use a local acquisition approach on that donor device, e.g. T1019/T1020" ;
     solveit-core:techniqueID "DFT-1160" ;
     solveit-core:techniqueName "Collect data with 'cloud backup restore' approach" .
@@ -2546,7 +3101,7 @@ This might involve questions such as:
 :techniqueDFT-1162 a solveit-core:Technique ;
     rdfs:label "DFT-1162: Read data from a device via In-System Programming (ISP)"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
-    solveit-core:hasReference "https://en.wikipedia.org/wiki/In-system_programming" ;
+    solveit-core:hasReference :citationDFCite-1136 ;
     solveit-core:hasSubtechnique :techniqueDFT-1027 ;
     solveit-core:hasSynonym "ISCP",
         "In-circuit serial Programming" ;
@@ -2557,8 +3112,8 @@ This might involve questions such as:
     rdfs:label "DFT-1163: Automated screenshot-based capture of a mobile device"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"^^xsd:anyURI ;
-    solveit-core:hasReference "https://github.com/prosch88/ALEX",
-        "https://github.com/prosch88/UFADE" ;
+    solveit-core:hasReference :citationDFCite-1137,
+        :citationDFCite-1138 ;
     solveit-core:techniqueDescription "Programmatically controlling a mobile device while capturing screenshots of the display." ;
     solveit-core:techniqueID "DFT-1163" ;
     solveit-core:techniqueName "Automated screenshot-based capture of a mobile device" .
@@ -2591,7 +3146,7 @@ This might involve questions such as:
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/keywordSearchTerm"^^xsd:anyURI ;
     solveit-core:hasExample "DuckDuckGo search URLs",
         "Google search URLs" ;
-    solveit-core:hasReference "Horsman, G., 2019. A forensic examination of online search facility URL record structures. Journal of forensic sciences, 64(1), pp.236-242." ;
+    solveit-core:hasReference :citationDFCite-1065 ;
     solveit-core:techniqueDescription "Parsing a URL and extracting search terms from the parameters." ;
     solveit-core:techniqueDetails """These may be `q=` strings or some other encoded parameters. 
 
@@ -2638,8 +3193,8 @@ This would include web search URLs such as Google searches but could also includ
         "AFF4-L",
         "CTR",
         "L01" ;
-    solveit-core:hasReference "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68.",
-        "Im, S., Park, H., Joun, J., Lee, S. and Park, J., 2024. Revisiting logical image formats for future digital forensics: A comprehensive analysis on L01 and AFF4-L. Forensic Science International: Digital Investigation, 50" ;
+    solveit-core:hasReference :citationDFCite-1035,
+        :citationDFCite-1069 ;
     solveit-core:hasSynonym "Logical image decoding",
         "Read logical image" ;
     solveit-core:techniqueDescription "Decodes logical image formats such as L01, AD1, CTR, or AFF4-L. The output here is not an image file but rather a set of files and their metadata." ;
@@ -2690,7 +3245,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Call"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
-    solveit-core:hasReference "Google (2025) Content provider basics. Available at: https://developer.android.com/guide/topics/providers/content-provider-basics." ;
+    solveit-core:hasReference :citationDFCite-1047 ;
     solveit-core:techniqueDescription "Use of content queries on Android devices via adb to extract specific pieces of data exposed by content providers." ;
     solveit-core:techniqueID "DFT-1175" ;
     solveit-core:techniqueName "Extract data using content queries" .
@@ -2767,7 +3322,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1006: Acquisition tool does not copy data from HPA"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1003,
         :mitigationDFM-1005 ;
-    solveit-core:hasReference "Gupta, M.R., Hoeschele, M.D. and Rogers, M.K., 2006. Hidden disk areas: HPA and DCO. International Journal of Digital Evidence, 5(1), pp.1-8." ;
+    solveit-core:hasReference :citationDFCite-1052 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -2782,7 +3337,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1007: Acquisition tool does not copy data from DCO"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1003,
         :mitigationDFM-1006 ;
-    solveit-core:hasReference "Gupta, M.R., Hoeschele, M.D. and Rogers, M.K., 2006. Hidden disk areas: HPA and DCO. International Journal of Digital Evidence, 5(1), pp.1-8." ;
+    solveit-core:hasReference :citationDFCite-1052 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -2873,7 +3428,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1015 a solveit-core:Weakness ;
     rdfs:label "DFW-1015: Powering on SSD results in sectors being wiped by TRIM operation"@en ;
-    solveit-core:hasReference "DSTL Digital Forensics Bulletin, TRIM & Garbage Collection on SSDs, Edition 27, July 2024 DSTL/PUB160897, https://mailchi.mp/3b5bda81ff5f/digital-forensic-bulletin-edition27-trim-and-garbage-collection-on-ssds9445401" ;
+    solveit-core:hasReference :citationDFCite-1036 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR true ;
@@ -2886,7 +3441,6 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1016 a solveit-core:Weakness ;
     rdfs:label "DFW-1016: Data copied from sectors on source device are not transferred correctly for storage"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1004 ;
-    solveit-core:hasReference "conv option -dd, https://www.ibm.com/docs/en/aix/7.2.0?topic=d-dd-command#dd__row-d3e19630" ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR true ;
@@ -3040,10 +3594,10 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1029: Memory smearing may result in pointers being inconsistent within the memory image"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1086,
         :mitigationDFM-1088 ;
-    solveit-core:hasReference "Jenny Ottmann, Üsame Cengiz, Frank Breitinger, and Felix Freiling, 2023. As if Time Had Stopped – Checking Memory Dumps for Quasi-Instantaneous Consistency. In Proceedings of the Digital Forensics Research Conference USA (DFRWS USA), Baltimore, MD, July 2023.",
-        "Ottmann, J., Breitinger, F. and Freiling, F., 2024. An experimental assessment of inconsistencies in memory forensics. ACM Transactions on Privacy and Security (TOPS). 27, 2:1–2:29.",
-        "Pagani, F., Fedorov, O. and Balzarotti, D., 2019. Introducing the temporal dimension to memory forensics. ACM Transactions on Privacy and Security (TOPS), 22(2), 1-21.",
-        "Rzepka, L., Ottmann, J., Freiling, F. and Baier, H., 2024. Causal Inconsistencies are Normal in Windows Memory Dumps (too). Digital Threats: Research and Practice." ;
+    solveit-core:hasReference :citationDFCite-1072,
+        :citationDFCite-1110,
+        :citationDFCite-1111,
+        :citationDFCite-1116 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR true ;
@@ -3056,9 +3610,9 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1030 a solveit-core:Weakness ;
     rdfs:label "DFW-1030: Loading a memory imaging tool makes changes to the data in memory that is being acquired"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1087 ;
-    solveit-core:hasReference "Campbell, W., 2013. Volatile memory acquisition tools–A comparison across taint and correctness. 11th Australian Digital Forensics Conference. Edith Cowan University, Perth, Western Australia.",
-        "Gruhn, M. and Freiling, F.C., 2016. Evaluating atomicity, and integrity of correct memory acquisition methods. Digital Investigation, 16, S1-S10.",
-        "Vömel, S. and Stüttgen, J., 2013. An evaluation platform for forensic memory acquisition software. Digital Investigation, 10, S30-S40." ;
+    solveit-core:hasReference :citationDFCite-1023,
+        :citationDFCite-1051,
+        :citationDFCite-1128 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -3081,7 +3635,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1033 a solveit-core:Weakness ;
     rdfs:label "DFW-1033: Data referenced in memory is located within pagefile or swapfile but is not collected"@en ;
-    solveit-core:hasReference "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33." ;
+    solveit-core:hasReference :citationDFCite-1025 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -3119,7 +3673,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1036: Overwriting relevant data with changes caused by running the live tools"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1014,
         :mitigationDFM-1015 ;
-    solveit-core:hasReference "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5" ;
+    solveit-core:hasReference :citationDFCite-1062 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -3433,7 +3987,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1064: Making incorrect assumptions about sector size e.g. 512 rather than 4096"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1045,
         :mitigationDFM-1046 ;
-    solveit-core:hasReference "V, Kethareswaran; Khurana, Surinder Singh; Singh, Parvinder (2021), “File Carving based Digital Forensic Tools Testing Data Sets (Contiguous Files)”, Mendeley Data, V3, doi: 10.17632/2kh2bdsp5b.3" ;
+    solveit-core:hasReference :citationDFCite-1126 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -3459,8 +4013,8 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1066: Missing deleted but recoverable partitions from unpartitioned space"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1043,
         :mitigationDFM-1044 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679.",
-        "Hargreaves, C., Repository for 'An abstract model for digital forensic analysis tools - A foundation for systematic error mitigation analysis', https://github.com/chrishargreaves/digital-forensic-tool-abstractions/tree/main" ;
+    solveit-core:hasReference :citationDFCite-1060,
+        :citationDFCite-1061 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -3744,7 +4298,7 @@ This would include web search URLs such as Google searches but could also includ
         :mitigationDFM-1054,
         :mitigationDFM-1055,
         :mitigationDFM-1056 ;
-    solveit-core:hasReference "New msgstore – Who ‘Dis? A Look At An Updated WhatsApp On Android, https://thebinaryhick.blog/2022/06/09/new-msgstore-who-dis-a-look-at-an-updated-whatsapp-on-android/" ;
+    solveit-core:hasReference :citationDFCite-1105 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -3821,7 +4375,7 @@ This would include web search URLs such as Google searches but could also includ
         :mitigationDFM-1054,
         :mitigationDFM-1055,
         :mitigationDFM-1056 ;
-    solveit-core:hasReference "Time is not on our side when it comes to Messages in iOS 11, https://smarterforensics.com/2017/09/time-is-not-on-our-side-when-it-comes-to-messages-in-ios-11/" ;
+    solveit-core:hasReference :citationDFCite-1123 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4076,7 +4630,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1108: Failure to recover history resulting from private browsing"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1066,
         :mitigationDFM-1067 ;
-    solveit-core:hasReference "Horsman, G., 2020. The challenge of identifying historic ‘private browsing’sessions on suspect devices. Forensic Science International: Digital Investigation, 34, p.300980." ;
+    solveit-core:hasReference :citationDFCite-1066 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4233,7 +4787,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1121 a solveit-core:Weakness ;
     rdfs:label "DFW-1121: Image format parsing fails to to present all blocks from within a forensic container image in their ‘flat’ (dd) representation"@en ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4245,7 +4799,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1122 a solveit-core:Weakness ;
     rdfs:label "DFW-1122: Image format parsing presents incorrect data within sectors of the image"@en ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4257,7 +4811,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1123 a solveit-core:Weakness ;
     rdfs:label "DFW-1123: Image format parsing presents incorrect forensic image metadata"@en ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4271,7 +4825,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1124: Failure to compute hash of source device correctly during disk image verification"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1075,
         :mitigationDFM-1085 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR true ;
@@ -4286,7 +4840,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1125: Failure to validate hash properly during disk image verification"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1075,
         :mitigationDFM-1085 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR true ;
@@ -4301,7 +4855,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1126: Failure to validate hash properly allowing an incomplete disk image to present as validated"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1075,
         :mitigationDFM-1085 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4314,7 +4868,7 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1127 a solveit-core:Weakness ;
     rdfs:label "DFW-1127: Failure to validate disk image metadata"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1076 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR true ;
@@ -4330,8 +4884,8 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasPotentialMitigation :mitigationDFM-1022,
         :mitigationDFM-1023,
         :mitigationDFM-1074 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679.",
-        "Kemmerich, T., Junge, F., Kuntze, N., Rudolph, C., Endicott-Popovsky, B. and Großkopf, L., 2014. Generation and handling of hard drive duplicates as piece of evidence." ;
+    solveit-core:hasReference :citationDFCite-1060,
+        :citationDFCite-1079 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR true ;
@@ -4346,7 +4900,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasPotentialMitigation :mitigationDFM-1109,
         :mitigationDFM-1111,
         :mitigationDFM-1112 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4362,7 +4916,7 @@ This would include web search URLs such as Google searches but could also includ
         :mitigationDFM-1110,
         :mitigationDFM-1111,
         :mitigationDFM-1112 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4377,8 +4931,8 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasPotentialMitigation :mitigationDFM-1109,
         :mitigationDFM-1111,
         :mitigationDFM-1112 ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679.",
-        "Magazinius, J., Rios, B.K. and Sabelfeld, A., 2013, November. Polyglots: crossing origins by crossing formats. In Proceedings of the 2013 ACM SIGSAC conference on Computer & communications security (pp. 753-764)." ;
+    solveit-core:hasReference :citationDFCite-1060,
+        :citationDFCite-1090 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4391,8 +4945,8 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1133 a solveit-core:Weakness ;
     rdfs:label "DFW-1133: Tool fails to express uncertainty in the classification of file recovery results, e.g., where content may be partly overwritten."@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1084 ;
-    solveit-core:hasReference "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873.",
-        "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1030,
+        :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4409,7 +4963,7 @@ This would include web search URLs such as Google searches but could also includ
         :mitigationDFM-1081,
         :mitigationDFM-1082,
         :mitigationDFM-1083 ;
-    solveit-core:hasReference "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873." ;
+    solveit-core:hasReference :citationDFCite-1030 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4426,7 +4980,7 @@ This would include web search URLs such as Google searches but could also includ
         :mitigationDFM-1081,
         :mitigationDFM-1082,
         :mitigationDFM-1083 ;
-    solveit-core:hasReference "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873." ;
+    solveit-core:hasReference :citationDFCite-1030 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4437,7 +4991,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:weaknessName "Recovered (non-allocated) file content has been overwritten by the content of a newer live file but this is not detected " .
 
 :weaknessDFW-1136 a solveit-core:Weakness ;
-    rdfs:label "DFW-1136: Not recovering data from a failed hard drive"@en ;
+    rdfs:label "DFW-1136: Data cannot be read from a device due to the device having failed physically"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1089 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
@@ -4446,7 +5000,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:mayResultInINCOMP true ;
     solveit-core:mayResultInMISINT false ;
     solveit-core:weaknessID "DFW-1136" ;
-    solveit-core:weaknessName "Not recovering data from a failed hard drive" .
+    solveit-core:weaknessName "Data cannot be read from a device due to the device having failed physically" .
 
 :weaknessDFW-1137 a solveit-core:Weakness ;
     rdfs:label "DFW-1137: Failing to determine password as it is not in the dictionary used"@en ;
@@ -4546,7 +5100,7 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1143 a solveit-core:Weakness ;
     rdfs:label "DFW-1143: Data is not read from remapped sectors e.g. G-Lists during the acquisition process"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1102 ;
-    solveit-core:hasReference "Turner, P. The Remapped/Reallocated Sector Conundrum, Presentation at DFRWS US 2024, https://www.dfrws.org/wp-content/uploads/2023/07/turner-remappedsectors.pdf" ;
+    solveit-core:hasReference :citationDFCite-1124 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4580,7 +5134,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1146 a solveit-core:Weakness ;
     rdfs:label "DFW-1146: Failure to consider non-timestamp based timing information"@en ;
-    solveit-core:hasReference "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755." ;
+    solveit-core:hasReference :citationDFCite-1039 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4686,8 +5240,8 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1157 a solveit-core:Weakness ;
     rdfs:label "DFW-1157: Use of mobile exploit changes/overwrites data that was relevant to the investigation"@en ;
-    solveit-core:hasReference "Elcomsoft 2021, Forensically Sound checkm8 Based Extraction of iPhone 5s, 6, 6s and SE, https://blog.elcomsoft.com/2021/05/checkm8-based-extraction-of-iphone-5s-6-6s-and-se/",
-        "Grover, J., 2013. Android forensics: Automated data collection and reporting from a mobile device. Digital Investigation, 10, pp.S12-S20." ;
+    solveit-core:hasReference :citationDFCite-1042,
+        :citationDFCite-1049 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4699,7 +5253,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1158 a solveit-core:Weakness ;
     rdfs:label "DFW-1158: Use of mobile exploit renders device unusable or 'bricked'"@en ;
-    solveit-core:hasReference "Tyler, J., 2012 p50. XDA Developers' Android Hacker's Toolkit: The Complete Guide to Rooting, ROMs and Theming. John Wiley & Sons" ;
+    solveit-core:hasReference :citationDFCite-1125 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4795,7 +5349,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFW-1166: Consideration of live database content only"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1122,
         :mitigationDFM-1123 ;
-    solveit-core:hasReference "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103." ;
+    solveit-core:hasReference :citationDFCite-1113 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4845,7 +5399,7 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1170 a solveit-core:Weakness ;
     rdfs:label "DFW-1170: Failure to recover data stored in Write Ahead Log (WAL) files"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1124 ;
-    solveit-core:hasReference "Caithness 2012, The Forensic Implications of SQLite’s Write Ahead Log, https://digitalinvestigation.wordpress.com/2012/05/04/the-forensic-implications-of-sqlites-write-ahead-log/" ;
+    solveit-core:hasReference :citationDFCite-1021 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4858,7 +5412,7 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1171 a solveit-core:Weakness ;
     rdfs:label "DFW-1171: Failure to recover data stored in database journal files"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1125 ;
-    solveit-core:hasReference "Caithness 2012, The Forensic Implications of SQLite’s Write Ahead Log, https://digitalinvestigation.wordpress.com/2012/05/04/the-forensic-implications-of-sqlites-write-ahead-log/" ;
+    solveit-core:hasReference :citationDFCite-1021 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -4917,7 +5471,7 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1176 a solveit-core:Weakness ;
     rdfs:label "DFW-1176: Unable to physically remove/detach internal storage media"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1126 ;
-    solveit-core:hasReference "Interpol (2021), Guidelines for digital forensics first responders v7, Ch5 Specific Procedures p34, https://www.interpol.int/content/download/16243/file/Guidelines_to_Digital_Forensics_First_Responders_V7.pdf" ;
+    solveit-core:hasReference :citationDFCite-1071 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -5648,7 +6202,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasPotentialMitigation :mitigationDFM-1172,
         :mitigationDFM-1173,
         :mitigationDFM-1175 ;
-    solveit-core:hasReference "https://www.crowdstrike.com/en-us/guides/syslog-logging/advanced-concepts/" ;
+    solveit-core:hasReference :citationDFCite-1140 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -5749,7 +6303,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1244 a solveit-core:Weakness ;
     rdfs:label "DFW-1244: Missing browser history data as it was cleared by user"@en ;
-    solveit-core:hasReference "Oh, J., Lee, S. and Lee, S., 2011. Advanced evidence collection and analysis of web browser activity. Digital investigation, 8, pp.S62-S70., section 3.6" ;
+    solveit-core:hasReference :citationDFCite-1109 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -5761,7 +6315,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1245 a solveit-core:Weakness ;
     rdfs:label "DFW-1245: Relying on times stored in browser history that are not representative of exact web page visit time"@en ;
-    solveit-core:hasReference "Groß, T., Dirauf, R. and Freiling, F., 2020, May. Systematic analysis of browser history evidence. In 2020 13th International Conference on Systematic Approaches to Digital Forensic Engineering (SADFE) (pp. 1-12). IEEE." ;
+    solveit-core:hasReference :citationDFCite-1050 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR false ;
@@ -5846,7 +6400,7 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1252 a solveit-core:Weakness ;
     rdfs:label "DFW-1252: Assuming that data stored in the cache was viewed by the user"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1189 ;
-    solveit-core:hasReference "Horsman, G., 2018. I didn't see that! An examination of internet browser cache behaviour following website visits. Digital Investigation, 25, pp.105-113." ;
+    solveit-core:hasReference :citationDFCite-1064 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR false ;
@@ -6096,8 +6650,8 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1271 a solveit-core:Weakness ;
     rdfs:label "DFW-1271: Inability to access required service as it is not enabled"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1232 ;
-    solveit-core:hasReference "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/",
-        "Belkasoft (undated) Dealing with Apple's USB Restricted Mode, https://belkasoft.com/dealing_with_usb_restricted_mode" ;
+    solveit-core:hasReference :citationDFCite-1004,
+        :citationDFCite-1015 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -6152,7 +6706,7 @@ This would include web search URLs such as Google searches but could also includ
 :weaknessDFW-1275 a solveit-core:Weakness ;
     rdfs:label "DFW-1275: Failure to store data due to size limitations of archive format used"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1237 ;
-    solveit-core:hasReference "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64" ;
+    solveit-core:hasReference :citationDFCite-1130 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -6201,6 +6755,154 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:weaknessID "DFW-1278" ;
     solveit-core:weaknessName "Data copied does not include all sectors from LBA0 to LBA max due to the data copying process skipping some sectors or bytes" .
 
+:citationDFCite-1014 a solveit-core:Citation ;
+    rdfs:label "DFCite-1014" ;
+    solveit-core:citationID "DFCite-1014" ;
+    solveit-core:citationPlaintext "Beebe, N.L. and Liu, L., 2014. Ranking algorithms for digital forensic string search hits. Digital Investigation, 11, pp.S124-S132." .
+
+:citationDFCite-1020 a solveit-core:Citation ;
+    rdfs:label "DFCite-1020" ;
+    solveit-core:citationID "DFCite-1020" ;
+    solveit-core:citationPlaintext "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759" .
+
+:citationDFCite-1022 a solveit-core:Citation ;
+    rdfs:label "DFCite-1022" ;
+    solveit-core:citationID "DFCite-1022" ;
+    solveit-core:citationPlaintext "Caithness 2024, Time travelling with SQLite Journals and WAL, https://www.cclsolutionsgroup.com/post/time-travelling-with-sqlite-journals-and-wal" .
+
+:citationDFCite-1026 a solveit-core:Citation ;
+    rdfs:label "DFCite-1026" ;
+    solveit-core:citationID "DFCite-1026" ;
+    solveit-core:citationPlaintext "Casey et al (2011) The growing impact of full disk encryption on digital forensics, https://www.sciencedirect.com/science/article/abs/pii/S1742287611000727?via%3Dihub" .
+
+:citationDFCite-1032 a solveit-core:Citation ;
+    rdfs:label "DFCite-1032" ;
+    solveit-core:citationID "DFCite-1032" ;
+    solveit-core:citationPlaintext "Chivers, H., 2014. Private browsing: A window of forensic opportunity. Digital Investigation, 11(1), pp.20-29." .
+
+:citationDFCite-1035 a solveit-core:Citation ;
+    rdfs:label "DFCite-1035" ;
+    solveit-core:citationID "DFCite-1035" ;
+    solveit-core:citationPlaintext "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68." .
+
+:citationDFCite-1043 a solveit-core:Citation ;
+    rdfs:label "DFCite-1043" ;
+    solveit-core:citationID "DFCite-1043" ;
+    solveit-core:citationPlaintext "Fisher & Fisher. 2012, Techniques of Crime Scene Investigation, Eighth Edition, p82" .
+
+:citationDFCite-1045 a solveit-core:Citation ;
+    rdfs:label "DFCite-1045" ;
+    solveit-core:citationID "DFCite-1045" ;
+    solveit-core:citationPlaintext "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169." .
+
+:citationDFCite-1049 a solveit-core:Citation ;
+    rdfs:label "DFCite-1049" ;
+    solveit-core:citationID "DFCite-1049" ;
+    solveit-core:citationPlaintext "Grover, J., 2013. Android forensics: Automated data collection and reporting from a mobile device. Digital Investigation, 10, pp.S12-S20." .
+
+:citationDFCite-1052 a solveit-core:Citation ;
+    rdfs:label "DFCite-1052" ;
+    solveit-core:citationID "DFCite-1052" ;
+    solveit-core:citationPlaintext "Gupta, M.R., Hoeschele, M.D. and Rogers, M.K., 2006. Hidden disk areas: HPA and DCO. International Journal of Digital Evidence, 5(1), pp.1-8." .
+
+:citationDFCite-1053 a solveit-core:Citation ;
+    rdfs:label "DFCite-1053" ;
+    solveit-core:citationID "DFCite-1053" ;
+    solveit-core:citationPlaintext "Halderman, J.A., Schoen, S.D., Heninger, N., Clarkson, W., Paul, W., Calandrino, J.A., Feldman, A.J., Appelbaum, J. and Felten, E.W., 2009. Lest we remember: cold-boot attacks on encryption keys. Communications of the ACM, 52(5), pp.91-98." .
+
+:citationDFCite-1057 a solveit-core:Citation ;
+    rdfs:label "DFCite-1057" ;
+    solveit-core:citationID "DFCite-1057" ;
+    solveit-core:citationPlaintext "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140." .
+
+:citationDFCite-1058 a solveit-core:Citation ;
+    rdfs:label "DFCite-1058" ;
+    solveit-core:citationID "DFCite-1058" ;
+    solveit-core:citationPlaintext "Hargreaves, C. and Patterson, J., 2012. An automated timeline reconstruction approach for digital forensic investigations. Digital Investigation, 9, pp.S69-S79." .
+
+:citationDFCite-1064 a solveit-core:Citation ;
+    rdfs:label "DFCite-1064" ;
+    solveit-core:citationID "DFCite-1064" ;
+    solveit-core:citationPlaintext "Horsman, G., 2018. I didn't see that! An examination of internet browser cache behaviour following website visits. Digital Investigation, 25, pp.105-113." .
+
+:citationDFCite-1071 a solveit-core:Citation ;
+    rdfs:label "DFCite-1071" ;
+    solveit-core:citationID "DFCite-1071" ;
+    solveit-core:citationPlaintext "Interpol (2021), Guidelines for digital forensics first responders v7, Ch5 Specific Procedures p34, https://www.interpol.int/content/download/16243/file/Guidelines_to_Digital_Forensics_First_Responders_V7.pdf" .
+
+:citationDFCite-1076 a solveit-core:Citation ;
+    rdfs:label "DFCite-1076" ;
+    solveit-core:citationID "DFCite-1076" ;
+    solveit-core:citationPlaintext "Kanta, A., Coisel, I. and Scanlon, M., 2023. Harder, better, faster, stronger: Optimising the performance of context-based password cracking dictionaries. Forensic Science International: Digital Investigation, 44, p.301507." .
+
+:citationDFCite-1085 a solveit-core:Citation ;
+    rdfs:label "DFCite-1085" ;
+    solveit-core:citationID "DFCite-1085" ;
+    solveit-core:citationPlaintext "Latzo, T., Palutke, R. and Freiling, F., 2019. A universal taxonomy and survey of forensic memory acquisition techniques. Digital Investigation, 28, 56-69." .
+
+:citationDFCite-1086 a solveit-core:Citation ;
+    rdfs:label "DFCite-1086" ;
+    solveit-core:citationID "DFCite-1086" ;
+    solveit-core:citationPlaintext "Lennox-Steele, A., & Nisbet, A. (2016). A forensic examination of several mobile device Faraday bags & materials to test their effectiveness. In Valli, C. (Ed.). (2016). The Proceedings of 14th Australian Digital Forensics Conference, 5-6 December 2016, Edith Cowan University, Perth, Australia. (pp 34-41)." .
+
+:citationDFCite-1089 a solveit-core:Citation ;
+    rdfs:label "DFCite-1089" ;
+    solveit-core:citationID "DFCite-1089" ;
+    solveit-core:citationPlaintext "Lyle, J.R., 2006. A strategy for testing hardware write block devices. digital investigation, 3, pp.3-9." .
+
+:citationDFCite-1111 a solveit-core:Citation ;
+    rdfs:label "DFCite-1111" ;
+    solveit-core:citationID "DFCite-1111" ;
+    solveit-core:citationPlaintext "Pagani, F., Fedorov, O. and Balzarotti, D., 2019. Introducing the temporal dimension to memory forensics. ACM Transactions on Privacy and Security (TOPS), 22(2), 1-21." .
+
+:citationDFCite-1114 a solveit-core:Citation ;
+    rdfs:label "DFCite-1114" ;
+    solveit-core:citationBibtex """@incollection{petersen2022dogs,
+  title={Dogs as Detectors for Hidden Digital Storage Devices: A Pilot Study from the National Police of The Netherlands},
+  author={Petersen, St{\\`e}phan J and Schoon, Adee},
+  booktitle={Canines},
+  pages={535--557},
+  year={2022},
+  publisher={Jenny Stanford Publishing}
+}""" ;
+    solveit-core:citationID "DFCite-1114" ;
+    solveit-core:citationPlaintext "None" .
+
+:citationDFCite-1124 a solveit-core:Citation ;
+    rdfs:label "DFCite-1124" ;
+    solveit-core:citationID "DFCite-1124" ;
+    solveit-core:citationPlaintext "Turner, P. The Remapped/Reallocated Sector Conundrum, Presentation at DFRWS US 2024, https://www.dfrws.org/wp-content/uploads/2023/07/turner-remappedsectors.pdf" .
+
+:citationDFCite-1128 a solveit-core:Citation ;
+    rdfs:label "DFCite-1128" ;
+    solveit-core:citationID "DFCite-1128" ;
+    solveit-core:citationPlaintext "Vömel, S. and Stüttgen, J., 2013. An evaluation platform for forensic memory acquisition software. Digital Investigation, 10, S30-S40." .
+
+:citationDFCite-1130 a solveit-core:Citation ;
+    rdfs:label "DFCite-1130" ;
+    solveit-core:citationID "DFCite-1130" ;
+    solveit-core:citationPlaintext "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64" .
+
+:citationDFCite-1133 a solveit-core:Citation ;
+    rdfs:label "DFCite-1133" ;
+    solveit-core:citationID "DFCite-1133" ;
+    solveit-core:citationPlaintext "X-Ways (2025), X-Ways Manual: Logical Search (section 5.11), https://www.x-ways.net/winhex/manual.pdf" .
+
+:citationDFCite-1134 a solveit-core:Citation ;
+    rdfs:label "DFCite-1134" ;
+    solveit-core:citationID "DFCite-1134" ;
+    solveit-core:citationPlaintext "X-Ways (2025), X-Ways Manual: Simultaneous Search (section 5.10), https://www.x-ways.net/winhex/manual.pdf" .
+
+:citationDFCite-1135 a solveit-core:Citation ;
+    rdfs:label "DFCite-1135" ;
+    solveit-core:citationID "DFCite-1135" ;
+    solveit-core:citationPlaintext "X-Ways - Provides an option called ‘Scan for Lost Partitions’ which explicitly scans for deleted partitions in unallocated space (X-Ways 2024)" .
+
+:citationDFCite-1140 a solveit-core:Citation ;
+    rdfs:label "DFCite-1140" ;
+    solveit-core:citationID "DFCite-1140" ;
+    solveit-core:citationPlaintext "https://www.crowdstrike.com/en-us/guides/syslog-logging/advanced-concepts/" .
+
 :mitigationDFM-1005 a solveit-core:Mitigation ;
     rdfs:label "DFM-1005: Testing to ensure software and hardware setup detects HPAs"@en ;
     solveit-core:mitigationID "DFM-1005" ;
@@ -6228,13 +6930,13 @@ This would include web search URLs such as Google searches but could also includ
 
 :mitigationDFM-1013 a solveit-core:Mitigation ;
     rdfs:label "DFM-1013: Consider memory acquisition and offline analysis instead"@en ;
-    solveit-core:hasReference "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 6" ;
+    solveit-core:hasReference :citationDFCite-1063 ;
     solveit-core:mitigationID "DFM-1013" ;
     solveit-core:mitigationName "Consider memory acquisition and offline analysis instead" .
 
 :mitigationDFM-1015 a solveit-core:Mitigation ;
     rdfs:label "DFM-1015: Use tools only if changes made are to locations where relevant evidence is unlikely to be located."@en ;
-    solveit-core:hasReference "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5" ;
+    solveit-core:hasReference :citationDFCite-1062 ;
     solveit-core:mitigationID "DFM-1015" ;
     solveit-core:mitigationName "Use tools only if changes made are to locations where relevant evidence is unlikely to be located." .
 
@@ -6260,13 +6962,13 @@ This would include web search URLs such as Google searches but could also includ
 
 :mitigationDFM-1032 a solveit-core:Mitigation ;
     rdfs:label "DFM-1032: Evaluation of the effectiveness of wordlist used for case-type searching"@en ;
-    solveit-core:hasReference "Kanta, A. and Hargreaves, C., 2025, August. Measuring the effectiveness of keyword lists in digital forensics. In Proceedings of the 20th International Conference on Availability, Reliability and Security." ;
+    solveit-core:hasReference :citationDFCite-1074 ;
     solveit-core:mitigationID "DFM-1032" ;
     solveit-core:mitigationName "Evaluation of the effectiveness of wordlist used for case-type searching" .
 
 :mitigationDFM-1033 a solveit-core:Mitigation ;
     rdfs:label "DFM-1033: Prioritization of search results based on context"@en ;
-    solveit-core:hasReference "Beebe, N.L. and Liu, L., 2014. Ranking algorithms for digital forensic string search hits. Digital Investigation, 11, pp.S124-S132." ;
+    solveit-core:hasReference :citationDFCite-1014 ;
     solveit-core:mitigationID "DFM-1033" ;
     solveit-core:mitigationName "Prioritization of search results based on context" .
 
@@ -6322,13 +7024,13 @@ This would include web search URLs such as Google searches but could also includ
 
 :mitigationDFM-1092 a solveit-core:Mitigation ;
     rdfs:label "DFM-1092: Optimise dictionary"@en ;
-    solveit-core:hasReference "Kanta, A., Coisel, I. and Scanlon, M., 2023. Harder, better, faster, stronger: Optimising the performance of context-based password cracking dictionaries. Forensic Science International: Digital Investigation, 44, p.301507." ;
+    solveit-core:hasReference :citationDFCite-1076 ;
     solveit-core:mitigationID "DFM-1092" ;
     solveit-core:mitigationName "Optimise dictionary" .
 
 :mitigationDFM-1094 a solveit-core:Mitigation ;
     rdfs:label "DFM-1094: Include contextual information when assembling the dictionary"@en ;
-    solveit-core:hasReference "Kanta, A., Coisel, I. and Scanlon, M., 2023. Harder, better, faster, stronger: Optimising the performance of context-based password cracking dictionaries. Forensic Science International: Digital Investigation, 44, p.301507." ;
+    solveit-core:hasReference :citationDFCite-1076 ;
     solveit-core:mitigationID "DFM-1094" ;
     solveit-core:mitigationName "Include contextual information when assembling the dictionary" .
 
@@ -6392,21 +7094,21 @@ This would include web search URLs such as Google searches but could also includ
 
 :mitigationDFM-1205 a solveit-core:Mitigation ;
     rdfs:label "DFM-1205: Use wordlist generator with case data"@en ;
-    solveit-core:hasReference "Magnet Forensics (2019) Magnet Axiom Wordlist Generator. Magnet Forensics. Available at: https://www.magnetforensics.com/resources/magnet-axiom-wordlist-generator/",
-        "Magnet Forensics (2019) Utilizing AXIOM Wordlist Generator to Optimize Handset Lock Code Breaking, Magnet Forensics, Available at: https://www.magnetforensics.com/blog/utilizing-axiom-wordlist-generator-to-optimize-handset-lock-code-breaking/ " ;
+    solveit-core:hasReference :citationDFCite-1094,
+        :citationDFCite-1095 ;
     solveit-core:mitigationID "DFM-1205" ;
     solveit-core:mitigationName "Use wordlist generator with case data" .
 
 :mitigationDFM-1225 a solveit-core:Mitigation ;
     rdfs:label "DFM-1225: Estimate clock offset at a specific point in time using time anchoring"@en ;
-    solveit-core:hasReference "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759" ;
+    solveit-core:hasReference :citationDFCite-1020 ;
     solveit-core:linksToTechnique :techniqueDFT-1134 ;
     solveit-core:mitigationID "DFM-1225" ;
     solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" .
 
 :mitigationDFM-1232 a solveit-core:Mitigation ;
     rdfs:label "DFM-1232: Adopt a systematic search pattern"@en ;
-    solveit-core:hasReference "Fisher & Fisher. 2012, Techniques of Crime Scene Investigation, Eighth Edition, p82" ;
+    solveit-core:hasReference :citationDFCite-1043 ;
     solveit-core:mitigationDescription "According to Fisher & Fisher (2012): \"Criminal investigation texts recommend a variety of search patterns: the strip or lane search, grid search, spiral search, and quadrant search. \" " ;
     solveit-core:mitigationID "DFM-1232" ;
     solveit-core:mitigationName "Adopt a systematic search pattern" .
@@ -6439,7 +7141,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1005 ;
-    solveit-core:hasReference "Petersen, S.J. and Schoon, A., 2022. Dogs as Detectors for Hidden Digital Storage Devices: A Pilot Study from the National Police of The Netherlands. In Canines (pp. 535-557). Jenny Stanford Publishing." ;
+    solveit-core:hasReference :citationDFCite-1114 ;
     solveit-core:hasSynonym "Digital Storage Device Dogs" ;
     solveit-core:techniqueDescription "The use of canines to locate obscured digital storage devices." ;
     solveit-core:techniqueID "DFT-1006" ;
@@ -6454,7 +7156,7 @@ This would include web search URLs such as Google searches but could also includ
         :weaknessDFW-1010,
         :weaknessDFW-1011,
         :weaknessDFW-1012 ;
-    solveit-core:hasReference "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140." ;
+    solveit-core:hasReference :citationDFCite-1057 ;
     solveit-core:techniqueDescription "A technique developed in Hargreaves & Marshall (2018) whereby synchronisation artefacts on a device are examined and used to identify the existence of a related device. Also sometimes used to infer activity that occurred on an inaccessible or unavailable device. " ;
     solveit-core:techniqueID "DFT-1007" ;
     solveit-core:techniqueName "Use a SyncTriage-based approach to detect existence of devices" .
@@ -6463,7 +7165,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFT-1013: Use software write blockers to provide read only access to storage media"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
-    solveit-core:hasReference "NIST (2006) NIST SP 800-86 Guide to Integrating Forensic Techniques into Incident Response, https://doi.org/10.6028/NIST.SP.800-86" ;
+    solveit-core:hasReference :citationDFCite-1102 ;
     solveit-core:techniqueDescription "Use of a software-based tool that prevents a computer from writing to computer storage media connected to it (NIST 2006)" ;
     solveit-core:techniqueDetails "Note that both read/write and write protected interfaces are specified as input since a software write blocker could be applied to a hardware write protected interface." ;
     solveit-core:techniqueID "DFT-1013" ;
@@ -6479,9 +7181,9 @@ This would include web search URLs such as Google searches but could also includ
         :weaknessDFW-1162,
         :weaknessDFW-1163,
         :weaknessDFW-1164 ;
-    solveit-core:hasReference "Cellebrite (undated), Full File System Extraction - Mobile Device Forensics, https://cellebrite.com/en/glossary/full-file-system-extraction-mobile-device-forensics/",
-        "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169.",
-        "Magnet (2024) Revealing hidden data: Full file system extractions uncovered, https://www.magnetforensics.com/blog/revealing-hidden-data-full-file-system-extractions-uncovered/" ;
+    solveit-core:hasReference :citationDFCite-1031,
+        :citationDFCite-1045,
+        :citationDFCite-1091 ;
     solveit-core:techniqueDescription "Accessing the file system(s) of the device and extracting a set of files (full or partial depending on level of access)" ;
     solveit-core:techniqueDetails "Note that Fukami et al (2021) states \"In order to conduct effective file system extraction, rooting the device is required.\" See T1040. Usually results in a zip/tar file. Rooting may provide access to the file system, but files may still be encrypted. Attacking the user pin, usually on device, using T1034, or T1035 may be necessary, unless the PIN can be obtained from the device user (T1037)" ;
     solveit-core:techniqueID "DFT-1020" ;
@@ -6503,9 +7205,9 @@ This would include web search URLs such as Google searches but could also includ
         :weaknessDFW-1126,
         :weaknessDFW-1127,
         :weaknessDFW-1128 ;
-    solveit-core:hasReference "Kessler GC. The impact of SHA-1 file hash collisions on digital forensic imaging: A follow-up experiment. Journal of Digital Forensics, Security and Law. 2016;11(4):10.",
-        "Kessler, G.C., 2016. The impact of MD5 file hash collisions on digital forensic imaging. Journal of digital forensics, security and law, 11(4), p.9.",
-        "Lyle, J., 2002. Testing disk imaging tools. DFRWS USA 2002, https://dfrws.org/wp-content/uploads/2019/06/2002_USA_paper-testing_disk_imaging_tools.pdf" ;
+    solveit-core:hasReference :citationDFCite-1081,
+        :citationDFCite-1083,
+        :citationDFCite-1088 ;
     solveit-core:techniqueDescription "Computing the hash function of the entire contents of a disk, recording it, and then subsequently computing the hash over any disk image created to detect if any content is different (adapted from Lyle 2002)" ;
     solveit-core:techniqueID "DFT-1042" ;
     solveit-core:techniqueName "Hash verification of source device against stored data" .
@@ -6530,7 +7232,7 @@ This would include web search URLs such as Google searches but could also includ
 :techniqueDFT-1110 a solveit-core:Technique ;
     rdfs:label "DFT-1110: Preserving reference data"@en ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1172 ;
-    solveit-core:hasReference "Spichiger, H. and Adelstein, F., 2025. Preserving meaning of evidence from evolving systems. Forensic Science International: Digital Investigation, 52, p.301867." ;
+    solveit-core:hasReference :citationDFCite-1118 ;
     solveit-core:techniqueDetails "Reference data may be needed for later trace interpretation, but may change (especially server side software), so relevant data should be preserved close to the time of the event of interest" ;
     solveit-core:techniqueID "DFT-1110" ;
     solveit-core:techniqueName "Preserving reference data" .
@@ -6556,9 +7258,9 @@ This would include web search URLs such as Google searches but could also includ
         :weaknessDFW-1179,
         :weaknessDFW-1180,
         :weaknessDFW-1182 ;
-    solveit-core:hasReference "Interpol (2021), Guidelines for digital forensics first responders v7, Ch5 Specific Procedures p34, https://www.interpol.int/content/download/16243/file/Guidelines_to_Digital_Forensics_First_Responders_V7.pdf",
-        "Paladin Forensic Suite, https://sumuri.com/software/paladin/",
-        "WinFE, https://www.winfe.net" ;
+    solveit-core:hasReference :citationDFCite-1071,
+        :citationDFCite-1112,
+        :citationDFCite-1132 ;
     solveit-core:techniqueDescription "Booting the suspected computer device into forensically-sound bootable software-write blocked operating system in order to image the disks." ;
     solveit-core:techniqueID "DFT-1113" ;
     solveit-core:techniqueName "Access internal storage via bootable environment" .
@@ -6571,8 +7273,8 @@ This would include web search URLs such as Google searches but could also includ
         "https://ontology.unifiedcyberontology.org/uco/observable/tableSchema"^^xsd:anyURI ;
     solveit-core:hasExample "Discussed in 'Puma: Automatically generating digital forensic reference data triggered by mobile application updates' (Claij-Swart et al. 2025)" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1191 ;
-    solveit-core:hasReference "Claij-Swart et al. (2025), PUMA (Programmable Utility for Mobile Automation), https://github.com/NetherlandsForensicInstitute/puma",
-        "Claij-Swart, A.A., Oudsen, E., Timbermont, B., Hargreaves, C. and Voigt, L.L., 2025. Automatically generating digital forensic reference data triggered by mobile application updates. Forensic Science International: Digital Investigation, 54, p.301985." ;
+    solveit-core:hasReference :citationDFCite-1033,
+        :citationDFCite-1034 ;
     solveit-core:hasSynonym "App update monitoring" ;
     solveit-core:techniqueDescription "Monitor every version change of an application to determine if there are changes to the way the app stores data" ;
     solveit-core:techniqueID "DFT-1119" ;
@@ -6582,8 +7284,8 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFT-1127: Keyword search (live) (logical)"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1195 ;
-    solveit-core:hasReference "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31",
-        "X-Ways (2025), X-Ways Manual: Logical Search (section 5.11), https://www.x-ways.net/winhex/manual.pdf" ;
+    solveit-core:hasReference :citationDFCite-1103,
+        :citationDFCite-1133 ;
     solveit-core:hasSynonym "live search" ;
     solveit-core:techniqueDescription "Searching for keywords over the raw data, without an index of text content, but on a file by file basis" ;
     solveit-core:techniqueDetails "This approach can include decoding the individual file formats and content. It can also overcome limitations associated with compressed data or data split due to file fragmentation." ;
@@ -6592,8 +7294,8 @@ This would include web search URLs such as Google searches but could also includ
 
 :techniqueDFT-1129 a solveit-core:Technique ;
     rdfs:label "DFT-1129: Search for indicators of clock tampering"@en ;
-    solveit-core:hasReference "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755.",
-        "Vanini, C., Hargreaves, C.J., van Beek, H. and Breitinger, F., 2024. Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction. Forensic Science International: Digital Investigation, 49, p.301759." ;
+    solveit-core:hasReference :citationDFCite-1039,
+        :citationDFCite-1127 ;
     solveit-core:techniqueDescription "Searching for indicators that the system clock has been tampered with" ;
     solveit-core:techniqueID "DFT-1129" ;
     solveit-core:techniqueName "Search for indicators of clock tampering" .
@@ -6608,7 +7310,7 @@ This would include web search URLs such as Google searches but could also includ
         :weaknessDFW-1261,
         :weaknessDFW-1262,
         :weaknessDFW-1263 ;
-    solveit-core:hasReference "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759" ;
+    solveit-core:hasReference :citationDFCite-1020 ;
     solveit-core:hasSynonym "Time anchoring (Vanini et al 2024)",
         "Timestamp correlation" ;
     solveit-core:techniqueDescription "Correlate timestamps from the system clock and an external trusted time source (Time Anchoring)" ;
@@ -6640,7 +7342,7 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFT-1158: Configure device to enable a service needed for data extraction"@en ;
     solveit-core:hasExample "Turn on developer mode to make use of Android Debug Bridge (ADB)" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1274 ;
-    solveit-core:hasReference "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" ;
+    solveit-core:hasReference :citationDFCite-1004 ;
     solveit-core:techniqueDescription "Change a setting on a device such that a service needed for data extraction is enabled. This may require a user PIN that can be obtained using other techniques." ;
     solveit-core:techniqueID "DFT-1158" ;
     solveit-core:techniqueName "Configure device to enable a service needed for data extraction" .
@@ -6660,7 +7362,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1032 a solveit-core:Weakness ;
     rdfs:label "DFW-1032: Not all memory is acquired"@en ;
-    solveit-core:hasReference "Vömel, S. and Stüttgen, J., 2013. An evaluation platform for forensic memory acquisition software. Digital Investigation, 10, S30-S40." ;
+    solveit-core:hasReference :citationDFCite-1128 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -6724,7 +7426,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1132 a solveit-core:Weakness ;
     rdfs:label "DFW-1132: Incorrectly computing the hash of one or more files within a disk image due to incorrect hash algorithm implementation"@en ;
-    solveit-core:hasReference "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." ;
+    solveit-core:hasReference :citationDFCite-1060 ;
     solveit-core:mayResultInINAC_ALT true ;
     solveit-core:mayResultInINAC_AS true ;
     solveit-core:mayResultInINAC_COR false ;
@@ -6751,7 +7453,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :weaknessDFW-1150 a solveit-core:Weakness ;
     rdfs:label "DFW-1150: Misinterpreting events from automated processes as user generated ones"@en ;
-    solveit-core:hasReference "Jens-Petter Sandvik, André Årnes, 2018. The reliability of clocks as digital evidence under low voltage conditions. Digital Investigation, 24, pp.S10-S17." ;
+    solveit-core:hasReference :citationDFCite-1073 ;
     solveit-core:mayResultInINAC_ALT false ;
     solveit-core:mayResultInINAC_AS false ;
     solveit-core:mayResultInINAC_COR false ;
@@ -6788,15 +7490,60 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:weaknessID "DFW-1266" ;
     solveit-core:weaknessName "Timestamp used is an inaccurate representation of the real world time due to timezone and/or daylight savings" .
 
+:citationDFCite-1004 a solveit-core:Citation ;
+    rdfs:label "DFCite-1004" ;
+    solveit-core:citationID "DFCite-1004" ;
+    solveit-core:citationPlaintext "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" .
+
+:citationDFCite-1021 a solveit-core:Citation ;
+    rdfs:label "DFCite-1021" ;
+    solveit-core:citationID "DFCite-1021" ;
+    solveit-core:citationPlaintext "Caithness 2012, The Forensic Implications of SQLite’s Write Ahead Log, https://digitalinvestigation.wordpress.com/2012/05/04/the-forensic-implications-of-sqlites-write-ahead-log/" .
+
+:citationDFCite-1024 a solveit-core:Citation ;
+    rdfs:label "DFCite-1024" ;
+    solveit-core:citationID "DFCite-1024" ;
+    solveit-core:citationPlaintext "Carrier, B., 2005. File system forensic analysis. Addison-Wesley Professional." .
+
+:citationDFCite-1025 a solveit-core:Citation ;
+    rdfs:label "DFCite-1025" ;
+    solveit-core:citationID "DFCite-1025" ;
+    solveit-core:citationPlaintext "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33." .
+
+:citationDFCite-1039 a solveit-core:Citation ;
+    rdfs:label "DFCite-1039" ;
+    solveit-core:citationID "DFCite-1039" ;
+    solveit-core:citationPlaintext "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755." .
+
+:citationDFCite-1062 a solveit-core:Citation ;
+    rdfs:label "DFCite-1062" ;
+    solveit-core:citationID "DFCite-1062" ;
+    solveit-core:citationPlaintext "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5" .
+
+:citationDFCite-1068 a solveit-core:Citation ;
+    rdfs:label "DFCite-1068" ;
+    solveit-core:citationID "DFCite-1068" ;
+    solveit-core:citationPlaintext "ISO 21043-5:2025 - Forensic sciences — Part 5: Reporting" .
+
+:citationDFCite-1082 a solveit-core:Citation ;
+    rdfs:label "DFCite-1082" ;
+    solveit-core:citationID "DFCite-1082" ;
+    solveit-core:citationPlaintext "Kessler, G.C., 2007. Anti-forensics and the digital investigator." .
+
+:citationDFCite-1113 a solveit-core:Citation ;
+    rdfs:label "DFCite-1113" ;
+    solveit-core:citationID "DFCite-1113" ;
+    solveit-core:citationPlaintext "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103." .
+
 :mitigationDFM-1002 a solveit-core:Mitigation ;
     rdfs:label "DFM-1002: Testing of the faraday environment to be used"@en ;
-    solveit-core:hasReference "Lennox-Steele, A., & Nisbet, A. (2016). A forensic examination of several mobile device Faraday bags & materials to test their effectiveness. In Valli, C. (Ed.). (2016). The Proceedings of 14th Australian Digital Forensics Conference, 5-6 December 2016, Edith Cowan University, Perth, Australia. (pp 34-41)." ;
+    solveit-core:hasReference :citationDFCite-1086 ;
     solveit-core:mitigationID "DFM-1002" ;
     solveit-core:mitigationName "Testing of the faraday environment to be used" .
 
 :mitigationDFM-1014 a solveit-core:Mitigation ;
     rdfs:label "DFM-1014: Test and document changes made by the tools used"@en ;
-    solveit-core:hasReference "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5" ;
+    solveit-core:hasReference :citationDFCite-1062 ;
     solveit-core:mitigationID "DFM-1014" ;
     solveit-core:mitigationName "Test and document changes made by the tools used" .
 
@@ -6859,9 +7606,9 @@ This would include web search URLs such as Google searches but could also includ
 
 :mitigationDFM-1112 a solveit-core:Mitigation ;
     rdfs:label "DFM-1112: Use of AI to classify files in addition to standard programmatic methods"@en ;
-    solveit-core:hasReference "Alam, S. and Demir, A.K., 2024. SIFT: Sifting file types—application of explainable artificial intelligence in cyber forensics. Cybersecurity, 7(1), p.52.",
-        "Karampidis, K. and Papadourakis, G., 2017. File type identification-computational intelligence for digital forensics. Journal of Digital Forensics, Security and Law, 12(2), p.6.",
-        "https://www.opswat.com/blog/accurate-file-type-detection-powered-by-ai" ;
+    solveit-core:hasReference :citationDFCite-1002,
+        :citationDFCite-1078,
+        :citationDFCite-1141 ;
     solveit-core:mitigationID "DFM-1112" ;
     solveit-core:mitigationName "Use of AI to classify files in addition to standard programmatic methods" .
 
@@ -6888,7 +7635,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasPotentialWeakness :weaknessDFW-1118,
         :weaknessDFW-1119,
         :weaknessDFW-1120 ;
-    solveit-core:hasReference "Lyle, J.R., 2006. A strategy for testing hardware write block devices. digital investigation, 3, pp.3-9." ;
+    solveit-core:hasReference :citationDFCite-1089 ;
     solveit-core:techniqueDescription "A hardware write blocking device [should] prevent any change to data in the user area of a hard drive while allowing access to all data on a hard drive. (Lyle 2006)" ;
     solveit-core:techniqueDetails "Note that \"Sometimes it may be desirable to change a drive configuration to obtain access to otherwise hidden sectors, for example, such as within an HPA (host protected area).\" (Lyle 2006) " ;
     solveit-core:techniqueID "DFT-1012" ;
@@ -6907,7 +7654,7 @@ This would include web search URLs such as Google searches but could also includ
         "Checkra1n, https://checkra.in" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1157,
         :weaknessDFW-1158 ;
-    solveit-core:hasReference "Grover, J., 2013. Android forensics: Automated data collection and reporting from a mobile device. Digital Investigation, 10, pp.S12-S20." ;
+    solveit-core:hasReference :citationDFCite-1049 ;
     solveit-core:techniqueDescription "A process that typically exploits a security flaw in a specific device or operating system to enable users to perform higher privileged functions on a device (derived from Grover 2013)" ;
     solveit-core:techniqueID "DFT-1040" ;
     solveit-core:techniqueName "Use mobile device exploit" .
@@ -6916,9 +7663,9 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFT-1125: Keyword search (live)"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1200 ;
-    solveit-core:hasReference "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31",
-        "X-Ways (2025), X-Ways Manual: Logical Search (section 5.11), https://www.x-ways.net/winhex/manual.pdf",
-        "X-Ways (2025), X-Ways Manual: Simultaneous Search (section 5.10), https://www.x-ways.net/winhex/manual.pdf" ;
+    solveit-core:hasReference :citationDFCite-1103,
+        :citationDFCite-1133,
+        :citationDFCite-1134 ;
     solveit-core:hasSynonym "live search" ;
     solveit-core:techniqueDescription "Searching for keywords over the raw data in a case without using an index of text content" ;
     solveit-core:techniqueDetails "This may be done on a physical sector basis, or on a logical (file) basis." ;
@@ -6946,6 +7693,11 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:techniqueID "DFT-1143" ;
     solveit-core:techniqueName "Browser configuration examination" .
 
+:citationDFCite-1070 a solveit-core:Citation ;
+    rdfs:label "DFCite-1070" ;
+    solveit-core:citationID "DFCite-1070" ;
+    solveit-core:citationPlaintext "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence." .
+
 :mitigationDFM-1007 a solveit-core:Mitigation ;
     rdfs:label "DFM-1007: Use hardware write blocker"@en ;
     solveit-core:linksToTechnique :techniqueDFT-1012 ;
@@ -6963,7 +7715,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasPotentialWeakness :weaknessDFW-1140,
         :weaknessDFW-1141,
         :weaknessDFW-1142 ;
-    solveit-core:hasReference "Kanta, A., Coray, S., Coisel, I. and Scanlon, M., 2021. How viable is password cracking in digital forensic investigation? Analyzing the guessability of over 3.9 billion real-world accounts. Forensic Science International: Digital Investigation, 37, p.301186." ;
+    solveit-core:hasReference :citationDFCite-1077 ;
     solveit-core:hasSynonym "exhaustive password search" ;
     solveit-core:techniqueDescription "A brute force attack, or exhaustive search is a password cracking approach where every combination of characters is tested until the correct one is found. This method is \"guaranteed to work\" given infinite time and resources which in a real-life scenario is not feasible." ;
     solveit-core:techniqueDetails "Brute force attack involves trying every possible combination in a defined search space to find the correct value. The search space could be limited to just numbers, for example in the case of a 4-digit PIN number, or alphanumerical values or even the full ASCII character set. The larger the search space, the longer it takes to complete a brute force attack." ;
@@ -6976,7 +7728,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasPotentialWeakness :weaknessDFW-1137,
         :weaknessDFW-1138,
         :weaknessDFW-1139 ;
-    solveit-core:hasReference "Kanta, A., Coisel, I. and Scanlon, M., 2021, December. PCWQ: A framework for evaluating password cracking wordlist quality. In International Conference on Digital Forensics and Cyber Crime (pp. 159-175). Cham: Springer International Publishing." ;
+    solveit-core:hasReference :citationDFCite-1075 ;
     solveit-core:techniqueDescription "A dictionary attack is a password cracking technique where an attacker uses a list of passwords, called a dictionary, to attempt to guess a password." ;
     solveit-core:techniqueDetails "Dictionary attacks use list compiled common passwords that are likely to be used by people, such as dictionary words, names, common patterns or existing lists of popular or leaked passwords.  Therefore, success depends on the quality and of dictionary list." ;
     solveit-core:techniqueID "DFT-1035" ;
@@ -6986,11 +7738,16 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFT-1124: Keyword search (indexed)"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1052 ;
-    solveit-core:hasReference "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31" ;
+    solveit-core:hasReference :citationDFCite-1103 ;
     solveit-core:hasSynonym "indexed search" ;
     solveit-core:techniqueDescription "Searching for keywords within a generated index of data in a case" ;
     solveit-core:techniqueID "DFT-1124" ;
     solveit-core:techniqueName "Keyword search (indexed)" .
+
+:citationDFCite-1103 a solveit-core:Citation ;
+    rdfs:label "DFCite-1103" ;
+    solveit-core:citationID "DFCite-1103" ;
+    solveit-core:citationPlaintext "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31" .
 
 :mitigationDFM-1003 a solveit-core:Mitigation ;
     rdfs:label "DFM-1003: Check image size corresponds with drive label"@en ;
@@ -7012,6 +7769,11 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFM-1154: Testing for live message recovery from AI companion app"@en ;
     solveit-core:mitigationID "DFM-1154" ;
     solveit-core:mitigationName "Testing for live message recovery from AI companion app" .
+
+:citationDFCite-1030 a solveit-core:Citation ;
+    rdfs:label "DFCite-1030" ;
+    solveit-core:citationID "DFCite-1030" ;
+    solveit-core:citationPlaintext "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873." .
 
 :mitigationDFM-1008 a solveit-core:Mitigation ;
     rdfs:label "DFM-1008: Use software write blocker"@en ;
@@ -7073,7 +7835,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :mitigationDFM-1231 a solveit-core:Mitigation ;
     rdfs:label "DFM-1231: Make use of 'paired searching'"@en ;
-    solveit-core:hasReference "Fisher & Fisher. 2012, Techniques of Crime Scene Investigation, Eighth Edition, p82" ;
+    solveit-core:hasReference :citationDFCite-1043 ;
     solveit-core:mitigationDescription "According to Fisher & Fisher (2012): \"Indoor crime scene searches are best done with two persons. One easy way of accomplishing a search in a room is to divide it in half. Each investigator searches one half. After they have done a thorough search, they switch halves.\" " ;
     solveit-core:mitigationID "DFM-1231" ;
     solveit-core:mitigationName "Make use of 'paired searching'" .
@@ -7082,6 +7844,11 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFM-1056: Correlation of message data from third party data (another participant in message thread)"@en ;
     solveit-core:mitigationID "DFM-1056" ;
     solveit-core:mitigationName "Correlation of message data from third party data (another participant in message thread)" .
+
+:citationDFCite-1060 a solveit-core:Citation ;
+    rdfs:label "DFCite-1060" ;
+    solveit-core:citationID "DFCite-1060" ;
+    solveit-core:citationPlaintext "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679." .
 
 :mitigationDFM-1051 a solveit-core:Mitigation ;
     rdfs:label "DFM-1051: Validation of specific file system parsing operation for the file system under consideration"@en ;

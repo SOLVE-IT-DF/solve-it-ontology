@@ -1,5 +1,3033 @@
 [
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1001",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1001"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@misc{brignoni_aleapp_adb_hosts,\n  author = {Brignoni, Alexis},\n  title = {ALEAPP adb\\_hosts.py},\n  year = {n.d.},\n  url = {https://github.com/abrignoni/ALEAPP/blob/main/scripts/artifacts/adb_hosts.py},\n  note = {Android Logs Events And Protobuf Parser (ALEAPP) artifact script}\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1001"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "None"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1002",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1002"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@article{alam2024sift,\n  title={SIFT: Sifting file types—application of explainable artificial intelligence in cyber forensics},\n  author={Alam, Shahid and Demir, Alper Kamil},\n  journal={Cybersecurity},\n  volume={7},\n  number={1},\n  pages={52},\n  year={2024},\n  publisher={Springer}\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1002"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "None"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1003",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1003"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@misc{android_adb,\n  author = {{Android Developers}},\n  title = {Android Debug Bridge (adb)},\n  year = {2025},\n  url = {https://developer.android.com/tools/adb},\n  note = {Official Android developer documentation for ADB}\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1003"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Android (2025), Android Debug Bridge (adb), https://developer.android.com/tools/adb"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1004",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1004"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1004"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1005",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1005"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1005"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Apple (2025) View and restore past versions of documents on Mac https://support.apple.com/en-gb/guide/mac-help/mh40710/mac"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1006",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1006"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1006"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Autopsy Interesting File module, https://sleuthkit.org/autopsy/docs/user-docs/3.1/interesting_page.html"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1007",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1007"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1007"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Basis Technology (2015), Extension Mismatch Detector Module, https://sleuthkit.org/autopsy/docs/user-docs/3.1/extension_mismatch_detector_page.html"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1008",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1008"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1008"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Basis Technology 2019, Reporting, https://sleuthkit.org/autopsy/docs/user-docs/4.12.0/reporting_page.html"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1009",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1009"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1009"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Basis Technology 2019, Tagging, https://sleuthkit.org/autopsy/docs/user-docs/4.12.0/tagging_page.html"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1010",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1010"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1010"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Basis Technology 2020, Autopsy User Documentation: Geolocation Overview, https://sleuthkit.org/autopsy/docs/user-docs/4.13.0/geolocation_page.html"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1011",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1011"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1011"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Basis Technology 2025, PhotoRec Carver Module, https://sleuthkit.org/autopsy/docs/user-docs/4.22.0/photorec_carver_page.html"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1012",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1012"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1012"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Bayor, L., Weinert, C., Maier, C. and Weitzel, T., 2025. Social-Oriented Communication with AI Companions: Benefits, Costs, and Contextual Patterns. Business & Information Systems Engineering, pp.1-19."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1013",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1013"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1013"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Beebe, N.L. and Clark, J.G., 2007. Digital forensic text string searching: Improving information retrieval effectiveness by thematically clustering search results. Digital investigation, 4, pp.49-54."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1014",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1014"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1014"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Beebe, N.L. and Liu, L., 2014. Ranking algorithms for digital forensic string search hits. Digital Investigation, 11, pp.S124-S132."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1015",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1015"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1015"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Belkasoft (undated) Dealing with Apple's USB Restricted Mode, https://belkasoft.com/dealing_with_usb_restricted_mode"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1016",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1016"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1016"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Belkasoft https://belkasoft.com/agent_based_ios_acquisition"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1017",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1017"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1017"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Berggren at al. (2014) TimeSketch, https://timesketch.org"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1018",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1018"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1018"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1019",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1019"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1019"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Breitinger, F., Studiawan, H. and Hargreaves, C., 2025. SoK: Timeline based event reconstruction for digital forensics: Terminology, methodology, and current challenges."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1020",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1020"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1020"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1021",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1021"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1021"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Caithness 2012, The Forensic Implications of SQLite’s Write Ahead Log, https://digitalinvestigation.wordpress.com/2012/05/04/the-forensic-implications-of-sqlites-write-ahead-log/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1022",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1022"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1022"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Caithness 2024, Time travelling with SQLite Journals and WAL, https://www.cclsolutionsgroup.com/post/time-travelling-with-sqlite-journals-and-wal"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1023",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1023"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1023"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Campbell, W., 2013. Volatile memory acquisition tools–A comparison across taint and correctness. 11th Australian Digital Forensics Conference. Edith Cowan University, Perth, Western Australia."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1024",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1024"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1024"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Carrier, B., 2005. File system forensic analysis. Addison-Wesley Professional."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1025",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1025"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1025"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1026",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1026"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1026"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Casey et al (2011) The growing impact of full disk encryption on digital forensics, https://www.sciencedirect.com/science/article/abs/pii/S1742287611000727?via%3Dihub"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1027",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Casey, E. and Jaquet-Chiffelle, D.O., 2019. Do identities matter?. Policing: A Journal of Policy and Practice, 13(1), pp.21-34."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1028",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1028"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1028"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Casey, E., 2011. Digital evidence and computer crime: Forensic science, computers, and the internet. Academic press, Section 8.1.2"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1029",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1029"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1029"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Casey, E., 2011. Digital evidence and computer crime: Forensic science, computers, and the internet. Academic press, Section 8.1.3"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1030",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1030"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1030"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1031",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1031"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1031"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Cellebrite (undated), Full File System Extraction - Mobile Device Forensics, https://cellebrite.com/en/glossary/full-file-system-extraction-mobile-device-forensics/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1032",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1032"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1032"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Chivers, H., 2014. Private browsing: A window of forensic opportunity. Digital Investigation, 11(1), pp.20-29."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1033",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1033"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1033"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Claij-Swart et al. (2025), PUMA (Programmable Utility for Mobile Automation), https://github.com/NetherlandsForensicInstitute/puma"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1034",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1034"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1034"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Claij-Swart, A.A., Oudsen, E., Timbermont, B., Hargreaves, C. and Voigt, L.L., 2025. Automatically generating digital forensic reference data triggered by mobile application updates. Forensic Science International: Digital Investigation, 54, p.301985."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1035",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1035"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1035"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1036",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1036"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1036"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "DSTL Digital Forensics Bulletin, TRIM & Garbage Collection on SSDs, Edition 27, July 2024 DSTL/PUB160897, https://mailchi.mp/3b5bda81ff5f/digital-forensic-bulletin-edition27-trim-and-garbage-collection-on-ssds9445401"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1037",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1037"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1037"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Dickinson (2020) ‘Privacy by design – 10 ways MSAB can help you meet the challenges.’ MSAB Blog. Available at: https://www.msab.com/blog/privacy-by-design-10-ways-msab-can-help-you-meet-the-challenges/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1038",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1038"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1038"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Digital Detective Knowledgebase https://kb.digital-detective.net/display/BF"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1039",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1039"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1039"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1040",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1040"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1040"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Dubettier, A., Gernot, T., Giguet, E. and Rosenberger, C., 2023. File type identification tools for digital investigations. Forensic Science International: Digital Investigation, 46, p.301574."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1041",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1041"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1041"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Elcomsoft 20203 https://blog.elcomsoft.com/2023/07/ios-device-acquisition-installing-the-extraction-agent/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1042",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1042"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1042"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Elcomsoft 2021, Forensically Sound checkm8 Based Extraction of iPhone 5s, 6, 6s and SE, https://blog.elcomsoft.com/2021/05/checkm8-based-extraction-of-iphone-5s-6-6s-and-se/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1043",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1043"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1043"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Fisher & Fisher. 2012, Techniques of Crime Scene Investigation, Eighth Edition, p82"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1044",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1044"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1044"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Forensic Science Regulator (2025) Incident scene examination (FSR-GUI-0006). GOV.UK. Available at: https://www.gov.uk/government/publications/incident-scene-examination-fsr-gui-0006"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1045",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1045"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1045"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1046",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1046"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1046"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Geus, J., Gruber, J., Wozar, J. and Freiling, F., 2025. From sync to seizure: A binary instrumentation-based evaluation of the iCloud backup process. Forensic Science International: Digital Investigation, 54, p.301978."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1047",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1047"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1047"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Google (2025) Content provider basics. Available at: https://developer.android.com/guide/topics/providers/content-provider-basics."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1048",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1048"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1048"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Grenier (2023) PhotoRec, https://www.cgsecurity.org/wiki/PhotoRec"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1049",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1049"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1049"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Grover, J., 2013. Android forensics: Automated data collection and reporting from a mobile device. Digital Investigation, 10, pp.S12-S20."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1050",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1050"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1050"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Groß, T., Dirauf, R. and Freiling, F., 2020, May. Systematic analysis of browser history evidence. In 2020 13th International Conference on Systematic Approaches to Digital Forensic Engineering (SADFE) (pp. 1-12). IEEE."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1051",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1051"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1051"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Gruhn, M. and Freiling, F.C., 2016. Evaluating atomicity, and integrity of correct memory acquisition methods. Digital Investigation, 16, S1-S10."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1052",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1052"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1052"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Gupta, M.R., Hoeschele, M.D. and Rogers, M.K., 2006. Hidden disk areas: HPA and DCO. International Journal of Digital Evidence, 5(1), pp.1-8."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1053",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1053"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1053"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Halderman, J.A., Schoen, S.D., Heninger, N., Clarkson, W., Paul, W., Calandrino, J.A., Feldman, A.J., Appelbaum, J. and Felten, E.W., 2009. Lest we remember: cold-boot attacks on encryption keys. Communications of the ACM, 52(5), pp.91-98."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1054",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1054"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1054"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves & Chivers 2008b. Avoiding Live Imaging of Large Encrypted Volumes by Recovering Keys from Memory, Proceedings from 3rd Advances in Computer Security and Forensics"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1055",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1055"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1055"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves & Drury, 2025, Forensic Analysis of AI Applications: A Replika \"AI Companion\" example, WSDF 2025"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1056",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1056"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1056"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves, C. and Chivers, H., 2008, March. Recovery of encryption keys from memory using a linear scan. In 2008 Third International Conference on Availability, Reliability and Security (pp. 1369-1376). IEEE."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1057",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1057"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1057"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1058",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1058"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1058"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves, C. and Patterson, J., 2012. An automated timeline reconstruction approach for digital forensic investigations. Digital Investigation, 9, pp.S69-S79."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1059",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1059"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1059"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves, C., Chivers, H. and Titheridge, D., 2008. Windows Vista and digital investigations. Digital Investigation, 5(1-2), pp.34-48."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1060"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1060"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1061",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1061"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1061"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves, C., Repository for 'An abstract model for digital forensic analysis tools - A foundation for systematic error mitigation analysis', https://github.com/chrishargreaves/digital-forensic-tool-abstractions/tree/main"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1062",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1062"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1062"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1063",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1063"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1063"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 6"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1064",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1064"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1064"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Horsman, G., 2018. I didn't see that! An examination of internet browser cache behaviour following website visits. Digital Investigation, 25, pp.105-113."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1065",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1065"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1065"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Horsman, G., 2019. A forensic examination of online search facility URL record structures. Journal of forensic sciences, 64(1), pp.236-242."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1066",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1066"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1066"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Horsman, G., 2020. The challenge of identifying historic ‘private browsing’sessions on suspect devices. Forensic Science International: Digital Investigation, 34, p.300980."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1067",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1067"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1067"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Hoy, J., 2023. Forensic radio survey techniques for cell site analysis. John Wiley & Sons."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1068",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1068"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1068"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "ISO 21043-5:2025 - Forensic sciences — Part 5: Reporting"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1069",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1069"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1069"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Im, S., Park, H., Joun, J., Lee, S. and Park, J., 2024. Revisiting logical image formats for future digital forensics: A comprehensive analysis on L01 and AFF4-L. Forensic Science International: Digital Investigation, 50"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1070",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1070"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1070"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1071",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1071"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1071"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Interpol (2021), Guidelines for digital forensics first responders v7, Ch5 Specific Procedures p34, https://www.interpol.int/content/download/16243/file/Guidelines_to_Digital_Forensics_First_Responders_V7.pdf"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1072",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1072"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1072"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Jenny Ottmann, Üsame Cengiz, Frank Breitinger, and Felix Freiling, 2023. As if Time Had Stopped – Checking Memory Dumps for Quasi-Instantaneous Consistency. In Proceedings of the Digital Forensics Research Conference USA (DFRWS USA), Baltimore, MD, July 2023."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1073",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1073"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1073"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Jens-Petter Sandvik, André Årnes, 2018. The reliability of clocks as digital evidence under low voltage conditions. Digital Investigation, 24, pp.S10-S17."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1074",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1074"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1074"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kanta, A. and Hargreaves, C., 2025, August. Measuring the effectiveness of keyword lists in digital forensics. In Proceedings of the 20th International Conference on Availability, Reliability and Security."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1075",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1075"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1075"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kanta, A., Coisel, I. and Scanlon, M., 2021, December. PCWQ: A framework for evaluating password cracking wordlist quality. In International Conference on Digital Forensics and Cyber Crime (pp. 159-175). Cham: Springer International Publishing."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1076",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1076"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1076"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kanta, A., Coisel, I. and Scanlon, M., 2023. Harder, better, faster, stronger: Optimising the performance of context-based password cracking dictionaries. Forensic Science International: Digital Investigation, 44, p.301507."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1077",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1077"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1077"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kanta, A., Coray, S., Coisel, I. and Scanlon, M., 2021. How viable is password cracking in digital forensic investigation? Analyzing the guessability of over 3.9 billion real-world accounts. Forensic Science International: Digital Investigation, 37, p.301186."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1078",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1078"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1078"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Karampidis, K. and Papadourakis, G., 2017. File type identification-computational intelligence for digital forensics. Journal of Digital Forensics, Security and Law, 12(2), p.6."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1079",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1079"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1079"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kemmerich, T., Junge, F., Kuntze, N., Rudolph, C., Endicott-Popovsky, B. and Großkopf, L., 2014. Generation and handling of hard drive duplicates as piece of evidence."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1080",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1080"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1080"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kent, K., Chevalier, S., Grance, T. & Dang, H. (2006) Guide to Integrating Forensic Techniques into Incident Response. NIST Special Publication 800‑86. National Institute of Standards and Technology (NIST). Available at: https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-86.pdf"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1081",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1081"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1081"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kessler GC. The impact of SHA-1 file hash collisions on digital forensic imaging: A follow-up experiment. Journal of Digital Forensics, Security and Law. 2016;11(4):10."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1082",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1082"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1082"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kessler, G.C., 2007. Anti-forensics and the digital investigator."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1083",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1083"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1083"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kessler, G.C., 2016. The impact of MD5 file hash collisions on digital forensic imaging. Journal of digital forensics, security and law, 11(4), p.9."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1084",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1084"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1084"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Kornblum, J.D., 2007. Using every part of the buffalo in Windows memory analysis. Digital Investigation, 4(1), pp.24-29."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1085",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1085"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1085"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Latzo, T., Palutke, R. and Freiling, F., 2019. A universal taxonomy and survey of forensic memory acquisition techniques. Digital Investigation, 28, 56-69."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1086",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1086"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1086"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Lennox-Steele, A., & Nisbet, A. (2016). A forensic examination of several mobile device Faraday bags & materials to test their effectiveness. In Valli, C. (Ed.). (2016). The Proceedings of 14th Australian Digital Forensics Conference, 5-6 December 2016, Edith Cowan University, Perth, Australia. (pp 34-41)."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1087",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1087"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1087"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Leschke, T.R. and Nicholas, C., 2013, October. Change-link 2.0: a digital forensic tool for visualizing changes to shadow volume data. In Proceedings of the Tenth Workshop on Visualization for Cyber Security (pp. 17-24)."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1088",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1088"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1088"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Lyle, J., 2002. Testing disk imaging tools. DFRWS USA 2002, https://dfrws.org/wp-content/uploads/2019/06/2002_USA_paper-testing_disk_imaging_tools.pdf"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1089",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1089"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1089"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Lyle, J.R., 2006. A strategy for testing hardware write block devices. digital investigation, 3, pp.3-9."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1090",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1090"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1090"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Magazinius, J., Rios, B.K. and Sabelfeld, A., 2013, November. Polyglots: crossing origins by crossing formats. In Proceedings of the 2013 ACM SIGSAC conference on Computer & communications security (pp. 753-764)."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1091",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1091"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1091"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Magnet (2024) Revealing hidden data: Full file system extractions uncovered, https://www.magnetforensics.com/blog/revealing-hidden-data-full-file-system-extractions-uncovered/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1092",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1092"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1092"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Magnet 2020, Using the Geolocation Data Filter in Magnet AXIOM & AXIOM Cyber, https://www.magnetforensics.com/blog/using-the-geolocation-data-filter-in-magnet-axiom-axiom-cyber/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1093",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1093"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1093"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Magnet 2024, Moving in the right direction with Animated maps, https://www.magnetforensics.com/blog/moving-in-the-right-direction-with-animated-maps/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1094",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1094"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1094"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Magnet Forensics (2019) Magnet Axiom Wordlist Generator. Magnet Forensics. Available at: https://www.magnetforensics.com/resources/magnet-axiom-wordlist-generator/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1095",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1095"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1095"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Magnet Forensics (2019) Utilizing AXIOM Wordlist Generator to Optimize Handset Lock Code Breaking, Magnet Forensics, Available at: https://www.magnetforensics.com/blog/utilizing-axiom-wordlist-generator-to-optimize-handset-lock-code-breaking/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1096",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1096"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1096"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Martignoni, L., Fattori, A., Paleari, R. and Cavallaro, L., 2010. Live and trustworthy forensic analysis of commodity production systems. In International Workshop on Recent Advances in Intrusion Detection (pp. 297-316). Berlin, Heidelberg: Springer Berlin Heidelberg."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1097",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1097"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1097"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "McGee, J. (2022). An Alternate Location for Deleted SMS/iMessage Data in Apple Devices. DFIR Review. Retrieved from https://dfir.pubpub.org/pub/yp6efc8q"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1098",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1098"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1098"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "McQuaid, J. (2017) Using Keywords with Magnet AXIOM, Magnet Forensics, https://www.magnetforensics.com/blog/using-keywords-with-magnet-axiom/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1099",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1099"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1099"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Mendoza, A., Kumar, A., Midcap, D., Cho, H. and Varol, C., 2015. BrowStEx: A tool to aggregate browser storage artifacts for forensic analysis. Digital investigation, 14, pp.63-75."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1100",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1100"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1100"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Metz (2011), Windows Search forensics, https://www.forensicfocus.com/articles/windows-search-forensics/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1101",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1101"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1101"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Mozillazine (2017), Profiles.ini file, https://kb.mozillazine.org/Profiles.ini_file"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1102",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1102"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1102"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "NIST (2006) NIST SP 800-86 Guide to Integrating Forensic Techniques into Incident Response, https://doi.org/10.6028/NIST.SP.800-86"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1103",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1103"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1103"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1104",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1104"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1104"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Nemetz, S., Schmitt, S. and Freiling, F., 2018. A standardized corpus for SQLite database forensics. Digital Investigation, 24, pp.S121-S130."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1105",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1105"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1105"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "New msgstore – Who ‘Dis? A Look At An Updated WhatsApp On Android, https://thebinaryhick.blog/2022/06/09/new-msgstore-who-dis-a-look-at-an-updated-whatsapp-on-android/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1106",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1106"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1106"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Nikkel, B., 2009. Forensic analysis of GPT disks and GUID partition tables. Digital Investigation, 6(1-2), pp.39-47."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1107",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1107"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1107"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, “Forensic Image Acquisition"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1108",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1108"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1108"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Oh, J., Lee, S. and Lee, S., 2011. Advanced evidence collection and analysis of web browser activity. Digital investigation, 8, pp.S62-S70."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1109",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1109"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1109"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Oh, J., Lee, S. and Lee, S., 2011. Advanced evidence collection and analysis of web browser activity. Digital investigation, 8, pp.S62-S70., section 3.6"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1110",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1110"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1110"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Ottmann, J., Breitinger, F. and Freiling, F., 2024. An experimental assessment of inconsistencies in memory forensics. ACM Transactions on Privacy and Security (TOPS). 27, 2:1–2:29."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1111",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1111"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1111"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Pagani, F., Fedorov, O. and Balzarotti, D., 2019. Introducing the temporal dimension to memory forensics. ACM Transactions on Privacy and Security (TOPS), 22(2), 1-21."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1112",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1112"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1112"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Paladin Forensic Suite, https://sumuri.com/software/paladin/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1113",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1113"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1113"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1114",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1114"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@incollection{petersen2022dogs,\n  title={Dogs as Detectors for Hidden Digital Storage Devices: A Pilot Study from the National Police of The Netherlands},\n  author={Petersen, St{\\`e}phan J and Schoon, Adee},\n  booktitle={Canines},\n  pages={535--557},\n  year={2022},\n  publisher={Jenny Stanford Publishing}\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1114"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "None"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1115",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1115"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1115"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Roussev, V., Quates, C. and Martell, R., 2013. Real-time digital forensics and triage. Digital Investigation, 10(2), pp.158-167."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1116",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1116"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1116"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Rzepka, L., Ottmann, J., Freiling, F. and Baier, H., 2024. Causal Inconsistencies are Normal in Windows Memory Dumps (too). Digital Threats: Research and Practice."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1117",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1117"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1117"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Schneider, J., Eichhorn, M., Dreier, L.M. and Hargreaves, C., 2024. Applying digital stratigraphy to the problem of recycled storage media. Forensic Science International: Digital Investigation, 49, p.301761."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1118",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1118"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1118"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Spichiger, H. and Adelstein, F., 2025. Preserving meaning of evidence from evolving systems. Forensic Science International: Digital Investigation, 52, p.301867."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1119",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1119"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1119"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Spichiger, H., 2025. Please mind the gap: A taxonomy for addressing the issue of linking person, account and device. Science & Justice, p.101314."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1120",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1120"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1120"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Sreeja, S.C. and Balan, C., 2016, October. Forensic analysis of volume shadow copy in windows 7. In 2016 International Conference on Emerging Technological Trends (ICETT) (pp. 1-6). IEEE."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1121",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1121"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1121"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Tart, M., Brodie, I., Gleed, N. and Matthews, J., 2012. Historic cell site analysis–Overview of principles and survey methodologies. Digital Investigation, 8(3-4), pp.185-193."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1122",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1122"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1122"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "The Zeitgeist Project (2021) https://zeitgeist.freedesktop.org"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1123",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1123"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1123"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Time is not on our side when it comes to Messages in iOS 11, https://smarterforensics.com/2017/09/time-is-not-on-our-side-when-it-comes-to-messages-in-ios-11/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1124",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1124"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1124"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Turner, P. The Remapped/Reallocated Sector Conundrum, Presentation at DFRWS US 2024, https://www.dfrws.org/wp-content/uploads/2023/07/turner-remappedsectors.pdf"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1125",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1125"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1125"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Tyler, J., 2012 p50. XDA Developers' Android Hacker's Toolkit: The Complete Guide to Rooting, ROMs and Theming. John Wiley & Sons"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1126",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1126"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1126"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "V, Kethareswaran; Khurana, Surinder Singh; Singh, Parvinder (2021), “File Carving based Digital Forensic Tools Testing Data Sets (Contiguous Files)”, Mendeley Data, V3, doi: 10.17632/2kh2bdsp5b.3"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1127",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1127"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1127"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Vanini, C., Hargreaves, C.J., van Beek, H. and Breitinger, F., 2024. Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction. Forensic Science International: Digital Investigation, 49, p.301759."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1128",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1128"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1128"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Vömel, S. and Stüttgen, J., 2013. An evaluation platform for forensic memory acquisition software. Digital Investigation, 10, S30-S40."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1129",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1129"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1129"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Waits, C., Akinyele, J.A., Nolan, R. and Rogers, L., 2008. Computer forensics: results of live response inquiry vs. memory image analysis. CERT program, CMU/SEI-2008-TN-017."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1130",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1130"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1130"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1131",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1131"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1131"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Wilson-Kovacs, D., 2020. Effective resource management in digital forensics: An exploratory analysis of triage practices in four English constabularies. Policing: an international journal, 43(1), pp.77-90."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1132",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1132"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1132"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "WinFE, https://www.winfe.net"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1133",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1133"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1133"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "X-Ways (2025), X-Ways Manual: Logical Search (section 5.11), https://www.x-ways.net/winhex/manual.pdf"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1134",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1134"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1134"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "X-Ways (2025), X-Ways Manual: Simultaneous Search (section 5.10), https://www.x-ways.net/winhex/manual.pdf"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1135",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1135"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1135"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "X-Ways - Provides an option called ‘Scan for Lost Partitions’ which explicitly scans for deleted partitions in unallocated space (X-Ways 2024)"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1136",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1136"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1136"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://en.wikipedia.org/wiki/In-system_programming"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1137",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1137"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1137"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://github.com/prosch88/ALEX"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1138",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1138"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1138"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://github.com/prosch88/UFADE"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1139",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1139"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1139"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://support.mobiledit.com/portal/en/kb/articles/app-downgrade"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1140",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1140"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1140"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://www.crowdstrike.com/en-us/guides/syslog-logging/advanced-concepts/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1141",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1141"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1141"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://www.opswat.com/blog/accurate-file-type-detection-powered-by-ai"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1142",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1142"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1142"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://www.oxygenforensics.com/en/resources/downgrade-method-what-should-be-known-before-the-procedure/"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1143",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1143"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@inproceedings{gruhn2015windows,\n  title={Windows NT pagefile. sys virtual memory analysis},\n  author={Gruhn, Michael},\n  booktitle={2015 Ninth International Conference on IT Security Incident Management \\& IT Forensics},\n  pages={3--18},\n  year={2015},\n  organization={IEEE}\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1143"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Gruhn, M., 2015, May. Windows NT pagefile. sys virtual memory analysis. In 2015 Ninth International Conference on IT Security Incident Management & IT Forensics (pp. 3-18). IEEE."
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Mitigation"
@@ -34,7 +3062,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Lennox-Steele, A., & Nisbet, A. (2016). A forensic examination of several mobile device Faraday bags & materials to test their effectiveness. In Valli, C. (Ed.). (2016). The Proceedings of 14th Australian Digital Forensics Conference, 5-6 December 2016, Edith Cowan University, Perth, Australia. (pp 34-41)."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1086"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -296,7 +3324,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 6"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1063"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -323,7 +3351,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1062"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -350,7 +3378,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1062"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -734,7 +3762,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kanta, A. and Hargreaves, C., 2025, August. Measuring the effectiveness of keyword lists in digital forensics. In Proceedings of the 20th International Conference on Availability, Reliability and Security."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1074"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -761,7 +3789,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Beebe, N.L. and Liu, L., 2014. Ranking algorithms for digital forensic string search hits. Digital Investigation, 11, pp.S124-S132."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1014"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -991,7 +4019,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "X-Ways - Provides an option called ‘Scan for Lost Partitions’ which explicitly scans for deleted partitions in unallocated space (X-Ways 2024)"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1135"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -1018,7 +4046,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "X-Ways - Provides an option called ‘Scan for Lost Partitions’ which explicitly scans for deleted partitions in unallocated space (X-Ways 2024)"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1135"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -1402,7 +4430,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Schneider, J., Eichhorn, M., Dreier, L.M. and Hargreaves, C., 2024. Applying digital stratigraphy to the problem of recycled storage media. Forensic Science International: Digital Investigation, 49, p.301761."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1117"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -1517,7 +4545,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Chivers, H., 2014. Private browsing: A window of forensic opportunity. Digital Investigation, 11(1), pp.20-29."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1032"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -1544,7 +4572,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Chivers, H., 2014. Private browsing: A window of forensic opportunity. Digital Investigation, 11(1), pp.20-29."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1032"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
@@ -1576,7 +4604,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Petersen, S.J. and Schoon, A., 2022. Dogs as Detectors for Hidden Digital Storage Devices: A Pilot Study from the National Police of The Netherlands. In Canines (pp. 535-557). Jenny Stanford Publishing."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1114"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
@@ -1608,7 +4636,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1057"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
@@ -1662,7 +4690,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Lyle, J.R., 2006. A strategy for testing hardware write block devices. digital investigation, 3, pp.3-9."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1089"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -1733,7 +4761,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -1804,7 +4832,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "McGee, J. (2022). An Alternate Location for Deleted SMS/iMessage Data in Apple Devices. DFIR Review. Retrieved from https://dfir.pubpub.org/pub/yp6efc8q"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1097"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2007,7 +5035,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Pagani, F., Fedorov, O. and Balzarotti, D., 2019. Introducing the temporal dimension to memory forensics. ACM Transactions on Privacy and Security (TOPS), 22(2), 1-21."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1111"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2034,7 +5062,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Latzo, T., Palutke, R. and Freiling, F., 2019. A universal taxonomy and survey of forensic memory acquisition techniques. Digital Investigation, 28, 56-69."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1085"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2061,10 +5089,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Martignoni, L., Fattori, A., Paleari, R. and Cavallaro, L., 2010. Live and trustworthy forensic analysis of commodity production systems. In International Workshop on Recent Advances in Intrusion Detection (pp. 297-316). Berlin, Heidelberg: Springer Berlin Heidelberg."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1096"
       },
       {
-        "@value": "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1025"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2162,7 +5190,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kanta, A., Coisel, I. and Scanlon, M., 2023. Harder, better, faster, stronger: Optimising the performance of context-based password cracking dictionaries. Forensic Science International: Digital Investigation, 44, p.301507."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1076"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2211,7 +5239,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kanta, A., Coisel, I. and Scanlon, M., 2023. Harder, better, faster, stronger: Optimising the performance of context-based password cracking dictionaries. Forensic Science International: Digital Investigation, 44, p.301507."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1076"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2407,7 +5435,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Turner, P. The Remapped/Reallocated Sector Conundrum, Presentation at DFRWS US 2024, https://www.dfrws.org/wp-content/uploads/2023/07/turner-remappedsectors.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1124"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2632,13 +5660,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "https://www.opswat.com/blog/accurate-file-type-detection-powered-by-ai"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1141"
       },
       {
-        "@value": "Alam, S. and Demir, A.K., 2024. SIFT: Sifting file types—application of explainable artificial intelligence in cyber forensics. Cybersecurity, 7(1), p.52."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1002"
       },
       {
-        "@value": "Karampidis, K. and Papadourakis, G., 2017. File type identification-computational intelligence for digital forensics. Journal of Digital Forensics, Security and Law, 12(2), p.6."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1078"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2888,7 +5916,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1113"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2915,7 +5943,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1113"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2942,10 +5970,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Caithness 2012, The Forensic Implications of SQLite’s Write Ahead Log, https://digitalinvestigation.wordpress.com/2012/05/04/the-forensic-implications-of-sqlites-write-ahead-log/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1021"
       },
       {
-        "@value": "Caithness 2024, Time travelling with SQLite Journals and WAL, https://www.cclsolutionsgroup.com/post/time-travelling-with-sqlite-journals-and-wal"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1022"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -2972,7 +6000,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Caithness 2024, Time travelling with SQLite Journals and WAL, https://www.cclsolutionsgroup.com/post/time-travelling-with-sqlite-journals-and-wal"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1022"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -3136,7 +6164,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey et al (2011) The growing impact of full disk encryption on digital forensics, https://www.sciencedirect.com/science/article/abs/pii/S1742287611000727?via%3Dihub"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1026"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -3163,7 +6191,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey et al (2011) The growing impact of full disk encryption on digital forensics, https://www.sciencedirect.com/science/article/abs/pii/S1742287611000727?via%3Dihub"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1026"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4068,7 +7096,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "https://www.crowdstrike.com/en-us/guides/syslog-logging/advanced-concepts/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1140"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4347,7 +7375,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Horsman, G., 2018. I didn't see that! An examination of internet browser cache behaviour following website visits. Digital Investigation, 25, pp.105-113."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1064"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4396,7 +7424,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Mozillazine (2017), Profiles.ini file, https://kb.mozillazine.org/Profiles.ini_file"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1101"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
@@ -4690,10 +7718,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Magnet Forensics (2019) Magnet Axiom Wordlist Generator. Magnet Forensics. Available at: https://www.magnetforensics.com/resources/magnet-axiom-wordlist-generator/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1094"
       },
       {
-        "@value": "Magnet Forensics (2019) Utilizing AXIOM Wordlist Generator to Optimize Handset Lock Code Breaking, Magnet Forensics, Available at: https://www.magnetforensics.com/blog/utilizing-axiom-wordlist-generator-to-optimize-handset-lock-code-breaking/ "
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1095"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4720,7 +7748,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1070"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4747,10 +7775,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "ISO 21043-5:2025 - Forensic sciences — Part 5: Reporting"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1068"
       },
       {
-        "@value": "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1070"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4777,10 +7805,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "ISO 21043-5:2025 - Forensic sciences — Part 5: Reporting"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1068"
       },
       {
-        "@value": "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1070"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4807,10 +7835,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "ISO 21043-5:2025 - Forensic sciences — Part 5: Reporting"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1068"
       },
       {
-        "@value": "International Organization for Standardization (ISO) (2015) ISO/IEC 27042:2015 Guidelines for the analysis and interpretation of digital evidence."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1070"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4837,7 +7865,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1035"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -5177,7 +8205,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1020"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
@@ -5329,7 +8357,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Fisher & Fisher. 2012, Techniques of Crime Scene Investigation, Eighth Edition, p82"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1043"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
@@ -5361,7 +8389,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Fisher & Fisher. 2012, Techniques of Crime Scene Investigation, Eighth Edition, p82"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1043"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
@@ -5496,7 +8524,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1130"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -5523,10 +8551,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Android (2025), Android Debug Bridge (adb), https://developer.android.com/tools/adb"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1003"
       },
       {
-        "@value": "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1004"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
@@ -5574,6 +8602,33 @@
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
         "@value": "Obtain possible passwords/PIN codes from other devices with limited security"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1240",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1240: Check for indications of disk backed memory pages"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1143"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1240"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Check for indications of disk backed memory pages"
       }
     ]
   },
@@ -6840,20 +9895,20 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Roussev, V., Quates, C. and Martell, R., 2013. Real-time digital forensics and triage. Digital Investigation, 10(2), pp.158-167."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1115"
       },
       {
-        "@value": "Wilson-Kovacs, D., 2020. Effective resource management in digital forensics: An exploratory analysis of triage practices in four English constabularies. Policing: an international journal, 43(1), pp.77-90."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1131"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Digital forensic triage is a partial forensic examination conducted under (significant) time and resource constraints. (Roussev et al 2013)."
+        "@value": "Digital forensic triage is a partial forensic examination conducted under (significant) time and resource constraints [DFCite-1115]."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "Involves the ranking of apprehended digital items in terms of their importance to a case and likelihood that the contain the data require (Wilson-Kovacs 2020). It can involve multiple techniques to identify devices of most interest such as keyword searching, hash matching, media review etc."
+        "@value": "Involves the ranking of apprehended digital items in terms of their importance to a case and likelihood that they contain the data required [DFCite-1131]. It can involve multiple techniques to identify devices of most interest such as keyword searching, hash matching, media review etc."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -6939,7 +9994,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, “Forensic Image Acquisition"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1107"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -7010,13 +10065,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1025"
       },
       {
-        "@value": "Latzo, T., Palutke, R. and Freiling, F., 2019. A universal taxonomy and survey of forensic memory acquisition techniques. Digital Investigation, 28, 56-69."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1085"
       },
       {
-        "@value": "Kornblum, J.D., 2007. Using every part of the buffalo in Windows memory analysis. Digital Investigation, 4(1), pp.24-29."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1084"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -7163,10 +10218,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1018"
       },
       {
-        "@value": "Forensic Science Regulator (2025) Incident scene examination (FSR-GUI-0006). GOV.UK. Available at: https://www.gov.uk/government/publications/incident-scene-examination-fsr-gui-0006"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1044"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -7235,7 +10290,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Petersen, S.J. and Schoon, A., 2022. Dogs as Detectors for Hidden Digital Storage Devices: A Pilot Study from the National Police of The Netherlands. In Canines (pp. 535-557). Jenny Stanford Publishing."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1114"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -7300,7 +10355,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1057"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -7387,7 +10442,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Lennox-Steele, A., & Nisbet, A. (2016). A forensic examination of several mobile device Faraday bags & materials to test their effectiveness. In Valli, C. (Ed.). (2016). The Proceedings of 14th Australian Digital Forensics Conference, 5-6 December 2016, Edith Cowan University, Perth, Australia. (pp 34-41)."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1086"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -7469,7 +10524,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Lyle, J.R., 2006. A strategy for testing hardware write block devices. digital investigation, 3, pp.3-9."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1089"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -7518,7 +10573,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "NIST (2006) NIST SP 800-86 Guide to Integrating Forensic Techniques into Incident Response, https://doi.org/10.6028/NIST.SP.800-86"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1102"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -7679,10 +10734,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Waits, C., Akinyele, J.A., Nolan, R. and Rogers, L., 2008. Computer forensics: results of live response inquiry vs. memory image analysis. CERT program, CMU/SEI-2008-TN-017."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1129"
       },
       {
-        "@value": "Kent, K., Chevalier, S., Grance, T. & Dang, H. (2006) Guide to Integrating Forensic Techniques into Incident Response. NIST Special Publication 800‑86. National Institute of Standards and Technology (NIST). Available at: https://nvlpubs.nist.gov/nistpubs/legacy/sp/nistspecialpublication800-86.pdf "
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1080"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -7886,13 +10941,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Cellebrite (undated), Full File System Extraction - Mobile Device Forensics, https://cellebrite.com/en/glossary/full-file-system-extraction-mobile-device-forensics/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1031"
       },
       {
-        "@value": "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1045"
       },
       {
-        "@value": "Magnet (2024) Revealing hidden data: Full file system extractions uncovered, https://www.magnetforensics.com/blog/revealing-hidden-data-full-file-system-extractions-uncovered/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1091"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -7983,7 +11038,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Fukami, A., Stoykova, R. and Geradts, Z., 2021. A new model for forensic data extraction from encrypted mobile devices. Forensic Science International: Digital Investigation, 38, p.301169."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1045"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -8318,13 +11373,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C. and Chivers, H., 2008, March. Recovery of encryption keys from memory using a linear scan. In 2008 Third International Conference on Availability, Reliability and Security (pp. 1369-1376). IEEE."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1056"
       },
       {
-        "@value": "Hargreaves & Chivers 2008b. Avoiding Live Imaging of Large Encrypted Volumes by Recovering Keys from Memory, Proceedings from 3rd Advances in Computer Security and Forensics "
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1054"
       },
       {
-        "@value": "Halderman, J.A., Schoen, S.D., Heninger, N., Clarkson, W., Paul, W., Calandrino, J.A., Feldman, A.J., Appelbaum, J. and Felten, E.W., 2009. Lest we remember: cold-boot attacks on encryption keys. Communications of the ACM, 52(5), pp.91-98."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1053"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -8428,7 +11483,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kanta, A., Coray, S., Coisel, I. and Scanlon, M., 2021. How viable is password cracking in digital forensic investigation? Analyzing the guessability of over 3.9 billion real-world accounts. Forensic Science International: Digital Investigation, 37, p.301186."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1077"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -8487,7 +11542,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kanta, A., Coisel, I. and Scanlon, M., 2021, December. PCWQ: A framework for evaluating password cracking wordlist quality. In International Conference on Digital Forensics and Cyber Crime (pp. 159-175). Cham: Springer International Publishing."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1075"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -8608,10 +11663,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "https://support.mobiledit.com/portal/en/kb/articles/app-downgrade"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1139"
       },
       {
-        "@value": "https://www.oxygenforensics.com/en/resources/downgrade-method-what-should-be-known-before-the-procedure/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1142"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -8665,7 +11720,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Grover, J., 2013. Android forensics: Automated data collection and reporting from a mobile device. Digital Investigation, 10, pp.S12-S20."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1049"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -8745,13 +11800,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kessler, G.C., 2016. The impact of MD5 file hash collisions on digital forensic imaging. Journal of digital forensics, security and law, 11(4), p.9."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1083"
       },
       {
-        "@value": "Kessler GC. The impact of SHA-1 file hash collisions on digital forensic imaging: A follow-up experiment. Journal of Digital Forensics, Security and Law. 2016;11(4):10."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1081"
       },
       {
-        "@value": "Lyle, J., 2002. Testing disk imaging tools. DFRWS USA 2002, https://dfrws.org/wp-content/uploads/2019/06/2002_USA_paper-testing_disk_imaging_tools.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1088"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -9043,7 +12098,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Dickinson (2020) ‘Privacy by design – 10 ways MSAB can help you meet the challenges.’ MSAB Blog. Available at: https://www.msab.com/blog/privacy-by-design-10-ways-msab-can-help-you-meet-the-challenges/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1037"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -9100,13 +12155,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Beebe, N.L. and Liu, L., 2014. Ranking algorithms for digital forensic string search hits. Digital Investigation, 11, pp.S124-S132."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1014"
       },
       {
-        "@value": "Beebe, N.L. and Clark, J.G., 2007. Digital forensic text string searching: Improving information retrieval effectiveness by thematically clustering search results. Digital investigation, 4, pp.49-54."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1013"
       },
       {
-        "@value": "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1103"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
@@ -9278,10 +12333,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C. and Patterson, J., 2012. An automated timeline reconstruction approach for digital forensic investigations. Digital Investigation, 9, pp.S69-S79."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1058"
       },
       {
-        "@value": "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1039"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
@@ -9458,7 +12513,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kessler, G.C., 2007. Anti-forensics and the digital investigator."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1082"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -9500,7 +12555,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Basis Technology (2015), Extension Mismatch Detector Module, https://sleuthkit.org/autopsy/docs/user-docs/3.1/extension_mismatch_detector_page.html"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1007"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -9571,10 +12626,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Nikkel, B., 2009. Forensic analysis of GPT disks and GUID partition tables. Digital Investigation, 6(1-2), pp.39-47."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1106"
       },
       {
-        "@value": "Carrier, B., 2005. File system forensic analysis. Addison-Wesley Professional."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1024"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -9689,10 +12744,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1030"
       },
       {
-        "@value": "Carrier, B., 2005. File system forensic analysis. Addison-Wesley Professional."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1024"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -9816,7 +12871,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1030"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
@@ -9927,10 +12982,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Dubettier, A., Gernot, T., Giguet, E. and Rosenberger, C., 2023. File type identification tools for digital investigations. Forensic Science International: Digital Investigation, 46, p.301574."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1040"
       },
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -10013,10 +13068,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Basis Technology 2025, PhotoRec Carver Module, https://sleuthkit.org/autopsy/docs/user-docs/4.22.0/photorec_carver_page.html"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1011"
       },
       {
-        "@value": "Grenier (2023) PhotoRec, https://www.cgsecurity.org/wiki/PhotoRec"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1048"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -10074,10 +13129,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Metz (2011), Windows Search forensics, https://www.forensicfocus.com/articles/windows-search-forensics/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1100"
       },
       {
-        "@value": "The Zeitgeist Project (2021) https://zeitgeist.freedesktop.org"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1122"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -10243,10 +13298,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Digital Detective Knowledgebase https://kb.digital-detective.net/display/BF"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1038"
       },
       {
-        "@value": "Oh, J., Lee, S. and Lee, S., 2011. Advanced evidence collection and analysis of web browser activity. Digital investigation, 8, pp.S62-S70."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1108"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
@@ -10390,7 +13445,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Nemetz, S., Schmitt, S. and Freiling, F., 2018. A standardized corpus for SQLite database forensics. Digital Investigation, 24, pp.S121-S130."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1104"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -10560,6 +13615,12 @@
         "@value": "DFT-1074: Social network app examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/SocialMediaAppFiles"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -10594,6 +13655,16 @@
       {
         "@language": "en",
         "@value": "DFT-1075: Maps/travel app examination"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/MapsAppFiles"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/NavigationAppFiles"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -10695,6 +13766,12 @@
       {
         "@language": "en",
         "@value": "DFT-1077: Photos app examination"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/PhotosAppFiles"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -10928,16 +14005,16 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Berggren at al. (2014) TimeSketch, https://timesketch.org"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1017"
       },
       {
-        "@value": "Breitinger, F., Studiawan, H. and Hargreaves, C., 2025. SoK: Timeline based event reconstruction for digital forensics: Terminology, methodology, and current challenges."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1019"
       },
       {
-        "@value": "Casey, E., 2011. Digital evidence and computer crime: Forensic science, computers, and the internet. Academic press, Section 8.1.2"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1028"
       },
       {
-        "@value": "Hargreaves, C. and Patterson, J., 2012. An automated timeline reconstruction approach for digital forensic investigations. Digital Investigation, 9, pp.S69-S79."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1058"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
@@ -11039,7 +14116,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey, E., 2011. Digital evidence and computer crime: Forensic science, computers, and the internet. Academic press, Section 8.1.3"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1029"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -11193,10 +14270,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Basis Technology 2019, Tagging, https://sleuthkit.org/autopsy/docs/user-docs/4.12.0/tagging_page.html"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1009"
       },
       {
-        "@value": "Basis Technology 2019, Reporting, https://sleuthkit.org/autopsy/docs/user-docs/4.12.0/reporting_page.html"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1008"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -11486,10 +14563,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Tart, M., Brodie, I., Gleed, N. and Matthews, J., 2012. Historic cell site analysis–Overview of principles and survey methodologies. Digital Investigation, 8(3-4), pp.185-193."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1121"
       },
       {
-        "@value": "Hoy, J., 2023. Forensic radio survey techniques for cell site analysis. John Wiley & Sons."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1067"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -11649,6 +14726,12 @@
         "@value": "DFT-1107: Health/Fitness app examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/HealthAppFiles"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
       {
         "@value": "DFT-1107"
@@ -11671,6 +14754,12 @@
         "@value": "DFT-1108: Reminders app examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/RemindersAppFiles"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
       {
         "@value": "DFT-1108"
@@ -11691,6 +14780,12 @@
       {
         "@language": "en",
         "@value": "DFT-1109: Payment app examination"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/PaymentAppFiles"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11722,7 +14817,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Spichiger, H. and Adelstein, F., 2025. Preserving meaning of evidence from evolving systems. Forensic Science International: Digital Investigation, 52, p.301867."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1118"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
@@ -11888,13 +14983,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Interpol (2021), Guidelines for digital forensics first responders v7, Ch5 Specific Procedures p34, https://www.interpol.int/content/download/16243/file/Guidelines_to_Digital_Forensics_First_Responders_V7.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1071"
       },
       {
-        "@value": "Paladin Forensic Suite, https://sumuri.com/software/paladin/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1112"
       },
       {
-        "@value": "WinFE, https://www.winfe.net"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1132"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -11937,7 +15032,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Halderman, J.A., Schoen, S.D., Heninger, N., Clarkson, W., Paul, W., Calandrino, J.A., Feldman, A.J., Appelbaum, J. and Felten, E.W., 2009. Lest we remember: cold-boot attacks on encryption keys. Communications of the ACM, 52(5), pp.91-98."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1053"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -11990,13 +15085,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Magnet 2020, Using the Geolocation Data Filter in Magnet AXIOM & AXIOM Cyber, https://www.magnetforensics.com/blog/using-the-geolocation-data-filter-in-magnet-axiom-axiom-cyber/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1092"
       },
       {
-        "@value": "Magnet 2024, Moving in the right direction with Animated maps, https://www.magnetforensics.com/blog/moving-in-the-right-direction-with-animated-maps/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1093"
       },
       {
-        "@value": "Basis Technology 2020, Autopsy User Documentation: Geolocation Overview, https://sleuthkit.org/autopsy/docs/user-docs/4.13.0/geolocation_page.html"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1010"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -12050,7 +15145,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "ALEAPP abd_hots.py, https://github.com/abrignoni/ALEAPP/blob/main/scripts/artifacts/adb_hosts.py"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1001"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -12162,7 +15257,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Autopsy Interesting File module, https://sleuthkit.org/autopsy/docs/user-docs/3.1/interesting_page.html"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1006"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -12222,10 +15317,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Claij-Swart, A.A., Oudsen, E., Timbermont, B., Hargreaves, C. and Voigt, L.L., 2025. Automatically generating digital forensic reference data triggered by mobile application updates. Forensic Science International: Digital Investigation, 54, p.301985."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1034"
       },
       {
-        "@value": "Claij-Swart et al. (2025), PUMA (Programmable Utility for Mobile Automation), https://github.com/NetherlandsForensicInstitute/puma"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1033"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -12498,7 +15593,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1103"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -12546,13 +15641,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1103"
       },
       {
-        "@value": "X-Ways (2025), X-Ways Manual: Simultaneous Search (section 5.10), https://www.x-ways.net/winhex/manual.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1134"
       },
       {
-        "@value": "X-Ways (2025), X-Ways Manual: Logical Search (section 5.11), https://www.x-ways.net/winhex/manual.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1133"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -12611,10 +15706,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1103"
       },
       {
-        "@value": "X-Ways (2025), X-Ways Manual: Simultaneous Search (section 5.10), https://www.x-ways.net/winhex/manual.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1134"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -12662,10 +15757,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1103"
       },
       {
-        "@value": "X-Ways (2025), X-Ways Manual: Logical Search (section 5.11), https://www.x-ways.net/winhex/manual.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1133"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -12747,10 +15842,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Vanini, C., Hargreaves, C.J., van Beek, H. and Breitinger, F., 2024. Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction. Forensic Science International: Digital Investigation, 49, p.301759."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1127"
       },
       {
-        "@value": "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1039"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -12830,7 +15925,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kessler, G.C., 2007. Anti-forensics and the digital investigator."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1082"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -12868,7 +15963,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Kessler, G.C., 2007. Anti-forensics and the digital investigator."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1082"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -13035,10 +16130,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves & Drury, 2025, Forensic Analysis of AI Applications: A Replika \"AI Companion\" example, WSDF 2025"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1055"
       },
       {
-        "@value": "Bayor, L., Weinert, C., Maier, C. and Weitzel, T., 2025. Social-Oriented Communication with AI Companions: Benefits, Costs, and Contextual Patterns. Business & Information Systems Engineering, pp.1-19."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1012"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -13103,7 +16198,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1020"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -13597,7 +16692,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Mendoza, A., Kumar, A., Midcap, D., Cho, H. and Varol, C., 2015. BrowStEx: A tool to aggregate browser storage artifacts for forensic analysis. Digital investigation, 14, pp.63-75."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1099"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -13670,16 +16765,16 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Apple (2025) View and restore past versions of documents on Mac https://support.apple.com/en-gb/guide/mac-help/mh40710/mac"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1005"
       },
       {
-        "@value": "Hargreaves, C., Chivers, H. and Titheridge, D., 2008. Windows Vista and digital investigations. Digital Investigation, 5(1-2), pp.34-48."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1059"
       },
       {
-        "@value": "Leschke, T.R. and Nicholas, C., 2013, October. Change-link 2.0: a digital forensic tool for visualizing changes to shadow volume data. In Proceedings of the Tenth Workshop on Visualization for Cyber Security (pp. 17-24)."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1087"
       },
       {
-        "@value": "Sreeja, S.C. and Balan, C., 2016, October. Forensic analysis of volume shadow copy in windows 7. In 2016 International Conference on Emerging Technological Trends (ICETT) (pp. 1-6). IEEE."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1120"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -13832,10 +16927,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1030"
       },
       {
-        "@value": "Carrier, B., 2005. File system forensic analysis. Addison-Wesley Professional."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1024"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -13883,7 +16978,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "McQuaid, J. (2017) Using Keywords with Magnet AXIOM, Magnet Forensics, https://www.magnetforensics.com/blog/using-keywords-with-magnet-axiom/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1098"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -14000,10 +17095,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey, E. and Jaquet-Chiffelle, D.O., 2019. Do identities matter?. Policing: A Journal of Policy and Practice, 13(1), pp.21-34."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1027"
       },
       {
-        "@value": "Spichiger, H., 2025. Please mind the gap: A taxonomy for addressing the issue of linking person, account and device. Science & Justice, p.101314."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1119"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -14228,7 +17323,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1004"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -14285,10 +17380,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Elcomsoft 20203 https://blog.elcomsoft.com/2023/07/ios-device-acquisition-installing-the-extraction-agent/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1041"
       },
       {
-        "@value": "Belkasoft https://belkasoft.com/agent_based_ios_acquisition"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1016"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -14331,7 +17426,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Geus, J., Gruber, J., Wozar, J. and Freiling, F., 2025. From sync to seizure: A binary instrumentation-based evaluation of the iCloud backup process. Forensic Science International: Digital Investigation, 54, p.301978."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1046"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -14369,7 +17464,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "https://en.wikipedia.org/wiki/In-system_programming"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1136"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
@@ -14421,10 +17516,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "https://github.com/prosch88/UFADE"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1138"
       },
       {
-        "@value": "https://github.com/prosch88/ALEX"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1137"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -14580,7 +17675,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Horsman, G., 2019. A forensic examination of online search facility URL record structures. Journal of forensic sciences, 64(1), pp.236-242."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1065"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -14782,10 +17877,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Cohen, M., Garfinkel, S. and Schatz, B., 2009. Extending the advanced forensic format to accommodate multiple data sources, logical evidence, arbitrary information and forensic workflow. digital investigation, 6, pp.S57-S68."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1035"
       },
       {
-        "@value": "Im, S., Park, H., Joun, J., Lee, S. and Park, J., 2024. Revisiting logical image formats for future digital forensics: A comprehensive analysis on L01 and AFF4-L. Forensic Science International: Digital Investigation, 50"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1069"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -15029,7 +18124,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Google (2025) Content provider basics. Available at: https://developer.android.com/guide/topics/providers/content-provider-basics."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1047"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -15417,7 +18512,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Gupta, M.R., Hoeschele, M.D. and Rogers, M.K., 2006. Hidden disk areas: HPA and DCO. International Journal of Digital Evidence, 5(1), pp.1-8."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1052"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -15493,7 +18588,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Gupta, M.R., Hoeschele, M.D. and Rogers, M.K., 2006. Hidden disk areas: HPA and DCO. International Journal of Digital Evidence, 5(1), pp.1-8."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1052"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -16025,7 +19120,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "DSTL Digital Forensics Bulletin, TRIM & Garbage Collection on SSDs, Edition 27, July 2024 DSTL/PUB160897, https://mailchi.mp/3b5bda81ff5f/digital-forensic-bulletin-edition27-trim-and-garbage-collection-on-ssds9445401"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1036"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -16089,11 +19184,6 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1004"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/hasReference": [
-      {
-        "@value": "conv option -dd, https://www.ibm.com/docs/en/aix/7.2.0?topic=d-dd-command#dd__row-d3e19630"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -16894,16 +19984,16 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Pagani, F., Fedorov, O. and Balzarotti, D., 2019. Introducing the temporal dimension to memory forensics. ACM Transactions on Privacy and Security (TOPS), 22(2), 1-21."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1111"
       },
       {
-        "@value": "Jenny Ottmann, Üsame Cengiz, Frank Breitinger, and Felix Freiling, 2023. As if Time Had Stopped – Checking Memory Dumps for Quasi-Instantaneous Consistency. In Proceedings of the Digital Forensics Research Conference USA (DFRWS USA), Baltimore, MD, July 2023."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1072"
       },
       {
-        "@value": "Ottmann, J., Breitinger, F. and Freiling, F., 2024. An experimental assessment of inconsistencies in memory forensics. ACM Transactions on Privacy and Security (TOPS). 27, 2:1–2:29."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1110"
       },
       {
-        "@value": "Rzepka, L., Ottmann, J., Freiling, F. and Baier, H., 2024. Causal Inconsistencies are Normal in Windows Memory Dumps (too). Digital Threats: Research and Practice."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1116"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -16971,13 +20061,13 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Campbell, W., 2013. Volatile memory acquisition tools–A comparison across taint and correctness. 11th Australian Digital Forensics Conference. Edith Cowan University, Perth, Western Australia."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1023"
       },
       {
-        "@value": "Vömel, S. and Stüttgen, J., 2013. An evaluation platform for forensic memory acquisition software. Digital Investigation, 10, S30-S40."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1128"
       },
       {
-        "@value": "Gruhn, M. and Freiling, F.C., 2016. Evaluating atomicity, and integrity of correct memory acquisition methods. Digital Investigation, 16, S1-S10."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1051"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -17098,7 +20188,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Vömel, S. and Stüttgen, J., 2013. An evaluation platform for forensic memory acquisition software. Digital Investigation, 10, S30-S40."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1128"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -17161,7 +20251,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Case, A. and Richard III, G. G., 2017. Memory forensics: The path forward. Digital investigation, 20, 23-33."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1025"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -17358,7 +20448,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C.J., 2009. Assessing the reliability of digital evidence from live investigations involving encryption. Chapter 5"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1062"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -19210,7 +22300,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "V, Kethareswaran; Khurana, Surinder Singh; Singh, Parvinder (2021), “File Carving based Digital Forensic Tools Testing Data Sets (Contiguous Files)”, Mendeley Data, V3, doi: 10.17632/2kh2bdsp5b.3"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1126"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -19344,10 +22434,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       },
       {
-        "@value": "Hargreaves, C., Repository for 'An abstract model for digital forensic analysis tools - A foundation for systematic error mitigation analysis', https://github.com/chrishargreaves/digital-forensic-tool-abstractions/tree/main"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1061"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -20714,7 +23804,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "New msgstore – Who ‘Dis? A Look At An Updated WhatsApp On Android, https://thebinaryhick.blog/2022/06/09/new-msgstore-who-dis-a-look-at-an-updated-whatsapp-on-android/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1105"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -21082,7 +24172,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Time is not on our side when it comes to Messages in iOS 11, https://smarterforensics.com/2017/09/time-is-not-on-our-side-when-it-comes-to-messages-in-ios-11/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1123"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -22335,7 +25425,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Horsman, G., 2020. The challenge of identifying historic ‘private browsing’sessions on suspect devices. Forensic Science International: Digital Investigation, 34, p.300980."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1066"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23149,7 +26239,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23212,7 +26302,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23275,7 +26365,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23346,7 +26436,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23422,7 +26512,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23498,7 +26588,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23566,7 +26656,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23645,10 +26735,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       },
       {
-        "@value": "Kemmerich, T., Junge, F., Kuntze, N., Rudolph, C., Endicott-Popovsky, B. and Großkopf, L., 2014. Generation and handling of hard drive duplicates as piece of evidence."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1079"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23722,7 +26812,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23799,7 +26889,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23873,10 +26963,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       },
       {
-        "@value": "Magazinius, J., Rios, B.K. and Sabelfeld, A., 2013, November. Polyglots: crossing origins by crossing formats. In Proceedings of the 2013 ACM SIGSAC conference on Computer & communications security (pp. 753-764)."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1090"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -23939,7 +27029,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -24007,10 +27097,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Hargreaves, C., Nelson, A. and Casey, E., 2024. An abstract model for digital forensic analysis tools-A foundation for systematic error mitigation analysis. Forensic Science International: Digital Investigation, 48, p.301679."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1060"
       },
       {
-        "@value": "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1030"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -24090,7 +27180,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1030"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -24170,7 +27260,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Casey, E., Nelson, A. and Hyde, J., 2019. Standardization of file recovery classification and authentication. Digital Investigation, 31, p.100873."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1030"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -24228,7 +27318,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1136: Not recovering data from a failed hard drive"
+        "@value": "DFW-1136: Data cannot be read from a device due to the device having failed physically"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
@@ -24279,7 +27369,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Not recovering data from a failed hard drive"
+        "@value": "Data cannot be read from a device due to the device having failed physically"
       }
     ]
   },
@@ -24748,7 +27838,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Turner, P. The Remapped/Reallocated Sector Conundrum, Presentation at DFRWS US 2024, https://www.dfrws.org/wp-content/uploads/2023/07/turner-remappedsectors.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1124"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -24927,7 +28017,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1039"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -25183,7 +28273,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Jens-Petter Sandvik, André Årnes, 2018. The reliability of clocks as digital evidence under low voltage conditions. Digital Investigation, 24, pp.S10-S17."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1073"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -25615,10 +28705,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Elcomsoft 2021, Forensically Sound checkm8 Based Extraction of iPhone 5s, 6, 6s and SE, https://blog.elcomsoft.com/2021/05/checkm8-based-extraction-of-iphone-5s-6-6s-and-se/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1042"
       },
       {
-        "@value": "Grover, J., 2013. Android forensics: Automated data collection and reporting from a mobile device. Digital Investigation, 10, pp.S12-S20."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1049"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -25681,7 +28771,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Tyler, J., 2012 p50. XDA Developers' Android Hacker's Toolkit: The Complete Guide to Rooting, ROMs and Theming. John Wiley & Sons"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1125"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -26179,7 +29269,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1113"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -26435,7 +29525,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Caithness 2012, The Forensic Implications of SQLite’s Write Ahead Log, https://digitalinvestigation.wordpress.com/2012/05/04/the-forensic-implications-of-sqlites-write-ahead-log/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1021"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -26503,7 +29593,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Caithness 2012, The Forensic Implications of SQLite’s Write Ahead Log, https://digitalinvestigation.wordpress.com/2012/05/04/the-forensic-implications-of-sqlites-write-ahead-log/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1021"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -26813,7 +29903,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Interpol (2021), Guidelines for digital forensics first responders v7, Ch5 Specific Procedures p34, https://www.interpol.int/content/download/16243/file/Guidelines_to_Digital_Forensics_First_Responders_V7.pdf"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1071"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -30475,7 +33565,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "https://www.crowdstrike.com/en-us/guides/syslog-logging/advanced-concepts/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1140"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -30994,7 +34084,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Oh, J., Lee, S. and Lee, S., 2011. Advanced evidence collection and analysis of web browser activity. Digital investigation, 8, pp.S62-S70., section 3.6"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1109"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -31057,7 +34147,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Groß, T., Dirauf, R. and Freiling, F., 2020, May. Systematic analysis of browser history evidence. In 2020 13th International Conference on Systematic Approaches to Digital Forensic Engineering (SADFE) (pp. 1-12). IEEE."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1050"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -31499,7 +34589,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Horsman, G., 2018. I didn't see that! An examination of internet browser cache behaviour following website visits. Digital Investigation, 25, pp.105-113."
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1064"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -32811,10 +35901,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Belkasoft (undated) Dealing with Apple's USB Restricted Mode, https://belkasoft.com/dealing_with_usb_restricted_mode"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1015"
       },
       {
-        "@value": "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1004"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
@@ -33091,7 +36181,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
-        "@value": "Wikipedia (2026), ZIP (file format), https://en.wikipedia.org/wiki/ZIP_(file_format)#ZIP64"
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1130"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mayResultInINAC_ALT": [
