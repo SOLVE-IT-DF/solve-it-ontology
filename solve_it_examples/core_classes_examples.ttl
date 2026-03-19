@@ -90,6 +90,12 @@
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI .
 
 #################################################################
+#    ASTM Error Category (defined in core ontology, referenced here)
+#################################################################
+
+solveit-core:ASTM_INCOMP rdf:type solveit-core:ASTMErrorCategory .
+
+#################################################################
 #    Example SOLVE-IT Weakness Instance
 #################################################################
 
