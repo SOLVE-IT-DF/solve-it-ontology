@@ -1955,9 +1955,9 @@
     solveit-core:techniqueName "Key recovery from memory" .
 
 :techniqueDFT-1032 a solveit-core:Technique ;
-    rdfs:label "DFT-1032: Side channel"@en ;
+    rdfs:label "DFT-1032: Obtain encryption key information using side channel attacks"@en ;
     solveit-core:techniqueID "DFT-1032" ;
-    solveit-core:techniqueName "Side channel" .
+    solveit-core:techniqueName "Obtain encryption key information using side channel attacks" .
 
 :techniqueDFT-1036 a solveit-core:Technique ;
     rdfs:label "DFT-1036: Smudge attack"@en ;

@@ -11437,7 +11437,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1032: Side channel"
+        "@value": "DFT-1032: Obtain encryption key information using side channel attacks"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11447,7 +11447,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Side channel"
+        "@value": "Obtain encryption key information using side channel attacks"
       }
     ]
   },
