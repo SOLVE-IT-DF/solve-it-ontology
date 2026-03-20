@@ -17,7 +17,7 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/examples/triaged-devices> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/triaged-devices/0.0.1> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/triaged-devices/0.1.0> ;
     owl:imports <https://ontology.solveit-df.org/solveit/observable> ,
                 <https://ontology.solveit-df.org/solveit/core> ,
                 <https://ontology.solveit-df.org/solveit/data> ;
@@ -54,10 +54,10 @@
     rdfs:label "Forensic Examiner"@en .
 
 ###  Triage action — examiner applies T1001 to the device set
-:triage-action rdf:type solveit-core:PerformedTechnique ;
+:triage-action rdf:type solveit-core:SolveitInvestigativeAction ;
     uco-core:name "Device triage" ;
     uco-core:description "Examiner triaged seized devices based on case relevance and expected evidentiary value" ;
-    solveit-core:usedTechnique solveit-data:techniqueT1001 ;  # T1001: Triage
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1001 ;  # T1001: Triage
     uco-action:performer :examiner-1 ;
     uco-action:startTime "2026-02-16T10:00:00Z"^^xsd:dateTime ;
     uco-action:endTime "2026-02-16T10:45:00Z"^^xsd:dateTime ;

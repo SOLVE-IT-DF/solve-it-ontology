@@ -67,11 +67,13 @@ done
 echo "  Updated owl:versionIRI in $COUNT files"
 
 # 4. Update owl:versionIRI in example TTL files
+#    Examples use /examples/{name}/{version} format — match any semver in that position
 COUNT=0
 for ttl in solve_it_examples/*.ttl; do
-    if grep -q "/$OLD_VERSION>" "$ttl"; then
-        sed -i '' "s|/$OLD_VERSION>|/$NEW_VERSION>|g" "$ttl"
-        COUNT=$((COUNT + 1))
+    if grep -q 'owl:versionIRI' "$ttl"; then
+        if sed -i '' "s|/examples/\([^/]*\)/[0-9][0-9]*\.[0-9][0-9]*\.[0-9][0-9]*>|/examples/\1/$NEW_VERSION>|g" "$ttl"; then
+            COUNT=$((COUNT + 1))
+        fi
     fi
 done
 echo "  Updated owl:versionIRI in $COUNT example files"

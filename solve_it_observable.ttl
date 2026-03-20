@@ -16,7 +16,7 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/observable> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/0.0.8> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/0.1.0> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.4.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/observable/1.4.0> ,
                 <https://ontology.solveit-df.org/solveit/observable/acquisition> ,
@@ -25,7 +25,7 @@
     dcterms:title "SOLVE-IT Observable Module"@en ;
     dcterms:description "Observable objects for SOLVE-IT digital forensics, including video frames and other forensic artifacts. This module imports sub-modules for acquisition, timeline, and search observables."@en ;
     dcterms:creator "SOLVE-IT Project" ;
-    owl:versionInfo "0.0.8" ;
+    owl:versionInfo "0.1.0" ;
     rdfs:label "SOLVE-IT Observable Module"@en .
 
 #################################################################
@@ -133,6 +133,18 @@ solveit-observable:HashVerificationResult rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
     rdfs:label "Hash Verification Result"@en ;
     rdfs:comment "The result of comparing hash values to verify data integrity, typically comparing a source hash against a computed hash of acquired or copied data."@en .
+
+###  Wordlist Observable Object
+solveit-observable:Wordlist rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Wordlist"@en ;
+    rdfs:comment "A list of words or terms used as input to techniques such as keyword searching or dictionary-based password attacks. May be a case-type wordlist (standard terms for a category of investigation), a case-specific wordlist (names, addresses, dates etc. specific to the investigation), or a general-purpose dictionary (e.g. for password recovery)."@en .
+
+###  ClusterRun Observable Object
+solveit-observable:ClusterRun rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Cluster Run"@en ;
+    rdfs:comment "A contiguous run of clusters allocated to a file in a cluster-based file system (e.g., FAT, NTFS, exFAT). Multiple runs indicate file fragmentation."@en .
 
 ###  ApplicationFiles Observable Object
 solveit-observable:ApplicationFiles rdf:type owl:Class ;
@@ -298,6 +310,12 @@ solveit-observable:hasArtifact rdf:type owl:ObjectProperty ;
     rdfs:label "has artifact"@en ;
     rdfs:comment "An artifact belonging to this artifact set."@en .
 
+solveit-observable:hasClusterRun rdf:type owl:ObjectProperty ;
+    rdfs:domain uco-observable:File ;
+    rdfs:range solveit-observable:ClusterRun ;
+    rdfs:label "has cluster run"@en ;
+    rdfs:comment "Links a file to its cluster allocation runs. A contiguous file has one run; a fragmented file has multiple runs."@en .
+
 #################################################################
 #    Data Properties
 #################################################################
@@ -325,3 +343,15 @@ solveit-observable:verificationPassed rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:boolean ;
     rdfs:label "verification passed"@en ;
     rdfs:comment "Indicates whether the hash verification was successful (true) or failed (false)."@en .
+
+solveit-observable:runStartCluster rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ClusterRun ;
+    rdfs:range xsd:integer ;
+    rdfs:label "run start cluster"@en ;
+    rdfs:comment "The first cluster number in this contiguous run."@en .
+
+solveit-observable:runClusterCount rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:ClusterRun ;
+    rdfs:range xsd:integer ;
+    rdfs:label "run cluster count"@en ;
+    rdfs:comment "The number of contiguous clusters in this run."@en .

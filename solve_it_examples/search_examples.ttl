@@ -1,0 +1,153 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix solveit-data: <https://ontology.solveit-df.org/solveit/data/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Search Examples
+#    Demonstrates keyword search, indexing, and result set classes
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/search> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/search/0.1.0> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/core> ;
+    rdfs:label "SOLVE-IT Search Examples"@en ;
+    rdfs:comment "Example instances demonstrating keyword search and indexing classes."@en .
+
+
+#################################################################
+#    Example 1: Simple Keyword Search
+#
+#    A straightforward live keyword search using case-type
+#    wordlists, producing a result set with individual hits.
+#################################################################
+
+###  Supporting objects
+:examiner-11111111-1111-1111-1111-111111111111 rdf:type uco-core:UcoObject ;
+    rdfs:label "Examiner A"@en .
+
+:bitstream-22222222-2222-2222-2222-222222222222 rdf:type solveit-observable:BitstreamRandomAccessed ;
+    rdfs:label "USB drive bitstream (random access)"@en .
+
+:wordlist-33333333-3333-3333-3333-333333333333 rdf:type solveit-observable:Wordlist ;
+    rdfs:label "Fraud case-type keyword list"@en ;
+    uco-core:description "Standard wordlist for financial fraud investigations" .
+
+:searchresults-44444444-4444-4444-4444-444444444444 rdf:type solveit-observable:KeywordSearchResultSet ;
+    rdfs:label "Live keyword search results"@en ;
+    uco-core:description "87 offset hits — these are raw byte offsets into the bitstream that require subsequent lookup to resolve to files or unallocated space" ;
+    solveit-observable:hasSearchResult :hit-55555555-5555-5555-5555-555555555551 ;
+    solveit-observable:hasSearchResult :hit-55555555-5555-5555-5555-555555555552 ;
+    solveit-observable:hasSearchResult :hit-55555555-5555-5555-5555-555555555553 .
+
+:hit-55555555-5555-5555-5555-555555555551 rdf:type solveit-observable:KeywordSearchResult ;
+    rdfs:label "Hit: offset 0x1A3F00 — keyword match (pending file resolution)"@en .
+
+:hit-55555555-5555-5555-5555-555555555552 rdf:type solveit-observable:KeywordSearchResult ;
+    rdfs:label "Hit: offset 0x8B2100 — keyword match (pending file resolution)"@en .
+
+:hit-55555555-5555-5555-5555-555555555553 rdf:type solveit-observable:KeywordSearchResult ;
+    rdfs:label "Hit: offset 0xF04E80 — keyword match (pending file resolution)"@en .
+
+###  SolveitInvestigativeAction: Live keyword search with case-type wordlists
+:investigativeaction-66666666-6666-6666-6666-666666666666 rdf:type solveit-core:SolveitInvestigativeAction ;
+    uco-core:name "keyword-search-live" ;
+    uco-core:description "Live keyword search over USB drive bitstream using standard fraud case-type wordlist" ;
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1122 ;  # Keyword search (case-type wordlists)
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1125 ;  # Keyword search (live)
+    uco-action:startTime "2024-11-10T14:00:00Z"^^xsd:dateTime ;
+    uco-action:endTime "2024-11-10T14:47:22Z"^^xsd:dateTime ;
+    uco-action:performer :examiner-11111111-1111-1111-1111-111111111111 ;
+    uco-action:object :bitstream-22222222-2222-2222-2222-222222222222 ,
+                      :wordlist-33333333-3333-3333-3333-333333333333 ;
+    uco-action:result :searchresults-44444444-4444-4444-4444-444444444444 ;
+    rdfs:comment "Simple example: live keyword search using case-type wordlists. The 47-minute duration reflects that a live search scans raw data without a pre-built index. Results are raw byte offsets into the bitstream that require a subsequent file-resolution step to determine whether each hit falls within an allocated file or in unallocated space."@en .
+
+
+#################################################################
+#    Example 2: Keyword Indexing
+#
+#    Building a keyword index with configuration settings.
+#    This is a prerequisite for an indexed keyword search
+#    (DFT-1124).  The input can be a FileSet, an ArtifactSet,
+#    or any other collection to be indexed.
+#################################################################
+
+###  Supporting objects
+:forensicworkstation-aaaa1111-2222-3333-4444-555566667777 rdf:type uco-observable:Computer ;
+    rdfs:label "Forensic Workstation"@en .
+
+:examiner-bbbb1111-2222-3333-4444-555566667777 rdf:type uco-core:UcoObject ;
+    rdfs:label "Digital Forensic Examiner"@en .
+
+:fileset-77771111-2222-3333-4444-555566667777 rdf:type solveit-observable:FileSet ;
+    rdfs:label "Extracted files from suspect laptop image"@en .
+
+:artifactset-77772222-2222-3333-4444-555566667777 rdf:type solveit-observable:ArtifactSet ;
+    rdfs:label "Parsed artifacts from suspect laptop (browser history, messages, etc.)"@en .
+
+:indexconfig-88881111-2222-3333-4444-555566667777 rdf:type solveit-observable:KeywordIndexingConfiguration ;
+    rdfs:label "Indexing configuration"@en ;
+    uco-core:description "UTF-8 encoding, English language stemming enabled, max word length 64" .
+
+:generatedindex-99991111-2222-3333-4444-555566667777 rdf:type solveit-observable:KeywordIndex ;
+    rdfs:label "Keyword index of suspect laptop files and parsed artifacts"@en ;
+    solveit-observable:hasConfiguration :indexconfig-88881111-2222-3333-4444-555566667777 .
+
+###  SolveitInvestigativeAction: Building a keyword index
+:investigativeaction-aabb1111-2222-3333-4444-555566667777 rdf:type solveit-core:SolveitInvestigativeAction ;
+    uco-core:name "keyword-indexing" ;
+    uco-core:description "Build keyword index from extracted files and parsed artifacts of suspect laptop" ;
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1126 ;  # Keyword indexing
+    uco-action:startTime "2024-11-14T22:00:00Z"^^xsd:dateTime ;
+    uco-action:endTime "2024-11-15T01:15:43Z"^^xsd:dateTime ;
+    uco-action:instrument :forensicworkstation-aaaa1111-2222-3333-4444-555566667777 ;
+    uco-action:performer :examiner-bbbb1111-2222-3333-4444-555566667777 ;
+    uco-action:object :fileset-77771111-2222-3333-4444-555566667777 ,
+                      :artifactset-77772222-2222-3333-4444-555566667777 ;
+    uco-action:result :generatedindex-99991111-2222-3333-4444-555566667777 ;
+    rdfs:comment "Keyword indexing is typically run overnight as a batch process. The input can include both raw file content (FileSet) and parsed artifacts such as browser history and messages (ArtifactSet). The resulting KeywordIndex is then used as input to the indexed keyword search in Example 3."@en .
+
+
+#################################################################
+#    Example 3: Indexed Keyword Search
+#
+#    Searches the KeywordIndex built in Example 2 using
+#    case-specific wordlists (DFT-1123).  Same scenario as in
+#    core_classes_examples.ttl, repeated here to show the
+#    search classes in context.
+#################################################################
+
+###  Supporting objects
+:casekeywords-dddd1111-2222-3333-4444-555566667777 rdf:type solveit-observable:Wordlist ;
+    rdfs:label "Case-specific keyword list"@en ;
+    uco-core:description "Wordlist containing suspect names, known aliases, addresses, and key dates relevant to the investigation" .
+
+:searchresults-eeee1111-2222-3333-4444-555566667777 rdf:type solveit-observable:KeywordSearchResultSet ;
+    rdfs:label "Indexed keyword search results"@en ;
+    uco-core:description "1,247 hits across 312 files from indexed keyword search" .
+
+###  SolveitInvestigativeAction: Indexed keyword search with case-specific wordlists
+###  Uses the KeywordIndex generated in Example 2
+:investigativeaction-ffff1111-2222-3333-4444-555566667777 rdf:type solveit-core:SolveitInvestigativeAction ;
+    uco-core:name "keyword-search-indexed" ;
+    uco-core:description "Indexed keyword search using case-specific wordlists against keyword index of suspect laptop" ;
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1123 ;  # Keyword search (case-specific wordlists)
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1124 ;  # Keyword search (indexed)
+    uco-action:startTime "2024-11-15T09:30:00Z"^^xsd:dateTime ;
+    uco-action:endTime "2024-11-15T09:32:17Z"^^xsd:dateTime ;
+    uco-action:instrument :forensicworkstation-aaaa1111-2222-3333-4444-555566667777 ;
+    uco-action:performer :examiner-bbbb1111-2222-3333-4444-555566667777 ;
+    uco-action:object :generatedindex-99991111-2222-3333-4444-555566667777 ,
+                      :casekeywords-dddd1111-2222-3333-4444-555566667777 ;
+    uco-action:result :searchresults-eeee1111-2222-3333-4444-555566667777 ;
+    rdfs:comment "Indexed search using case-specific wordlists against the index built in Example 2. The fast completion time (approx. 2 minutes vs 47 minutes for a live search) reflects the use of a pre-built index."@en .

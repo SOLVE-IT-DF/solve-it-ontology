@@ -13,7 +13,7 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/examples/sqlite> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/sqlite/1.0.0> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/sqlite/0.1.0> ;
     owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
     rdfs:label "SOLVE-IT SQLite Examples"@en ;
     rdfs:comment "Minimal example: a hello.db with one table and two records."@en .

@@ -15,13 +15,13 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/observable/sqlite> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/sqlite/0.0.8> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/sqlite/0.1.0> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.4.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/observable/1.4.0> ;
     dcterms:title "SOLVE-IT SQLite Module"@en ;
     dcterms:description "SQLite database structural representation for digital forensic analysis, including logical structure (tables, schemas, records), physical structure (pages), and WAL/journal representations."@en ;
     dcterms:creator "SOLVE-IT Project" ;
-    owl:versionInfo "0.0.8" ;
+    owl:versionInfo "0.1.0" ;
     rdfs:label "SOLVE-IT SQLite Module"@en .
 
 #################################################################

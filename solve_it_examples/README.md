@@ -10,7 +10,7 @@ Examples of the core SOLVE-IT classes:
 - **Technique** - Methods to achieve objectives (e.g., T1002: Disk imaging, T1042: Hash verification)
 - **Weakness** - Potential issues with techniques (e.g., incomplete acquisition)
 - **Mitigation** - Ways to address weaknesses (e.g., hash verification)
-- **PerformedTechnique** - Records of techniques executed during an investigation, extending CASE/UCO InvestigativeAction (provides extended version of Bifrost example from here: https://caseontology.org/examples/asgard/)
+- **SolveitInvestigativeAction** - A SOLVE-IT aware InvestigativeAction that records which technique(s) were used (1..n) and which mitigations were applied (0..n) during an investigation, extending CASE/UCO InvestigativeAction (provides extended version of Bifrost example from here: https://caseontology.org/examples/asgard/)
 
 ### [observable_examples.ttl](observable_examples.ttl)
 Examples of SOLVE-IT observable classes:
@@ -29,6 +29,27 @@ Timeline examples demonstrating **ImplicitTimingInformation** for sequence-based
 - ClusterRun objects showing file fragmentation
 - Shows how ordering can be derived from non-temporal artifacts
 - Demonstrates the same two-step provenance chain (T1060 -> T1052)
+
+### [search_examples.ttl](search_examples.ttl)
+Examples of keyword search and indexing classes:
+- **Live keyword search** - Searching a BitstreamRandomAccessed with a case-type Wordlist, producing offset-based KeywordSearchResultSet hits
+- **Keyword indexing** - Building a KeywordIndex from a FileSet and ArtifactSet with KeywordIndexingConfiguration
+- **Indexed keyword search** - Searching the generated KeywordIndex with a case-specific Wordlist, producing file-level KeywordSearchResultSet hits
+
+### [acquisition_examples.ttl](acquisition_examples.ttl)
+Examples of forensic acquisition classes and workflows:
+- Physical disk removal, write blocking, and imaging chain
+- ForensicImageContainer, PhysicalImageContainer, and related acquisition observables
+
+### [sqlite_examples.ttl](sqlite_examples.ttl)
+Examples of SQLite observable classes for database forensics.
+
+### [triaged_devices_examples.ttl](triaged_devices_examples.ttl)
+Examples of device triage classes:
+- **DeviceSet** and **PrioritizedDeviceSet** for grouping and prioritising seized devices
+
+### [weakness_assessment_examples.ttl](weakness_assessment_examples.ttl)
+Examples of weakness assessment classes for evaluating technique reliability.
 
 ## Usage
 

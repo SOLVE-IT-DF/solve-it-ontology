@@ -39,3 +39,6 @@ jobs:
 
       - name: Validate examples against ontology
         run: python scripts/validate_examples.py
+
+      - name: Validate example I/O types against KB
+        run: python scripts/validate_example_io.py
