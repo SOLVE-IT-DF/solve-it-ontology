@@ -4092,13 +4092,13 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:weaknessName "Assigning an attachment to an incorrect messages" .
 
 :weaknessDFW-1100 a solveit-core:Weakness ;
-    rdfs:label "DFW-1100: Failure to display special effects or highlight within a message"@en ;
+    rdfs:label "DFW-1100: Tool fails to display special effects or highlight within a message"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1027,
         :mitigationDFM-1050,
         :mitigationDFM-1054 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1100" ;
-    solveit-core:weaknessName "Failure to display special effects or highlight within a message" .
+    solveit-core:weaknessName "Tool fails to display special effects or highlight within a message" .
 
 :weaknessDFW-1101 a solveit-core:Weakness ;
     rdfs:label "DFW-1101: Failure to recover message edits if available"@en ;
@@ -6631,12 +6631,12 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:mitigationName "Correlation of data extracted with data from service provider" .
 
 :mitigationDFM-1050 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1050: Manual verification of relevant data"@en ;
+    rdfs:label "DFM-1050: Manually verify relevant data"@en ;
     solveit-core:mitigationID "DFM-1050" ;
-    solveit-core:mitigationName "Manual verification of relevant data" .
+    solveit-core:mitigationName "Manually verify relevant data" .
 
 :mitigationDFM-1027 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1027: Dual tool verification"@en ;
+    rdfs:label "DFM-1027: Use dual tool verification"@en ;
     solveit-core:mitigationID "DFM-1027" ;
-    solveit-core:mitigationName "Dual tool verification" .
+    solveit-core:mitigationName "Use dual tool verification" .
 

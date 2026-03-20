@@ -3673,7 +3673,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFM-1027: Dual tool verification"
+        "@value": "DFM-1027: Use dual tool verification"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -3683,7 +3683,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
-        "@value": "Dual tool verification"
+        "@value": "Use dual tool verification"
       }
     ]
   },
@@ -4204,7 +4204,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFM-1050: Manual verification of relevant data"
+        "@value": "DFM-1050: Manually verify relevant data"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -4214,7 +4214,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
-        "@value": "Manual verification of relevant data"
+        "@value": "Manually verify relevant data"
       }
     ]
   },
@@ -21939,7 +21939,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1100: Failure to display special effects or highlight within a message"
+        "@value": "DFW-1100: Tool fails to display special effects or highlight within a message"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
@@ -21965,7 +21965,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Failure to display special effects or highlight within a message"
+        "@value": "Tool fails to display special effects or highlight within a message"
       }
     ]
   },
