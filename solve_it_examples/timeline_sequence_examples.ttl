@@ -19,7 +19,7 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/examples/timeline-sequence> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/timeline-sequence/0.0.1> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/timeline-sequence/0.1.0> ;
     owl:imports <https://ontology.solveit-df.org/solveit/observable> ,
                 <https://ontology.solveit-df.org/solveit/data> ;
     rdfs:label "SOLVE-IT Timeline Sequence Examples"@en ;
@@ -28,8 +28,8 @@
 #################################################################
 #    Techniques are referenced from the SOLVE-IT Knowledge Base:
 #    https://ontology.solveit-df.org/data/solve-it-kb.ttl
-#    - solveit-data:techniqueT1052 (Timeline generation)
-#    - solveit-data:techniqueT1060 (Enumerate allocated files and folders)
+#    - solveit-data:techniqueDFT-1052 (Timeline generation)
+#    - solveit-data:techniqueDFT-1060 (Enumerate allocated files and folders)
 #################################################################
 
 #################################################################
@@ -50,8 +50,11 @@
     uco-core:name "ACME timeline generator" ;
     uco-tool:version "0.42" .
 
-:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:Image ;
-    rdfs:label "Forensic disk image"@en .
+:filesystem-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:FileSystem ;
+    rdfs:label "FAT32 filesystem on USB drive"@en .
+
+:fileset-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type solveit-observable:FileSet ;
+    rdfs:label "Enumerated files from FAT32 USB drive"@en .
 
 #################################################################
 #    Two-step provenance chain for cluster allocation timeline
@@ -60,25 +63,23 @@
 #################################################################
 
 ###  Step 1: T1060 Enumerate allocated files - extracts files with cluster metadata
-:enumerateFilesAction002 rdf:type solveit-core:PerformedTechnique ;
+:enumerateFilesAction002 rdf:type solveit-core:SolveitInvestigativeAction ;
     uco-core:name "enumerate-files" ;
     uco-core:description "Enumeration of allocated files from FAT32 USB drive" ;
-    solveit-core:usedTechnique solveit-data:techniqueT1060 ;
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1060 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-filesystem-parser ;
     uco-action:startTime "2026-01-28T11:00:00Z"^^xsd:dateTime ;
     uco-action:endTime "2026-01-28T11:03:00Z"^^xsd:dateTime ;
-    uco-action:object :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
-    uco-action:result :implicit_example_file001 ,
-                      :implicit_example_file002 ,
-                      :implicit_example_file003 ;
+    uco-action:object :filesystem-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
+    uco-action:result :fileset-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
     rdfs:comment "T1060: Enumerate allocated files - extracts file objects with directory entry metadata including start cluster."@en .
 
 ###  Step 2: T1052 Timeline generation - creates timeline from cluster allocation order
-:clusterTimelineGenerationAction001 rdf:type solveit-core:PerformedTechnique ;
+:clusterTimelineGenerationAction001 rdf:type solveit-core:SolveitInvestigativeAction ;
     uco-core:name "generate-cluster-timeline" ;
     uco-core:description "Generation of allocation order timeline from FAT cluster metadata" ;
-    solveit-core:usedTechnique solveit-data:techniqueT1052 ;
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1052 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-timeline-generator ;
     uco-action:startTime "2026-01-28T11:03:00Z"^^xsd:dateTime ;

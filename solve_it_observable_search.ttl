@@ -13,12 +13,12 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/observable/search> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/search/0.0.8> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/search/0.1.0> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/observable/1.4.0> ;
     dcterms:title "SOLVE-IT Observable Search Module"@en ;
     dcterms:description "Classes for keyword search, indexing, and file system analysis."@en ;
     dcterms:creator "SOLVE-IT Project" ;
-    owl:versionInfo "0.0.8" ;
+    owl:versionInfo "0.1.0" ;
     rdfs:label "SOLVE-IT Observable Search Module"@en .
 
 #################################################################
@@ -30,6 +30,12 @@ solveit-observable:KeywordSearchResult rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
     rdfs:label "Keyword Search Result"@en ;
     rdfs:comment "A result from a keyword search operation during forensic analysis."@en .
+
+###  KeywordSearchResultSet Observable Object
+solveit-observable:KeywordSearchResultSet rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ArtifactSet ;
+    rdfs:label "Keyword Search Result Set"@en ;
+    rdfs:comment "A collection of keyword search results from a search operation. Subsequent techniques may filter or reduce this set, for example by reviewing hits, discarding false positives, or redacting privileged content. Follows the same set-based pattern as FileSet and its subclasses."@en .
 
 ###  KeywordIndex Observable Object
 solveit-observable:KeywordIndex rdf:type owl:Class ;
@@ -43,40 +49,18 @@ solveit-observable:KeywordIndexingConfiguration rdf:type owl:Class ;
     rdfs:label "Keyword Indexing Configuration"@en ;
     rdfs:comment "Configuration settings used for keyword indexing during forensic analysis."@en .
 
-###  ClusterRun Observable Object
-solveit-observable:ClusterRun rdf:type owl:Class ;
-    rdfs:subClassOf uco-observable:ObservableObject ;
-    rdfs:label "Cluster Run"@en ;
-    rdfs:comment "A contiguous run of clusters allocated to a file in a cluster-based file system (e.g., FAT, NTFS, exFAT). Multiple runs indicate file fragmentation."@en .
-
 #################################################################
 #    Object Properties
 #################################################################
+
+solveit-observable:hasSearchResult rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:KeywordSearchResultSet ;
+    rdfs:range solveit-observable:KeywordSearchResult ;
+    rdfs:label "has search result"@en ;
+    rdfs:comment "Links a KeywordSearchResultSet to an individual KeywordSearchResult."@en .
 
 solveit-observable:hasConfiguration rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:KeywordIndex ;
     rdfs:range solveit-observable:KeywordIndexingConfiguration ;
     rdfs:label "has configuration"@en ;
     rdfs:comment "Links a KeywordIndex to its KeywordIndexingConfiguration."@en .
-
-solveit-observable:hasClusterRun rdf:type owl:ObjectProperty ;
-    rdfs:domain uco-observable:File ;
-    rdfs:range solveit-observable:ClusterRun ;
-    rdfs:label "has cluster run"@en ;
-    rdfs:comment "Links a file to its cluster allocation runs. A contiguous file has one run; a fragmented file has multiple runs."@en .
-
-#################################################################
-#    Data Properties
-#################################################################
-
-solveit-observable:runStartCluster rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClusterRun ;
-    rdfs:range xsd:integer ;
-    rdfs:label "run start cluster"@en ;
-    rdfs:comment "The first cluster number in this contiguous run."@en .
-
-solveit-observable:runClusterCount rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClusterRun ;
-    rdfs:range xsd:integer ;
-    rdfs:label "run cluster count"@en ;
-    rdfs:comment "The number of contiguous clusters in this run."@en .

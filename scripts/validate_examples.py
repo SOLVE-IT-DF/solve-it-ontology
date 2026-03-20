@@ -15,6 +15,20 @@ SOLVEIT_OBS = Namespace("https://ontology.solveit-df.org/solveit/observable/")
 SOLVEIT_ANALYSIS = Namespace("https://ontology.solveit-df.org/solveit/analysis/")
 SOLVEIT_DATA = Namespace("https://ontology.solveit-df.org/solveit/data/")  # External KB
 
+def _local_name(iri):
+    """Extract the local name from an IRI (after last / or #)."""
+    for sep in ("#", "/"):
+        idx = iri.rfind(sep)
+        if idx >= 0:
+            return iri[idx + 1:]
+    return iri
+
+def _short_label(graph, node):
+    """Return rdfs:label if available, otherwise the IRI local name."""
+    for label in graph.objects(node, RDFS.label):
+        return str(label)
+    return _local_name(str(node))
+
 def load_ontology_definitions(project_root):
     """Load all ontology TTL files and extract defined classes and properties."""
     g = Graph()
@@ -103,10 +117,13 @@ def is_instance_of_class_or_subclass(instance_types, target_class, ontology_grap
             return True
     return False
 
-def validate_id_format(id_value, expected_prefix):
-    """Validate ID format (e.g., T1002, W1004, M1003)."""
-    pattern = f"^{expected_prefix}\\d+$"
-    return re.match(pattern, id_value) is not None
+def validate_id_format(id_value, expected_prefixes):
+    """Validate ID format (e.g., T1002, DFT-1002, W1004, DFW-1004, M1003, DFM-1003)."""
+    for prefix in expected_prefixes:
+        pattern = f"^{re.escape(prefix)}\\d+$"
+        if re.match(pattern, id_value):
+            return True
+    return False
 
 def validate_examples(project_root, defined_classes, defined_properties, property_domains, property_ranges, ontology_graph):
     """Validate all example files in the solve_it_examples directory against the ontology definitions."""
@@ -162,9 +179,9 @@ def validate_examples(project_root, defined_classes, defined_properties, propert
 
     # ID format validation patterns
     id_format_rules = {
-        str(SOLVEIT_CORE.techniqueID): 'T',
-        str(SOLVEIT_CORE.weaknessID): 'W',
-        str(SOLVEIT_CORE.mitigationID): 'M'
+        str(SOLVEIT_CORE.techniqueID): ['DFT-'],
+        str(SOLVEIT_CORE.weaknessID): ['DFW-'],
+        str(SOLVEIT_CORE.mitigationID): ['DFM-'],
     }
 
     # Collect all instances by type
@@ -260,9 +277,10 @@ def validate_examples(project_root, defined_classes, defined_properties, propert
             if prop_str in id_format_rules:
                 if isinstance(o, Literal):
                     id_value = str(o)
-                    expected_prefix = id_format_rules[prop_str]
-                    if not validate_id_format(id_value, expected_prefix):
-                        errors.append(f"ID format violation: {prop_str} on {s} has value '{id_value}' (expected format: {expected_prefix}####)")
+                    expected_prefixes = id_format_rules[prop_str]
+                    if not validate_id_format(id_value, expected_prefixes):
+                        fmt_examples = " or ".join(f"{p}####" for p in expected_prefixes)
+                        errors.append(f"ID format violation: {prop_str} on {s} has value '{id_value}' (expected format: {fmt_examples})")
 
     # Validation 3: Required Properties Check
     for class_uri, required_props in required_properties.items():
@@ -275,6 +293,66 @@ def validate_examples(project_root, defined_classes, defined_properties, propert
                         prop_name = required_prop.split('/')[-1]
                         class_name = class_uri.split('/')[-1]
                         errors.append(f"Missing required property: {instance} (type {class_name}) is missing {prop_name}")
+
+    # Validation 6: Input/Output Type Compatibility
+    # For SolveitInvestigativeAction instances, warn when the types of
+    # uco-action:object (inputs) or uco-action:result (outputs) don't
+    # match the hasCASEInputClass / hasCASEOutputClass declared on the
+    # linked technique.  This is a warning, not an error — many techniques
+    # don't have I/O classes mapped yet, and there may be valid variations.
+    UCO_ACTION = Namespace("https://ontology.unifiedcyberontology.org/uco/action/")
+    combined_graph = g + ontology_graph  # query across both
+
+    action_class = SOLVEIT_CORE.SolveitInvestigativeAction
+    for action in g.subjects(RDF.type, action_class):
+        for technique_ref in g.objects(action, SOLVEIT_CORE.usedTechnique):
+            # Collect expected I/O classes from the technique definition
+            expected_inputs = set()
+            expected_outputs = set()
+            for cls_literal in combined_graph.objects(technique_ref, SOLVEIT_CORE.hasCASEInputClass):
+                expected_inputs.add(str(cls_literal))
+            for cls_literal in combined_graph.objects(technique_ref, SOLVEIT_CORE.hasCASEOutputClass):
+                expected_outputs.add(str(cls_literal))
+
+            # Skip if technique has no I/O classes defined (nothing to check)
+            if not expected_inputs and not expected_outputs:
+                continue
+
+            # Collect actual types of uco-action:object (inputs)
+            if expected_inputs:
+                actual_input_types = set()
+                for obj in g.objects(action, UCO_ACTION.object):
+                    for t in g.objects(obj, RDF.type):
+                        actual_input_types.add(str(t))
+                if actual_input_types:
+                    if not actual_input_types & expected_inputs:
+                        tech_label = _short_label(combined_graph, technique_ref)
+                        action_label = _short_label(g, action)
+                        expected_names = ", ".join(sorted(_local_name(c) for c in expected_inputs))
+                        actual_names = ", ".join(sorted(_local_name(t) for t in actual_input_types))
+                        warnings.append(
+                            f"Input type mismatch: {action_label} provides "
+                            f"object types [{actual_names}] but technique "
+                            f"{tech_label} expects [{expected_names}]"
+                        )
+
+            # Collect actual types of uco-action:result (outputs)
+            if expected_outputs:
+                actual_output_types = set()
+                for res in g.objects(action, UCO_ACTION.result):
+                    for t in g.objects(res, RDF.type):
+                        actual_output_types.add(str(t))
+                if actual_output_types:
+                    if not actual_output_types & expected_outputs:
+                        tech_label = _short_label(combined_graph, technique_ref)
+                        action_label = _short_label(g, action)
+                        expected_names = ", ".join(sorted(_local_name(c) for c in expected_outputs))
+                        actual_names = ", ".join(sorted(_local_name(t) for t in actual_output_types))
+                        warnings.append(
+                            f"Output type mismatch: {action_label} produces "
+                            f"result types [{actual_names}] but technique "
+                            f"{tech_label} expects [{expected_names}]"
+                        )
 
     # Report results
     print("\n" + "=" * 70)
