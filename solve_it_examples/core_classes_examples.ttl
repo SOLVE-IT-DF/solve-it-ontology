@@ -90,6 +90,12 @@
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI .
 
 #################################################################
+#    ASTM Error Category (defined in core ontology, referenced here)
+#################################################################
+
+solveit-core:ASTM_INCOMP rdf:type solveit-core:ASTMErrorCategory .
+
+#################################################################
 #    Example SOLVE-IT Weakness Instance
 #################################################################
 
@@ -97,12 +103,7 @@
     rdfs:label "W1004: Acquisition does not include all sectors from LBA0 to LBA max"@en ;
     solveit-core:weaknessID "W1004" ;
     solveit-core:weaknessName "Acquisition does not include all sectors from LBA0 to LBA max" ;
-    solveit-core:mayResultInINCOMP true ;
-    solveit-core:mayResultInINAC_EX false ;
-    solveit-core:mayResultInINAC_AS false ;
-    solveit-core:mayResultInINAC_ALT false ;
-    solveit-core:mayResultInINAC_COR false ;
-    solveit-core:mayResultInMISINT false ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:hasPotentialMitigation :mitigationM1003 ;
     solveit-core:hasPotentialMitigation :mitigationM1004 .
 

@@ -175,41 +175,43 @@ solveit-core:weaknessDescription rdf:type owl:DatatypeProperty ;
     rdfs:label "weakness description"@en ;
     rdfs:comment "A detailed description of the weakness and its potential impacts."@en .
 
-solveit-core:mayResultInINCOMP rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:boolean ;
-    rdfs:label "may result in INCOMP"@en ;
-    rdfs:comment "Indicates if this weakness may result in an Incompleteness error (ASTM E3016-18 category)."@en .
+#################################################################
+#    ASTM Error Category class and individuals
+#################################################################
 
-solveit-core:mayResultInINAC_EX rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:boolean ;
-    rdfs:label "may result in INAC-EX"@en ;
-    rdfs:comment "Indicates if this weakness may result in an Inaccuracy-Execution error (ASTM E3016-18 category)."@en .
+solveit-core:ASTMErrorCategory rdf:type owl:Class ;
+    rdfs:label "ASTM Error Category"@en ;
+    rdfs:comment "An error category from ASTM E3016-18 used to classify weakness impacts."@en .
 
-solveit-core:mayResultInINAC_AS rdf:type owl:DatatypeProperty ;
+solveit-core:hasWeaknessClass rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:boolean ;
-    rdfs:label "may result in INAC-AS"@en ;
-    rdfs:comment "Indicates if this weakness may result in an Inaccuracy-Assumption error (ASTM E3016-18 category)."@en .
+    rdfs:range solveit-core:ASTMErrorCategory ;
+    rdfs:label "has weakness class"@en ;
+    rdfs:comment "Associates a weakness with an ASTM E3016-18 error category."@en .
 
-solveit-core:mayResultInINAC_ALT rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:boolean ;
-    rdfs:label "may result in INAC-ALT"@en ;
-    rdfs:comment "Indicates if this weakness may result in an Inaccuracy-Alteration error (ASTM E3016-18 category)."@en .
+solveit-core:ASTM_INCOMP rdf:type owl:NamedIndividual, solveit-core:ASTMErrorCategory ;
+    rdfs:label "INCOMP"@en ;
+    rdfs:comment "Incompleteness — failure to recover live or deleted artefacts (ASTM E3016-18)."@en .
 
-solveit-core:mayResultInINAC_COR rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:boolean ;
-    rdfs:label "may result in INAC-COR"@en ;
-    rdfs:comment "Indicates if this weakness may result in an Inaccuracy-Corruption error (ASTM E3016-18 category)."@en .
+solveit-core:ASTM_INAC_EX rdf:type owl:NamedIndividual, solveit-core:ASTMErrorCategory ;
+    rdfs:label "INAC-EX"@en ;
+    rdfs:comment "Inaccuracy: Existence — presenting artefacts for non-existent items (ASTM E3016-18)."@en .
 
-solveit-core:mayResultInMISINT rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-core:Weakness ;
-    rdfs:range xsd:boolean ;
-    rdfs:label "may result in MISINT"@en ;
-    rdfs:comment "Indicates if this weakness may result in a Misinterpretation error (ASTM E3016-18 category)."@en .
+solveit-core:ASTM_INAC_AS rdf:type owl:NamedIndividual, solveit-core:ASTMErrorCategory ;
+    rdfs:label "INAC-AS"@en ;
+    rdfs:comment "Inaccuracy: Association — e.g. presenting live data as deleted (ASTM E3016-18)."@en .
+
+solveit-core:ASTM_INAC_ALT rdf:type owl:NamedIndividual, solveit-core:ASTMErrorCategory ;
+    rdfs:label "INAC-ALT"@en ;
+    rdfs:comment "Inaccuracy: Alteration — modifying the content of digital data (ASTM E3016-18)."@en .
+
+solveit-core:ASTM_INAC_COR rdf:type owl:NamedIndividual, solveit-core:ASTMErrorCategory ;
+    rdfs:label "INAC-COR"@en ;
+    rdfs:comment "Inaccuracy: Corruption — process could corrupt data or fail to detect corrupt data (ASTM E3016-18)."@en .
+
+solveit-core:ASTM_MISINT rdf:type owl:NamedIndividual, solveit-core:ASTMErrorCategory ;
+    rdfs:label "MISINT"@en ;
+    rdfs:comment "Misinterpretation — results presented in a way that encourages misinterpretation (ASTM E3016-18)."@en .
 
 #################################################################
 #    Data Properties - Mitigation
