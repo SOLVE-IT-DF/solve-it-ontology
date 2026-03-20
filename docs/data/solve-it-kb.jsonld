@@ -15533,6 +15533,11 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1059"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1074"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "Searching for case-type specific keywords"

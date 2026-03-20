@@ -578,11 +578,6 @@
     solveit-core:citationID "DFCite-1073" ;
     solveit-core:citationPlaintext "Jens-Petter Sandvik, André Årnes, 2018. The reliability of clocks as digital evidence under low voltage conditions. Digital Investigation, 24, pp.S10-S17." .
 
-:citationDFCite-1074 a solveit-core:Citation ;
-    rdfs:label "DFCite-1074" ;
-    solveit-core:citationID "DFCite-1074" ;
-    solveit-core:citationPlaintext "Kanta, A. and Hargreaves, C., 2025, August. Measuring the effectiveness of keyword lists in digital forensics. In Proceedings of the 20th International Conference on Availability, Reliability and Security." .
-
 :citationDFCite-1075 a solveit-core:Citation ;
     rdfs:label "DFCite-1075" ;
     solveit-core:citationID "DFCite-1075" ;
@@ -2770,6 +2765,7 @@ Facebook Messenger
     solveit-core:hasExample "Example word lists https://www.dfir.training/downloads/search-terms" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1057,
         :weaknessDFW-1059 ;
+    solveit-core:hasReference :citationDFCite-1074 ;
     solveit-core:techniqueDescription "Searching for case-type specific keywords" ;
     solveit-core:techniqueDetails "This complements case-specific wordlists (T1123) created for the individual case." ;
     solveit-core:techniqueID "DFT-1122" ;
@@ -5635,6 +5631,11 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFCite-1071" ;
     solveit-core:citationID "DFCite-1071" ;
     solveit-core:citationPlaintext "Interpol (2021), Guidelines for digital forensics first responders v7, Ch5 Specific Procedures p34, https://www.interpol.int/content/download/16243/file/Guidelines_to_Digital_Forensics_First_Responders_V7.pdf" .
+
+:citationDFCite-1074 a solveit-core:Citation ;
+    rdfs:label "DFCite-1074" ;
+    solveit-core:citationID "DFCite-1074" ;
+    solveit-core:citationPlaintext "Kanta, A. and Hargreaves, C., 2025, August. Measuring the effectiveness of keyword lists in digital forensics. In Proceedings of the 20th International Conference on Availability, Reliability and Security." .
 
 :citationDFCite-1076 a solveit-core:Citation ;
     rdfs:label "DFCite-1076" ;
