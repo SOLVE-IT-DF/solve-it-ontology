@@ -236,6 +236,12 @@ solveit-observable:SocialMediaAppFiles rdf:type owl:Class ;
     rdfs:label "Social Media App Files"@en ;
     rdfs:comment "Files associated with a social media application, including posts, direct messages, friend/follower lists, media uploads, and notification data (e.g. Instagram, Facebook, TikTok, X)."@en .
 
+###  SmartHomeAppFiles Observable Object
+solveit-observable:SmartHomeAppFiles rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:ApplicationFiles ;
+    rdfs:label "Smart Home App Files"@en ;
+    rdfs:comment "Files associated with a smart home or IoT control application, including device registries, automation routines, activity logs, sensor data, camera event histories, and network configuration (e.g. Apple Home, Google Home, Amazon Alexa, Samsung SmartThings)."@en .
+
 ###  DeviceSet Observable Object
 solveit-observable:DeviceSet rdf:type owl:Class ;
     rdfs:subClassOf uco-core:ContextualCompilation ;
