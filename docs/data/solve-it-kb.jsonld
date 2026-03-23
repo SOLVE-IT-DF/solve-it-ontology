@@ -9048,6 +9048,9 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1169"
       },
       {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1121"
+      },
+      {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1165"
       }
     ],
@@ -12499,9 +12502,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1124"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1121"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1122"

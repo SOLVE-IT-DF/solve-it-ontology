@@ -39,6 +39,7 @@
         :techniqueDFT-1099,
         :techniqueDFT-1100,
         :techniqueDFT-1120,
+        :techniqueDFT-1121,
         :techniqueDFT-1165,
         :techniqueDFT-1167,
         :techniqueDFT-1169 ;
@@ -2064,8 +2065,7 @@
     solveit-core:hasReference :citationDFCite-1013,
         :citationDFCite-1014,
         :citationDFCite-1103 ;
-    solveit-core:hasSubtechnique :techniqueDFT-1121,
-        :techniqueDFT-1122,
+    solveit-core:hasSubtechnique :techniqueDFT-1122,
         :techniqueDFT-1123,
         :techniqueDFT-1124,
         :techniqueDFT-1125,
