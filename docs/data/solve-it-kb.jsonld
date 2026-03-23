@@ -9543,10 +9543,13 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1133"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1177"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1179"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1179"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1181"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1177"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -16532,10 +16535,16 @@
         "@value": "DFT-1134: Use time anchors to estimate clock offset"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/DateTimeStamp"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/ClockOffset"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/TimestampOffset"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -18811,6 +18820,61 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Extract file(s) from a pre-deletion container"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1181",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1181: Examine smart home app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/SmartHomeAppFiles"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "SmartThings"
+      },
+      {
+        "@value": "Apple Home"
+      },
+      {
+        "@value": "Philips Hue"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Examine the data stored by an app designed to control, monitor or program smart home capabilities."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "There are many other components to a smart home system including the devices themselves (possibly different hubs and sensors), plus the online content. This technique focuses on the app."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1181"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Examine smart home app"
       }
     ]
   },
