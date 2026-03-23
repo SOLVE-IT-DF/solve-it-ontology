@@ -61,6 +61,12 @@ solveit-observable:ClockOffsetMeasurement rdf:type owl:Class ;
     rdfs:label "Clock Offset Measurement"@en ;
     rdfs:comment "The measured difference between a device clock and a reference time source. Records what was compared, the offset value, and when the comparison was made."@en .
 
+###  TimestampOffset Observable Object
+solveit-observable:TimestampOffset rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Timestamp Offset"@en ;
+    rdfs:comment "The computed difference between two timestamps, expressed in seconds. Positive values indicate the first timestamp is ahead of the second, negative values indicate it is behind."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -107,6 +113,12 @@ solveit-observable:clockOffsetKnownAt rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:dateTime ;
     rdfs:label "clock offset known at"@en ;
     rdfs:comment "The specific point in time when this clock offset was determined."@en .
+
+solveit-observable:timestampOffsetValue rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:TimestampOffset ;
+    rdfs:range xsd:decimal ;
+    rdfs:label "timestamp offset value"@en ;
+    rdfs:comment "The difference between two timestamps in seconds. Positive values indicate the first timestamp is ahead of the second, negative values indicate it is behind."@en .
 
 solveit-observable:timestampValue rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-observable:DateTimeStamp ;
