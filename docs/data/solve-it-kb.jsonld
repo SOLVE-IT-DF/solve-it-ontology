@@ -8686,6 +8686,270 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1242",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1242: Testing live message recovery from multiplayer gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1242"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Testing live message recovery from multiplayer gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1243: Request user data from multiplayer gaming platform and compare"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Request user data from multiplayer gaming platform and compare"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1244",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1244: Testing deleted message recovery from multiplayer gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1244"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Testing deleted message recovery from multiplayer gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1245",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1245: Testing live contact recovery from a multiplayer gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1245"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Testing live contact recovery from a multiplayer gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1246",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1246: Testing deleted contact recovery from a multiplayer gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1246"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Testing deleted contact recovery from a multiplayer gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1247",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1247: Testing that gaming app configuration information is recovered correctly"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1247"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Testing that gaming app configuration information is recovered correctly"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1248",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1248: Testing to ensure that live accounts are recovered correctly from a gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1248"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Testing to ensure that live accounts are recovered correctly from a gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1249",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1249: Testing to ensure that deleted accounts are recovered correctly from a gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1249"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Testing to ensure that deleted accounts are recovered correctly from a gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1250",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1250: Test that timeline analysis tool returns correct results when filter criteria are provided"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1250"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Test that timeline analysis tool returns correct results when filter criteria are provided"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1251",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1251: Manually review timeline entries for relevance"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1251"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Manually review timeline entries for relevance"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1252",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1252: Refine timeline filtering criteria to reduce set of entries to a manageable set for review"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1252"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Refine timeline filtering criteria to reduce set of entries to a manageable set for review"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1253",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1253: Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1253"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
@@ -8734,7 +8998,7 @@
     "https://ontology.solveit-df.org/solveit/core/sortOrder": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 19
+        "@value": 20
       }
     ]
   },
@@ -8782,6 +9046,12 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1169"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1121"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1165"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -8908,7 +9178,7 @@
     "https://ontology.solveit-df.org/solveit/core/sortOrder": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 20
+        "@value": 19
       }
     ]
   },
@@ -9003,9 +9273,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1017"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1015"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1162"
@@ -9276,6 +9543,9 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1133"
       },
       {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1177"
+      },
+      {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1179"
       }
     ],
@@ -9327,6 +9597,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1086"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1182"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -9604,6 +9877,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1149"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1180"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -9866,6 +10142,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1026"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1178"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -9971,7 +10250,7 @@
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -10189,6 +10468,11 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1024"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1015"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -10593,7 +10877,11 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -11165,10 +11453,6 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/RawImage"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -11192,10 +11476,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
-        "@value": "Disk image container"
+        "@value": "store disk image container"
       },
       {
-        "@value": "image file"
+        "@value": "store image file"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -11205,7 +11489,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "Bitstream data that would result from disk imaging would be stored in formats such as: RAW, EWF, AFF4. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc."
+        "@value": "The storage of bitstream data resulting from disk imaging, in formats such as: EWF, AFF4. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc. This technique represents storage of data in container formats, whereas DFT-1178 represents data stored in raw files. "
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11244,6 +11528,17 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "ZIP"
+      },
+      {
+        "@value": "RAR"
+      },
+      {
+        "@value": "TAR"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -12209,9 +12504,6 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1124"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1121"
-      },
-      {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1122"
       },
       {
@@ -12813,6 +13105,16 @@
         "@value": "DFT-1061: Recover non-allocated files"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -12825,74 +13127,6 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Directory"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/allocationStatus"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/extInodeID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/filePath"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/fileName"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/metadataChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftRecordChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameModifiedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameAccessedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameCreatedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameRecordChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerSID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ownerSID"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -12924,6 +13158,11 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "The recovery of files from non-allocated space"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "An attempt to recover non-allocated files from either a current file system or non-allocated space from within a file system, partition, or storage media."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13290,6 +13529,12 @@
         "@value": "DFT-1069: Browser examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/BrowserAppFiles"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -13405,6 +13650,12 @@
         "@value": "DFT-1070: Email examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/EmailAppFiles"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -13413,6 +13664,10 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/EmailMessage"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Contact"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13511,6 +13766,12 @@
         "@value": "DFT-1072: Chat app examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ChatAppFiles"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -13519,6 +13780,10 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/SMSMessage"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Contact"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -13612,6 +13877,12 @@
       {
         "@language": "en",
         "@value": "DFT-1073: Calendar app examination"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/CalendarAppFiles"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -14131,18 +14402,24 @@
         "@value": "DFT-1088: Relational-based event reconstruction"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Message"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Contact"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/core/Relationship"
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/core/kindOfRelationship"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/core/confidence"
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedCommunication"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -14984,7 +15261,7 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -15149,7 +15426,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1116: Determine connected devices"
+        "@value": "DFT-1116: Extract references to connected devices"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -15160,7 +15443,13 @@
         "@value": "ADB connected hosts"
       },
       {
-        "@value": "iOS Backups from a computer"
+        "@value": "iOS backups from a computer"
+      },
+      {
+        "@value": "Paired bluetooth devices"
+      },
+      {
+        "@value": "Synronization artifacts referencing another device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -15176,12 +15465,20 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
       {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1057"
+      },
+      {
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1001"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "Examine artifacts and extract indicators of devices that have been connected to the target device."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This technique extracts references to other devices that have potentially been connected to the device being examined. The subsequent interpretation of these artifacts (using T1088: Relational-based event reconstruction), could result in HypothesisedDevices. The separate process for inferring the connected device(s) captures the uncertainty in such an interpretation."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15191,7 +15488,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Determine connected devices"
+        "@value": "Extract references to connected devices"
       }
     ]
   },
@@ -15460,14 +15757,24 @@
         "@value": "DFT-1121: Keyword indexing"
       }
     ],
-    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/KeywordIndex"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/observable/KeywordIndexingConfiguration"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/KeywordIndex"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -15489,7 +15796,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Extracting strings from a data source and adding them to an index for subsequent searching"
+        "@value": "Extracting strings from a data source and adding them to an index for subsequent searching."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "An index can be constructed over a set of files (including non-allocated space represented as files), a set of extracted artefacts, or both."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15616,10 +15928,20 @@
         "@value": "DFT-1124: Keyword search (indexed)"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/KeywordIndex"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/Wordlist"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -16034,6 +16356,12 @@
         "@value": "DFT-1133: AI companion app examination"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/AiChatAppFiles"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -16202,6 +16530,12 @@
       {
         "@language": "en",
         "@value": "DFT-1134: Use time anchors to estimate clock offset"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ClockOffset"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -16859,6 +17193,12 @@
         "@value": "DFT-1150: Recover non-allocated files using residual file metadata"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
@@ -16871,74 +17211,6 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Directory"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/allocationStatus"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/extInodeID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/filePath"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/fileName"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/metadataChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftRecordChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameModifiedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameAccessedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameCreatedTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameRecordChangeTime"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerSID"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ownerSID"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -17172,10 +17444,20 @@
         "@value": "DFT-1155: Operation-based event reconstruction"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/keywordSearchTerm"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedWebSearch"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -17623,6 +17905,50 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1165",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1165: Extract software configuration information"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ApplicationFiles"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Examination of one or more files to extract configuration information for a piece of software."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "A configuration file of a browser for example may contain the home page that is set or other information. This technique extracts and presents that configuration information."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1165"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Extract software configuration information"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1166",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Technique"
@@ -17851,6 +18177,10 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/observable/PhotosAppFiles"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/GamingAppFiles"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -18217,6 +18547,174 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1177",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1177: Examination of a mutiplayer game app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/GamingAppFiles"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Message"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Contact"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Account"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1279"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1287"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1288"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1289"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1290"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1291"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1292"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1293"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1294"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1280"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1281"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1282"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1283"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1284"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1285"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1286"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1143"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "gaming app examination"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Extracting artifacts from multiplayer gaming apps."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Multiplayer game apps often offer messaging, contacts/friends, and other features that could contain data that may be relevant to many types of case."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1177"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Examination of a mutiplayer game app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1178",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1178: Writing bitstream data to a raw image format"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/Bitstream"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/RawImage"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "store dd image"
+      },
+      {
+        "@value": "write dd image"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Storage of bitstream data recovered from a digital device as raw files."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Bitstream data resulting from disk imaging stored in a raw format. The imaged data may be stored as one file or split into several segments. The raw files may also be accompanied by complementary separate metadata files."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1178"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Writing bitstream data to a raw image format"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1179",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Technique"
@@ -18245,6 +18743,143 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Drone app examination"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1180",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1180: Extract file(s) from a pre-deletion container"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/path"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/DateTimeStamp"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Windows Recycle Bin"
+      },
+      {
+        "@value": "macOS Trash"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Recycle Bin examination"
+      },
+      {
+        "@value": "Trash examination"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "An examination of the operating system structures that represent the 'pre-deletion' container (i.e. Recycle Bin/Trash) to extract those files and potentially additional metadata such as original path or date it was moved."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Content in pre-deletion containers such as the recycle bin/trash is not always viewable in a useful form without further processing. \nThis further processing should provide access to the file content but also potentially additional information such as data sent to recycle bin, or original path."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1180"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Extract file(s) from a pre-deletion container"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1182",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1182: Filter timeline for relevant entries "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/Timeline"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/Timeline"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Plaso"
+      },
+      {
+        "@value": "TimeSketch"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1295"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1296"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1297"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1298"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1299"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Provide some criteria that selects only a subset of timeline entries from a set. "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Filtering might be on timestamp type, within a defined time range, related to a particular file, or matching against some other content associated with the timestamp entries. "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1182"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Filter timeline for relevant entries "
       }
     ]
   },
@@ -28364,6 +28999,781 @@
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
         "@value": "Data copied does not include all sectors from LBA0 to LBA max due to the data copying process skipping some sectors or bytes"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1279",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1279: Failure to recover live message from a multiplayer gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1242"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1279"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover live message from a multiplayer gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1280",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1280: Presenting a live contact from a gaming app as a deleted one or vice versa"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1245"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1244"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1280"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Presenting a live contact from a gaming app as a deleted one or vice versa"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1281",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1281: Failure to recover the gaming app configuration"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1247"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1281"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover the gaming app configuration"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1282",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1282: Recovering the gaming app configuration incorrectly"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1247"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1282"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Recovering the gaming app configuration incorrectly"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1283",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1283: Failure to recover a live account used in a gaming application"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1248"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1283"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover a live account used in a gaming application"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1284",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1284: Failure to recover a previous but removed account used in a gaming application"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1249"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1284"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover a previous but removed account used in a gaming application"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1285",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1285: Recovering an account used for a gaming application that was not actually used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1248"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1050"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1285"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Recovering an account used for a gaming application that was not actually used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1286",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1286: Describing a live gaming app account as deleted/removed or vice versa"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1248"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1249"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1050"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1286"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Describing a live gaming app account as deleted/removed or vice versa"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1287",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1287: Failure to recover deleted message from a multiplayer gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1244"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1287"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover deleted message from a multiplayer gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1288",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1288: Presenting a live message from a gaming app that does not exist"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1242"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1288"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Presenting a live message from a gaming app that does not exist"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1289",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1289: Presenting a deleted message from a gaming app that does not exist"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1244"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1289"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Presenting a deleted message from a gaming app that does not exist"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1290",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1290: Presenting a live message from a gaming app as deleted or vice versa"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1244"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1242"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1290"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Presenting a live message from a gaming app as deleted or vice versa"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1291",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1291: Failure to recover a live contact from a gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1245"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1291"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover a live contact from a gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1292",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1292: Failure to recover a deleted contact from a gaming app"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1246"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1292"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover a deleted contact from a gaming app"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1293",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1293: Presenting a live contact from a gaming app that does not exist"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1245"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1293"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Presenting a live contact from a gaming app that does not exist"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1294",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1294: Presenting a deleted contact from a gaming app that does not exist"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1246"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1243"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1294"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Presenting a deleted contact from a gaming app that does not exist"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1295",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1295: The filtered timeline misses relevant entries because filtering criteria was too strict"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1295"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The filtered timeline misses relevant entries because filtering criteria was too strict"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1296",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1296: The filtered timeline misses relevant entries because the tool did not filter correctly"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1250"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1296"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The filtered timeline misses relevant entries because the tool did not filter correctly"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1297",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1297: The filtered timeline includes entries that are not relevant because the filtering criteria was too broad"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1251"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1252"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1297"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The filtered timeline includes entries that are not relevant because the filtering criteria was too broad"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1298",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1298: The filtered timeline includes entries that are not relevant because the the tool did not filter correctly"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1250"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1298"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The filtered timeline includes entries that are not relevant because the the tool did not filter correctly"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1299",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1299: A filtered timeline is presented as a full timeline"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1253"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1299"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A filtered timeline is presented as a full timeline"
       }
     ]
   }

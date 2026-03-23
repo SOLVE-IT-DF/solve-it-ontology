@@ -26,7 +26,7 @@
     solveit-core:objectiveDescription "Use available digital evidence to formulate and test hypotheses about events." ;
     solveit-core:objectiveID "DFO-1001" ;
     solveit-core:objectiveName "Reconstruct events" ;
-    solveit-core:sortOrder 19 .
+    solveit-core:sortOrder 20 .
 
 :objectiveDFO-1002 a solveit-core:Objective ;
     rdfs:label "DFO-1002: Extract artifacts, or content of specific types"@en ;
@@ -39,6 +39,8 @@
         :techniqueDFT-1099,
         :techniqueDFT-1100,
         :techniqueDFT-1120,
+        :techniqueDFT-1121,
+        :techniqueDFT-1165,
         :techniqueDFT-1167,
         :techniqueDFT-1169 ;
     solveit-core:objectiveDescription "Process data to extract artifacts or stored content of specific types." ;
@@ -70,7 +72,7 @@
     solveit-core:objectiveDescription "Conduct research to gain additional knowledge to support the acquisition, extraction, or interpretation of digital evidence." ;
     solveit-core:objectiveID "DFO-1004" ;
     solveit-core:objectiveName "Conduct research" ;
-    solveit-core:sortOrder 20 .
+    solveit-core:sortOrder 19 .
 
 :objectiveDFO-1005 a solveit-core:Objective ;
     rdfs:label "DFO-1005: Prioritize digital evidence sources"@en ;
@@ -85,7 +87,6 @@
     solveit-core:includesTechnique :techniqueDFT-1002,
         :techniqueDFT-1003,
         :techniqueDFT-1004,
-        :techniqueDFT-1015,
         :techniqueDFT-1016,
         :techniqueDFT-1017,
         :techniqueDFT-1018,
@@ -163,6 +164,7 @@
         :techniqueDFT-1108,
         :techniqueDFT-1109,
         :techniqueDFT-1133,
+        :techniqueDFT-1177,
         :techniqueDFT-1179 ;
     solveit-core:objectiveDescription "Process data stored by the applications to extract digital forensic artifacts." ;
     solveit-core:objectiveID "DFO-1011" ;
@@ -175,7 +177,8 @@
         :techniqueDFT-1050,
         :techniqueDFT-1051,
         :techniqueDFT-1086,
-        :techniqueDFT-1118 ;
+        :techniqueDFT-1118,
+        :techniqueDFT-1182 ;
     solveit-core:objectiveDescription "Attempt to find digital artifacts relevant to the investigation." ;
     solveit-core:objectiveID "DFO-1012" ;
     solveit-core:objectiveName "Locate potentially relevant content" ;
@@ -244,7 +247,8 @@
         :techniqueDFT-1097,
         :techniqueDFT-1098,
         :techniqueDFT-1116,
-        :techniqueDFT-1149 ;
+        :techniqueDFT-1149,
+        :techniqueDFT-1180 ;
     solveit-core:objectiveDescription "Process data stored by the operating system to extract digital forensic artifacts." ;
     solveit-core:objectiveID "DFO-1017" ;
     solveit-core:objectiveName "Extract artifacts stored by the operating system" ;
@@ -308,7 +312,8 @@
 :objectiveDFO-1022 a solveit-core:Objective ;
     rdfs:label "DFO-1022: Store acquired data"@en ;
     solveit-core:includesTechnique :techniqueDFT-1025,
-        :techniqueDFT-1026 ;
+        :techniqueDFT-1026,
+        :techniqueDFT-1178 ;
     solveit-core:objectiveDescription "Store acquired data in one or more formats for subsequent examination and analysis" ;
     solveit-core:objectiveID "DFO-1022" ;
     solveit-core:objectiveName "Store acquired data" ;
@@ -837,19 +842,6 @@
     rdfs:label "DFCite-1142" ;
     solveit-core:citationID "DFCite-1142" ;
     solveit-core:citationPlaintext "https://www.oxygenforensics.com/en/resources/downgrade-method-what-should-be-known-before-the-procedure/" .
-
-:citationDFCite-1143 a solveit-core:Citation ;
-    rdfs:label "DFCite-1143" ;
-    solveit-core:citationBibtex """@inproceedings{gruhn2015windows,
-  title={Windows NT pagefile. sys virtual memory analysis},
-  author={Gruhn, Michael},
-  booktitle={2015 Ninth International Conference on IT Security Incident Management \\& IT Forensics},
-  pages={3--18},
-  year={2015},
-  organization={IEEE}
-}""" ;
-    solveit-core:citationID "DFCite-1143" ;
-    solveit-core:citationPlaintext "Gruhn, M., 2015, May. Windows NT pagefile. sys virtual memory analysis. In 2015 Ninth International Conference on IT Security Incident Management & IT Forensics (pp. 3-18). IEEE." .
 
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
@@ -1659,6 +1651,21 @@
     solveit-core:mitigationID "DFM-1241" ;
     solveit-core:mitigationName "Avoid direct connection to media and use hardware write blocker instead" .
 
+:mitigationDFM-1251 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1251: Manually review timeline entries for relevance"@en ;
+    solveit-core:mitigationID "DFM-1251" ;
+    solveit-core:mitigationName "Manually review timeline entries for relevance" .
+
+:mitigationDFM-1252 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1252: Refine timeline filtering criteria to reduce set of entries to a manageable set for review"@en ;
+    solveit-core:mitigationID "DFM-1252" ;
+    solveit-core:mitigationName "Refine timeline filtering criteria to reduce set of entries to a manageable set for review" .
+
+:mitigationDFM-1253 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1253: Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown"@en ;
+    solveit-core:mitigationID "DFM-1253" ;
+    solveit-core:mitigationName "Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown" .
+
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceSet"^^xsd:anyURI ;
@@ -1675,7 +1682,7 @@
 
 :techniqueDFT-1002 a solveit-core:Technique ;
     rdfs:label "DFT-1002: Disk imaging"@en ;
-    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI,
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
     solveit-core:hasExample "FTK Imager",
@@ -1731,6 +1738,7 @@
         :weaknessDFW-1022,
         :weaknessDFW-1023,
         :weaknessDFW-1024 ;
+    solveit-core:hasSubtechnique :techniqueDFT-1015 ;
     solveit-core:hasSynonym "Logical imaging" ;
     solveit-core:techniqueDescription "Views a set of files (typically via direct access from previewing) and acquires a subset of them." ;
     solveit-core:techniqueDetails "This selection of files would subsequently be stored into a container such as a tar/zip file or a forensic image format." ;
@@ -1888,17 +1896,16 @@
 :techniqueDFT-1025 a solveit-core:Technique ;
     rdfs:label "DFT-1025: Writing bitstream data to a forensic image format"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"^^xsd:anyURI,
-        "https://ontology.solveit-df.org/solveit/observable/RawImage"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"^^xsd:anyURI ;
     solveit-core:hasExample "2009 M57-Jean - Data is supplied as a ‘multi-volume Expert Witness file’ - i.e. split EnCase E01 & E02 image files (https://digitalcorpora.org/corpora/scenarios/m57-jean/)",
         "FTK Imager: This tool can be used to acquire data from block devices in various image formats including RAW, EWF, and AFF",
         "Magnet Acquire: This tool can be used to acquire data from block devices in various image formats including RAW and EWF.",
         "libewf: This open source library allows access to the EWF format. The accompanying ewftools proves tools to verify, inspect and create EWF images. " ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1043 ;
-    solveit-core:hasSynonym "Disk image container",
-        "image file" ;
+    solveit-core:hasSynonym "store disk image container",
+        "store image file" ;
     solveit-core:techniqueDescription "Storage of bitstream data recovered from a digital device" ;
-    solveit-core:techniqueDetails "Bitstream data that would result from disk imaging would be stored in formats such as: RAW, EWF, AFF4. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc." ;
+    solveit-core:techniqueDetails "The storage of bitstream data resulting from disk imaging, in formats such as: EWF, AFF4. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc. This technique represents storage of data in container formats, whereas DFT-1178 represents data stored in raw files. " ;
     solveit-core:techniqueID "DFT-1025" ;
     solveit-core:techniqueName "Writing bitstream data to a forensic image format" .
 
@@ -1907,6 +1914,9 @@
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/FileSystemExtraction"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
+    solveit-core:hasExample "RAR",
+        "TAR",
+        "ZIP" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1165,
         :weaknessDFW-1275 ;
     solveit-core:techniqueDescription "Storing acquired data in a standard archive format such as rar, tar or zip" ;
@@ -2055,8 +2065,7 @@
     solveit-core:hasReference :citationDFCite-1013,
         :citationDFCite-1014,
         :citationDFCite-1103 ;
-    solveit-core:hasSubtechnique :techniqueDFT-1121,
-        :techniqueDFT-1122,
+    solveit-core:hasSubtechnique :techniqueDFT-1122,
         :techniqueDFT-1123,
         :techniqueDFT-1124,
         :techniqueDFT-1125,
@@ -2202,26 +2211,11 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
 
 :techniqueDFT-1061 a solveit-core:Technique ;
     rdfs:label "DFT-1061: Recover non-allocated files"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Directory"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/allocationStatus"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/extInodeID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/fileName"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/filePath"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/metadataChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameAccessedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameCreatedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameModifiedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameRecordChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftRecordChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerSID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ownerSID"^^xsd:anyURI ;
+        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1133 ;
     solveit-core:hasReference :citationDFCite-1030 ;
     solveit-core:hasSubtechnique :techniqueDFT-1064,
@@ -2229,6 +2223,7 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:hasSynonym "Deleted data recovery",
         "Deleted file recovery" ;
     solveit-core:techniqueDescription "The recovery of files from non-allocated space" ;
+    solveit-core:techniqueDetails "An attempt to recover non-allocated files from either a current file system or non-allocated space from within a file system, partition, or storage media." ;
     solveit-core:techniqueID "DFT-1061" ;
     solveit-core:techniqueName "Recover non-allocated files" .
 
@@ -2312,6 +2307,7 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
 
 :techniqueDFT-1069 a solveit-core:Technique ;
     rdfs:label "DFT-1069: Browser examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BrowserAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/BrowserBookmark"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/BrowserCookie"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/CookieHistory"^^xsd:anyURI,
@@ -2342,7 +2338,9 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
 
 :techniqueDFT-1070 a solveit-core:Technique ;
     rdfs:label "DFT-1070: Email examination"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/EmailAccount"^^xsd:anyURI,
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/EmailAppFiles"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/EmailAccount"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/EmailMessage"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1070" ;
     solveit-core:techniqueName "Email examination" .
@@ -2366,7 +2364,9 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
 
 :techniqueDFT-1072 a solveit-core:Technique ;
     rdfs:label "DFT-1072: Chat app examination"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI,
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ChatAppFiles"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/SMSMessage"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1085,
         :weaknessDFW-1086,
@@ -2401,6 +2401,7 @@ Facebook Messenger
 
 :techniqueDFT-1073 a solveit-core:Technique ;
     rdfs:label "DFT-1073: Calendar app examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/CalendarAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Calendar"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/CalendarEntry"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1073" ;
@@ -2519,9 +2520,10 @@ Facebook Messenger
 
 :techniqueDFT-1088 a solveit-core:Technique ;
     rdfs:label "DFT-1088: Relational-based event reconstruction"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/Relationship"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/core/kindOfRelationship"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedCommunication"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1029 ;
     solveit-core:hasSynonym "Connection-based event reconstruction",
         "Relational analysis" ;
@@ -2692,17 +2694,22 @@ Facebook Messenger
     solveit-core:techniqueName "Visualisation of geolocation information" .
 
 :techniqueDFT-1116 a solveit-core:Technique ;
-    rdfs:label "DFT-1116: Determine connected devices"@en ;
+    rdfs:label "DFT-1116: Extract references to connected devices"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasExample "ADB connected hosts",
+        "Paired bluetooth devices",
+        "Synronization artifacts referencing another device",
         "USB connected devices",
-        "iOS Backups from a computer" ;
+        "iOS backups from a computer" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1011,
         :weaknessDFW-1183,
         :weaknessDFW-1184 ;
-    solveit-core:hasReference :citationDFCite-1001 ;
+    solveit-core:hasReference :citationDFCite-1001,
+        :citationDFCite-1057 ;
     solveit-core:techniqueDescription "Examine artifacts and extract indicators of devices that have been connected to the target device." ;
+    solveit-core:techniqueDetails "This technique extracts references to other devices that have potentially been connected to the device being examined. The subsequent interpretation of these artifacts (using T1088: Relational-based event reconstruction), could result in HypothesisedDevices. The separate process for inferring the connected device(s) captures the uncertainty in such an interpretation." ;
     solveit-core:techniqueID "DFT-1116" ;
-    solveit-core:techniqueName "Determine connected devices" .
+    solveit-core:techniqueName "Extract references to connected devices" .
 
 :techniqueDFT-1117 a solveit-core:Technique ;
     rdfs:label "DFT-1117: Time-based event reconstruction"@en ;
@@ -2748,14 +2755,17 @@ Facebook Messenger
 
 :techniqueDFT-1121 a solveit-core:Technique ;
     rdfs:label "DFT-1121: Keyword indexing"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordIndex"^^xsd:anyURI,
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/KeywordIndexingConfiguration"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordIndex"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1054,
         :weaknessDFW-1055,
         :weaknessDFW-1056,
         :weaknessDFW-1197,
         :weaknessDFW-1198 ;
-    solveit-core:techniqueDescription "Extracting strings from a data source and adding them to an index for subsequent searching" ;
+    solveit-core:techniqueDescription "Extracting strings from a data source and adding them to an index for subsequent searching." ;
+    solveit-core:techniqueDetails "An index can be constructed over a set of files (including non-allocated space represented as files), a set of extracted artefacts, or both." ;
     solveit-core:techniqueID "DFT-1121" ;
     solveit-core:techniqueName "Keyword indexing" .
 
@@ -2831,6 +2841,7 @@ Facebook Messenger
 
 :techniqueDFT-1133 a solveit-core:Technique ;
     rdfs:label "DFT-1133: AI companion app examination"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/AiChatAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Call"^^xsd:anyURI,
@@ -2982,26 +2993,10 @@ Facebook Messenger
 
 :techniqueDFT-1150 a solveit-core:Technique ;
     rdfs:label "DFT-1150: Recover non-allocated files using residual file metadata"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Directory"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/allocationStatus"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/extInodeID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/fileName"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/filePath"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/metadataChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameAccessedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameCreatedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameModifiedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftFileNameRecordChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/mftRecordChangeTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ntfsOwnerSID"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/ownerSID"^^xsd:anyURI ;
+        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1134,
         :weaknessDFW-1135,
         :weaknessDFW-1253,
@@ -3042,7 +3037,9 @@ Facebook Messenger
 
 :techniqueDFT-1155 a solveit-core:Technique ;
     rdfs:label "DFT-1155: Operation-based event reconstruction"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/keywordSearchTerm"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/analysis/HypothesisedWebSearch"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1150 ;
     solveit-core:hasSynonym "Action-based event reconstruction",
         "Activity-based event reconstruction" ;
@@ -3137,6 +3134,15 @@ This might involve questions such as:
     solveit-core:techniqueID "DFT-1164" ;
     solveit-core:techniqueName "Direct data read from a block device" .
 
+:techniqueDFT-1165 a solveit-core:Technique ;
+    rdfs:label "DFT-1165: Extract software configuration information"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ApplicationFiles"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "Examination of one or more files to extract configuration information for a piece of software." ;
+    solveit-core:techniqueDetails "A configuration file of a browser for example may contain the home page that is set or other information. This technique extracts and presents that configuration information." ;
+    solveit-core:techniqueID "DFT-1165" ;
+    solveit-core:techniqueName "Extract software configuration information" .
+
 :techniqueDFT-1166 a solveit-core:Technique ;
     rdfs:label "DFT-1166: Connect directly to storage media"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Disk"^^xsd:anyURI,
@@ -3182,6 +3188,7 @@ This would include web search URLs such as Google searches but could also includ
         "https://ontology.solveit-df.org/solveit/observable/CalendarAppFiles"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/ChatAppFiles"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/EmailAppFiles"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/GamingAppFiles"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/HealthAppFiles"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/MapsAppFiles"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/NavigationAppFiles"^^xsd:anyURI,
@@ -3267,12 +3274,85 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:techniqueID "DFT-1176" ;
     solveit-core:techniqueName "Identification of synthetic images" .
 
+:techniqueDFT-1177 a solveit-core:Technique ;
+    rdfs:label "DFT-1177: Examination of a mutiplayer game app"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/GamingAppFiles"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1279,
+        :weaknessDFW-1280,
+        :weaknessDFW-1281,
+        :weaknessDFW-1282,
+        :weaknessDFW-1283,
+        :weaknessDFW-1284,
+        :weaknessDFW-1285,
+        :weaknessDFW-1286,
+        :weaknessDFW-1287,
+        :weaknessDFW-1288,
+        :weaknessDFW-1289,
+        :weaknessDFW-1290,
+        :weaknessDFW-1291,
+        :weaknessDFW-1292,
+        :weaknessDFW-1293,
+        :weaknessDFW-1294 ;
+    solveit-core:hasReference :citationDFCite-1143 ;
+    solveit-core:hasSynonym "gaming app examination" ;
+    solveit-core:techniqueDescription "Extracting artifacts from multiplayer gaming apps." ;
+    solveit-core:techniqueDetails "Multiplayer game apps often offer messaging, contacts/friends, and other features that could contain data that may be relevant to many types of case." ;
+    solveit-core:techniqueID "DFT-1177" ;
+    solveit-core:techniqueName "Examination of a mutiplayer game app" .
+
+:techniqueDFT-1178 a solveit-core:Technique ;
+    rdfs:label "DFT-1178: Writing bitstream data to a raw image format"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RawImage"^^xsd:anyURI ;
+    solveit-core:hasSynonym "store dd image",
+        "write dd image" ;
+    solveit-core:techniqueDescription "Storage of bitstream data recovered from a digital device as raw files." ;
+    solveit-core:techniqueDetails "Bitstream data resulting from disk imaging stored in a raw format. The imaged data may be stored as one file or split into several segments. The raw files may also be accompanied by complementary separate metadata files." ;
+    solveit-core:techniqueID "DFT-1178" ;
+    solveit-core:techniqueName "Writing bitstream data to a raw image format" .
+
 :techniqueDFT-1179 a solveit-core:Technique ;
     rdfs:label "DFT-1179: Drone app examination"@en ;
     solveit-core:hasSynonym "UAV app examination" ;
     solveit-core:techniqueDescription "The examination of a mobile app used to control Unmanned Areial Vehicles (UAVs) or 'drones'." ;
     solveit-core:techniqueID "DFT-1179" ;
     solveit-core:techniqueName "Drone app examination" .
+
+:techniqueDFT-1180 a solveit-core:Technique ;
+    rdfs:label "DFT-1180: Extract file(s) from a pre-deletion container"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DateTimeStamp"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/path"^^xsd:anyURI ;
+    solveit-core:hasExample "Windows Recycle Bin",
+        "macOS Trash" ;
+    solveit-core:hasSynonym "Recycle Bin examination",
+        "Trash examination" ;
+    solveit-core:techniqueDescription "An examination of the operating system structures that represent the 'pre-deletion' container (i.e. Recycle Bin/Trash) to extract those files and potentially additional metadata such as original path or date it was moved." ;
+    solveit-core:techniqueDetails """Content in pre-deletion containers such as the recycle bin/trash is not always viewable in a useful form without further processing. 
+This further processing should provide access to the file content but also potentially additional information such as data sent to recycle bin, or original path.""" ;
+    solveit-core:techniqueID "DFT-1180" ;
+    solveit-core:techniqueName "Extract file(s) from a pre-deletion container" .
+
+:techniqueDFT-1182 a solveit-core:Technique ;
+    rdfs:label "DFT-1182: Filter timeline for relevant entries "@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
+    solveit-core:hasExample "Plaso",
+        "TimeSketch" ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1295,
+        :weaknessDFW-1296,
+        :weaknessDFW-1297,
+        :weaknessDFW-1298,
+        :weaknessDFW-1299 ;
+    solveit-core:techniqueDescription "Provide some criteria that selects only a subset of timeline entries from a set. " ;
+    solveit-core:techniqueDetails "Filtering might be on timestamp type, within a defined time range, related to a particular file, or matching against some other content associated with the timestamp entries. " ;
+    solveit-core:techniqueID "DFT-1182" ;
+    solveit-core:techniqueName "Filter timeline for relevant entries " .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -5557,6 +5637,188 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:weaknessID "DFW-1278" ;
     solveit-core:weaknessName "Data copied does not include all sectors from LBA0 to LBA max due to the data copying process skipping some sectors or bytes" .
 
+:weaknessDFW-1279 a solveit-core:Weakness ;
+    rdfs:label "DFW-1279: Failure to recover live message from a multiplayer gaming app"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1242,
+        :mitigationDFM-1243 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1279" ;
+    solveit-core:weaknessName "Failure to recover live message from a multiplayer gaming app" .
+
+:weaknessDFW-1280 a solveit-core:Weakness ;
+    rdfs:label "DFW-1280: Presenting a live contact from a gaming app as a deleted one or vice versa"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1243,
+        :mitigationDFM-1244,
+        :mitigationDFM-1245 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1280" ;
+    solveit-core:weaknessName "Presenting a live contact from a gaming app as a deleted one or vice versa" .
+
+:weaknessDFW-1281 a solveit-core:Weakness ;
+    rdfs:label "DFW-1281: Failure to recover the gaming app configuration"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1247 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1281" ;
+    solveit-core:weaknessName "Failure to recover the gaming app configuration" .
+
+:weaknessDFW-1282 a solveit-core:Weakness ;
+    rdfs:label "DFW-1282: Recovering the gaming app configuration incorrectly"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1247 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1282" ;
+    solveit-core:weaknessName "Recovering the gaming app configuration incorrectly" .
+
+:weaknessDFW-1283 a solveit-core:Weakness ;
+    rdfs:label "DFW-1283: Failure to recover a live account used in a gaming application"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1248 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1283" ;
+    solveit-core:weaknessName "Failure to recover a live account used in a gaming application" .
+
+:weaknessDFW-1284 a solveit-core:Weakness ;
+    rdfs:label "DFW-1284: Failure to recover a previous but removed account used in a gaming application"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1249 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1284" ;
+    solveit-core:weaknessName "Failure to recover a previous but removed account used in a gaming application" .
+
+:weaknessDFW-1285 a solveit-core:Weakness ;
+    rdfs:label "DFW-1285: Recovering an account used for a gaming application that was not actually used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1050,
+        :mitigationDFM-1248 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1285" ;
+    solveit-core:weaknessName "Recovering an account used for a gaming application that was not actually used" .
+
+:weaknessDFW-1286 a solveit-core:Weakness ;
+    rdfs:label "DFW-1286: Describing a live gaming app account as deleted/removed or vice versa"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1050,
+        :mitigationDFM-1248,
+        :mitigationDFM-1249 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessID "DFW-1286" ;
+    solveit-core:weaknessName "Describing a live gaming app account as deleted/removed or vice versa" .
+
+:weaknessDFW-1287 a solveit-core:Weakness ;
+    rdfs:label "DFW-1287: Failure to recover deleted message from a multiplayer gaming app"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1243,
+        :mitigationDFM-1244 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1287" ;
+    solveit-core:weaknessName "Failure to recover deleted message from a multiplayer gaming app" .
+
+:weaknessDFW-1288 a solveit-core:Weakness ;
+    rdfs:label "DFW-1288: Presenting a live message from a gaming app that does not exist"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1242,
+        :mitigationDFM-1243 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1288" ;
+    solveit-core:weaknessName "Presenting a live message from a gaming app that does not exist" .
+
+:weaknessDFW-1289 a solveit-core:Weakness ;
+    rdfs:label "DFW-1289: Presenting a deleted message from a gaming app that does not exist"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1243,
+        :mitigationDFM-1244 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1289" ;
+    solveit-core:weaknessName "Presenting a deleted message from a gaming app that does not exist" .
+
+:weaknessDFW-1290 a solveit-core:Weakness ;
+    rdfs:label "DFW-1290: Presenting a live message from a gaming app as deleted or vice versa"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1242,
+        :mitigationDFM-1243,
+        :mitigationDFM-1244 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1290" ;
+    solveit-core:weaknessName "Presenting a live message from a gaming app as deleted or vice versa" .
+
+:weaknessDFW-1291 a solveit-core:Weakness ;
+    rdfs:label "DFW-1291: Failure to recover a live contact from a gaming app"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1243,
+        :mitigationDFM-1245 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1291" ;
+    solveit-core:weaknessName "Failure to recover a live contact from a gaming app" .
+
+:weaknessDFW-1292 a solveit-core:Weakness ;
+    rdfs:label "DFW-1292: Failure to recover a deleted contact from a gaming app"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1243,
+        :mitigationDFM-1246 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1292" ;
+    solveit-core:weaknessName "Failure to recover a deleted contact from a gaming app" .
+
+:weaknessDFW-1293 a solveit-core:Weakness ;
+    rdfs:label "DFW-1293: Presenting a live contact from a gaming app that does not exist"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1243,
+        :mitigationDFM-1245 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1293" ;
+    solveit-core:weaknessName "Presenting a live contact from a gaming app that does not exist" .
+
+:weaknessDFW-1294 a solveit-core:Weakness ;
+    rdfs:label "DFW-1294: Presenting a deleted contact from a gaming app that does not exist"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1243,
+        :mitigationDFM-1246 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1294" ;
+    solveit-core:weaknessName "Presenting a deleted contact from a gaming app that does not exist" .
+
+:weaknessDFW-1295 a solveit-core:Weakness ;
+    rdfs:label "DFW-1295: The filtered timeline misses relevant entries because filtering criteria was too strict"@en ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1295" ;
+    solveit-core:weaknessName "The filtered timeline misses relevant entries because filtering criteria was too strict" .
+
+:weaknessDFW-1296 a solveit-core:Weakness ;
+    rdfs:label "DFW-1296: The filtered timeline misses relevant entries because the tool did not filter correctly"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1250 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1296" ;
+    solveit-core:weaknessName "The filtered timeline misses relevant entries because the tool did not filter correctly" .
+
+:weaknessDFW-1297 a solveit-core:Weakness ;
+    rdfs:label "DFW-1297: The filtered timeline includes entries that are not relevant because the filtering criteria was too broad"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1251,
+        :mitigationDFM-1252 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1297" ;
+    solveit-core:weaknessName "The filtered timeline includes entries that are not relevant because the filtering criteria was too broad" .
+
+:weaknessDFW-1298 a solveit-core:Weakness ;
+    rdfs:label "DFW-1298: The filtered timeline includes entries that are not relevant because the the tool did not filter correctly"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1250 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1298" ;
+    solveit-core:weaknessName "The filtered timeline includes entries that are not relevant because the the tool did not filter correctly" .
+
+:weaknessDFW-1299 a solveit-core:Weakness ;
+    rdfs:label "DFW-1299: A filtered timeline is presented as a full timeline"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1253 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessID "DFW-1299" ;
+    solveit-core:weaknessName "A filtered timeline is presented as a full timeline" .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
@@ -5611,11 +5873,6 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFCite-1053" ;
     solveit-core:citationID "DFCite-1053" ;
     solveit-core:citationPlaintext "Halderman, J.A., Schoen, S.D., Heninger, N., Clarkson, W., Paul, W., Calandrino, J.A., Feldman, A.J., Appelbaum, J. and Felten, E.W., 2009. Lest we remember: cold-boot attacks on encryption keys. Communications of the ACM, 52(5), pp.91-98." .
-
-:citationDFCite-1057 a solveit-core:Citation ;
-    rdfs:label "DFCite-1057" ;
-    solveit-core:citationID "DFCite-1057" ;
-    solveit-core:citationPlaintext "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140." .
 
 :citationDFCite-1058 a solveit-core:Citation ;
     rdfs:label "DFCite-1058" ;
@@ -5709,6 +5966,19 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFCite-1140" ;
     solveit-core:citationID "DFCite-1140" ;
     solveit-core:citationPlaintext "https://www.crowdstrike.com/en-us/guides/syslog-logging/advanced-concepts/" .
+
+:citationDFCite-1143 a solveit-core:Citation ;
+    rdfs:label "DFCite-1143" ;
+    solveit-core:citationBibtex """@inproceedings{gruhn2015windows,
+  title={Windows NT pagefile. sys virtual memory analysis},
+  author={Gruhn, Michael},
+  booktitle={2015 Ninth International Conference on IT Security Incident Management \\& IT Forensics},
+  pages={3--18},
+  year={2015},
+  organization={IEEE}
+}""" ;
+    solveit-core:citationID "DFCite-1143" ;
+    solveit-core:citationPlaintext "Gruhn, M., 2015, May. Windows NT pagefile. sys virtual memory analysis. In 2015 Ninth International Conference on IT Security Incident Management & IT Forensics (pp. 3-18). IEEE." .
 
 :mitigationDFM-1005 a solveit-core:Mitigation ;
     rdfs:label "DFM-1005: Testing to ensure software and hardware setup detects HPAs"@en ;
@@ -5943,6 +6213,26 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:mitigationID "DFM-1236" ;
     solveit-core:mitigationName "Attempt to obtain password/pincode with dictionary attacks" .
 
+:mitigationDFM-1246 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1246: Testing deleted contact recovery from a multiplayer gaming app"@en ;
+    solveit-core:mitigationID "DFM-1246" ;
+    solveit-core:mitigationName "Testing deleted contact recovery from a multiplayer gaming app" .
+
+:mitigationDFM-1247 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1247: Testing that gaming app configuration information is recovered correctly"@en ;
+    solveit-core:mitigationID "DFM-1247" ;
+    solveit-core:mitigationName "Testing that gaming app configuration information is recovered correctly" .
+
+:mitigationDFM-1249 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1249: Testing to ensure that deleted accounts are recovered correctly from a gaming app"@en ;
+    solveit-core:mitigationID "DFM-1249" ;
+    solveit-core:mitigationName "Testing to ensure that deleted accounts are recovered correctly from a gaming app" .
+
+:mitigationDFM-1250 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1250: Test that timeline analysis tool returns correct results when filter criteria are provided"@en ;
+    solveit-core:mitigationID "DFM-1250" ;
+    solveit-core:mitigationName "Test that timeline analysis tool returns correct results when filter criteria are provided" .
+
 :techniqueDFT-1006 a solveit-core:Technique ;
     rdfs:label "DFT-1006: Use digital sniffer dogs to locate digital devices"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
@@ -5970,7 +6260,8 @@ This would include web search URLs such as Google searches but could also includ
 
 :techniqueDFT-1013 a solveit-core:Technique ;
     rdfs:label "DFT-1013: Use software write blockers to provide read only access to storage media"@en ;
-    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1102 ;
     solveit-core:techniqueDescription "Use of a software-based tool that prevents a computer from writing to computer storage media connected to it (NIST 2006)" ;
@@ -6057,7 +6348,7 @@ This would include web search URLs such as Google searches but could also includ
 :techniqueDFT-1113 a solveit-core:Technique ;
     rdfs:label "DFT-1113: Access internal storage via bootable environment"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceInterface"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasExample "PALADIN Forensic - is a modified “live” Linux distribution based on Ubuntu that simplifies various forensics tasks in a forensically sound manner via the PALADIN Toolbox.",
         "WinFE - Windows Forensic Environment, is forensically sound, bootable Windows operation system that can be burned into USB and plug the USB into suspected device. Then, after changing boot order, booting to the USB to create forensic images from the tested Windows, MacOS and Linux systems." ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1177,
@@ -6109,6 +6400,7 @@ This would include web search URLs such as Google searches but could also includ
 
 :techniqueDFT-1134 a solveit-core:Technique ;
     rdfs:label "DFT-1134: Use time anchors to estimate clock offset"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ClockOffset"^^xsd:anyURI ;
     solveit-core:hasExample "Browser caches often contain local timestamps and those derived from external servers",
         "Email headers often record timestamps derived from external mail servers as well as timestamps generated by the local system time",
         "Missed call or voicemail notification messages often include a timestamp derived from an external time source, e.g., missed call from XX on 2018-06-06 at 01:32:49 pm, which can be compared to the local file system time the message was received",
@@ -6270,6 +6562,11 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:citationID "DFCite-1039" ;
     solveit-core:citationPlaintext "Dreier, L.M., Vanini, C., Hargreaves, C.J., Breitinger, F. and Freiling, F., 2024. Beyond timestamps: Integrating implicit timing information into digital forensic timelines. Forensic Science International: Digital Investigation, 49, p.301755." .
 
+:citationDFCite-1057 a solveit-core:Citation ;
+    rdfs:label "DFCite-1057" ;
+    solveit-core:citationID "DFCite-1057" ;
+    solveit-core:citationPlaintext "Hargreaves, C. and Marshall, A., 2019. SyncTriage: Using synchronisation artefacts to optimise acquisition order. Digital Investigation, 28, pp.S134-S140." .
+
 :citationDFCite-1062 a solveit-core:Citation ;
     rdfs:label "DFCite-1062" ;
     solveit-core:citationID "DFCite-1062" ;
@@ -6383,6 +6680,21 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:mitigationID "DFM-1224" ;
     solveit-core:mitigationName "Check for location artifacts to infer the time zone at a specific moment" .
 
+:mitigationDFM-1242 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1242: Testing live message recovery from multiplayer gaming app"@en ;
+    solveit-core:mitigationID "DFM-1242" ;
+    solveit-core:mitigationName "Testing live message recovery from multiplayer gaming app" .
+
+:mitigationDFM-1245 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1245: Testing live contact recovery from a multiplayer gaming app"@en ;
+    solveit-core:mitigationID "DFM-1245" ;
+    solveit-core:mitigationName "Testing live contact recovery from a multiplayer gaming app" .
+
+:mitigationDFM-1248 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1248: Testing to ensure that live accounts are recovered correctly from a gaming app"@en ;
+    solveit-core:mitigationID "DFM-1248" ;
+    solveit-core:mitigationName "Testing to ensure that live accounts are recovered correctly from a gaming app" .
+
 :techniqueDFT-1012 a solveit-core:Technique ;
     rdfs:label "DFT-1012: Connect storage medium via hardware write blocker"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium"^^xsd:anyURI ;
@@ -6464,6 +6776,11 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:mitigationID "DFM-1026" ;
     solveit-core:mitigationName "Testing of backup parsing method" .
 
+:mitigationDFM-1244 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1244: Testing deleted message recovery from multiplayer gaming app"@en ;
+    solveit-core:mitigationID "DFM-1244" ;
+    solveit-core:mitigationName "Testing deleted message recovery from multiplayer gaming app" .
+
 :techniqueDFT-1034 a solveit-core:Technique ;
     rdfs:label "DFT-1034: Brute force attack"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
@@ -6491,7 +6808,9 @@ This would include web search URLs such as Google searches but could also includ
 
 :techniqueDFT-1124 a solveit-core:Technique ;
     rdfs:label "DFT-1124: Keyword search (indexed)"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/KeywordIndex"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/Wordlist"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1052 ;
     solveit-core:hasReference :citationDFCite-1103 ;
     solveit-core:hasSynonym "indexed search" ;
@@ -6599,6 +6918,11 @@ This would include web search URLs such as Google searches but could also includ
     rdfs:label "DFM-1056: Correlation of message data from third party data (another participant in message thread)"@en ;
     solveit-core:mitigationID "DFM-1056" ;
     solveit-core:mitigationName "Correlation of message data from third party data (another participant in message thread)" .
+
+:mitigationDFM-1243 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1243: Request user data from multiplayer gaming platform and compare"@en ;
+    solveit-core:mitigationID "DFM-1243" ;
+    solveit-core:mitigationName "Request user data from multiplayer gaming platform and compare" .
 
 :citationDFCite-1060 a solveit-core:Citation ;
     rdfs:label "DFCite-1060" ;
