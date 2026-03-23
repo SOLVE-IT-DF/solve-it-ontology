@@ -9600,9 +9600,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1086"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1182"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -14325,6 +14322,9 @@
     "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1134"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1182"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [

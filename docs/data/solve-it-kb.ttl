@@ -178,8 +178,7 @@
         :techniqueDFT-1050,
         :techniqueDFT-1051,
         :techniqueDFT-1086,
-        :techniqueDFT-1118,
-        :techniqueDFT-1182 ;
+        :techniqueDFT-1118 ;
     solveit-core:objectiveDescription "Attempt to find digital artifacts relevant to the investigation." ;
     solveit-core:objectiveID "DFO-1012" ;
     solveit-core:objectiveName "Locate potentially relevant content" ;
@@ -2503,7 +2502,8 @@ Facebook Messenger
         :citationDFCite-1019,
         :citationDFCite-1028,
         :citationDFCite-1058 ;
-    solveit-core:hasSubtechnique :techniqueDFT-1134 ;
+    solveit-core:hasSubtechnique :techniqueDFT-1134,
+        :techniqueDFT-1182 ;
     solveit-core:hasSynonym "Temporal Analysis" ;
     solveit-core:techniqueDescription "The process of searching, filtering, sorting, highlighting, or aggregating timeline entries to determine which are relevant for event reconstruction, or to identify times of interest (adapted from Breitinger et al. 2025)" ;
     solveit-core:techniqueDetails "This can involve refinement approaches such as: filtering irrelevant entries, highlighting key entries, or aggregating entries into more meaningful events. This may result in a filtered timeline, or a set of highlighted timeline entries" ;
