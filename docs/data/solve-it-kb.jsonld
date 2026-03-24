@@ -423,6 +423,11 @@
         "@value": "DFCite-1020"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@article{vanini2024clocks,\ntitle = {Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction},\njournal = {Forensic Science International: Digital Investigation},\nvolume = {49},\npages = {301759},\nyear = {2024},\nissn = {2666-2817},\ndoi = {https://doi.org/10.1016/j.fsidi.2024.301759},\nurl = {https://www.sciencedirect.com/science/article/pii/S2666281724000787},\nauthor = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and Frank Breitinger}\n}"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/citationID": [
       {
         "@value": "DFCite-1020"
