@@ -15305,7 +15305,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Booting the suspected computer device into forensically-sound bootable software-write blocked operating system in order to image the disks."
+        "@value": "Booting the suspected computer device into an alternative operating system in order to image the attached disks."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "These operating systems are usually modified to contain forensic imaging tools and to avoid writing to the attached storage through the use of software write blocking (DFT-1013)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [

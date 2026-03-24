@@ -6372,7 +6372,8 @@ This further processing should provide access to the file content but also poten
     solveit-core:hasReference :citationDFCite-1071,
         :citationDFCite-1112,
         :citationDFCite-1132 ;
-    solveit-core:techniqueDescription "Booting the suspected computer device into forensically-sound bootable software-write blocked operating system in order to image the disks." ;
+    solveit-core:techniqueDescription "Booting the suspected computer device into an alternative operating system in order to image the attached disks." ;
+    solveit-core:techniqueDetails "These operating systems are usually modified to contain forensic imaging tools and to avoid writing to the attached storage through the use of software write blocking (DFT-1013)" ;
     solveit-core:techniqueID "DFT-1113" ;
     solveit-core:techniqueName "Access internal storage via bootable environment" .
 
