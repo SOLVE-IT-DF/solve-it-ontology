@@ -843,6 +843,26 @@
     solveit-core:citationID "DFCite-1142" ;
     solveit-core:citationPlaintext "https://www.oxygenforensics.com/en/resources/downgrade-method-what-should-be-known-before-the-procedure/" .
 
+:citationDFCite-1146 a solveit-core:Citation ;
+    rdfs:label "DFCite-1146" ;
+    solveit-core:citationBibtex """@article{casey_structuring_2020,
+	title = {Structuring the {Evaluation} of {Location}-{Related} {Mobile} {Device} {Evidence}},
+	volume = {32},
+	issn = {2666-2817},
+	url = {https://www.sciencedirect.com/science/article/pii/S2666281720300238},
+	doi = {10.1016/j.fsidi.2020.300928},
+	language = {en},
+	urldate = {2021-12-18},
+	journal = {Forensic Science International: Digital Investigation},
+	author = {Casey, Eoghan and Jaquet-Chiffelle, David-Olivier and Spichiger, Hannes and Ryser, Elénore and Souvignet, Thomas},
+	month = apr,
+	year = {2020},
+	keywords = {Digital forensic science, Scientific interpretation, Digital evidence evaluation, Geolocation data, Location-related evidence, Mobile device evidence},
+	pages = {300928},
+}""" ;
+    solveit-core:citationID "DFCite-1146" ;
+    solveit-core:citationPlaintext "Casey, E., Jaquet-Chiffelle, D.-O., Spichiger, H., Ryser, E., Souvignet, T., 2020. Structuring the Evaluation of Location-Related Mobile Device Evidence. Forensic Science International: Digital Investigation 32, 300928. https://doi.org/10.1016/j.fsidi.2020.300928" .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -2515,6 +2535,7 @@ Facebook Messenger
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/location/Location"^^xsd:anyURI ;
+    solveit-core:hasReference :citationDFCite-1146 ;
     solveit-core:techniqueDescription "The process of assigning location properties to a reconstructed event" ;
     solveit-core:techniqueID "DFT-1087" ;
     solveit-core:techniqueName "Location-based event reconstruction" .

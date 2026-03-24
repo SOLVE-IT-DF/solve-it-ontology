@@ -3059,6 +3059,32 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1146",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1146"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@article{casey_structuring_2020,\n\ttitle = {Structuring the {Evaluation} of {Location}-{Related} {Mobile} {Device} {Evidence}},\n\tvolume = {32},\n\tissn = {2666-2817},\n\turl = {https://www.sciencedirect.com/science/article/pii/S2666281720300238},\n\tdoi = {10.1016/j.fsidi.2020.300928},\n\tlanguage = {en},\n\turldate = {2021-12-18},\n\tjournal = {Forensic Science International: Digital Investigation},\n\tauthor = {Casey, Eoghan and Jaquet-Chiffelle, David-Olivier and Spichiger, Hannes and Ryser, Elénore and Souvignet, Thomas},\n\tmonth = apr,\n\tyear = {2020},\n\tkeywords = {Digital forensic science, Scientific interpretation, Digital evidence evaluation, Geolocation data, Location-related evidence, Mobile device evidence},\n\tpages = {300928},\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1146"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Casey, E., Jaquet-Chiffelle, D.-O., Spichiger, H., Ryser, E., Souvignet, T., 2020. Structuring the Evaluation of Location-Related Mobile Device Evidence. Forensic Science International: Digital Investigation 32, 300928. https://doi.org/10.1016/j.fsidi.2020.300928"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Mitigation"
@@ -14381,6 +14407,11 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/location/Location"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1146"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
