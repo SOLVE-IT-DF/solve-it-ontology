@@ -1719,8 +1719,8 @@
         :weaknessDFW-1143,
         :weaknessDFW-1278 ;
     solveit-core:hasReference :citationDFCite-1107 ;
-    solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ to a bitstream that can be stored in a image format (T1025). " ;
-    solveit-core:techniqueDetails "The process could be applied to a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader. This data needs to be stored as a container file (T1025). Logs would also usually be created recording the details of the imaging process and any errors that occured." ;
+    solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ to a bitstream that can be stored in a image format (DFT-1025)." ;
+    solveit-core:techniqueDetails "The process could be applied to a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader. This data needs to be stored as a container file (DFT-1025). Logs would also usually be created recording the details of the imaging process and any errors that occured." ;
     solveit-core:techniqueID "DFT-1002" ;
     solveit-core:techniqueName "Disk imaging" .
 
