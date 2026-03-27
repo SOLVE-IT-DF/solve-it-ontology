@@ -10061,7 +10061,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFO-1020: Produce documentation"
+        "@value": "DFO-1020: Document digital forensic activities"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
@@ -10093,7 +10093,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
-        "@value": "Produce documentation"
+        "@value": "Document digital forensic activities"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/sortOrder": [
