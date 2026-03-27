@@ -3085,6 +3085,32 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1147",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1147"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@online{nist_chain_of_custody,\n  author       = {{National Institute of Standards and Technology}},\n  title        = {Computer Security Resource Center Glossary: Chain of Custody},\n  url          = {https://csrc.nist.gov/glossary/term/chain_of_custody},\n  note         = {Accessed: 2026-03-27}\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1147"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "National Institute of Standards and Technology (undated) Computer Security Resource Center Glossary: Chain of Custody. Available at: https://csrc.nist.gov/glossary/term/chain_of_custody."
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Mitigation"
@@ -10955,7 +10981,25 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1014: Chain of custody documentation"
+        "@value": "DFT-1014: Document the chain of custody"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1147"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "CoC"
+      },
+      {
+        "@value": "Continuity of evidence"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "A process that tracks the movement of evidence through its collection, safeguarding, and analysis lifecycle by documenting each person who handled the evidence, the date/time it was collected or transferred, and the purpose for the transfer [DFCite-1147]."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -10965,7 +11009,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Chain of custody documentation"
+        "@value": "Document the chain of custody"
       }
     ]
   },

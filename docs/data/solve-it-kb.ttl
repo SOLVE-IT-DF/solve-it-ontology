@@ -863,6 +863,17 @@
     solveit-core:citationID "DFCite-1146" ;
     solveit-core:citationPlaintext "Casey, E., Jaquet-Chiffelle, D.-O., Spichiger, H., Ryser, E., Souvignet, T., 2020. Structuring the Evaluation of Location-Related Mobile Device Evidence. Forensic Science International: Digital Investigation 32, 300928. https://doi.org/10.1016/j.fsidi.2020.300928" .
 
+:citationDFCite-1147 a solveit-core:Citation ;
+    rdfs:label "DFCite-1147" ;
+    solveit-core:citationBibtex """@online{nist_chain_of_custody,
+  author       = {{National Institute of Standards and Technology}},
+  title        = {Computer Security Resource Center Glossary: Chain of Custody},
+  url          = {https://csrc.nist.gov/glossary/term/chain_of_custody},
+  note         = {Accessed: 2026-03-27}
+}""" ;
+    solveit-core:citationID "DFCite-1147" ;
+    solveit-core:citationPlaintext "National Institute of Standards and Technology (undated) Computer Security Resource Center Glossary: Chain of Custody. Available at: https://csrc.nist.gov/glossary/term/chain_of_custody." .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -1810,9 +1821,13 @@
     solveit-core:techniqueName "Store seized devices in evidence bags" .
 
 :techniqueDFT-1014 a solveit-core:Technique ;
-    rdfs:label "DFT-1014: Chain of custody documentation"@en ;
+    rdfs:label "DFT-1014: Document the chain of custody"@en ;
+    solveit-core:hasReference :citationDFCite-1147 ;
+    solveit-core:hasSynonym "CoC",
+        "Continuity of evidence" ;
+    solveit-core:techniqueDescription "A process that tracks the movement of evidence through its collection, safeguarding, and analysis lifecycle by documenting each person who handled the evidence, the date/time it was collected or transferred, and the purpose for the transfer [DFCite-1147]." ;
     solveit-core:techniqueID "DFT-1014" ;
-    solveit-core:techniqueName "Chain of custody documentation" .
+    solveit-core:techniqueName "Document the chain of custody" .
 
 :techniqueDFT-1015 a solveit-core:Technique ;
     rdfs:label "DFT-1015: Privacy preserving selective extraction"@en ;
