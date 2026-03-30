@@ -146,6 +146,33 @@
 #    ApplicationFiles Shape
 #################################################################
 
+#################################################################
+#    SortedTimelineEntry Shape
+#################################################################
+
+:SortedTimelineEntryShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:SortedTimelineEntry ;
+    rdfs:label "Sorted Timeline Entry Shape"@en ;
+    rdfs:comment "Validates that each SortedTimelineEntry has exactly one referencesTimelineEntry and exactly one sortPosition."@en ;
+    sh:property [
+        sh:path solveit-observable:referencesTimelineEntry ;
+        sh:class solveit-observable:TimelineEntry ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "referencesTimelineEntry must reference exactly one TimelineEntry"@en ;
+    ] ;
+    sh:property [
+        sh:path solveit-observable:sortPosition ;
+        sh:datatype xsd:nonNegativeInteger ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "sortPosition must be exactly one xsd:nonNegativeInteger"@en ;
+    ] .
+
+#################################################################
+#    ApplicationFiles Shape
+#################################################################
+
 :ApplicationFilesShape a sh:NodeShape ;
     sh:targetClass solveit-observable:ApplicationFiles ;
     rdfs:label "Application Files Shape"@en ;

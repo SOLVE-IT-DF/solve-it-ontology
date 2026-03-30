@@ -167,3 +167,45 @@ solveit-observable:endTimeExclusive rdf:type owl:DatatypeProperty ;
     rdfs:range xsd:dateTime ;
     rdfs:label "end time exclusive"@en ;
     rdfs:comment "The interval ends before this time (exclusive, i.e., < this value)."@en .
+
+#################################################################
+#    Sorted Timeline Classes
+#################################################################
+
+###  SortedTimeline Observable Object
+solveit-observable:SortedTimeline rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:Timeline ;
+    rdfs:label "Sorted Timeline"@en ;
+    rdfs:comment "A timeline whose entries have been ordered by position, as determined by a sorting process. Multiple entries may share the same position to indicate they are tied (indistinguishable in order)."@en .
+
+###  SortedTimelineEntry Observable Object
+solveit-observable:SortedTimelineEntry rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Sorted Timeline Entry"@en ;
+    rdfs:comment "An intermediary node that associates a TimelineEntry with its ordinal position within a SortedTimeline. This allows the same TimelineEntry to exist in both an unsorted Timeline and a SortedTimeline without duplication."@en .
+
+#################################################################
+#    Sorted Timeline Object Properties
+#################################################################
+
+solveit-observable:hasSortedTimelineEntry rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SortedTimeline ;
+    rdfs:range solveit-observable:SortedTimelineEntry ;
+    rdfs:label "has sorted timeline entry"@en ;
+    rdfs:comment "Links a sorted timeline to its sorted entry wrappers."@en .
+
+solveit-observable:referencesTimelineEntry rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:SortedTimelineEntry ;
+    rdfs:range solveit-observable:TimelineEntry ;
+    rdfs:label "references timeline entry"@en ;
+    rdfs:comment "Links a sorted timeline entry to the original timeline entry it references."@en .
+
+#################################################################
+#    Sorted Timeline Data Properties
+#################################################################
+
+solveit-observable:sortPosition rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SortedTimelineEntry ;
+    rdfs:range xsd:nonNegativeInteger ;
+    rdfs:label "sort position"@en ;
+    rdfs:comment "The ordinal position of this entry within its sorted timeline. Multiple entries may share the same position to indicate they are tied (indistinguishable in order)."@en .
