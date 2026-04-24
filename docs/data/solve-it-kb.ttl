@@ -211,7 +211,8 @@
 
 :objectiveDFO-1015 a solveit-core:Objective ;
     rdfs:label "DFO-1015: Prepare for a digital investigation"@en ;
-    solveit-core:includesTechnique :techniqueDFT-1110 ;
+    solveit-core:includesTechnique :techniqueDFT-1110,
+        :techniqueDFT-1184 ;
     solveit-core:objectiveDescription "Conduct activities in preparation of conducting a digital investigation" ;
     solveit-core:objectiveID "DFO-1015" ;
     solveit-core:objectiveName "Prepare for a digital investigation" ;
@@ -422,11 +423,6 @@
     rdfs:label "DFCite-1018" ;
     solveit-core:citationID "DFCite-1018" ;
     solveit-core:citationPlaintext "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35." .
-
-:citationDFCite-1019 a solveit-core:Citation ;
-    rdfs:label "DFCite-1019" ;
-    solveit-core:citationID "DFCite-1019" ;
-    solveit-core:citationPlaintext "Breitinger, F., Studiawan, H. and Hargreaves, C., 2025. SoK: Timeline based event reconstruction for digital forensics: Terminology, methodology, and current challenges." .
 
 :citationDFCite-1023 a solveit-core:Citation ;
     rdfs:label "DFCite-1023" ;
@@ -874,6 +870,19 @@
     solveit-core:citationID "DFCite-1147" ;
     solveit-core:citationPlaintext "National Institute of Standards and Technology (undated) Computer Security Resource Center Glossary: Chain of Custody. Available at: https://csrc.nist.gov/glossary/term/chain_of_custody." .
 
+:citationDFCite-1148 a solveit-core:Citation ;
+    rdfs:label "DFCite-1148" ;
+    solveit-core:citationBibtex """@inproceedings{suma2017forensic,
+  title={Forensic analysis of google chrome cache files},
+  author={Suma, GS and Dija, S and Pillai, Arun T},
+  booktitle={2017 ieee international conference on computational intelligence and computing research (iccic)},
+  pages={1--5},
+  year={2017},
+  organization={IEEE}
+}""" ;
+    solveit-core:citationID "DFCite-1148" ;
+    solveit-core:citationPlaintext "Suma, G.S., Dija, S. and Pillai, A.T., 2017, December. Forensic analysis of google chrome cache files. In 2017 ieee international conference on computational intelligence and computing research (iccic) (pp. 1-5). IEEE." .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -950,12 +959,6 @@
     solveit-core:hasReference :citationDFCite-1135 ;
     solveit-core:mitigationID "DFM-1043" ;
     solveit-core:mitigationName "Scan for orphaned EPTs" .
-
-:mitigationDFM-1044 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1044: Scan for Volume Boot Records in unpartitioned space"@en ;
-    solveit-core:hasReference :citationDFCite-1135 ;
-    solveit-core:mitigationID "DFM-1044" ;
-    solveit-core:mitigationName "Scan for Volume Boot Records in unpartitioned space" .
 
 :mitigationDFM-1045 a solveit-core:Mitigation ;
     rdfs:label "DFM-1045: Explicitly detect sector size in use"@en ;
@@ -1696,6 +1699,26 @@
     rdfs:label "DFM-1253: Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown"@en ;
     solveit-core:mitigationID "DFM-1253" ;
     solveit-core:mitigationName "Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown" .
+
+:mitigationDFM-1260 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1260: Check that sorted timeline contains same number of entries as unsorted timeline"@en ;
+    solveit-core:mitigationID "DFM-1260" ;
+    solveit-core:mitigationName "Check that sorted timeline contains same number of entries as unsorted timeline" .
+
+:mitigationDFM-1261 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1261: Test that timeline sorting correctly represents entries with low resolution timestamps"@en ;
+    solveit-core:mitigationID "DFM-1261" ;
+    solveit-core:mitigationName "Test that timeline sorting correctly represents entries with low resolution timestamps" .
+
+:mitigationDFM-1262 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1262: Test that timeline tools represent timeline entries with the same value at the same point in time, not in an artificial order"@en ;
+    solveit-core:mitigationID "DFM-1262" ;
+    solveit-core:mitigationName "Test that timeline tools represent timeline entries with the same value at the same point in time, not in an artificial order" .
+
+:mitigationDFM-1263 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1263: Check timeline entry to ensure that a timezone has not already been applied and shifted the timestamp value"@en ;
+    solveit-core:mitigationID "DFM-1263" ;
+    solveit-core:mitigationName "Check timeline entry to ensure that a timezone has not already been applied and shifted the timestamp value" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage"@en ;
@@ -3211,6 +3234,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1300 ;
     solveit-core:techniqueDescription "From a partition or data from a full disk, identify volumes and extract file systems." ;
     solveit-core:techniqueID "DFT-1168" ;
     solveit-core:techniqueName "Identify volumes" .
@@ -3402,6 +3426,24 @@ This further processing should provide access to the file content but also poten
     solveit-core:techniqueDetails "Filtering might be on timestamp type, within a defined time range, related to a particular file, or matching against some other content associated with the timestamp entries. " ;
     solveit-core:techniqueID "DFT-1182" ;
     solveit-core:techniqueName "Filter timeline for relevant entries " .
+
+:techniqueDFT-1184 a solveit-core:Technique ;
+    rdfs:label "DFT-1184: Sort timeline entries chronologically"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/SortedTimeline"^^xsd:anyURI ;
+    solveit-core:hasExample "Plaso",
+        "TimeSketch" ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1308,
+        :weaknessDFW-1309,
+        :weaknessDFW-1310,
+        :weaknessDFW-1311,
+        :weaknessDFW-1312,
+        :weaknessDFW-1313,
+        :weaknessDFW-1314 ;
+    solveit-core:techniqueDescription "Order a timeline based on the values in the timestamp entry." ;
+    solveit-core:techniqueDetails "This may be applied automatically to a generated timeline or may be applied as a separate process. " ;
+    solveit-core:techniqueID "DFT-1184" ;
+    solveit-core:techniqueName "Sort timeline entries chronologically" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -5868,26 +5910,70 @@ This further processing should provide access to the file content but also poten
     solveit-core:weaknessID "DFW-1299" ;
     solveit-core:weaknessName "A filtered timeline is presented as a full timeline" .
 
+:weaknessDFW-1300 a solveit-core:Weakness ;
+    rdfs:label "DFW-1300: Missing deleted but recoverable volumes from unpartitioned space"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1044 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1300" ;
+    solveit-core:weaknessName "Missing deleted but recoverable volumes from unpartitioned space" .
+
+:weaknessDFW-1308 a solveit-core:Weakness ;
+    rdfs:label "DFW-1308: Sorted timeline is missing timeline entries due to tool error during sort process"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1259 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1308" ;
+    solveit-core:weaknessName "Sorted timeline is missing timeline entries due to tool error during sort process" .
+
+:weaknessDFW-1309 a solveit-core:Weakness ;
+    rdfs:label "DFW-1309: Sorted timeline is missing timeline entries because timeline contained entries not based on timestamps"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1260 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1309" ;
+    solveit-core:weaknessName "Sorted timeline is missing timeline entries because timeline contained entries not based on timestamps" .
+
+:weaknessDFW-1310 a solveit-core:Weakness ;
+    rdfs:label "DFW-1310: Sorted timeline has additional timeline entries due to tool error during sort process"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1259 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1310" ;
+    solveit-core:weaknessName "Sorted timeline has additional timeline entries due to tool error during sort process" .
+
+:weaknessDFW-1311 a solveit-core:Weakness ;
+    rdfs:label "DFW-1311: Timeline entry is in an incorrect sequence due to resolution of the timestamp used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1261,
+        :mitigationDFM-1262 ;
+    solveit-core:hasReference :citationDFCite-1019 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1311" ;
+    solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to resolution of the timestamp used" .
+
+:weaknessDFW-1312 a solveit-core:Weakness ;
+    rdfs:label "DFW-1312: Timeline entry is in an incorrect sequence due to underlying timestamp being based on an incorrect clock"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1225 ;
+    solveit-core:hasReference :citationDFCite-1019,
+        :citationDFCite-1020 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1312" ;
+    solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to underlying timestamp being based on an incorrect clock" .
+
+:weaknessDFW-1313 a solveit-core:Weakness ;
+    rdfs:label "DFW-1313: Timeline entry is in an incorrect sequence due to timezone already applied to timestamp"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1263 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1313" ;
+    solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to timezone already applied to timestamp" .
+
+:weaknessDFW-1314 a solveit-core:Weakness ;
+    rdfs:label "DFW-1314: Timeline entry is in an incorrect sequence due to a time offset being applied that is incorrect for the timeline entry"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1225 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1314" ;
+    solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to a time offset being applied that is incorrect for the timeline entry" .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
     solveit-core:citationPlaintext "Beebe, N.L. and Liu, L., 2014. Ranking algorithms for digital forensic string search hits. Digital Investigation, 11, pp.S124-S132." .
-
-:citationDFCite-1020 a solveit-core:Citation ;
-    rdfs:label "DFCite-1020" ;
-    solveit-core:citationBibtex """@article{vanini2024clocks,
-title = {Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction},
-journal = {Forensic Science International: Digital Investigation},
-volume = {49},
-pages = {301759},
-year = {2024},
-issn = {2666-2817},
-doi = {https://doi.org/10.1016/j.fsidi.2024.301759},
-url = {https://www.sciencedirect.com/science/article/pii/S2666281724000787},
-author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and Frank Breitinger}
-}""" ;
-    solveit-core:citationID "DFCite-1020" ;
-    solveit-core:citationPlaintext "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759" .
 
 :citationDFCite-1022 a solveit-core:Citation ;
     rdfs:label "DFCite-1022" ;
@@ -6119,6 +6205,12 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationID "DFM-1042" ;
     solveit-core:mitigationName "Secondary review of flagged items to ensure relevance" .
 
+:mitigationDFM-1044 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1044: Scan for Volume Boot Records in unpartitioned space"@en ;
+    solveit-core:hasReference :citationDFCite-1135 ;
+    solveit-core:mitigationID "DFM-1044" ;
+    solveit-core:mitigationName "Scan for Volume Boot Records in unpartitioned space" .
+
 :mitigationDFM-1047 a solveit-core:Mitigation ;
     rdfs:label "DFM-1047: Testing partition table parsing on standard and non-standard configurations"@en ;
     solveit-core:mitigationID "DFM-1047" ;
@@ -6236,13 +6328,6 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationID "DFM-1205" ;
     solveit-core:mitigationName "Use wordlist generator with case data" .
 
-:mitigationDFM-1225 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1225: Estimate clock offset at a specific point in time using time anchoring"@en ;
-    solveit-core:hasReference :citationDFCite-1020 ;
-    solveit-core:linksToTechnique :techniqueDFT-1134 ;
-    solveit-core:mitigationID "DFM-1225" ;
-    solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" .
-
 :mitigationDFM-1232 a solveit-core:Mitigation ;
     rdfs:label "DFM-1232: Adopt a systematic search pattern"@en ;
     solveit-core:hasReference :citationDFCite-1043 ;
@@ -6292,6 +6377,11 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFM-1250: Test that timeline analysis tool returns correct results when filter criteria are provided"@en ;
     solveit-core:mitigationID "DFM-1250" ;
     solveit-core:mitigationName "Test that timeline analysis tool returns correct results when filter criteria are provided" .
+
+:mitigationDFM-1259 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1259: Test that a timeline tool correctly sorts entries"@en ;
+    solveit-core:mitigationID "DFM-1259" ;
+    solveit-core:mitigationName "Test that a timeline tool correctly sorts entries" .
 
 :techniqueDFT-1006 a solveit-core:Technique ;
     rdfs:label "DFT-1006: Use digital sniffer dogs to locate digital devices"@en ;
@@ -6604,6 +6694,27 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:citationID "DFCite-1004" ;
     solveit-core:citationPlaintext "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" .
 
+:citationDFCite-1019 a solveit-core:Citation ;
+    rdfs:label "DFCite-1019" ;
+    solveit-core:citationID "DFCite-1019" ;
+    solveit-core:citationPlaintext "Breitinger, F., Studiawan, H. and Hargreaves, C., 2025. SoK: Timeline based event reconstruction for digital forensics: Terminology, methodology, and current challenges." .
+
+:citationDFCite-1020 a solveit-core:Citation ;
+    rdfs:label "DFCite-1020" ;
+    solveit-core:citationBibtex """@article{vanini2024clocks,
+title = {Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction},
+journal = {Forensic Science International: Digital Investigation},
+volume = {49},
+pages = {301759},
+year = {2024},
+issn = {2666-2817},
+doi = {https://doi.org/10.1016/j.fsidi.2024.301759},
+url = {https://www.sciencedirect.com/science/article/pii/S2666281724000787},
+author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and Frank Breitinger}
+}""" ;
+    solveit-core:citationID "DFCite-1020" ;
+    solveit-core:citationPlaintext "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759" .
+
 :citationDFCite-1021 a solveit-core:Citation ;
     rdfs:label "DFCite-1021" ;
     solveit-core:citationID "DFCite-1021" ;
@@ -6809,6 +6920,7 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
         "https://ontology.unifiedcyberontology.org/uco/observable/URL"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/httpRequestHeader"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1252 ;
+    solveit-core:hasReference :citationDFCite-1148 ;
     solveit-core:hasSynonym "internet cache examination",
         "web cache examination" ;
     solveit-core:techniqueDescription "The examination of the content saved locally by browsers to improve performance" ;
@@ -6837,6 +6949,13 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFM-1026: Testing of backup parsing method"@en ;
     solveit-core:mitigationID "DFM-1026" ;
     solveit-core:mitigationName "Testing of backup parsing method" .
+
+:mitigationDFM-1225 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1225: Estimate clock offset at a specific point in time using time anchoring"@en ;
+    solveit-core:hasReference :citationDFCite-1020 ;
+    solveit-core:linksToTechnique :techniqueDFT-1134 ;
+    solveit-core:mitigationID "DFM-1225" ;
+    solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" .
 
 :mitigationDFM-1244 a solveit-core:Mitigation ;
     rdfs:label "DFM-1244: Testing deleted message recovery from multiplayer gaming app"@en ;
