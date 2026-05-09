@@ -42,7 +42,8 @@
         :techniqueDFT-1121,
         :techniqueDFT-1165,
         :techniqueDFT-1167,
-        :techniqueDFT-1169 ;
+        :techniqueDFT-1169,
+        :techniqueDFT-1187 ;
     solveit-core:objectiveDescription "Process data to extract artifacts or stored content of specific types." ;
     solveit-core:objectiveID "DFO-1002" ;
     solveit-core:objectiveName "Extract artifacts, or content of specific types" ;
@@ -211,8 +212,7 @@
 
 :objectiveDFO-1015 a solveit-core:Objective ;
     rdfs:label "DFO-1015: Prepare for a digital investigation"@en ;
-    solveit-core:includesTechnique :techniqueDFT-1110,
-        :techniqueDFT-1184 ;
+    solveit-core:includesTechnique :techniqueDFT-1110 ;
     solveit-core:objectiveDescription "Conduct activities in preparation of conducting a digital investigation" ;
     solveit-core:objectiveID "DFO-1015" ;
     solveit-core:objectiveName "Prepare for a digital investigation" ;
@@ -249,7 +249,8 @@
         :techniqueDFT-1098,
         :techniqueDFT-1116,
         :techniqueDFT-1149,
-        :techniqueDFT-1180 ;
+        :techniqueDFT-1180,
+        :techniqueDFT-1185 ;
     solveit-core:objectiveDescription "Process data stored by the operating system to extract digital forensic artifacts." ;
     solveit-core:objectiveID "DFO-1017" ;
     solveit-core:objectiveName "Extract artifacts stored by the operating system" ;
@@ -883,6 +884,34 @@
     solveit-core:citationID "DFCite-1148" ;
     solveit-core:citationPlaintext "Suma, G.S., Dija, S. and Pillai, A.T., 2017, December. Forensic analysis of google chrome cache files. In 2017 ieee international conference on computational intelligence and computing research (iccic) (pp. 1-5). IEEE." .
 
+:citationDFCite-1149 a solveit-core:Citation ;
+    rdfs:label "DFCite-1149" ;
+    solveit-core:citationBibtex """@article{domingues2022digital,
+  title={A digital forensic view of Windows 10 notifications},
+  author={Domingues, Patr{\\'\\i}cio and Andrade, Lu{\\'\\i}s and Frade, Miguel},
+  journal={Forensic Sciences},
+  volume={2},
+  number={1},
+  pages={88--106},
+  year={2022},
+  publisher={MDPI}
+}""" ;
+    solveit-core:citationID "DFCite-1149" ;
+    solveit-core:citationPlaintext "None" .
+
+:citationDFCite-1150 a solveit-core:Citation ;
+    rdfs:label "DFCite-1150" ;
+    solveit-core:citationBibtex """@inproceedings{dragonas2024forensic,
+  title={Forensic Analysis of Android Notifications' History},
+  author={Dragonas, Evangelos and Lambrinoudakis, Costas},
+  booktitle={2024 IEEE International Conference on Cyber Security and Resilience (CSR)},
+  pages={01--06},
+  year={2024},
+  organization={IEEE}
+}""" ;
+    solveit-core:citationID "DFCite-1150" ;
+    solveit-core:citationPlaintext "None" .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -1231,12 +1260,6 @@
         :citationDFCite-1022 ;
     solveit-core:mitigationID "DFM-1124" ;
     solveit-core:mitigationName "Examine database contents with and without Write Ahead Log (WAL) files applied" .
-
-:mitigationDFM-1125 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1125: Examine database journal files"@en ;
-    solveit-core:hasReference :citationDFCite-1022 ;
-    solveit-core:mitigationID "DFM-1125" ;
-    solveit-core:mitigationName "Examine database journal files" .
 
 :mitigationDFM-1127 a solveit-core:Mitigation ;
     rdfs:label "DFM-1127: Use a similar system to test steps required to interrupt the normal boot process and boot from Trusted Bootable Environment"@en ;
@@ -1719,6 +1742,11 @@
     rdfs:label "DFM-1263: Check timeline entry to ensure that a timezone has not already been applied and shifted the timestamp value"@en ;
     solveit-core:mitigationID "DFM-1263" ;
     solveit-core:mitigationName "Check timeline entry to ensure that a timezone has not already been applied and shifted the timestamp value" .
+
+:mitigationDFM-1264 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1264: Ensure that tools used extract data from any operating system notification databases or relevant files"@en ;
+    solveit-core:mitigationID "DFM-1264" ;
+    solveit-core:mitigationName "Ensure that tools used extract data from any operating system notification databases or relevant files" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage"@en ;
@@ -2263,7 +2291,7 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:hasReference :citationDFCite-1024,
         :citationDFCite-1030 ;
     solveit-core:hasSynonym "file system parsing" ;
-    solveit-core:techniqueDescription "This involves parsing the live file system data structures and reconstructing the file system of the target media or device." ;
+    solveit-core:techniqueDescription "This involves parsing the allocated file system data structures and reconstructing the file system of the target media or device." ;
     solveit-core:techniqueID "DFT-1060" ;
     solveit-core:techniqueName "Enumerate allocated files and folders" .
 
@@ -2561,7 +2589,8 @@ Facebook Messenger
         :citationDFCite-1028,
         :citationDFCite-1058 ;
     solveit-core:hasSubtechnique :techniqueDFT-1134,
-        :techniqueDFT-1182 ;
+        :techniqueDFT-1182,
+        :techniqueDFT-1184 ;
     solveit-core:hasSynonym "Temporal Analysis" ;
     solveit-core:techniqueDescription "The process of searching, filtering, sorting, highlighting, or aggregating timeline entries to determine which are relevant for event reconstruction, or to identify times of interest (adapted from Breitinger et al. 2025)" ;
     solveit-core:techniqueDetails "This can involve refinement approaches such as: filtering irrelevant entries, highlighting key entries, or aggregating entries into more meaningful events. This may result in a filtered timeline, or a set of highlighted timeline entries" ;
@@ -3235,7 +3264,7 @@ This would include web search URLs such as Google searches but could also includ
         "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1300 ;
-    solveit-core:techniqueDescription "From a partition or data from a full disk, identify volumes and extract file systems." ;
+    solveit-core:techniqueDescription "From a partition or data from a full disk, identify volumes." ;
     solveit-core:techniqueID "DFT-1168" ;
     solveit-core:techniqueName "Identify volumes" .
 
@@ -3444,6 +3473,45 @@ This further processing should provide access to the file content but also poten
     solveit-core:techniqueDetails "This may be applied automatically to a generated timeline or may be applied as a separate process. " ;
     solveit-core:techniqueID "DFT-1184" ;
     solveit-core:techniqueName "Sort timeline entries chronologically" .
+
+:techniqueDFT-1185 a solveit-core:Technique ;
+    rdfs:label "DFT-1185: Extract data from OS-level notifications"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DateTimeStamp"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1315,
+        :weaknessDFW-1316,
+        :weaknessDFW-1317,
+        :weaknessDFW-1318,
+        :weaknessDFW-1319,
+        :weaknessDFW-1320,
+        :weaknessDFW-1321 ;
+    solveit-core:hasReference :citationDFCite-1149,
+        :citationDFCite-1150 ;
+    solveit-core:hasSynonym "Notification analysis",
+        "WPN analysis" ;
+    solveit-core:techniqueDescription "Recovery of the notifications produced by applications that are stored by the operating system. " ;
+    solveit-core:techniqueID "DFT-1185" ;
+    solveit-core:techniqueName "Extract data from OS-level notifications" .
+
+:techniqueDFT-1187 a solveit-core:Technique ;
+    rdfs:label "DFT-1187: Extract content from compound files"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasExample "Autopsy Embedded File Extractor module" ;
+    solveit-core:hasSynonym "Compound file expansion",
+        "Container file expansion",
+        "Embedded file extraction" ;
+    solveit-core:techniqueDescription "The process of extracting files and objects contained within compound files, including archives, Office documents, PDFs, and email containers, surfacing the contained items as first-class files for further analysis." ;
+    solveit-core:techniqueDetails """'Compound file' is used here in the broad sense: any file format whose payload is one or more other files. 
+
+This covers user-downloaded archives (.zip, .rar, .7z, .tar), images and objects embedded in Office documents (.docx / .xlsx / .pptx, and legacy .doc / .xls / .ppt that use the Microsoft Compound File Binary Format, attachments and embedded streams in PDFs, and attachments inside email containers. 
+
+Extracting them surfaces each contained item as a first-class file so downstream techniques such as file-type identification, extension-mismatch detection, and hash matching can operate on the content. 
+
+This is distinct from DFT-1045, which decodes archive containers produced by the forensic extraction pipeline (e.g. an iOS file-system extraction packaged as a TAR file); this technique is applied later in the workflow, against compound files encountered within user data. The technique should be applied recursively because extracted items may themselves be compound files.""" ;
+    solveit-core:techniqueID "DFT-1187" ;
+    solveit-core:techniqueName "Extract content from compound files" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -3940,64 +4008,64 @@ This further processing should provide access to the file content but also poten
     solveit-core:weaknessName "Failure to check the integrity of partition table (where possible e.g. GPT)" .
 
 :weaknessDFW-1068 a solveit-core:Weakness ;
-    rdfs:label "DFW-1068: Failing to identify the existence of a live file"@en ;
+    rdfs:label "DFW-1068: Failing to identify the existence of an allocated file"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1068" ;
-    solveit-core:weaknessName "Failing to identify the existence of a live file" .
+    solveit-core:weaknessName "Failing to identify the existence of an allocated file" .
 
 :weaknessDFW-1069 a solveit-core:Weakness ;
-    rdfs:label "DFW-1069: Failing to identify the existence of a live directory"@en ;
+    rdfs:label "DFW-1069: Failing to identify the existence of an allocated directory"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1069" ;
-    solveit-core:weaknessName "Failing to identify the existence of a live directory" .
+    solveit-core:weaknessName "Failing to identify the existence of an allocated directory" .
 
 :weaknessDFW-1070 a solveit-core:Weakness ;
-    rdfs:label "DFW-1070: Failing to recover the complete contents of a live file"@en ;
+    rdfs:label "DFW-1070: Failing to recover the complete contents of an allocated file"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1070" ;
-    solveit-core:weaknessName "Failing to recover the complete contents of a live file" .
+    solveit-core:weaknessName "Failing to recover the complete contents of an allocated file" .
 
 :weaknessDFW-1071 a solveit-core:Weakness ;
-    rdfs:label "DFW-1071: Failing to recover a complete listing of a live directory"@en ;
+    rdfs:label "DFW-1071: Failing to recover a complete listing of an allocated directory"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1071" ;
-    solveit-core:weaknessName "Failing to recover a complete listing of a live directory" .
+    solveit-core:weaknessName "Failing to recover a complete listing of an allocated directory" .
 
 :weaknessDFW-1072 a solveit-core:Weakness ;
-    rdfs:label "DFW-1072: Recovering incorrect contents of a live file"@en ;
+    rdfs:label "DFW-1072: Recovering incorrect contents of an allocated file"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
-    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
     solveit-core:weaknessID "DFW-1072" ;
-    solveit-core:weaknessName "Recovering incorrect contents of a live file" .
+    solveit-core:weaknessName "Recovering incorrect contents of an allocated file" .
 
 :weaknessDFW-1073 a solveit-core:Weakness ;
-    rdfs:label "DFW-1073: Recovering an incorrect listing of a live directory"@en ;
+    rdfs:label "DFW-1073: Recovering an incorrect listing of an allocated directory"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
-    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
     solveit-core:weaknessID "DFW-1073" ;
-    solveit-core:weaknessName "Recovering an incorrect listing of a live directory" .
+    solveit-core:weaknessName "Recovering an incorrect listing of an allocated directory" .
 
 :weaknessDFW-1074 a solveit-core:Weakness ;
     rdfs:label "DFW-1074: Attributing a file to the wrong directory"@en ;
@@ -4030,7 +4098,7 @@ This further processing should provide access to the file content but also poten
     solveit-core:weaknessName "Presenting a directory that does not exist" .
 
 :weaknessDFW-1077 a solveit-core:Weakness ;
-    rdfs:label "DFW-1077: Presenting a deleted file as a live file"@en ;
+    rdfs:label "DFW-1077: Presenting a non-allocated file as an allocated file"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
@@ -4038,10 +4106,10 @@ This further processing should provide access to the file content but also poten
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
         solveit-core:ASTM_MISINT ;
     solveit-core:weaknessID "DFW-1077" ;
-    solveit-core:weaknessName "Presenting a deleted file as a live file" .
+    solveit-core:weaknessName "Presenting a non-allocated file as an allocated file" .
 
 :weaknessDFW-1078 a solveit-core:Weakness ;
-    rdfs:label "DFW-1078: Presenting a live file as deleted"@en ;
+    rdfs:label "DFW-1078: Presenting an allocated file as non-allocated"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
@@ -4049,7 +4117,7 @@ This further processing should provide access to the file content but also poten
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
         solveit-core:ASTM_MISINT ;
     solveit-core:weaknessID "DFW-1078" ;
-    solveit-core:weaknessName "Presenting a live file as deleted" .
+    solveit-core:weaknessName "Presenting an allocated file as non-allocated" .
 
 :weaknessDFW-1079 a solveit-core:Weakness ;
     rdfs:label "DFW-1079: Recovering incorrect metadata about a file"@en ;
@@ -5970,6 +6038,57 @@ This further processing should provide access to the file content but also poten
     solveit-core:weaknessID "DFW-1314" ;
     solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to a time offset being applied that is incorrect for the timeline entry" .
 
+:weaknessDFW-1315 a solveit-core:Weakness ;
+    rdfs:label "DFW-1315: Failure to recover a notification due to not attempting to parse the relevant data"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1264 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1315" ;
+    solveit-core:weaknessName "Failure to recover a notification due to not attempting to parse the relevant data" .
+
+:weaknessDFW-1316 a solveit-core:Weakness ;
+    rdfs:label "DFW-1316: Failure to recover a notification due to a tool error parsing the relevant data"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1265 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1316" ;
+    solveit-core:weaknessName "Failure to recover a notification due to a tool error parsing the relevant data" .
+
+:weaknessDFW-1317 a solveit-core:Weakness ;
+    rdfs:label "DFW-1317: Failure to recover a notification due to it being deleted because of the expiry time set"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1125,
+        :mitigationDFM-1266 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1317" ;
+    solveit-core:weaknessName "Failure to recover a notification due to it being deleted because of the expiry time set" .
+
+:weaknessDFW-1318 a solveit-core:Weakness ;
+    rdfs:label "DFW-1318: Failure to recover a notification due to it being deleted because of it being viewed and cleared"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1125,
+        :mitigationDFM-1266 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1318" ;
+    solveit-core:weaknessName "Failure to recover a notification due to it being deleted because of it being viewed and cleared" .
+
+:weaknessDFW-1319 a solveit-core:Weakness ;
+    rdfs:label "DFW-1319: Associating a notification with an incorrect application due to tool error"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1265 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1319" ;
+    solveit-core:weaknessName "Associating a notification with an incorrect application due to tool error" .
+
+:weaknessDFW-1320 a solveit-core:Weakness ;
+    rdfs:label "DFW-1320: Failure to extract the creation time of a notification due to tool error"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1267 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1320" ;
+    solveit-core:weaknessName "Failure to extract the creation time of a notification due to tool error" .
+
+:weaknessDFW-1321 a solveit-core:Weakness ;
+    rdfs:label "DFW-1321: Presenting the incorrect time for a notification due to tool error"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1267 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1321" ;
+    solveit-core:weaknessName "Presenting the incorrect time for a notification due to tool error" .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
@@ -6382,6 +6501,21 @@ This further processing should provide access to the file content but also poten
     rdfs:label "DFM-1259: Test that a timeline tool correctly sorts entries"@en ;
     solveit-core:mitigationID "DFM-1259" ;
     solveit-core:mitigationName "Test that a timeline tool correctly sorts entries" .
+
+:mitigationDFM-1265 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1265: Test that the tool used correctly recovers operating system notifications from the data structures examined"@en ;
+    solveit-core:mitigationID "DFM-1265" ;
+    solveit-core:mitigationName "Test that the tool used correctly recovers operating system notifications from the data structures examined" .
+
+:mitigationDFM-1266 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1266: Examine longer lasting operating system notification storage locations if possible"@en ;
+    solveit-core:mitigationID "DFM-1266" ;
+    solveit-core:mitigationName "Examine longer lasting operating system notification storage locations if possible" .
+
+:mitigationDFM-1267 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1267: Test that the tool used correctly recovers operating system notification timestamps from the data structures examined"@en ;
+    solveit-core:mitigationID "DFM-1267" ;
+    solveit-core:mitigationName "Test that the tool used correctly recovers operating system notification timestamps from the data structures examined" .
 
 :techniqueDFT-1006 a solveit-core:Technique ;
     rdfs:label "DFT-1006: Use digital sniffer dogs to locate digital devices"@en ;
@@ -6836,6 +6970,12 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
         :citationDFCite-1141 ;
     solveit-core:mitigationID "DFM-1112" ;
     solveit-core:mitigationName "Use of AI to classify files in addition to standard programmatic methods" .
+
+:mitigationDFM-1125 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1125: Examine database journal files"@en ;
+    solveit-core:hasReference :citationDFCite-1022 ;
+    solveit-core:mitigationID "DFM-1125" ;
+    solveit-core:mitigationName "Examine database journal files" .
 
 :mitigationDFM-1139 a solveit-core:Mitigation ;
     rdfs:label "DFM-1139: Use automated software monitoring to detect app artefact changes"@en ;
