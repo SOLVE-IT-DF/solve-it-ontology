@@ -43,6 +43,7 @@
         :techniqueDFT-1165,
         :techniqueDFT-1167,
         :techniqueDFT-1169,
+        :techniqueDFT-1186,
         :techniqueDFT-1187 ;
     solveit-core:objectiveDescription "Process data to extract artifacts or stored content of specific types." ;
     solveit-core:objectiveID "DFO-1002" ;
@@ -1748,6 +1749,11 @@
     solveit-core:mitigationID "DFM-1264" ;
     solveit-core:mitigationName "Ensure that tools used extract data from any operating system notification databases or relevant files" .
 
+:mitigationDFM-1268 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1268: Count timeline entries before and after sorting a timeline and check they are the same"@en ;
+    solveit-core:mitigationID "DFM-1268" ;
+    solveit-core:mitigationName "Count timeline entries before and after sorting a timeline and check they are the same" .
+
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceSet"^^xsd:anyURI ;
@@ -2693,10 +2699,12 @@ Facebook Messenger
     solveit-core:techniqueName "User account analysis (OS)" .
 
 :techniqueDFT-1100 a solveit-core:Technique ;
-    rdfs:label "DFT-1100: EXIF data extraction"@en ;
+    rdfs:label "DFT-1100: Extract metadata from within images"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/exifData"^^xsd:anyURI ;
+    solveit-core:hasSynonym "EXIF extraction" ;
+    solveit-core:techniqueDescription "The extraction of metadata from within images (pictures). e.g. EXIF, XMP. IPTC, iTXt etc." ;
     solveit-core:techniqueID "DFT-1100" ;
-    solveit-core:techniqueName "EXIF data extraction" .
+    solveit-core:techniqueName "Extract metadata from within images" .
 
 :techniqueDFT-1101 a solveit-core:Technique ;
     rdfs:label "DFT-1101: Cell site survey"@en ;
@@ -3493,6 +3501,23 @@ This further processing should provide access to the file content but also poten
     solveit-core:techniqueDescription "Recovery of the notifications produced by applications that are stored by the operating system. " ;
     solveit-core:techniqueID "DFT-1185" ;
     solveit-core:techniqueName "Extract data from OS-level notifications" .
+
+:techniqueDFT-1186 a solveit-core:Technique ;
+    rdfs:label "DFT-1186: Compute per-file hash values"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/hash"^^xsd:anyURI ;
+    solveit-core:hasExample "Autopsy hash lookup ingest module computing per-file hashes",
+        "md5sum / sha256sum applied recursively over a mounted forensic image" ;
+    solveit-core:hasSynonym "File hashing",
+        "Per-file hashing" ;
+    solveit-core:techniqueDescription "The process of computing one or more hash digests for each file in a set, producing per-file digests that can subsequently be used for matching, deduplication, or integrity comparison." ;
+    solveit-core:techniqueDetails """This technique does vary based on the kind of digest produced: cryptographic-digest computation for exact matching, and fuzzy or similarity-digest computation for approximate matching. 
+
+The output of this technique is typically consumed by hash-matching techniques including DFT-1047, DFT-1050, and DFT-1051. 
+
+This technique is distinct from DFT-1042, which hashes the entire bitstream of a source device for acquisition integrity rather than individual files within the file system.""" ;
+    solveit-core:techniqueID "DFT-1186" ;
+    solveit-core:techniqueName "Compute per-file hash values" .
 
 :techniqueDFT-1187 a solveit-core:Technique ;
     rdfs:label "DFT-1187: Extract content from compound files"@en ;
@@ -5964,12 +5989,12 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:weaknessName "The filtered timeline includes entries that are not relevant because the filtering criteria was too broad" .
 
 :weaknessDFW-1298 a solveit-core:Weakness ;
-    rdfs:label "DFW-1298: The filtered timeline includes entries that are not relevant because the the tool did not filter correctly"@en ;
+    rdfs:label "DFW-1298: The filtered timeline includes entries that are not relevant because the tool did not filter correctly"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1250 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
         solveit-core:ASTM_INAC_EX ;
     solveit-core:weaknessID "DFW-1298" ;
-    solveit-core:weaknessName "The filtered timeline includes entries that are not relevant because the the tool did not filter correctly" .
+    solveit-core:weaknessName "The filtered timeline includes entries that are not relevant because the tool did not filter correctly" .
 
 :weaknessDFW-1299 a solveit-core:Weakness ;
     rdfs:label "DFW-1299: A filtered timeline is presented as a full timeline"@en ;
@@ -5987,7 +6012,8 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
 
 :weaknessDFW-1308 a solveit-core:Weakness ;
     rdfs:label "DFW-1308: Sorted timeline is missing timeline entries due to tool error during sort process"@en ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1259 ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1259,
+        :mitigationDFM-1268 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1308" ;
     solveit-core:weaknessName "Sorted timeline is missing timeline entries due to tool error during sort process" .

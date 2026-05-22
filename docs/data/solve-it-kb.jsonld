@@ -9283,6 +9283,28 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1268",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1268: Count timeline entries before and after sorting a timeline and check they are the same"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1268"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Count timeline entries before and after sorting a timeline and check they are the same"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
@@ -9385,6 +9407,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1165"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1186"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1187"
@@ -15206,13 +15231,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1100: EXIF data extraction"
+        "@value": "DFT-1100: Extract metadata from within images"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/exifData"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "EXIF extraction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The extraction of metadata from within images (pictures). e.g. EXIF, XMP. IPTC, iTXt etc."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15222,7 +15257,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "EXIF data extraction"
+        "@value": "Extract metadata from within images"
       }
     ]
   },
@@ -19481,6 +19516,66 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Extract data from OS-level notifications"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1186",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1186: Compute per-file hash values"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/hash"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Autopsy hash lookup ingest module computing per-file hashes"
+      },
+      {
+        "@value": "md5sum / sha256sum applied recursively over a mounted forensic image"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "File hashing"
+      },
+      {
+        "@value": "Per-file hashing"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of computing one or more hash digests for each file in a set, producing per-file digests that can subsequently be used for matching, deduplication, or integrity comparison."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This technique does vary based on the kind of digest produced: cryptographic-digest computation for exact matching, and fuzzy or similarity-digest computation for approximate matching. \n\nThe output of this technique is typically consumed by hash-matching techniques including DFT-1047, DFT-1050, and DFT-1051. \n\nThis technique is distinct from DFT-1042, which hashes the entire bitstream of a source device for acquisition integrity rather than individual files within the file system."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1186"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Compute per-file hash values"
       }
     ]
   },
@@ -30379,7 +30474,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1298: The filtered timeline includes entries that are not relevant because the the tool did not filter correctly"
+        "@value": "DFW-1298: The filtered timeline includes entries that are not relevant because the tool did not filter correctly"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
@@ -30402,7 +30497,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "The filtered timeline includes entries that are not relevant because the the tool did not filter correctly"
+        "@value": "The filtered timeline includes entries that are not relevant because the tool did not filter correctly"
       }
     ]
   },
@@ -30484,6 +30579,9 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1259"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1268"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
