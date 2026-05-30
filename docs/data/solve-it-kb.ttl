@@ -29,25 +29,15 @@
     solveit-core:sortOrder 20 .
 
 :objectiveDFO-1002 a solveit-core:Objective ;
-    rdfs:label "DFO-1002: Extract artifacts, or content of specific types"@en ;
-    solveit-core:includesTechnique :techniqueDFT-1021,
-        :techniqueDFT-1052,
-        :techniqueDFT-1053,
-        :techniqueDFT-1056,
-        :techniqueDFT-1071,
-        :techniqueDFT-1076,
+    rdfs:label "DFO-1002: Extract data from specific formats"@en ;
+    solveit-core:includesTechnique :techniqueDFT-1071,
         :techniqueDFT-1099,
         :techniqueDFT-1100,
-        :techniqueDFT-1120,
-        :techniqueDFT-1121,
-        :techniqueDFT-1165,
         :techniqueDFT-1167,
-        :techniqueDFT-1169,
-        :techniqueDFT-1186,
         :techniqueDFT-1187 ;
-    solveit-core:objectiveDescription "Process data to extract artifacts or stored content of specific types." ;
+    solveit-core:objectiveDescription "Process data to extract artifacts from specific data formats." ;
     solveit-core:objectiveID "DFO-1002" ;
-    solveit-core:objectiveName "Extract artifacts, or content of specific types" ;
+    solveit-core:objectiveName "Extract data from specific formats" ;
     solveit-core:sortOrder 13 .
 
 :objectiveDFO-1003 a solveit-core:Objective ;
@@ -321,6 +311,23 @@
     solveit-core:objectiveID "DFO-1022" ;
     solveit-core:objectiveName "Store acquired data" ;
     solveit-core:sortOrder 7 .
+
+:objectiveDFO-1023 a solveit-core:Objective ;
+    rdfs:label "DFO-1023: Extract specific artifact types"@en ;
+    solveit-core:includesTechnique :techniqueDFT-1021,
+        :techniqueDFT-1052,
+        :techniqueDFT-1053,
+        :techniqueDFT-1056,
+        :techniqueDFT-1076,
+        :techniqueDFT-1120,
+        :techniqueDFT-1121,
+        :techniqueDFT-1165,
+        :techniqueDFT-1169,
+        :techniqueDFT-1186 ;
+    solveit-core:objectiveDescription "Process data to extract specific types of artifact" ;
+    solveit-core:objectiveID "DFO-1023" ;
+    solveit-core:objectiveName "Extract specific artifact types" ;
+    solveit-core:sortOrder 13 .
 
 :citationDFCite-1001 a solveit-core:Citation ;
     rdfs:label "DFCite-1001" ;

@@ -9365,59 +9365,29 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFO-1002: Extract artifacts, or content of specific types"
+        "@value": "DFO-1002: Extract data from specific formats"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1021"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1071"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1076"
-      },
-      {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1100"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1099"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1052"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1053"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1056"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1120"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1187"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1167"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1169"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1099"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1121"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1165"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1186"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1187"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1071"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
       {
-        "@value": "Process data to extract artifacts or stored content of specific types."
+        "@value": "Process data to extract artifacts from specific data formats."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveID": [
@@ -9427,7 +9397,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveName": [
       {
-        "@value": "Extract artifacts, or content of specific types"
+        "@value": "Extract data from specific formats"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/sortOrder": [
@@ -10530,6 +10500,71 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
         "@value": 7
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1023",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1023: Extract specific artifact types"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1052"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1121"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1169"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1165"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1053"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1056"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1021"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1120"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1076"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1186"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Process data to extract specific types of artifact"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1023"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Extract specific artifact types"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 13
       }
     ]
   },
