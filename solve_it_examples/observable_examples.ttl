@@ -31,7 +31,7 @@
     solveit-observable:videoFramePixelHeight 1080 ;
     solveit-observable:extractedFromVideo :video001 .
 
-:video001 rdf:type uco-observable:File ;
+:video001 rdf:type solveit-observable:VideoFile ;
     rdfs:label "surveillance_camera_01.mp4"@en .
 
 #################################################################

@@ -45,6 +45,18 @@ solveit-observable:BitstreamRandomAccessed rdf:type owl:Class ;
     rdfs:label "Bitstream Random Accessed"@en ;
     rdfs:comment "Random access to sector-level data, whether from a live device or a decoded forensic image container. Enables partition parsing, filesystem traversal, and logical operations."@en .
 
+###  VideoFile Observable Object
+solveit-observable:VideoFile rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:File ;
+    rdfs:label "Video File"@en ;
+    rdfs:comment "A file whose primary content is video data (e.g. MP4, MOV, AVI, MKV)."@en .
+
+###  AudioFile Observable Object
+solveit-observable:AudioFile rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:File ;
+    rdfs:label "Audio File"@en ;
+    rdfs:comment "A file whose primary content is audio data (e.g. MP3, WAV, AAC, FLAC)."@en .
+
 ###  VideoFrame Observable Object
 solveit-observable:VideoFrame rdf:type owl:Class ;
     rdfs:subClassOf uco-observable:ObservableObject ;
@@ -278,7 +290,7 @@ solveit-observable:HashSetEntry rdf:type owl:Class ;
 
 solveit-observable:extractedFromVideo rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:VideoFrame ;
-    rdfs:range uco-observable:File ;
+    rdfs:range solveit-observable:VideoFile ;
     rdfs:label "extracted from video"@en ;
     rdfs:comment "Links a VideoFrame to the source video file."@en .
 
