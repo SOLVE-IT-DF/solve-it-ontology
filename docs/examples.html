@@ -833,6 +833,66 @@
             </div>
         </div>
         <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-observablefileset.html">solveit-observable:FileSet</a></h2>
+            <div class="example-instance" id="filesUnderExam">
+                <div class="instance-header">Allocated files from partition (48,210 files)</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/filesUnderExam</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-observablehashset.html">solveit-observable:HashSet</a></h2>
+            <div class="example-instance" id="nsrlKnownHashes">
+                <div class="instance-header">NSRL RDS (known file hashes)</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/nsrlKnownHashes</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablecontainshashsetentry.html">solveit-observable:containsHashSetEntry</a></td>
+                            <td class="property-value"><a href="#entryWin11Notepad">https://ontology.solveit-df.org/solveit/examples/entryWin11Notepad</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-observablehashsetentry.html">solveit-observable:HashSetEntry</a></h2>
+            <div class="example-instance" id="entryWin11Notepad">
+                <div class="instance-header">notepad.exe (Windows 11)</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/entryWin11Notepad</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablecontainshash.html">solveit-observable:containsHash</a></td>
+                            <td class="property-value"><a href="#notepadSha256">https://ontology.solveit-df.org/solveit/examples/notepadSha256</a></td>
+                        </tr>
+                        <tr>
+                            <td class="property-name"><a href="prop-solveit-observablecontainshash.html">solveit-observable:containsHash</a></td>
+                            <td class="property-value"><a href="#notepadMd5">https://ontology.solveit-df.org/solveit/examples/notepadMd5</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
+            <h2 class="class-title">Examples of <a href="class-solveit-observableredactedfileset.html">solveit-observable:RedactedFileSet</a></h2>
+            <div class="example-instance" id="reducedFiles">
+                <div class="instance-header">38,380 files remaining for examination</div>
+                <div class="instance-type">Instance URI: <code>https://ontology.solveit-df.org/solveit/examples/reducedFiles</code></div>
+                <table class="table table-bordered table-condensed property-table">
+                    <thead><tr><th width="35%">Property</th><th>Value</th></tr></thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="class-section">
             <h2 class="class-title">Examples of <a href="class-solveit-observablevideoframe.html">solveit-observable:VideoFrame</a></h2>
             <div class="example-instance" id="exampleFrame001">
                 <div class="instance-header">Frame 001 from surveillance video</div>
@@ -1458,11 +1518,11 @@
                     <tbody>
                         <tr>
                             <td class="property-name">http://www.w3.org/2000/01/rdf-schema#comment</td>
-                            <td class="property-value">"DFT-xxxx: Sort timeline - orders 15 entries chronologically. Point timestamps (DateTimeStamp) are ordered by value. Whole-day accessed ranges (DateTimeRange) are placed at the end of their respective days since the exact access time within the day is unknown. Tied positions occur where: (a) NOTES.TXT and DRAFT.DOC share the same modified time at 2s resolution, (b) README.TXT and NOTES.TXT share the same accessed date of 2025-11-03, and (c) DRAFT.DOC, BUDGET.XLS, and PHOTO.JPG share the same accessed date of 2025-11-04."@en</td>
+                            <td class="property-value">"DFT-1183: Sort timeline - orders 15 entries chronologically. Point timestamps (DateTimeStamp) are ordered by value. Whole-day accessed ranges (DateTimeRange) are placed at the end of their respective days since the exact access time within the day is unknown. Tied positions occur where: (a) NOTES.TXT and DRAFT.DOC share the same modified time at 2s resolution, (b) README.TXT and NOTES.TXT share the same accessed date of 2025-11-03, and (c) DRAFT.DOC, BUDGET.XLS, and PHOTO.JPG share the same accessed date of 2025-11-04."@en</td>
                         </tr>
                         <tr>
                             <td class="property-name"><a href="prop-solveit-coreusedtechnique.html">solveit-core:usedTechnique</a></td>
-                            <td class="property-value">https://ontology.solveit-df.org/solveit/data/techniqueDFT-1052</td>
+                            <td class="property-value">https://ontology.solveit-df.org/solveit/data/techniqueDFT-1183</td>
                         </tr>
                         <tr>
                             <td class="property-name">https://ontology.unifiedcyberontology.org/uco/action/endTime</td>
@@ -4308,7 +4368,7 @@
 
         <hr>
         <footer>
-            <p class="text-muted">Generated from <code>acquisition_examples.ttl</code>, <code>core_classes_examples.ttl</code>, <code>observable_examples.ttl</code>, <code>search_examples.ttl</code>, <code>sorted_timeline_examples.ttl</code>, <code>sqlite_examples.ttl</code>, <code>timeline_resolution_examples.ttl</code>, <code>timeline_sequence_examples.ttl</code>, <code>triaged_devices_examples.ttl</code>, <code>weakness_assessment_examples.ttl</code></p>
+            <p class="text-muted">Generated from <code>acquisition_examples.ttl</code>, <code>core_classes_examples.ttl</code>, <code>hashset_examples.ttl</code>, <code>observable_examples.ttl</code>, <code>search_examples.ttl</code>, <code>sorted_timeline_examples.ttl</code>, <code>sqlite_examples.ttl</code>, <code>timeline_resolution_examples.ttl</code>, <code>timeline_sequence_examples.ttl</code>, <code>triaged_devices_examples.ttl</code>, <code>weakness_assessment_examples.ttl</code></p>
         </footer>
     </div>
 </body>
