@@ -1,0 +1,49 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Hash Set Example
+#
+#    DFT-1047: Filter files based on a hashset to reduce files examined
+#      FileSet + HashSet -> [DFT-1047] -> Classification + RedactedFileSet
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/hashset> rdf:type owl:Ontology ;
+    owl:imports <https://ontology.solveit-df.org/solveit/observable> ;
+    rdfs:label "SOLVE-IT Hash Set Example"@en ;
+    rdfs:comment "Example instances demonstrating HashSet, HashSetEntry and DFT-1047."@en .
+
+#    --- Input: the files to be examined ---
+:filesUnderExam rdf:type solveit-observable:FileSet ;
+    rdfs:label "Allocated files from partition (48,210 files)"@en .
+
+#    --- Input: the reference hash set (e.g. an NSRL RDS subset) ---
+:nsrlKnownHashes rdf:type solveit-observable:HashSet ;
+    rdfs:label "NSRL RDS (known file hashes)"@en ;
+    solveit-observable:containsHashSetEntry :entryWin11Notepad .
+
+#    One entry, carrying two hashes for the same known file
+#    (multiple uco-types:Hash instances = the MD5 and SHA-256 columns of an RDS row)
+:entryWin11Notepad rdf:type solveit-observable:HashSetEntry ;
+    rdfs:label "notepad.exe (Windows 11)"@en ;
+    solveit-observable:containsHash :notepadSha256 , :notepadMd5 .
+
+:notepadSha256 rdf:type uco-types:Hash ;
+    uco-types:hashMethod "SHA256" ;
+    uco-types:hashValue "a7f4e1c0d2b3"^^xsd:hexBinary .
+
+:notepadMd5 rdf:type uco-types:Hash ;
+    uco-types:hashMethod "MD5" ;
+    uco-types:hashValue "9e107d9d372b"^^xsd:hexBinary .
+
+#    --- Outputs of DFT-1047 ---
+:reducedFiles rdf:type solveit-observable:RedactedFileSet ;
+    rdfs:label "38,380 files remaining for examination"@en .

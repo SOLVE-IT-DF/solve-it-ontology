@@ -48,6 +48,10 @@ Examples of SQLite observable classes for database forensics.
 Examples of device triage classes:
 - **DeviceSet** and **PrioritizedDeviceSet** for grouping and prioritising seized devices
 
+### [hashset_examples.ttl](hashset_examples.ttl)
+Examples of hash matching classes:
+- **HashSet** and **HashSetEntry** for matching file hashes against a reference set (e.g. NSRL RDS) in DFT-1047 to reduce the files examined
+
 ### [weakness_assessment_examples.ttl](weakness_assessment_examples.ttl)
 Examples of weakness assessment classes for evaluating technique reliability.
 

@@ -7,6 +7,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix cacontology-forensics: <https://cacontology.projectvic.org/forensics#> .
 @base <https://ontology.solveit-df.org/solveit/observable/> .
 
@@ -259,6 +260,18 @@ solveit-observable:PrioritizedDeviceEntry rdf:type owl:Class ;
     rdfs:label "Prioritized Device Entry"@en ;
     rdfs:comment "An entry pairing a device with its triage priority classification."@en .
 
+###  HashSet Observable Object
+solveit-observable:HashSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject , uco-core:ContextualCompilation ;
+    rdfs:label "Hash Set"@en ;
+    rdfs:comment "A reference set of known file hashes used to match against files under examination, in order to reduce or flag the files examined (e.g. NSRL RDS). Composed of HashSetEntry instances."@en .
+
+###  HashSetEntry Observable Object
+solveit-observable:HashSetEntry rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Hash Set Entry"@en ;
+    rdfs:comment "A single entry within a hash set. At minimum it carries a hash value; further details (e.g. file name, size, product or operating system, classification) may be added as required."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -321,6 +334,18 @@ solveit-observable:hasClusterRun rdf:type owl:ObjectProperty ;
     rdfs:range solveit-observable:ClusterRun ;
     rdfs:label "has cluster run"@en ;
     rdfs:comment "Links a file to its cluster allocation runs. A contiguous file has one run; a fragmented file has multiple runs."@en .
+
+solveit-observable:containsHashSetEntry rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:HashSet ;
+    rdfs:range solveit-observable:HashSetEntry ;
+    rdfs:label "contains hash set entry"@en ;
+    rdfs:comment "Links a hash set to one of the entries it contains."@en .
+
+solveit-observable:containsHash rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:HashSetEntry ;
+    rdfs:range uco-types:Hash ;
+    rdfs:label "contains hash"@en ;
+    rdfs:comment "The hash value carried by a hash set entry. The algorithm (MD5, SHA-1, SHA-256, etc.) is held within the uco-types:Hash instance via its hashMethod and hashValue."@en .
 
 #################################################################
 #    Data Properties
