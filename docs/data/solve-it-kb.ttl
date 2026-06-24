@@ -29,23 +29,15 @@
     solveit-core:sortOrder 20 .
 
 :objectiveDFO-1002 a solveit-core:Objective ;
-    rdfs:label "DFO-1002: Extract artifacts, or content of specific types"@en ;
-    solveit-core:includesTechnique :techniqueDFT-1021,
-        :techniqueDFT-1052,
-        :techniqueDFT-1053,
-        :techniqueDFT-1056,
-        :techniqueDFT-1071,
-        :techniqueDFT-1076,
+    rdfs:label "DFO-1002: Extract data from specific formats"@en ;
+    solveit-core:includesTechnique :techniqueDFT-1071,
         :techniqueDFT-1099,
         :techniqueDFT-1100,
-        :techniqueDFT-1120,
-        :techniqueDFT-1121,
-        :techniqueDFT-1165,
         :techniqueDFT-1167,
-        :techniqueDFT-1169 ;
-    solveit-core:objectiveDescription "Process data to extract artifacts or stored content of specific types." ;
+        :techniqueDFT-1187 ;
+    solveit-core:objectiveDescription "Process data to extract artifacts from specific data formats." ;
     solveit-core:objectiveID "DFO-1002" ;
-    solveit-core:objectiveName "Extract artifacts, or content of specific types" ;
+    solveit-core:objectiveName "Extract data from specific formats" ;
     solveit-core:sortOrder 13 .
 
 :objectiveDFO-1003 a solveit-core:Objective ;
@@ -248,7 +240,8 @@
         :techniqueDFT-1098,
         :techniqueDFT-1116,
         :techniqueDFT-1149,
-        :techniqueDFT-1180 ;
+        :techniqueDFT-1180,
+        :techniqueDFT-1185 ;
     solveit-core:objectiveDescription "Process data stored by the operating system to extract digital forensic artifacts." ;
     solveit-core:objectiveID "DFO-1017" ;
     solveit-core:objectiveName "Extract artifacts stored by the operating system" ;
@@ -318,6 +311,23 @@
     solveit-core:objectiveID "DFO-1022" ;
     solveit-core:objectiveName "Store acquired data" ;
     solveit-core:sortOrder 7 .
+
+:objectiveDFO-1023 a solveit-core:Objective ;
+    rdfs:label "DFO-1023: Extract specific artifact types"@en ;
+    solveit-core:includesTechnique :techniqueDFT-1021,
+        :techniqueDFT-1052,
+        :techniqueDFT-1053,
+        :techniqueDFT-1056,
+        :techniqueDFT-1076,
+        :techniqueDFT-1120,
+        :techniqueDFT-1121,
+        :techniqueDFT-1165,
+        :techniqueDFT-1169,
+        :techniqueDFT-1186 ;
+    solveit-core:objectiveDescription "Process data to extract specific types of artifact" ;
+    solveit-core:objectiveID "DFO-1023" ;
+    solveit-core:objectiveName "Extract specific artifact types" ;
+    solveit-core:sortOrder 13 .
 
 :citationDFCite-1001 a solveit-core:Citation ;
     rdfs:label "DFCite-1001" ;
@@ -422,11 +432,6 @@
     rdfs:label "DFCite-1018" ;
     solveit-core:citationID "DFCite-1018" ;
     solveit-core:citationPlaintext "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35." .
-
-:citationDFCite-1019 a solveit-core:Citation ;
-    rdfs:label "DFCite-1019" ;
-    solveit-core:citationID "DFCite-1019" ;
-    solveit-core:citationPlaintext "Breitinger, F., Studiawan, H. and Hargreaves, C., 2025. SoK: Timeline based event reconstruction for digital forensics: Terminology, methodology, and current challenges." .
 
 :citationDFCite-1023 a solveit-core:Citation ;
     rdfs:label "DFCite-1023" ;
@@ -874,6 +879,47 @@
     solveit-core:citationID "DFCite-1147" ;
     solveit-core:citationPlaintext "National Institute of Standards and Technology (undated) Computer Security Resource Center Glossary: Chain of Custody. Available at: https://csrc.nist.gov/glossary/term/chain_of_custody." .
 
+:citationDFCite-1148 a solveit-core:Citation ;
+    rdfs:label "DFCite-1148" ;
+    solveit-core:citationBibtex """@inproceedings{suma2017forensic,
+  title={Forensic analysis of google chrome cache files},
+  author={Suma, GS and Dija, S and Pillai, Arun T},
+  booktitle={2017 ieee international conference on computational intelligence and computing research (iccic)},
+  pages={1--5},
+  year={2017},
+  organization={IEEE}
+}""" ;
+    solveit-core:citationID "DFCite-1148" ;
+    solveit-core:citationPlaintext "Suma, G.S., Dija, S. and Pillai, A.T., 2017, December. Forensic analysis of google chrome cache files. In 2017 ieee international conference on computational intelligence and computing research (iccic) (pp. 1-5). IEEE." .
+
+:citationDFCite-1149 a solveit-core:Citation ;
+    rdfs:label "DFCite-1149" ;
+    solveit-core:citationBibtex """@article{domingues2022digital,
+  title={A digital forensic view of Windows 10 notifications},
+  author={Domingues, Patr{\\'\\i}cio and Andrade, Lu{\\'\\i}s and Frade, Miguel},
+  journal={Forensic Sciences},
+  volume={2},
+  number={1},
+  pages={88--106},
+  year={2022},
+  publisher={MDPI}
+}""" ;
+    solveit-core:citationID "DFCite-1149" ;
+    solveit-core:citationPlaintext "None" .
+
+:citationDFCite-1150 a solveit-core:Citation ;
+    rdfs:label "DFCite-1150" ;
+    solveit-core:citationBibtex """@inproceedings{dragonas2024forensic,
+  title={Forensic Analysis of Android Notifications' History},
+  author={Dragonas, Evangelos and Lambrinoudakis, Costas},
+  booktitle={2024 IEEE International Conference on Cyber Security and Resilience (CSR)},
+  pages={01--06},
+  year={2024},
+  organization={IEEE}
+}""" ;
+    solveit-core:citationID "DFCite-1150" ;
+    solveit-core:citationPlaintext "None" .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -950,12 +996,6 @@
     solveit-core:hasReference :citationDFCite-1135 ;
     solveit-core:mitigationID "DFM-1043" ;
     solveit-core:mitigationName "Scan for orphaned EPTs" .
-
-:mitigationDFM-1044 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1044: Scan for Volume Boot Records in unpartitioned space"@en ;
-    solveit-core:hasReference :citationDFCite-1135 ;
-    solveit-core:mitigationID "DFM-1044" ;
-    solveit-core:mitigationName "Scan for Volume Boot Records in unpartitioned space" .
 
 :mitigationDFM-1045 a solveit-core:Mitigation ;
     rdfs:label "DFM-1045: Explicitly detect sector size in use"@en ;
@@ -1228,12 +1268,6 @@
         :citationDFCite-1022 ;
     solveit-core:mitigationID "DFM-1124" ;
     solveit-core:mitigationName "Examine database contents with and without Write Ahead Log (WAL) files applied" .
-
-:mitigationDFM-1125 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1125: Examine database journal files"@en ;
-    solveit-core:hasReference :citationDFCite-1022 ;
-    solveit-core:mitigationID "DFM-1125" ;
-    solveit-core:mitigationName "Examine database journal files" .
 
 :mitigationDFM-1127 a solveit-core:Mitigation ;
     rdfs:label "DFM-1127: Use a similar system to test steps required to interrupt the normal boot process and boot from Trusted Bootable Environment"@en ;
@@ -1696,6 +1730,36 @@
     rdfs:label "DFM-1253: Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown"@en ;
     solveit-core:mitigationID "DFM-1253" ;
     solveit-core:mitigationName "Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown" .
+
+:mitigationDFM-1260 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1260: Check that sorted timeline contains same number of entries as unsorted timeline"@en ;
+    solveit-core:mitigationID "DFM-1260" ;
+    solveit-core:mitigationName "Check that sorted timeline contains same number of entries as unsorted timeline" .
+
+:mitigationDFM-1261 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1261: Test that timeline sorting correctly represents entries with low resolution timestamps"@en ;
+    solveit-core:mitigationID "DFM-1261" ;
+    solveit-core:mitigationName "Test that timeline sorting correctly represents entries with low resolution timestamps" .
+
+:mitigationDFM-1262 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1262: Test that timeline tools represent timeline entries with the same value at the same point in time, not in an artificial order"@en ;
+    solveit-core:mitigationID "DFM-1262" ;
+    solveit-core:mitigationName "Test that timeline tools represent timeline entries with the same value at the same point in time, not in an artificial order" .
+
+:mitigationDFM-1263 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1263: Check timeline entry to ensure that a timezone has not already been applied and shifted the timestamp value"@en ;
+    solveit-core:mitigationID "DFM-1263" ;
+    solveit-core:mitigationName "Check timeline entry to ensure that a timezone has not already been applied and shifted the timestamp value" .
+
+:mitigationDFM-1264 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1264: Ensure that tools used extract data from any operating system notification databases or relevant files"@en ;
+    solveit-core:mitigationID "DFM-1264" ;
+    solveit-core:mitigationName "Ensure that tools used extract data from any operating system notification databases or relevant files" .
+
+:mitigationDFM-1268 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1268: Count timeline entries before and after sorting a timeline and check they are the same"@en ;
+    solveit-core:mitigationID "DFM-1268" ;
+    solveit-core:mitigationName "Count timeline entries before and after sorting a timeline and check they are the same" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage"@en ;
@@ -2240,7 +2304,7 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:hasReference :citationDFCite-1024,
         :citationDFCite-1030 ;
     solveit-core:hasSynonym "file system parsing" ;
-    solveit-core:techniqueDescription "This involves parsing the live file system data structures and reconstructing the file system of the target media or device." ;
+    solveit-core:techniqueDescription "This involves parsing the allocated file system data structures and reconstructing the file system of the target media or device." ;
     solveit-core:techniqueID "DFT-1060" ;
     solveit-core:techniqueName "Enumerate allocated files and folders" .
 
@@ -2538,7 +2602,8 @@ Facebook Messenger
         :citationDFCite-1028,
         :citationDFCite-1058 ;
     solveit-core:hasSubtechnique :techniqueDFT-1134,
-        :techniqueDFT-1182 ;
+        :techniqueDFT-1182,
+        :techniqueDFT-1184 ;
     solveit-core:hasSynonym "Temporal Analysis" ;
     solveit-core:techniqueDescription "The process of searching, filtering, sorting, highlighting, or aggregating timeline entries to determine which are relevant for event reconstruction, or to identify times of interest (adapted from Breitinger et al. 2025)" ;
     solveit-core:techniqueDetails "This can involve refinement approaches such as: filtering irrelevant entries, highlighting key entries, or aggregating entries into more meaningful events. This may result in a filtered timeline, or a set of highlighted timeline entries" ;
@@ -2641,10 +2706,12 @@ Facebook Messenger
     solveit-core:techniqueName "User account analysis (OS)" .
 
 :techniqueDFT-1100 a solveit-core:Technique ;
-    rdfs:label "DFT-1100: EXIF data extraction"@en ;
+    rdfs:label "DFT-1100: Extract metadata from within images"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/exifData"^^xsd:anyURI ;
+    solveit-core:hasSynonym "EXIF extraction" ;
+    solveit-core:techniqueDescription "The extraction of metadata from within images (pictures). e.g. EXIF, XMP. IPTC, iTXt etc." ;
     solveit-core:techniqueID "DFT-1100" ;
-    solveit-core:techniqueName "EXIF data extraction" .
+    solveit-core:techniqueName "Extract metadata from within images" .
 
 :techniqueDFT-1101 a solveit-core:Technique ;
     rdfs:label "DFT-1101: Cell site survey"@en ;
@@ -3211,7 +3278,8 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem"^^xsd:anyURI ;
-    solveit-core:techniqueDescription "From a partition or data from a full disk, identify volumes and extract file systems." ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1300 ;
+    solveit-core:techniqueDescription "From a partition or data from a full disk, identify volumes." ;
     solveit-core:techniqueID "DFT-1168" ;
     solveit-core:techniqueName "Identify volumes" .
 
@@ -3402,6 +3470,80 @@ This further processing should provide access to the file content but also poten
     solveit-core:techniqueDetails "Filtering might be on timestamp type, within a defined time range, related to a particular file, or matching against some other content associated with the timestamp entries. " ;
     solveit-core:techniqueID "DFT-1182" ;
     solveit-core:techniqueName "Filter timeline for relevant entries " .
+
+:techniqueDFT-1184 a solveit-core:Technique ;
+    rdfs:label "DFT-1184: Sort timeline entries chronologically"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/SortedTimeline"^^xsd:anyURI ;
+    solveit-core:hasExample "Plaso",
+        "TimeSketch" ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1308,
+        :weaknessDFW-1309,
+        :weaknessDFW-1310,
+        :weaknessDFW-1311,
+        :weaknessDFW-1312,
+        :weaknessDFW-1313,
+        :weaknessDFW-1314 ;
+    solveit-core:techniqueDescription "Order a timeline based on the values in the timestamp entry." ;
+    solveit-core:techniqueDetails "This may be applied automatically to a generated timeline or may be applied as a separate process. " ;
+    solveit-core:techniqueID "DFT-1184" ;
+    solveit-core:techniqueName "Sort timeline entries chronologically" .
+
+:techniqueDFT-1185 a solveit-core:Technique ;
+    rdfs:label "DFT-1185: Extract data from OS-level notifications"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DateTimeStamp"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1315,
+        :weaknessDFW-1316,
+        :weaknessDFW-1317,
+        :weaknessDFW-1318,
+        :weaknessDFW-1319,
+        :weaknessDFW-1320,
+        :weaknessDFW-1321 ;
+    solveit-core:hasReference :citationDFCite-1149,
+        :citationDFCite-1150 ;
+    solveit-core:hasSynonym "Notification analysis",
+        "WPN analysis" ;
+    solveit-core:techniqueDescription "Recovery of the notifications produced by applications that are stored by the operating system. " ;
+    solveit-core:techniqueID "DFT-1185" ;
+    solveit-core:techniqueName "Extract data from OS-level notifications" .
+
+:techniqueDFT-1186 a solveit-core:Technique ;
+    rdfs:label "DFT-1186: Compute per-file hash values"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/hash"^^xsd:anyURI ;
+    solveit-core:hasExample "Autopsy hash lookup ingest module computing per-file hashes",
+        "md5sum / sha256sum applied recursively over a mounted forensic image" ;
+    solveit-core:hasSynonym "File hashing",
+        "Per-file hashing" ;
+    solveit-core:techniqueDescription "The process of computing one or more hash digests for each file in a set, producing per-file digests that can subsequently be used for matching, deduplication, or integrity comparison." ;
+    solveit-core:techniqueDetails """This technique does vary based on the kind of digest produced: cryptographic-digest computation for exact matching, and fuzzy or similarity-digest computation for approximate matching. 
+
+The output of this technique is typically consumed by hash-matching techniques including DFT-1047, DFT-1050, and DFT-1051. 
+
+This technique is distinct from DFT-1042, which hashes the entire bitstream of a source device for acquisition integrity rather than individual files within the file system.""" ;
+    solveit-core:techniqueID "DFT-1186" ;
+    solveit-core:techniqueName "Compute per-file hash values" .
+
+:techniqueDFT-1187 a solveit-core:Technique ;
+    rdfs:label "DFT-1187: Extract content from compound files"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasExample "Autopsy Embedded File Extractor module" ;
+    solveit-core:hasSynonym "Compound file expansion",
+        "Container file expansion",
+        "Embedded file extraction" ;
+    solveit-core:techniqueDescription "The process of extracting files and objects contained within compound files, including archives, Office documents, PDFs, and email containers, surfacing the contained items as first-class files for further analysis." ;
+    solveit-core:techniqueDetails """'Compound file' is used here in the broad sense: any file format whose payload is one or more other files. 
+
+This covers user-downloaded archives (.zip, .rar, .7z, .tar), images and objects embedded in Office documents (.docx / .xlsx / .pptx, and legacy .doc / .xls / .ppt that use the Microsoft Compound File Binary Format, attachments and embedded streams in PDFs, and attachments inside email containers. 
+
+Extracting them surfaces each contained item as a first-class file so downstream techniques such as file-type identification, extension-mismatch detection, and hash matching can operate on the content. 
+
+This is distinct from DFT-1045, which decodes archive containers produced by the forensic extraction pipeline (e.g. an iOS file-system extraction packaged as a TAR file); this technique is applied later in the workflow, against compound files encountered within user data. The technique should be applied recursively because extracted items may themselves be compound files.""" ;
+    solveit-core:techniqueID "DFT-1187" ;
+    solveit-core:techniqueName "Extract content from compound files" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -3898,64 +4040,64 @@ This further processing should provide access to the file content but also poten
     solveit-core:weaknessName "Failure to check the integrity of partition table (where possible e.g. GPT)" .
 
 :weaknessDFW-1068 a solveit-core:Weakness ;
-    rdfs:label "DFW-1068: Failing to identify the existence of a live file"@en ;
+    rdfs:label "DFW-1068: Failing to identify the existence of an allocated file"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1068" ;
-    solveit-core:weaknessName "Failing to identify the existence of a live file" .
+    solveit-core:weaknessName "Failing to identify the existence of an allocated file" .
 
 :weaknessDFW-1069 a solveit-core:Weakness ;
-    rdfs:label "DFW-1069: Failing to identify the existence of a live directory"@en ;
+    rdfs:label "DFW-1069: Failing to identify the existence of an allocated directory"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1069" ;
-    solveit-core:weaknessName "Failing to identify the existence of a live directory" .
+    solveit-core:weaknessName "Failing to identify the existence of an allocated directory" .
 
 :weaknessDFW-1070 a solveit-core:Weakness ;
-    rdfs:label "DFW-1070: Failing to recover the complete contents of a live file"@en ;
+    rdfs:label "DFW-1070: Failing to recover the complete contents of an allocated file"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1070" ;
-    solveit-core:weaknessName "Failing to recover the complete contents of a live file" .
+    solveit-core:weaknessName "Failing to recover the complete contents of an allocated file" .
 
 :weaknessDFW-1071 a solveit-core:Weakness ;
-    rdfs:label "DFW-1071: Failing to recover a complete listing of a live directory"@en ;
+    rdfs:label "DFW-1071: Failing to recover a complete listing of an allocated directory"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1071" ;
-    solveit-core:weaknessName "Failing to recover a complete listing of a live directory" .
+    solveit-core:weaknessName "Failing to recover a complete listing of an allocated directory" .
 
 :weaknessDFW-1072 a solveit-core:Weakness ;
-    rdfs:label "DFW-1072: Recovering incorrect contents of a live file"@en ;
+    rdfs:label "DFW-1072: Recovering incorrect contents of an allocated file"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
-    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
     solveit-core:weaknessID "DFW-1072" ;
-    solveit-core:weaknessName "Recovering incorrect contents of a live file" .
+    solveit-core:weaknessName "Recovering incorrect contents of an allocated file" .
 
 :weaknessDFW-1073 a solveit-core:Weakness ;
-    rdfs:label "DFW-1073: Recovering an incorrect listing of a live directory"@en ;
+    rdfs:label "DFW-1073: Recovering an incorrect listing of an allocated directory"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
         :mitigationDFM-1053 ;
-    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
     solveit-core:weaknessID "DFW-1073" ;
-    solveit-core:weaknessName "Recovering an incorrect listing of a live directory" .
+    solveit-core:weaknessName "Recovering an incorrect listing of an allocated directory" .
 
 :weaknessDFW-1074 a solveit-core:Weakness ;
     rdfs:label "DFW-1074: Attributing a file to the wrong directory"@en ;
@@ -3988,7 +4130,7 @@ This further processing should provide access to the file content but also poten
     solveit-core:weaknessName "Presenting a directory that does not exist" .
 
 :weaknessDFW-1077 a solveit-core:Weakness ;
-    rdfs:label "DFW-1077: Presenting a deleted file as a live file"@en ;
+    rdfs:label "DFW-1077: Presenting a non-allocated file as an allocated file"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
@@ -3996,10 +4138,10 @@ This further processing should provide access to the file content but also poten
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
         solveit-core:ASTM_MISINT ;
     solveit-core:weaknessID "DFW-1077" ;
-    solveit-core:weaknessName "Presenting a deleted file as a live file" .
+    solveit-core:weaknessName "Presenting a non-allocated file as an allocated file" .
 
 :weaknessDFW-1078 a solveit-core:Weakness ;
-    rdfs:label "DFW-1078: Presenting a live file as deleted"@en ;
+    rdfs:label "DFW-1078: Presenting an allocated file as non-allocated"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1050,
         :mitigationDFM-1051,
         :mitigationDFM-1052,
@@ -4007,7 +4149,7 @@ This further processing should provide access to the file content but also poten
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
         solveit-core:ASTM_MISINT ;
     solveit-core:weaknessID "DFW-1078" ;
-    solveit-core:weaknessName "Presenting a live file as deleted" .
+    solveit-core:weaknessName "Presenting an allocated file as non-allocated" .
 
 :weaknessDFW-1079 a solveit-core:Weakness ;
     rdfs:label "DFW-1079: Recovering incorrect metadata about a file"@en ;
@@ -5854,12 +5996,12 @@ This further processing should provide access to the file content but also poten
     solveit-core:weaknessName "The filtered timeline includes entries that are not relevant because the filtering criteria was too broad" .
 
 :weaknessDFW-1298 a solveit-core:Weakness ;
-    rdfs:label "DFW-1298: The filtered timeline includes entries that are not relevant because the the tool did not filter correctly"@en ;
+    rdfs:label "DFW-1298: The filtered timeline includes entries that are not relevant because the tool did not filter correctly"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1250 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
         solveit-core:ASTM_INAC_EX ;
     solveit-core:weaknessID "DFW-1298" ;
-    solveit-core:weaknessName "The filtered timeline includes entries that are not relevant because the the tool did not filter correctly" .
+    solveit-core:weaknessName "The filtered timeline includes entries that are not relevant because the tool did not filter correctly" .
 
 :weaknessDFW-1299 a solveit-core:Weakness ;
     rdfs:label "DFW-1299: A filtered timeline is presented as a full timeline"@en ;
@@ -5868,26 +6010,122 @@ This further processing should provide access to the file content but also poten
     solveit-core:weaknessID "DFW-1299" ;
     solveit-core:weaknessName "A filtered timeline is presented as a full timeline" .
 
+:weaknessDFW-1300 a solveit-core:Weakness ;
+    rdfs:label "DFW-1300: Missing deleted but recoverable volumes from unpartitioned space"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1044 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1300" ;
+    solveit-core:weaknessName "Missing deleted but recoverable volumes from unpartitioned space" .
+
+:weaknessDFW-1308 a solveit-core:Weakness ;
+    rdfs:label "DFW-1308: Sorted timeline is missing timeline entries due to tool error during sort process"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1259,
+        :mitigationDFM-1268 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1308" ;
+    solveit-core:weaknessName "Sorted timeline is missing timeline entries due to tool error during sort process" .
+
+:weaknessDFW-1309 a solveit-core:Weakness ;
+    rdfs:label "DFW-1309: Sorted timeline is missing timeline entries because timeline contained entries not based on timestamps"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1260 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1309" ;
+    solveit-core:weaknessName "Sorted timeline is missing timeline entries because timeline contained entries not based on timestamps" .
+
+:weaknessDFW-1310 a solveit-core:Weakness ;
+    rdfs:label "DFW-1310: Sorted timeline has additional timeline entries due to tool error during sort process"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1259 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1310" ;
+    solveit-core:weaknessName "Sorted timeline has additional timeline entries due to tool error during sort process" .
+
+:weaknessDFW-1311 a solveit-core:Weakness ;
+    rdfs:label "DFW-1311: Timeline entry is in an incorrect sequence due to resolution of the timestamp used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1261,
+        :mitigationDFM-1262 ;
+    solveit-core:hasReference :citationDFCite-1019 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1311" ;
+    solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to resolution of the timestamp used" .
+
+:weaknessDFW-1312 a solveit-core:Weakness ;
+    rdfs:label "DFW-1312: Timeline entry is in an incorrect sequence due to underlying timestamp being based on an incorrect clock"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1225 ;
+    solveit-core:hasReference :citationDFCite-1019,
+        :citationDFCite-1020 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1312" ;
+    solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to underlying timestamp being based on an incorrect clock" .
+
+:weaknessDFW-1313 a solveit-core:Weakness ;
+    rdfs:label "DFW-1313: Timeline entry is in an incorrect sequence due to timezone already applied to timestamp"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1263 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1313" ;
+    solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to timezone already applied to timestamp" .
+
+:weaknessDFW-1314 a solveit-core:Weakness ;
+    rdfs:label "DFW-1314: Timeline entry is in an incorrect sequence due to a time offset being applied that is incorrect for the timeline entry"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1225 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1314" ;
+    solveit-core:weaknessName "Timeline entry is in an incorrect sequence due to a time offset being applied that is incorrect for the timeline entry" .
+
+:weaknessDFW-1315 a solveit-core:Weakness ;
+    rdfs:label "DFW-1315: Failure to recover a notification due to not attempting to parse the relevant data"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1264 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1315" ;
+    solveit-core:weaknessName "Failure to recover a notification due to not attempting to parse the relevant data" .
+
+:weaknessDFW-1316 a solveit-core:Weakness ;
+    rdfs:label "DFW-1316: Failure to recover a notification due to a tool error parsing the relevant data"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1265 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1316" ;
+    solveit-core:weaknessName "Failure to recover a notification due to a tool error parsing the relevant data" .
+
+:weaknessDFW-1317 a solveit-core:Weakness ;
+    rdfs:label "DFW-1317: Failure to recover a notification due to it being deleted because of the expiry time set"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1125,
+        :mitigationDFM-1266 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1317" ;
+    solveit-core:weaknessName "Failure to recover a notification due to it being deleted because of the expiry time set" .
+
+:weaknessDFW-1318 a solveit-core:Weakness ;
+    rdfs:label "DFW-1318: Failure to recover a notification due to it being deleted because of it being viewed and cleared"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1125,
+        :mitigationDFM-1266 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1318" ;
+    solveit-core:weaknessName "Failure to recover a notification due to it being deleted because of it being viewed and cleared" .
+
+:weaknessDFW-1319 a solveit-core:Weakness ;
+    rdfs:label "DFW-1319: Associating a notification with an incorrect application due to tool error"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1265 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1319" ;
+    solveit-core:weaknessName "Associating a notification with an incorrect application due to tool error" .
+
+:weaknessDFW-1320 a solveit-core:Weakness ;
+    rdfs:label "DFW-1320: Failure to extract the creation time of a notification due to tool error"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1267 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1320" ;
+    solveit-core:weaknessName "Failure to extract the creation time of a notification due to tool error" .
+
+:weaknessDFW-1321 a solveit-core:Weakness ;
+    rdfs:label "DFW-1321: Presenting the incorrect time for a notification due to tool error"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1267 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1321" ;
+    solveit-core:weaknessName "Presenting the incorrect time for a notification due to tool error" .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
     solveit-core:citationPlaintext "Beebe, N.L. and Liu, L., 2014. Ranking algorithms for digital forensic string search hits. Digital Investigation, 11, pp.S124-S132." .
-
-:citationDFCite-1020 a solveit-core:Citation ;
-    rdfs:label "DFCite-1020" ;
-    solveit-core:citationBibtex """@article{vanini2024clocks,
-title = {Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction},
-journal = {Forensic Science International: Digital Investigation},
-volume = {49},
-pages = {301759},
-year = {2024},
-issn = {2666-2817},
-doi = {https://doi.org/10.1016/j.fsidi.2024.301759},
-url = {https://www.sciencedirect.com/science/article/pii/S2666281724000787},
-author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and Frank Breitinger}
-}""" ;
-    solveit-core:citationID "DFCite-1020" ;
-    solveit-core:citationPlaintext "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759" .
 
 :citationDFCite-1022 a solveit-core:Citation ;
     rdfs:label "DFCite-1022" ;
@@ -6119,6 +6357,12 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationID "DFM-1042" ;
     solveit-core:mitigationName "Secondary review of flagged items to ensure relevance" .
 
+:mitigationDFM-1044 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1044: Scan for Volume Boot Records in unpartitioned space"@en ;
+    solveit-core:hasReference :citationDFCite-1135 ;
+    solveit-core:mitigationID "DFM-1044" ;
+    solveit-core:mitigationName "Scan for Volume Boot Records in unpartitioned space" .
+
 :mitigationDFM-1047 a solveit-core:Mitigation ;
     rdfs:label "DFM-1047: Testing partition table parsing on standard and non-standard configurations"@en ;
     solveit-core:mitigationID "DFM-1047" ;
@@ -6236,13 +6480,6 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationID "DFM-1205" ;
     solveit-core:mitigationName "Use wordlist generator with case data" .
 
-:mitigationDFM-1225 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1225: Estimate clock offset at a specific point in time using time anchoring"@en ;
-    solveit-core:hasReference :citationDFCite-1020 ;
-    solveit-core:linksToTechnique :techniqueDFT-1134 ;
-    solveit-core:mitigationID "DFM-1225" ;
-    solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" .
-
 :mitigationDFM-1232 a solveit-core:Mitigation ;
     rdfs:label "DFM-1232: Adopt a systematic search pattern"@en ;
     solveit-core:hasReference :citationDFCite-1043 ;
@@ -6292,6 +6529,26 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFM-1250: Test that timeline analysis tool returns correct results when filter criteria are provided"@en ;
     solveit-core:mitigationID "DFM-1250" ;
     solveit-core:mitigationName "Test that timeline analysis tool returns correct results when filter criteria are provided" .
+
+:mitigationDFM-1259 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1259: Test that a timeline tool correctly sorts entries"@en ;
+    solveit-core:mitigationID "DFM-1259" ;
+    solveit-core:mitigationName "Test that a timeline tool correctly sorts entries" .
+
+:mitigationDFM-1265 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1265: Test that the tool used correctly recovers operating system notifications from the data structures examined"@en ;
+    solveit-core:mitigationID "DFM-1265" ;
+    solveit-core:mitigationName "Test that the tool used correctly recovers operating system notifications from the data structures examined" .
+
+:mitigationDFM-1266 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1266: Examine longer lasting operating system notification storage locations if possible"@en ;
+    solveit-core:mitigationID "DFM-1266" ;
+    solveit-core:mitigationName "Examine longer lasting operating system notification storage locations if possible" .
+
+:mitigationDFM-1267 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1267: Test that the tool used correctly recovers operating system notification timestamps from the data structures examined"@en ;
+    solveit-core:mitigationID "DFM-1267" ;
+    solveit-core:mitigationName "Test that the tool used correctly recovers operating system notification timestamps from the data structures examined" .
 
 :techniqueDFT-1006 a solveit-core:Technique ;
     rdfs:label "DFT-1006: Use digital sniffer dogs to locate digital devices"@en ;
@@ -6604,6 +6861,27 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:citationID "DFCite-1004" ;
     solveit-core:citationPlaintext "Android (2025), How to Enable Android Developer Settings: Unlock your Device’s Hidden Potential, https://www.android.com/intl/en_uk/articles/enable-android-developer-settings/" .
 
+:citationDFCite-1019 a solveit-core:Citation ;
+    rdfs:label "DFCite-1019" ;
+    solveit-core:citationID "DFCite-1019" ;
+    solveit-core:citationPlaintext "Breitinger, F., Studiawan, H. and Hargreaves, C., 2025. SoK: Timeline based event reconstruction for digital forensics: Terminology, methodology, and current challenges." .
+
+:citationDFCite-1020 a solveit-core:Citation ;
+    rdfs:label "DFCite-1020" ;
+    solveit-core:citationBibtex """@article{vanini2024clocks,
+title = {Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction},
+journal = {Forensic Science International: Digital Investigation},
+volume = {49},
+pages = {301759},
+year = {2024},
+issn = {2666-2817},
+doi = {https://doi.org/10.1016/j.fsidi.2024.301759},
+url = {https://www.sciencedirect.com/science/article/pii/S2666281724000787},
+author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and Frank Breitinger}
+}""" ;
+    solveit-core:citationID "DFCite-1020" ;
+    solveit-core:citationPlaintext "C. Vanini, C. Hargreaves, H. van Beek, F. Breitinger, 2024, Was the clock correct? Exploring timestamp interpretation through time anchors for digital forensic event reconstruction, Forensic Science International: Digital Investigation, 10.1016/j.fsidi.2024.301759" .
+
 :citationDFCite-1021 a solveit-core:Citation ;
     rdfs:label "DFCite-1021" ;
     solveit-core:citationID "DFCite-1021" ;
@@ -6726,6 +7004,12 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationID "DFM-1112" ;
     solveit-core:mitigationName "Use of AI to classify files in addition to standard programmatic methods" .
 
+:mitigationDFM-1125 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1125: Examine database journal files"@en ;
+    solveit-core:hasReference :citationDFCite-1022 ;
+    solveit-core:mitigationID "DFM-1125" ;
+    solveit-core:mitigationName "Examine database journal files" .
+
 :mitigationDFM-1139 a solveit-core:Mitigation ;
     rdfs:label "DFM-1139: Use automated software monitoring to detect app artefact changes"@en ;
     solveit-core:linksToTechnique :techniqueDFT-1119 ;
@@ -6809,6 +7093,7 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
         "https://ontology.unifiedcyberontology.org/uco/observable/URL"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/httpRequestHeader"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1252 ;
+    solveit-core:hasReference :citationDFCite-1148 ;
     solveit-core:hasSynonym "internet cache examination",
         "web cache examination" ;
     solveit-core:techniqueDescription "The examination of the content saved locally by browsers to improve performance" ;
@@ -6837,6 +7122,13 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFM-1026: Testing of backup parsing method"@en ;
     solveit-core:mitigationID "DFM-1026" ;
     solveit-core:mitigationName "Testing of backup parsing method" .
+
+:mitigationDFM-1225 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1225: Estimate clock offset at a specific point in time using time anchoring"@en ;
+    solveit-core:hasReference :citationDFCite-1020 ;
+    solveit-core:linksToTechnique :techniqueDFT-1134 ;
+    solveit-core:mitigationID "DFM-1225" ;
+    solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" .
 
 :mitigationDFM-1244 a solveit-core:Mitigation ;
     rdfs:label "DFM-1244: Testing deleted message recovery from multiplayer gaming app"@en ;
