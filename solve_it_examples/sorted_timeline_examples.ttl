@@ -24,7 +24,7 @@
 #    1. DFT-1060: Enumerate files from the filesystem
 #    2. DFT-1052: Generate timeline entries for ALL FAT timestamps
 #       (created, modified, accessed) per file = 15 entries total
-#    3. DFT-xxxx: Sort the timeline into a SortedTimeline with
+#    3. DFT-1183: Sort the timeline into a SortedTimeline with
 #       tied positions where timestamps are indistinguishable
 #    4. DFT-1182: Filter the sorted timeline around a specific
 #       event (DRAFT.DOC creation) to produce a smaller timeline
@@ -51,7 +51,7 @@
 #    https://ontology.solveit-df.org/data/solve-it-kb.ttl
 #    - solveit-data:techniqueDFT-1060 (Enumerate allocated files)
 #    - solveit-data:techniqueDFT-1052 (Timeline generation)
-#    - solveit-data:techniqueDFT-xxxx (Sort timeline) [placeholder]
+#    - solveit-data:techniqueDFT-1183 (Sort timeline) [placeholder]
 #    - solveit-data:techniqueDFT-1182 (Filter timeline)
 #################################################################
 
@@ -91,7 +91,7 @@
 #
 #    Step 1: DFT-1060 enumerates files from the filesystem
 #    Step 2: DFT-1052 generates timeline entries (15 total)
-#    Step 3: DFT-xxxx sorts the timeline (tied positions)
+#    Step 3: DFT-1183 sorts the timeline (tied positions)
 #    Step 4: DFT-1182 filters around DRAFT.DOC creation time
 #################################################################
 
@@ -140,18 +140,18 @@
                       :fatTimeline001 ;
     rdfs:comment "DFT-1052: Timeline generation - creates 15 TimelineEntries (created/modified/accessed for each of 5 files) and assembles them into an unsorted Timeline. Created and modified times become DateTimeStamp values; accessed dates become DateTimeRange values (whole-day intervals)."@en .
 
-###  Step 3: DFT-xxxx Sort timeline - produces SortedTimeline with tied positions
+###  Step 3: DFT-1183 Sort timeline - produces SortedTimeline with tied positions
 :timelineSortAction001 rdf:type solveit-core:SolveitInvestigativeAction ;
     uco-core:name "sort-timeline" ;
     uco-core:description "Chronological sorting of 15-entry FAT timestamp timeline, assigning positions with ties where timestamps are indistinguishable" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1052 ;
+    solveit-core:usedTechnique solveit-data:techniqueDFT-1183 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-timeline-analyser ;
     uco-action:startTime "2026-02-10T09:03:00Z"^^xsd:dateTime ;
     uco-action:endTime "2026-02-10T09:03:30Z"^^xsd:dateTime ;
     uco-action:object :fatTimeline001 ;
     uco-action:result :fatSortedTimeline001 ;
-    rdfs:comment "DFT-xxxx: Sort timeline - orders 15 entries chronologically. Point timestamps (DateTimeStamp) are ordered by value. Whole-day accessed ranges (DateTimeRange) are placed at the end of their respective days since the exact access time within the day is unknown. Tied positions occur where: (a) NOTES.TXT and DRAFT.DOC share the same modified time at 2s resolution, (b) README.TXT and NOTES.TXT share the same accessed date of 2025-11-03, and (c) DRAFT.DOC, BUDGET.XLS, and PHOTO.JPG share the same accessed date of 2025-11-04."@en .
+    rdfs:comment "DFT-1183: Sort timeline - orders 15 entries chronologically. Point timestamps (DateTimeStamp) are ordered by value. Whole-day accessed ranges (DateTimeRange) are placed at the end of their respective days since the exact access time within the day is unknown. Tied positions occur where: (a) NOTES.TXT and DRAFT.DOC share the same modified time at 2s resolution, (b) README.TXT and NOTES.TXT share the same accessed date of 2025-11-03, and (c) DRAFT.DOC, BUDGET.XLS, and PHOTO.JPG share the same accessed date of 2025-11-04."@en .
 
 ###  Step 4: DFT-1182 Filter timeline around DRAFT.DOC creation
 :timelineFilterAction001 rdf:type solveit-core:SolveitInvestigativeAction ;
@@ -452,7 +452,7 @@
     rdfs:comment "Unsorted timeline containing created, modified, and accessed entries for all 5 files on the FAT32 USB drive. 15 entries total."@en .
 
 #################################################################
-#    SortedTimelineEntry wrappers (produced by Step 3: DFT-xxxx)
+#    SortedTimelineEntry wrappers (produced by Step 3: DFT-1183)
 #
 #    Full chronological sort order with positions:
 #
@@ -587,7 +587,7 @@
     solveit-observable:sortPosition "11"^^xsd:nonNegativeInteger .
 
 #################################################################
-#    The SortedTimeline (produced by Step 3: DFT-xxxx)
+#    The SortedTimeline (produced by Step 3: DFT-1183)
 #    Links to both the original TimelineEntries (via inherited
 #    hasTimelineEntry) and the SortedTimelineEntry wrappers
 #    (via hasSortedTimelineEntry).
