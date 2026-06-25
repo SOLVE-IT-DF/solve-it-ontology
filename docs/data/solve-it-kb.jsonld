@@ -3189,6 +3189,58 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1154",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1154"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@online{CPS2026DigitalMaterial,\n  author       = {{Crown Prosecution Service, UK}},\n  title        = {Disclosure Manual: Chapter 30 -- Digital Material},\n  year         = {2026},\n  url          = {https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material},\n  organization = {Crown Prosecution Service},\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1154"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1155",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1155"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@misc{AttorneyGeneral2024Disclosure,\n  author = {{Attorney General's Office}},\n  title  = {Attorney General's Guidelines on Disclosure, UK},\n  year   = {2024},\n  url    = {https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure},\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1155"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Mitigation"

@@ -15,6 +15,29 @@
     solveit-core:citationID "DFCite-1144" ;
     solveit-core:citationPlaintext "Magnet Forensics (2020) Expose evidence of timestomping with the NTFS timestamp mismatch artifact in Magnet AXIOM 4.4. Available at: https://www.magnetforensics.com/blog/expose-evidence-of-timestomping-with-the-ntfs-timestamp-mismatch-artifact-in-magnet-axiom-4-4/" .
 
+:citationDFCite-1154 a solveit-core:Citation ;
+    rdfs:label "DFCite-1154" ;
+    solveit-core:citationBibtex """@online{CPS2026DigitalMaterial,
+  author       = {{Crown Prosecution Service, UK}},
+  title        = {Disclosure Manual: Chapter 30 -- Digital Material},
+  year         = {2026},
+  url          = {https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material},
+  organization = {Crown Prosecution Service},
+}""" ;
+    solveit-core:citationID "DFCite-1154" ;
+    solveit-core:citationPlaintext "https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material" .
+
+:citationDFCite-1155 a solveit-core:Citation ;
+    rdfs:label "DFCite-1155" ;
+    solveit-core:citationBibtex """@misc{AttorneyGeneral2024Disclosure,
+  author = {{Attorney General's Office}},
+  title  = {Attorney General's Guidelines on Disclosure, UK},
+  year   = {2024},
+  url    = {https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure},
+}""" ;
+    solveit-core:citationID "DFCite-1155" ;
+    solveit-core:citationPlaintext "https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure" .
+
 :objectiveDFO-1001 a solveit-core:Objective ;
     rdfs:label "DFO-1001: Reconstruct events"@en ;
     solveit-core:includesTechnique :techniqueDFT-1087,
