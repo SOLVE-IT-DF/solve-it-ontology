@@ -11,7 +11,7 @@
 
 #################################################################
 #    SOLVE-IT Observable Examples
-#    Demonstrates VideoFrame and UnlockPattern usage
+#    Demonstrates VideoFrame, UnlockPattern and VirtualizedComputer usage
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/examples/observables> rdf:type owl:Ontology ;
@@ -42,3 +42,26 @@
     rdfs:label "Android unlock pattern from seized device"@en ;
     solveit-observable:unlockPatternSequence (1 4 7 8 9) ;
     rdfs:comment "Pattern extracted from /data/system/gesture.key representing an 'L' shape on 3x3 grid (down left column, across bottom row)."@en .
+
+#################################################################
+#    Example VirtualizedComputer Instance
+#
+#    DFT-1103: Virtualize suspect system for previewing
+#    PhysicalImageContainer -> [DFT-1103] -> VirtualizedComputer
+#
+#    The source image and the VM are linked at the technique level
+#    (DFT-1103 input/output); there is no direct ontology property
+#    from the VM back to its source image at present.
+#################################################################
+
+:virtualizedSuspectPC rdf:type solveit-observable:VirtualizedComputer ;
+    rdfs:label "Virtualized suspect Windows 11 laptop"@en ;
+    rdfs:comment "Suspect disk image booted as a virtual machine for previewing the user's desktop. The original image is preserved read-only, with writes directed to a delta disk."@en ;
+    solveit-observable:virtualizedFromFile :suspectVmConfig , :suspectVmDisk .
+
+:suspectVmConfig rdf:type uco-observable:File ;
+    rdfs:label "suspect_preview.vmx"@en .
+
+:suspectVmDisk rdf:type uco-observable:File ;
+    rdfs:label "suspect_preview.vmdk"@en .
+

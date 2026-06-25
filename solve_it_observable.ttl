@@ -284,6 +284,18 @@ solveit-observable:HashSetEntry rdf:type owl:Class ;
     rdfs:label "Hash Set Entry"@en ;
     rdfs:comment "A single entry within a hash set. At minimum it carries a hash value; further details (e.g. file name, size, product or operating system, classification) may be added as required."@en .
 
+###  VirtualizedDevice Observable Object
+solveit-observable:VirtualizedDevice rdf:type owl:Class ;
+    rdfs:subClassOf uco-observable:ObservableObject ;
+    rdfs:label "Virtualized Device"@en ;
+    rdfs:comment "A device or system that exists as a virtual machine, defined by virtualization configuration and one or more virtual disks rather than running on dedicated physical hardware. A virtualized device may arise in several ways, for example a virtual machine recovered from a suspect's storage, a forensic image booted as a virtual machine for previewing, or a virtual machine built as an analysis platform. This is the parent class for virtualized representations of any device type (e.g. computers, mobile devices)."@en .
+
+###  VirtualizedComputer Observable Object
+solveit-observable:VirtualizedComputer rdf:type owl:Class ;
+    rdfs:subClassOf solveit-observable:VirtualizedDevice ;
+    rdfs:label "Virtualized Computer"@en ;
+    rdfs:comment "A computer (desktop, laptop, or server) that exists as a virtual machine rather than running on physical hardware. The most common form is a server running as a virtual machine in a datacentre or cloud environment, which may itself be the subject of an investigation or host evidence. In a forensic context a virtualized computer may also, for example, be a virtual machine recovered from seized media, a forensic disk image booted as a virtual machine for previewing, or a virtual machine provisioned as an analysis environment."@en .
+
 #################################################################
 #    Object Properties
 #################################################################
@@ -293,6 +305,12 @@ solveit-observable:extractedFromVideo rdf:type owl:ObjectProperty ;
     rdfs:range solveit-observable:VideoFile ;
     rdfs:label "extracted from video"@en ;
     rdfs:comment "Links a VideoFrame to the source video file."@en .
+
+solveit-observable:virtualizedFromFile rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:VirtualizedDevice ;
+    rdfs:range uco-observable:File ;
+    rdfs:label "virtualized from file"@en ;
+    rdfs:comment "Links a virtualized device to the file or files that constitute its virtual machine, such as a configuration file (e.g. .vmx) and one or more virtual disk files (e.g. .vmdk). Multiple files can be linked."@en .
 
 solveit-observable:unlockPatternSequence rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:UnlockPattern ;
