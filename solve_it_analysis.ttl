@@ -67,6 +67,12 @@ solveit-analysis:HypothesisedDevice rdf:type owl:Class ;
     rdfs:label "Hypothesised Device"@en ;
     rdfs:comment "A device that is hypothesised to have been involved, such as a device inferred from artifacts but not yet physically identified or examined."@en .
 
+###  HypothesisSet Analytic Result
+solveit-analysis:HypothesisSet rdf:type owl:Class ;
+    rdfs:subClassOf uco-analysis:AnalyticResult ;
+    rdfs:label "Hypothesis Set"@en ;
+    rdfs:comment "A collection of competing alternative hypotheses considered together, for example the mutually exclusive explanations proposed for a single observation. Members are linked with solveit-analysis:hasHypothesis."@en .
+
 ###  ForensicToolTagBasedReport Analytic Result
 solveit-analysis:ForensicToolTagBasedReport rdf:type owl:Class ;
     rdfs:subClassOf uco-analysis:AnalyticResult ;
@@ -88,6 +94,12 @@ solveit-analysis:contradictedBy rdf:type owl:ObjectProperty ;
     rdfs:range uco-observable:ObservableObject ;
     rdfs:label "contradicted by"@en ;
     rdfs:comment "Links a Hypothesis to artifacts that contradict the hypothesis."@en .
+
+solveit-analysis:hasHypothesis rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-analysis:HypothesisSet ;
+    rdfs:range solveit-analysis:Hypothesis ;
+    rdfs:label "has hypothesis"@en ;
+    rdfs:comment "Links a HypothesisSet to a member Hypothesis it groups as a competing alternative."@en .
 
 solveit-analysis:hypothesisedDateTime rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:HypothesisedEvent ;
