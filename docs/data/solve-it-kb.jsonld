@@ -3200,7 +3200,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
       {
-        "@value": "@online{CPS2026DigitalMaterial,\n  author       = {{Crown Prosecution Service, UK}},\n  title        = {Disclosure Manual: Chapter 30 -- Digital Material},\n  year         = {2026},\n  url          = {https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material},\n  organization = {Crown Prosecution Service},\n}"
+        "@value": "@online{CPS2026DigitalMaterial,\n  author       = {{Crown Prosecution Service, England and Wales}},\n  title        = {Disclosure Manual: Chapter 30 -- Digital Material},\n  year         = {2026},\n  url          = {https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material},\n  organization = {Crown Prosecution Service},\n}"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/citationID": [
@@ -3226,7 +3226,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
       {
-        "@value": "@misc{AttorneyGeneral2024Disclosure,\n  author = {{Attorney General's Office}},\n  title  = {Attorney General's Guidelines on Disclosure, UK},\n  year   = {2024},\n  url    = {https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure},\n}"
+        "@value": "@misc{AttorneyGeneral2024Disclosure,\n  author = {{Attorney General's Office}},\n  title  = {Attorney General's Guidelines on Disclosure, England and Wales},\n  year   = {2024},\n  url    = {https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure},\n}"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/citationID": [
@@ -3237,6 +3237,32 @@
     "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
       {
         "@value": "https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1156",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1156"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@misc{ravnas_frida,\n  author = {Ravn{\\aa}s, Ole Andr{\\'e} Vadla and {The Frida Project contributors}},\n  title  = {Frida: Dynamic instrumentation toolkit for developers, reverse-engineers, and security researchers},\n  year   = {n.d.},\n  url    = {https://github.com/frida},\n}"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1156"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "https://github.com/frida"
       }
     ]
   },
@@ -3346,7 +3372,12 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFM-1005: Testing to ensure software and hardware setup detects HPAs"
+        "@value": "DFM-1005: Testing to ensure that the software and hardware disk imaging setup can detect HPAs"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Tests have been performed that the combination of hardware and software used can detect when HPAs are present."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -3356,7 +3387,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
-        "@value": "Testing to ensure software and hardware setup detects HPAs"
+        "@value": "Testing to ensure that the software and hardware disk imaging setup can detect HPAs"
       }
     ]
   },
@@ -9488,9 +9519,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1082"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1176"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -9644,9 +9672,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1016"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1114"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1003"
@@ -9850,6 +9875,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1013"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1114"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -10628,7 +10656,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1001: Triage"
+        "@value": "DFT-1001: Triage devices or media"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -10679,7 +10707,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Triage"
+        "@value": "Triage devices or media"
       }
     ]
   },
@@ -10691,7 +10719,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1002: Disk imaging"
+        "@value": "DFT-1002: Copy sectors from storage media"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -10758,6 +10786,11 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1107"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "disk imaging"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ to a bitstream that can be stored in a image format (DFT-1025)."
@@ -10775,7 +10808,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Disk imaging"
+        "@value": "Copy sectors from storage media"
       }
     ]
   },
@@ -10787,7 +10820,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1003: Memory imaging"
+        "@value": "DFT-1003: Copy pages from physical memory"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -10837,6 +10870,9 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
+        "@value": "Memory imaging"
+      },
+      {
         "@value": "RAM dump"
       },
       {
@@ -10863,7 +10899,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Memory imaging"
+        "@value": "Copy pages from physical memory"
       }
     ]
   },
@@ -10875,7 +10911,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1004: Selective file acquisition"
+        "@value": "DFT-1004: Collect logical files selectively"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -10929,6 +10965,9 @@
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
         "@value": "Logical imaging"
+      },
+      {
+        "@value": "Logical acquisition"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -10948,7 +10987,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Selective file acquisition"
+        "@value": "Collect logical files selectively"
       }
     ]
   },
@@ -10960,7 +10999,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1005: Conduct a search of a crime scene"
+        "@value": "DFT-1005: Search a crime scene for relevant physical evidence"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -11014,7 +11053,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "The UK's Forensic Science Regulator (FSR) guidance refers to \"Incident scene examination\" which takes a holistic approach and considers an incident scene in conjunction with the requirements of an investigation and the criminal justice system. The aim of incident scene examination is to identify and locate, or note the absence of, physical material which has relevance and significance to inform the investigation including, where relevant, the reconstruction of past events."
+        "@value": "The UK's Forensic Science Regulator (FSR) guidance refers to \"Incident scene examination\" which takes a holistic approach and considers an incident scene in conjunction with the requirements of an investigation and the criminal justice system. The aim of incident scene examination is to identify and locate, or note the absence of, physical material which has relevance and significance to inform the investigation including, where relevant, the reconstruction of past events.\nThe techqniue does not restrict to searching for digital devices as other physical objects may be relevant e.g. contain passwords."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11024,7 +11063,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Conduct a search of a crime scene"
+        "@value": "Search a crime scene for relevant physical evidence"
       }
     ]
   },
@@ -11036,7 +11075,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1006: Use digital sniffer dogs to locate digital devices"
+        "@value": "DFT-1006: Search a crime scene using digital sniffer dogs"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -11076,7 +11115,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Use digital sniffer dogs to locate digital devices"
+        "@value": "Search a crime scene using digital sniffer dogs"
       }
     ]
   },
@@ -11088,13 +11127,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1007: Use a SyncTriage-based approach to detect existence of devices"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+        "@value": "DFT-1007: Detect the potential existence of digital devices using a SyncTriage-based approach"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -11126,7 +11159,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "A technique developed in Hargreaves & Marshall (2018) whereby synchronisation artefacts on a device are examined and used to identify the existence of a related device. Also sometimes used to infer activity that occurred on an inaccessible or unavailable device. "
+        "@value": "A technique developed in Hargreaves & Marshall (2018) whereby synchronization artifacts on a device are examined and used to identify the existence of a related device. Also sometimes used to infer activity that occurred on an inaccessible or unavailable device. "
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11136,7 +11169,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Use a SyncTriage-based approach to detect existence of devices"
+        "@value": "Detect the potential existence of digital devices using a SyncTriage-based approach"
       }
     ]
   },
@@ -11148,7 +11181,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1008: Profiling network traffic"
+        "@value": "DFT-1008: Detect the potential existence of digital devices by profiling network traffic"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11158,7 +11191,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Profiling network traffic"
+        "@value": "Detect the potential existence of digital devices by profiling network traffic"
       }
     ]
   },
@@ -11170,7 +11203,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1009: Locate cloud account identifiers"
+        "@value": "DFT-1009: Locate potential digital evidence sources via cloud account identifiers"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11180,7 +11213,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Locate cloud account identifiers"
+        "@value": "Locate potential digital evidence sources via cloud account identifiers"
       }
     ]
   },
@@ -11192,7 +11225,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1010: Place device in faraday environment"
+        "@value": "DFT-1010: Place device in a faraday environment"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -11228,7 +11273,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Place device in faraday environment"
+        "@value": "Place device in a faraday environment"
       }
     ]
   },
@@ -11240,7 +11285,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1011: Store seized devices in evidence bags"
+        "@value": "DFT-1011: Store seized devices or media in evidence bags"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.caseontology.org/case/investigation/exhibitNumber"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11250,7 +11311,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Store seized devices in evidence bags"
+        "@value": "Store seized devices or media in evidence bags"
       }
     ]
   },
@@ -11262,7 +11323,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1012: Connect storage medium via hardware write blocker"
+        "@value": "DFT-1012: Write protect storage media using a hardware write blocker"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -11310,7 +11371,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Connect storage medium via hardware write blocker"
+        "@value": "Write protect storage media using a hardware write blocker"
       }
     ]
   },
@@ -11322,7 +11383,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1013: Use software write blockers to provide read only access to storage media"
+        "@value": "DFT-1013: Write protect storage media using a software write blocker"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -11363,7 +11424,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Use software write blockers to provide read only access to storage media"
+        "@value": "Write protect storage media using a software write blocker"
       }
     ]
   },
@@ -11415,7 +11476,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1015: Privacy preserving selective extraction"
+        "@value": "DFT-1015: Collect logical files selectively based on privacy preserving criteria"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -11455,7 +11516,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Privacy preserving selective extraction"
+        "@value": "Collect logical files selectively based on privacy preserving criteria"
       }
     ]
   },
@@ -11467,7 +11528,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1016: Live data collection"
+        "@value": "DFT-1016: Collect specific pieces of information from a live running device"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -11553,7 +11620,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Live data collection"
+        "@value": "Collect specific pieces of information from a live running device"
       }
     ]
   },
@@ -11565,7 +11632,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1017: Network packet capture"
+        "@value": "DFT-1017: Capture network packets"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/NetworkInterface"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -11581,7 +11654,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Network packet capture"
+        "@value": "Capture network packets"
       }
     ]
   },
@@ -11593,17 +11666,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1018: Remote data collection"
+        "@value": "DFT-1018: Collect data from a remote networked device"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/NetworkConnection"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Image"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11613,7 +11692,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Remote data collection"
+        "@value": "Collect data from a remote networked device"
       }
     ]
   },
@@ -11625,7 +11704,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1019: Mobile backup extraction"
+        "@value": "DFT-1019: Extract a backup from a mobile device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -11670,7 +11749,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Using the backup capability of a device to extract a subset of its contents"
+        "@value": "Using the in-built backup capability of a device to extract a subset of its contents"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -11680,7 +11759,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Mobile backup extraction"
+        "@value": "Extract a backup from a mobile device"
       }
     ]
   },
@@ -11692,7 +11771,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1020: Mobile file system extraction"
+        "@value": "DFT-1020: Extract the file system from a mobile device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -11738,6 +11817,11 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1091"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "file system extraction"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "Accessing the file system(s) of the device and extracting a set of files (full or partial depending on level of access)"
@@ -11755,7 +11839,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Mobile file system extraction"
+        "@value": "Extract the file system from a mobile device"
       }
     ]
   },
@@ -11767,7 +11851,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1021: Configuration file examination"
+        "@value": "DFT-1021: Extract artifacts from a configuration file"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -11797,7 +11881,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Configuration file examination"
+        "@value": "Extract artifacts from a configuration file"
       }
     ]
   },
@@ -11809,7 +11893,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1022: Mobile device screenshot based capture"
+        "@value": "DFT-1022: Capture mobile device screenshots (manually)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -11834,6 +11918,11 @@
         "@value": "An examiner directly manipulates the target mobile device using the device's input interface (i.e., keypads and buttons), and records the content shown on the display of the device. (Fukami et al 2021)"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This is the manual version of DFT-1163. The device is controlled manually, and screenshots are captured manually."
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
       {
         "@value": "DFT-1022"
@@ -11841,7 +11930,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Mobile device screenshot based capture"
+        "@value": "Capture mobile device screenshots (manually)"
       }
     ]
   },
@@ -11853,7 +11942,17 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1023: Cloud data collection to access data via a live web page using credentials"
+        "@value": "DFT-1023: Collect data from cloud service via a live web page using credentials"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Credential"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/OnlineService"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -11869,7 +11968,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Cloud data collection to access data via a live web page using credentials"
+        "@value": "Collect data from cloud service via a live web page using credentials"
       }
     ]
   },
@@ -11881,7 +11980,17 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1024: Cloud data collection via submission of request to service provider"
+        "@value": "DFT-1024: Collect data from cloud service via submission of request to service provider"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/OnlineService"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/accountIdentifier"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -11897,7 +12006,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Cloud data collection via submission of request to service provider"
+        "@value": "Collect data from cloud service via submission of request to service provider"
       }
     ]
   },
@@ -11909,7 +12018,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1025: Writing bitstream data to a forensic image format"
+        "@value": "DFT-1025: Store bitstream data in a forensic image format"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -11949,6 +12058,12 @@
       },
       {
         "@value": "store image file"
+      },
+      {
+        "@value": "write data to a forensic image format"
+      },
+      {
+        "@value": "write data to a disk image container"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -11968,7 +12083,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Writing bitstream data to a forensic image format"
+        "@value": "Store bitstream data in a forensic image format"
       }
     ]
   },
@@ -11980,7 +12095,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1026: Writing data to standard archive format"
+        "@value": "DFT-1026: Store data in standard archive format"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -12035,7 +12150,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Writing data to standard archive format"
+        "@value": "Store data in standard archive format"
       }
     ]
   },
@@ -12047,7 +12162,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1027: Data read using JTAG"
+        "@value": "DFT-1027: Read data from a device using JTAG"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -12057,7 +12172,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Data read using JTAG"
+        "@value": "Read data from a device using JTAG"
       }
     ]
   },
@@ -12069,7 +12184,12 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1028: Chip-off"
+        "@value": "DFT-1028: Physically remove a storage chip from a device (chip-off)"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "chip-off"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -12079,7 +12199,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Chip-off"
+        "@value": "Physically remove a storage chip from a device (chip-off)"
       }
     ]
   },
@@ -12091,7 +12211,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1029: Access data from a desoldered eMMC via a chip reader"
+        "@value": "DFT-1029: Read data from a desoldered eMMC via a chip reader"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12107,7 +12227,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Access data from a desoldered eMMC via a chip reader"
+        "@value": "Read data from a desoldered eMMC via a chip reader"
       }
     ]
   },
@@ -12119,7 +12239,12 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1030: Data read from unmanaged NAND"
+        "@value": "DFT-1030: Read data from unmanaged NAND"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Data read in this way will need decoding to be made accessible, e.g. via DFT-1029"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -12129,7 +12254,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Data read from unmanaged NAND"
+        "@value": "Read data from unmanaged NAND"
       }
     ]
   },
@@ -12141,7 +12266,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1031: Key recovery from memory"
+        "@value": "DFT-1031: Recover encryption/decryption key from memory"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12189,7 +12314,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Key recovery from memory"
+        "@value": "Recover encryption/decryption key from memory"
       }
     ]
   },
@@ -12201,7 +12326,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1032: Obtain encryption key information using side channel attacks"
+        "@value": "DFT-1032: Recover encryption/decryption key information using side channel attacks"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -12211,7 +12336,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Obtain encryption key information using side channel attacks"
+        "@value": "Recover encryption/decryption key information using side channel attacks"
       }
     ]
   },
@@ -12223,13 +12348,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1033: Extraction of credential from an accessible device"
+        "@value": "DFT-1033: Extract credential(s) from an accessible device to attempt access to a more secure device or service"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Account"
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Credential"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -12244,7 +12369,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Extraction of credential from an accessible device"
+        "@value": "Extract credential(s) from an accessible device to attempt access to a more secure device or service"
       }
     ]
   },
@@ -12256,7 +12381,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1034: Brute force attack"
+        "@value": "DFT-1034: Attack a stored credential or device using a brute force approach"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12283,6 +12408,9 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
+        "@value": "brute force attack"
+      },
+      {
         "@value": "exhaustive password search"
       }
     ],
@@ -12303,7 +12431,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Brute force attack"
+        "@value": "Attack a stored credential or device using a brute force approach"
       }
     ]
   },
@@ -12315,7 +12443,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1035: Dictionary attack"
+        "@value": "DFT-1035: Attack a stored credential or device using a dictionary-based approach"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12340,6 +12468,11 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1075"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "dictionary attack"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "A dictionary attack is a password cracking technique where an attacker uses a list of passwords, called a dictionary, to attempt to guess a password."
@@ -12357,7 +12490,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Dictionary attack"
+        "@value": "Attack a stored credential or device using a dictionary-based approach"
       }
     ]
   },
@@ -12369,7 +12502,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1036: Smudge attack"
+        "@value": "DFT-1036: Recover information about a potential device PIN or pattern lock using a smudge attack"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12385,7 +12518,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Smudge attack"
+        "@value": "Recover information about a potential device PIN or pattern lock using a smudge attack"
       }
     ]
   },
@@ -12397,7 +12530,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1037: Obtain password from the device owner"
+        "@value": "DFT-1037: Obtain password from the device's owner"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12413,7 +12546,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Obtain password from the device owner"
+        "@value": "Obtain password from the device's owner"
       }
     ]
   },
@@ -12425,13 +12558,18 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1038: Rainbow table-based password attack"
+        "@value": "DFT-1038: Attack a stored credential or device using a rainbow table-based approach"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/password"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "rainbow table attack"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -12441,7 +12579,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Rainbow table-based password attack"
+        "@value": "Attack a stored credential or device using a rainbow table-based approach"
       }
     ]
   },
@@ -12488,7 +12626,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1040: Use mobile device exploit"
+        "@value": "DFT-1040: Exploit a mobile device to facilitate privileged access for data extraction"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12518,6 +12656,17 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1049"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "mobile device exploit"
+      },
+      {
+        "@value": "rooting"
+      },
+      {
+        "@value": "jailbreaking"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "A process that typically exploits a security flaw in a specific device or operating system to enable users to perform higher privileged functions on a device (derived from Grover 2013)"
@@ -12530,7 +12679,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Use mobile device exploit"
+        "@value": "Exploit a mobile device to facilitate privileged access for data extraction"
       }
     ]
   },
@@ -12542,7 +12691,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1041: Pin2Pwn"
+        "@value": "DFT-1041: Gain access to a device via a Pin2Pwn approach"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -12552,7 +12701,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Pin2Pwn"
+        "@value": "Gain access to a device via a Pin2Pwn approach"
       }
     ]
   },
@@ -12564,13 +12713,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1042: Hash verification of source device against stored data"
+        "@value": "DFT-1042: Verify hash of imaged data matches the hash of the source device"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/hash"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/hash"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/HashVerificationResult"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -12604,11 +12759,6 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1088"
       }
     ],
-    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
-      {
-        "@value": "Computing the hash function of the entire contents of a disk, recording it, and then subsequently computing the hash over any disk image created to detect if any content is different (adapted from Lyle 2002)"
-      }
-    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
       {
         "@value": "DFT-1042"
@@ -12616,7 +12766,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Hash verification of source device against stored data"
+        "@value": "Verify hash of imaged data matches the hash of the source device"
       }
     ]
   },
@@ -12628,7 +12778,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1043: Access forensic image content (bitstream)"
+        "@value": "DFT-1043: Read bitstream from forensic image container file(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -12671,6 +12821,15 @@
       },
       {
         "@value": "Read forensic image"
+      },
+      {
+        "@value": "Access forensic image"
+      },
+      {
+        "@value": "Access forensic image content"
+      },
+      {
+        "@value": "Decode forensic image bitstream"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -12690,7 +12849,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Access forensic image content (bitstream)"
+        "@value": "Read bitstream from forensic image container file(s)"
       }
     ]
   },
@@ -12702,7 +12861,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1044: Mobile backup decoding"
+        "@value": "DFT-1044: Decode data stored in a mobile backup format"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -12757,7 +12916,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Mobile backup decoding"
+        "@value": "Decode data stored in a mobile backup format"
       }
     ]
   },
@@ -12769,7 +12928,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1045: Decode standard archive format"
+        "@value": "DFT-1045: Read contents from standard archive file(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -12801,7 +12960,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Decode standard archive format"
+        "@value": "Read contents from standard archive file(s)"
       }
     ]
   },
@@ -12813,7 +12972,17 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1046: Privileged material protection"
+        "@value": "DFT-1046: Redact digital forensic tool results to protect privileged material"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -12833,7 +13002,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Privileged material protection"
+        "@value": "Redact digital forensic tool results to protect privileged material"
       }
     ]
   },
@@ -12845,14 +13014,20 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1047: Hash matching (reduce)"
+        "@value": "DFT-1047: Filter files using a hashset to reduce files examined"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/HashSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/classification"
-      },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/observable/RedactedFileSet"
@@ -12863,6 +13038,16 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1132"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "hash matching (reduce)"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "After hashing a set of files, compare the hashes against a known hashset to identify and remove known files from further examination."
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
       {
         "@value": "DFT-1047"
@@ -12870,7 +13055,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Hash matching (reduce)"
+        "@value": "Filter files using a hashset to reduce files examined"
       }
     ]
   },
@@ -12882,13 +13067,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1048: Privacy protection via partial processing"
+        "@value": "DFT-1048: Protect privacy by only partially processing data from a source"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/observable/RedactedArtifactSet"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/RedactedFileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -12903,7 +13098,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "The files may still be present in the data set or removed, or made in accessible but the core of the technique to to provide a limited set of artifacts, compared with full processing."
+        "@value": "The files may still be present in the data set or removed, or made inaccessible, but the core of the technique is to provide a limited set of artifacts, compared with full processing."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -12913,7 +13108,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Privacy protection via partial processing"
+        "@value": "Protect privacy by only partially processing data from a source"
       }
     ]
   },
@@ -12925,7 +13120,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1049: Keyword searching"
+        "@value": "DFT-1049: Keyword search"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -13004,7 +13199,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Keyword searching"
+        "@value": "Keyword search"
       }
     ]
   },
@@ -13016,22 +13211,33 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1050: Hash matching (locate)"
+        "@value": "DFT-1050: Locate relevant files using a hashset to identify files of interest"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/HashSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/classification"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1132"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Hash matching (locate)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13041,7 +13247,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Hash matching (locate)"
+        "@value": "Locate relevant files using a hashset to identify files of interest"
       }
     ]
   },
@@ -13053,17 +13259,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1051: Fuzzy hash matching"
+        "@value": "DFT-1051: Locate potentially relevant files using fuzzy hash matching"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/classification"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13073,7 +13281,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Fuzzy hash matching"
+        "@value": "Locate potentially relevant files using fuzzy hash matching"
       }
     ]
   },
@@ -13085,17 +13293,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1052: Timeline generation"
+        "@value": "DFT-1052: Generate timeline"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/observable/Timeline"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.solveit-df.org/solveit/observable/TimelineEntry"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -13139,6 +13353,9 @@
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
         "@value": "timelining"
+      },
+      {
+        "@value": "timeline generation"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -13153,7 +13370,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Timeline generation"
+        "@value": "Generate timeline"
       }
     ]
   },
@@ -13165,7 +13382,42 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1053: Entity extraction"
+        "@value": "DFT-1053: Extract 'entities' from a data source"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "bulk extractor"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "entity extraction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Extracting common types of entity in a data source e.g. email addresses, IP addresses, domain names, URLs, credit card numbers, etc."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13175,7 +13427,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Entity extraction"
+        "@value": "Extract 'entities' from a data source"
       }
     ]
   },
@@ -13187,17 +13439,17 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1054: Manual content review for relevant material"
+        "@value": "DFT-1054: Review artifacts or content manually for relevant material"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
       },
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/path"
+        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -13218,7 +13470,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "The result of this process is a classification, which may be 'relevant', or could be more specific, e.g. 'contains reference to x'. This technique is likely paired with T1091 (Bookmark artifacts) but they could be recorded in other ways. This manual review could be of the content of files (T1058), or of content extracted from within files e.g. images (T1081), video (T1080), or audio (T1079)."
+        "@value": "The result of this process is a classification, which may be 'relevant', or could be more specific, e.g. 'contains reference to x'. This technique is likely paired with T1091 (Bookmark artifacts) but they could be recorded in other ways. This manual review could be of the content of files (DFT-1058), or of content extracted from within files e.g. images (DFT-1081), video (DFT-1080), or audio (DFT-1079)."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13228,7 +13480,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Manual content review for relevant material"
+        "@value": "Review artifacts or content manually for relevant material"
       }
     ]
   },
@@ -13240,7 +13492,17 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1055: File system content inspection"
+        "@value": "DFT-1055: Examine file and folder structure"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Directory structure review"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of examining the directory hierarchy, file and folder names (rather than file contents) to identify potentially relevant material."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13250,7 +13512,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "File system content inspection"
+        "@value": "Examine file and folder structure"
       }
     ]
   },
@@ -13262,13 +13524,33 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1056: Entity connection enumeration"
+        "@value": "DFT-1056: Enumerate connections between artifacts"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ObservableRelationship"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "AXIOM Connections feature"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Finds references between artifacts, such as operating system artifacts that refer to a specific file"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13278,7 +13560,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Entity connection enumeration"
+        "@value": "Enumerate connections between artifacts"
       }
     ]
   },
@@ -13293,14 +13575,16 @@
         "@value": "DFT-1057: Search for indicators of steganography"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/AcquiredData"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/path"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -13335,14 +13619,16 @@
         "@value": "DFT-1058: Search for mismatched file extensions"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/filePath"
-      },
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/extension"
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -13653,7 +13939,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1062: Decryption of encrypted file systems/volumes"
+        "@value": "DFT-1062: Decrypt encrypted file systems/volumes"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -13683,7 +13969,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Decryption of encrypted file systems/volumes"
+        "@value": "Decrypt encrypted file systems/volumes"
       }
     ]
   },
@@ -13756,7 +14042,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1064: File carving"
+        "@value": "DFT-1064: Carve non-allocated files"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -13813,6 +14099,11 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1048"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "file carving"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "The process of recovering files from non-allocated space using only the structural properties of files."
@@ -13830,7 +14121,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "File carving"
+        "@value": "Carve non-allocated files"
       }
     ]
   },
@@ -13842,7 +14133,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1065: Content indexer examination (OS)"
+        "@value": "DFT-1065: Extract artifacts from operating system-level content indexer(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -13874,6 +14165,14 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1122"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "OS search database examination"
+      },
+      {
+        "@value": "operating system search database examination"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "Examine information from operating system artifacts relating to content indexing and search capabilities e.g. Windows Desktop Search"
@@ -13891,7 +14190,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Content indexer examination (OS)"
+        "@value": "Extract artifacts from operating system-level content indexer(s)"
       }
     ]
   },
@@ -13903,13 +14202,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1066: Log file examination (OS)"
+        "@value": "DFT-1066: Extract artifacts from operating system log files"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/EventLog"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Windows Event Logs"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "event log examination"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13919,7 +14228,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Log file examination (OS)"
+        "@value": "Extract artifacts from operating system log files"
       }
     ]
   },
@@ -13931,7 +14240,26 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1067: Cloud synchronisation feature examination (OS)"
+        "@value": "DFT-1067: Extract artifacts from operating system cloud synchronization features"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "iCloud Drive"
+      },
+      {
+        "@value": "OneDrive"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Focuses on operating system level cloud syncronization features, such as iCloud Drive and OneDrive, which may be used to synchronize files between a local system and a cloud service."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13941,7 +14269,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Cloud synchronisation feature examination (OS)"
+        "@value": "Extract artifacts from operating system cloud synchronization features"
       }
     ]
   },
@@ -13953,7 +14281,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1068: Recently used file identification (OS)"
+        "@value": "DFT-1068: Extract operating system artifacts indicating recently used files"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -13983,7 +14317,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Recently used file identification (OS)"
+        "@value": "Extract operating system artifacts indicating recently used files"
       }
     ]
   },
@@ -13995,7 +14329,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1069: Browser examination"
+        "@value": "DFT-1069: Extract artifacts from a web browser"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14104,7 +14438,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser examination"
+        "@value": "Extract artifacts from a web browser"
       }
     ]
   },
@@ -14116,7 +14450,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1070: Email examination"
+        "@value": "DFT-1070: Extract artifacts from email client(s) or webmail access"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14146,7 +14480,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Email examination"
+        "@value": "Extract artifacts from email client(s) or webmail access"
       }
     ]
   },
@@ -14158,7 +14492,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1071: SQLite database examination"
+        "@value": "DFT-1071: Extract data from SQLite database(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14220,7 +14554,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "SQLite database examination"
+        "@value": "Extract data from SQLite database(s)"
       }
     ]
   },
@@ -14232,7 +14566,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1072: Chat app examination"
+        "@value": "DFT-1072: Extract artifacts from chat app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14333,7 +14667,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Chat app examination"
+        "@value": "Extract artifacts from chat app(s)"
       }
     ]
   },
@@ -14345,7 +14679,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1073: Calendar app examination"
+        "@value": "DFT-1073: Extract artifacts from calendar app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14371,7 +14705,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Calendar app examination"
+        "@value": "Extract artifacts from calendar app(s)"
       }
     ]
   },
@@ -14383,7 +14717,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1074: Social network app examination"
+        "@value": "DFT-1074: Extract artifacts from social network app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14413,7 +14747,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Social network app examination"
+        "@value": "Extract artifacts from social network app(s)"
       }
     ]
   },
@@ -14425,7 +14759,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1075: Maps/travel app examination"
+        "@value": "DFT-1075: Extract artifacts from maps/travel app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14445,7 +14779,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Maps/travel app examination"
+        "@value": "Extract artifacts from maps/travel app(s)"
       }
     ]
   },
@@ -14457,7 +14791,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1076: Log file examination"
+        "@value": "DFT-1076: Extract artifacts from log files"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -14524,7 +14858,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Log file examination"
+        "@value": "Extract artifacts from log files"
       }
     ]
   },
@@ -14536,7 +14870,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1077: Photos app examination"
+        "@value": "DFT-1077: Extract artifacts from photo management app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14552,7 +14886,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Photos app examination"
+        "@value": "Extract artifacts from photo management app(s)"
       }
     ]
   },
@@ -14564,7 +14898,20 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1078: Cloud sync app examination"
+        "@value": "DFT-1078: Extract artifacts from cloud synchronization app(s)"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Dropbox"
+      },
+      {
+        "@value": "Google Drive"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Involves examination of cloud synchronization artifacts from apps rather than those built into the operating system."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14574,7 +14921,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Cloud sync app examination"
+        "@value": "Extract artifacts from cloud synchronization app(s)"
       }
     ]
   },
@@ -14586,7 +14933,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1079: Audio content analysis"
+        "@value": "DFT-1079: Examine audio content"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14596,7 +14943,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Audio content analysis"
+        "@value": "Examine audio content"
       }
     ]
   },
@@ -14608,7 +14955,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1080: Video content analysis"
+        "@value": "DFT-1080: Examine video content"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
@@ -14623,7 +14970,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Video content analysis"
+        "@value": "Examine video content"
       }
     ]
   },
@@ -14635,7 +14982,12 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1081: Image content analysis"
+        "@value": "DFT-1081: Examine image/picture content"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1176"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14645,7 +14997,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Image content analysis"
+        "@value": "Examine image/picture content"
       }
     ]
   },
@@ -14657,7 +15009,15 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1082: Document content analysis"
+        "@value": "DFT-1082: Examine document content"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Microsoft Word"
+      },
+      {
+        "@value": "Pages"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14667,7 +15027,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Document content analysis"
+        "@value": "Examine document content"
       }
     ]
   },
@@ -14679,7 +15039,20 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1083: Memory examination (OS-level)"
+        "@value": "DFT-1083: Extract artifacts from operating system memory structures"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "EPROCESS blocks"
+      },
+      {
+        "@value": "VAD trees"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Examination of the operating system structures that allows individual processes to be listed and pages used by specific processes to be enumerated."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14689,7 +15062,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Memory examination (OS-level)"
+        "@value": "Extract artifacts from operating system memory structures"
       }
     ]
   },
@@ -14701,7 +15074,28 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1084: Extraction of user accounts"
+        "@value": "DFT-1084: Extract potentially user-identifying content from account information"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/UserAccount"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/identity/Person"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Analysis of user account information to extract content that may help identify the person associated with an account, such as usernames, real names, password hints, security questions, recovery email addresses, and profile details."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14711,7 +15105,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Extraction of user accounts"
+        "@value": "Extract potentially user-identifying content from account information"
       }
     ]
   },
@@ -14723,7 +15117,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1085: Identify conflation"
+        "@value": "DFT-1085: Conflate specific account identifiers to a single user identity"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14733,7 +15127,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Identify conflation"
+        "@value": "Conflate specific account identifiers to a single user identity"
       }
     ]
   },
@@ -14745,7 +15139,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1086: Timeline analysis"
+        "@value": "DFT-1086: Analyze timeline"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -14801,7 +15195,10 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
-        "@value": "Temporal Analysis"
+        "@value": "Timeline analysis"
+      },
+      {
+        "@value": "Temporal analysis"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -14821,7 +15218,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Timeline analysis"
+        "@value": "Analyze timeline"
       }
     ]
   },
@@ -14833,7 +15230,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1087: Location-based event reconstruction"
+        "@value": "DFT-1087: Reconstruct the location-based properties of an event"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -14867,7 +15264,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Location-based event reconstruction"
+        "@value": "Reconstruct the location-based properties of an event"
       }
     ]
   },
@@ -14879,7 +15276,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1088: Relational-based event reconstruction"
+        "@value": "DFT-1088: Reconstruct an relations between events properties of events"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -14913,6 +15310,9 @@
       },
       {
         "@value": "Connection-based event reconstruction"
+      },
+      {
+        "@value": "Relation-based event reconstruction"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -14927,7 +15327,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Relational-based event reconstruction"
+        "@value": "Reconstruct an relations between events properties of events"
       }
     ]
   },
@@ -14939,7 +15339,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1089: Source code review"
+        "@value": "DFT-1089: Review source code of software"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Code"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Typically to  understand it's capabilities, the artifacts it produces, or what user actions could be potentially reconstructed"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "The equivalent of `static analysis` of malware, but applied to software in general."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14949,7 +15365,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Source code review"
+        "@value": "Review source code of software"
       }
     ]
   },
@@ -14961,7 +15377,17 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1090: Experimentation"
+        "@value": "DFT-1090: Experiment with software to ascertain forensic artifacts"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of running software in a controlled environment to observe its behavior and identify potential forensic artifacts."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "The equivalent of `dynamic analysis` of malware, but applied to software in general. This can involve running the software in a controlled environment and observing its behavior, inputs, and outputs to gain insights into its functionality and potential for event reconstruction."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -14971,7 +15397,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Experimentation"
+        "@value": "Experiment with software to ascertain forensic artifacts"
       }
     ]
   },
@@ -14983,7 +15409,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1091: Bookmark artifacts"
+        "@value": "DFT-1091: Tag artifacts"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15006,6 +15438,9 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
+        "@value": "Bookmark artifacts"
+      },
+      {
         "@value": "Bookmarking"
       },
       {
@@ -15024,7 +15459,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Bookmark artifacts"
+        "@value": "Tag artifacts"
       }
     ]
   },
@@ -15036,7 +15471,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1092: Produce tag-based automated report"
+        "@value": "DFT-1092: Generate tag-based automated report"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15081,7 +15516,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Produce tag-based automated report"
+        "@value": "Generate tag-based automated report"
       }
     ]
   },
@@ -15121,7 +15556,15 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1094: Disclosure"
+        "@value": "DFT-1094: Disclose investigation material to an authorized legal authority"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1154"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1155"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15131,7 +15574,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Disclosure"
+        "@value": "Disclose investigation material to an authorized legal authority"
       }
     ]
   },
@@ -15143,7 +15586,28 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1095: Instrumentation"
+        "@value": "DFT-1095: Instrument a piece of running software"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "IDA Pro"
+      },
+      {
+        "@value": "Frida"
+      },
+      {
+        "@value": "Fiddler"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1156"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "This can be done during experiments to help ascertain functionality, or potential forensic artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15153,7 +15617,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Instrumentation"
+        "@value": "Instrument a piece of running software"
       }
     ]
   },
@@ -15165,7 +15629,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1096: Run programs identification (OS)"
+        "@value": "DFT-1096: Extract operating system artifacts indicating program execution"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15182,6 +15652,11 @@
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/execProgramHashes"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Programs run identification (OS)"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "The process of examining operating system files to extract artifacts that may indicate a program has been run."
@@ -15189,7 +15664,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "While this technique may result in executable or script paths and timestamps, to evaluate a hypothesis that a program was run requires use of T1155 to evaluate if this occurred, and optionally T1117 if the time of access is relevant."
+        "@value": "While this technique may result in paths to executables/scripts and timestamps, to evaluate a hypothesis that a program was run requires use of T1155 to evaluate if this occurred, and optionally T1117 if the time of access is relevant."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15199,7 +15674,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Run programs identification (OS)"
+        "@value": "Extract operating system artifacts indicating program execution"
       }
     ]
   },
@@ -15211,7 +15686,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1097: Installed programs identification (OS)"
+        "@value": "DFT-1097: Extract operating system artifacts indicating installed software"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15222,6 +15703,11 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ApplicationVersion"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Installed software identification (OS)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -15236,7 +15722,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Installed programs identification (OS)"
+        "@value": "Extract operating system artifacts indicating installed software"
       }
     ]
   },
@@ -15248,7 +15734,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1098: User account analysis (OS)"
+        "@value": "DFT-1098: Enumerate operating system user accounts"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15261,9 +15753,24 @@
         "@value": "https://ontology.unifiedcyberontology.org/uco/observable/accountType"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Windows SAM file"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "User account analysis (OS)"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Examination of information related to user account creation and logins"
+        "@value": "Examination of operating system artifacts to determine user accounts"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This might include which accounts exist on the system, when they were created, etc."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15273,7 +15780,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "User account analysis (OS)"
+        "@value": "Enumerate operating system user accounts"
       }
     ]
   },
@@ -15285,7 +15792,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1099: File repair with grafting"
+        "@value": "DFT-1099: Repair a damaged or incomplete file using `grafting`"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15306,7 +15819,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "File repair with grafting"
+        "@value": "Repair a damaged or incomplete file using `grafting`"
       }
     ]
   },
@@ -15319,6 +15832,12 @@
       {
         "@language": "en",
         "@value": "DFT-1100: Extract metadata from within images"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/RasterPicture"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15356,7 +15875,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1101: Cell site survey"
+        "@value": "DFT-1101: Conduct cell site survey"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/location/Location"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -15384,7 +15909,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Cell site survey"
+        "@value": "Conduct cell site survey"
       }
     ]
   },
@@ -15396,7 +15921,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1102: Decode data from image from unmanaged NAND"
+        "@value": "DFT-1102: Decode data extracted from unmanaged NAND"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15406,7 +15937,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Decode data from image from unmanaged NAND"
+        "@value": "Decode data extracted from unmanaged NAND"
       }
     ]
   },
@@ -15418,7 +15949,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1103: Virtualise suspect system for previewing"
+        "@value": "DFT-1103: Virtualize suspect system for previewing"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/RawImage"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/VirtualizedComputer"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -15433,7 +15980,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Virtualise suspect system for previewing"
+        "@value": "Virtualize suspect system for previewing"
       }
     ]
   },
@@ -15467,7 +16014,17 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1105: Memory examination (application-level)"
+        "@value": "DFT-1105: Examine memory dump from an application"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Examination of the specific structures from the memory of a specific application"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "These could be extracted from a physical memory dump through analysis of operating system memory structures to extract specific process memory, or obtained directly on a live system."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15477,7 +16034,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Memory examination (application-level)"
+        "@value": "Examine memory dump from an application"
       }
     ]
   },
@@ -15489,7 +16046,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1106: Deep fake detection (video)"
+        "@value": "DFT-1106: Classify if a video is potentially synthetically generated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/VideoFile"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15509,7 +16072,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Deep fake detection (video)"
+        "@value": "Classify if a video is potentially synthetically generated"
       }
     ]
   },
@@ -15521,7 +16084,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1107: Health/Fitness app examination"
+        "@value": "DFT-1107: Extract artifacts from health/fitness app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -15537,7 +16100,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Health/Fitness app examination"
+        "@value": "Extract artifacts from health/fitness app(s)"
       }
     ]
   },
@@ -15549,7 +16112,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1108: Reminders app examination"
+        "@value": "DFT-1108: Extract artifacts from reminders app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -15565,7 +16128,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Reminders app examination"
+        "@value": "Extract artifacts from reminders app(s)"
       }
     ]
   },
@@ -15577,7 +16140,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1109: Payment app examination"
+        "@value": "DFT-1109: Extract artifacts from payment app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -15593,7 +16156,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Payment app examination"
+        "@value": "Extract artifacts from payment app(s)"
       }
     ]
   },
@@ -15605,7 +16168,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1110: Preserving reference data"
+        "@value": "DFT-1110: Preserve reference data"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -15630,7 +16193,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Preserving reference data"
+        "@value": "Preserve reference data"
       }
     ]
   },
@@ -15642,7 +16205,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1111: Recording system clock offset"
+        "@value": "DFT-1111: Record system clock offset"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -15677,7 +16246,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Recording system clock offset"
+        "@value": "Record system clock offset"
       }
     ]
   },
@@ -15689,7 +16258,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1112: Physical disk identification and removal"
+        "@value": "DFT-1112: Locate and remove physical disks from a device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -15717,7 +16286,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Identifying physical storage media within devices and removing them"
+        "@value": "Locate physical storage media within devices and removing them"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15727,7 +16296,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Physical disk identification and removal"
+        "@value": "Locate and remove physical disks from a device"
       }
     ]
   },
@@ -15819,13 +16388,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1114: Memory Acquisition via Cold Boot Attack"
+        "@value": "DFT-1114: Preserve memory contents via Cold Boot Attack"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
-        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Image"
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Memory"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -15848,12 +16417,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Extracting volatile memory (RAM) from a powered-off system by quickly rebooting or transferring the memory module to another system before residual data fades. Cooling the memory modules can significantly slow down data decay, preserving critical data such as encryption keys or passwords."
+        "@value": "A precursor to extracting volatile memory (RAM) from a powered-off system by quickly rebooting or transferring the memory module to another system before residual data fades. Cooling the memory modules can significantly slow down data decay, preserving critical data such as encryption keys or passwords."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "An examiner freezes a computer’s RAM by spraying it with liquid nitrogen or even using inverted canned air, then powering off the live system without proper shutdown, and then booting into an external plugged USB, and try capturing the residual RAM content with encryption keys that might still be stored there"
+        "@value": "An examiner freezes a computer’s RAM by spraying it with liquid nitrogen or even using inverted canned air, then powering off the live system without proper shutdown, and then booting into an external plugged USB, and try capturing the residual RAM content (DFT-1003) with encryption keys that might still be stored there"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -15863,7 +16432,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Memory Acquisition via Cold Boot Attack"
+        "@value": "Preserve memory contents via Cold Boot Attack"
       }
     ]
   },
@@ -15875,7 +16444,13 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1115: Visualisation of geolocation information"
+        "@value": "DFT-1115: Visualize geolocation information"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/location/Location"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
@@ -15909,7 +16484,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Visualisation of geolocation information"
+        "@value": "Visualize geolocation information"
       }
     ]
   },
@@ -15995,7 +16570,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1117: Time-based event reconstruction"
+        "@value": "DFT-1117: Reconstruct the time that an event may have occurred"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -16032,7 +16607,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Time-based event reconstruction"
+        "@value": "Reconstruct the time that an event may have occurred"
       }
     ]
   },
@@ -16085,7 +16660,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "Use the path of file name to determine potential relevance of artefact"
+        "@value": "Use the path of file name to determine potential relevance of artifact"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -16175,7 +16750,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1120: Automated artifact extraction from app data"
+        "@value": "DFT-1120: Extract artifacts from app data automatically"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -16237,7 +16812,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Automated artifact extraction from app data"
+        "@value": "Extract artifacts from app data automatically"
       }
     ]
   },
@@ -16249,7 +16824,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1121: Keyword indexing"
+        "@value": "DFT-1121: Index a data source for keyword searching"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -16289,6 +16864,11 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1198"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "keyword indexing"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "Extracting strings from a data source and adding them to an index for subsequent searching."
@@ -16296,7 +16876,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "An index can be constructed over a set of files (including non-allocated space represented as files), a set of extracted artefacts, or both."
+        "@value": "An index can be constructed over a set of files (including non-allocated space represented as files), a set of extracted artifacts, or both."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -16306,7 +16886,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Keyword indexing"
+        "@value": "Index a data source for keyword searching"
       }
     ]
   },
@@ -16848,7 +17428,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1133: AI companion app examination"
+        "@value": "DFT-1133: Extract artifacts from AI companion app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -17012,7 +17592,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "AI companion app examination"
+        "@value": "Extract artifacts from AI companion app(s)"
       }
     ]
   },
@@ -17109,7 +17689,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1137: Browser history examination"
+        "@value": "DFT-1137: Extract browser history artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -17186,7 +17766,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser history examination"
+        "@value": "Extract browser history artifacts"
       }
     ]
   },
@@ -17198,7 +17778,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1138: Browser cache examination"
+        "@value": "DFT-1138: Extract browser cache artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -17255,7 +17835,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser cache examination"
+        "@value": "Extract browser cache artifacts"
       }
     ]
   },
@@ -17267,7 +17847,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1139: Browser session examination"
+        "@value": "DFT-1139: Extract browser session artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -17282,7 +17862,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser session examination"
+        "@value": "Extract browser session artifacts"
       }
     ]
   },
@@ -17294,7 +17874,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1140: Browser autofill examination"
+        "@value": "DFT-1140: Extract browser autofill artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -17309,7 +17889,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser autofill examination"
+        "@value": "Extract browser autofill artifacts"
       }
     ]
   },
@@ -17321,7 +17901,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1141: Browser bookmarks examination"
+        "@value": "DFT-1141: Extract browser bookmark artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -17347,7 +17927,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser bookmarks examination"
+        "@value": "Extract browser bookmark artifacts"
       }
     ]
   },
@@ -17359,7 +17939,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1142: Browser downloads examination"
+        "@value": "DFT-1142: Extract browser download artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -17389,7 +17969,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser downloads examination"
+        "@value": "Extract browser download artifacts"
       }
     ]
   },
@@ -17401,7 +17981,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1143: Browser configuration examination"
+        "@value": "DFT-1143: Extract browser configuration artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -17422,7 +18002,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser configuration examination"
+        "@value": "Extract browser configuration artifacts"
       }
     ]
   },
@@ -17434,7 +18014,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1144: Browser profile enumeration"
+        "@value": "DFT-1144: Enumerate browser profiles"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -17454,7 +18034,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser profile enumeration"
+        "@value": "Enumerate browser profiles"
       }
     ]
   },
@@ -17466,7 +18046,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1145: Browser extensions examination"
+        "@value": "DFT-1145: Extract browser extensions artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -17481,7 +18061,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser extensions examination"
+        "@value": "Extract browser extensions artifacts"
       }
     ]
   },
@@ -17493,7 +18073,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1146: Browser synchronization feature examination"
+        "@value": "DFT-1146: Extract browser synchronization artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -17514,7 +18094,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser synchronization feature examination"
+        "@value": "Extract browser synchronization artifacts"
       }
     ]
   },
@@ -17526,7 +18106,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1147: Browser cookie examination"
+        "@value": "DFT-1147: Extract browser cookie artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -17551,7 +18131,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser cookie examination"
+        "@value": "Extract browser cookie artifacts"
       }
     ]
   },
@@ -17563,7 +18143,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1148: Browser web storage examination"
+        "@value": "DFT-1148: Extract browser web storage artifacts"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -17602,7 +18182,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Browser web storage examination"
+        "@value": "Extract browser web storage artifacts"
       }
     ]
   },
@@ -17614,7 +18194,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1149: File versioning feature examination"
+        "@value": "DFT-1149: Extract artifacts from the file versioning feature"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -17684,7 +18264,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "File versioning feature examination"
+        "@value": "Extract artifacts from the file versioning feature"
       }
     ]
   },
@@ -17885,7 +18465,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1154: Identity-based event reconstruction"
+        "@value": "DFT-1154: Reconstruct an identity associated with an event"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -17917,6 +18497,9 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
+        "@value": "Identity-based event reconstruction"
+      },
+      {
         "@value": "Resolving the person-device gap"
       },
       {
@@ -17935,7 +18518,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Identity-based event reconstruction"
+        "@value": "Reconstruct an identity associated with an event"
       }
     ]
   },
@@ -17947,7 +18530,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1155: Operation-based event reconstruction"
+        "@value": "DFT-1155: Reconstruct that a specific event may have occurred"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -17973,6 +18556,9 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
+        "@value": "Operation-based event reconstruction"
+      },
+      {
         "@value": "Activity-based event reconstruction"
       },
       {
@@ -17996,7 +18582,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Operation-based event reconstruction"
+        "@value": "Reconstruct that a specific event may have occurred"
       }
     ]
   },
@@ -18008,7 +18594,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1156: Functional-based event reconstruction"
+        "@value": "DFT-1156: Reconstruct if an event could have functionally occurred on a system given its capabilities"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -18023,6 +18609,11 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.unifiedcyberontology.org/uco/core/confidence"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Functional-based event reconstruction"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -18042,7 +18633,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Functional-based event reconstruction"
+        "@value": "Reconstruct if an event could have functionally occurred on a system given its capabilities"
       }
     ]
   },
@@ -18323,7 +18914,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1163: Automated screenshot-based capture of a mobile device"
+        "@value": "DFT-1163: Capture mobile device screenshots (automatically)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -18351,6 +18942,11 @@
         "@value": "Programmatically controlling a mobile device while capturing screenshots of the display."
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This is the automated version of DFT-1022. The device is controlled programmatically, and screenshots are captured automatically."
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
       {
         "@value": "DFT-1163"
@@ -18358,7 +18954,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Automated screenshot-based capture of a mobile device"
+        "@value": "Capture mobile device screenshots (automatically)"
       }
     ]
   },
@@ -18370,7 +18966,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1164: Direct data read from a block device"
+        "@value": "DFT-1164: Read data directly from a block device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -18406,7 +19002,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Direct data read from a block device"
+        "@value": "Read data directly from a block device"
       }
     ]
   },
@@ -18723,7 +19319,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1170: Decode forensic image format (logical)"
+        "@value": "DFT-1170: Read contents from logical forensic container file(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -18780,7 +19376,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Decode forensic image format (logical)"
+        "@value": "Read contents from logical forensic container file(s)"
       }
     ]
   },
@@ -18792,7 +19388,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1171: Access file system via live operating system"
+        "@value": "DFT-1171: Access a file system via live operating system"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -18807,6 +19403,11 @@
         "@value": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Access file system via the running operating system"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
         "@value": "This involves accessing a live system and relying on the operating system's parsing of the file system to access files."
@@ -18819,7 +19420,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Access file system via live operating system"
+        "@value": "Access a file system via live operating system"
       }
     ]
   },
@@ -18831,7 +19432,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1172: Access raw image content"
+        "@value": "DFT-1172: Read bitstream from raw image file(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -18868,7 +19469,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Access raw image content"
+        "@value": "Read bitstream from raw image file(s)"
       }
     ]
   },
@@ -18934,6 +19535,10 @@
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/File"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
         "@value": "https://ontology.solveit-df.org/solveit/observable/ADBPullData"
       },
       {
@@ -18976,7 +19581,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1175: Extract data using content queries"
+        "@value": "DFT-1175: Extract data from an Android device using content queries"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -19016,7 +19621,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Extract data using content queries"
+        "@value": "Extract data from an Android device using content queries"
       }
     ]
   },
@@ -19028,7 +19633,19 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1176: Identification of synthetic images"
+        "@value": "DFT-1176: Classify if an image is potentially synthetically generated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/RasterPicture"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -19053,7 +19670,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Identification of synthetic images"
+        "@value": "Classify if an image is potentially synthetically generated"
       }
     ]
   },
@@ -19065,7 +19682,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1177: Examination of a mutiplayer game app"
+        "@value": "DFT-1177: Extract artifacts from multiplayer game app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -19169,7 +19786,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Examination of a mutiplayer game app"
+        "@value": "Extract artifacts from multiplayer game app(s)"
       }
     ]
   },
@@ -19181,7 +19798,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1178: Writing bitstream data to a raw image format"
+        "@value": "DFT-1178: Store bitstream data in a raw image format"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -19221,7 +19838,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Writing bitstream data to a raw image format"
+        "@value": "Store bitstream data in a raw image format"
       }
     ]
   },
@@ -19233,7 +19850,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1179: Drone app examination"
+        "@value": "DFT-1179: Extract artifacts from drone/UAV app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
@@ -19253,7 +19870,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Drone app examination"
+        "@value": "Extract artifacts from drone/UAV app(s)"
       }
     ]
   },
@@ -19333,7 +19950,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1181: Examine smart home app"
+        "@value": "DFT-1181: Extract artifacts from smart home app(s)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -19376,7 +19993,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Examine smart home app"
+        "@value": "Extract artifacts from smart home app(s)"
       }
     ]
   },
@@ -19388,7 +20005,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1182: Filter timeline for relevant entries "
+        "@value": "DFT-1182: Filter a timeline for relevant entries"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -19445,7 +20062,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Filter timeline for relevant entries "
+        "@value": "Filter a timeline for relevant entries"
       }
     ]
   },
@@ -19457,7 +20074,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1184: Sort timeline entries chronologically"
+        "@value": "DFT-1184: Sort a timeline so entries are ordered chronologically"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -19520,7 +20137,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Sort timeline entries chronologically"
+        "@value": "Sort a timeline so entries are ordered chronologically"
       }
     ]
   },
@@ -19532,7 +20149,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1185: Extract data from OS-level notifications"
+        "@value": "DFT-1185: Extract data from operating system notifications"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -19602,7 +20219,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Extract data from OS-level notifications"
+        "@value": "Extract data from operating system notifications"
       }
     ]
   },
@@ -29671,9 +30288,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1236"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1238"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1239"

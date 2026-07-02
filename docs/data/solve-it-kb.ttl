@@ -15,28 +15,14 @@
     solveit-core:citationID "DFCite-1144" ;
     solveit-core:citationPlaintext "Magnet Forensics (2020) Expose evidence of timestomping with the NTFS timestamp mismatch artifact in Magnet AXIOM 4.4. Available at: https://www.magnetforensics.com/blog/expose-evidence-of-timestomping-with-the-ntfs-timestamp-mismatch-artifact-in-magnet-axiom-4-4/" .
 
-:citationDFCite-1154 a solveit-core:Citation ;
-    rdfs:label "DFCite-1154" ;
-    solveit-core:citationBibtex """@online{CPS2026DigitalMaterial,
-  author       = {{Crown Prosecution Service, UK}},
-  title        = {Disclosure Manual: Chapter 30 -- Digital Material},
-  year         = {2026},
-  url          = {https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material},
-  organization = {Crown Prosecution Service},
-}""" ;
-    solveit-core:citationID "DFCite-1154" ;
-    solveit-core:citationPlaintext "https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material" .
-
-:citationDFCite-1155 a solveit-core:Citation ;
-    rdfs:label "DFCite-1155" ;
-    solveit-core:citationBibtex """@misc{AttorneyGeneral2024Disclosure,
-  author = {{Attorney General's Office}},
-  title  = {Attorney General's Guidelines on Disclosure, UK},
-  year   = {2024},
-  url    = {https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure},
-}""" ;
-    solveit-core:citationID "DFCite-1155" ;
-    solveit-core:citationPlaintext "https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure" .
+:mitigationDFM-1238 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1238: Configure device to enable required service"@en ;
+    solveit-core:hasReference :citationDFCite-1003,
+        :citationDFCite-1004 ;
+    solveit-core:linksToTechnique :techniqueDFT-1158 ;
+    solveit-core:mitigationDescription "For example turning on Developer Mode on Android to enable ADB" ;
+    solveit-core:mitigationID "DFM-1238" ;
+    solveit-core:mitigationName "Configure device to enable required service" .
 
 :objectiveDFO-1001 a solveit-core:Objective ;
     rdfs:label "DFO-1001: Reconstruct events"@en ;
@@ -70,8 +56,7 @@
         :techniqueDFT-1079,
         :techniqueDFT-1080,
         :techniqueDFT-1081,
-        :techniqueDFT-1082,
-        :techniqueDFT-1176 ;
+        :techniqueDFT-1082 ;
     solveit-core:objectiveDescription "Review potentially relevant content to determine its significance or meaning." ;
     solveit-core:objectiveID "DFO-1003" ;
     solveit-core:objectiveName "Review content for relevance" ;
@@ -112,7 +97,6 @@
         :techniqueDFT-1030,
         :techniqueDFT-1104,
         :techniqueDFT-1111,
-        :techniqueDFT-1114,
         :techniqueDFT-1157,
         :techniqueDFT-1159,
         :techniqueDFT-1160,
@@ -158,7 +142,8 @@
     solveit-core:includesTechnique :techniqueDFT-1010,
         :techniqueDFT-1011,
         :techniqueDFT-1012,
-        :techniqueDFT-1013 ;
+        :techniqueDFT-1013,
+        :techniqueDFT-1114 ;
     solveit-core:objectiveDescription "Ensure the integrity and authenticity of digital evidence is maintained." ;
     solveit-core:objectiveID "DFO-1010" ;
     solveit-core:objectiveName "Preserve digital evidence" ;
@@ -943,6 +928,40 @@
     solveit-core:citationID "DFCite-1150" ;
     solveit-core:citationPlaintext "None" .
 
+:citationDFCite-1154 a solveit-core:Citation ;
+    rdfs:label "DFCite-1154" ;
+    solveit-core:citationBibtex """@online{CPS2026DigitalMaterial,
+  author       = {{Crown Prosecution Service, England and Wales}},
+  title        = {Disclosure Manual: Chapter 30 -- Digital Material},
+  year         = {2026},
+  url          = {https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material},
+  organization = {Crown Prosecution Service},
+}""" ;
+    solveit-core:citationID "DFCite-1154" ;
+    solveit-core:citationPlaintext "https://www.cps.gov.uk/prosecution-guidance/disclosure-manual-chapter-30-digital-material" .
+
+:citationDFCite-1155 a solveit-core:Citation ;
+    rdfs:label "DFCite-1155" ;
+    solveit-core:citationBibtex """@misc{AttorneyGeneral2024Disclosure,
+  author = {{Attorney General's Office}},
+  title  = {Attorney General's Guidelines on Disclosure, England and Wales},
+  year   = {2024},
+  url    = {https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure},
+}""" ;
+    solveit-core:citationID "DFCite-1155" ;
+    solveit-core:citationPlaintext "https://www.gov.uk/government/publications/attorney-generals-guidelines-on-disclosure" .
+
+:citationDFCite-1156 a solveit-core:Citation ;
+    rdfs:label "DFCite-1156" ;
+    solveit-core:citationBibtex """@misc{ravnas_frida,
+  author = {Ravn{\\aa}s, Ole Andr{\\'e} Vadla and {The Frida Project contributors}},
+  title  = {Frida: Dynamic instrumentation toolkit for developers, reverse-engineers, and security researchers},
+  year   = {n.d.},
+  url    = {https://github.com/frida},
+}""" ;
+    solveit-core:citationID "DFCite-1156" ;
+    solveit-core:citationPlaintext "https://github.com/frida" .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -1712,15 +1731,6 @@
     solveit-core:mitigationID "DFM-1237" ;
     solveit-core:mitigationName "Ensure that archive format used can handle sufficiently large files" .
 
-:mitigationDFM-1238 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1238: Configure device to enable required service"@en ;
-    solveit-core:hasReference :citationDFCite-1003,
-        :citationDFCite-1004 ;
-    solveit-core:linksToTechnique :techniqueDFT-1158 ;
-    solveit-core:mitigationDescription "For example turning on Developer Mode on Android to enable ADB" ;
-    solveit-core:mitigationID "DFM-1238" ;
-    solveit-core:mitigationName "Configure device to enable required service" .
-
 :mitigationDFM-1239 a solveit-core:Mitigation ;
     rdfs:label "DFM-1239: Obtain possible passwords/PIN codes from other devices with limited security"@en ;
     solveit-core:linksToTechnique :techniqueDFT-1033 ;
@@ -1785,7 +1795,7 @@
     solveit-core:mitigationName "Count timeline entries before and after sorting a timeline and check they are the same" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
-    rdfs:label "DFT-1001: Triage"@en ;
+    rdfs:label "DFT-1001: Triage devices or media"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceSet"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/PrioritizedDeviceSet"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1001,
@@ -1796,10 +1806,10 @@
     solveit-core:techniqueDescription "Digital forensic triage is a partial forensic examination conducted under (significant) time and resource constraints [DFCite-1115]." ;
     solveit-core:techniqueDetails "Involves the ranking of apprehended digital items in terms of their importance to a case and likelihood that they contain the data required [DFCite-1131]. It can involve multiple techniques to identify devices of most interest such as keyword searching, hash matching, media review etc." ;
     solveit-core:techniqueID "DFT-1001" ;
-    solveit-core:techniqueName "Triage" .
+    solveit-core:techniqueName "Triage devices or media" .
 
 :techniqueDFT-1002 a solveit-core:Technique ;
-    rdfs:label "DFT-1002: Disk imaging"@en ;
+    rdfs:label "DFT-1002: Copy sectors from storage media"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
@@ -1817,13 +1827,14 @@
         :weaknessDFW-1143,
         :weaknessDFW-1278 ;
     solveit-core:hasReference :citationDFCite-1107 ;
+    solveit-core:hasSynonym "disk imaging" ;
     solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ to a bitstream that can be stored in a image format (DFT-1025)." ;
     solveit-core:techniqueDetails "The process could be applied to a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader. This data needs to be stored as a container file (DFT-1025). Logs would also usually be created recording the details of the imaging process and any errors that occured." ;
     solveit-core:techniqueID "DFT-1002" ;
-    solveit-core:techniqueName "Disk imaging" .
+    solveit-core:techniqueName "Copy sectors from storage media" .
 
 :techniqueDFT-1003 a solveit-core:Technique ;
-    rdfs:label "DFT-1003: Memory imaging"@en ;
+    rdfs:label "DFT-1003: Copy pages from physical memory"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Memory"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
     solveit-core:hasExample "FTK Imager" ;
@@ -1835,16 +1846,17 @@
     solveit-core:hasReference :citationDFCite-1025,
         :citationDFCite-1084,
         :citationDFCite-1085 ;
-    solveit-core:hasSynonym "RAM dump",
+    solveit-core:hasSynonym "Memory imaging",
+        "RAM dump",
         "RAM imaging",
         "memory dump" ;
     solveit-core:techniqueDescription "Involves creating a copy of the live memory data of a running system" ;
     solveit-core:techniqueDetails "Collection of Pagefile may also be useful (Kornblum 2007)." ;
     solveit-core:techniqueID "DFT-1003" ;
-    solveit-core:techniqueName "Memory imaging" .
+    solveit-core:techniqueName "Copy pages from physical memory" .
 
 :techniqueDFT-1004 a solveit-core:Technique ;
-    rdfs:label "DFT-1004: Selective file acquisition"@en ;
+    rdfs:label "DFT-1004: Collect logical files selectively"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"^^xsd:anyURI ;
     solveit-core:hasExample "FTK Imager - allows an AD1 logical container to be created of a selected subset of files within a previewed data source." ;
@@ -1857,14 +1869,15 @@
         :weaknessDFW-1023,
         :weaknessDFW-1024 ;
     solveit-core:hasSubtechnique :techniqueDFT-1015 ;
-    solveit-core:hasSynonym "Logical imaging" ;
+    solveit-core:hasSynonym "Logical acquisition",
+        "Logical imaging" ;
     solveit-core:techniqueDescription "Views a set of files (typically via direct access from previewing) and acquires a subset of them." ;
     solveit-core:techniqueDetails "This selection of files would subsequently be stored into a container such as a tar/zip file or a forensic image format." ;
     solveit-core:techniqueID "DFT-1004" ;
-    solveit-core:techniqueName "Selective file acquisition" .
+    solveit-core:techniqueName "Collect logical files selectively" .
 
 :techniqueDFT-1005 a solveit-core:Technique ;
-    rdfs:label "DFT-1005: Conduct a search of a crime scene"@en ;
+    rdfs:label "DFT-1005: Search a crime scene for relevant physical evidence"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceSet"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
@@ -1877,22 +1890,25 @@
         "Incident scene examination",
         "Scene search" ;
     solveit-core:techniqueDescription "The process of 'carefully documenting the conditions at a crime scene and identifying all relevant physical evidence.' (Birzer 2018)." ;
-    solveit-core:techniqueDetails "The UK's Forensic Science Regulator (FSR) guidance refers to \"Incident scene examination\" which takes a holistic approach and considers an incident scene in conjunction with the requirements of an investigation and the criminal justice system. The aim of incident scene examination is to identify and locate, or note the absence of, physical material which has relevance and significance to inform the investigation including, where relevant, the reconstruction of past events." ;
+    solveit-core:techniqueDetails """The UK's Forensic Science Regulator (FSR) guidance refers to "Incident scene examination" which takes a holistic approach and considers an incident scene in conjunction with the requirements of an investigation and the criminal justice system. The aim of incident scene examination is to identify and locate, or note the absence of, physical material which has relevance and significance to inform the investigation including, where relevant, the reconstruction of past events.
+The techqniue does not restrict to searching for digital devices as other physical objects may be relevant e.g. contain passwords.""" ;
     solveit-core:techniqueID "DFT-1005" ;
-    solveit-core:techniqueName "Conduct a search of a crime scene" .
+    solveit-core:techniqueName "Search a crime scene for relevant physical evidence" .
 
 :techniqueDFT-1008 a solveit-core:Technique ;
-    rdfs:label "DFT-1008: Profiling network traffic"@en ;
+    rdfs:label "DFT-1008: Detect the potential existence of digital devices by profiling network traffic"@en ;
     solveit-core:techniqueID "DFT-1008" ;
-    solveit-core:techniqueName "Profiling network traffic" .
+    solveit-core:techniqueName "Detect the potential existence of digital devices by profiling network traffic" .
 
 :techniqueDFT-1009 a solveit-core:Technique ;
-    rdfs:label "DFT-1009: Locate cloud account identifiers"@en ;
+    rdfs:label "DFT-1009: Locate potential digital evidence sources via cloud account identifiers"@en ;
     solveit-core:techniqueID "DFT-1009" ;
-    solveit-core:techniqueName "Locate cloud account identifiers" .
+    solveit-core:techniqueName "Locate potential digital evidence sources via cloud account identifiers" .
 
 :techniqueDFT-1010 a solveit-core:Technique ;
-    rdfs:label "DFT-1010: Place device in faraday environment"@en ;
+    rdfs:label "DFT-1010: Place device in a faraday environment"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1115,
         :weaknessDFW-1116,
         :weaknessDFW-1117 ;
@@ -1900,12 +1916,15 @@
     solveit-core:techniqueDescription "Place a device in an environment designed to shield a mobile phone or small digital device from radio waves entering the environment and reaching the device, and to stop radio waves escaping from the environment (adapted from Lennox-Steele & Nisbet (2016))" ;
     solveit-core:techniqueDetails "Environment should block: mobile network, Wi-Fi, and Bluetooth and all other RF." ;
     solveit-core:techniqueID "DFT-1010" ;
-    solveit-core:techniqueName "Place device in faraday environment" .
+    solveit-core:techniqueName "Place device in a faraday environment" .
 
 :techniqueDFT-1011 a solveit-core:Technique ;
-    rdfs:label "DFT-1011: Store seized devices in evidence bags"@en ;
+    rdfs:label "DFT-1011: Store seized devices or media in evidence bags"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.caseontology.org/case/investigation/exhibitNumber"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1011" ;
-    solveit-core:techniqueName "Store seized devices in evidence bags" .
+    solveit-core:techniqueName "Store seized devices or media in evidence bags" .
 
 :techniqueDFT-1014 a solveit-core:Technique ;
     rdfs:label "DFT-1014: Document the chain of custody"@en ;
@@ -1917,7 +1936,7 @@
     solveit-core:techniqueName "Document the chain of custody" .
 
 :techniqueDFT-1015 a solveit-core:Technique ;
-    rdfs:label "DFT-1015: Privacy preserving selective extraction"@en ;
+    rdfs:label "DFT-1015: Collect logical files selectively based on privacy preserving criteria"@en ;
     solveit-core:hasExample "Cellebrite - Allows filtering by app, data category, and/or by timestamp as to what data is collected.",
         "Odyssey - Allows selective storing of data from mobile devices - https://www.bluelightsdigital.com/odyssey",
         "XRY - Allows filtering by app, data category, and/or by timestamp as to what data is collected." ;
@@ -1927,10 +1946,11 @@
         :weaknessDFW-1028 ;
     solveit-core:techniqueDescription "Previewing a data source and selecting a subset of the data for collection into a container such as a tar/zip file or a forensic image format for the purposes of protecting the privacy of the complainant or witness." ;
     solveit-core:techniqueID "DFT-1015" ;
-    solveit-core:techniqueName "Privacy preserving selective extraction" .
+    solveit-core:techniqueName "Collect logical files selectively based on privacy preserving criteria" .
 
 :techniqueDFT-1016 a solveit-core:Technique ;
-    rdfs:label "DFT-1016: Live data collection"@en ;
+    rdfs:label "DFT-1016: Collect specific pieces of information from a live running device"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/IPAddress"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/MACAddress"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/NetworkConnection"^^xsd:anyURI,
@@ -1954,23 +1974,25 @@
 - Establish method for transmitting and storing the information
 """ ;
     solveit-core:techniqueID "DFT-1016" ;
-    solveit-core:techniqueName "Live data collection" .
+    solveit-core:techniqueName "Collect specific pieces of information from a live running device" .
 
 :techniqueDFT-1017 a solveit-core:Technique ;
-    rdfs:label "DFT-1017: Network packet capture"@en ;
+    rdfs:label "DFT-1017: Capture network packets"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/NetworkInterface"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/NetworkPacketCapture"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1017" ;
-    solveit-core:techniqueName "Network packet capture" .
+    solveit-core:techniqueName "Capture network packets" .
 
 :techniqueDFT-1018 a solveit-core:Technique ;
-    rdfs:label "DFT-1018: Remote data collection"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
+    rdfs:label "DFT-1018: Collect data from a remote networked device"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/NetworkConnection"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1018" ;
-    solveit-core:techniqueName "Remote data collection" .
+    solveit-core:techniqueName "Collect data from a remote networked device" .
 
 :techniqueDFT-1019 a solveit-core:Technique ;
-    rdfs:label "DFT-1019: Mobile backup extraction"@en ;
+    rdfs:label "DFT-1019: Extract a backup from a mobile device"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"^^xsd:anyURI ;
     solveit-core:hasExample "Extraction of an iOS backup",
@@ -1981,42 +2003,47 @@
         :weaknessDFW-1040,
         :weaknessDFW-1041,
         :weaknessDFW-1270 ;
-    solveit-core:techniqueDescription "Using the backup capability of a device to extract a subset of its contents" ;
+    solveit-core:techniqueDescription "Using the in-built backup capability of a device to extract a subset of its contents" ;
     solveit-core:techniqueID "DFT-1019" ;
-    solveit-core:techniqueName "Mobile backup extraction" .
+    solveit-core:techniqueName "Extract a backup from a mobile device" .
 
 :techniqueDFT-1021 a solveit-core:Technique ;
-    rdfs:label "DFT-1021: Configuration file examination"@en ;
+    rdfs:label "DFT-1021: Extract artifacts from a configuration file"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/configuration/ConfigurationEntry"^^xsd:anyURI ;
     solveit-core:hasExample "prefs.js from Firefox" ;
     solveit-core:techniqueDescription "Examination of a file that was designed for storing configuration information for a piece of software (e.g. an application or operating system feature)" ;
     solveit-core:techniqueID "DFT-1021" ;
-    solveit-core:techniqueName "Configuration file examination" .
+    solveit-core:techniqueName "Extract artifacts from a configuration file" .
 
 :techniqueDFT-1022 a solveit-core:Technique ;
-    rdfs:label "DFT-1022: Mobile device screenshot based capture"@en ;
+    rdfs:label "DFT-1022: Capture mobile device screenshots (manually)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1045 ;
     solveit-core:techniqueDescription "An examiner directly manipulates the target mobile device using the device's input interface (i.e., keypads and buttons), and records the content shown on the display of the device. (Fukami et al 2021)" ;
+    solveit-core:techniqueDetails "This is the manual version of DFT-1163. The device is controlled manually, and screenshots are captured manually." ;
     solveit-core:techniqueID "DFT-1022" ;
-    solveit-core:techniqueName "Mobile device screenshot based capture" .
+    solveit-core:techniqueName "Capture mobile device screenshots (manually)" .
 
 :techniqueDFT-1023 a solveit-core:Technique ;
-    rdfs:label "DFT-1023: Cloud data collection to access data via a live web page using credentials"@en ;
+    rdfs:label "DFT-1023: Collect data from cloud service via a live web page using credentials"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Credential"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/OnlineService"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1023" ;
-    solveit-core:techniqueName "Cloud data collection to access data via a live web page using credentials" .
+    solveit-core:techniqueName "Collect data from cloud service via a live web page using credentials" .
 
 :techniqueDFT-1024 a solveit-core:Technique ;
-    rdfs:label "DFT-1024: Cloud data collection via submission of request to service provider"@en ;
+    rdfs:label "DFT-1024: Collect data from cloud service via submission of request to service provider"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/OnlineService"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/accountIdentifier"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1024" ;
-    solveit-core:techniqueName "Cloud data collection via submission of request to service provider" .
+    solveit-core:techniqueName "Collect data from cloud service via submission of request to service provider" .
 
 :techniqueDFT-1025 a solveit-core:Technique ;
-    rdfs:label "DFT-1025: Writing bitstream data to a forensic image format"@en ;
+    rdfs:label "DFT-1025: Store bitstream data in a forensic image format"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"^^xsd:anyURI ;
     solveit-core:hasExample "2009 M57-Jean - Data is supplied as a ‘multi-volume Expert Witness file’ - i.e. split EnCase E01 & E02 image files (https://digitalcorpora.org/corpora/scenarios/m57-jean/)",
@@ -2025,14 +2052,16 @@
         "libewf: This open source library allows access to the EWF format. The accompanying ewftools proves tools to verify, inspect and create EWF images. " ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1043 ;
     solveit-core:hasSynonym "store disk image container",
-        "store image file" ;
+        "store image file",
+        "write data to a disk image container",
+        "write data to a forensic image format" ;
     solveit-core:techniqueDescription "Storage of bitstream data recovered from a digital device" ;
     solveit-core:techniqueDetails "The storage of bitstream data resulting from disk imaging, in formats such as: EWF, AFF4. The imaged data may be split into several linked container formats. e.g. e01, e02 e03 etc. This technique represents storage of data in container formats, whereas DFT-1178 represents data stored in raw files. " ;
     solveit-core:techniqueID "DFT-1025" ;
-    solveit-core:techniqueName "Writing bitstream data to a forensic image format" .
+    solveit-core:techniqueName "Store bitstream data in a forensic image format" .
 
 :techniqueDFT-1026 a solveit-core:Technique ;
-    rdfs:label "DFT-1026: Writing data to standard archive format"@en ;
+    rdfs:label "DFT-1026: Store data in standard archive format"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/FileSystemExtraction"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
@@ -2044,31 +2073,33 @@
     solveit-core:techniqueDescription "Storing acquired data in a standard archive format such as rar, tar or zip" ;
     solveit-core:techniqueDetails "This is commonly used with mobile file system extractions, but mobile backups can also sometimes be compressed into an archive." ;
     solveit-core:techniqueID "DFT-1026" ;
-    solveit-core:techniqueName "Writing data to standard archive format" .
+    solveit-core:techniqueName "Store data in standard archive format" .
 
 :techniqueDFT-1027 a solveit-core:Technique ;
-    rdfs:label "DFT-1027: Data read using JTAG"@en ;
+    rdfs:label "DFT-1027: Read data from a device using JTAG"@en ;
     solveit-core:techniqueID "DFT-1027" ;
-    solveit-core:techniqueName "Data read using JTAG" .
+    solveit-core:techniqueName "Read data from a device using JTAG" .
 
 :techniqueDFT-1028 a solveit-core:Technique ;
-    rdfs:label "DFT-1028: Chip-off"@en ;
+    rdfs:label "DFT-1028: Physically remove a storage chip from a device (chip-off)"@en ;
+    solveit-core:hasSynonym "chip-off" ;
     solveit-core:techniqueID "DFT-1028" ;
-    solveit-core:techniqueName "Chip-off" .
+    solveit-core:techniqueName "Physically remove a storage chip from a device (chip-off)" .
 
 :techniqueDFT-1029 a solveit-core:Technique ;
-    rdfs:label "DFT-1029: Access data from a desoldered eMMC via a chip reader"@en ;
+    rdfs:label "DFT-1029: Read data from a desoldered eMMC via a chip reader"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1029" ;
-    solveit-core:techniqueName "Access data from a desoldered eMMC via a chip reader" .
+    solveit-core:techniqueName "Read data from a desoldered eMMC via a chip reader" .
 
 :techniqueDFT-1030 a solveit-core:Technique ;
-    rdfs:label "DFT-1030: Data read from unmanaged NAND"@en ;
+    rdfs:label "DFT-1030: Read data from unmanaged NAND"@en ;
+    solveit-core:techniqueDetails "Data read in this way will need decoding to be made accessible, e.g. via DFT-1029" ;
     solveit-core:techniqueID "DFT-1030" ;
-    solveit-core:techniqueName "Data read from unmanaged NAND" .
+    solveit-core:techniqueName "Read data from unmanaged NAND" .
 
 :techniqueDFT-1031 a solveit-core:Technique ;
-    rdfs:label "DFT-1031: Key recovery from memory"@en ;
+    rdfs:label "DFT-1031: Recover encryption/decryption key from memory"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DecryptionKey"^^xsd:anyURI ;
     solveit-core:hasExample "Bulk Extractor - of the many scanners within bulk extractor, one of which attempts to locate AES keys.",
         "Volatility - the plug in ‘trucryptmaster’ attempts to recover Truecrypt 7.1a master keys." ;
@@ -2079,24 +2110,25 @@
         :citationDFCite-1056 ;
     solveit-core:techniqueDescription "This describes the technique whereby an attempt is made to extract key material from memory, or a memory acquisition of a running system to fascinate the decryption of some data " ;
     solveit-core:techniqueID "DFT-1031" ;
-    solveit-core:techniqueName "Key recovery from memory" .
+    solveit-core:techniqueName "Recover encryption/decryption key from memory" .
 
 :techniqueDFT-1032 a solveit-core:Technique ;
-    rdfs:label "DFT-1032: Obtain encryption key information using side channel attacks"@en ;
+    rdfs:label "DFT-1032: Recover encryption/decryption key information using side channel attacks"@en ;
     solveit-core:techniqueID "DFT-1032" ;
-    solveit-core:techniqueName "Obtain encryption key information using side channel attacks" .
+    solveit-core:techniqueName "Recover encryption/decryption key information using side channel attacks" .
 
 :techniqueDFT-1036 a solveit-core:Technique ;
-    rdfs:label "DFT-1036: Smudge attack"@en ;
+    rdfs:label "DFT-1036: Recover information about a potential device PIN or pattern lock using a smudge attack"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/UnlockPattern"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1036" ;
-    solveit-core:techniqueName "Smudge attack" .
+    solveit-core:techniqueName "Recover information about a potential device PIN or pattern lock using a smudge attack" .
 
 :techniqueDFT-1038 a solveit-core:Technique ;
-    rdfs:label "DFT-1038: Rainbow table-based password attack"@en ;
+    rdfs:label "DFT-1038: Attack a stored credential or device using a rainbow table-based approach"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
+    solveit-core:hasSynonym "rainbow table attack" ;
     solveit-core:techniqueID "DFT-1038" ;
-    solveit-core:techniqueName "Rainbow table-based password attack" .
+    solveit-core:techniqueName "Attack a stored credential or device using a rainbow table-based approach" .
 
 :techniqueDFT-1039 a solveit-core:Technique ;
     rdfs:label "DFT-1039: Downgrade apps to facilitate data extraction"@en ;
@@ -2107,12 +2139,12 @@
     solveit-core:techniqueName "Downgrade apps to facilitate data extraction" .
 
 :techniqueDFT-1041 a solveit-core:Technique ;
-    rdfs:label "DFT-1041: Pin2Pwn"@en ;
+    rdfs:label "DFT-1041: Gain access to a device via a Pin2Pwn approach"@en ;
     solveit-core:techniqueID "DFT-1041" ;
-    solveit-core:techniqueName "Pin2Pwn" .
+    solveit-core:techniqueName "Gain access to a device via a Pin2Pwn approach" .
 
 :techniqueDFT-1043 a solveit-core:Technique ;
-    rdfs:label "DFT-1043: Access forensic image content (bitstream)"@en ;
+    rdfs:label "DFT-1043: Read bitstream from forensic image container file(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI ;
     solveit-core:hasExample "Advanced Forensic Format (AFF)",
@@ -2121,15 +2153,18 @@
         :weaknessDFW-1122,
         :weaknessDFW-1123,
         :weaknessDFW-1259 ;
-    solveit-core:hasSynonym "Read forensic format",
+    solveit-core:hasSynonym "Access forensic image",
+        "Access forensic image content",
+        "Decode forensic image bitstream",
+        "Read forensic format",
         "Read forensic image" ;
     solveit-core:techniqueDescription "The decoding of a forensic format such as EWF such that the raw sectors can be accessed by a forensic tool (typically performed on-the-fly internally in a tool.)" ;
     solveit-core:techniqueDetails "For example a EWF (Expert Witness Format) needs to be processed to expose the equivalent RAW image sectors." ;
     solveit-core:techniqueID "DFT-1043" ;
-    solveit-core:techniqueName "Access forensic image content (bitstream)" .
+    solveit-core:techniqueName "Read bitstream from forensic image container file(s)" .
 
 :techniqueDFT-1044 a solveit-core:Technique ;
-    rdfs:label "DFT-1044: Mobile backup decoding"@en ;
+    rdfs:label "DFT-1044: Decode data stored in a mobile backup format"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasExample "adb backup decoding",
@@ -2142,43 +2177,50 @@
         :weaknessDFW-1051 ;
     solveit-core:techniqueDescription "Processing an extracted mobile device backup to access the files contained within." ;
     solveit-core:techniqueID "DFT-1044" ;
-    solveit-core:techniqueName "Mobile backup decoding" .
+    solveit-core:techniqueName "Decode data stored in a mobile backup format" .
 
 :techniqueDFT-1045 a solveit-core:Technique ;
-    rdfs:label "DFT-1045: Decode standard archive format"@en ;
+    rdfs:label "DFT-1045: Read contents from standard archive file(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1185 ;
     solveit-core:techniqueDescription "Extract files from a common archive format e.g. TAR, RAR, ZIP" ;
     solveit-core:techniqueID "DFT-1045" ;
-    solveit-core:techniqueName "Decode standard archive format" .
+    solveit-core:techniqueName "Read contents from standard archive file(s)" .
 
 :techniqueDFT-1046 a solveit-core:Technique ;
-    rdfs:label "DFT-1046: Privileged material protection"@en ;
+    rdfs:label "DFT-1046: Redact digital forensic tool results to protect privileged material"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RedactedArtifactSet"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/RedactedFileSet"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1046" ;
-    solveit-core:techniqueName "Privileged material protection" .
+    solveit-core:techniqueName "Redact digital forensic tool results to protect privileged material" .
 
 :techniqueDFT-1047 a solveit-core:Technique ;
-    rdfs:label "DFT-1047: Hash matching (reduce)"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RedactedFileSet"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/analysis/classification"^^xsd:anyURI ;
+    rdfs:label "DFT-1047: Filter files using a hashset to reduce files examined"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/HashSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RedactedFileSet"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1132 ;
+    solveit-core:hasSynonym "hash matching (reduce)" ;
+    solveit-core:techniqueDescription "After hashing a set of files, compare the hashes against a known hashset to identify and remove known files from further examination." ;
     solveit-core:techniqueID "DFT-1047" ;
-    solveit-core:techniqueName "Hash matching (reduce)" .
+    solveit-core:techniqueName "Filter files using a hashset to reduce files examined" .
 
 :techniqueDFT-1048 a solveit-core:Technique ;
-    rdfs:label "DFT-1048: Privacy protection via partial processing"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RedactedArtifactSet"^^xsd:anyURI ;
+    rdfs:label "DFT-1048: Protect privacy by only partially processing data from a source"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RedactedArtifactSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/RedactedFileSet"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1037 ;
     solveit-core:techniqueDescription "Limiting the scope of file processing based on type, date or other criteria to protect privacy." ;
-    solveit-core:techniqueDetails "The files may still be present in the data set or removed, or made in accessible but the core of the technique to to provide a limited set of artifacts, compared with full processing." ;
+    solveit-core:techniqueDetails "The files may still be present in the data set or removed, or made inaccessible, but the core of the technique is to provide a limited set of artifacts, compared with full processing." ;
     solveit-core:techniqueID "DFT-1048" ;
-    solveit-core:techniqueName "Privacy protection via partial processing" .
+    solveit-core:techniqueName "Protect privacy by only partially processing data from a source" .
 
 :techniqueDFT-1049 a solveit-core:Technique ;
-    rdfs:label "DFT-1049: Keyword searching"@en ;
+    rdfs:label "DFT-1049: Keyword search"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1053,
         :weaknessDFW-1058,
@@ -2198,27 +2240,30 @@
     solveit-core:techniqueDescription "This technique involves searching data in the case for specific strings" ;
     solveit-core:techniqueDetails "This search may be conducted live, directly over the data, or from a generated index of strings extracted from the data. The words searched for may be either case-specific, or sometimes case-type specific." ;
     solveit-core:techniqueID "DFT-1049" ;
-    solveit-core:techniqueName "Keyword searching" .
+    solveit-core:techniqueName "Keyword search" .
 
 :techniqueDFT-1050 a solveit-core:Technique ;
-    rdfs:label "DFT-1050: Hash matching (locate)"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/classification"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
+    rdfs:label "DFT-1050: Locate relevant files using a hashset to identify files of interest"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/HashSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1132 ;
+    solveit-core:hasSynonym "Hash matching (locate)" ;
     solveit-core:techniqueID "DFT-1050" ;
-    solveit-core:techniqueName "Hash matching (locate)" .
+    solveit-core:techniqueName "Locate relevant files using a hashset to identify files of interest" .
 
 :techniqueDFT-1051 a solveit-core:Technique ;
-    rdfs:label "DFT-1051: Fuzzy hash matching"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/classification"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
+    rdfs:label "DFT-1051: Locate potentially relevant files using fuzzy hash matching"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1051" ;
-    solveit-core:techniqueName "Fuzzy hash matching" .
+    solveit-core:techniqueName "Locate potentially relevant files using fuzzy hash matching" .
 
 :techniqueDFT-1052 a solveit-core:Technique ;
-    rdfs:label "DFT-1052: Timeline generation"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI,
-        "https://ontology.solveit-df.org/solveit/observable/TimelineEntry"^^xsd:anyURI ;
+    rdfs:label "DFT-1052: Generate timeline"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
     solveit-core:hasExample "plaso" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1144,
         :weaknessDFW-1145,
@@ -2229,43 +2274,57 @@
     solveit-core:hasReference :citationDFCite-1039,
         :citationDFCite-1058 ;
     solveit-core:hasSubtechnique :techniqueDFT-1153 ;
-    solveit-core:hasSynonym "timelining" ;
+    solveit-core:hasSynonym "timeline generation",
+        "timelining" ;
     solveit-core:techniqueDescription "The extraction and normalisation of timestamps from a data source into a set of timeline entries" ;
     solveit-core:techniqueID "DFT-1052" ;
-    solveit-core:techniqueName "Timeline generation" .
+    solveit-core:techniqueName "Generate timeline" .
 
 :techniqueDFT-1053 a solveit-core:Technique ;
-    rdfs:label "DFT-1053: Entity extraction"@en ;
+    rdfs:label "DFT-1053: Extract 'entities' from a data source"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI ;
+    solveit-core:hasExample "bulk extractor" ;
+    solveit-core:hasSynonym "entity extraction" ;
+    solveit-core:techniqueDescription "Extracting common types of entity in a data source e.g. email addresses, IP addresses, domain names, URLs, credit card numbers, etc." ;
     solveit-core:techniqueID "DFT-1053" ;
-    solveit-core:techniqueName "Entity extraction" .
+    solveit-core:techniqueName "Extract 'entities' from a data source" .
 
 :techniqueDFT-1054 a solveit-core:Technique ;
-    rdfs:label "DFT-1054: Manual content review for relevant material"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/path"^^xsd:anyURI ;
+    rdfs:label "DFT-1054: Review artifacts or content manually for relevant material"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1060,
         :weaknessDFW-1061,
         :weaknessDFW-1062 ;
     solveit-core:techniqueDescription "Manual examination of files or artifacts to determine their relevance to the investigation." ;
-    solveit-core:techniqueDetails "The result of this process is a classification, which may be 'relevant', or could be more specific, e.g. 'contains reference to x'. This technique is likely paired with T1091 (Bookmark artifacts) but they could be recorded in other ways. This manual review could be of the content of files (T1058), or of content extracted from within files e.g. images (T1081), video (T1080), or audio (T1079)." ;
+    solveit-core:techniqueDetails "The result of this process is a classification, which may be 'relevant', or could be more specific, e.g. 'contains reference to x'. This technique is likely paired with T1091 (Bookmark artifacts) but they could be recorded in other ways. This manual review could be of the content of files (DFT-1058), or of content extracted from within files e.g. images (DFT-1081), video (DFT-1080), or audio (DFT-1079)." ;
     solveit-core:techniqueID "DFT-1054" ;
-    solveit-core:techniqueName "Manual content review for relevant material" .
+    solveit-core:techniqueName "Review artifacts or content manually for relevant material" .
 
 :techniqueDFT-1055 a solveit-core:Technique ;
-    rdfs:label "DFT-1055: File system content inspection"@en ;
+    rdfs:label "DFT-1055: Examine file and folder structure"@en ;
+    solveit-core:hasSynonym "Directory structure review" ;
+    solveit-core:techniqueDescription "The process of examining the directory hierarchy, file and folder names (rather than file contents) to identify potentially relevant material." ;
     solveit-core:techniqueID "DFT-1055" ;
-    solveit-core:techniqueName "File system content inspection" .
+    solveit-core:techniqueName "Examine file and folder structure" .
 
 :techniqueDFT-1056 a solveit-core:Technique ;
-    rdfs:label "DFT-1056: Entity connection enumeration"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/ObservableRelationship"^^xsd:anyURI ;
+    rdfs:label "DFT-1056: Enumerate connections between artifacts"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/ObservableRelationship"^^xsd:anyURI ;
+    solveit-core:hasExample "AXIOM Connections feature" ;
+    solveit-core:techniqueDescription "Finds references between artifacts, such as operating system artifacts that refer to a specific file" ;
     solveit-core:techniqueID "DFT-1056" ;
-    solveit-core:techniqueName "Entity connection enumeration" .
+    solveit-core:techniqueName "Enumerate connections between artifacts" .
 
 :techniqueDFT-1057 a solveit-core:Technique ;
     rdfs:label "DFT-1057: Search for indicators of steganography"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/path"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/AcquiredData"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1082 ;
     solveit-core:techniqueDescription "Searching for the presence of current or historical steganography software on a system" ;
     solveit-core:techniqueID "DFT-1057" ;
@@ -2273,8 +2332,8 @@
 
 :techniqueDFT-1058 a solveit-core:Technique ;
     rdfs:label "DFT-1058: Search for mismatched file extensions"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/extension"^^xsd:anyURI,
-        "https://ontology.unifiedcyberontology.org/uco/observable/filePath"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1007 ;
     solveit-core:techniqueDescription "Checking the content of a file against its file extension to identify mismatches." ;
     solveit-core:techniqueDetails "This results in a file path of an identified file, but also highlights the extension that the file has, and the file extension(s) that are expected" ;
@@ -2350,13 +2409,13 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:techniqueName "Recover non-allocated files" .
 
 :techniqueDFT-1062 a solveit-core:Technique ;
-    rdfs:label "DFT-1062: Decryption of encrypted file systems/volumes"@en ;
+    rdfs:label "DFT-1062: Decrypt encrypted file systems/volumes"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Volume"^^xsd:anyURI ;
     solveit-core:techniqueDescription "The process of decrypting an encrypted file system/volume to make its contents accessible for analysis." ;
     solveit-core:techniqueDetails "The output of this process will vary depending on the encryption implementation in place. If encryption is at the sector level then it would result in a decrypted forensic image, but if it uses file-based encryption then the process would result in an equivalent volume but with the file content/metadata decrypted." ;
     solveit-core:techniqueID "DFT-1062" ;
-    solveit-core:techniqueName "Decryption of encrypted file systems/volumes" .
+    solveit-core:techniqueName "Decrypt encrypted file systems/volumes" .
 
 :techniqueDFT-1063 a solveit-core:Technique ;
     rdfs:label "DFT-1063: Identify file types"@en ;
@@ -2373,7 +2432,7 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:techniqueName "Identify file types" .
 
 :techniqueDFT-1064 a solveit-core:Technique ;
-    rdfs:label "DFT-1064: File carving"@en ;
+    rdfs:label "DFT-1064: Carve non-allocated files"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/rangeOffset"^^xsd:anyURI,
@@ -2388,13 +2447,14 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
         :weaknessDFW-1107 ;
     solveit-core:hasReference :citationDFCite-1011,
         :citationDFCite-1048 ;
+    solveit-core:hasSynonym "file carving" ;
     solveit-core:techniqueDescription "The process of recovering files from non-allocated space using only the structural properties of files." ;
     solveit-core:techniqueDetails "File carving should result in not just the file content, but the offset in which it was found and the offset base (i.e. the disk, volume, or offset within another file). This approach uses internal files structural information only - if residual file system metadata is used then the complementary technique T1150 is more applicable." ;
     solveit-core:techniqueID "DFT-1064" ;
-    solveit-core:techniqueName "File carving" .
+    solveit-core:techniqueName "Carve non-allocated files" .
 
 :techniqueDFT-1065 a solveit-core:Technique ;
-    rdfs:label "DFT-1065: Content indexer examination (OS)"@en ;
+    rdfs:label "DFT-1065: Extract artifacts from operating system-level content indexer(s)"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/fileName"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/filePath"^^xsd:anyURI ;
     solveit-core:hasExample "Spotlight",
@@ -2402,33 +2462,42 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
         "Zeitgeist" ;
     solveit-core:hasReference :citationDFCite-1100,
         :citationDFCite-1122 ;
+    solveit-core:hasSynonym "OS search database examination",
+        "operating system search database examination" ;
     solveit-core:techniqueDescription "Examine information from operating system artifacts relating to content indexing and search capabilities e.g. Windows Desktop Search" ;
     solveit-core:techniqueDetails "For example the Windows Search database '...contains vast amount of values about various of artifacts found on a Windows system, e.g. files and directories, emails, appointments, attachments, images, audio and video' (Metz 2011)" ;
     solveit-core:techniqueID "DFT-1065" ;
-    solveit-core:techniqueName "Content indexer examination (OS)" .
+    solveit-core:techniqueName "Extract artifacts from operating system-level content indexer(s)" .
 
 :techniqueDFT-1066 a solveit-core:Technique ;
-    rdfs:label "DFT-1066: Log file examination (OS)"@en ;
+    rdfs:label "DFT-1066: Extract artifacts from operating system log files"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/EventLog"^^xsd:anyURI ;
+    solveit-core:hasExample "Windows Event Logs" ;
+    solveit-core:hasSynonym "event log examination" ;
     solveit-core:techniqueID "DFT-1066" ;
-    solveit-core:techniqueName "Log file examination (OS)" .
+    solveit-core:techniqueName "Extract artifacts from operating system log files" .
 
 :techniqueDFT-1067 a solveit-core:Technique ;
-    rdfs:label "DFT-1067: Cloud synchronisation feature examination (OS)"@en ;
+    rdfs:label "DFT-1067: Extract artifacts from operating system cloud synchronization features"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasExample "OneDrive",
+        "iCloud Drive" ;
+    solveit-core:techniqueDescription "Focuses on operating system level cloud syncronization features, such as iCloud Drive and OneDrive, which may be used to synchronize files between a local system and a cloud service." ;
     solveit-core:techniqueID "DFT-1067" ;
-    solveit-core:techniqueName "Cloud synchronisation feature examination (OS)" .
+    solveit-core:techniqueName "Extract artifacts from operating system cloud synchronization features" .
 
 :techniqueDFT-1068 a solveit-core:Technique ;
-    rdfs:label "DFT-1068: Recently used file identification (OS)"@en ;
+    rdfs:label "DFT-1068: Extract operating system artifacts indicating recently used files"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/filePath"^^xsd:anyURI ;
     solveit-core:techniqueDescription "The process of examining operating system files to extract artifacts that may indicate file accesses." ;
     solveit-core:techniqueDetails "While this technique may result in file paths and timestamps, to evaluate a hypothesis that a file was accessed requires use of T1155 to evaluate if this access occurred, and optionally T1117 if the time of access is relevant." ;
     solveit-core:techniqueID "DFT-1068" ;
-    solveit-core:techniqueName "Recently used file identification (OS)" .
+    solveit-core:techniqueName "Extract operating system artifacts indicating recently used files" .
 
 :techniqueDFT-1069 a solveit-core:Technique ;
-    rdfs:label "DFT-1069: Browser examination"@en ;
+    rdfs:label "DFT-1069: Extract artifacts from a web browser"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BrowserAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/BrowserBookmark"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/BrowserCookie"^^xsd:anyURI,
@@ -2456,19 +2525,19 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:techniqueDescription "Recovery of information left from web browsing activity (derived from Oh et al (2011))" ;
     solveit-core:techniqueDetails "This may involve: history, cached items, bookmarks, cookies, saved passwords, form data." ;
     solveit-core:techniqueID "DFT-1069" ;
-    solveit-core:techniqueName "Browser examination" .
+    solveit-core:techniqueName "Extract artifacts from a web browser" .
 
 :techniqueDFT-1070 a solveit-core:Technique ;
-    rdfs:label "DFT-1070: Email examination"@en ;
+    rdfs:label "DFT-1070: Extract artifacts from email client(s) or webmail access"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/EmailAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/EmailAccount"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/EmailMessage"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1070" ;
-    solveit-core:techniqueName "Email examination" .
+    solveit-core:techniqueName "Extract artifacts from email client(s) or webmail access" .
 
 :techniqueDFT-1071 a solveit-core:Technique ;
-    rdfs:label "DFT-1071: SQLite database examination"@en ;
+    rdfs:label "DFT-1071: Extract data from SQLite database(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/SQLiteDatabase"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/SQLiteTable"^^xsd:anyURI ;
     solveit-core:hasExample "sqlite-forensic-corpus (2018), https://faui1-files.cs.fau.de/public/sqlite-forensic-corpus/" ;
@@ -2482,10 +2551,10 @@ Partitions can also be deleted but may be recoverable if the start sectors of th
     solveit-core:hasSynonym "database forensics" ;
     solveit-core:techniqueDescription "Examination of a SQLite database file(s) to extract information from within." ;
     solveit-core:techniqueID "DFT-1071" ;
-    solveit-core:techniqueName "SQLite database examination" .
+    solveit-core:techniqueName "Extract data from SQLite database(s)" .
 
 :techniqueDFT-1072 a solveit-core:Technique ;
-    rdfs:label "DFT-1072: Chat app examination"@en ;
+    rdfs:label "DFT-1072: Extract artifacts from chat app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ChatAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI,
@@ -2519,34 +2588,34 @@ Signal
 Facebook Messenger
 …""" ;
     solveit-core:techniqueID "DFT-1072" ;
-    solveit-core:techniqueName "Chat app examination" .
+    solveit-core:techniqueName "Extract artifacts from chat app(s)" .
 
 :techniqueDFT-1073 a solveit-core:Technique ;
-    rdfs:label "DFT-1073: Calendar app examination"@en ;
+    rdfs:label "DFT-1073: Extract artifacts from calendar app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/CalendarAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Calendar"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/CalendarEntry"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1073" ;
-    solveit-core:techniqueName "Calendar app examination" .
+    solveit-core:techniqueName "Extract artifacts from calendar app(s)" .
 
 :techniqueDFT-1074 a solveit-core:Technique ;
-    rdfs:label "DFT-1074: Social network app examination"@en ;
+    rdfs:label "DFT-1074: Extract artifacts from social network app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/SocialMediaAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Post"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1074" ;
-    solveit-core:techniqueName "Social network app examination" .
+    solveit-core:techniqueName "Extract artifacts from social network app(s)" .
 
 :techniqueDFT-1075 a solveit-core:Technique ;
-    rdfs:label "DFT-1075: Maps/travel app examination"@en ;
+    rdfs:label "DFT-1075: Extract artifacts from maps/travel app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/MapsAppFiles"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/NavigationAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1075" ;
-    solveit-core:techniqueName "Maps/travel app examination" .
+    solveit-core:techniqueName "Extract artifacts from maps/travel app(s)" .
 
 :techniqueDFT-1076 a solveit-core:Technique ;
-    rdfs:label "DFT-1076: Log file examination"@en ;
+    rdfs:label "DFT-1076: Extract artifacts from log files"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/eventType"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/EventLog"^^xsd:anyURI ;
     solveit-core:hasExample "Examination of setupapi.dev.log",
@@ -2563,57 +2632,70 @@ Facebook Messenger
     solveit-core:techniqueDescription "Examination of a file that was designed for incremental logging from a piece of software (e.g. an application or operating system feature)" ;
     solveit-core:techniqueDetails "These could be in a variety of formats e.g. plain text, JSON, XML, binary, etc." ;
     solveit-core:techniqueID "DFT-1076" ;
-    solveit-core:techniqueName "Log file examination" .
+    solveit-core:techniqueName "Extract artifacts from log files" .
 
 :techniqueDFT-1077 a solveit-core:Technique ;
-    rdfs:label "DFT-1077: Photos app examination"@en ;
+    rdfs:label "DFT-1077: Extract artifacts from photo management app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/PhotosAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1077" ;
-    solveit-core:techniqueName "Photos app examination" .
+    solveit-core:techniqueName "Extract artifacts from photo management app(s)" .
 
 :techniqueDFT-1078 a solveit-core:Technique ;
-    rdfs:label "DFT-1078: Cloud sync app examination"@en ;
+    rdfs:label "DFT-1078: Extract artifacts from cloud synchronization app(s)"@en ;
+    solveit-core:hasExample "Dropbox",
+        "Google Drive" ;
+    solveit-core:techniqueDescription "Involves examination of cloud synchronization artifacts from apps rather than those built into the operating system." ;
     solveit-core:techniqueID "DFT-1078" ;
-    solveit-core:techniqueName "Cloud sync app examination" .
+    solveit-core:techniqueName "Extract artifacts from cloud synchronization app(s)" .
 
 :techniqueDFT-1079 a solveit-core:Technique ;
-    rdfs:label "DFT-1079: Audio content analysis"@en ;
+    rdfs:label "DFT-1079: Examine audio content"@en ;
     solveit-core:techniqueID "DFT-1079" ;
-    solveit-core:techniqueName "Audio content analysis" .
+    solveit-core:techniqueName "Examine audio content" .
 
 :techniqueDFT-1080 a solveit-core:Technique ;
-    rdfs:label "DFT-1080: Video content analysis"@en ;
+    rdfs:label "DFT-1080: Examine video content"@en ;
     solveit-core:hasSubtechnique :techniqueDFT-1106 ;
     solveit-core:techniqueID "DFT-1080" ;
-    solveit-core:techniqueName "Video content analysis" .
+    solveit-core:techniqueName "Examine video content" .
 
 :techniqueDFT-1081 a solveit-core:Technique ;
-    rdfs:label "DFT-1081: Image content analysis"@en ;
+    rdfs:label "DFT-1081: Examine image/picture content"@en ;
+    solveit-core:hasSubtechnique :techniqueDFT-1176 ;
     solveit-core:techniqueID "DFT-1081" ;
-    solveit-core:techniqueName "Image content analysis" .
+    solveit-core:techniqueName "Examine image/picture content" .
 
 :techniqueDFT-1082 a solveit-core:Technique ;
-    rdfs:label "DFT-1082: Document content analysis"@en ;
+    rdfs:label "DFT-1082: Examine document content"@en ;
+    solveit-core:hasExample "Microsoft Word",
+        "Pages" ;
     solveit-core:techniqueID "DFT-1082" ;
-    solveit-core:techniqueName "Document content analysis" .
+    solveit-core:techniqueName "Examine document content" .
 
 :techniqueDFT-1083 a solveit-core:Technique ;
-    rdfs:label "DFT-1083: Memory examination (OS-level)"@en ;
+    rdfs:label "DFT-1083: Extract artifacts from operating system memory structures"@en ;
+    solveit-core:hasExample "EPROCESS blocks",
+        "VAD trees" ;
+    solveit-core:techniqueDescription "Examination of the operating system structures that allows individual processes to be listed and pages used by specific processes to be enumerated." ;
     solveit-core:techniqueID "DFT-1083" ;
-    solveit-core:techniqueName "Memory examination (OS-level)" .
+    solveit-core:techniqueName "Extract artifacts from operating system memory structures" .
 
 :techniqueDFT-1084 a solveit-core:Technique ;
-    rdfs:label "DFT-1084: Extraction of user accounts"@en ;
+    rdfs:label "DFT-1084: Extract potentially user-identifying content from account information"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/UserAccount"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/identity/Person"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "Analysis of user account information to extract content that may help identify the person associated with an account, such as usernames, real names, password hints, security questions, recovery email addresses, and profile details." ;
     solveit-core:techniqueID "DFT-1084" ;
-    solveit-core:techniqueName "Extraction of user accounts" .
+    solveit-core:techniqueName "Extract potentially user-identifying content from account information" .
 
 :techniqueDFT-1085 a solveit-core:Technique ;
-    rdfs:label "DFT-1085: Identify conflation"@en ;
+    rdfs:label "DFT-1085: Conflate specific account identifiers to a single user identity"@en ;
     solveit-core:techniqueID "DFT-1085" ;
-    solveit-core:techniqueName "Identify conflation" .
+    solveit-core:techniqueName "Conflate specific account identifiers to a single user identity" .
 
 :techniqueDFT-1086 a solveit-core:Technique ;
-    rdfs:label "DFT-1086: Timeline analysis"@en ;
+    rdfs:label "DFT-1086: Analyze timeline"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/TimelineEntry"^^xsd:anyURI ;
     solveit-core:hasExample "PyDFT (Hargreaves & Patterson 2012)",
@@ -2627,54 +2709,61 @@ Facebook Messenger
     solveit-core:hasSubtechnique :techniqueDFT-1134,
         :techniqueDFT-1182,
         :techniqueDFT-1184 ;
-    solveit-core:hasSynonym "Temporal Analysis" ;
+    solveit-core:hasSynonym "Temporal analysis",
+        "Timeline analysis" ;
     solveit-core:techniqueDescription "The process of searching, filtering, sorting, highlighting, or aggregating timeline entries to determine which are relevant for event reconstruction, or to identify times of interest (adapted from Breitinger et al. 2025)" ;
     solveit-core:techniqueDetails "This can involve refinement approaches such as: filtering irrelevant entries, highlighting key entries, or aggregating entries into more meaningful events. This may result in a filtered timeline, or a set of highlighted timeline entries" ;
     solveit-core:techniqueID "DFT-1086" ;
-    solveit-core:techniqueName "Timeline analysis" .
+    solveit-core:techniqueName "Analyze timeline" .
 
 :techniqueDFT-1087 a solveit-core:Technique ;
-    rdfs:label "DFT-1087: Location-based event reconstruction"@en ;
+    rdfs:label "DFT-1087: Reconstruct the location-based properties of an event"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/location/Location"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1146 ;
     solveit-core:techniqueDescription "The process of assigning location properties to a reconstructed event" ;
     solveit-core:techniqueID "DFT-1087" ;
-    solveit-core:techniqueName "Location-based event reconstruction" .
+    solveit-core:techniqueName "Reconstruct the location-based properties of an event" .
 
 :techniqueDFT-1088 a solveit-core:Technique ;
-    rdfs:label "DFT-1088: Relational-based event reconstruction"@en ;
+    rdfs:label "DFT-1088: Reconstruct an relations between events properties of events"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedCommunication"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1029 ;
     solveit-core:hasSynonym "Connection-based event reconstruction",
+        "Relation-based event reconstruction",
         "Relational analysis" ;
     solveit-core:techniqueDescription "The process of determining the existence and nature of relationships between entities during event reconstruction" ;
     solveit-core:techniqueID "DFT-1088" ;
-    solveit-core:techniqueName "Relational-based event reconstruction" .
+    solveit-core:techniqueName "Reconstruct an relations between events properties of events" .
 
 :techniqueDFT-1089 a solveit-core:Technique ;
-    rdfs:label "DFT-1089: Source code review"@en ;
+    rdfs:label "DFT-1089: Review source code of software"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Code"^^xsd:anyURI ;
+    solveit-core:techniqueDescription "Typically to  understand it's capabilities, the artifacts it produces, or what user actions could be potentially reconstructed" ;
+    solveit-core:techniqueDetails "The equivalent of `static analysis` of malware, but applied to software in general." ;
     solveit-core:techniqueID "DFT-1089" ;
-    solveit-core:techniqueName "Source code review" .
+    solveit-core:techniqueName "Review source code of software" .
 
 :techniqueDFT-1091 a solveit-core:Technique ;
-    rdfs:label "DFT-1091: Bookmark artifacts"@en ;
+    rdfs:label "DFT-1091: Tag artifacts"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/core/Annotation"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1155,
         :weaknessDFW-1156 ;
-    solveit-core:hasSynonym "Bookmarking",
+    solveit-core:hasSynonym "Bookmark artifacts",
+        "Bookmarking",
         "Tagging" ;
     solveit-core:techniqueDescription "Make a record of selected files or pieces of data so they can be accessed easily, or used for generating automated reports." ;
     solveit-core:techniqueID "DFT-1091" ;
-    solveit-core:techniqueName "Bookmark artifacts" .
+    solveit-core:techniqueName "Tag artifacts" .
 
 :techniqueDFT-1092 a solveit-core:Technique ;
-    rdfs:label "DFT-1092: Produce tag-based automated report"@en ;
+    rdfs:label "DFT-1092: Generate tag-based automated report"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/ForensicToolTagBasedReport"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1152,
         :weaknessDFW-1153,
@@ -2684,7 +2773,7 @@ Facebook Messenger
     solveit-core:hasSynonym "Produce bookmark-based automated report" ;
     solveit-core:techniqueDescription "Generate a report in PDF, HTML or other format that compiles tagged (or bookmarked) items from a case into a package that can be reviewed." ;
     solveit-core:techniqueID "DFT-1092" ;
-    solveit-core:techniqueName "Produce tag-based automated report" .
+    solveit-core:techniqueName "Generate tag-based automated report" .
 
 :techniqueDFT-1093 a solveit-core:Technique ;
     rdfs:label "DFT-1093: Write expert report"@en ;
@@ -2693,43 +2782,59 @@ Facebook Messenger
     solveit-core:techniqueName "Write expert report" .
 
 :techniqueDFT-1094 a solveit-core:Technique ;
-    rdfs:label "DFT-1094: Disclosure"@en ;
+    rdfs:label "DFT-1094: Disclose investigation material to an authorized legal authority"@en ;
+    solveit-core:hasReference :citationDFCite-1154,
+        :citationDFCite-1155 ;
     solveit-core:techniqueID "DFT-1094" ;
-    solveit-core:techniqueName "Disclosure" .
+    solveit-core:techniqueName "Disclose investigation material to an authorized legal authority" .
 
 :techniqueDFT-1095 a solveit-core:Technique ;
-    rdfs:label "DFT-1095: Instrumentation"@en ;
+    rdfs:label "DFT-1095: Instrument a piece of running software"@en ;
+    solveit-core:hasExample "Fiddler",
+        "Frida",
+        "IDA Pro" ;
+    solveit-core:hasReference :citationDFCite-1156 ;
+    solveit-core:techniqueDescription "This can be done during experiments to help ascertain functionality, or potential forensic artifacts" ;
     solveit-core:techniqueID "DFT-1095" ;
-    solveit-core:techniqueName "Instrumentation" .
+    solveit-core:techniqueName "Instrument a piece of running software" .
 
 :techniqueDFT-1096 a solveit-core:Technique ;
-    rdfs:label "DFT-1096: Run programs identification (OS)"@en ;
+    rdfs:label "DFT-1096: Extract operating system artifacts indicating program execution"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/execProgramHashes"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/execProgramPath"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/timesExecuted"^^xsd:anyURI ;
+    solveit-core:hasSynonym "Programs run identification (OS)" ;
     solveit-core:techniqueDescription "The process of examining operating system files to extract artifacts that may indicate a program has been run." ;
-    solveit-core:techniqueDetails "While this technique may result in executable or script paths and timestamps, to evaluate a hypothesis that a program was run requires use of T1155 to evaluate if this occurred, and optionally T1117 if the time of access is relevant." ;
+    solveit-core:techniqueDetails "While this technique may result in paths to executables/scripts and timestamps, to evaluate a hypothesis that a program was run requires use of T1155 to evaluate if this occurred, and optionally T1117 if the time of access is relevant." ;
     solveit-core:techniqueID "DFT-1096" ;
-    solveit-core:techniqueName "Run programs identification (OS)" .
+    solveit-core:techniqueName "Extract operating system artifacts indicating program execution" .
 
 :techniqueDFT-1097 a solveit-core:Technique ;
-    rdfs:label "DFT-1097: Installed programs identification (OS)"@en ;
+    rdfs:label "DFT-1097: Extract operating system artifacts indicating installed software"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Application"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/ApplicationVersion"^^xsd:anyURI ;
+    solveit-core:hasSynonym "Installed software identification (OS)" ;
     solveit-core:techniqueDescription "Extraction and analysis of information that allows programs installed on an OS to be identified." ;
     solveit-core:techniqueID "DFT-1097" ;
-    solveit-core:techniqueName "Installed programs identification (OS)" .
+    solveit-core:techniqueName "Extract operating system artifacts indicating installed software" .
 
 :techniqueDFT-1098 a solveit-core:Technique ;
-    rdfs:label "DFT-1098: User account analysis (OS)"@en ;
+    rdfs:label "DFT-1098: Enumerate operating system user accounts"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/UserAccount"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/accountType"^^xsd:anyURI ;
-    solveit-core:techniqueDescription "Examination of information related to user account creation and logins" ;
+    solveit-core:hasExample "Windows SAM file" ;
+    solveit-core:hasSynonym "User account analysis (OS)" ;
+    solveit-core:techniqueDescription "Examination of operating system artifacts to determine user accounts" ;
+    solveit-core:techniqueDetails "This might include which accounts exist on the system, when they were created, etc." ;
     solveit-core:techniqueID "DFT-1098" ;
-    solveit-core:techniqueName "User account analysis (OS)" .
+    solveit-core:techniqueName "Enumerate operating system user accounts" .
 
 :techniqueDFT-1100 a solveit-core:Technique ;
     rdfs:label "DFT-1100: Extract metadata from within images"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/RasterPicture"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/exifData"^^xsd:anyURI ;
     solveit-core:hasSynonym "EXIF extraction" ;
     solveit-core:techniqueDescription "The extraction of metadata from within images (pictures). e.g. EXIF, XMP. IPTC, iTXt etc." ;
@@ -2737,24 +2842,29 @@ Facebook Messenger
     solveit-core:techniqueName "Extract metadata from within images" .
 
 :techniqueDFT-1101 a solveit-core:Technique ;
-    rdfs:label "DFT-1101: Cell site survey"@en ;
+    rdfs:label "DFT-1101: Conduct cell site survey"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/location/Location"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1067,
         :citationDFCite-1121 ;
     solveit-core:techniqueDescription "Taking measurements to assess which cells actually provide service at a specific location (adapted from Tart et al 2012)." ;
     solveit-core:techniqueDetails "Can involve: spot sample, location survey, area survey, cell survey (Tart et al 2012)" ;
     solveit-core:techniqueID "DFT-1101" ;
-    solveit-core:techniqueName "Cell site survey" .
+    solveit-core:techniqueName "Conduct cell site survey" .
 
 :techniqueDFT-1102 a solveit-core:Technique ;
-    rdfs:label "DFT-1102: Decode data from image from unmanaged NAND"@en ;
+    rdfs:label "DFT-1102: Decode data extracted from unmanaged NAND"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1102" ;
-    solveit-core:techniqueName "Decode data from image from unmanaged NAND" .
+    solveit-core:techniqueName "Decode data extracted from unmanaged NAND" .
 
 :techniqueDFT-1103 a solveit-core:Technique ;
-    rdfs:label "DFT-1103: Virtualise suspect system for previewing"@en ;
+    rdfs:label "DFT-1103: Virtualize suspect system for previewing"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/RawImage"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/VirtualizedComputer"^^xsd:anyURI ;
     solveit-core:techniqueDescription "A suspect disk image can be configured to boot as a virtual machine, which allows screenshots to be taken showing how the user's desktop looked for example." ;
     solveit-core:techniqueID "DFT-1103" ;
-    solveit-core:techniqueName "Virtualise suspect system for previewing" .
+    solveit-core:techniqueName "Virtualize suspect system for previewing" .
 
 :techniqueDFT-1104 a solveit-core:Technique ;
     rdfs:label "DFT-1104: Collect data using open source intelligence"@en ;
@@ -2762,55 +2872,57 @@ Facebook Messenger
     solveit-core:techniqueName "Collect data using open source intelligence" .
 
 :techniqueDFT-1106 a solveit-core:Technique ;
-    rdfs:label "DFT-1106: Deep fake detection (video)"@en ;
+    rdfs:label "DFT-1106: Classify if a video is potentially synthetically generated"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/VideoFile"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/analysis/classificationConfidence"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1106" ;
-    solveit-core:techniqueName "Deep fake detection (video)" .
+    solveit-core:techniqueName "Classify if a video is potentially synthetically generated" .
 
 :techniqueDFT-1107 a solveit-core:Technique ;
-    rdfs:label "DFT-1107: Health/Fitness app examination"@en ;
+    rdfs:label "DFT-1107: Extract artifacts from health/fitness app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/HealthAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1107" ;
-    solveit-core:techniqueName "Health/Fitness app examination" .
+    solveit-core:techniqueName "Extract artifacts from health/fitness app(s)" .
 
 :techniqueDFT-1108 a solveit-core:Technique ;
-    rdfs:label "DFT-1108: Reminders app examination"@en ;
+    rdfs:label "DFT-1108: Extract artifacts from reminders app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/RemindersAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1108" ;
-    solveit-core:techniqueName "Reminders app examination" .
+    solveit-core:techniqueName "Extract artifacts from reminders app(s)" .
 
 :techniqueDFT-1109 a solveit-core:Technique ;
-    rdfs:label "DFT-1109: Payment app examination"@en ;
+    rdfs:label "DFT-1109: Extract artifacts from payment app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/PaymentAppFiles"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1109" ;
-    solveit-core:techniqueName "Payment app examination" .
+    solveit-core:techniqueName "Extract artifacts from payment app(s)" .
 
 :techniqueDFT-1112 a solveit-core:Technique ;
-    rdfs:label "DFT-1112: Physical disk identification and removal"@en ;
+    rdfs:label "DFT-1112: Locate and remove physical disks from a device"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1174,
         :weaknessDFW-1175,
         :weaknessDFW-1176 ;
-    solveit-core:techniqueDescription "Identifying physical storage media within devices and removing them" ;
+    solveit-core:techniqueDescription "Locate physical storage media within devices and removing them" ;
     solveit-core:techniqueID "DFT-1112" ;
-    solveit-core:techniqueName "Physical disk identification and removal" .
+    solveit-core:techniqueName "Locate and remove physical disks from a device" .
 
 :techniqueDFT-1114 a solveit-core:Technique ;
-    rdfs:label "DFT-1114: Memory Acquisition via Cold Boot Attack"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
+    rdfs:label "DFT-1114: Preserve memory contents via Cold Boot Attack"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Memory"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1032 ;
     solveit-core:hasReference :citationDFCite-1053 ;
     solveit-core:hasSynonym "Cold Boot Attack",
         "Extracting RAM data using Cold Boot Attack" ;
-    solveit-core:techniqueDescription "Extracting volatile memory (RAM) from a powered-off system by quickly rebooting or transferring the memory module to another system before residual data fades. Cooling the memory modules can significantly slow down data decay, preserving critical data such as encryption keys or passwords." ;
-    solveit-core:techniqueDetails "An examiner freezes a computer’s RAM by spraying it with liquid nitrogen or even using inverted canned air, then powering off the live system without proper shutdown, and then booting into an external plugged USB, and try capturing the residual RAM content with encryption keys that might still be stored there" ;
+    solveit-core:techniqueDescription "A precursor to extracting volatile memory (RAM) from a powered-off system by quickly rebooting or transferring the memory module to another system before residual data fades. Cooling the memory modules can significantly slow down data decay, preserving critical data such as encryption keys or passwords." ;
+    solveit-core:techniqueDetails "An examiner freezes a computer’s RAM by spraying it with liquid nitrogen or even using inverted canned air, then powering off the live system without proper shutdown, and then booting into an external plugged USB, and try capturing the residual RAM content (DFT-1003) with encryption keys that might still be stored there" ;
     solveit-core:techniqueID "DFT-1114" ;
-    solveit-core:techniqueName "Memory Acquisition via Cold Boot Attack" .
+    solveit-core:techniqueName "Preserve memory contents via Cold Boot Attack" .
 
 :techniqueDFT-1115 a solveit-core:Technique ;
-    rdfs:label "DFT-1115: Visualisation of geolocation information"@en ;
+    rdfs:label "DFT-1115: Visualize geolocation information"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/location/Location"^^xsd:anyURI ;
     solveit-core:hasExample "Autopsy Geolocation view (Basis Technology 2020)",
         "Magnet Axiom 'World map view' (Magnet 2020)" ;
     solveit-core:hasReference :citationDFCite-1010,
@@ -2818,7 +2930,7 @@ Facebook Messenger
         :citationDFCite-1093 ;
     solveit-core:techniqueDescription "Presenting points or paths visually using extracted data, typically on a map" ;
     solveit-core:techniqueID "DFT-1115" ;
-    solveit-core:techniqueName "Visualisation of geolocation information" .
+    solveit-core:techniqueName "Visualize geolocation information" .
 
 :techniqueDFT-1116 a solveit-core:Technique ;
     rdfs:label "DFT-1116: Extract references to connected devices"@en ;
@@ -2839,7 +2951,7 @@ Facebook Messenger
     solveit-core:techniqueName "Extract references to connected devices" .
 
 :techniqueDFT-1117 a solveit-core:Technique ;
-    rdfs:label "DFT-1117: Time-based event reconstruction"@en ;
+    rdfs:label "DFT-1117: Reconstruct the time that an event may have occurred"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/hypothesisedDateTime"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1148,
         :weaknessDFW-1149,
@@ -2847,7 +2959,7 @@ Facebook Messenger
     solveit-core:hasSynonym "Temporal-based event reconstruction" ;
     solveit-core:techniqueDescription "The process of assigning a time component to a reconstructed event" ;
     solveit-core:techniqueID "DFT-1117" ;
-    solveit-core:techniqueName "Time-based event reconstruction" .
+    solveit-core:techniqueName "Reconstruct the time that an event may have occurred" .
 
 :techniqueDFT-1118 a solveit-core:Technique ;
     rdfs:label "DFT-1118: Locate relevant files by path"@en ;
@@ -2859,12 +2971,12 @@ Facebook Messenger
         :weaknessDFW-1187,
         :weaknessDFW-1188 ;
     solveit-core:hasReference :citationDFCite-1006 ;
-    solveit-core:techniqueDescription "Use the path of file name to determine potential relevance of artefact" ;
+    solveit-core:techniqueDescription "Use the path of file name to determine potential relevance of artifact" ;
     solveit-core:techniqueID "DFT-1118" ;
     solveit-core:techniqueName "Locate relevant files by path" .
 
 :techniqueDFT-1120 a solveit-core:Technique ;
-    rdfs:label "DFT-1120: Automated artifact extraction from app data"@en ;
+    rdfs:label "DFT-1120: Extract artifacts from app data automatically"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ApplicationFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI ;
     solveit-core:hasExample "Axiom",
@@ -2878,10 +2990,10 @@ Facebook Messenger
     solveit-core:techniqueDescription "The use of automation to extract pieces of data that are potentially useful for a digital forensic investigation from app data." ;
     solveit-core:techniqueDetails "Artifacts extracted may be a direct mapping to lower levels of abstraction e.g. a database field 'message content' may map to an artifact 'message content', but in many cases, automated interpretation is applied where a field such as 'flag' containing numeric values, may be mapped to more meaningful text strings in the extracted artifact." ;
     solveit-core:techniqueID "DFT-1120" ;
-    solveit-core:techniqueName "Automated artifact extraction from app data" .
+    solveit-core:techniqueName "Extract artifacts from app data automatically" .
 
 :techniqueDFT-1121 a solveit-core:Technique ;
-    rdfs:label "DFT-1121: Keyword indexing"@en ;
+    rdfs:label "DFT-1121: Index a data source for keyword searching"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/KeywordIndexingConfiguration"^^xsd:anyURI ;
@@ -2891,10 +3003,11 @@ Facebook Messenger
         :weaknessDFW-1056,
         :weaknessDFW-1197,
         :weaknessDFW-1198 ;
+    solveit-core:hasSynonym "keyword indexing" ;
     solveit-core:techniqueDescription "Extracting strings from a data source and adding them to an index for subsequent searching." ;
-    solveit-core:techniqueDetails "An index can be constructed over a set of files (including non-allocated space represented as files), a set of extracted artefacts, or both." ;
+    solveit-core:techniqueDetails "An index can be constructed over a set of files (including non-allocated space represented as files), a set of extracted artifacts, or both." ;
     solveit-core:techniqueID "DFT-1121" ;
-    solveit-core:techniqueName "Keyword indexing" .
+    solveit-core:techniqueName "Index a data source for keyword searching" .
 
 :techniqueDFT-1122 a solveit-core:Technique ;
     rdfs:label "DFT-1122: Keyword search (case-type wordlists)"@en ;
@@ -2967,7 +3080,7 @@ Facebook Messenger
     solveit-core:techniqueName "Search for indicators of artifact wiping" .
 
 :techniqueDFT-1133 a solveit-core:Technique ;
-    rdfs:label "DFT-1133: AI companion app examination"@en ;
+    rdfs:label "DFT-1133: Extract artifacts from AI companion app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/AiChatAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI,
@@ -3012,10 +3125,10 @@ Facebook Messenger
     solveit-core:techniqueDescription "The forensic examination of the artifacts describing the configuration or the interaction with an AI companion app or service." ;
     solveit-core:techniqueDetails "An AI companion is defined as \"a type of generative AI-based conversational agent (CA) explicitly designed for companionship and friendship with a human user (Strohmann et al. 2022; Pentina et al. 2023)\" (Bayor et al 2025)." ;
     solveit-core:techniqueID "DFT-1133" ;
-    solveit-core:techniqueName "AI companion app examination" .
+    solveit-core:techniqueName "Extract artifacts from AI companion app(s)" .
 
 :techniqueDFT-1137 a solveit-core:Technique ;
-    rdfs:label "DFT-1137: Browser history examination"@en ;
+    rdfs:label "DFT-1137: Extract browser history artifacts"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BrowserAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/URLHistory"^^xsd:anyURI ;
     solveit-core:hasExample "History for Chrome",
@@ -3034,60 +3147,60 @@ Facebook Messenger
     solveit-core:techniqueDescription "The examination of the history component of a web browser." ;
     solveit-core:techniqueDetails "Typically this would involve the examination of data in one or more SQLite tables." ;
     solveit-core:techniqueID "DFT-1137" ;
-    solveit-core:techniqueName "Browser history examination" .
+    solveit-core:techniqueName "Extract browser history artifacts" .
 
 :techniqueDFT-1139 a solveit-core:Technique ;
-    rdfs:label "DFT-1139: Browser session examination"@en ;
+    rdfs:label "DFT-1139: Extract browser session artifacts"@en ;
     solveit-core:techniqueDescription "The examination of sessions and open tabs and their individual histories" ;
     solveit-core:techniqueID "DFT-1139" ;
-    solveit-core:techniqueName "Browser session examination" .
+    solveit-core:techniqueName "Extract browser session artifacts" .
 
 :techniqueDFT-1140 a solveit-core:Technique ;
-    rdfs:label "DFT-1140: Browser autofill examination"@en ;
+    rdfs:label "DFT-1140: Extract browser autofill artifacts"@en ;
     solveit-core:techniqueDescription "The examination of data that is stored to autocomplete entries in forms" ;
     solveit-core:techniqueID "DFT-1140" ;
-    solveit-core:techniqueName "Browser autofill examination" .
+    solveit-core:techniqueName "Extract browser autofill artifacts" .
 
 :techniqueDFT-1141 a solveit-core:Technique ;
-    rdfs:label "DFT-1141: Browser bookmarks examination"@en ;
+    rdfs:label "DFT-1141: Extract browser bookmark artifacts"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/BrowserBookmark"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1247 ;
     solveit-core:techniqueDescription "The examination of the links saved within a browser to facilitate quick access" ;
     solveit-core:techniqueID "DFT-1141" ;
-    solveit-core:techniqueName "Browser bookmarks examination" .
+    solveit-core:techniqueName "Extract browser bookmark artifacts" .
 
 :techniqueDFT-1142 a solveit-core:Technique ;
-    rdfs:label "DFT-1142: Browser downloads examination"@en ;
+    rdfs:label "DFT-1142: Extract browser download artifacts"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/URL"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1248 ;
     solveit-core:techniqueDescription "The examination of records of files downloaded with a browser" ;
     solveit-core:techniqueID "DFT-1142" ;
-    solveit-core:techniqueName "Browser downloads examination" .
+    solveit-core:techniqueName "Extract browser download artifacts" .
 
 :techniqueDFT-1145 a solveit-core:Technique ;
-    rdfs:label "DFT-1145: Browser extensions examination"@en ;
+    rdfs:label "DFT-1145: Extract browser extensions artifacts"@en ;
     solveit-core:techniqueDescription "The examination of the extensions installed within a browser" ;
     solveit-core:techniqueID "DFT-1145" ;
-    solveit-core:techniqueName "Browser extensions examination" .
+    solveit-core:techniqueName "Extract browser extensions artifacts" .
 
 :techniqueDFT-1146 a solveit-core:Technique ;
-    rdfs:label "DFT-1146: Browser synchronization feature examination"@en ;
+    rdfs:label "DFT-1146: Extract browser synchronization artifacts"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI ;
     solveit-core:techniqueDescription "The examination of the settings and artifacts resulting from a browser synchronization feature" ;
     solveit-core:techniqueID "DFT-1146" ;
-    solveit-core:techniqueName "Browser synchronization feature examination" .
+    solveit-core:techniqueName "Extract browser synchronization artifacts" .
 
 :techniqueDFT-1147 a solveit-core:Technique ;
-    rdfs:label "DFT-1147: Browser cookie examination"@en ;
+    rdfs:label "DFT-1147: Extract browser cookie artifacts"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/BrowserCookie"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/CookieHistory"^^xsd:anyURI ;
     solveit-core:techniqueDescription "The examination of stored browser cookies" ;
     solveit-core:techniqueID "DFT-1147" ;
-    solveit-core:techniqueName "Browser cookie examination" .
+    solveit-core:techniqueName "Extract browser cookie artifacts" .
 
 :techniqueDFT-1148 a solveit-core:Technique ;
-    rdfs:label "DFT-1148: Browser web storage examination"@en ;
+    rdfs:label "DFT-1148: Extract browser web storage artifacts"@en ;
     solveit-core:hasReference :citationDFCite-1099 ;
     solveit-core:hasSynonym "HTML5 storage examination",
         "browser storage examination",
@@ -3096,10 +3209,10 @@ Facebook Messenger
     solveit-core:techniqueDescription "The examination of " ;
     solveit-core:techniqueDetails "Web storage is a browser-based API bundled in HTML5 specifications that allow persistent client-side storage for web applications. (Mendoza 2015)" ;
     solveit-core:techniqueID "DFT-1148" ;
-    solveit-core:techniqueName "Browser web storage examination" .
+    solveit-core:techniqueName "Extract browser web storage artifacts" .
 
 :techniqueDFT-1149 a solveit-core:Technique ;
-    rdfs:label "DFT-1149: File versioning feature examination"@en ;
+    rdfs:label "DFT-1149: Extract artifacts from the file versioning feature"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/version"^^xsd:anyURI ;
@@ -3116,7 +3229,7 @@ Facebook Messenger
     solveit-core:techniqueDescription "Extraction of data from the versioning system used by an operating system to store older versions of files." ;
     solveit-core:techniqueDetails "Operating systems often maintain versioning systems that preserve older versions of files, either for backup purposes or to enable users to restore previous states. These systems create snapshots or shadow copies at regular intervals or when significant changes occur. Digital forensic examination of these versioning features can reveal files that have been modified or deleted, providing valuable evidence of system activity and user behavior. The examination process involves identifying the versioning mechanism used by the operating system, locating the stored versions, and extracting relevant data for analysis." ;
     solveit-core:techniqueID "DFT-1149" ;
-    solveit-core:techniqueName "File versioning feature examination" .
+    solveit-core:techniqueName "Extract artifacts from the file versioning feature" .
 
 :techniqueDFT-1150 a solveit-core:Technique ;
     rdfs:label "DFT-1150: Recover non-allocated files using residual file metadata"@en ;
@@ -3149,38 +3262,41 @@ Facebook Messenger
     solveit-core:techniqueName "Keyword search (over extracted artifacts)" .
 
 :techniqueDFT-1154 a solveit-core:Technique ;
-    rdfs:label "DFT-1154: Identity-based event reconstruction"@en ;
+    rdfs:label "DFT-1154: Reconstruct an identity associated with an event"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/identity/Person"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1150 ;
     solveit-core:hasReference :citationDFCite-1027,
         :citationDFCite-1119 ;
-    solveit-core:hasSynonym "Resolving the person-account gap,",
+    solveit-core:hasSynonym "Identity-based event reconstruction",
+        "Resolving the person-account gap,",
         "Resolving the person-device gap" ;
     solveit-core:techniqueDescription "The process of attempting to link an identity (account, person etc.) to a reconstructed event" ;
     solveit-core:techniqueID "DFT-1154" ;
-    solveit-core:techniqueName "Identity-based event reconstruction" .
+    solveit-core:techniqueName "Reconstruct an identity associated with an event" .
 
 :techniqueDFT-1155 a solveit-core:Technique ;
-    rdfs:label "DFT-1155: Operation-based event reconstruction"@en ;
+    rdfs:label "DFT-1155: Reconstruct that a specific event may have occurred"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/keywordSearchTerm"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/analysis/HypothesisedWebSearch"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1150 ;
     solveit-core:hasSynonym "Action-based event reconstruction",
-        "Activity-based event reconstruction" ;
+        "Activity-based event reconstruction",
+        "Operation-based event reconstruction" ;
     solveit-core:techniqueDescription "The process of reconstructing that an operation occurred on a digital system" ;
     solveit-core:techniqueDetails """While some event reconstruction needs a time component, there are some questions that are simply explaining what happened, or if something happened. The time component may need to investigated later, or may be learned as a byproduct of reconstructing the event, but isn't intrinsic to the question being asked.
 e.g. Was this file opened? How many times was this file opened? What data has been exfiltrated?""" ;
     solveit-core:techniqueID "DFT-1155" ;
-    solveit-core:techniqueName "Operation-based event reconstruction" .
+    solveit-core:techniqueName "Reconstruct that a specific event may have occurred" .
 
 :techniqueDFT-1156 a solveit-core:Technique ;
-    rdfs:label "DFT-1156: Functional-based event reconstruction"@en ;
+    rdfs:label "DFT-1156: Reconstruct if an event could have functionally occurred on a system given its capabilities"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/configuration/dependencies"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/core/confidence"^^xsd:anyURI ;
+    solveit-core:hasSynonym "Functional-based event reconstruction" ;
     solveit-core:techniqueDescription "Reconstructing the configuration or capabilities of a system at the time of an event" ;
     solveit-core:techniqueDetails """Considering how a system works and what conditions were necessary for an event to be possible, i.e. supporting or refuting if a hypothesis is feasible.
 
@@ -3188,7 +3304,7 @@ This might involve questions such as:
 - is a program or system capable of performing some action
 - how was the program or system configured (to determine if an operation was possible)""" ;
     solveit-core:techniqueID "DFT-1156" ;
-    solveit-core:techniqueName "Functional-based event reconstruction" .
+    solveit-core:techniqueName "Reconstruct if an event could have functionally occurred on a system given its capabilities" .
 
 :techniqueDFT-1157 a solveit-core:Technique ;
     rdfs:label "DFT-1157: Extract device data using exposed service"@en ;
@@ -3242,24 +3358,25 @@ This might involve questions such as:
     solveit-core:techniqueName "Read data from a device via In-System Programming (ISP)" .
 
 :techniqueDFT-1163 a solveit-core:Technique ;
-    rdfs:label "DFT-1163: Automated screenshot-based capture of a mobile device"@en ;
+    rdfs:label "DFT-1163: Capture mobile device screenshots (automatically)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1137,
         :citationDFCite-1138 ;
     solveit-core:techniqueDescription "Programmatically controlling a mobile device while capturing screenshots of the display." ;
+    solveit-core:techniqueDetails "This is the automated version of DFT-1022. The device is controlled programmatically, and screenshots are captured automatically." ;
     solveit-core:techniqueID "DFT-1163" ;
-    solveit-core:techniqueName "Automated screenshot-based capture of a mobile device" .
+    solveit-core:techniqueName "Capture mobile device screenshots (automatically)" .
 
 :techniqueDFT-1164 a solveit-core:Technique ;
-    rdfs:label "DFT-1164: Direct data read from a block device"@en ;
+    rdfs:label "DFT-1164: Read data directly from a block device"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI ;
     solveit-core:techniqueDescription "Rather than imaging a block device, this involves accessing it directly without the expectation of saving block data to a forensic image format." ;
     solveit-core:techniqueDetails "This would typically be followed by processing of the data that is read to then provide a live view of partitions and file systems, and facilitates logical file extraction or any other direct operations on the data." ;
     solveit-core:techniqueID "DFT-1164" ;
-    solveit-core:techniqueName "Direct data read from a block device" .
+    solveit-core:techniqueName "Read data directly from a block device" .
 
 :techniqueDFT-1165 a solveit-core:Technique ;
     rdfs:label "DFT-1165: Extract software configuration information"@en ;
@@ -3330,7 +3447,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:techniqueName "Filter files related to an application" .
 
 :techniqueDFT-1170 a solveit-core:Technique ;
-    rdfs:label "DFT-1170: Decode forensic image format (logical)"@en ;
+    rdfs:label "DFT-1170: Read contents from logical forensic container file(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/LogicalImageContainer"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:hasExample "AD1",
@@ -3343,25 +3460,26 @@ This would include web search URLs such as Google searches but could also includ
         "Read logical image" ;
     solveit-core:techniqueDescription "Decodes logical image formats such as L01, AD1, CTR, or AFF4-L. The output here is not an image file but rather a set of files and their metadata." ;
     solveit-core:techniqueID "DFT-1170" ;
-    solveit-core:techniqueName "Decode forensic image format (logical)" .
+    solveit-core:techniqueName "Read contents from logical forensic container file(s)" .
 
 :techniqueDFT-1171 a solveit-core:Technique ;
-    rdfs:label "DFT-1171: Access file system via live operating system"@en ;
+    rdfs:label "DFT-1171: Access a file system via live operating system"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasSynonym "Access file system via the running operating system" ;
     solveit-core:techniqueDescription "This involves accessing a live system and relying on the operating system's parsing of the file system to access files." ;
     solveit-core:techniqueID "DFT-1171" ;
-    solveit-core:techniqueName "Access file system via live operating system" .
+    solveit-core:techniqueName "Access a file system via live operating system" .
 
 :techniqueDFT-1172 a solveit-core:Technique ;
-    rdfs:label "DFT-1172: Access raw image content"@en ;
+    rdfs:label "DFT-1172: Read bitstream from raw image file(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/RawImage"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"^^xsd:anyURI ;
     solveit-core:hasSynonym "read dd file" ;
     solveit-core:techniqueDescription "This technique reads data from a raw image e.g. a dd image." ;
     solveit-core:techniqueDetails "This provides the 'raw' equivalent of reading data from a forensic image container e.g. EWF. This provides random access to the bitstream so the stored sectors can be processed further." ;
     solveit-core:techniqueID "DFT-1172" ;
-    solveit-core:techniqueName "Access raw image content" .
+    solveit-core:techniqueName "Read bitstream from raw image file(s)" .
 
 :techniqueDFT-1173 a solveit-core:Technique ;
     rdfs:label "DFT-1173: Extract data from captured screenshots"@en ;
@@ -3376,7 +3494,8 @@ This would include web search URLs such as Google searches but could also includ
 :techniqueDFT-1174 a solveit-core:Technique ;
     rdfs:label "DFT-1174: Read evidential files stored directly on local file system"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ADBPullData"^^xsd:anyURI,
-        "https://ontology.solveit-df.org/solveit/observable/AFCExtractionData"^^xsd:anyURI ;
+        "https://ontology.solveit-df.org/solveit/observable/AFCExtractionData"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
     solveit-core:techniqueDescription "Represents reading files that have been acquired or extracted directly to the local file system." ;
     solveit-core:techniqueDetails "For example an ADB pull command against a directory can result in a set of files copied to the local file system. This represents reading those files directly to extract information." ;
@@ -3384,7 +3503,7 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:techniqueName "Read evidential files stored directly on local file system" .
 
 :techniqueDFT-1175 a solveit-core:Technique ;
-    rdfs:label "DFT-1175: Extract data using content queries"@en ;
+    rdfs:label "DFT-1175: Extract data from an Android device using content queries"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/AndroidPhone"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Call"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Contact"^^xsd:anyURI,
@@ -3392,18 +3511,20 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:hasReference :citationDFCite-1047 ;
     solveit-core:techniqueDescription "Use of content queries on Android devices via adb to extract specific pieces of data exposed by content providers." ;
     solveit-core:techniqueID "DFT-1175" ;
-    solveit-core:techniqueName "Extract data using content queries" .
+    solveit-core:techniqueName "Extract data from an Android device using content queries" .
 
 :techniqueDFT-1176 a solveit-core:Technique ;
-    rdfs:label "DFT-1176: Identification of synthetic images"@en ;
+    rdfs:label "DFT-1176: Classify if an image is potentially synthetically generated"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/RasterPicture"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"^^xsd:anyURI ;
     solveit-core:hasSynonym "Deepfake Detection, Synthetic Image Detection, Image Source Attribution, Image Authentication, Image Source Classification" ;
     solveit-core:techniqueDescription "Classification of images with respect to their origin, i.e., whether they are synthetically generated or naturally captured by a camera." ;
     solveit-core:techniqueDetails "An image is analyzed using a method from the subtechniques. The output can be a classifier-predicted score of how many traces of synthetic origin can be found in an image, or extracted traces from the image that aid the analyst in their assessment of the image origin." ;
     solveit-core:techniqueID "DFT-1176" ;
-    solveit-core:techniqueName "Identification of synthetic images" .
+    solveit-core:techniqueName "Classify if an image is potentially synthetically generated" .
 
 :techniqueDFT-1177 a solveit-core:Technique ;
-    rdfs:label "DFT-1177: Examination of a mutiplayer game app"@en ;
+    rdfs:label "DFT-1177: Extract artifacts from multiplayer game app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/GamingAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI,
@@ -3430,10 +3551,10 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:techniqueDescription "Extracting artifacts from multiplayer gaming apps." ;
     solveit-core:techniqueDetails "Multiplayer game apps often offer messaging, contacts/friends, and other features that could contain data that may be relevant to many types of case." ;
     solveit-core:techniqueID "DFT-1177" ;
-    solveit-core:techniqueName "Examination of a mutiplayer game app" .
+    solveit-core:techniqueName "Extract artifacts from multiplayer game app(s)" .
 
 :techniqueDFT-1178 a solveit-core:Technique ;
-    rdfs:label "DFT-1178: Writing bitstream data to a raw image format"@en ;
+    rdfs:label "DFT-1178: Store bitstream data in a raw image format"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Bitstream"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/RawImage"^^xsd:anyURI ;
     solveit-core:hasSynonym "store dd image",
@@ -3441,14 +3562,14 @@ This would include web search URLs such as Google searches but could also includ
     solveit-core:techniqueDescription "Storage of bitstream data recovered from a digital device as raw files." ;
     solveit-core:techniqueDetails "Bitstream data resulting from disk imaging stored in a raw format. The imaged data may be stored as one file or split into several segments. The raw files may also be accompanied by complementary separate metadata files." ;
     solveit-core:techniqueID "DFT-1178" ;
-    solveit-core:techniqueName "Writing bitstream data to a raw image format" .
+    solveit-core:techniqueName "Store bitstream data in a raw image format" .
 
 :techniqueDFT-1179 a solveit-core:Technique ;
-    rdfs:label "DFT-1179: Drone app examination"@en ;
+    rdfs:label "DFT-1179: Extract artifacts from drone/UAV app(s)"@en ;
     solveit-core:hasSynonym "UAV app examination" ;
     solveit-core:techniqueDescription "The examination of a mobile app used to control Unmanned Areial Vehicles (UAVs) or 'drones'." ;
     solveit-core:techniqueID "DFT-1179" ;
-    solveit-core:techniqueName "Drone app examination" .
+    solveit-core:techniqueName "Extract artifacts from drone/UAV app(s)" .
 
 :techniqueDFT-1180 a solveit-core:Technique ;
     rdfs:label "DFT-1180: Extract file(s) from a pre-deletion container"@en ;
@@ -3467,7 +3588,7 @@ This further processing should provide access to the file content but also poten
     solveit-core:techniqueName "Extract file(s) from a pre-deletion container" .
 
 :techniqueDFT-1181 a solveit-core:Technique ;
-    rdfs:label "DFT-1181: Examine smart home app"@en ;
+    rdfs:label "DFT-1181: Extract artifacts from smart home app(s)"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/SmartHomeAppFiles"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/location/Location"^^xsd:anyURI ;
     solveit-core:hasExample "Apple Home",
@@ -3476,10 +3597,10 @@ This further processing should provide access to the file content but also poten
     solveit-core:techniqueDescription "Examine the data stored by an app designed to control, monitor or program smart home capabilities." ;
     solveit-core:techniqueDetails "There are many other components to a smart home system including the devices themselves (possibly different hubs and sensors), plus the online content. This technique focuses on the app." ;
     solveit-core:techniqueID "DFT-1181" ;
-    solveit-core:techniqueName "Examine smart home app" .
+    solveit-core:techniqueName "Extract artifacts from smart home app(s)" .
 
 :techniqueDFT-1182 a solveit-core:Technique ;
-    rdfs:label "DFT-1182: Filter timeline for relevant entries "@en ;
+    rdfs:label "DFT-1182: Filter a timeline for relevant entries"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
     solveit-core:hasExample "Plaso",
@@ -3492,10 +3613,10 @@ This further processing should provide access to the file content but also poten
     solveit-core:techniqueDescription "Provide some criteria that selects only a subset of timeline entries from a set. " ;
     solveit-core:techniqueDetails "Filtering might be on timestamp type, within a defined time range, related to a particular file, or matching against some other content associated with the timestamp entries. " ;
     solveit-core:techniqueID "DFT-1182" ;
-    solveit-core:techniqueName "Filter timeline for relevant entries " .
+    solveit-core:techniqueName "Filter a timeline for relevant entries" .
 
 :techniqueDFT-1184 a solveit-core:Technique ;
-    rdfs:label "DFT-1184: Sort timeline entries chronologically"@en ;
+    rdfs:label "DFT-1184: Sort a timeline so entries are ordered chronologically"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/SortedTimeline"^^xsd:anyURI ;
     solveit-core:hasExample "Plaso",
@@ -3510,10 +3631,10 @@ This further processing should provide access to the file content but also poten
     solveit-core:techniqueDescription "Order a timeline based on the values in the timestamp entry." ;
     solveit-core:techniqueDetails "This may be applied automatically to a generated timeline or may be applied as a separate process. " ;
     solveit-core:techniqueID "DFT-1184" ;
-    solveit-core:techniqueName "Sort timeline entries chronologically" .
+    solveit-core:techniqueName "Sort a timeline so entries are ordered chronologically" .
 
 :techniqueDFT-1185 a solveit-core:Technique ;
-    rdfs:label "DFT-1185: Extract data from OS-level notifications"@en ;
+    rdfs:label "DFT-1185: Extract data from operating system notifications"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/DateTimeStamp"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
@@ -3530,7 +3651,7 @@ This further processing should provide access to the file content but also poten
         "WPN analysis" ;
     solveit-core:techniqueDescription "Recovery of the notifications produced by applications that are stored by the operating system. " ;
     solveit-core:techniqueID "DFT-1185" ;
-    solveit-core:techniqueName "Extract data from OS-level notifications" .
+    solveit-core:techniqueName "Extract data from operating system notifications" .
 
 :techniqueDFT-1186 a solveit-core:Technique ;
     rdfs:label "DFT-1186: Compute per-file hash values"@en ;
@@ -5811,7 +5932,6 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
         :mitigationDFM-1234,
         :mitigationDFM-1235,
         :mitigationDFM-1236,
-        :mitigationDFM-1238,
         :mitigationDFM-1239 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1274" ;
@@ -6302,9 +6422,10 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:citationPlaintext "Gruhn, M., 2015, May. Windows NT pagefile. sys virtual memory analysis. In 2015 Ninth International Conference on IT Security Incident Management & IT Forensics (pp. 3-18). IEEE." .
 
 :mitigationDFM-1005 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1005: Testing to ensure software and hardware setup detects HPAs"@en ;
+    rdfs:label "DFM-1005: Testing to ensure that the software and hardware disk imaging setup can detect HPAs"@en ;
+    solveit-core:mitigationDescription "Tests have been performed that the combination of hardware and software used can detect when HPAs are present." ;
     solveit-core:mitigationID "DFM-1005" ;
-    solveit-core:mitigationName "Testing to ensure software and hardware setup detects HPAs" .
+    solveit-core:mitigationName "Testing to ensure that the software and hardware disk imaging setup can detect HPAs" .
 
 :mitigationDFM-1006 a solveit-core:Mitigation ;
     rdfs:label "DFM-1006: Testing to ensure software and hardware setup detects DCOs"@en ;
@@ -6574,7 +6695,7 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:mitigationName "Test that the tool used correctly recovers operating system notification timestamps from the data structures examined" .
 
 :techniqueDFT-1006 a solveit-core:Technique ;
-    rdfs:label "DFT-1006: Use digital sniffer dogs to locate digital devices"@en ;
+    rdfs:label "DFT-1006: Search a crime scene using digital sniffer dogs"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1005 ;
@@ -6582,11 +6703,10 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:hasSynonym "Digital Storage Device Dogs" ;
     solveit-core:techniqueDescription "The use of canines to locate obscured digital storage devices." ;
     solveit-core:techniqueID "DFT-1006" ;
-    solveit-core:techniqueName "Use digital sniffer dogs to locate digital devices" .
+    solveit-core:techniqueName "Search a crime scene using digital sniffer dogs" .
 
 :techniqueDFT-1007 a solveit-core:Technique ;
-    rdfs:label "DFT-1007: Use a SyncTriage-based approach to detect existence of devices"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
+    rdfs:label "DFT-1007: Detect the potential existence of digital devices using a SyncTriage-based approach"@en ;
     solveit-core:hasExample "SyncTriage - https://bitbucket.org/chrishargreaves/synctriage" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1008,
         :weaknessDFW-1009,
@@ -6594,12 +6714,12 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
         :weaknessDFW-1011,
         :weaknessDFW-1012 ;
     solveit-core:hasReference :citationDFCite-1057 ;
-    solveit-core:techniqueDescription "A technique developed in Hargreaves & Marshall (2018) whereby synchronisation artefacts on a device are examined and used to identify the existence of a related device. Also sometimes used to infer activity that occurred on an inaccessible or unavailable device. " ;
+    solveit-core:techniqueDescription "A technique developed in Hargreaves & Marshall (2018) whereby synchronization artifacts on a device are examined and used to identify the existence of a related device. Also sometimes used to infer activity that occurred on an inaccessible or unavailable device. " ;
     solveit-core:techniqueID "DFT-1007" ;
-    solveit-core:techniqueName "Use a SyncTriage-based approach to detect existence of devices" .
+    solveit-core:techniqueName "Detect the potential existence of digital devices using a SyncTriage-based approach" .
 
 :techniqueDFT-1013 a solveit-core:Technique ;
-    rdfs:label "DFT-1013: Use software write blockers to provide read only access to storage media"@en ;
+    rdfs:label "DFT-1013: Write protect storage media using a software write blocker"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface"^^xsd:anyURI,
         "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
@@ -6607,10 +6727,10 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:techniqueDescription "Use of a software-based tool that prevents a computer from writing to computer storage media connected to it (NIST 2006)" ;
     solveit-core:techniqueDetails "Note that both read/write and write protected interfaces are specified as input since a software write blocker could be applied to a hardware write protected interface." ;
     solveit-core:techniqueID "DFT-1013" ;
-    solveit-core:techniqueName "Use software write blockers to provide read only access to storage media" .
+    solveit-core:techniqueName "Write protect storage media using a software write blocker" .
 
 :techniqueDFT-1020 a solveit-core:Technique ;
-    rdfs:label "DFT-1020: Mobile file system extraction"@en ;
+    rdfs:label "DFT-1020: Extract the file system from a mobile device"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FileSystemExtraction"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1159,
@@ -6622,21 +6742,23 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:hasReference :citationDFCite-1031,
         :citationDFCite-1045,
         :citationDFCite-1091 ;
+    solveit-core:hasSynonym "file system extraction" ;
     solveit-core:techniqueDescription "Accessing the file system(s) of the device and extracting a set of files (full or partial depending on level of access)" ;
     solveit-core:techniqueDetails "Note that Fukami et al (2021) states \"In order to conduct effective file system extraction, rooting the device is required.\" See T1040. Usually results in a zip/tar file. Rooting may provide access to the file system, but files may still be encrypted. Attacking the user pin, usually on device, using T1034, or T1035 may be necessary, unless the PIN can be obtained from the device user (T1037)" ;
     solveit-core:techniqueID "DFT-1020" ;
-    solveit-core:techniqueName "Mobile file system extraction" .
+    solveit-core:techniqueName "Extract the file system from a mobile device" .
 
 :techniqueDFT-1033 a solveit-core:Technique ;
-    rdfs:label "DFT-1033: Extraction of credential from an accessible device"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI ;
+    rdfs:label "DFT-1033: Extract credential(s) from an accessible device to attempt access to a more secure device or service"@en ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Credential"^^xsd:anyURI ;
     solveit-core:techniqueDescription "Accessing a device with limited or no security to obtain a credential (e.g. password, PIN, token) that can be used to access another device or service." ;
     solveit-core:techniqueID "DFT-1033" ;
-    solveit-core:techniqueName "Extraction of credential from an accessible device" .
+    solveit-core:techniqueName "Extract credential(s) from an accessible device to attempt access to a more secure device or service" .
 
 :techniqueDFT-1042 a solveit-core:Technique ;
-    rdfs:label "DFT-1042: Hash verification of source device against stored data"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/hash"^^xsd:anyURI ;
+    rdfs:label "DFT-1042: Verify hash of imaged data matches the hash of the source device"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/hash"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/HashVerificationResult"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1042,
         :weaknessDFW-1124,
         :weaknessDFW-1125,
@@ -6646,44 +6768,49 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:hasReference :citationDFCite-1081,
         :citationDFCite-1083,
         :citationDFCite-1088 ;
-    solveit-core:techniqueDescription "Computing the hash function of the entire contents of a disk, recording it, and then subsequently computing the hash over any disk image created to detect if any content is different (adapted from Lyle 2002)" ;
     solveit-core:techniqueID "DFT-1042" ;
-    solveit-core:techniqueName "Hash verification of source device against stored data" .
+    solveit-core:techniqueName "Verify hash of imaged data matches the hash of the source device" .
 
 :techniqueDFT-1090 a solveit-core:Technique ;
-    rdfs:label "DFT-1090: Experimentation"@en ;
+    rdfs:label "DFT-1090: Experiment with software to ascertain forensic artifacts"@en ;
+    solveit-core:techniqueDescription "The process of running software in a controlled environment to observe its behavior and identify potential forensic artifacts." ;
+    solveit-core:techniqueDetails "The equivalent of `dynamic analysis` of malware, but applied to software in general. This can involve running the software in a controlled environment and observing its behavior, inputs, and outputs to gain insights into its functionality and potential for event reconstruction." ;
     solveit-core:techniqueID "DFT-1090" ;
-    solveit-core:techniqueName "Experimentation" .
+    solveit-core:techniqueName "Experiment with software to ascertain forensic artifacts" .
 
 :techniqueDFT-1099 a solveit-core:Technique ;
-    rdfs:label "DFT-1099: File repair with grafting"@en ;
+    rdfs:label "DFT-1099: Repair a damaged or incomplete file using `grafting`"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
     solveit-core:techniqueDescription "Repair file by grafting different reference data onto fragment(s)" ;
     solveit-core:techniqueID "DFT-1099" ;
-    solveit-core:techniqueName "File repair with grafting" .
+    solveit-core:techniqueName "Repair a damaged or incomplete file using `grafting`" .
 
 :techniqueDFT-1105 a solveit-core:Technique ;
-    rdfs:label "DFT-1105: Memory examination (application-level)"@en ;
+    rdfs:label "DFT-1105: Examine memory dump from an application"@en ;
+    solveit-core:techniqueDescription "Examination of the specific structures from the memory of a specific application" ;
+    solveit-core:techniqueDetails "These could be extracted from a physical memory dump through analysis of operating system memory structures to extract specific process memory, or obtained directly on a live system." ;
     solveit-core:techniqueID "DFT-1105" ;
-    solveit-core:techniqueName "Memory examination (application-level)" .
+    solveit-core:techniqueName "Examine memory dump from an application" .
 
 :techniqueDFT-1110 a solveit-core:Technique ;
-    rdfs:label "DFT-1110: Preserving reference data"@en ;
+    rdfs:label "DFT-1110: Preserve reference data"@en ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1172 ;
     solveit-core:hasReference :citationDFCite-1118 ;
     solveit-core:techniqueDetails "Reference data may be needed for later trace interpretation, but may change (especially server side software), so relevant data should be preserved close to the time of the event of interest" ;
     solveit-core:techniqueID "DFT-1110" ;
-    solveit-core:techniqueName "Preserving reference data" .
+    solveit-core:techniqueName "Preserve reference data" .
 
 :techniqueDFT-1111 a solveit-core:Technique ;
-    rdfs:label "DFT-1111: Recording system clock offset"@en ;
+    rdfs:label "DFT-1111: Record system clock offset"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/ClockOffsetCapture"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/systemTime"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1173 ;
     solveit-core:techniqueDescription "Recording a system clock compared with trusted time source" ;
     solveit-core:techniqueDetails "Collection of the time of a device clock compared with the correct time, allowing an offset to be calculated *for the point in time when the clock was observed*." ;
     solveit-core:techniqueID "DFT-1111" ;
-    solveit-core:techniqueName "Recording system clock offset" .
+    solveit-core:techniqueName "Record system clock offset" .
 
 :techniqueDFT-1113 a solveit-core:Technique ;
     rdfs:label "DFT-1113: Access internal storage via bootable environment"@en ;
@@ -6760,11 +6887,11 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:techniqueName "Use time anchors to estimate clock offset" .
 
 :techniqueDFT-1144 a solveit-core:Technique ;
-    rdfs:label "DFT-1144: Browser profile enumeration"@en ;
+    rdfs:label "DFT-1144: Enumerate browser profiles"@en ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1249 ;
     solveit-core:techniqueDescription "The enumeration of the separate user profiles set up within a browser" ;
     solveit-core:techniqueID "DFT-1144" ;
-    solveit-core:techniqueName "Browser profile enumeration" .
+    solveit-core:techniqueName "Enumerate browser profiles" .
 
 :techniqueDFT-1153 a solveit-core:Technique ;
     rdfs:label "DFT-1153: Apply offset to a timestamp"@en ;
@@ -7065,7 +7192,7 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationName "Testing to ensure that live accounts are recovered correctly from a gaming app" .
 
 :techniqueDFT-1012 a solveit-core:Technique ;
-    rdfs:label "DFT-1012: Connect storage medium via hardware write blocker"@en ;
+    rdfs:label "DFT-1012: Write protect storage media using a hardware write blocker"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1118,
@@ -7075,25 +7202,28 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:techniqueDescription "A hardware write blocking device [should] prevent any change to data in the user area of a hard drive while allowing access to all data on a hard drive. (Lyle 2006)" ;
     solveit-core:techniqueDetails "Note that \"Sometimes it may be desirable to change a drive configuration to obtain access to otherwise hidden sectors, for example, such as within an HPA (host protected area).\" (Lyle 2006) " ;
     solveit-core:techniqueID "DFT-1012" ;
-    solveit-core:techniqueName "Connect storage medium via hardware write blocker" .
+    solveit-core:techniqueName "Write protect storage media using a hardware write blocker" .
 
 :techniqueDFT-1037 a solveit-core:Technique ;
-    rdfs:label "DFT-1037: Obtain password from the device owner"@en ;
+    rdfs:label "DFT-1037: Obtain password from the device's owner"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
     solveit-core:techniqueID "DFT-1037" ;
-    solveit-core:techniqueName "Obtain password from the device owner" .
+    solveit-core:techniqueName "Obtain password from the device's owner" .
 
 :techniqueDFT-1040 a solveit-core:Technique ;
-    rdfs:label "DFT-1040: Use mobile device exploit"@en ;
+    rdfs:label "DFT-1040: Exploit a mobile device to facilitate privileged access for data extraction"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/isPrivileged"^^xsd:anyURI ;
     solveit-core:hasExample "",
         "Checkra1n, https://checkra.in" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1157,
         :weaknessDFW-1158 ;
     solveit-core:hasReference :citationDFCite-1049 ;
+    solveit-core:hasSynonym "jailbreaking",
+        "mobile device exploit",
+        "rooting" ;
     solveit-core:techniqueDescription "A process that typically exploits a security flaw in a specific device or operating system to enable users to perform higher privileged functions on a device (derived from Grover 2013)" ;
     solveit-core:techniqueID "DFT-1040" ;
-    solveit-core:techniqueName "Use mobile device exploit" .
+    solveit-core:techniqueName "Exploit a mobile device to facilitate privileged access for data extraction" .
 
 :techniqueDFT-1125 a solveit-core:Technique ;
     rdfs:label "DFT-1125: Keyword search (live)"@en ;
@@ -7109,7 +7239,7 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:techniqueName "Keyword search (live)" .
 
 :techniqueDFT-1138 a solveit-core:Technique ;
-    rdfs:label "DFT-1138: Browser cache examination"@en ;
+    rdfs:label "DFT-1138: Extract browser cache artifacts"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/BrowserCacheData"^^xsd:anyURI ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/httpResponseHeader"^^xsd:anyURI,
         "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
@@ -7121,14 +7251,14 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
         "web cache examination" ;
     solveit-core:techniqueDescription "The examination of the content saved locally by browsers to improve performance" ;
     solveit-core:techniqueID "DFT-1138" ;
-    solveit-core:techniqueName "Browser cache examination" .
+    solveit-core:techniqueName "Extract browser cache artifacts" .
 
 :techniqueDFT-1143 a solveit-core:Technique ;
-    rdfs:label "DFT-1143: Browser configuration examination"@en ;
+    rdfs:label "DFT-1143: Extract browser configuration artifacts"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/configuration/Configuration"^^xsd:anyURI ;
     solveit-core:techniqueDescription "The examination of a browsers configuration" ;
     solveit-core:techniqueID "DFT-1143" ;
-    solveit-core:techniqueName "Browser configuration examination" .
+    solveit-core:techniqueName "Extract browser configuration artifacts" .
 
 :citationDFCite-1070 a solveit-core:Citation ;
     rdfs:label "DFCite-1070" ;
@@ -7159,29 +7289,31 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationName "Testing deleted message recovery from multiplayer gaming app" .
 
 :techniqueDFT-1034 a solveit-core:Technique ;
-    rdfs:label "DFT-1034: Brute force attack"@en ;
+    rdfs:label "DFT-1034: Attack a stored credential or device using a brute force approach"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1140,
         :weaknessDFW-1141,
         :weaknessDFW-1142 ;
     solveit-core:hasReference :citationDFCite-1077 ;
-    solveit-core:hasSynonym "exhaustive password search" ;
+    solveit-core:hasSynonym "brute force attack",
+        "exhaustive password search" ;
     solveit-core:techniqueDescription "A brute force attack, or exhaustive search is a password cracking approach where every combination of characters is tested until the correct one is found. This method is \"guaranteed to work\" given infinite time and resources which in a real-life scenario is not feasible." ;
     solveit-core:techniqueDetails "Brute force attack involves trying every possible combination in a defined search space to find the correct value. The search space could be limited to just numbers, for example in the case of a 4-digit PIN number, or alphanumerical values or even the full ASCII character set. The larger the search space, the longer it takes to complete a brute force attack." ;
     solveit-core:techniqueID "DFT-1034" ;
-    solveit-core:techniqueName "Brute force attack" .
+    solveit-core:techniqueName "Attack a stored credential or device using a brute force approach" .
 
 :techniqueDFT-1035 a solveit-core:Technique ;
-    rdfs:label "DFT-1035: Dictionary attack"@en ;
+    rdfs:label "DFT-1035: Attack a stored credential or device using a dictionary-based approach"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1137,
         :weaknessDFW-1138,
         :weaknessDFW-1139 ;
     solveit-core:hasReference :citationDFCite-1075 ;
+    solveit-core:hasSynonym "dictionary attack" ;
     solveit-core:techniqueDescription "A dictionary attack is a password cracking technique where an attacker uses a list of passwords, called a dictionary, to attempt to guess a password." ;
     solveit-core:techniqueDetails "Dictionary attacks use list compiled common passwords that are likely to be used by people, such as dictionary words, names, common patterns or existing lists of popular or leaked passwords.  Therefore, success depends on the quality and of dictionary list." ;
     solveit-core:techniqueID "DFT-1035" ;
-    solveit-core:techniqueName "Dictionary attack" .
+    solveit-core:techniqueName "Attack a stored credential or device using a dictionary-based approach" .
 
 :techniqueDFT-1124 a solveit-core:Technique ;
     rdfs:label "DFT-1124: Keyword search (indexed)"@en ;
