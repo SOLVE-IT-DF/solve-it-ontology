@@ -3372,7 +3372,12 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFM-1005: Testing to ensure software and hardware setup detects HPAs"
+        "@value": "DFM-1005: Testing to ensure that the software and hardware disk imaging setup can detect HPAs"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Tests have been performed that the combination of hardware and software used can detect when HPAs are present."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -3382,7 +3387,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
-        "@value": "Testing to ensure software and hardware setup detects HPAs"
+        "@value": "Testing to ensure that the software and hardware disk imaging setup can detect HPAs"
       }
     ]
   },
@@ -12816,6 +12821,15 @@
       },
       {
         "@value": "Read forensic image"
+      },
+      {
+        "@value": "Access forensic image"
+      },
+      {
+        "@value": "Access forensic image content"
+      },
+      {
+        "@value": "Decode forensic image bitstream"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
