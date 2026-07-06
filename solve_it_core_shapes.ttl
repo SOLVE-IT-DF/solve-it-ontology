@@ -1,0 +1,36 @@
+@prefix : <https://ontology.solveit-df.org/solveit/core/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@base <https://ontology.solveit-df.org/solveit/core/shapes/> .
+
+#################################################################
+#    SOLVE-IT Core SHACL Shapes
+#    Validation constraints for the SOLVE-IT core vocabulary.
+#    Companion to solve_it_observable_shapes.ttl; load alongside the
+#    ontology (as a supplemental graph) when validating data.
+#################################################################
+
+#################################################################
+#    SolveitInvestigativeAction Shape
+#################################################################
+
+:SolveitInvestigativeActionShape a sh:NodeShape ;
+    sh:targetClass solveit-core:SolveitInvestigativeAction ;
+    rdfs:label "SOLVE-IT Investigative Action Shape"@en ;
+    rdfs:comment "Enforces the cardinality solve_it_core.ttl states in prose: a SolveitInvestigativeAction links to at least one SOLVE-IT technique (1..n via usedTechnique)."@en ;
+    sh:property [
+        sh:path solveit-core:usedTechnique ;
+        sh:minCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:message "A SolveitInvestigativeAction must reference at least one SOLVE-IT technique via usedTechnique (1..n)."@en ;
+    ] .
+
+# Note: usedTechnique's range (solveit-core:Technique) is asserted as an
+# OWL rdfs:range in solve_it_core.ttl but is deliberately NOT enforced
+# here as sh:class. Data graphs commonly reference the technique
+# individual as an external node (e.g. solveit-data:techniqueDFT-NNNN)
+# without restating its type, so a class check would fail well-formed
+# data. The shape requires an IRI value instead. A stricter range shape
+# is a candidate once a convention is agreed for declaring (or importing)
+# the referenced Technique individuals.
