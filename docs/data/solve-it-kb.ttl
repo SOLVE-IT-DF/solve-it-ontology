@@ -249,7 +249,8 @@
         :techniqueDFT-1116,
         :techniqueDFT-1149,
         :techniqueDFT-1180,
-        :techniqueDFT-1185 ;
+        :techniqueDFT-1185,
+        :techniqueDFT-1190 ;
     solveit-core:objectiveDescription "Process data stored by the operating system to extract digital forensic artifacts." ;
     solveit-core:objectiveID "DFO-1017" ;
     solveit-core:objectiveName "Extract artifacts stored by the operating system" ;
@@ -961,6 +962,21 @@
 }""" ;
     solveit-core:citationID "DFCite-1156" ;
     solveit-core:citationPlaintext "https://github.com/frida" .
+
+:citationDFCite-1157 a solveit-core:Citation ;
+    rdfs:label "DFCite-1157" ;
+    solveit-core:citationBibtex """@misc{tubbs2018lastwindows,
+  author       = {Tubbs, Jamey},
+  title        = {What ``the Last Version of {Windows}'' Means for Digital Forensics},
+  howpublished = {Magnet Forensics Blog},
+  year         = {2018},
+  month        = feb,
+  day          = {16},
+  url          = {https://www.magnetforensics.com/blog/what-the-last-version-of-windows-means-for-digital-forensics/},
+  note         = {Accessed: 2026-07-06}
+}""" ;
+    solveit-core:citationID "DFCite-1157" ;
+    solveit-core:citationPlaintext "None" .
 
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
@@ -1793,6 +1809,11 @@
     rdfs:label "DFM-1268: Count timeline entries before and after sorting a timeline and check they are the same"@en ;
     solveit-core:mitigationID "DFM-1268" ;
     solveit-core:mitigationName "Count timeline entries before and after sorting a timeline and check they are the same" .
+
+:mitigationDFM-1273 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1273: Ensure that older operating system versions are also displayed along with current version"@en ;
+    solveit-core:mitigationID "DFM-1273" ;
+    solveit-core:mitigationName "Ensure that older operating system versions are also displayed along with current version" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage devices or media"@en ;
@@ -3688,6 +3709,23 @@ Extracting them surfaces each contained item as a first-class file so downstream
 This is distinct from DFT-1045, which decodes archive containers produced by the forensic extraction pipeline (e.g. an iOS file-system extraction packaged as a TAR file); this technique is applied later in the workflow, against compound files encountered within user data. The technique should be applied recursively because extracted items may themselves be compound files.""" ;
     solveit-core:techniqueID "DFT-1187" ;
     solveit-core:techniqueName "Extract content from compound files" .
+
+:techniqueDFT-1190 a solveit-core:Technique ;
+    rdfs:label "DFT-1190: Extract operating system version(s) from data source"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1324,
+        :weaknessDFW-1325,
+        :weaknessDFW-1326,
+        :weaknessDFW-1327,
+        :weaknessDFW-1328,
+        :weaknessDFW-1329 ;
+    solveit-core:hasReference :citationDFCite-1157 ;
+    solveit-core:techniqueDescription "The process of extracting and processing the artifacts that describe the current operating system version and associated version details e.g. build, service pack etc." ;
+    solveit-core:techniqueDetails """Each operating system will have a specific artifact that allows this to be performed e.g. details from the Registry on Windows. 
+
+It is also sometimes possible to determine older versions of the operating system which have been used, with timestamps, which may be useful for later functional reconstruction (DFT-1156)""" ;
+    solveit-core:techniqueID "DFT-1190" ;
+    solveit-core:techniqueName "Extract operating system version(s) from data source" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -6265,6 +6303,49 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
     solveit-core:weaknessID "DFW-1321" ;
     solveit-core:weaknessName "Presenting the incorrect time for a notification due to tool error" .
 
+:weaknessDFW-1324 a solveit-core:Weakness ;
+    rdfs:label "DFW-1324: Failure to extract the operating system version due to a tool accessing the wrong artifact"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1272 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1324" ;
+    solveit-core:weaknessName "Failure to extract the operating system version due to a tool accessing the wrong artifact" .
+
+:weaknessDFW-1325 a solveit-core:Weakness ;
+    rdfs:label "DFW-1325: Failure to extract the operating system version because a tool parses the relevant artefact incorrectly"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1272 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessDescription "This weakness captures failing to extract a version at all, contrasted with extracting an incorrect version covered elsewhere. " ;
+    solveit-core:weaknessID "DFW-1325" ;
+    solveit-core:weaknessName "Failure to extract the operating system version because a tool parses the relevant artefact incorrectly" .
+
+:weaknessDFW-1326 a solveit-core:Weakness ;
+    rdfs:label "DFW-1326: Extracting an incorrect operating system version because a tool uses an incorrect or outdated artifact"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1272 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1326" ;
+    solveit-core:weaknessName "Extracting an incorrect operating system version because a tool uses an incorrect or outdated artifact" .
+
+:weaknessDFW-1327 a solveit-core:Weakness ;
+    rdfs:label "DFW-1327: Extracting an incorrect operating system version because a tool parses the relevant artefact incorrectly"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1272 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1327" ;
+    solveit-core:weaknessName "Extracting an incorrect operating system version because a tool parses the relevant artefact incorrectly" .
+
+:weaknessDFW-1328 a solveit-core:Weakness ;
+    rdfs:label "DFW-1328: Extracting a previous operating system version as if it were the current because a tool uses an incorrect or outdated artifact"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1272 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1328" ;
+    solveit-core:weaknessName "Extracting a previous operating system version as if it were the current because a tool uses an incorrect or outdated artifact" .
+
+:weaknessDFW-1329 a solveit-core:Weakness ;
+    rdfs:label "DFW-1329: Failure to highlight previous versions of the operating system that were used on the device"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1273 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessID "DFW-1329" ;
+    solveit-core:weaknessName "Failure to highlight previous versions of the operating system that were used on the device" .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
@@ -7352,6 +7433,11 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFM-1154: Testing for live message recovery from AI companion app"@en ;
     solveit-core:mitigationID "DFM-1154" ;
     solveit-core:mitigationName "Testing for live message recovery from AI companion app" .
+
+:mitigationDFM-1272 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1272: Test that the tool extracts the correct operating system"@en ;
+    solveit-core:mitigationID "DFM-1272" ;
+    solveit-core:mitigationName "Test that the tool extracts the correct operating system" .
 
 :citationDFCite-1030 a solveit-core:Citation ;
     rdfs:label "DFCite-1030" ;
