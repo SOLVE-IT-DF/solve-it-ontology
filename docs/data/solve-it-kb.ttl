@@ -43,7 +43,8 @@
         :techniqueDFT-1099,
         :techniqueDFT-1100,
         :techniqueDFT-1167,
-        :techniqueDFT-1187 ;
+        :techniqueDFT-1187,
+        :techniqueDFT-1191 ;
     solveit-core:objectiveDescription "Process data to extract artifacts from specific data formats." ;
     solveit-core:objectiveID "DFO-1002" ;
     solveit-core:objectiveName "Extract data from specific formats" ;
@@ -978,6 +979,17 @@
     solveit-core:citationID "DFCite-1157" ;
     solveit-core:citationPlaintext "None" .
 
+:citationDFCite-1158 a solveit-core:Citation ;
+    rdfs:label "DFCite-1158" ;
+    solveit-core:citationBibtex """@book{carvey2011windows,
+  title={Windows registry forensics: Advanced digital forensic analysis of the windows registry},
+  author={Carvey, Harlan},
+  year={2011},
+  publisher={Elsevier}
+}""" ;
+    solveit-core:citationID "DFCite-1158" ;
+    solveit-core:citationPlaintext "None" .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -1814,6 +1826,11 @@
     rdfs:label "DFM-1273: Ensure that older operating system versions are also displayed along with current version"@en ;
     solveit-core:mitigationID "DFM-1273" ;
     solveit-core:mitigationName "Ensure that older operating system versions are also displayed along with current version" .
+
+:mitigationDFM-1275 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1275: Ensure tool presents Registry key modification times as applicable to a key only, not any individual value"@en ;
+    solveit-core:mitigationID "DFM-1275" ;
+    solveit-core:mitigationName "Ensure tool presents Registry key modification times as applicable to a key only, not any individual value" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage devices or media"@en ;
@@ -3726,6 +3743,26 @@ This is distinct from DFT-1045, which decodes archive containers produced by the
 It is also sometimes possible to determine older versions of the operating system which have been used, with timestamps, which may be useful for later functional reconstruction (DFT-1156)""" ;
     solveit-core:techniqueID "DFT-1190" ;
     solveit-core:techniqueName "Extract operating system version(s) from data source" .
+
+:techniqueDFT-1191 a solveit-core:Technique ;
+    rdfs:label "DFT-1191: Parse allocated structures in Windows HIVE files"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/WindowsRegistryHive"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/WindowsRegistryKey"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/WindowsRegistryValue"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1330,
+        :weaknessDFW-1331,
+        :weaknessDFW-1332,
+        :weaknessDFW-1333,
+        :weaknessDFW-1334,
+        :weaknessDFW-1335,
+        :weaknessDFW-1336,
+        :weaknessDFW-1337 ;
+    solveit-core:hasReference :citationDFCite-1158 ;
+    solveit-core:hasSynonym "Registry analysis" ;
+    solveit-core:techniqueDescription "Enumerate the allocated structures within HIVE files (typically Windows Registry) to extract the tree structure along with keys and their values. " ;
+    solveit-core:techniqueDetails "This focuses on the data structure enumeration only, rather than taking a specific key and performing analysis on the data contained within. It covers allocated keys and values only." ;
+    solveit-core:techniqueID "DFT-1191" ;
+    solveit-core:techniqueName "Parse allocated structures in Windows HIVE files" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -6346,6 +6383,62 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:weaknessID "DFW-1329" ;
     solveit-core:weaknessName "Failure to highlight previous versions of the operating system that were used on the device" .
 
+:weaknessDFW-1330 a solveit-core:Weakness ;
+    rdfs:label "DFW-1330: Failure to recover an allocated Registry key because of a parsing error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1274 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1330" ;
+    solveit-core:weaknessName "Failure to recover an allocated Registry key because of a parsing error in the tool used" .
+
+:weaknessDFW-1331 a solveit-core:Weakness ;
+    rdfs:label "DFW-1331: Failure to recover last modified time associated with an allocated Registry key because of a parsing error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1274 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1331" ;
+    solveit-core:weaknessName "Failure to recover last modified time associated with an allocated Registry key because of a parsing error in the tool used" .
+
+:weaknessDFW-1332 a solveit-core:Weakness ;
+    rdfs:label "DFW-1332: Presenting an allocated Registry key that does not exist because of a parsing error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1274 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1332" ;
+    solveit-core:weaknessName "Presenting an allocated Registry key that does not exist because of a parsing error in the tool used" .
+
+:weaknessDFW-1333 a solveit-core:Weakness ;
+    rdfs:label "DFW-1333: Mapping an allocated Registry key to an incorrect point in the Registry tree structure because of a parsing error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1274 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1333" ;
+    solveit-core:weaknessName "Mapping an allocated Registry key to an incorrect point in the Registry tree structure because of a parsing error in the tool used" .
+
+:weaknessDFW-1334 a solveit-core:Weakness ;
+    rdfs:label "DFW-1334: Failure to recover allocated values associated with a Registry key because of a parsing error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1274 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1334" ;
+    solveit-core:weaknessName "Failure to recover allocated values associated with a Registry key because of a parsing error in the tool used" .
+
+:weaknessDFW-1335 a solveit-core:Weakness ;
+    rdfs:label "DFW-1335: Presenting an allocated Registry value that does not exist because of a parsing error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1274 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1335" ;
+    solveit-core:weaknessName "Presenting an allocated Registry value that does not exist because of a parsing error in the tool used" .
+
+:weaknessDFW-1336 a solveit-core:Weakness ;
+    rdfs:label "DFW-1336: Associating an allocated Registry value with an incorrect key because of a parsing error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1274 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS ;
+    solveit-core:weaknessID "DFW-1336" ;
+    solveit-core:weaknessName "Associating an allocated Registry value with an incorrect key because of a parsing error in the tool used" .
+
+:weaknessDFW-1337 a solveit-core:Weakness ;
+    rdfs:label "DFW-1337: Presenting an allocated Registry key's modification time as the modification time for a specific value."@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1275 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessID "DFW-1337" ;
+    solveit-core:weaknessName "Presenting an allocated Registry key's modification time as the modification time for a specific value." .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
@@ -7508,6 +7601,11 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationDescription "According to Fisher & Fisher (2012): \"Indoor crime scene searches are best done with two persons. One easy way of accomplishing a search in a room is to divide it in half. Each investigator searches one half. After they have done a thorough search, they switch halves.\" " ;
     solveit-core:mitigationID "DFM-1231" ;
     solveit-core:mitigationName "Make use of 'paired searching'" .
+
+:mitigationDFM-1274 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1274: Testing of Windows HIVE file parsing"@en ;
+    solveit-core:mitigationID "DFM-1274" ;
+    solveit-core:mitigationName "Testing of Windows HIVE file parsing" .
 
 :mitigationDFM-1056 a solveit-core:Mitigation ;
     rdfs:label "DFM-1056: Correlation of message data from third party data (another participant in message thread)"@en ;
