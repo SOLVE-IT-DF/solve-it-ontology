@@ -279,7 +279,8 @@
         :techniqueDFT-1170,
         :techniqueDFT-1172,
         :techniqueDFT-1173,
-        :techniqueDFT-1174 ;
+        :techniqueDFT-1174,
+        :techniqueDFT-1193 ;
     solveit-core:objectiveDescription "Access data within digital evidence containers such as disk images, memory dumps, or archive formats." ;
     solveit-core:objectiveID "DFO-1018" ;
     solveit-core:objectiveName "Read data from digital evidence storage formats" ;
@@ -1858,6 +1859,11 @@
     rdfs:label "DFM-1275: Ensure tool presents Registry key modification times as applicable to a key only, not any individual value"@en ;
     solveit-core:mitigationID "DFM-1275" ;
     solveit-core:mitigationName "Ensure tool presents Registry key modification times as applicable to a key only, not any individual value" .
+
+:mitigationDFM-1281 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1281: Compare the cryptographic hash stored in a forensic container with one recorded externally"@en ;
+    solveit-core:mitigationID "DFM-1281" ;
+    solveit-core:mitigationName "Compare the cryptographic hash stored in a forensic container with one recorded externally" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage devices or media"@en ;
@@ -3822,6 +3828,34 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:techniqueDescription "This involves changing settings on a device to attempt to remove any connectivity options so that data cannot be sent or received over typical RF channels. This may involve multiple settings e.g. airplane mode and separate Bluetooth and WiFi toggles." ;
     solveit-core:techniqueID "DFT-1192" ;
     solveit-core:techniqueName "Disable connectivity using device configuration settings" .
+
+:techniqueDFT-1193 a solveit-core:Technique ;
+    rdfs:label "DFT-1193: Read metadata from within a forensic image container"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/LogicalImageContainer"^^xsd:anyURI,
+        "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.caseontology.org/case/investigation/exhibitNumber"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/core/description"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/core/name"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Note"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/types/Hash"^^xsd:anyURI ;
+    solveit-core:hasExample "AFF4",
+        "EWF" ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1344,
+        :weaknessDFW-1345,
+        :weaknessDFW-1346,
+        :weaknessDFW-1347,
+        :weaknessDFW-1348,
+        :weaknessDFW-1349,
+        :weaknessDFW-1350,
+        :weaknessDFW-1351,
+        :weaknessDFW-1352,
+        :weaknessDFW-1353,
+        :weaknessDFW-1354,
+        :weaknessDFW-1355 ;
+    solveit-core:techniqueDescription "The processes of reading the metadata values stored within forensic container formats" ;
+    solveit-core:techniqueDetails "This has been differentiated from reading data from text files that accompany raw disk images, but includes metadata stored within logical formats. " ;
+    solveit-core:techniqueID "DFT-1193" ;
+    solveit-core:techniqueName "Read metadata from within a forensic image container" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -6555,6 +6589,96 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:weaknessID "DFW-1343" ;
     solveit-core:weaknessName "Data is added to a mobile device because the connectivity settings were subsequently reset by an automated process" .
 
+:weaknessDFW-1344 a solveit-core:Weakness ;
+    rdfs:label "DFW-1344: The case number is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1344" ;
+    solveit-core:weaknessName "The case number is not retrieved from the metadata inside a forensic container because of a programming error in the tool used" .
+
+:weaknessDFW-1345 a solveit-core:Weakness ;
+    rdfs:label "DFW-1345: The case description retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1280 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1345" ;
+    solveit-core:weaknessName "The case description retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used" .
+
+:weaknessDFW-1346 a solveit-core:Weakness ;
+    rdfs:label "DFW-1346: The cryptographic hash is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1346" ;
+    solveit-core:weaknessName "The cryptographic hash is not retrieved from the metadata inside a forensic container because of a programming error in the tool used" .
+
+:weaknessDFW-1347 a solveit-core:Weakness ;
+    rdfs:label "DFW-1347: The cryptographic hash retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1281 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1347" ;
+    solveit-core:weaknessName "The cryptographic hash retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used" .
+
+:weaknessDFW-1348 a solveit-core:Weakness ;
+    rdfs:label "DFW-1348: The case number retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1280 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1348" ;
+    solveit-core:weaknessName "The case number retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used" .
+
+:weaknessDFW-1349 a solveit-core:Weakness ;
+    rdfs:label "DFW-1349: The evidence number is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1349" ;
+    solveit-core:weaknessName "The evidence number is not retrieved from the metadata inside a forensic container because of a programming error in the tool used" .
+
+:weaknessDFW-1350 a solveit-core:Weakness ;
+    rdfs:label "DFW-1350: The evidence number retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1280 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1350" ;
+    solveit-core:weaknessName "The evidence number retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used" .
+
+:weaknessDFW-1351 a solveit-core:Weakness ;
+    rdfs:label "DFW-1351: The examiner name is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1351" ;
+    solveit-core:weaknessName "The examiner name is not retrieved from the metadata inside a forensic container because of a programming error in the tool used" .
+
+:weaknessDFW-1352 a solveit-core:Weakness ;
+    rdfs:label "DFW-1352: The examiner name retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1280 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1352" ;
+    solveit-core:weaknessName "The examiner name retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used" .
+
+:weaknessDFW-1353 a solveit-core:Weakness ;
+    rdfs:label "DFW-1353: The notes field is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1353" ;
+    solveit-core:weaknessName "The notes field is not retrieved from the metadata inside a forensic container because of a programming error in the tool used" .
+
+:weaknessDFW-1354 a solveit-core:Weakness ;
+    rdfs:label "DFW-1354: The notes field retrieved from the metadata inside a forensic container are incorrect because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1280 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1354" ;
+    solveit-core:weaknessName "The notes field retrieved from the metadata inside a forensic container are incorrect because of a programming error in the tool used" .
+
+:weaknessDFW-1355 a solveit-core:Weakness ;
+    rdfs:label "DFW-1355: The case description is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1355" ;
+    solveit-core:weaknessName "The case description is not retrieved from the metadata inside a forensic container because of a programming error in the tool used" .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
@@ -7688,6 +7812,11 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFM-1272: Test that the tool extracts the correct operating system"@en ;
     solveit-core:mitigationID "DFM-1272" ;
     solveit-core:mitigationName "Test that the tool extracts the correct operating system" .
+
+:mitigationDFM-1280 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1280: Compare the metadata stored in a forensic container with that recorded in accompanying documentation"@en ;
+    solveit-core:mitigationID "DFM-1280" ;
+    solveit-core:mitigationName "Compare the metadata stored in a forensic container with that recorded in accompanying documentation" .
 
 :citationDFCite-1030 a solveit-core:Citation ;
     rdfs:label "DFCite-1030" ;

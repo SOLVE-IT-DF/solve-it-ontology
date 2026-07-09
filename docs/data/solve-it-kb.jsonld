@@ -9760,6 +9760,50 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1280",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1280: Compare the metadata stored in a forensic container with that recorded in accompanying documentation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1280"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Compare the metadata stored in a forensic container with that recorded in accompanying documentation"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1281",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1281: Compare the cryptographic hash stored in a forensic container with one recorded externally"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1281"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Compare the cryptographic hash stored in a forensic container with one recorded externally"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
@@ -10740,6 +10784,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1174"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1193"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -21068,6 +21115,116 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Disable connectivity using device configuration settings"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1193",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1193: Read metadata from within a forensic image container"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/LogicalImageContainer"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.caseontology.org/case/investigation/exhibitNumber"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/core/name"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Note"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/core/description"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/types/Hash"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "EWF"
+      },
+      {
+        "@value": "AFF4"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1344"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1348"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1349"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1350"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1351"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1352"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1353"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1354"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1355"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1345"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1346"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1347"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The processes of reading the metadata values stored within forensic container formats"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This has been differentiated from reading data from text files that accompany raw disk images, but includes metadata stored within logical formats. "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1193"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Read metadata from within a forensic image container"
       }
     ]
   },
@@ -33162,6 +33319,408 @@
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
         "@value": "Data is added to a mobile device because the connectivity settings were subsequently reset by an automated process"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1344",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1344: The case number is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1344"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The case number is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1345",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1345: The case description retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1280"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1345"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The case description retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1346",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1346: The cryptographic hash is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1346"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The cryptographic hash is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1347",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1347: The cryptographic hash retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1281"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1347"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The cryptographic hash retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1348",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1348: The case number retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1280"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1348"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The case number retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1349",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1349: The evidence number is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1349"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The evidence number is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1350",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1350: The evidence number retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1280"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1350"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The evidence number retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1351",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1351: The examiner name is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1351"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The examiner name is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1352",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1352: The examiner name retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1280"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1352"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The examiner name retrieved from the metadata inside a forensic container is incorrect because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1353",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1353: The notes field is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1353"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The notes field is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1354",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1354: The notes field retrieved from the metadata inside a forensic container are incorrect because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1280"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1354"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The notes field retrieved from the metadata inside a forensic container are incorrect because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1355",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1355: The case description is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1355"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The case description is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
       }
     ]
   }
