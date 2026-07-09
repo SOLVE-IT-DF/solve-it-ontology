@@ -24,6 +24,16 @@
     solveit-core:mitigationID "DFM-1238" ;
     solveit-core:mitigationName "Configure device to enable required service" .
 
+:mitigationDFM-1270 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1270: Systematically analyse all fields and timestamps in API responses to recover evidence that would otherwise be missed"@en ;
+    solveit-core:mitigationID "DFM-1270" ;
+    solveit-core:mitigationName "Systematically analyse all fields and timestamps in API responses to recover evidence that would otherwise be missed" .
+
+:mitigationDFM-1271 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1271: Cross-validate API-derived artefacts against independent sources to improve reliability"@en ;
+    solveit-core:mitigationID "DFM-1271" ;
+    solveit-core:mitigationName "Cross-validate API-derived artefacts against independent sources to improve reliability" .
+
 :objectiveDFO-1001 a solveit-core:Objective ;
     rdfs:label "DFO-1001: Reconstruct events"@en ;
     solveit-core:includesTechnique :techniqueDFT-1087,
@@ -101,6 +111,7 @@
         :techniqueDFT-1157,
         :techniqueDFT-1159,
         :techniqueDFT-1160,
+        :techniqueDFT-1161,
         :techniqueDFT-1162,
         :techniqueDFT-1163,
         :techniqueDFT-1164,
@@ -144,7 +155,8 @@
         :techniqueDFT-1011,
         :techniqueDFT-1012,
         :techniqueDFT-1013,
-        :techniqueDFT-1114 ;
+        :techniqueDFT-1114,
+        :techniqueDFT-1192 ;
     solveit-core:objectiveDescription "Ensure the integrity and authenticity of digital evidence is maintained." ;
     solveit-core:objectiveID "DFO-1010" ;
     solveit-core:objectiveName "Preserve digital evidence" ;
@@ -990,6 +1002,16 @@
     solveit-core:citationID "DFCite-1158" ;
     solveit-core:citationPlaintext "None" .
 
+:citationDFCite-1160 a solveit-core:Citation ;
+    rdfs:label "DFCite-1160" ;
+    solveit-core:citationID "DFCite-1160" ;
+    solveit-core:citationPlaintext "Yang, J., Kim, J., Bang, J., Lee, S. and Park, J. (2022) 'CATCH: Cloud data acquisition through comprehensive and hybrid approaches', Forensic Science International: Digital Investigation, 43, p. 301442." .
+
+:citationDFCite-1161 a solveit-core:Citation ;
+    rdfs:label "DFCite-1161" ;
+    solveit-core:citationID "DFCite-1161" ;
+    solveit-core:citationPlaintext "Chung, H., Park, J. and Lee, S. (2017) 'Digital forensic approaches for Amazon Alexa ecosystem', Digital Investigation, 22, pp. S15-S25." .
+
 :mitigationDFM-1001 a solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
     solveit-core:mitigationID "DFM-1001" ;
@@ -1822,6 +1844,11 @@
     solveit-core:mitigationID "DFM-1268" ;
     solveit-core:mitigationName "Count timeline entries before and after sorting a timeline and check they are the same" .
 
+:mitigationDFM-1269 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1269: Generate UUIDs of all timeline entries prior to a sort and ensure that all are present post-sort"@en ;
+    solveit-core:mitigationID "DFM-1269" ;
+    solveit-core:mitigationName "Generate UUIDs of all timeline entries prior to a sort and ensure that all are present post-sort" .
+
 :mitigationDFM-1273 a solveit-core:Mitigation ;
     rdfs:label "DFM-1273: Ensure that older operating system versions are also displayed along with current version"@en ;
     solveit-core:mitigationID "DFM-1273" ;
@@ -1943,19 +1970,6 @@ The techqniue does not restrict to searching for digital devices as other physic
     solveit-core:techniqueID "DFT-1009" ;
     solveit-core:techniqueName "Locate potential digital evidence sources via cloud account identifiers" .
 
-:techniqueDFT-1010 a solveit-core:Technique ;
-    rdfs:label "DFT-1010: Place device in a faraday environment"@en ;
-    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessDFW-1115,
-        :weaknessDFW-1116,
-        :weaknessDFW-1117 ;
-    solveit-core:hasReference :citationDFCite-1086 ;
-    solveit-core:techniqueDescription "Place a device in an environment designed to shield a mobile phone or small digital device from radio waves entering the environment and reaching the device, and to stop radio waves escaping from the environment (adapted from Lennox-Steele & Nisbet (2016))" ;
-    solveit-core:techniqueDetails "Environment should block: mobile network, Wi-Fi, and Bluetooth and all other RF." ;
-    solveit-core:techniqueID "DFT-1010" ;
-    solveit-core:techniqueName "Place device in a faraday environment" .
-
 :techniqueDFT-1011 a solveit-core:Technique ;
     rdfs:label "DFT-1011: Store seized devices or media in evidence bags"@en ;
     solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
@@ -1966,6 +1980,8 @@ The techqniue does not restrict to searching for digital devices as other physic
 
 :techniqueDFT-1014 a solveit-core:Technique ;
     rdfs:label "DFT-1014: Document the chain of custody"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.caseontology.org/case/investigation/ProvenanceRecord"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.caseontology.org/case/investigation/ProvenanceRecord"^^xsd:anyURI ;
     solveit-core:hasReference :citationDFCite-1147 ;
     solveit-core:hasSynonym "CoC",
         "Continuity of evidence" ;
@@ -3002,14 +3018,17 @@ Facebook Messenger
 :techniqueDFT-1118 a solveit-core:Technique ;
     rdfs:label "DFT-1118: Locate relevant files by path"@en ;
     solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/FileSet"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
     solveit-core:hasExample "Autopsy Interesting Files module",
         "Pattern matching in ALEAPP/iLEAPP to trigger specific plugins" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1186,
         :weaknessDFW-1187,
         :weaknessDFW-1188 ;
     solveit-core:hasReference :citationDFCite-1006 ;
-    solveit-core:techniqueDescription "Use the path of file name to determine potential relevance of artifact" ;
+    solveit-core:hasSynonym "Filename matching" ;
+    solveit-core:techniqueDescription "Use the path of file name to determine potential relevance of the file." ;
+    solveit-core:techniqueDetails "There are multiple applications of this, for example: within a tool to determine what processing should occur to a file, or flagging files with particular extensions." ;
     solveit-core:techniqueID "DFT-1118" ;
     solveit-core:techniqueName "Locate relevant files by path" .
 
@@ -3289,7 +3308,8 @@ Facebook Messenger
 
 :techniqueDFT-1151 a solveit-core:Technique ;
     rdfs:label "DFT-1151: Keyword search (over extracted artifacts)"@en ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"^^xsd:anyURI ;
     solveit-core:hasExample "Using Keywords with Magnet AXIOM (McQuaid 2017)" ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1257 ;
     solveit-core:hasReference :citationDFCite-1098 ;
@@ -3384,6 +3404,31 @@ This might involve questions such as:
     solveit-core:techniqueDescription "Restore a device's cloud backup to a donor device, then subsequently use a local acquisition approach on that donor device, e.g. T1019/T1020" ;
     solveit-core:techniqueID "DFT-1160" ;
     solveit-core:techniqueName "Collect data with 'cloud backup restore' approach" .
+
+:techniqueDFT-1161 a solveit-core:Technique ;
+    rdfs:label "DFT-1161: Collect data from cloud service via API using credentials"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/OnlineService"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Account"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/EventRecord"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Message"^^xsd:anyURI ;
+    solveit-core:hasExample "Cellebrite UFED Cloud",
+        "FOREST (open-source cloud forensic tool)",
+        "Magnet AXIOM Cloud",
+        "Oxygen Forensic Cloud Extractor",
+        "kumodd" ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1338,
+        :weaknessDFW-1339 ;
+    solveit-core:hasReference :citationDFCite-1159,
+        :citationDFCite-1160,
+        :citationDFCite-1161 ;
+    solveit-core:hasSynonym "API-based cloud acquisition",
+        "Cloud Data Collection via RESTful API" ;
+    solveit-core:techniqueDescription "Copying data from a cloud service using the officially supported API of the provider." ;
+    solveit-core:techniqueDetails "API-based forensic acquisition of cloud data using the officially supported API of the provider can provide additional details and structure that is not available via other access methods. Requests may target public or undocumented endpoints identified via network observation or reverse engineering. Returned responses may include artifacts such as messages, file metadata, activity logs, and identity attributes. Analysts may use traffic capture tools or instrumentation to extract and store this data for forensic or intelligence purposes, both reactively and proactively." ;
+    solveit-core:techniqueID "DFT-1161" ;
+    solveit-core:techniqueName "Collect data from cloud service via API using credentials" .
 
 :techniqueDFT-1162 a solveit-core:Technique ;
     rdfs:label "DFT-1162: Read data from a device via In-System Programming (ISP)"@en ;
@@ -3763,6 +3808,20 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:techniqueDetails "This focuses on the data structure enumeration only, rather than taking a specific key and performing analysis on the data contained within. It covers allocated keys and values only." ;
     solveit-core:techniqueID "DFT-1191" ;
     solveit-core:techniqueName "Parse allocated structures in Windows HIVE files" .
+
+:techniqueDFT-1192 a solveit-core:Technique ;
+    rdfs:label "DFT-1192: Disable connectivity using device configuration settings"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
+    solveit-core:hasExample "airplane mode",
+        "flight mode" ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1340,
+        :weaknessDFW-1341,
+        :weaknessDFW-1342,
+        :weaknessDFW-1343 ;
+    solveit-core:techniqueDescription "This involves changing settings on a device to attempt to remove any connectivity options so that data cannot be sent or received over typical RF channels. This may involve multiple settings e.g. airplane mode and separate Bluetooth and WiFi toggles." ;
+    solveit-core:techniqueID "DFT-1192" ;
+    solveit-core:techniqueName "Disable connectivity using device configuration settings" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -6238,7 +6297,8 @@ It is also sometimes possible to determine older versions of the operating syste
 :weaknessDFW-1308 a solveit-core:Weakness ;
     rdfs:label "DFW-1308: Sorted timeline is missing timeline entries due to tool error during sort process"@en ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1259,
-        :mitigationDFM-1268 ;
+        :mitigationDFM-1268,
+        :mitigationDFM-1269 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1308" ;
     solveit-core:weaknessName "Sorted timeline is missing timeline entries due to tool error during sort process" .
@@ -6438,6 +6498,62 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
     solveit-core:weaknessID "DFW-1337" ;
     solveit-core:weaknessName "Presenting an allocated Registry key's modification time as the modification time for a specific value." .
+
+:weaknessDFW-1338 a solveit-core:Weakness ;
+    rdfs:label "DFW-1338: Failing to acquire data due to omission of undocumented endpoints"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1050,
+        :mitigationDFM-1276,
+        :mitigationDFM-1277 ;
+    solveit-core:hasReference :citationDFCite-1159 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1338" ;
+    solveit-core:weaknessName "Failing to acquire data due to omission of undocumented endpoints" .
+
+:weaknessDFW-1339 a solveit-core:Weakness ;
+    rdfs:label "DFW-1339: Failing to acquire data because of filtering"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1050,
+        :mitigationDFM-1276,
+        :mitigationDFM-1277 ;
+    solveit-core:hasReference :citationDFCite-1159 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1339" ;
+    solveit-core:weaknessName "Failing to acquire data because of filtering" .
+
+:weaknessDFW-1340 a solveit-core:Weakness ;
+    rdfs:label "DFW-1340: Data on a mobile device is overwritten because not all relevant connectivity settings were configured correctly"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1278,
+        :mitigationDFM-1279 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT,
+        solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessDescription "This might include setting airplane mode only rather than WiFi and/or Bluetooth separately. This would also include the extreme case of a remote wipe being performed" ;
+    solveit-core:weaknessID "DFW-1340" ;
+    solveit-core:weaknessName "Data on a mobile device is overwritten because not all relevant connectivity settings were configured correctly" .
+
+:weaknessDFW-1341 a solveit-core:Weakness ;
+    rdfs:label "DFW-1341: Data on a mobile device is overwritten because the connectivity settings were subsequently reset by an automated process"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1278 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT,
+        solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1341" ;
+    solveit-core:weaknessName "Data on a mobile device is overwritten because the connectivity settings were subsequently reset by an automated process" .
+
+:weaknessDFW-1342 a solveit-core:Weakness ;
+    rdfs:label "DFW-1342: Data is added to a mobile device because not all relevant connectivity settings were configured correctly"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1278,
+        :mitigationDFM-1279 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessDescription "Data on a mobile device is added post-seizure because not all relevant connectivity settings were configured correctly" ;
+    solveit-core:weaknessID "DFW-1342" ;
+    solveit-core:weaknessName "Data is added to a mobile device because not all relevant connectivity settings were configured correctly" .
+
+:weaknessDFW-1343 a solveit-core:Weakness ;
+    rdfs:label "DFW-1343: Data is added to a mobile device because the connectivity settings were subsequently reset by an automated process"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1278 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1343" ;
+    solveit-core:weaknessName "Data is added to a mobile device because the connectivity settings were subsequently reset by an automated process" .
 
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
@@ -6868,6 +6984,23 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:mitigationID "DFM-1267" ;
     solveit-core:mitigationName "Test that the tool used correctly recovers operating system notification timestamps from the data structures examined" .
 
+:mitigationDFM-1276 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1276: Collect from all available API endpoints, including undocumented ones identified via client reverse engineering"@en ;
+    solveit-core:hasReference :citationDFCite-1159 ;
+    solveit-core:mitigationID "DFM-1276" ;
+    solveit-core:mitigationName "Collect from all available API endpoints, including undocumented ones identified via client reverse engineering" .
+
+:mitigationDFM-1277 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1277: Monitor structural changes to the target API and update parsing logic to prevent silent data loss"@en ;
+    solveit-core:hasReference :citationDFCite-1159 ;
+    solveit-core:mitigationID "DFM-1277" ;
+    solveit-core:mitigationName "Monitor structural changes to the target API and update parsing logic to prevent silent data loss" .
+
+:mitigationDFM-1279 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1279: Ensure all relevant connectivity settings for this particular device have been disabled"@en ;
+    solveit-core:mitigationID "DFM-1279" ;
+    solveit-core:mitigationName "Ensure all relevant connectivity settings for this particular device have been disabled" .
+
 :techniqueDFT-1006 a solveit-core:Technique ;
     rdfs:label "DFT-1006: Search a crime scene using digital sniffer dogs"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
@@ -6891,6 +7024,19 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:techniqueDescription "A technique developed in Hargreaves & Marshall (2018) whereby synchronization artifacts on a device are examined and used to identify the existence of a related device. Also sometimes used to infer activity that occurred on an inaccessible or unavailable device. " ;
     solveit-core:techniqueID "DFT-1007" ;
     solveit-core:techniqueName "Detect the potential existence of digital devices using a SyncTriage-based approach" .
+
+:techniqueDFT-1010 a solveit-core:Technique ;
+    rdfs:label "DFT-1010: Place device in a faraday environment"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1115,
+        :weaknessDFW-1116,
+        :weaknessDFW-1117 ;
+    solveit-core:hasReference :citationDFCite-1086 ;
+    solveit-core:techniqueDescription "Place a device in an environment designed to shield a mobile phone or small digital device from radio waves entering the environment and reaching the device, and to stop radio waves escaping from the environment (adapted from Lennox-Steele & Nisbet (2016))" ;
+    solveit-core:techniqueDetails "Environment should block: mobile network, Wi-Fi, and Bluetooth and all other RF." ;
+    solveit-core:techniqueID "DFT-1010" ;
+    solveit-core:techniqueName "Place device in a faraday environment" .
 
 :techniqueDFT-1013 a solveit-core:Technique ;
     rdfs:label "DFT-1013: Write protect storage media using a software write blocker"@en ;
@@ -7462,6 +7608,12 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationID "DFM-1244" ;
     solveit-core:mitigationName "Testing deleted message recovery from multiplayer gaming app" .
 
+:mitigationDFM-1278 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1278: Place device in faraday bag to block connectivity"@en ;
+    solveit-core:linksToTechnique :techniqueDFT-1010 ;
+    solveit-core:mitigationID "DFM-1278" ;
+    solveit-core:mitigationName "Place device in faraday bag to block connectivity" .
+
 :techniqueDFT-1034 a solveit-core:Technique ;
     rdfs:label "DFT-1034: Attack a stored credential or device using a brute force approach"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/password"^^xsd:anyURI ;
@@ -7505,6 +7657,11 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFCite-1103" ;
     solveit-core:citationID "DFCite-1103" ;
     solveit-core:citationPlaintext "NIST, 2025. Computer forensics tools & techniques catalog: string search, https://toolcatalog.nist.gov/taxonomy/index.php?ff_id=31" .
+
+:citationDFCite-1159 a solveit-core:Citation ;
+    rdfs:label "DFCite-1159" ;
+    solveit-core:citationID "DFCite-1159" ;
+    solveit-core:citationPlaintext "Jeong, B., Kim, J., Lee, S. and Park, J. (2026) 'FOREST: Inspecting and tracking RESTful APIs for constructing a cloud forensic knowledge base', Forensic Science International: Digital Investigation, 56, p. 302070." .
 
 :mitigationDFM-1003 a solveit-core:Mitigation ;
     rdfs:label "DFM-1003: Check image size corresponds with drive label"@en ;
