@@ -67,6 +67,12 @@ solveit-analysis:HypothesisedDevice rdf:type owl:Class ;
     rdfs:label "Hypothesised Device"@en ;
     rdfs:comment "A device that is hypothesised to have been involved, such as a device inferred from artifacts but not yet physically identified or examined."@en .
 
+###  HypothesisedUserAccount
+solveit-analysis:HypothesisedUserAccount rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:Hypothesis ;
+    rdfs:label "Hypothesised User Account"@en ;
+    rdfs:comment "A user account that is hypothesised to have existed, for example inferred from recovered deleted account records, carved registry artifacts, or references to the account in other artifacts. Supporting artifacts can be linked with solveit-analysis:supportedBy."@en .
+
 ###  HypothesisSet Analytic Result
 solveit-analysis:HypothesisSet rdf:type owl:Class ;
     rdfs:subClassOf uco-analysis:AnalyticResult ;
