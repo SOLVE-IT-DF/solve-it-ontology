@@ -15379,6 +15379,11 @@
         "@value": "DFT-1079: Examine audio content"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1194"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
       {
         "@value": "DFT-1079"
@@ -21225,6 +21230,81 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Read metadata from within a forensic image container"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1194",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1194: Classify if audio is potentially synthetically generated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/observable/AudioFile"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "AASIST-family neural anti-spoofing classifiers"
+      },
+      {
+        "@value": "ASVspoof challenge countermeasure systems"
+      },
+      {
+        "@value": "Bispectral / higher-order spectral analysis of speech"
+      },
+      {
+        "@value": "Project VIC Media Authentication Analyzer (AASIST-L neural detector + bispectrum heuristic in production)"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Audio deepfake detection"
+      },
+      {
+        "@value": "Synthetic speech detection"
+      },
+      {
+        "@value": "Voice clone detection"
+      },
+      {
+        "@value": "Audio anti-spoofing"
+      },
+      {
+        "@value": "Speech spoofing countermeasure"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Classification of audio with respect to its origin, i.e., whether it is synthetically generated (e.g. text-to-speech synthesis or voice conversion) or naturally captured from a live speaker."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Audio content is analyzed for traces of synthetic generation. Methods include neural anti-spoofing classifiers (e.g. spectro-temporal graph attention networks trained on spoofed/bona-fide speech corpora) and signal-level analyses such as higher-order spectral (bispectral) statistics. The output is typically a classifier-predicted score or confidence that the audio is synthetically generated, or extracted signal traces that aid the analyst in assessing the audio's origin. This completes the modality triad alongside the existing video (DFT-1106) and image (DFT-1176) synthetic-classification techniques."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1194"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Classify if audio is potentially synthetically generated"
       }
     ]
   },
