@@ -17532,6 +17532,9 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1200"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1378"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -17597,6 +17600,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1195"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1378"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -17648,6 +17654,9 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1195"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1378"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -33801,6 +33810,46 @@
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
         "@value": "The case description is not retrieved from the metadata inside a forensic container because of a programming error in the tool used"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1378",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1378: Relevant keywords not returned by live search due to improper handling of character encoding"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1034"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1027"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Keyword searching (live) does not handle character encoding properly, causing search terms to miss content and fail to find relevant data (false negative)."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1378"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Relevant keywords not returned by live search due to improper handling of character encoding"
       }
     ]
   }

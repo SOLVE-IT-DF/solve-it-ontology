@@ -3100,7 +3100,8 @@ Facebook Messenger
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1193,
         :weaknessDFW-1194,
-        :weaknessDFW-1195 ;
+        :weaknessDFW-1195,
+        :weaknessDFW-1378 ;
     solveit-core:hasReference :citationDFCite-1103,
         :citationDFCite-1134 ;
     solveit-core:hasSynonym "live search" ;
@@ -7312,7 +7313,8 @@ It is also sometimes possible to determine older versions of the operating syste
 :techniqueDFT-1127 a solveit-core:Technique ;
     rdfs:label "DFT-1127: Keyword search (live) (logical)"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessDFW-1195 ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1195,
+        :weaknessDFW-1378 ;
     solveit-core:hasReference :citationDFCite-1103,
         :citationDFCite-1133 ;
     solveit-core:hasSynonym "live search" ;
@@ -7691,7 +7693,8 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
 :techniqueDFT-1125 a solveit-core:Technique ;
     rdfs:label "DFT-1125: Keyword search (live)"@en ;
     solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"^^xsd:anyURI ;
-    solveit-core:hasPotentialWeakness :weaknessDFW-1200 ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1200,
+        :weaknessDFW-1378 ;
     solveit-core:hasReference :citationDFCite-1103,
         :citationDFCite-1133,
         :citationDFCite-1134 ;
@@ -7722,6 +7725,15 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:techniqueDescription "The examination of a browsers configuration" ;
     solveit-core:techniqueID "DFT-1143" ;
     solveit-core:techniqueName "Extract browser configuration artifacts" .
+
+:weaknessDFW-1378 a solveit-core:Weakness ;
+    rdfs:label "DFW-1378: Relevant keywords not returned by live search due to improper handling of character encoding"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1027,
+        :mitigationDFM-1034 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessDescription "Keyword searching (live) does not handle character encoding properly, causing search terms to miss content and fail to find relevant data (false negative)." ;
+    solveit-core:weaknessID "DFW-1378" ;
+    solveit-core:weaknessName "Relevant keywords not returned by live search due to improper handling of character encoding" .
 
 :citationDFCite-1070 a solveit-core:Citation ;
     rdfs:label "DFCite-1070" ;
@@ -7848,12 +7860,6 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:mitigationID "DFM-1008" ;
     solveit-core:mitigationName "Use software write blocker" .
 
-:mitigationDFM-1034 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1034: Comparison of index results with live search results"@en ;
-    solveit-core:linksToTechnique :techniqueDFT-1125 ;
-    solveit-core:mitigationID "DFM-1034" ;
-    solveit-core:mitigationName "Comparison of index results with live search results" .
-
 :mitigationDFM-1079 a solveit-core:Mitigation ;
     rdfs:label "DFM-1079: Analyse file content to detect incompatibility between the content and the recovered file system metadata"@en ;
     solveit-core:mitigationID "DFM-1079" ;
@@ -7893,6 +7899,12 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFM-1162: Testing of deleted call record recovery from AI companion app"@en ;
     solveit-core:mitigationID "DFM-1162" ;
     solveit-core:mitigationName "Testing of deleted call record recovery from AI companion app" .
+
+:mitigationDFM-1034 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1034: Comparison of index results with live search results"@en ;
+    solveit-core:linksToTechnique :techniqueDFT-1125 ;
+    solveit-core:mitigationID "DFM-1034" ;
+    solveit-core:mitigationName "Comparison of index results with live search results" .
 
 :mitigationDFM-1097 a solveit-core:Mitigation ;
     rdfs:label "DFM-1097: Attempt to obtain password/passcode from the device owner"@en ;
