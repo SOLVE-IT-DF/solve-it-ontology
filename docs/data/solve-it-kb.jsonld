@@ -9804,6 +9804,33 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1299",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1299: Cryptographically sign generated forensic analysis reports with an asymmetric key"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Sign analysis reports and export bundles with an asymmetric key (e.g., Ed25519, ECDSA) and embed signatures in a manifest so subsequent tampering is detectable without relying solely on storing a hash in a separate location (DFM-1108)."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1299"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Cryptographically sign generated forensic analysis reports with an asymmetric key"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
