@@ -34,12 +34,6 @@
     solveit-core:mitigationID "DFM-1271" ;
     solveit-core:mitigationName "Cross-validate API-derived artefacts against independent sources to improve reliability" .
 
-:mitigationDFM-1299 a solveit-core:Mitigation ;
-    rdfs:label "DFM-1299: Cryptographically sign generated forensic analysis reports with an asymmetric key"@en ;
-    solveit-core:mitigationDescription "Sign analysis reports and export bundles with an asymmetric key (e.g., Ed25519, ECDSA) and embed signatures in a manifest so subsequent tampering is detectable without relying solely on storing a hash in a separate location (DFM-1108)." ;
-    solveit-core:mitigationID "DFM-1299" ;
-    solveit-core:mitigationName "Cryptographically sign generated forensic analysis reports with an asymmetric key" .
-
 :objectiveDFO-1001 a solveit-core:Objective ;
     rdfs:label "DFO-1001: Reconstruct events"@en ;
     solveit-core:includesTechnique :techniqueDFT-1087,
@@ -1870,6 +1864,12 @@
     rdfs:label "DFM-1281: Compare the cryptographic hash stored in a forensic container with one recorded externally"@en ;
     solveit-core:mitigationID "DFM-1281" ;
     solveit-core:mitigationName "Compare the cryptographic hash stored in a forensic container with one recorded externally" .
+
+:mitigationDFM-1299 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1299: Cryptographically sign generated forensic analysis reports with an asymmetric key"@en ;
+    solveit-core:mitigationDescription "Sign analysis reports and export bundles with an asymmetric key (e.g., Ed25519, ECDSA) and embed signatures in a manifest so subsequent tampering is detectable without relying solely on storing a hash in a separate location (DFM-1108)." ;
+    solveit-core:mitigationID "DFM-1299" ;
+    solveit-core:mitigationName "Cryptographically sign generated forensic analysis reports with an asymmetric key" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage devices or media"@en ;
@@ -5159,7 +5159,8 @@ It is also sometimes possible to determine older versions of the operating syste
 
 :weaknessDFW-1154 a solveit-core:Weakness ;
     rdfs:label "DFW-1154: Report generated from bookmarks stored in manner that does not prevent tampering or corruption"@en ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1108 ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1108,
+        :mitigationDFM-1299 ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_COR ;
     solveit-core:weaknessID "DFW-1154" ;
     solveit-core:weaknessName "Report generated from bookmarks stored in manner that does not prevent tampering or corruption" .

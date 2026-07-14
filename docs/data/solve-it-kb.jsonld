@@ -27100,6 +27100,9 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1108"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1299"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
