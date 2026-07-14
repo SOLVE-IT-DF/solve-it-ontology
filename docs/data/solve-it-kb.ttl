@@ -310,7 +310,7 @@
     solveit-core:objectiveDescription "Create documentation about techniques used and findings." ;
     solveit-core:objectiveID "DFO-1020" ;
     solveit-core:objectiveName "Document digital forensic activities" ;
-    solveit-core:sortOrder 21 .
+    solveit-core:sortOrder 22 .
 
 :objectiveDFO-1021 a solveit-core:Objective ;
     rdfs:label "DFO-1021: Access device data for acquisition"@en ;
@@ -351,6 +351,13 @@
     solveit-core:objectiveID "DFO-1023" ;
     solveit-core:objectiveName "Extract specific artifact types" ;
     solveit-core:sortOrder 13 .
+
+:objectiveDFO-1024 a solveit-core:Objective ;
+    rdfs:label "DFO-1024: Evaluate evidence"@en ;
+    solveit-core:objectiveDescription "Evaluate evidence " ;
+    solveit-core:objectiveID "DFO-1024" ;
+    solveit-core:objectiveName "Evaluate evidence" ;
+    solveit-core:sortOrder 21 .
 
 :citationDFCite-1001 a solveit-core:Citation ;
     rdfs:label "DFCite-1001" ;

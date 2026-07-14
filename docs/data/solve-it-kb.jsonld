@@ -10940,7 +10940,7 @@
     "https://ontology.solveit-df.org/solveit/core/sortOrder": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
-        "@value": 21
+        "@value": 22
       }
     ]
   },
@@ -11103,6 +11103,39 @@
       {
         "@type": "http://www.w3.org/2001/XMLSchema#integer",
         "@value": 13
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1024",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Objective"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFO-1024: Evaluate evidence"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
+      {
+        "@value": "Evaluate evidence "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveID": [
+      {
+        "@value": "DFO-1024"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/objectiveName": [
+      {
+        "@value": "Evaluate evidence"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/sortOrder": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#integer",
+        "@value": 21
       }
     ]
   },
