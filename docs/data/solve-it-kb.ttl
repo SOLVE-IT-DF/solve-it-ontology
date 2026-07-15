@@ -354,6 +354,7 @@
 
 :objectiveDFO-1024 a solveit-core:Objective ;
     rdfs:label "DFO-1024: Evaluate evidence"@en ;
+    solveit-core:includesTechnique :techniqueDFT-1195 ;
     solveit-core:objectiveDescription "Evaluate evidence " ;
     solveit-core:objectiveID "DFO-1024" ;
     solveit-core:objectiveName "Evaluate evidence" ;
@@ -1877,6 +1878,46 @@
     solveit-core:mitigationDescription "Sign analysis reports and export bundles with an asymmetric key (e.g., Ed25519, ECDSA) and embed signatures in a manifest so subsequent tampering is detectable without relying solely on storing a hash in a separate location (DFM-1108)." ;
     solveit-core:mitigationID "DFM-1299" ;
     solveit-core:mitigationName "Cryptographically sign generated forensic analysis reports with an asymmetric key" .
+
+:mitigationDFM-1300 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1300: Ensure that hypotheses are mutually exclusive"@en ;
+    solveit-core:mitigationID "DFM-1300" ;
+    solveit-core:mitigationName "Ensure that hypotheses are mutually exclusive" .
+
+:mitigationDFM-1301 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1301: Avoid hypotheses that rely on untestable assertions"@en ;
+    solveit-core:mitigationID "DFM-1301" ;
+    solveit-core:mitigationName "Avoid hypotheses that rely on untestable assertions" .
+
+:mitigationDFM-1302 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1302: Frame the hypothesis as a relational prediction"@en ;
+    solveit-core:mitigationID "DFM-1302" ;
+    solveit-core:mitigationName "Frame the hypothesis as a relational prediction" .
+
+:mitigationDFM-1303 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1303: Refer to the to the \"suspect\" rather than \"device user\" when generating a hypothesis related to the accused individual"@en ;
+    solveit-core:mitigationID "DFM-1303" ;
+    solveit-core:mitigationName "Refer to the to the \"suspect\" rather than \"device user\" when generating a hypothesis related to the accused individual" .
+
+:mitigationDFM-1304 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1304: Avoid judgmental or loaded terminology in generated hypotheses"@en ;
+    solveit-core:mitigationID "DFM-1304" ;
+    solveit-core:mitigationName "Avoid judgmental or loaded terminology in generated hypotheses" .
+
+:mitigationDFM-1305 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1305: Ensure that hypotheses address the correct level of hierarchy (source, activity, or offense level)"@en ;
+    solveit-core:mitigationID "DFM-1305" ;
+    solveit-core:mitigationName "Ensure that hypotheses address the correct level of hierarchy (source, activity, or offense level)" .
+
+:mitigationDFM-1306 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1306: Generate hypotheses as declarative statements written in the present tense."@en ;
+    solveit-core:mitigationID "DFM-1306" ;
+    solveit-core:mitigationName "Generate hypotheses as declarative statements written in the present tense." .
+
+:mitigationDFM-1307 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1307: Do not generate hypotheses that are overly narrow and may increase the risk of over-specificity or confirmation bias. For instance, refer to a class (wiping tool, Trojan horse program) rather than a member of class (e.g., Eraser.exe, Backdoor.exe) to avoid narrowly focusing on a specific detail"@en ;
+    solveit-core:mitigationID "DFM-1307" ;
+    solveit-core:mitigationName "Do not generate hypotheses that are overly narrow and may increase the risk of over-specificity or confirmation bias. For instance, refer to a class (wiping tool, Trojan horse program) rather than a member of class (e.g., Eraser.exe, Backdoor.exe) to avoid narrowly focusing on a specific detail" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage devices or media"@en ;
@@ -3889,6 +3930,26 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:techniqueDetails "Audio content is analyzed for traces of synthetic generation. Methods include neural anti-spoofing classifiers (e.g. spectro-temporal graph attention networks trained on spoofed/bona-fide speech corpora) and signal-level analyses such as higher-order spectral (bispectral) statistics. The output is typically a classifier-predicted score or confidence that the audio is synthetically generated, or extracted signal traces that aid the analyst in assessing the audio's origin. This completes the modality triad alongside the existing video (DFT-1106) and image (DFT-1176) synthetic-classification techniques." ;
     solveit-core:techniqueID "DFT-1194" ;
     solveit-core:techniqueName "Classify if audio is potentially synthetically generated" .
+
+:techniqueDFT-1195 a solveit-core:Technique ;
+    rdfs:label "DFT-1195: Generate Alternative Hypotheses"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.solveit-df.org/solveit/analysis/Hypothesis"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Observable"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisSet"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1379,
+        :weaknessDFW-1380,
+        :weaknessDFW-1381,
+        :weaknessDFW-1382,
+        :weaknessDFW-1383,
+        :weaknessDFW-1384,
+        :weaknessDFW-1385,
+        :weaknessDFW-1386 ;
+    solveit-core:hasSynonym "Claim",
+        "Proposition" ;
+    solveit-core:techniqueDescription "The process of considering what are the alternative possibilities (other than the proposed hypothesis) for the digital forensic artifacts/traces that we are observing" ;
+    solveit-core:techniqueDetails "Considering alternative hypotheses is fundamental to scientific practices, and assists in mitigating the potential influence of bias. In investigative mode, experts generate possible explanations. In evaluative mode for expert opinion in court proceedings, the expert focuses on disputed issues and evaluates their observations." ;
+    solveit-core:techniqueID "DFT-1195" ;
+    solveit-core:techniqueName "Generate Alternative Hypotheses" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -6712,6 +6773,69 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:weaknessID "DFW-1355" ;
     solveit-core:weaknessName "The case description is not retrieved from the metadata inside a forensic container because of a programming error in the tool used" .
+
+:weaknessDFW-1379 a solveit-core:Weakness ;
+    rdfs:label "DFW-1379: One or more proposed hypotheses are not mutually exclusive"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1300 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessID "DFW-1379" ;
+    solveit-core:weaknessName "One or more proposed hypotheses are not mutually exclusive" .
+
+:weaknessDFW-1380 a solveit-core:Weakness ;
+    rdfs:label "DFW-1380: A proposed hypothesis suffers from a lack of falsifiability"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1301 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessDescription "A scientifically valid hypothesis must present an outcome that can be definitively proven false." ;
+    solveit-core:weaknessID "DFW-1380" ;
+    solveit-core:weaknessName "A proposed hypothesis suffers from a lack of falsifiability" .
+
+:weaknessDFW-1381 a solveit-core:Weakness ;
+    rdfs:label "DFW-1381: A proposed hypothesis equates correlation with causation"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1302 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessDescription "Causal mechanisms are not explicitly established" ;
+    solveit-core:weaknessID "DFW-1381" ;
+    solveit-core:weaknessName "A proposed hypothesis equates correlation with causation" .
+
+:weaknessDFW-1382 a solveit-core:Weakness ;
+    rdfs:label "DFW-1382: A hypothesis refers to \"device user\" rather than \"suspect\" when a specific individual is under investigation"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1303 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessDescription "When a specific individual is under investigation, address this fact. If the individual's use of a device is challenged, this should be explicitly addressed in hypothesis generation." ;
+    solveit-core:weaknessID "DFW-1382" ;
+    solveit-core:weaknessName "A hypothesis refers to \"device user\" rather than \"suspect\" when a specific individual is under investigation" .
+
+:weaknessDFW-1383 a solveit-core:Weakness ;
+    rdfs:label "DFW-1383: A proposed hypothesis uses judgmental or loaded terminology"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1304 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessDescription "Judgmental or loaded terminology is outside the scope of digital forensics and could reflect bias" ;
+    solveit-core:weaknessID "DFW-1383" ;
+    solveit-core:weaknessName "A proposed hypothesis uses judgmental or loaded terminology" .
+
+:weaknessDFW-1384 a solveit-core:Weakness ;
+    rdfs:label "DFW-1384: Addressing the wrong level of the hierarchy of hypotheses required for the case"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1305 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessDescription "The hierarchy of hypotheses (a.k.a. hierarchy of propositions) are: 1) source level concerns where a trace came from (e.g., which device produced contraband), 2) activity level concerns what act produced it (e.g., who produced contraband), and 3) offense level concerns the criminal issue itself (e.g., whether the suspect knowingly produced contraband) — with higher levels being more relevant to decision-makers but requiring more case information to evaluate." ;
+    solveit-core:weaknessID "DFW-1384" ;
+    solveit-core:weaknessName "Addressing the wrong level of the hierarchy of hypotheses required for the case" .
+
+:weaknessDFW-1385 a solveit-core:Weakness ;
+    rdfs:label "DFW-1385: A proposed hypothesis uses vague or complex phrasing"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1306 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessDescription "Hypotheses are declarative statements written in the present tense, without ambiguous language, multiple conditions, or conditional verbs (e.g., \"if-then\" or \"would\"). " ;
+    solveit-core:weaknessID "DFW-1385" ;
+    solveit-core:weaknessName "A proposed hypothesis uses vague or complex phrasing" .
+
+:weaknessDFW-1386 a solveit-core:Weakness ;
+    rdfs:label "DFW-1386: A proposed hypothesis is overly specific to details in the case"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1307 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessDescription "Generating hypotheses that focus on specific details available early in an investigation can be too narrow to accomodate new details found later, and increases the risk of confirmation bias, such as focusing on the use of a specific wiping tool rather than any wiping tool being used" ;
+    solveit-core:weaknessID "DFW-1386" ;
+    solveit-core:weaknessName "A proposed hypothesis is overly specific to details in the case" .
 
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;

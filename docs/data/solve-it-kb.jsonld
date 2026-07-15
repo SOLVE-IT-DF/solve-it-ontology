@@ -9831,6 +9831,182 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1300",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1300: Ensure that hypotheses are mutually exclusive"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1300"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure that hypotheses are mutually exclusive"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1301",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1301: Avoid hypotheses that rely on untestable assertions"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1301"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Avoid hypotheses that rely on untestable assertions"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1302",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1302: Frame the hypothesis as a relational prediction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1302"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Frame the hypothesis as a relational prediction"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1303",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1303: Refer to the to the \"suspect\" rather than \"device user\" when generating a hypothesis related to the accused individual"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1303"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Refer to the to the \"suspect\" rather than \"device user\" when generating a hypothesis related to the accused individual"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1304",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1304: Avoid judgmental or loaded terminology in generated hypotheses"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1304"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Avoid judgmental or loaded terminology in generated hypotheses"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1305",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1305: Ensure that hypotheses address the correct level of hierarchy (source, activity, or offense level)"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1305"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure that hypotheses address the correct level of hierarchy (source, activity, or offense level)"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1306",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1306: Generate hypotheses as declarative statements written in the present tense."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1306"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Generate hypotheses as declarative statements written in the present tense."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1307",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1307: Do not generate hypotheses that are overly narrow and may increase the risk of over-specificity or confirmation bias. For instance, refer to a class (wiping tool, Trojan horse program) rather than a member of class (e.g., Eraser.exe, Backdoor.exe) to avoid narrowly focusing on a specific detail"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1307"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Do not generate hypotheses that are overly narrow and may increase the risk of over-specificity or confirmation bias. For instance, refer to a class (wiping tool, Trojan horse program) rather than a member of class (e.g., Eraser.exe, Backdoor.exe) to avoid narrowly focusing on a specific detail"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
@@ -11115,6 +11291,11 @@
       {
         "@language": "en",
         "@value": "DFO-1024: Evaluate evidence"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1195"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/objectiveDescription": [
@@ -21374,6 +21555,88 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Classify if audio is potentially synthetically generated"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1195",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1195: Generate Alternative Hypotheses"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/Hypothesis"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Observable"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/HypothesisSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1379"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1380"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1381"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1382"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1383"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1384"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1385"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1386"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Claim"
+      },
+      {
+        "@value": "Proposition"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of considering what are the alternative possibilities (other than the proposed hypothesis) for the digital forensic artifacts/traces that we are observing"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Considering alternative hypotheses is fundamental to scientific practices, and assists in mitigating the potential influence of bias. In investigative mode, experts generate possible explanations. In evaluative mode for expert opinion in court proceedings, the expert focuses on disputed issues and evaluates their observations."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1195"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Generate Alternative Hypotheses"
       }
     ]
   },
@@ -33913,6 +34176,297 @@
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
         "@value": "Relevant keywords not returned by live search due to improper handling of character encoding"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1379",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1379: One or more proposed hypotheses are not mutually exclusive"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1300"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1379"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "One or more proposed hypotheses are not mutually exclusive"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1380",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1380: A proposed hypothesis suffers from a lack of falsifiability"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1301"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "A scientifically valid hypothesis must present an outcome that can be definitively proven false."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1380"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A proposed hypothesis suffers from a lack of falsifiability"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1381",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1381: A proposed hypothesis equates correlation with causation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1302"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Causal mechanisms are not explicitly established"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1381"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A proposed hypothesis equates correlation with causation"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1382",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1382: A hypothesis refers to \"device user\" rather than \"suspect\" when a specific individual is under investigation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1303"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "When a specific individual is under investigation, address this fact. If the individual's use of a device is challenged, this should be explicitly addressed in hypothesis generation."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1382"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A hypothesis refers to \"device user\" rather than \"suspect\" when a specific individual is under investigation"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1383",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1383: A proposed hypothesis uses judgmental or loaded terminology"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1304"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Judgmental or loaded terminology is outside the scope of digital forensics and could reflect bias"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1383"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A proposed hypothesis uses judgmental or loaded terminology"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1384",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1384: Addressing the wrong level of the hierarchy of hypotheses required for the case"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1305"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "The hierarchy of hypotheses (a.k.a. hierarchy of propositions) are: 1) source level concerns where a trace came from (e.g., which device produced contraband), 2) activity level concerns what act produced it (e.g., who produced contraband), and 3) offense level concerns the criminal issue itself (e.g., whether the suspect knowingly produced contraband) — with higher levels being more relevant to decision-makers but requiring more case information to evaluate."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1384"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Addressing the wrong level of the hierarchy of hypotheses required for the case"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1385",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1385: A proposed hypothesis uses vague or complex phrasing"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1306"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Hypotheses are declarative statements written in the present tense, without ambiguous language, multiple conditions, or conditional verbs (e.g., \"if-then\" or \"would\"). "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1385"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A proposed hypothesis uses vague or complex phrasing"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1386",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1386: A proposed hypothesis is overly specific to details in the case"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1307"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Generating hypotheses that focus on specific details available early in an investigation can be too narrow to accomodate new details found later, and increases the risk of confirmation bias, such as focusing on the use of a specific wiping tool rather than any wiping tool being used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1386"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A proposed hypothesis is overly specific to details in the case"
       }
     ]
   }
