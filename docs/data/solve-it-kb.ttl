@@ -263,7 +263,8 @@
         :techniqueDFT-1149,
         :techniqueDFT-1180,
         :techniqueDFT-1185,
-        :techniqueDFT-1190 ;
+        :techniqueDFT-1190,
+        :techniqueDFT-1196 ;
     solveit-core:objectiveDescription "Process data stored by the operating system to extract digital forensic artifacts." ;
     solveit-core:objectiveID "DFO-1017" ;
     solveit-core:objectiveName "Extract artifacts stored by the operating system" ;
@@ -984,21 +985,6 @@
 }""" ;
     solveit-core:citationID "DFCite-1156" ;
     solveit-core:citationPlaintext "https://github.com/frida" .
-
-:citationDFCite-1157 a solveit-core:Citation ;
-    rdfs:label "DFCite-1157" ;
-    solveit-core:citationBibtex """@misc{tubbs2018lastwindows,
-  author       = {Tubbs, Jamey},
-  title        = {What ``the Last Version of {Windows}'' Means for Digital Forensics},
-  howpublished = {Magnet Forensics Blog},
-  year         = {2018},
-  month        = feb,
-  day          = {16},
-  url          = {https://www.magnetforensics.com/blog/what-the-last-version-of-windows-means-for-digital-forensics/},
-  note         = {Accessed: 2026-07-06}
-}""" ;
-    solveit-core:citationID "DFCite-1157" ;
-    solveit-core:citationPlaintext "None" .
 
 :citationDFCite-1158 a solveit-core:Citation ;
     rdfs:label "DFCite-1158" ;
@@ -1918,6 +1904,11 @@
     rdfs:label "DFM-1307: Do not generate hypotheses that are overly narrow and may increase the risk of over-specificity or confirmation bias. For instance, refer to a class (wiping tool, Trojan horse program) rather than a member of class (e.g., Eraser.exe, Backdoor.exe) to avoid narrowly focusing on a specific detail"@en ;
     solveit-core:mitigationID "DFM-1307" ;
     solveit-core:mitigationName "Do not generate hypotheses that are overly narrow and may increase the risk of over-specificity or confirmation bias. For instance, refer to a class (wiping tool, Trojan horse program) rather than a member of class (e.g., Eraser.exe, Backdoor.exe) to avoid narrowly focusing on a specific detail" .
+
+:mitigationDFM-1309 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1309: Ensure that the tool examines artifacts of previous operating system installation and presents them clearly"@en ;
+    solveit-core:mitigationID "DFM-1309" ;
+    solveit-core:mitigationName "Ensure that the tool examines artifacts of previous operating system installation and presents them clearly" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage devices or media"@en ;
@@ -3950,6 +3941,21 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:techniqueDetails "Considering alternative hypotheses is fundamental to scientific practices, and assists in mitigating the potential influence of bias. In investigative mode, experts generate possible explanations. In evaluative mode for expert opinion in court proceedings, the expert focuses on disputed issues and evaluates their observations." ;
     solveit-core:techniqueID "DFT-1195" ;
     solveit-core:techniqueName "Generate Alternative Hypotheses" .
+
+:techniqueDFT-1196 a solveit-core:Technique ;
+    rdfs:label "DFT-1196: Extract operating system installation date"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Observable"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/installDate"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1387,
+        :weaknessDFW-1388,
+        :weaknessDFW-1389,
+        :weaknessDFW-1390,
+        :weaknessDFW-1391,
+        :weaknessDFW-1392 ;
+    solveit-core:hasReference :citationDFCite-1157 ;
+    solveit-core:techniqueDescription "Extract the date and time recorded as the installation date of the operating system." ;
+    solveit-core:techniqueID "DFT-1196" ;
+    solveit-core:techniqueName "Extract operating system installation date" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -6837,6 +6843,52 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:weaknessID "DFW-1386" ;
     solveit-core:weaknessName "A proposed hypothesis is overly specific to details in the case" .
 
+:weaknessDFW-1387 a solveit-core:Weakness ;
+    rdfs:label "DFW-1387: The operating system installation date is not recovered because the tool fails while decoding the value"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1308 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1387" ;
+    solveit-core:weaknessName "The operating system installation date is not recovered because the tool fails while decoding the value" .
+
+:weaknessDFW-1388 a solveit-core:Weakness ;
+    rdfs:label "DFW-1388: The operating system installation date is not recovered because the tool examines an incorrect artifact"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1308 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1388" ;
+    solveit-core:weaknessName "The operating system installation date is not recovered because the tool examines an incorrect artifact" .
+
+:weaknessDFW-1389 a solveit-core:Weakness ;
+    rdfs:label "DFW-1389: The operating system installation date extracted does not reflect the time it was installed because the artifact represents an software update, or some other event"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1308 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1389" ;
+    solveit-core:weaknessName "The operating system installation date extracted does not reflect the time it was installed because the artifact represents an software update, or some other event" .
+
+:weaknessDFW-1390 a solveit-core:Weakness ;
+    rdfs:label "DFW-1390: The operating system installation date extracted does not reflect the time it was installed because the timezone conversion was applied incorrectly"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1308 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1390" ;
+    solveit-core:weaknessName "The operating system installation date extracted does not reflect the time it was installed because the timezone conversion was applied incorrectly" .
+
+:weaknessDFW-1391 a solveit-core:Weakness ;
+    rdfs:label "DFW-1391: The operating system installation date extracted does not reflect the time it was installed because the tool incorrectly decoded the timestamp"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1308 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1391" ;
+    solveit-core:weaknessName "The operating system installation date extracted does not reflect the time it was installed because the tool incorrectly decoded the timestamp" .
+
+:weaknessDFW-1392 a solveit-core:Weakness ;
+    rdfs:label "DFW-1392: Presentation of the extracted operating system installation date does not highlight that there were previous operating systems installed prior to this date"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1309 ;
+    solveit-core:hasReference :citationDFCite-1157 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
+    solveit-core:weaknessID "DFW-1392" ;
+    solveit-core:weaknessName "Presentation of the extracted operating system installation date does not highlight that there were previous operating systems installed prior to this date" .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
@@ -7680,6 +7732,21 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:citationID "DFCite-1113" ;
     solveit-core:citationPlaintext "Pereira, M.T., 2009. Forensic analysis of the Firefox 3 Internet history and recovery of deleted SQLite records. Digital Investigation, 5(3-4), pp.93-103." .
 
+:citationDFCite-1157 a solveit-core:Citation ;
+    rdfs:label "DFCite-1157" ;
+    solveit-core:citationBibtex """@misc{tubbs2018lastwindows,
+  author       = {Tubbs, Jamey},
+  title        = {What ``the Last Version of {Windows}'' Means for Digital Forensics},
+  howpublished = {Magnet Forensics Blog},
+  year         = {2018},
+  month        = feb,
+  day          = {16},
+  url          = {https://www.magnetforensics.com/blog/what-the-last-version-of-windows-means-for-digital-forensics/},
+  note         = {Accessed: 2026-07-06}
+}""" ;
+    solveit-core:citationID "DFCite-1157" ;
+    solveit-core:citationPlaintext "None" .
+
 :mitigationDFM-1002 a solveit-core:Mitigation ;
     rdfs:label "DFM-1002: Testing of the faraday environment to be used"@en ;
     solveit-core:hasReference :citationDFCite-1086 ;
@@ -7986,6 +8053,11 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     rdfs:label "DFM-1280: Compare the metadata stored in a forensic container with that recorded in accompanying documentation"@en ;
     solveit-core:mitigationID "DFM-1280" ;
     solveit-core:mitigationName "Compare the metadata stored in a forensic container with that recorded in accompanying documentation" .
+
+:mitigationDFM-1308 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1308: Test that the tool recovers the date of operating system installation correctly"@en ;
+    solveit-core:mitigationID "DFM-1308" ;
+    solveit-core:mitigationName "Test that the tool recovers the date of operating system installation correctly" .
 
 :citationDFCite-1030 a solveit-core:Citation ;
     rdfs:label "DFCite-1030" ;
