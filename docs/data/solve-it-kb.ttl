@@ -264,7 +264,8 @@
         :techniqueDFT-1180,
         :techniqueDFT-1185,
         :techniqueDFT-1190,
-        :techniqueDFT-1196 ;
+        :techniqueDFT-1196,
+        :techniqueDFT-1197 ;
     solveit-core:objectiveDescription "Process data stored by the operating system to extract digital forensic artifacts." ;
     solveit-core:objectiveID "DFO-1017" ;
     solveit-core:objectiveName "Extract artifacts stored by the operating system" ;
@@ -1909,6 +1910,21 @@
     rdfs:label "DFM-1309: Ensure that the tool examines artifacts of previous operating system installation and presents them clearly"@en ;
     solveit-core:mitigationID "DFM-1309" ;
     solveit-core:mitigationName "Ensure that the tool examines artifacts of previous operating system installation and presents them clearly" .
+
+:mitigationDFM-1310 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1310: Recover older copies of data that contains mount point mappings from backups"@en ;
+    solveit-core:mitigationID "DFM-1310" ;
+    solveit-core:mitigationName "Recover older copies of data that contains mount point mappings from backups" .
+
+:mitigationDFM-1311 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1311: Recover older copies of data that contains mount point mappings from file versioning artifacts"@en ;
+    solveit-core:mitigationID "DFM-1311" ;
+    solveit-core:mitigationName "Recover older copies of data that contains mount point mappings from file versioning artifacts" .
+
+:mitigationDFM-1313 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1313: Check for the presence of multiple operating systems and process mount point mappings for all of them"@en ;
+    solveit-core:mitigationID "DFM-1313" ;
+    solveit-core:mitigationName "Check for the presence of multiple operating systems and process mount point mappings for all of them" .
 
 :techniqueDFT-1001 a solveit-core:Technique ;
     rdfs:label "DFT-1001: Triage devices or media"@en ;
@@ -3956,6 +3972,26 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:techniqueDescription "Extract the date and time recorded as the installation date of the operating system." ;
     solveit-core:techniqueID "DFT-1196" ;
     solveit-core:techniqueName "Extract operating system installation date" .
+
+:techniqueDFT-1197 a solveit-core:Technique ;
+    rdfs:label "DFT-1197: Determine mount point mappings within an operating system"@en ;
+    solveit-core:hasCASEInputClass "https://ontology.unifiedcyberontology.org/uco/observable/Observable"^^xsd:anyURI ;
+    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/driveLetter"^^xsd:anyURI,
+        "https://ontology.unifiedcyberontology.org/uco/observable/mountPoint"^^xsd:anyURI ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1393,
+        :weaknessDFW-1394,
+        :weaknessDFW-1395,
+        :weaknessDFW-1396 ;
+    solveit-core:hasSynonym "drive letter mapping" ;
+    solveit-core:techniqueDescription "This involves establishing what mount points (including drive letters) within an operating system are mapped to, either a partition or device. " ;
+    solveit-core:techniqueDetails """On Windows this will typically be mapping drive letters to specific partitions on local disks or removable media, DVD drives, or even mounted encrypted containers. 
+
+The term 'mount point mapping' is used here to include drive letters on Windows and the use of folders as mount points on other operating systems.""" ;
+    solveit-core:techniqueID "DFT-1197" ;
+    solveit-core:techniqueName "Determine mount point mappings within an operating system" .
 
 :weaknessDFW-1001 a solveit-core:Weakness ;
     rdfs:label "DFW-1001: Excluding a device that contains relevant information"@en ;
@@ -6889,6 +6925,36 @@ It is also sometimes possible to determine older versions of the operating syste
     solveit-core:weaknessID "DFW-1392" ;
     solveit-core:weaknessName "Presentation of the extracted operating system installation date does not highlight that there were previous operating systems installed prior to this date" .
 
+:weaknessDFW-1393 a solveit-core:Weakness ;
+    rdfs:label "DFW-1393: Failure to recover mount point mapping because multiple devices have used the mount point and older data has been overwritten"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1310,
+        :mitigationDFM-1311 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1393" ;
+    solveit-core:weaknessName "Failure to recover mount point mapping because multiple devices have used the mount point and older data has been overwritten" .
+
+:weaknessDFW-1394 a solveit-core:Weakness ;
+    rdfs:label "DFW-1394: Failure to recover mount point mapping because of a tool processing error"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1312 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1394" ;
+    solveit-core:weaknessName "Failure to recover mount point mapping because of a tool processing error" .
+
+:weaknessDFW-1395 a solveit-core:Weakness ;
+    rdfs:label "DFW-1395: Failure to recover mount point mapping because multiple operating systems are present and they use different mappings"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1313 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:weaknessID "DFW-1395" ;
+    solveit-core:weaknessName "Failure to recover mount point mapping because multiple operating systems are present and they use different mappings" .
+
+:weaknessDFW-1396 a solveit-core:Weakness ;
+    rdfs:label "DFW-1396: Extracting a relationship between a mount point and device/partition that is incorrect because of a tool processing error"@en ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1312 ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+        solveit-core:ASTM_INAC_EX ;
+    solveit-core:weaknessID "DFW-1396" ;
+    solveit-core:weaknessName "Extracting a relationship between a mount point and device/partition that is incorrect because of a tool processing error" .
+
 :citationDFCite-1014 a solveit-core:Citation ;
     rdfs:label "DFCite-1014" ;
     solveit-core:citationID "DFCite-1014" ;
@@ -7334,6 +7400,11 @@ It is also sometimes possible to determine older versions of the operating syste
     rdfs:label "DFM-1279: Ensure all relevant connectivity settings for this particular device have been disabled"@en ;
     solveit-core:mitigationID "DFM-1279" ;
     solveit-core:mitigationName "Ensure all relevant connectivity settings for this particular device have been disabled" .
+
+:mitigationDFM-1312 a solveit-core:Mitigation ;
+    rdfs:label "DFM-1312: Test that tool can correctly recover mount point mappings"@en ;
+    solveit-core:mitigationID "DFM-1312" ;
+    solveit-core:mitigationName "Test that tool can correctly recover mount point mappings" .
 
 :techniqueDFT-1006 a solveit-core:Technique ;
     rdfs:label "DFT-1006: Search a crime scene using digital sniffer dogs"@en ;

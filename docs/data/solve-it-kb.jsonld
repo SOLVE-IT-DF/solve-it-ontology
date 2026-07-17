@@ -10051,6 +10051,94 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1310",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1310: Recover older copies of data that contains mount point mappings from backups"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1310"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Recover older copies of data that contains mount point mappings from backups"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1311",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1311: Recover older copies of data that contains mount point mappings from file versioning artifacts"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1311"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Recover older copies of data that contains mount point mappings from file versioning artifacts"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1312",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1312: Test that tool can correctly recover mount point mappings"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1312"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Test that tool can correctly recover mount point mappings"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1313",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1313: Check for the presence of multiple operating systems and process mount point mappings for all of them"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1313"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Check for the presence of multiple operating systems and process mount point mappings for all of them"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
@@ -10969,6 +11057,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1190"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1197"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1196"
@@ -21748,6 +21839,85 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Extract operating system installation date"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1197",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1197: Determine mount point mappings within an operating system"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Observable"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/DiskPartition"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/mountPoint"
+      },
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#anyURI",
+        "@value": "https://ontology.unifiedcyberontology.org/uco/observable/driveLetter"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1393"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1394"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1395"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1396"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "drive letter mapping"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "This involves establishing what mount points (including drive letters) within an operating system are mapped to, either a partition or device. "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "On Windows this will typically be mapping drive letters to specific partitions on local disks or removable media, DVD drives, or even mounted encrypted containers. \n\nThe term 'mount point mapping' is used here to include drive letters on Windows and the use of folders as mount points on other operating systems."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1197"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Determine mount point mappings within an operating system"
       }
     ]
   },
@@ -34784,6 +34954,140 @@
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
         "@value": "Presentation of the extracted operating system installation date does not highlight that there were previous operating systems installed prior to this date"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1393",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1393: Failure to recover mount point mapping because multiple devices have used the mount point and older data has been overwritten"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1310"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1311"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1393"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover mount point mapping because multiple devices have used the mount point and older data has been overwritten"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1394",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1394: Failure to recover mount point mapping because of a tool processing error"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1312"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1394"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover mount point mapping because of a tool processing error"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1395",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1395: Failure to recover mount point mapping because multiple operating systems are present and they use different mappings"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1313"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1395"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to recover mount point mapping because multiple operating systems are present and they use different mappings"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1396",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1396: Extracting a relationship between a mount point and device/partition that is incorrect because of a tool processing error"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1312"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1396"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Extracting a relationship between a mount point and device/partition that is incorrect because of a tool processing error"
       }
     ]
   }
