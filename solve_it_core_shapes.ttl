@@ -1,6 +1,8 @@
 @prefix : <https://ontology.solveit-df.org/solveit/core/shapes/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
 @base <https://ontology.solveit-df.org/solveit/core/shapes/> .
 
@@ -14,23 +16,57 @@
 #################################################################
 #    SolveitInvestigativeAction Shape
 #################################################################
+#
+#    RETIRED at the UCO 1.5.0 Technique metaclass alignment.
+#
+#    The former shape required minCount 1 on solveit-core:usedTechnique.
+#    Under the metaclass model an action states its technique(s) by rdf:type
+#    against the technique class(es), and every technique class descends from
+#    solveit-core:SolveitInvestigativeAction. A node therefore cannot be a
+#    member of this class without carrying at least one technique type, so
+#    the constraint has no violating state left to detect.
+#
+#    Restating it would require a sh:sparql constraint counting rdf:type
+#    values that are SOLVE-IT technique classes, which buys nothing.
+#
+#    The target class itself remains available for future occurrence-level
+#    constraints (for example on appliedMitigation).
+#
+#    Note on targeting: sh:targetClass selects SHACL instances, which follow
+#    rdf:type then rdfs:subClassOf* . An action typed only with its technique
+#    class is therefore still selected by a shape targeting
+#    solveit-core:SolveitInvestigativeAction, with no reasoner required.
+#################################################################
 
-:SolveitInvestigativeActionShape a sh:NodeShape ;
-    sh:targetClass solveit-core:SolveitInvestigativeAction ;
-    rdfs:label "SOLVE-IT Investigative Action Shape"@en ;
-    rdfs:comment "Enforces the cardinality solve_it_core.ttl states in prose: a SolveitInvestigativeAction links to at least one SOLVE-IT technique (1..n via usedTechnique)."@en ;
+#################################################################
+#    Technique Shape
+#################################################################
+#
+#    A SOLVE-IT technique is simultaneously an instance of the Technique
+#    metaclass and an owl:Class. Both facts must be asserted, and the class
+#    must sit under SolveitInvestigativeAction so that its instances are
+#    investigative actions. UCO states this convention in prose because OWL 2
+#    has no axiom for "instances of this metaclass are subclasses of X", so it
+#    is checked here instead.
+
+:TechniqueShape a sh:NodeShape ;
+    sh:targetClass solveit-core:Technique ;
+    rdfs:label "SOLVE-IT Technique Shape"@en ;
+    rdfs:comment "Checks that each SOLVE-IT technique is declared as an owl:Class and is placed under solveit-core:SolveitInvestigativeAction, directly or through a parent technique."@en ;
     sh:property [
-        sh:path solveit-core:usedTechnique ;
+        sh:path rdf:type ;
+        sh:hasValue owl:Class ;
+        sh:message "A SOLVE-IT technique must also be declared an owl:Class, so that performed actions can be typed with it."@en ;
+    ] ;
+    sh:property [
+        sh:path rdfs:subClassOf ;
         sh:minCount 1 ;
         sh:nodeKind sh:IRI ;
-        sh:message "A SolveitInvestigativeAction must reference at least one SOLVE-IT technique via usedTechnique (1..n)."@en ;
+        sh:message "A SOLVE-IT technique class must have at least one rdfs:subClassOf — either its parent technique, or solveit-core:SolveitInvestigativeAction for a root technique."@en ;
+    ] ;
+    sh:property [
+        sh:path solveit-core:techniqueID ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A SOLVE-IT technique must have exactly one techniqueID."@en ;
     ] .
-
-# Note: usedTechnique's range (solveit-core:Technique) is asserted as an
-# OWL rdfs:range in solve_it_core.ttl but is deliberately NOT enforced
-# here as sh:class. Data graphs commonly reference the technique
-# individual as an external node (e.g. solveit-data:techniqueDFT-NNNN)
-# without restating its type, so a class check would fail well-formed
-# data. The shape requires an IRI value instead. A stricter range shape
-# is a candidate once a convention is agreed for declaring (or importing)
-# the referenced Technique individuals.

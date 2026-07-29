@@ -193,7 +193,25 @@ solveit-core:ASTM_INCOMP rdf:type solveit-core:ASTMErrorCategory .
 
 :searchresults-e5f67890-abcd-ef01-2345-555566667777 rdf:type solveit-observable:KeywordSearchResultSet ;
     rdfs:label "Keyword search results"@en ;
-    uco-core:description "1,247 hits across 312 files from indexed keyword search" .
+    uco-core:description "1,247 hits across 312 files from indexed keyword search" ;
+    solveit-observable:hasSearchResult :hit-07890123-def0-1234-5678-777788889991 ;
+    solveit-observable:hasSearchResult :hit-07890123-def0-1234-5678-777788889992 ;
+    solveit-observable:hasSearchResult :hit-07890123-def0-1234-5678-777788889993 .
+
+###  Individual hits within the result set. Three are shown here as a
+###  sample; the full set contains 1,247. Because the search was indexed,
+###  each hit is already resolved to a file rather than a raw byte offset.
+:hit-07890123-def0-1234-5678-777788889991 rdf:type solveit-observable:KeywordSearchResult ;
+    rdfs:label "Hit: 'Whitfield' in \\Users\\jsmith\\Documents\\contacts.docx"@en ;
+    uco-core:description "Match on a suspect alias from the case-specific wordlist" .
+
+:hit-07890123-def0-1234-5678-777788889992 rdf:type solveit-observable:KeywordSearchResult ;
+    rdfs:label "Hit: '14 Marlow Road' in \\Users\\jsmith\\AppData\\Local\\Microsoft\\Outlook\\archive.pst"@en ;
+    uco-core:description "Match on a case address, located in an email store" .
+
+:hit-07890123-def0-1234-5678-777788889993 rdf:type solveit-observable:KeywordSearchResult ;
+    rdfs:label "Hit: 'Whitfield' in \\Users\\jsmith\\Downloads\\invoice_0342.pdf"@en ;
+    uco-core:description "Second match on the same alias in a different file" .
 
 ###  SolveitInvestigativeAction: Indexed Keyword Search with Case-Specific Wordlists
 ###

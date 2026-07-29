@@ -303,9 +303,14 @@ def validate_examples(project_root, defined_classes, defined_properties, propert
     UCO_ACTION = Namespace("https://ontology.unifiedcyberontology.org/uco/action/")
     combined_graph = g + ontology_graph  # query across both
 
-    action_class = SOLVEIT_CORE.SolveitInvestigativeAction
-    for action in g.subjects(RDF.type, action_class):
-        for technique_ref in g.objects(action, SOLVEIT_CORE.usedTechnique):
+    # Under the UCO 1.5.0 Technique metaclass model, a performed action states
+    # the technique it implements by rdf:type against the technique class,
+    # rather than through a usedTechnique property. A technique class is any
+    # node typed solveit-core:Technique in the examples or in the ontology.
+    technique_classes = set(combined_graph.subjects(RDF.type, SOLVEIT_CORE.Technique))
+
+    for action in set(g.subjects(RDF.type, None)):
+        for technique_ref in [t for t in g.objects(action, RDF.type) if t in technique_classes]:
             # Collect expected I/O classes from the technique definition
             expected_inputs = set()
             expected_outputs = set()
