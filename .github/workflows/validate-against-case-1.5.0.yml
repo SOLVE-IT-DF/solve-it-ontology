@@ -1,0 +1,115 @@
+name: Validate against CASE 1.5.0
+
+# Manual only for now (workflow_dispatch). Run it from the Actions tab when the
+# ontology or the generated knowledge base changes in a way worth checking.
+#
+# The CASE/UCO version is pinned deliberately. When that pin moves, update BOTH
+# the `case_version` default below AND the workflow name above, so the name in
+# the Actions list never lies about what is being validated.
+#
+# If this is ever put on a schedule, add an actions/cache step for the merged
+# ontology graph, keyed on the CASE tag plus a hash of the local solve_it_*.ttl
+# files. It is not worth the moving parts while the workflow is manual.
+
+on:
+  workflow_dispatch:
+    inputs:
+      case_version:
+        description: 'CASE release tag to validate against (UCO comes from its submodule)'
+        default: '1.5.0'
+        required: true
+        type: string
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout ontology repository
+        uses: actions/checkout@v4
+
+      - name: Checkout CASE (with the UCO submodule)
+        uses: actions/checkout@v4
+        with:
+          repository: casework/CASE
+          ref: ${{ inputs.case_version }}
+          submodules: recursive
+          path: case-src
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        # case-utils 0.17.0 only bundles CASE up to 1.4.0, hence the
+        # --built-version none / --ontology-graph approach below.
+        run: |
+          python -m pip install --upgrade pip
+          pip install case-utils==0.17.0
+          pip show case-utils | head -2
+
+      - name: Build merged ontology graph
+        run: |
+          python - <<'PY'
+          import glob
+          from rdflib import Graph
+
+          patterns = [
+              'case-src/ontology/**/*.ttl',
+              'case-src/dependencies/UCO/ontology/**/*.ttl',
+              'solve_it_*.ttl',          # includes the two SHACL shapes files
+          ]
+          files = sorted({f for p in patterns for f in glob.glob(p, recursive=True)})
+
+          # Guard against the most damaging silent failure: if the UCO submodule
+          # is missing, the graph is nearly empty and everything "passes".
+          if len(files) < 25:
+              raise SystemExit(
+                  f'Only {len(files)} ontology files found, expected around 32. '
+                  'Is the UCO submodule checked out?'
+              )
+
+          g = Graph()
+          for f in files:
+              g.parse(f, format='turtle')
+          print(f'{len(files)} files, {len(g)} triples')
+          g.serialize('combined_ontology.ttl', format='turtle')
+          PY
+
+      - name: Validate the generated knowledge base
+        run: |
+          mkdir -p validation-reports
+          status=0
+          for f in docs/data/solve-it-kb.ttl docs/data/solve-it-kb.jsonld; do
+            if [ ! -f "$f" ]; then
+              echo "Missing: $f"
+              status=1
+              continue
+            fi
+            report="validation-reports/$(basename "$f").txt"
+            echo "::group::$f"
+            # --allow-info: the knowledge base uses stable readable IRIs rather
+            # than UUID-suffixed ones, so uco-core:UcoThing-identifier-regex-shape
+            # reports one sh:Info result per individual (several hundred). Without
+            # this flag pySHACL treats those as non-conforming and the job can
+            # never pass. Warnings and Violations still fail.
+            if case_validate --built-version none --allow-info \
+                 --ontology-graph combined_ontology.ttl "$f" > "$report" 2>&1; then
+              echo "PASS: $f"
+            else
+              echo "FAIL: $f"
+              status=1
+            fi
+            head -40 "$report"
+            echo "::endgroup::"
+          done
+          exit $status
+
+      - name: Upload validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: case-validation-reports
+          path: validation-reports/
+          if-no-files-found: warn
