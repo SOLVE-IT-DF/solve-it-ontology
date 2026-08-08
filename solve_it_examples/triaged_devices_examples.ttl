@@ -54,10 +54,9 @@
     rdfs:label "Forensic Examiner"@en .
 
 ###  Triage action — examiner applies T1001 to the device set
-:triage-action rdf:type solveit-core:SolveitInvestigativeAction ;
+:triage-action a solveit-data:techniqueDFT-1001 ;
     uco-core:name "Device triage" ;
     uco-core:description "Examiner triaged seized devices based on case relevance and expected evidentiary value" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1001 ;  # T1001: Triage
     uco-action:performer :examiner-1 ;
     uco-action:startTime "2026-02-16T10:00:00Z"^^xsd:dateTime ;
     uco-action:endTime "2026-02-16T10:45:00Z"^^xsd:dateTime ;

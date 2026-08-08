@@ -1,6 +1,8 @@
 @prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix kb: <http://example.org/kb/> .
 @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
 @prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix solveit-data: <https://ontology.solveit-df.org/solveit/data/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -8,215 +10,275 @@
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
-@prefix solveit-data: <https://ontology.solveit-df.org/solveit/data/> .
 @base <https://ontology.solveit-df.org/solveit/examples/> .
 
 #################################################################
-#    SOLVE-IT Core Classes Examples
-#    Demonstrates Objective, Technique, Weakness, Mitigation,
-#    and SolveitInvestigativeAction usage
+# SOLVE-IT Core Classes Examples — Technique metaclass model
+#
+# Model notes:
+#   * Each Technique is a class, declared "a owl:Class ,
+#     solveit-core:Technique" (an instance of the Technique
+#     metaclass). The core ontology already treats a Technique as
+#     a kind of action, so its instances are performed actions.
+#   * Sub-techniques are rdfs:subClassOf their parent Technique.
+#   * A performed action implements a Technique by being typed with
+#     it (rdf:type), eliminating the usedTechnique property. Example
+#     includes multi-classing (two rdf:type assertions).
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/examples/core> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/core/0.1.0> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/core/0.3.0> ;
     owl:imports <https://ontology.solveit-df.org/solveit/core> ;
-    rdfs:label "SOLVE-IT Core Classes Examples"@en ;
-    rdfs:comment "Example instances demonstrating the core SOLVE-IT ontology classes."@en .
+    rdfs:label "SOLVE-IT Core Classes Examples (Technique metaclass)"@en ;
+    rdfs:comment "Example instances demonstrating the core SOLVE-IT ontology classes with Technique modelled as a metaclass; property values aligned to the current SOLVE-IT knowledge base."@en .
 
 #################################################################
-#    Example SOLVE-IT Objective Instance
+# Example SOLVE-IT Objective Instance
 #################################################################
 
-:objectiveAcquireData rdf:type solveit-core:Objective ;
+solveit-data:objectiveAcquireData rdf:type solveit-core:Objective ;
     rdfs:label "Acquire data"@en ;
     solveit-core:objectiveName "Acquire data" ;
     solveit-core:objectiveDescription "Collect data from the identified evidence sources." ;
-    solveit-core:includesTechnique :techniqueDFT-1002 ;
-    solveit-core:includesTechnique :techniqueDFT-1042 ;
-    rdfs:comment "This objective can be achieved through multiple techniques including disk imaging (DFT-1002), hash verification (DFT-1042), and others not shown in these examples."@en .
-
+    solveit-core:includesTechnique solveit-data:techniqueDFT-1002 ;
+    solveit-core:includesTechnique solveit-data:techniqueDFT-1042 ;
+    rdfs:comment "This objective can be achieved through multiple techniques including copy sectors from storage media (DFT-1002), verify hash of imaged data (DFT-1042), and others not shown in these examples."@en .
 
 #################################################################
-#    Example SOLVE-IT Technique Instances
+# Example SOLVE-IT Technique CLASSES (metaclass model)
+#   a owl:Class , solveit-core:Technique   -> it IS a technique;
+#   the core ontology already treats techniques as actions, so
+#   instances of these classes are performed actions.
 #################################################################
 
-:techniqueDFT-1002 rdf:type solveit-core:Technique ;
-    rdfs:label "DFT-1002: Disk imaging"@en ;
+solveit-data:techniqueDFT-1002 a owl:Class , solveit-core:Technique ;
+    rdfs:label "DFT-1002: Copy sectors from storage media"@en ;
     solveit-core:techniqueID "DFT-1002" ;
-    solveit-core:techniqueName "Disk imaging" ;
-    solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ into an imaging format. The could be from a traditional hard disk, SSD, USB stick, or data from an eMMC chip that has been desoldered and placed in a reader." ;
+    solveit-core:techniqueName "Copy sectors from storage media" ;
+    solveit-core:techniqueDescription "Copying of sectors from a storage media, typically LBA~0~ to LBA~max~ to a bitstream that can be stored in a image format (DFT-1025)." ;
     solveit-core:hasExample "dcfldd" ;
     solveit-core:hasExample "FTK Imager" ;
     solveit-core:hasExample "Magnet ACQUIRE" ;
-    solveit-core:hasPotentialWeakness :weaknessDFW-1004 ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Image"^^xsd:anyURI ;
-    solveit-core:hasReference "Nikkel, B., 2016. Practical forensic imaging: securing digital evidence with Linux tools. No Starch Press, Chapter 6, 'Forensic Image Acquisition'" .
+    solveit-core:hasPotentialWeakness solveit-data:weaknessDFW-1004 ;
+    solveit-core:hasCASEInputClass solveit-observable:WriteProtectedDeviceInterface ;
+    solveit-core:hasCASEInputClass solveit-observable:ReadWriteDeviceInterface ;
+    solveit-core:hasCASEOutputClass solveit-observable:Bitstream ;
+    solveit-core:hasReference "DFCite-1107" .
 
-:techniqueDFT-1042 rdf:type solveit-core:Technique ;
-    rdfs:label "DFT-1042: Disk image hash verification"@en ;
+solveit-data:techniqueDFT-1042 a owl:Class , solveit-core:Technique ;
+    rdfs:label "DFT-1042: Verify hash of imaged data matches the hash of the source device"@en ;
     solveit-core:techniqueID "DFT-1042" ;
-    solveit-core:techniqueName "Disk image hash verification" ;
-    solveit-core:techniqueDescription "Computing the hash function of the entire contents of a disk, recording it, and then subsequently computing the hash over any disk image created to detect if any content is different (adapted from Lyle 2002)" ;
-    solveit-core:hasReference "Kessler, G.C., 2016. The impact of MD5 file hash collisions on digital forensic imaging. Journal of digital forensics, security and law, 11(4), p.9." ;
-    solveit-core:hasReference "Kessler GC. The impact of SHA-1 file hash collisions on digital forensic imaging: A follow-up experiment. Journal of Digital Forensics, Security and Law. 2016;11(4):10." ;
-    solveit-core:hasReference "Lyle, J., 2002. Testing disk imaging tools. DFRWS USA 2002, https://dfrws.org/wp-content/uploads/2019/06/2002_USA_paper-testing_disk_imaging_tools.pdf" .
+    solveit-core:techniqueName "Verify hash of imaged data matches the hash of the source device" ;
+    solveit-core:hasCASEInputClass uco-observable:hash ;
+    solveit-core:hasCASEOutputClass solveit-observable:HashVerificationResult ;
+    solveit-core:hasReference "DFCite-1083" ;
+    solveit-core:hasReference "DFCite-1081" ;
+    solveit-core:hasReference "DFCite-1088" .
 
-:techniqueDFT-1005 rdf:type solveit-core:Technique ;
-    rdfs:label "DFT-1005: Crime scene searching"@en ;
+solveit-data:techniqueDFT-1005 a owl:Class , solveit-core:Technique ;
+    rdfs:label "DFT-1005: Search a crime scene for relevant physical evidence"@en ;
     solveit-core:techniqueID "DFT-1005" ;
-    solveit-core:techniqueName "Crime scene searching" ;
+    solveit-core:techniqueName "Search a crime scene for relevant physical evidence" ;
     solveit-core:techniqueDescription "The process of 'carefully documenting the conditions at a crime scene and identifying all relevant physical evidence.' (Birzer 2018)." ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Device"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/Computer"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/MobileDevice"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/WearableDevice"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/location"^^xsd:anyURI ;
-    solveit-core:hasReference "Birzer, M.L., 2018. Crime Scene Search. Introduction to Criminal Investigation, p.35." .
+    solveit-core:hasCASEOutputClass solveit-observable:DeviceSet ;
+    solveit-core:hasCASEOutputClass uco-observable:Device ;
+    solveit-core:hasCASEOutputClass uco-observable:location ;
+    solveit-core:hasReference "DFCite-1018" ;
+    solveit-core:hasReference "DFCite-1044" .
 
-:techniqueDFT-1052 rdf:type solveit-core:Technique ;
-    rdfs:label "DFT-1052: Timeline generation"@en ;
+solveit-data:techniqueDFT-1052 a owl:Class , solveit-core:Technique ;
+    rdfs:label "DFT-1052: Generate timeline"@en ;
     solveit-core:techniqueID "DFT-1052" ;
-    solveit-core:techniqueName "Timeline generation" ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/Timeline"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.solveit-df.org/solveit/observable/TimelineEntry"^^xsd:anyURI .
+    solveit-core:techniqueName "Generate timeline" ;
+    solveit-core:techniqueDescription "The extraction and normalisation of timestamps from a data source into a set of timeline entries" ;
+    solveit-core:hasExample "plaso" ;
+    solveit-core:hasCASEInputClass solveit-observable:FileSet ;
+    solveit-core:hasCASEInputClass solveit-observable:ArtifactSet ;
+    solveit-core:hasCASEOutputClass solveit-observable:Timeline ;
+    solveit-core:hasReference "DFCite-1058" ;
+    solveit-core:hasReference "DFCite-1039" .
 
-:techniqueDFT-1060 rdf:type solveit-core:Technique ;
+solveit-data:techniqueDFT-1060 a owl:Class , solveit-core:Technique ;
     rdfs:label "DFT-1060: Enumerate allocated files and folders"@en ;
     solveit-core:techniqueID "DFT-1060" ;
     solveit-core:techniqueName "Enumerate allocated files and folders" ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/File"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/creationTime"^^xsd:anyURI ;
-    solveit-core:hasCASEOutputClass "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime"^^xsd:anyURI .
+    solveit-core:techniqueDescription "This involves parsing the allocated file system data structures and reconstructing the file system of the target media or device." ;
+    solveit-core:hasExample "The Sleuth Kit - allows parsing of file system structures" ;
+    solveit-core:hasExample "X-Ways Forensics - allows parsing of file system structures" ;
+    solveit-core:hasCASEInputClass uco-observable:FileSystem ;
+    solveit-core:hasCASEOutputClass solveit-observable:FileSet ;
+    solveit-core:hasReference "DFCite-1030" ;
+    solveit-core:hasReference "DFCite-1024" .
 
 #################################################################
-#    ASTM Error Category (defined in core ontology, referenced here)
+# Keyword-search Technique hierarchy (sub-techniques = subclasses)
+#   DFT-1049 (Keyword search) is the parent; the WHAT/HOW choices
+#   below are refinements. DFT-1123 + DFT-1124 are combined in the
+#   multi-classed action further down.
+#################################################################
+
+solveit-data:techniqueDFT-1049 a owl:Class , solveit-core:Technique ;
+    rdfs:label "DFT-1049: Keyword search"@en ;
+    solveit-core:techniqueID "DFT-1049" ;
+    solveit-core:techniqueName "Keyword search" ;
+    solveit-core:techniqueDescription "This technique involves searching data in the case for specific strings" ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasReference "DFCite-1014" ;
+    solveit-core:hasReference "DFCite-1013" ;
+    solveit-core:hasReference "DFCite-1103" .
+
+# WHAT · wordlist source
+solveit-data:techniqueDFT-1122 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
+    a owl:Class, solveit-core:Technique ;
+    solveit-core:techniqueID "DFT-1122" ;
+    solveit-core:techniqueName "Keyword search (case-type wordlists)" ;
+    solveit-core:techniqueDescription "Searching for case-type specific keywords" ;
+    solveit-core:hasExample "Example word lists https://www.dfir.training/downloads/search-terms" ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasReference "DFCite-1074" .
+
+solveit-data:techniqueDFT-1123 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
+    a owl:Class, solveit-core:Technique ;
+    solveit-core:techniqueID "DFT-1123" ;
+    solveit-core:techniqueName "Keyword search (case-specific wordlists)" ;
+    solveit-core:techniqueDescription "Searching for case-specific keywords, e.g. people's names, places etc." ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult .
+
+# HOW · execution mode
+solveit-data:techniqueDFT-1124 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
+    a owl:Class, solveit-core:Technique ;
+    solveit-core:techniqueID "DFT-1124" ;
+    solveit-core:techniqueName "Keyword search (indexed)" ;
+    solveit-core:techniqueDescription "Searching for keywords within a generated index of data in a case" ;
+    solveit-core:hasCASEInputClass solveit-observable:KeywordIndex ;
+    solveit-core:hasCASEInputClass solveit-observable:Wordlist ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
+    solveit-core:hasReference "DFCite-1103" .
+
+solveit-data:techniqueDFT-1125 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
+    a owl:Class, solveit-core:Technique ;
+    solveit-core:techniqueID "DFT-1125" ;
+    solveit-core:techniqueName "Keyword search (live)" ;
+    solveit-core:techniqueDescription "Searching for keywords over the raw data in a case without using an index of text content" ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasReference "DFCite-1103" ;
+    solveit-core:hasReference "DFCite-1134" ;
+    solveit-core:hasReference "DFCite-1133" .
+
+#################################################################
+# ASTM Error Category (defined in core ontology, referenced here)
 #################################################################
 
 solveit-core:ASTM_INCOMP rdf:type solveit-core:ASTMErrorCategory .
 
 #################################################################
-#    Example SOLVE-IT Weakness Instance
+# Example SOLVE-IT Weakness Instance
 #################################################################
 
-:weaknessDFW-1004 rdf:type solveit-core:Weakness ;
-    rdfs:label "DFW-1004: Acquisition does not include all sectors from LBA0 to LBA max"@en ;
+solveit-data:weaknessDFW-1004 rdf:type solveit-core:Weakness ;
+    rdfs:label "DFW-1004: Data copied does not include all sectors from LBA0 to LBA max due to the data copying process stopping prematurely"@en ;
     solveit-core:weaknessID "DFW-1004" ;
-    solveit-core:weaknessName "Acquisition does not include all sectors from LBA0 to LBA max" ;
+    solveit-core:weaknessName "Data copied does not include all sectors from LBA0 to LBA max due to the data copying process stopping prematurely" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1003 ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1004 .
+    solveit-core:hasPotentialMitigation solveit-data:mitigationDFM-1003 ;
+    solveit-core:hasPotentialMitigation solveit-data:mitigationDFM-1004 .
 
 #################################################################
-#    Example SOLVE-IT Mitigation Instances
+# Example SOLVE-IT Mitigation Instances
 #################################################################
 
-:mitigationDFM-1003 rdf:type solveit-core:Mitigation ;
+solveit-data:mitigationDFM-1003 rdf:type solveit-core:Mitigation ;
     rdfs:label "DFM-1003: Check image size corresponds with drive label"@en ;
     solveit-core:mitigationID "DFM-1003" ;
     solveit-core:mitigationName "Check image size corresponds with drive label" .
 
-:mitigationDFM-1004 rdf:type solveit-core:Mitigation ;
+solveit-data:mitigationDFM-1004 rdf:type solveit-core:Mitigation ;
     rdfs:label "DFM-1004: Check hash of image matches hash of source device"@en ;
     solveit-core:mitigationID "DFM-1004" ;
     solveit-core:mitigationName "Check hash of image matches hash of source device" ;
-    solveit-core:linksToTechnique :techniqueDFT-1042 .
-
+    solveit-core:linksToTechnique solveit-data:techniqueDFT-1042 .
 
 #################################################################
-#    Example SolveitInvestigativeAction Instance (Based on CASE Asgard)
+# Example performed action (Based on CASE Asgard)
+#   Implements DFT-1002 by rdf:type; no usedTechnique property.
 #################################################################
 
-###  Supporting objects for the investigative action
-:configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516 rdf:type uco-core:UcoObject ;
+### Supporting objects for the investigative action
+kb:configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516 rdf:type uco-core:UcoObject ;
     rdfs:label "Configured forensic tool"@en .
 
-:location-f67042d4-4963-4c31-9807-23662670004f rdf:type uco-core:UcoObject ;
+kb:location-f67042d4-4963-4c31-9807-23662670004f rdf:type uco-core:UcoObject ;
     rdfs:label "Bifrost Bridge"@en .
 
-:forensicexaminer-acf60326-de21-4a85-9909-692f1780470f rdf:type uco-core:UcoObject ;
+kb:forensicexaminer-acf60326-de21-4a85-9909-692f1780470f rdf:type uco-core:UcoObject ;
     rdfs:label "Forensic Examiner"@en .
 
-:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f rdf:type uco-observable:Device ;
+kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f rdf:type uco-observable:Device ;
     rdfs:label "Suspect device"@en .
 
-:provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa rdf:type uco-core:UcoObject ;
+kb:provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa rdf:type uco-core:UcoObject ;
     rdfs:label "Chain of custody record"@en .
 
-:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:Image ;
+kb:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type uco-observable:Image ;
     rdfs:label "Forensic disk image"@en .
 
-:provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53 rdf:type uco-core:UcoObject ;
+kb:provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53 rdf:type uco-core:UcoObject ;
     rdfs:label "Updated provenance record"@en .
 
-###  SolveitInvestigativeAction: Physical Device Acquisition (from CASE Asgard example)
-:investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49 rdf:type solveit-core:SolveitInvestigativeAction ;
+### Performed action: Physical Device Acquisition (from CASE Asgard example)
+kb:investigativeaction-67f43664-077d-47be-b332-4d1c2b579c49 a solveit-data:techniqueDFT-1002 ;
     uco-core:name "acquired" ;
     uco-core:description "Suspect device physical acquisition" ;
-    # SOLVE-IT extensions
-    solveit-core:usedTechnique :techniqueDFT-1002 ;  # Links to DFT-1002: Disk imaging
-    solveit-core:appliedMitigation :mitigationDFM-1004 ;  # Hash verification was applied
+    # SOLVE-IT extension retained at occurrence level:
+    solveit-core:appliedMitigation solveit-data:mitigationDFM-1004 ;   # Hash verification was applied
     # CASE/UCO InvestigativeAction properties
     uco-action:startTime "2019-03-30T22:17:31Z"^^xsd:dateTime ;
     uco-action:endTime "2019-03-30T22:47:32Z"^^xsd:dateTime ;
-    uco-action:instrument :configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516 ;
-    uco-action:location :location-f67042d4-4963-4c31-9807-23662670004f ;
-    uco-action:performer :forensicexaminer-acf60326-de21-4a85-9909-692f1780470f ;
-    uco-action:object :device-9420af3b-4d3a-4239-88fc-d33feec8dc4f ,
-                      :provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa ;
-    uco-action:result :forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ,
-                      :provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53 ;
-    rdfs:comment "Example of a SolveitInvestigativeAction based on the CASE Asgard example, demonstrating how a SOLVE-IT technique (DFT-1002: Disk imaging) was executed during an investigation, including the applied mitigation (DFM-1004: Hash verification)."@en .
-
+    uco-action:instrument kb:configuredtool-4c21b431-1746-410b-bc54-f2fd6a9b2516 ;
+    uco-action:location kb:location-f67042d4-4963-4c31-9807-23662670004f ;
+    uco-action:performer kb:forensicexaminer-acf60326-de21-4a85-9909-692f1780470f ;
+    uco-action:object kb:device-9420af3b-4d3a-4239-88fc-d33feec8dc4f ,
+                      kb:provenancerecord-c2b73229-9cc1-477a-9024-8117e18d97fa ;
+    uco-action:result kb:forensicimage-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ,
+                      kb:provenancerecord-a2a5098c-43fd-4556-a437-2d3ddb821a53 ;
+    rdfs:comment "The action implements DFT-1002 (Copy sectors from storage media) by rdf:type membership rather than a usedTechnique property; because the core ontology treats a Technique as a kind of action, this individual is also an investigative action. Applied mitigation DFM-1004 (Hash verification) is recorded for this occurrence."@en .
 
 #################################################################
-#    Example: Multi-Technique Keyword Search
-#    Demonstrates a single investigative action that combines
-#    multiple SOLVE-IT techniques — here, an indexed keyword
-#    search (DFT-1124) using case-specific wordlists (DFT-1123).
+# Example: Multi-Technique Keyword Search (multi-classing)
+#   One action that is an instance of BOTH DFT-1123 (case-specific
+#   wordlists) and DFT-1124 (indexed) — no usedTechnique property.
 #################################################################
 
-###  Supporting objects for the keyword search example
-:forensicworkstation-a1b2c3d4-5678-9abc-def0-111122223333 rdf:type uco-observable:Computer ;
+### Supporting objects for the keyword search example
+kb:forensicworkstation-a1b2c3d4-5678-9abc-def0-111122223333 rdf:type uco-observable:Computer ;
     rdfs:label "Forensic Workstation"@en .
 
-:examiner-b2c3d4e5-6789-abcd-ef01-222233334444 rdf:type uco-core:UcoObject ;
+kb:examiner-b2c3d4e5-6789-abcd-ef01-222233334444 rdf:type uco-core:UcoObject ;
     rdfs:label "Digital Forensic Examiner"@en .
 
-:keywordindex-c3d4e5f6-789a-bcde-f012-333344445555 rdf:type solveit-observable:KeywordIndex ;
+kb:keywordindex-c3d4e5f6-789a-bcde-f012-333344445555 rdf:type solveit-observable:KeywordIndex ;
     rdfs:label "Keyword index of suspect laptop image"@en .
 
-:casefile-d4e5f678-9abc-def0-1234-444455556666 rdf:type solveit-observable:Wordlist ;
+kb:casefile-d4e5f678-9abc-def0-1234-444455556666 rdf:type solveit-observable:Wordlist ;
     rdfs:label "Case-specific keyword list"@en ;
     uco-core:description "Wordlist containing suspect names, known aliases, addresses, and key dates relevant to the investigation" .
 
-:searchresults-e5f67890-abcd-ef01-2345-555566667777 rdf:type solveit-observable:KeywordSearchResultSet ;
+kb:searchresults-e5f67890-abcd-ef01-2345-555566667777 rdf:type solveit-observable:KeywordSearchResultSet ;
     rdfs:label "Keyword search results"@en ;
     uco-core:description "1,247 hits across 312 files from indexed keyword search" .
 
-###  SolveitInvestigativeAction: Indexed Keyword Search with Case-Specific Wordlists
-###
-###  This example demonstrates a single investigative action that
-###  combines two techniques: the examiner used case-specific keywords
-###  (DFT-1123) and searched them against a pre-built index (DFT-1124)
-###  rather than performing a live search (DFT-1125). This is a common
-###  pattern where the choice of keyword source and search method are
-###  separate decisions logged together.
-:investigativeaction-f6789012-bcde-f012-3456-666677778888 rdf:type solveit-core:SolveitInvestigativeAction ;
+### Performed action: Indexed Keyword Search with Case-Specific Wordlists
+kb:investigativeaction-f6789012-bcde-f012-3456-666677778888
+        a solveit-data:techniqueDFT-1123 ,
+          solveit-data:techniqueDFT-1124 ;
     uco-core:name "keyword-search-indexed" ;
     uco-core:description "Indexed keyword search using case-specific wordlists against keyword index of suspect laptop" ;
-    # Two SOLVE-IT techniques combined in one action:
-    # DFT-1123 — the keywords used were case-specific (not case-type)
-    # DFT-1124 — the search was run against a pre-built index (not live)
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1123 ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1124 ;
     # CASE/UCO InvestigativeAction properties
     uco-action:startTime "2024-11-15T09:30:00Z"^^xsd:dateTime ;
     uco-action:endTime "2024-11-15T09:32:17Z"^^xsd:dateTime ;
-    uco-action:instrument :forensicworkstation-a1b2c3d4-5678-9abc-def0-111122223333 ;
-    uco-action:performer :examiner-b2c3d4e5-6789-abcd-ef01-222233334444 ;
-    uco-action:object :keywordindex-c3d4e5f6-789a-bcde-f012-333344445555 ,
-                      :casefile-d4e5f678-9abc-def0-1234-444455556666 ;
-    uco-action:result :searchresults-e5f67890-abcd-ef01-2345-555566667777 ;
-    rdfs:comment "Example of a single SolveitInvestigativeAction that references multiple techniques. The examiner chose to search using case-specific wordlists (DFT-1123: names, aliases, addresses) rather than case-type wordlists (DFT-1122), and ran an indexed search (DFT-1124) rather than a live search (DFT-1125). The fast completion time (approx. 2 minutes) reflects the use of a pre-built index."@en .
+    uco-action:instrument kb:forensicworkstation-a1b2c3d4-5678-9abc-def0-111122223333 ;
+    uco-action:performer kb:examiner-b2c3d4e5-6789-abcd-ef01-222233334444 ;
+    uco-action:object kb:keywordindex-c3d4e5f6-789a-bcde-f012-333344445555 ,
+                      kb:casefile-d4e5f678-9abc-def0-1234-444455556666 ;
+    uco-action:result kb:searchresults-e5f67890-abcd-ef01-2345-555566667777 ;
+    rdfs:comment "A single action that is an instance of BOTH DFT-1123 (case-specific wordlists) and DFT-1124 (indexed) via multi-classing, rather than two usedTechnique links. The examiner chose case-specific over case-type wordlists (DFT-1122) and an indexed over a live search (DFT-1125). The fast completion time (approx. 2 minutes) reflects the pre-built index."@en .

@@ -63,10 +63,9 @@
 #################################################################
 
 ###  Step 1: T1060 Enumerate allocated files - extracts files with cluster metadata
-:enumerateFilesAction002 rdf:type solveit-core:SolveitInvestigativeAction ;
+:enumerateFilesAction002 a solveit-data:techniqueDFT-1060 ;
     uco-core:name "enumerate-files" ;
     uco-core:description "Enumeration of allocated files from FAT32 USB drive" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1060 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-filesystem-parser ;
     uco-action:startTime "2026-01-28T11:00:00Z"^^xsd:dateTime ;
@@ -76,10 +75,9 @@
     rdfs:comment "T1060: Enumerate allocated files - extracts file objects with directory entry metadata including start cluster."@en .
 
 ###  Step 2: T1052 Timeline generation - creates timeline from cluster allocation order
-:clusterTimelineGenerationAction001 rdf:type solveit-core:SolveitInvestigativeAction ;
+:clusterTimelineGenerationAction001 a solveit-data:techniqueDFT-1052 ;
     uco-core:name "generate-cluster-timeline" ;
     uco-core:description "Generation of allocation order timeline from FAT cluster metadata" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1052 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-timeline-generator ;
     uco-action:startTime "2026-01-28T11:03:00Z"^^xsd:dateTime ;

@@ -59,11 +59,9 @@
     rdfs:label "Hit: offset 0xF04E80 — keyword match (pending file resolution)"@en .
 
 ###  SolveitInvestigativeAction: Live keyword search with case-type wordlists
-:investigativeaction-66666666-6666-6666-6666-666666666666 rdf:type solveit-core:SolveitInvestigativeAction ;
+:investigativeaction-66666666-6666-6666-6666-666666666666 a solveit-data:techniqueDFT-1122 , solveit-data:techniqueDFT-1125 ;
     uco-core:name "keyword-search-live" ;
     uco-core:description "Live keyword search over USB drive bitstream using standard fraud case-type wordlist" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1122 ;  # Keyword search (case-type wordlists)
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1125 ;  # Keyword search (live)
     uco-action:startTime "2024-11-10T14:00:00Z"^^xsd:dateTime ;
     uco-action:endTime "2024-11-10T14:47:22Z"^^xsd:dateTime ;
     uco-action:performer :examiner-11111111-1111-1111-1111-111111111111 ;
@@ -104,10 +102,9 @@
     solveit-observable:hasConfiguration :indexconfig-88881111-2222-3333-4444-555566667777 .
 
 ###  SolveitInvestigativeAction: Building a keyword index
-:investigativeaction-aabb1111-2222-3333-4444-555566667777 rdf:type solveit-core:SolveitInvestigativeAction ;
+:investigativeaction-aabb1111-2222-3333-4444-555566667777 a solveit-data:techniqueDFT-1126 ;
     uco-core:name "keyword-indexing" ;
     uco-core:description "Build keyword index from extracted files and parsed artifacts of suspect laptop" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1126 ;  # Keyword indexing
     uco-action:startTime "2024-11-14T22:00:00Z"^^xsd:dateTime ;
     uco-action:endTime "2024-11-15T01:15:43Z"^^xsd:dateTime ;
     uco-action:instrument :forensicworkstation-aaaa1111-2222-3333-4444-555566667777 ;
@@ -138,11 +135,9 @@
 
 ###  SolveitInvestigativeAction: Indexed keyword search with case-specific wordlists
 ###  Uses the KeywordIndex generated in Example 2
-:investigativeaction-ffff1111-2222-3333-4444-555566667777 rdf:type solveit-core:SolveitInvestigativeAction ;
+:investigativeaction-ffff1111-2222-3333-4444-555566667777 a solveit-data:techniqueDFT-1123 , solveit-data:techniqueDFT-1124 ;
     uco-core:name "keyword-search-indexed" ;
     uco-core:description "Indexed keyword search using case-specific wordlists against keyword index of suspect laptop" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1123 ;  # Keyword search (case-specific wordlists)
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1124 ;  # Keyword search (indexed)
     uco-action:startTime "2024-11-15T09:30:00Z"^^xsd:dateTime ;
     uco-action:endTime "2024-11-15T09:32:17Z"^^xsd:dateTime ;
     uco-action:instrument :forensicworkstation-aaaa1111-2222-3333-4444-555566667777 ;

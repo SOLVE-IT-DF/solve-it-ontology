@@ -63,10 +63,9 @@
 #################################################################
 
 ###  Step 1: T1060 Enumerate allocated files - extracts file with standard UCO timestamps
-:enumerateFilesAction001 rdf:type solveit-core:SolveitInvestigativeAction ;
+:enumerateFilesAction001 a solveit-data:techniqueDFT-1060 ;
     uco-core:name "enumerate-files" ;
     uco-core:description "Enumeration of allocated files and folders from FAT32 USB drive" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1060 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-filesystem-parser ;
     uco-action:startTime "2026-01-28T10:00:00Z"^^xsd:dateTime ;
@@ -76,10 +75,9 @@
     rdfs:comment "T1060: Enumerate allocated files and folders - extracts file objects with standard UCO FileFacet timestamps."@en .
 
 ###  Step 2: T1052 Timeline generation - normalizes UCO timestamps into DateTimeStamps with resolution metadata
-:timelineGenerationAction001 rdf:type solveit-core:SolveitInvestigativeAction ;
+:timelineGenerationAction001 a solveit-data:techniqueDFT-1052 ;
     uco-core:name "generate-timeline" ;
     uco-core:description "Generation of forensic timeline from FAT filesystem metadata" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1052 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-timeline-generator ;
     uco-action:startTime "2026-01-28T10:05:00Z"^^xsd:dateTime ;

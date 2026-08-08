@@ -96,10 +96,9 @@
 #################################################################
 
 ###  Step 1: DFT-1060 Enumerate allocated files
-:enumerateFilesAction003 rdf:type solveit-core:SolveitInvestigativeAction ;
+:enumerateFilesAction003 a solveit-data:techniqueDFT-1060 ;
     uco-core:name "enumerate-files" ;
     uco-core:description "Enumeration of allocated files from FAT32 suspect USB drive" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1060 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-acme-filesystem-parser ;
     uco-action:startTime "2026-02-10T09:00:00Z"^^xsd:dateTime ;
@@ -109,10 +108,9 @@
     rdfs:comment "DFT-1060: Enumerate allocated files - extracts 5 file objects with FAT timestamps from the suspect USB drive."@en .
 
 ###  Step 2: DFT-1052 Timeline generation - creates 15 timeline entries (3 per file)
-:timelineGenerationAction003 rdf:type solveit-core:SolveitInvestigativeAction ;
+:timelineGenerationAction003 a solveit-data:techniqueDFT-1052 ;
     uco-core:name "generate-timeline" ;
     uco-core:description "Generation of forensic timeline from all FAT timestamps (created, modified, accessed) for 5 files" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1052 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-plaso ;
     uco-action:startTime "2026-02-10T09:02:00Z"^^xsd:dateTime ;
@@ -141,10 +139,9 @@
     rdfs:comment "DFT-1052: Timeline generation - creates 15 TimelineEntries (created/modified/accessed for each of 5 files) and assembles them into an unsorted Timeline. Created and modified times become DateTimeStamp values; accessed dates become DateTimeRange values (whole-day intervals)."@en .
 
 ###  Step 3: DFT-1183 Sort timeline - produces SortedTimeline with tied positions
-:timelineSortAction001 rdf:type solveit-core:SolveitInvestigativeAction ;
+:timelineSortAction001 a solveit-data:techniqueDFT-1183 ;
     uco-core:name "sort-timeline" ;
     uco-core:description "Chronological sorting of 15-entry FAT timestamp timeline, assigning positions with ties where timestamps are indistinguishable" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1183 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-timeline-analyser ;
     uco-action:startTime "2026-02-10T09:03:00Z"^^xsd:dateTime ;
@@ -154,10 +151,9 @@
     rdfs:comment "DFT-1183: Sort timeline - orders 15 entries chronologically. Point timestamps (DateTimeStamp) are ordered by value. Whole-day accessed ranges (DateTimeRange) are placed at the end of their respective days since the exact access time within the day is unknown. Tied positions occur where: (a) NOTES.TXT and DRAFT.DOC share the same modified time at 2s resolution, (b) README.TXT and NOTES.TXT share the same accessed date of 2025-11-03, and (c) DRAFT.DOC, BUDGET.XLS, and PHOTO.JPG share the same accessed date of 2025-11-04."@en .
 
 ###  Step 4: DFT-1182 Filter timeline around DRAFT.DOC creation
-:timelineFilterAction001 rdf:type solveit-core:SolveitInvestigativeAction ;
+:timelineFilterAction001 a solveit-data:techniqueDFT-1182 ;
     uco-core:name "filter-timeline" ;
     uco-core:description "Filter sorted timeline for entries within 10:20:00-10:23:00 around DRAFT.DOC creation time" ;
-    solveit-core:usedTechnique solveit-data:techniqueDFT-1182 ;
     uco-action:performer :examiner-john-smith ;
     uco-action:instrument :tool-timeline-analyser ;
     uco-action:startTime "2026-02-10T09:03:30Z"^^xsd:dateTime ;
