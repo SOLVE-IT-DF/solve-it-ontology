@@ -49,10 +49,10 @@
 #################################################################
 #    Techniques referenced from the SOLVE-IT Knowledge Base:
 #    https://ontology.solveit-df.org/data/solve-it-kb.ttl
-#    - solveit-data:techniqueDFT-1060 (Enumerate allocated files)
-#    - solveit-data:techniqueDFT-1052 (Timeline generation)
+#    - solveit-data:techniqueDFT-1060 (Enumerate allocated files and folders)
+#    - solveit-data:techniqueDFT-1052 (Generate timeline)
 #    - solveit-data:techniqueDFT-1183 (Sort timeline) [placeholder]
-#    - solveit-data:techniqueDFT-1182 (Filter timeline)
+#    - solveit-data:techniqueDFT-1182 (Filter a timeline for relevant entries)
 #################################################################
 
 #################################################################
@@ -107,7 +107,7 @@
     uco-action:result :fileset-a3c71d90-4e8b-4a1f-b2d6-9f0e3c5a7b12 ;
     rdfs:comment "DFT-1060: Enumerate allocated files - extracts 5 file objects with FAT timestamps from the suspect USB drive."@en .
 
-###  Step 2: DFT-1052 Timeline generation - creates 15 timeline entries (3 per file)
+###  Step 2: DFT-1052 Generate timeline - creates 15 timeline entries (3 per file)
 :timelineGenerationAction003 a solveit-data:techniqueDFT-1052 ;
     uco-core:name "generate-timeline" ;
     uco-core:description "Generation of forensic timeline from all FAT timestamps (created, modified, accessed) for 5 files" ;
@@ -136,7 +136,7 @@
                       :te-file005-modified ,
                       :te-file005-accessed ,
                       :fatTimeline001 ;
-    rdfs:comment "DFT-1052: Timeline generation - creates 15 TimelineEntries (created/modified/accessed for each of 5 files) and assembles them into an unsorted Timeline. Created and modified times become DateTimeStamp values; accessed dates become DateTimeRange values (whole-day intervals)."@en .
+    rdfs:comment "DFT-1052: Generate timeline - creates 15 TimelineEntries (created/modified/accessed for each of 5 files) and assembles them into an unsorted Timeline. Created and modified times become DateTimeStamp values; accessed dates become DateTimeRange values (whole-day intervals)."@en .
 
 ###  Step 3: DFT-1183 Sort timeline - produces SortedTimeline with tied positions
 :timelineSortAction001 a solveit-data:techniqueDFT-1183 ;

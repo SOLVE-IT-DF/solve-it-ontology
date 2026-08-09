@@ -55,7 +55,7 @@
 
 ###  Triage action — examiner applies T1001 to the device set
 :triage-action a solveit-data:techniqueDFT-1001 ;
-    uco-core:name "Device triage" ;
+    uco-core:name "Triage devices" ;
     uco-core:description "Examiner triaged seized devices based on case relevance and expected evidentiary value" ;
     uco-action:performer :examiner-1 ;
     uco-action:startTime "2026-02-16T10:00:00Z"^^xsd:dateTime ;

@@ -28,7 +28,7 @@
 #################################################################
 #    Techniques are referenced from the SOLVE-IT Knowledge Base:
 #    https://ontology.solveit-df.org/data/solve-it-kb.ttl
-#    - solveit-data:techniqueDFT-1052 (Timeline generation)
+#    - solveit-data:techniqueDFT-1052 (Generate timeline)
 #    - solveit-data:techniqueDFT-1060 (Enumerate allocated files and folders)
 #################################################################
 
