@@ -57,9 +57,10 @@ solveit-analysis:HypothesisedCommunication rdf:type owl:Class ;
 
 ###  HypothesisedRelationship
 solveit-analysis:HypothesisedRelationship rdf:type owl:Class ;
-    rdfs:subClassOf solveit-analysis:Hypothesis ;
+    rdfs:subClassOf solveit-analysis:Hypothesis ,
+                    uco-core:Relationship ;
     rdfs:label "Hypothesised Relationship"@en ;
-    rdfs:comment "A relationship between entities that is hypothesised to exist, such as an inferred association between persons, accounts, devices, or locations based on co-occurrence patterns, shared identifiers, or behavioural analysis."@en .
+    rdfs:comment "A relationship between entities that is hypothesised to exist. This covers inferred associations between persons, accounts, devices or locations - drawn from co-occurrence patterns, shared identifiers, or behavioural analysis - and also structural claims such as attributing a recovered database record to the table it belonged to. Being a uco-core:Relationship, the entities are named with uco-core:source and uco-core:target and the nature of the claim with uco-core:kindOfRelationship; being a Hypothesis, the grounds are given with solveit-analysis:supportedBy and solveit-analysis:contradictedBy. What is uncertain is the relationship, not the entities: source and target may both be perfectly ordinary observed objects."@en .
 
 ###  HypothesisedDevice
 solveit-analysis:HypothesisedDevice rdf:type owl:Class ;
@@ -77,7 +78,13 @@ solveit-analysis:HypothesisedUserAccount rdf:type owl:Class ;
 solveit-analysis:HypothesisedRecord rdf:type owl:Class ;
     rdfs:subClassOf solveit-analysis:Hypothesis ;
     rdfs:label "Hypothesised Record"@en ;
-    rdfs:comment "A database record hypothesised to have existed, typically reconstructed from deallocated or partially overwritten storage such as freeblocks, unallocated page space, or freelist pages. Its field values are an interpretation of surviving bytes rather than an observed live record: recovery techniques have known weaknesses, so the decoded values, the attribution to a table, and the record boundaries may each be uncertain. The table it is believed to have belonged to is linked with solveit-analysis:hypothesisedTable, decoded values with solveit-analysis:hypothesisedField, and the artifacts the reconstruction rests on (the database file, or the page the bytes were recovered from) with solveit-analysis:supportedBy."@en .
+    rdfs:comment "A database record hypothesised to have existed, typically reconstructed from deallocated or partially overwritten storage such as freeblocks, unallocated page space, or freelist pages. The claim it makes is one of extent: that these bytes constituted one record, beginning and ending where the reconstruction says. That claim can fail - a sequence of ordinary integers can decode as a plausible record header, adjacent deletions can merge into one freeblock, and a later write can overwrite the leading bytes - so a HypothesisedRecord is deliberately not a solveit-observable:SQLiteRecord. Decoded values are linked with solveit-analysis:hasField, the page the bytes came from with solveit-observable:recoveredFromPage, and the grounds for the extent claim (an intact cell header, or a plausible serial-type sequence) with solveit-analysis:supportedBy. Which table the record belonged to is a separate claim, and is not asserted here: it is made by a solveit-analysis:HypothesisedTableAttribution, so that one reconstruction can carry several competing attributions without being duplicated."@en .
+
+###  HypothesisedTableAttribution
+solveit-analysis:HypothesisedTableAttribution rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:HypothesisedRelationship ;
+    rdfs:label "Hypothesised Table Attribution"@en ;
+    rdfs:comment "The claim that a recovered record belonged to a particular table. The record is the uco-core:source and the table the uco-core:target; neither is itself in doubt, only the link between them. Attribution rests on different grounds in different cases - a record recovered from a freeblock sits on a page owned by a known table, whereas one recovered from a freelist page has lost that context and can only be matched by column shape - and those grounds are given per attribution with solveit-analysis:supportedBy. Where several tables are possible, one HypothesisedTableAttribution is made per candidate and they are collected in a solveit-analysis:HypothesisSet as mutually exclusive alternatives."@en .
 
 ###  HypothesisSet Analytic Result
 solveit-analysis:HypothesisSet rdf:type owl:Class ;
@@ -113,17 +120,11 @@ solveit-analysis:hasHypothesis rdf:type owl:ObjectProperty ;
     rdfs:label "has hypothesis"@en ;
     rdfs:comment "Links a HypothesisSet to a member Hypothesis it groups as a competing alternative."@en .
 
-solveit-analysis:hypothesisedField rdf:type owl:ObjectProperty ;
+solveit-analysis:hasField rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:HypothesisedRecord ;
     rdfs:range solveit-observable:SQLiteField ;
-    rdfs:label "hypothesised field"@en ;
-    rdfs:comment "Links a hypothesised record to a decoded field value. The bytes are observable; their interpretation as this field of this record is part of the hypothesis."@en .
-
-solveit-analysis:hypothesisedTable rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-analysis:HypothesisedRecord ;
-    rdfs:range solveit-observable:SQLiteTable ;
-    rdfs:label "hypothesised table"@en ;
-    rdfs:comment "The table this record is hypothesised to have belonged to. Attribution can itself be uncertain, for example for records recovered from freelist pages, or where several tables share an identical schema."@en .
+    rdfs:label "has field"@en ;
+    rdfs:comment "Links a hypothesised record to a decoded field value. It is deliberately not solveit-observable:hasField, whose rdfs:domain is solveit-observable:SQLiteRecord: rdfs:domain is an entailment rule rather than a usage restriction, so reusing that property would infer the hypothesis to be an observed record. The hedge is carried once, by the class, which is why this property needs no 'hypothesised' prefix. Note that in SQLite a record is self-describing, so the values follow from the record header once the extent is fixed; which column each value belongs to does not, and follows instead from the table attribution."@en .
 
 solveit-analysis:hypothesisedDateTime rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:HypothesisedEvent ;

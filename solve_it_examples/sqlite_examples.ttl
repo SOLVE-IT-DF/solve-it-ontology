@@ -5,6 +5,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @base <https://ontology.solveit-df.org/solveit/examples/> .
 
@@ -105,22 +106,49 @@
     solveit-observable:fieldContentText "Bonjour, le monde!" .
 
 #################################################################
-#    Hypothesised Record
+#    Hypothesised Record and its table attribution
+#
 #    A deleted row reconstructed from a freeblock on page 2. The
 #    freeblock header overwrote the cell header, so the rowid and the
 #    leading bytes of the id column are lost; the surviving bytes decode
-#    as a message value. The reconstruction is an analytic result, not
-#    an observed record, so it is modelled as a HypothesisedRecord
-#    supported by the page it was recovered from.
+#    as a message value.
+#
+#    Two separate claims are made, because they can fail independently:
+#
+#      1. that these bytes constituted one record, beginning and ending
+#         where the reconstruction says. That is the HypothesisedRecord,
+#         and it is supported here by the serial types decoding as a
+#         coherent sequence.
+#
+#      2. that the record belonged to the greetings table. That is a
+#         HypothesisedTableAttribution, supported by page 2 being owned
+#         by greetings. Neither the record nor the table is in doubt in
+#         itself - only the link between them - which is why the record
+#         is the source and the table the target of a relationship,
+#         rather than the table hanging off the record as though the
+#         table were the uncertain part.
+#
+#    With one candidate table there is a single attribution. Where a
+#    recovery matches several tables, one attribution is made per
+#    candidate and they are grouped in a HypothesisSet; the record and
+#    its decoded values are stated once either way.
 #################################################################
 
 :deletedRowHypothesis rdf:type solveit-analysis:HypothesisedRecord ;
     rdfs:label "Hypothesised deleted greeting"@en ;
-    solveit-analysis:hypothesisedTable :greetings ;
-    solveit-analysis:hypothesisedField :recovered_message ;
+    solveit-analysis:hasField :recovered_message ;
+    solveit-observable:recoveredFromPage :page2 ;
     solveit-analysis:supportedBy :page2 .
 
 :recovered_message rdf:type solveit-observable:SQLiteField ;
     rdfs:label "message = 'Auf Wiedersehen, Welt!'"@en ;
     solveit-observable:definedBy :colMessage ;
     solveit-observable:fieldContentText "Auf Wiedersehen, Welt!" .
+
+:deletedRowFromGreetings rdf:type solveit-analysis:HypothesisedTableAttribution ;
+    rdfs:label "Hypothesised deleted greeting belonged to greetings"@en ;
+    uco-core:source :deletedRowHypothesis ;
+    uco-core:target :greetings ;
+    uco-core:kindOfRelationship "belonged to" ;
+    uco-core:isDirectional true ;
+    solveit-analysis:supportedBy :page2 .

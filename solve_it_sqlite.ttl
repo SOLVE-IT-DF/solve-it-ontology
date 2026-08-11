@@ -147,10 +147,9 @@ solveit-observable:hasField rdf:type owl:ObjectProperty ;
     rdfs:comment "Links a SQLite record to a field it contains."@en .
 
 solveit-observable:recoveredFromPage rdf:type owl:ObjectProperty ;
-    rdfs:domain solveit-observable:SQLiteRecord ;
     rdfs:range solveit-observable:SQLitePage ;
     rdfs:label "recovered from page"@en ;
-    rdfs:comment "The page from which this record was physically recovered."@en .
+    rdfs:comment "The page from which this record was physically recovered. Deliberately has no rdfs:domain. Where bytes were found is a fact about them, true whether or not the reconstruction they support turns out to be correct, so it must be assertable of a solveit-analysis:HypothesisedRecord as readily as of an observed record. A domain of SQLiteRecord would not restrict that usage - rdfs:domain is an entailment rule, not a constraint - it would silently infer any hypothesis carrying this property to be an observed record, while still validating. A live record is in a page rather than recovered from one, so restricting the property to observed records would in any case have excluded the only case it was written for."@en .
 
 solveit-observable:definedBy rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:SQLiteField ;
