@@ -252,6 +252,12 @@ solveit-observable:pageType rdf:type owl:DatatypeProperty ;
     rdfs:label "page type"@en ;
     rdfs:comment "e.g. b-tree leaf, b-tree interior, overflow, freelist."@en .
 
+solveit-observable:rowid rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-observable:SQLiteRecord ;
+    rdfs:range xsd:integer ;
+    rdfs:label "rowid"@en ;
+    rdfs:comment "The rowid of this record within its table's B-tree. Omitted for records from WITHOUT ROWID tables."@en .
+
 solveit-observable:fieldContentText rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-observable:SQLiteField ;
     rdfs:range xsd:string ;
