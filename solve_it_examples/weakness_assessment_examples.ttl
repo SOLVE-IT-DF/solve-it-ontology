@@ -34,8 +34,7 @@
                                      :weaknessDFW-1015 .
 
 :weaknessDFW-1014 rdf:type solveit-core:Weakness ;
-    rdfs:label "DFW-1014: Accessing the drive to copy data changes original data
-"@en ;
+    rdfs:label "DFW-1014: Accessing the drive to copy data changes original data"@en ;
     solveit-core:weaknessID "DFW-1014" ;
     solveit-core:weaknessName "Accessing the drive to copy data changes original data
 " .
