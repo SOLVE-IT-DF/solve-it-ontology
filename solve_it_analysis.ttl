@@ -73,6 +73,12 @@ solveit-analysis:HypothesisedUserAccount rdf:type owl:Class ;
     rdfs:label "Hypothesised User Account"@en ;
     rdfs:comment "A user account that is hypothesised to have existed, for example inferred from recovered deleted account records, carved registry artifacts, or references to the account in other artifacts. Supporting artifacts can be linked with solveit-analysis:supportedBy."@en .
 
+###  HypothesisedRecord
+solveit-analysis:HypothesisedRecord rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:Hypothesis ;
+    rdfs:label "Hypothesised Record"@en ;
+    rdfs:comment "A database record hypothesised to have existed, typically reconstructed from deallocated or partially overwritten storage such as freeblocks, unallocated page space, or freelist pages. Its field values are an interpretation of surviving bytes rather than an observed live record: recovery techniques have known weaknesses, so the decoded values, the attribution to a table, and the record boundaries may each be uncertain. The table it is believed to have belonged to is linked with solveit-analysis:hypothesisedTable, decoded values with solveit-analysis:hypothesisedField, and the artifacts the reconstruction rests on (the database file, or the page the bytes were recovered from) with solveit-analysis:supportedBy."@en .
+
 ###  HypothesisSet Analytic Result
 solveit-analysis:HypothesisSet rdf:type owl:Class ;
     rdfs:subClassOf uco-analysis:AnalyticResult ;
@@ -107,6 +113,18 @@ solveit-analysis:hasHypothesis rdf:type owl:ObjectProperty ;
     rdfs:label "has hypothesis"@en ;
     rdfs:comment "Links a HypothesisSet to a member Hypothesis it groups as a competing alternative."@en .
 
+solveit-analysis:hypothesisedField rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-analysis:HypothesisedRecord ;
+    rdfs:range solveit-observable:SQLiteField ;
+    rdfs:label "hypothesised field"@en ;
+    rdfs:comment "Links a hypothesised record to a decoded field value. The bytes are observable; their interpretation as this field of this record is part of the hypothesis."@en .
+
+solveit-analysis:hypothesisedTable rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-analysis:HypothesisedRecord ;
+    rdfs:range solveit-observable:SQLiteTable ;
+    rdfs:label "hypothesised table"@en ;
+    rdfs:comment "The table this record is hypothesised to have belonged to. Attribution can itself be uncertain, for example for records recovered from freelist pages, or where several tables share an identical schema."@en .
+
 solveit-analysis:hypothesisedDateTime rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:HypothesisedEvent ;
     rdfs:range [ a owl:Class ;
@@ -114,6 +132,12 @@ solveit-analysis:hypothesisedDateTime rdf:type owl:ObjectProperty ;
                                solveit-observable:DateTimeRange ) ] ;
     rdfs:label "hypothesised date time"@en ;
     rdfs:comment "The date and time at which the hypothesised event is believed to have occurred - either an absolute timestamp (DateTimeStamp) or a time interval (DateTimeRange)."@en .
+
+solveit-analysis:hypothesisedRowid rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-analysis:HypothesisedRecord ;
+    rdfs:range xsd:integer ;
+    rdfs:label "hypothesised rowid"@en ;
+    rdfs:comment "The rowid this record is believed to have had, where recovery preserved it. Freeblock recovery overwrites the cell header, so a rowid is often not available."@en .
 
 solveit-analysis:hypothesisedServiceName rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-analysis:HypothesisedEvent ;
