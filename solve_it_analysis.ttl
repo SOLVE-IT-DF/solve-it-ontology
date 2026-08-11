@@ -116,9 +116,8 @@ solveit-analysis:contradictedBy rdf:type owl:ObjectProperty ;
 
 solveit-analysis:hasHypothesis rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:HypothesisSet ;
-    rdfs:range solveit-analysis:Hypothesis ;
     rdfs:label "has hypothesis"@en ;
-    rdfs:comment "Links a HypothesisSet to a member Hypothesis it groups as a competing alternative."@en .
+    rdfs:comment "Links a HypothesisSet to a member Hypothesis it groups as a competing alternative. Members must be a Hypothesis or a subclass of one, which is enforced by HypothesisSetShape rather than by an rdfs:range. A range would state the requirement without enforcing it: rdfs:range is an entailment rule, so under inference anything placed in a set would thereby be typed a Hypothesis, and putting an observable object in a set would silently make it one instead of being rejected."@en .
 
 solveit-analysis:hasField rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-analysis:HypothesisedRecord ;

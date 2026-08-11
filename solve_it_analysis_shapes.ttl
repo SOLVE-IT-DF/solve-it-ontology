@@ -1,0 +1,149 @@
+@prefix : <https://ontology.solveit-df.org/solveit/analysis/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix solveit-analysis: <https://ontology.solveit-df.org/solveit/analysis/> .
+@prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@base <https://ontology.solveit-df.org/solveit/analysis/shapes/> .
+
+#################################################################
+#    SOLVE-IT Analysis SHACL Shapes
+#    Validation constraints for analytic results
+#################################################################
+
+#################################################################
+#    HypothesisSet Shape
+#
+#    Only what holds for any set of hypotheses, whatever they are
+#    about. Hypothesis has several subclasses - events, relationships,
+#    devices, user accounts, records - and a set may hold any of them.
+#
+#    Two things are deliberately NOT asserted here.
+#
+#    That the members concern the same subject: only one Hypothesis
+#    subclass has a subject at all (HypothesisedRelationship, through
+#    uco-core:source), so such a rule would be a relationship
+#    constraint wearing a set shape. It is also not clearly true -
+#    competing explanations of one observation need not share a formal
+#    subject.
+#
+#    That the members share a class: a set may legitimately mix kinds.
+#    "This was a row of table X" and "these bytes were never a record"
+#    are alternatives of different types, and the second is exactly the
+#    sceptical alternative worth being able to state.
+#
+#    SHACL cannot make the members mutually exclusive in any case.
+#    Nothing in the data asserts that any of them is true, so there is
+#    no contradiction to detect; a consumer accepting two at once is
+#    reasoning badly rather than writing invalid data. What follows is
+#    the checkable part: that there is a genuine choice on offer.
+#################################################################
+
+:HypothesisSetShape a sh:NodeShape ;
+    sh:targetClass solveit-analysis:HypothesisSet ;
+    rdfs:label "Hypothesis Set Shape"@en ;
+    rdfs:comment "Validates that a hypothesis set offers two or more alternatives to choose between."@en ;
+    sh:property [
+        sh:path solveit-analysis:hasHypothesis ;
+        sh:class solveit-analysis:Hypothesis ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 2 ;
+        sh:message "A hypothesis set groups alternatives, so it must hold at least two, each a Hypothesis and each referenceable. A single hypothesis needs no set."@en ;
+    ] .
+
+# The sh:class above is the only thing enforcing what may go in a set,
+# and it is why hasHypothesis carries no rdfs:range. A range would read
+# as the same requirement but could never fail: rdfs:range is an
+# entailment rule, so under inference anything placed in a set is
+# thereby typed a Hypothesis, and an observable object put in a set
+# would be silently made one rather than rejected. The requirement is
+# therefore stated once, here, where it is checked. The same reasoning
+# removed the rdfs:domain from solveit-observable:recoveredFromPage.
+
+#################################################################
+#    HypothesisedTableAttribution Shape
+#
+#    The claims here are specific to attributing a record to a table,
+#    and rest on a fact about SQLite rather than about hypotheses in
+#    general: a row belonged to exactly one table. That is why they sit
+#    on this class and not on HypothesisSet, where they would be false
+#    for other kinds of hypothesis - a record may carry a table
+#    attribution and some other claim at once without the two competing.
+#################################################################
+
+:HypothesisedTableAttributionShape a sh:NodeShape ;
+    sh:targetClass solveit-analysis:HypothesisedTableAttribution ;
+    rdfs:label "Hypothesised Table Attribution Shape"@en ;
+    rdfs:comment "Validates the endpoints of a table attribution, and that attributions competing for one record are declared as alternatives."@en ;
+
+    # uco-core:Relationship admits any UcoObject at either end, so
+    # without these the subclass constrains nothing beyond its name.
+    sh:property [
+        sh:path uco-core:source ;
+        sh:class solveit-analysis:HypothesisedRecord ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "The source of a table attribution must be the one HypothesisedRecord being attributed."@en ;
+    ] ;
+    sh:property [
+        sh:path uco-core:target ;
+        sh:class solveit-observable:SQLiteTable ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "The target of a table attribution must be the one SQLiteTable it is attributed to."@en ;
+    ] ;
+
+    # A row belonged to one table, so two attributions of one record are
+    # alternatives whether or not anyone grouped them. Left ungrouped,
+    # the choice is invisible to a reader.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "This record carries more than one table attribution, but they are not grouped in a HypothesisSet, so nothing marks them as competing alternatives."@en ;
+        sh:select """
+            SELECT $this WHERE {
+                $this <https://ontology.unifiedcyberontology.org/uco/core/source> ?rec .
+                ?other <https://ontology.unifiedcyberontology.org/uco/core/source> ?rec .
+                FILTER (?other != $this)
+                FILTER NOT EXISTS {
+                    ?set a <https://ontology.solveit-df.org/solveit/analysis/HypothesisSet> ;
+                         <https://ontology.solveit-df.org/solveit/analysis/hasHypothesis> $this, ?other .
+                }
+            }
+        """ ;
+    ] ;
+
+    # And the converse: grouped table attributions must actually
+    # compete. Attributions of different records are unrelated claims
+    # filed together, and two naming the same table for the same record
+    # are one claim stated twice - neither offers a choice.
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "This table attribution is grouped with one about a different record, so they are not competing alternatives."@en ;
+        sh:select """
+            SELECT $this WHERE {
+                ?set a <https://ontology.solveit-df.org/solveit/analysis/HypothesisSet> ;
+                     <https://ontology.solveit-df.org/solveit/analysis/hasHypothesis> $this, ?other .
+                FILTER (?other != $this)
+                ?other a <https://ontology.solveit-df.org/solveit/analysis/HypothesisedTableAttribution> .
+                $this <https://ontology.unifiedcyberontology.org/uco/core/source> ?a .
+                ?other <https://ontology.unifiedcyberontology.org/uco/core/source> ?b .
+                FILTER (?a != ?b)
+            }
+        """ ;
+    ] ;
+    sh:sparql [
+        a sh:SPARQLConstraint ;
+        sh:message "This table attribution is grouped with another naming the same table for the same record, so they are the same claim rather than alternatives."@en ;
+        sh:select """
+            SELECT $this WHERE {
+                ?set a <https://ontology.solveit-df.org/solveit/analysis/HypothesisSet> ;
+                     <https://ontology.solveit-df.org/solveit/analysis/hasHypothesis> $this, ?other .
+                FILTER (?other != $this)
+                $this <https://ontology.unifiedcyberontology.org/uco/core/source> ?rec ;
+                      <https://ontology.unifiedcyberontology.org/uco/core/target> ?tbl .
+                ?other <https://ontology.unifiedcyberontology.org/uco/core/source> ?rec ;
+                       <https://ontology.unifiedcyberontology.org/uco/core/target> ?tbl .
+            }
+        """ ;
+    ] .
