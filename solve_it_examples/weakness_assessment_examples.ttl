@@ -37,8 +37,7 @@
 :weaknessDFW-1014 rdf:type solveit-core:Weakness ;
     rdfs:label "DFW-1014: Accessing the drive to copy data changes original data"@en ;
     solveit-core:weaknessID "DFW-1014" ;
-    solveit-core:weaknessName "Accessing the drive to copy data changes original data
-" .
+    solveit-core:weaknessName "Accessing the drive to copy data changes original data" .
 
 :weaknessDFW-1015 rdf:type solveit-core:Weakness ;
     rdfs:label "DFW-1015: Powering on SSD results in sectors being wiped by TRIM operation"@en ;
