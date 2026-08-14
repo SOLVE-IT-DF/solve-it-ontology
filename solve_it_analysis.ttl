@@ -17,14 +17,14 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/analysis> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/analysis/0.1.8> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/analysis/0.1.10> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.5.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/observable/1.5.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/analysis/1.5.0> ;
     dcterms:title "SOLVE-IT Analysis Module"@en ;
     dcterms:description "Analytic results for SOLVE-IT digital forensics, including hypothesised events and forensic tool reports."@en ;
     dcterms:creator "SOLVE-IT Project" ;
-    owl:versionInfo "0.1.8" ;
+    owl:versionInfo "0.1.10" ;
     rdfs:label "SOLVE-IT Analysis Module"@en .
 
 #################################################################
@@ -66,6 +66,12 @@ solveit-analysis:HypothesisedDevice rdf:type owl:Class ;
     rdfs:subClassOf solveit-analysis:Hypothesis ;
     rdfs:label "Hypothesised Device"@en ;
     rdfs:comment "A device that is hypothesised to have been involved, such as a device inferred from artifacts but not yet physically identified or examined."@en .
+
+###  HypothesisedUserAccount
+solveit-analysis:HypothesisedUserAccount rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:Hypothesis ;
+    rdfs:label "Hypothesised User Account"@en ;
+    rdfs:comment "A user account that is hypothesised to have existed, for example inferred from recovered deleted account records, carved registry artifacts, or references to the account in other artifacts. Supporting artifacts can be linked with solveit-analysis:supportedBy."@en .
 
 ###  HypothesisSet Analytic Result
 solveit-analysis:HypothesisSet rdf:type owl:Class ;
