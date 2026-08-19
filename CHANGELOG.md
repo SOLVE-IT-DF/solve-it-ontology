@@ -8,6 +8,46 @@ Versions up to 0.1.9 were reconstructed retrospectively from git history on
 stamped it. Patch versions containing only automated rebuilds and no ontology
 changes (0.0.8, 0.1.1) are omitted.
 
+## [0.2.0] — 2026-08-19
+
+- `Technique` now subclasses `uco-action:Technique` rather than
+  `case-investigation:InvestigativeAction`, following the metaclass model
+  introduced in UCO 1.5.0. A technique is a class; a performed action states
+  which technique it implements by `rdf:type`, not by a property. The previous
+  axiom sat on the metaclass and so made every catalogue entry a performed
+  action.
+- `SolveitInvestigativeAction` retained, and is now the parent of every
+  technique class. It remains the anchor for occurrence-level properties, so
+  `appliedMitigation` is unchanged — its domain is satisfied by inference.
+- `usedTechnique` marked `owl:deprecated`. Retained so existing data parses.
+- `hasCASEInputClass` and `hasCASEOutputClass` changed from datatype properties
+  with range `xsd:anyURI` to object properties with range `owl:Class`. A class
+  IRI held in a string literal cannot be followed by a reasoner, walked by a
+  SPARQL property path, or checked for a typo.
+- All UCO and CASE imports moved from 1.4.0 to 1.5.0 across 9 files. A partial
+  bump does not work: `uco-action` 1.5.0 imports `uco-core` 1.5.0, which would
+  put two versionIRIs of the same ontology in one import closure.
+- SHACL: retired `SolveitInvestigativeActionShape`, which required at least one
+  `usedTechnique`; under the metaclass model there is no violating state left
+  to detect. Added `TechniqueShape`, checking what OWL cannot express — that a
+  technique is also declared `owl:Class` and carries an `rdfs:subClassOf`.
+- Example actions migrated from `usedTechnique` to `rdf:type` against the
+  technique class, across six files.
+- `validate_examples.py` now loads the generated knowledge base
+  (`docs/data/solve-it-kb.ttl`). The technique classes the examples type their
+  actions with are defined there, not in the ontology files, so without it the
+  examples could not be resolved against a complete schema and every domain
+  check against an action reported a violation that was not real.
+- Retyped the keyword indexing example from `techniqueDFT-1126` (Keyword search
+  (live) (physical)) to `techniqueDFT-1121` (Index a data source for keyword
+  searching). The action builds an index from a `FileSet` and an `ArtifactSet`
+  and produces a `KeywordIndex`, which is what DFT-1121 declares; it was typed
+  as a search.
+- Qualified the technique and weaknesses in `weakness_assessment_examples.ttl`
+  with the `solveit-data:` prefix. They were written against the file's default
+  prefix, so they resolved into the examples namespace and described
+  look-alikes rather than the catalogue entries the evaluations scored.
+
 ## [0.1.10] — 2026-08-11
 
 - Added `rowid` data property to `SQLiteRecord`.

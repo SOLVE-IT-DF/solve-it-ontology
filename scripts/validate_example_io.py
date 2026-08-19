@@ -127,10 +127,16 @@ def validate(examples_graph, tech_names, tech_inputs, tech_outputs):
     mismatches = []
     warnings = []
 
-    action_class = URIRef(SOLVEIT_CORE_NS + "SolveitInvestigativeAction")
-    used_tech = URIRef(SOLVEIT_CORE_NS + "usedTechnique")
+    # Under the UCO 1.5.0 Technique metaclass model, an action states the
+    # technique it implements by rdf:type against the technique class. Any
+    # rdf:type value that is a known KB technique IRI counts as a technique
+    # used; nodes with no such type are not SOLVE-IT actions and are skipped.
+    for action in sorted(set(g.subjects(RDF.type, None)), key=str):
+        action_techniques = [t for t in g.objects(action, RDF.type)
+                             if str(t) in tech_names]
+        if not action_techniques:
+            continue
 
-    for action in sorted(g.subjects(RDF.type, action_class), key=str):
         names = list(g.objects(action, UCO_CORE_NAME))
         action_name = str(names[0]) if names else _short(str(action))
 
@@ -144,15 +150,9 @@ def validate(examples_graph, tech_names, tech_inputs, tech_outputs):
             for t in g.objects(res, RDF.type):
                 actual_output_types.add(str(t))
 
-        for tech_ref in g.objects(action, used_tech):
+        for tech_ref in action_techniques:
             tech_iri = str(tech_ref)
-            label = tech_names.get(tech_iri)
-
-            if label is None:
-                warnings.append(
-                    f"{action_name}: technique {_short(tech_iri)} not found in KB"
-                )
-                continue
+            label = tech_names[tech_iri]
 
             expected_inputs = tech_inputs.get(tech_iri, set())
             expected_outputs = tech_outputs.get(tech_iri, set())

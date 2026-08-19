@@ -83,7 +83,30 @@ def load_ontology_definitions(project_root):
         if ranges:
             property_ranges[prop] = [str(r) for r in ranges]
 
-    return defined_classes, defined_properties, property_domains, property_ranges, g
+    # The technique classes the examples type their actions with are defined in
+    # the generated knowledge base, not in the ontology files: solve_it_core.ttl
+    # defines the Technique metaclass, but each techniqueDFT-NNNN -- and the
+    # rdfs:subClassOf that makes it a SolveitInvestigativeAction -- is emitted
+    # by the KB generator. Without it the examples cannot be resolved against a
+    # complete schema. Loaded after the extraction above so that
+    # defined_classes/properties and the domain and range constraints still
+    # describe the ontology alone; this graph is used only for subclass walks
+    # and for reading the techniques' declared I/O classes.
+    # Refreshed hourly on main by the generate-knowledge-base workflow. Its
+    # absence is not fatal -- the same choice validate_example_io.py makes.
+    kb_path = project_root / "docs" / "data" / "solve-it-kb.ttl"
+    kb_graph = None
+    if kb_path.exists():
+        print(f"Loading {kb_path.relative_to(project_root)}...")
+        kb_graph = Graph()
+        kb_graph.parse(kb_path, format="turtle")
+        g += kb_graph
+    else:
+        print(f"Warning: knowledge base not found at {kb_path}")
+        print("Technique classes will be unresolved; run generate-knowledge-base.")
+
+    return (defined_classes, defined_properties, property_domains,
+            property_ranges, g, kb_graph)
 
 def get_instance_type(g, instance):
     """Get the rdf:type of an instance."""
@@ -125,7 +148,7 @@ def validate_id_format(id_value, expected_prefixes):
             return True
     return False
 
-def validate_examples(project_root, defined_classes, defined_properties, property_domains, property_ranges, ontology_graph):
+def validate_examples(project_root, defined_classes, defined_properties, property_domains, property_ranges, ontology_graph, kb_graph=None):
     """Validate all example files in the solve_it_examples directory against the ontology definitions."""
     examples_dir = project_root / "solve_it_examples"
 
@@ -303,9 +326,14 @@ def validate_examples(project_root, defined_classes, defined_properties, propert
     UCO_ACTION = Namespace("https://ontology.unifiedcyberontology.org/uco/action/")
     combined_graph = g + ontology_graph  # query across both
 
-    action_class = SOLVEIT_CORE.SolveitInvestigativeAction
-    for action in g.subjects(RDF.type, action_class):
-        for technique_ref in g.objects(action, SOLVEIT_CORE.usedTechnique):
+    # Under the UCO 1.5.0 Technique metaclass model, a performed action states
+    # the technique it implements by rdf:type against the technique class,
+    # rather than through a usedTechnique property. A technique class is any
+    # node typed solveit-core:Technique in the examples or in the ontology.
+    technique_classes = set(combined_graph.subjects(RDF.type, SOLVEIT_CORE.Technique))
+
+    for action in set(g.subjects(RDF.type, None)):
+        for technique_ref in [t for t in g.objects(action, RDF.type) if t in technique_classes]:
             # Collect expected I/O classes from the technique definition
             expected_inputs = set()
             expected_outputs = set()
@@ -386,9 +414,10 @@ if __name__ == "__main__":
     print("=" * 70)
 
     # Load ontology definitions
-    defined_classes, defined_properties, property_domains, property_ranges, ontology_graph = load_ontology_definitions(project_root)
+    (defined_classes, defined_properties, property_domains,
+     property_ranges, ontology_graph, kb_graph) = load_ontology_definitions(project_root)
 
     # Validate examples
-    is_valid = validate_examples(project_root, defined_classes, defined_properties, property_domains, property_ranges, ontology_graph)
+    is_valid = validate_examples(project_root, defined_classes, defined_properties, property_domains, property_ranges, ontology_graph, kb_graph)
 
     exit(0 if is_valid else 1)

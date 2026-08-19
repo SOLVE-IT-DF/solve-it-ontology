@@ -18,10 +18,10 @@
 
 <https://ontology.solveit-df.org/solveit/core> rdf:type owl:Ontology ;
     owl:versionIRI <https://ontology.solveit-df.org/solveit/core/0.1.10> ;
-    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.4.0> ,
-                <https://ontology.unifiedcyberontology.org/uco/observable/1.4.0> ,
-                <https://ontology.unifiedcyberontology.org/uco/action/1.4.0> ,                
-                <https://ontology.caseontology.org/case/investigation/1.4.0> ,
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.5.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/observable/1.5.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/action/1.5.0> ,
+                <https://ontology.caseontology.org/case/investigation/1.5.0> ,
                 <https://ontology.solveit-df.org/solveit/observable> ,
                 <https://ontology.solveit-df.org/solveit/analysis> ,
                 <https://ontology.solveit-df.org/solveit/tool-profile> ,
@@ -38,10 +38,21 @@
 #################################################################
 
 ###  SOLVE-IT Technique
+###
+###  Technique is a METACLASS, aligned with uco-action:Technique (UCO 1.5.0).
+###  Each SOLVE-IT technique (DFT-NNNN) is an *instance* of this class and is
+###  itself an owl:Class. UCO requires that a Technique instance be a subclass
+###  of uco-action:Action; SOLVE-IT satisfies this by having each root technique
+###  class declare rdfs:subClassOf solveit-core:SolveitInvestigativeAction,
+###  which is itself a subclass of case-investigation:InvestigativeAction.
+###
+###  Note: Technique is NOT a subclass of InvestigativeAction. That would make
+###  every catalogue entry a performed action. It is the *instances* of each
+###  technique class that are performed actions.
 solveit-core:Technique rdf:type owl:Class ;
-    rdfs:subClassOf case-investigation:InvestigativeAction ;
+    rdfs:subClassOf uco-action:Technique ;
     rdfs:label "SOLVE-IT Technique"@en ;
-    rdfs:comment "A digital forensic technique representing how one might achieve an objective by performing an action. Based on the SOLVE-IT knowledge base."@en .
+    rdfs:comment "A digital forensic technique representing how one might achieve an objective by performing an action. Based on the SOLVE-IT knowledge base. This class is a metaclass: its instances are owl:Class entities whose own instances are performed investigative actions."@en .
 
 ###  SOLVE-IT Weakness
 solveit-core:Weakness rdf:type owl:Class ;
@@ -62,10 +73,19 @@ solveit-core:Objective rdf:type owl:Class ;
     rdfs:comment "A goal or objective in a digital forensic investigation that can be achieved through one or more techniques."@en .
 
 ###  SOLVE-IT Investigative Action
+###
+###  The parent class of every SOLVE-IT technique class. A performed action is
+###  typed with the technique class(es) it implements; membership of this class
+###  then follows by inference, and with it membership of
+###  case-investigation:InvestigativeAction and uco-action:Action.
+###
+###  This class remains the anchor for occurrence-level SOLVE-IT properties —
+###  currently appliedMitigation — which describe what happened on one occasion
+###  rather than what the technique is in general.
 solveit-core:SolveitInvestigativeAction rdf:type owl:Class ;
     rdfs:subClassOf case-investigation:InvestigativeAction ;
     rdfs:label "SOLVE-IT Investigative Action"@en ;
-    rdfs:comment "A SOLVE-IT aware InvestigativeAction that links an investigative action to the SOLVE-IT technique(s) used (1..n via usedTechnique) and any mitigations applied (0..n via appliedMitigation) during its execution."@en .
+    rdfs:comment "An investigative action performed as an instance of one or more SOLVE-IT techniques, recording any mitigations applied on that occasion (0..n via appliedMitigation). The technique(s) used are expressed by rdf:type against the technique class(es), not by a separate property."@en .
 
 #################################################################
 #    Object Properties
@@ -101,11 +121,17 @@ solveit-core:includesTechnique rdf:type owl:ObjectProperty ;
     rdfs:label "includes technique"@en ;
     rdfs:comment "Links an Objective to Techniques that can be used to achieve it."@en .
 
+###  DEPRECATED as of the UCO 1.5.0 Technique metaclass alignment.
+###  A performed action now states the technique(s) it implements by rdf:type
+###  against the technique class(es), e.g.
+###      kb:action-01 a solveit-data:techniqueDFT-1002 .
+###  Retained so existing data continues to parse. Do not use in new data.
 solveit-core:usedTechnique rdf:type owl:ObjectProperty ;
+    owl:deprecated true ;
     rdfs:domain solveit-core:SolveitInvestigativeAction ;
     rdfs:range solveit-core:Technique ;
-    rdfs:label "used technique"@en ;
-    rdfs:comment "Links a SolveitInvestigativeAction to the SOLVE-IT Technique definition(s) that were executed. At least one technique must be specified (1..n)."@en .
+    rdfs:label "used technique (deprecated)"@en ;
+    rdfs:comment "DEPRECATED. Formerly linked a SolveitInvestigativeAction to the SOLVE-IT Technique definition(s) executed. Superseded by typing the action with the technique class itself, following the uco-action:Technique metaclass pattern."@en .
 
 solveit-core:appliedMitigation rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:SolveitInvestigativeAction ;
@@ -141,17 +167,20 @@ solveit-core:techniqueDetails rdf:type owl:DatatypeProperty ;
     rdfs:label "technique details"@en ;
     rdfs:comment "Additional details about the technique."@en .
 
-solveit-core:hasCASEInputClass rdf:type owl:DatatypeProperty ;
+###  Input and output classes are referenced as IRIs, not as xsd:anyURI string
+###  literals. A literal is opaque: it cannot be followed by a reasoner, walked
+###  by a SPARQL property path, or checked by a validator for a typo.
+solveit-core:hasCASEInputClass rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Technique ;
-    rdfs:range xsd:anyURI ;
+    rdfs:range owl:Class ;
     rdfs:label "has CASE input class"@en ;
-    rdfs:comment "A CASE/UCO class IRI that represents an expected input to this technique. Multiple input classes can be specified (e.g., https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface)."@en .
+    rdfs:comment "A CASE/UCO class that represents an expected input to this technique. Multiple input classes can be specified (e.g., solveit-observable:WriteProtectedDeviceInterface)."@en .
 
-solveit-core:hasCASEOutputClass rdf:type owl:DatatypeProperty ;
+solveit-core:hasCASEOutputClass rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Technique ;
-    rdfs:range xsd:anyURI ;
+    rdfs:range owl:Class ;
     rdfs:label "has CASE output class"@en ;
-    rdfs:comment "A CASE/UCO class IRI that represents an output of this technique. Multiple output classes can be specified (e.g., https://ontology.unifiedcyberontology.org/uco/observable/Image)."@en .
+    rdfs:comment "A CASE/UCO class that represents an output of this technique. Multiple output classes can be specified (e.g., uco-observable:Image)."@en .
 
 #################################################################
 #    Data Properties - Weakness

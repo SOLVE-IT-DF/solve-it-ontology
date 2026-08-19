@@ -5,9 +5,9 @@ This directory contains example instances demonstrating the use of SOLVE-IT onto
 ## Files
 
 ### [core_classes_examples.ttl](core_classes_examples.ttl)
-Examples of the core SOLVE-IT classes:
+Examples of the core SOLVE-IT classes, including use of the CASE/UCO Technique metaclass:
 - **Objective** - Investigation objectives (e.g., "Acquire data")
-- **Technique** - Methods to achieve objectives (e.g., T1002: Disk imaging, T1042: Hash verification)
+- **Technique** - Methods to achieve objectives (e.g., T1002: Copy sectors from storage media, T1042: Verify hash of imaged data matches the hash of the source device)
 - **Weakness** - Potential issues with techniques (e.g., incomplete acquisition)
 - **Mitigation** - Ways to address weaknesses (e.g., hash verification)
 - **SolveitInvestigativeAction** - A SOLVE-IT aware InvestigativeAction that records which technique(s) were used (1..n) and which mitigations were applied (0..n) during an investigation, extending CASE/UCO InvestigativeAction (provides extended version of Bifrost example from here: https://caseontology.org/examples/asgard/)
