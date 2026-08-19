@@ -10,6 +10,13 @@ changes (0.0.8, 0.1.1) are omitted.
 
 ## [Unreleased]
 
+- CI: the version check in `validate-and-build-docs.yml` diffed against `HEAD~1`
+  while `actions/checkout` was left at its default `fetch-depth: 1`, so `HEAD~1`
+  did not exist and the check reported "not changed" whatever the commit did.
+  Every hand-set version was patch-bumped past as a result. The section below is
+  titled 0.2.1 rather than the 0.2.0 that was set deliberately, because 0.2.0
+  was never stamped and never published.
+
 - `validate_examples.py`: knowledge base entities must be named in the
   `solveit-data:` namespace. An example writing `:techniqueDFT-1002` against its
   own default prefix creates a look-alike in the examples namespace instead of
@@ -27,7 +34,7 @@ changes (0.0.8, 0.1.1) are omitted.
   by a `SortedTimeline`; the previous set intersection missed that and reported
   a mismatch on correct data.
 
-## [0.2.0] — 2026-08-19
+## [0.2.1] — 2026-08-19
 
 - `Technique` now subclasses `uco-action:Technique` rather than
   `case-investigation:InvestigativeAction`, following the metaclass model

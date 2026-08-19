@@ -34,6 +34,14 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          # The "Check if VERSION was manually changed" step below diffs against
+          # HEAD~1. actions/checkout defaults to fetch-depth: 1, so HEAD~1 does
+          # not exist, git diff fails, the grep matches nothing and the check
+          # reports "not changed" whatever the commit did. Every hand-set
+          # version was therefore patch-bumped past: 0.2.0 was set deliberately
+          # for the UCO 1.5.0 metaclass change and shipped as 0.2.1.
+          fetch-depth: 2
 
       - name: Set up Python
         uses: actions/setup-python@v5
