@@ -74,6 +74,7 @@
 
 :row1 rdf:type solveit-observable:SQLiteRecord ;
     rdfs:label "Row 1"@en ;
+    solveit-observable:rowid 1 ;
     solveit-observable:hasField :row1_id , :row1_message .
 
 :row1_id rdf:type solveit-observable:SQLiteField ;
@@ -88,6 +89,7 @@
 
 :row2 rdf:type solveit-observable:SQLiteRecord ;
     rdfs:label "Row 2"@en ;
+    solveit-observable:rowid 2 ;
     solveit-observable:hasField :row2_id , :row2_message .
 
 :row2_id rdf:type solveit-observable:SQLiteField ;

@@ -26,7 +26,7 @@
     dcterms:title "SOLVE-IT Observable Module"@en ;
     dcterms:description "Observable objects for SOLVE-IT digital forensics, including video frames and other forensic artifacts. This module imports sub-modules for acquisition, timeline, and search observables."@en ;
     dcterms:creator "SOLVE-IT Project" ;
-    owl:versionInfo "0.1.8" ;
+    owl:versionInfo "0.1.10" ;
     rdfs:label "SOLVE-IT Observable Module"@en .
 
 #################################################################
