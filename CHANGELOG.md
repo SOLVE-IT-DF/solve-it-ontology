@@ -8,7 +8,7 @@ Versions up to 0.1.9 were reconstructed retrospectively from git history on
 stamped it. Patch versions containing only automated rebuilds and no ontology
 changes (0.0.8, 0.1.1) are omitted.
 
-## [Unreleased]
+## [0.2.0] — 2026-08-19
 
 - `Technique` now subclasses `uco-action:Technique` rather than
   `case-investigation:InvestigativeAction`, following the metaclass model
