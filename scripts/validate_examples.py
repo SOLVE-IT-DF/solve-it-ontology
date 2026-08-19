@@ -113,6 +113,88 @@ def get_instance_type(g, instance):
     types = list(g.objects(URIRef(instance), RDF.type))
     return [str(t) for t in types]
 
+# Knowledge base entities are named <kind><ID> and live in the solveit-data
+# namespace. An example that writes :techniqueDFT-1002 against its own default
+# prefix creates a look-alike in the examples namespace instead of referring to
+# the catalogue entry, which parses and validates but silently says nothing
+# about the real technique.
+KB_ENTITY_PATTERN = re.compile(r"^(technique|weakness|mitigation|objective)DF[TWMO]-\d+$")
+
+
+def check_kb_namespace(g, errors):
+    """Flag KB-named entities that sit outside the solveit-data namespace."""
+    seen = set()
+    for node in set(g.all_nodes()) | set(g.predicates()):
+        if not isinstance(node, URIRef):
+            continue
+        iri = str(node)
+        local = _local_name(iri)
+        if not KB_ENTITY_PATTERN.match(local):
+            continue
+        if iri.startswith(SOLVEIT_DATA) or iri in seen:
+            continue
+        seen.add(iri)
+        errors.append(
+            f"KB entity in wrong namespace: <{iri}> is named like a knowledge "
+            f"base entry but is not in {SOLVEIT_DATA} - it should be "
+            f"solveit-data:{local}"
+        )
+
+
+# Properties an example may restate from the catalogue. Examples declare these
+# inline so a reader can follow the file without opening the knowledge base;
+# the values must therefore agree with it.
+DRIFT_CHECKED_PROPERTIES = [
+    ("rdfs:subClassOf", RDFS.subClassOf),
+    ("rdfs:label", RDFS.label),
+    ("techniqueID", SOLVEIT_CORE.techniqueID),
+    ("techniqueName", SOLVEIT_CORE.techniqueName),
+    ("weaknessID", SOLVEIT_CORE.weaknessID),
+    ("weaknessName", SOLVEIT_CORE.weaknessName),
+    ("mitigationID", SOLVEIT_CORE.mitigationID),
+    ("mitigationName", SOLVEIT_CORE.mitigationName),
+    ("hasCASEInputClass", SOLVEIT_CORE.hasCASEInputClass),
+    ("hasCASEOutputClass", SOLVEIT_CORE.hasCASEOutputClass),
+    ("hasPotentialWeakness", SOLVEIT_CORE.hasPotentialWeakness),
+]
+
+
+def check_kb_drift(g, kb_graph, errors, warnings):
+    """Compare inline copies of catalogue entries against the knowledge base.
+
+    An example may abridge an entry - stating two of a technique's five input
+    classes is a shortened quotation, not a contradiction - so a value the
+    example omits is accepted. A value it asserts that the knowledge base does
+    not have is drift, and is reported.
+    """
+    if not kb_graph:
+        return
+    for subject in sorted({s for s in g.subjects() if isinstance(s, URIRef)
+                           and str(s).startswith(SOLVEIT_DATA)}, key=str):
+        local = _local_name(str(subject))
+        if not KB_ENTITY_PATTERN.match(local):
+            continue
+        if not any(kb_graph.triples((subject, None, None))):
+            warnings.append(
+                f"Not in knowledge base: solveit-data:{local} is declared in the "
+                f"examples but has no entry in the knowledge base"
+            )
+            continue
+        for label, prop in DRIFT_CHECKED_PROPERTIES:
+            in_example = {str(o) for o in g.objects(subject, prop)}
+            if not in_example:
+                continue
+            in_kb = {str(o) for o in kb_graph.objects(subject, prop)}
+            extra = in_example - in_kb
+            if extra:
+                errors.append(
+                    f"Drifted from knowledge base: solveit-data:{local} {label} "
+                    f"asserts [{', '.join(sorted(_local_name(v) for v in extra))}] "
+                    f"which the knowledge base does not "
+                    f"({'KB has [' + ', '.join(sorted(_local_name(v) for v in in_kb)) + ']' if in_kb else 'KB states none'})"
+                )
+
+
 def is_subclass_of(subclass_uri, superclass_uri, ontology_graph, visited=None):
     """Check if subclass_uri is a (transitive) subclass of superclass_uri."""
     if visited is None:
@@ -147,6 +229,22 @@ def validate_id_format(id_value, expected_prefixes):
         if re.match(pattern, id_value):
             return True
     return False
+
+def io_types_satisfy(actual_types, expected_classes, ontology_graph):
+    """Does any actual type match, or specialise, any expected class?
+
+    A technique that declares Timeline as its input is satisfied by a
+    SortedTimeline: the subclass is a timeline. Comparing the two sets for a
+    plain intersection missed that and reported a mismatch on correct data.
+    """
+    for actual in actual_types:
+        for expected in expected_classes:
+            if actual == expected:
+                return True
+            if is_subclass_of(URIRef(actual), URIRef(expected), ontology_graph):
+                return True
+    return False
+
 
 def validate_examples(project_root, defined_classes, defined_properties, property_domains, property_ranges, ontology_graph, kb_graph=None):
     """Validate all example files in the solve_it_examples directory against the ontology definitions."""
@@ -353,7 +451,7 @@ def validate_examples(project_root, defined_classes, defined_properties, propert
                     for t in g.objects(obj, RDF.type):
                         actual_input_types.add(str(t))
                 if actual_input_types:
-                    if not actual_input_types & expected_inputs:
+                    if not io_types_satisfy(actual_input_types, expected_inputs, combined_graph):
                         tech_label = _short_label(combined_graph, technique_ref)
                         action_label = _short_label(g, action)
                         expected_names = ", ".join(sorted(_local_name(c) for c in expected_inputs))
@@ -371,7 +469,7 @@ def validate_examples(project_root, defined_classes, defined_properties, propert
                     for t in g.objects(res, RDF.type):
                         actual_output_types.add(str(t))
                 if actual_output_types:
-                    if not actual_output_types & expected_outputs:
+                    if not io_types_satisfy(actual_output_types, expected_outputs, combined_graph):
                         tech_label = _short_label(combined_graph, technique_ref)
                         action_label = _short_label(g, action)
                         expected_names = ", ".join(sorted(_local_name(c) for c in expected_outputs))
@@ -381,6 +479,12 @@ def validate_examples(project_root, defined_classes, defined_properties, propert
                             f"result types [{actual_names}] but technique "
                             f"{tech_label} expects [{expected_names}]"
                         )
+
+    # Validation 7: KB entities must be named in the solveit-data namespace
+    check_kb_namespace(g, errors)
+
+    # Validation 8: inline copies of catalogue entries must match the KB
+    check_kb_drift(g, kb_graph, errors, warnings)
 
     # Report results
     print("\n" + "=" * 70)

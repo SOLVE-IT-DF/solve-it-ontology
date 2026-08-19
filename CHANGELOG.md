@@ -8,6 +8,25 @@ Versions up to 0.1.9 were reconstructed retrospectively from git history on
 stamped it. Patch versions containing only automated rebuilds and no ontology
 changes (0.0.8, 0.1.1) are omitted.
 
+## [Unreleased]
+
+- `validate_examples.py`: knowledge base entities must be named in the
+  `solveit-data:` namespace. An example writing `:techniqueDFT-1002` against its
+  own default prefix creates a look-alike in the examples namespace instead of
+  referring to the catalogue entry. Such a file is internally consistent, so it
+  parses and validates cleanly while describing entities that exist nowhere
+  else.
+- `validate_examples.py`: inline copies of catalogue entries are checked against
+  the knowledge base. Examples restate techniques, weaknesses and mitigations so
+  a reader can follow a file without opening the knowledge base, and those
+  copies can drift. A value the example omits is accepted — stating two of a
+  technique's five input classes is a shortened quotation, not a contradiction —
+  but a value it asserts that the knowledge base does not have is reported.
+- `validate_examples.py`: input and output type checking now follows
+  `rdfs:subClassOf`. A technique declaring `Timeline` as its input is satisfied
+  by a `SortedTimeline`; the previous set intersection missed that and reported
+  a mismatch on correct data.
+
 ## [0.2.0] — 2026-08-19
 
 - `Technique` now subclasses `uco-action:Technique` rather than
