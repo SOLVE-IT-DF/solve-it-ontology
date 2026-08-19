@@ -102,7 +102,7 @@
     solveit-observable:hasConfiguration :indexconfig-88881111-2222-3333-4444-555566667777 .
 
 ###  SolveitInvestigativeAction: Building a keyword index
-:investigativeaction-aabb1111-2222-3333-4444-555566667777 a solveit-data:techniqueDFT-1126 ;
+:investigativeaction-aabb1111-2222-3333-4444-555566667777 a solveit-data:techniqueDFT-1121 ;
     uco-core:name "keyword-indexing" ;
     uco-core:description "Build keyword index from extracted files and parsed artifacts of suspect laptop" ;
     uco-action:startTime "2024-11-14T22:00:00Z"^^xsd:dateTime ;

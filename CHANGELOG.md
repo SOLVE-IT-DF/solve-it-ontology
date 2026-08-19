@@ -38,6 +38,11 @@ changes (0.0.8, 0.1.1) are omitted.
   actions with are defined there, not in the ontology files, so without it the
   examples could not be resolved against a complete schema and every domain
   check against an action reported a violation that was not real.
+- Retyped the keyword indexing example from `techniqueDFT-1126` (Keyword search
+  (live) (physical)) to `techniqueDFT-1121` (Index a data source for keyword
+  searching). The action builds an index from a `FileSet` and an `ArtifactSet`
+  and produces a `KeywordIndex`, which is what DFT-1121 declares; it was typed
+  as a search.
 - Qualified the technique and weaknesses in `weakness_assessment_examples.ttl`
   with the `solveit-data:` prefix. They were written against the file's default
   prefix, so they resolved into the examples namespace and described
