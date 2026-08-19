@@ -1,5 +1,6 @@
 @prefix : <https://ontology.solveit-df.org/solveit/examples/> .
 @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-data: <https://ontology.solveit-df.org/solveit/data/> .
 @prefix solveit-wa: <https://ontology.solveit-df.org/solveit/weakness-assessment/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -26,20 +27,20 @@
 #    Referenced Technique and Weaknesses
 #################################################################
 
-:techniqueDFT-1002 a owl:Class , solveit-core:Technique ;
+solveit-data:techniqueDFT-1002 a owl:Class , solveit-core:Technique ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
     rdfs:label "DFT-1002: Copy sectors from storage media"@en ;
     solveit-core:techniqueID "DFT-1002" ;
     solveit-core:techniqueName "Copy sectors from storage media" ;
-    solveit-core:hasPotentialWeakness :weaknessDFW-1014 ,
-                                     :weaknessDFW-1015 .
+    solveit-core:hasPotentialWeakness solveit-data:weaknessDFW-1014 ,
+                                     solveit-data:weaknessDFW-1015 .
 
-:weaknessDFW-1014 rdf:type solveit-core:Weakness ;
+solveit-data:weaknessDFW-1014 rdf:type solveit-core:Weakness ;
     rdfs:label "DFW-1014: Accessing the drive to copy data changes original data"@en ;
     solveit-core:weaknessID "DFW-1014" ;
     solveit-core:weaknessName "Accessing the drive to copy data changes original data" .
 
-:weaknessDFW-1015 rdf:type solveit-core:Weakness ;
+solveit-data:weaknessDFW-1015 rdf:type solveit-core:Weakness ;
     rdfs:label "DFW-1015: Powering on SSD results in sectors being wiped by TRIM operation"@en ;
     solveit-core:weaknessID "DFW-1015" ;
     solveit-core:weaknessName "Powering on SSD results in sectors being wiped by TRIM operation" .
@@ -59,7 +60,7 @@
 
 :evaluation-DFW-1014-diskcopy rdf:type solveit-wa:WeaknessEvaluation ;
     rdfs:label "Evaluation of DFW-1014 for disk acquisition"@en ;
-    solveit-wa:evaluatesWeakness :weaknessDFW-1014 ;
+    solveit-wa:evaluatesWeakness solveit-data:weaknessDFW-1014 ;
     solveit-wa:likelihoodRating 3 ;
     solveit-wa:likelihoodRationale "Without mitigation, connecting a device for acquisition is very likely to cause writes to source media through OS auto-mounting, filesystem journaling, or tool behaviour." ;
     solveit-wa:impactRating 3 ;
@@ -75,7 +76,7 @@
 
 :evaluation-DFW-1015-diskcopy rdf:type solveit-wa:WeaknessEvaluation ;
     rdfs:label "Evaluation of DFW-1015 for disk acquisition"@en ;
-    solveit-wa:evaluatesWeakness :weaknessDFW-1015 ;
+    solveit-wa:evaluatesWeakness solveit-data:weaknessDFW-1015 ;
     solveit-wa:likelihoodRating 3 ;
     solveit-wa:likelihoodRationale "TRIM is enabled by default on most modern SSDs and operating systems. Powering on the device will trigger garbage collection." ;
     solveit-wa:impactRating 2 ;
@@ -100,7 +101,7 @@
     solveit-wa:evaluationSetDescription "Assessment of weaknesses associated with disk acquisition (DFT-1002) in a traditional HDD acquisition context." ;
     solveit-wa:evaluationDate "2025-03-01"^^xsd:date ;
     solveit-wa:evaluatedBy :evaluator-jane-doe ;
-    solveit-wa:scopedToTechnique :techniqueDFT-1002 ;
+    solveit-wa:scopedToTechnique solveit-data:techniqueDFT-1002 ;
     solveit-wa:hasEvaluation :evaluation-DFW-1014-diskcopy ,
                              :evaluation-DFW-1015-diskcopy ;
     rdfs:comment "An evaluation set grouping two weakness assessments for disk acquisition. Demonstrates both LI-only and full RPN scoring within a single set."@en .
