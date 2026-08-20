@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.1</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.2</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -276,7 +276,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.1</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.2</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -1136,11 +1136,15 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Shapes (1)</h3>
+              <h3 class="panel-title">Shapes (3)</h3>
             </div>
             <div class="panel-body">
               
-                <li><a href="shape-default2techniqueshape.html" title="https://ontology.solveit-df.org/solveit/core/shapes/TechniqueShape">default2:TechniqueShape</a></li>
+                <li><a href="shape-default1techniqueiotermconsistencyshape.html" title="https://ontology.solveit-df.org/solveit/core/shapes/TechniqueIOTermConsistencyShape">default1:TechniqueIOTermConsistencyShape</a></li>
+              
+                <li><a href="shape-default1techniqueiotermshape.html" title="https://ontology.solveit-df.org/solveit/core/shapes/TechniqueIOTermShape">default1:TechniqueIOTermShape</a></li>
+              
+                <li><a href="shape-default1techniqueshape.html" title="https://ontology.solveit-df.org/solveit/core/shapes/TechniqueShape">default1:TechniqueShape</a></li>
               
             </div>
           </div>
@@ -1311,15 +1315,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                           <i>owl:ObjectProperty<i>
                         </td>
                         <td class="thirdtd">
-                          <span>A CASE/UCO class that represents an expected input to this technique. Multiple input classes can be specified (e.g., solveit-observable:WriteProtectedDeviceInterface).</span>
+                          <span>A CASE/UCO term that represents an expected input to this technique. Usually a class (e.g., solveit-observable:WriteProtectedDeviceInterface), but a property where the technique consumes a single value rather than an object (e.g., uco-observable:filePath). No rdfs:range is asserted, because no single one is true of both; :TechniqueIOTermShape carries the constraint instead.</span>
                         </td>
                         <td class="fourthtd">
                           
-                            
-                                
-                                  <i>owl:Class</i>
-                                
-                            
+                              <i>owl:Thing</i>
                           
                         </td>
                       </tr>
@@ -1332,15 +1332,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                           <i>owl:ObjectProperty<i>
                         </td>
                         <td class="thirdtd">
-                          <span>A CASE/UCO class that represents an output of this technique. Multiple output classes can be specified (e.g., uco-observable:Image).</span>
+                          <span>A CASE/UCO term that represents an output of this technique. Usually a class (e.g., uco-observable:Image), but a property where the technique produces a single value rather than an object (e.g., case-investigation:exhibitNumber). No rdfs:range is asserted, because no single one is true of both; :TechniqueIOTermShape carries the constraint instead.</span>
                         </td>
                         <td class="fourthtd">
                           
-                            
-                                
-                                  <i>owl:Class</i>
-                                
-                            
+                              <i>owl:Thing</i>
                           
                         </td>
                       </tr>
@@ -1520,6 +1516,90 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                   
                     <td>    
                       
+                        <a class="propcolor" title="solveit-core:hasCASEInputClass" href="prop-solveit-corehascaseinputclass.html">solveit-core:hasCASEInputClass</a>
+                      
+                    </td>
+
+                    <td>    
+                      owl:ObjectProperty
+                    </td>
+
+                    <td>     
+                      A CASE/UCO term that represents an expected input to this technique. Usually a class (e.g., solveit-observable:WriteProtectedDeviceInterface), but a property where the technique consumes a single value rather than an object (e.g., uco-observable:filePath). No rdfs:range is asserted, because no single one is true of both; :TechniqueIOTermShape carries the constraint instead.
+                      <br>
+                      
+                    </td>
+
+                    <td>     
+                      
+                    </td>
+
+                    <td>     
+                      
+                    </td>
+
+                    <td>     
+                      
+                      
+                    </td>
+
+                    <td>    
+                      
+                        
+                          <i>owl:Thing</i>
+                        
+                      
+                    </td>
+                  
+                </tr>
+              
+                <tr>
+                  
+                  
+                    <td>    
+                      
+                        <a class="propcolor" title="solveit-core:hasCASEOutputClass" href="prop-solveit-corehascaseoutputclass.html">solveit-core:hasCASEOutputClass</a>
+                      
+                    </td>
+
+                    <td>    
+                      owl:ObjectProperty
+                    </td>
+
+                    <td>     
+                      A CASE/UCO term that represents an output of this technique. Usually a class (e.g., uco-observable:Image), but a property where the technique produces a single value rather than an object (e.g., case-investigation:exhibitNumber). No rdfs:range is asserted, because no single one is true of both; :TechniqueIOTermShape carries the constraint instead.
+                      <br>
+                      
+                    </td>
+
+                    <td>     
+                      
+                    </td>
+
+                    <td>     
+                      
+                    </td>
+
+                    <td>     
+                      
+                      
+                    </td>
+
+                    <td>    
+                      
+                        
+                          <i>owl:Thing</i>
+                        
+                      
+                    </td>
+                  
+                </tr>
+              
+                <tr>
+                  
+                  
+                    <td>    
+                      
                         <a class="propcolor" title="solveit-core:techniqueID" href="prop-solveit-coretechniqueid.html">solveit-core:techniqueID</a>
                       
                     </td>
@@ -1616,7 +1696,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Wed, 19 Aug 2026 15:22:54 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 20 Aug 2026 07:24:36 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
