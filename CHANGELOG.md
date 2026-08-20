@@ -2,12 +2,6 @@
 
 Notable changes to the SOLVE-IT ontology.
 
-Versions up to 0.1.9 were reconstructed retrospectively from git history on
-2026-08-11. Patch versions are assigned automatically by CI on push (see
-`scripts/sync_version.py`), so each version below is dated by the commit that
-stamped it. Patch versions containing only automated rebuilds and no ontology
-changes (0.0.8, 0.1.1) are omitted.
-
 ## [0.2.3] — 2026-08-20
 
 - `validate-against-case-1.5.0.yml` now runs automatically. It previously ran
@@ -137,6 +131,12 @@ changes (0.0.8, 0.1.1) are omitted.
 
 - Added `rowid` data property to `SQLiteRecord`.
 - Clarified comments on `fieldType` and `hasBlobContent` in the SQLite module.
+
+Versions up to 0.1.9 were reconstructed retrospectively from git history on
+2026-08-11. Patch versions are assigned automatically by CI on push (see
+`scripts/sync_version.py`), so each version is dated by the commit that stamped
+it. Patch versions containing only automated rebuilds and no ontology changes
+(0.0.8, 0.1.1) are omitted.
 
 ## [0.1.9] — 2026-07-10
 
