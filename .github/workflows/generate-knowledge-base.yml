@@ -11,6 +11,8 @@ permissions:
 jobs:
   generate-kb:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
 
     steps:
       - name: Checkout ontology repository
@@ -52,13 +54,26 @@ jobs:
           git config --local user.name "github-actions[bot]"
 
       - name: Commit knowledge base files
+        id: commit
         run: |
           git add docs/data/
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
             git commit -m "Update knowledge base RDF files" \
               -m "Generated solveit-kb.ttl and solveit-kb.jsonld from solve-it knowledge base" \
               -m "Co-Authored-By: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
             git push
           fi
+
+  # A rebuilt knowledge base is one of the two things that can invalidate the
+  # CASE/UCO/SOLVE-IT validation, and this job commits it with GITHUB_TOKEN, so
+  # the validation workflow's own push trigger will not see it. Call it here
+  # instead, and only when something actually changed: most hourly runs
+  # regenerate a byte-identical file and need no validation.
+  validate-against-case:
+    needs: generate-kb
+    if: needs.generate-kb.outputs.changed == 'true'
+    uses: ./.github/workflows/validate-against-case-1.5.0.yml
