@@ -10,6 +10,29 @@ changes (0.0.8, 0.1.1) are omitted.
 
 ## [Unreleased]
 
+- `hasCASEInputClass` and `hasCASEOutputClass` no longer assert
+  `rdfs:range owl:Class`. A technique can consume or produce a single value
+  rather than an object, and then the term it names is a property:
+  `case-investigation:exhibitNumber`, `uco-core:name`,
+  `uco-observable:filePath`. Of the 173 terms the knowledge base references,
+  42 are properties. The range was satisfied for those only because the
+  generator declared every term an `owl:Class`, which stated something false
+  about them. No single range is true of both classes and properties, so the
+  constraint moves to SHACL where the alternatives can be enumerated.
+- Added `TechniqueIOTermShape`: every term named as a technique input or
+  output must be declared an `owl:Class`, `owl:DatatypeProperty` or
+  `owl:ObjectProperty`.
+- Added `TechniqueIOTermConsistencyShape`: a term must not be declared as more
+  than one of those kinds. This is what catches a SOLVE-IT declaration that
+  contradicts CASE or UCO, which the shape above cannot, since the knowledge
+  base's own declaration is what satisfies it. It bites only when CASE and UCO
+  are loaded alongside the data. Against the knowledge base published before
+  this change it reports 56 violations across the 42 property terms; against
+  the output of the corrected generator, none.
+- The property names still say "Class" while now admitting properties. They
+  are expected to become `hasInput` and `hasOutput` alongside a knowledge base
+  change, and are left alone here so the rename happens once.
+
 - `validate_examples.py`: knowledge base entities must be named in the
   `solveit-data:` namespace. An example writing `:techniqueDFT-1002` against its
   own default prefix creates a look-alike in the examples namespace instead of

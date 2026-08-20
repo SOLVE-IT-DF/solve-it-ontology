@@ -172,15 +172,13 @@ solveit-core:techniqueDetails rdf:type owl:DatatypeProperty ;
 ###  by a SPARQL property path, or checked by a validator for a typo.
 solveit-core:hasCASEInputClass rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Technique ;
-    rdfs:range owl:Class ;
     rdfs:label "has CASE input class"@en ;
-    rdfs:comment "A CASE/UCO class that represents an expected input to this technique. Multiple input classes can be specified (e.g., solveit-observable:WriteProtectedDeviceInterface)."@en .
+    rdfs:comment "A CASE/UCO term that represents an expected input to this technique. Usually a class (e.g., solveit-observable:WriteProtectedDeviceInterface), but a property where the technique consumes a single value rather than an object (e.g., uco-observable:filePath). No rdfs:range is asserted, because no single one is true of both; :TechniqueIOTermShape carries the constraint instead."@en .
 
 solveit-core:hasCASEOutputClass rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Technique ;
-    rdfs:range owl:Class ;
     rdfs:label "has CASE output class"@en ;
-    rdfs:comment "A CASE/UCO class that represents an output of this technique. Multiple output classes can be specified (e.g., uco-observable:Image)."@en .
+    rdfs:comment "A CASE/UCO term that represents an output of this technique. Usually a class (e.g., uco-observable:Image), but a property where the technique produces a single value rather than an object (e.g., case-investigation:exhibitNumber). No rdfs:range is asserted, because no single one is true of both; :TechniqueIOTermShape carries the constraint instead."@en .
 
 #################################################################
 #    Data Properties - Weakness

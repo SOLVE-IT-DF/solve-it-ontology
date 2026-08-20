@@ -70,3 +70,87 @@
         sh:maxCount 1 ;
         sh:message "A SOLVE-IT technique must have exactly one techniqueID."@en ;
     ] .
+
+#################################################################
+#    Technique input and output term Shape
+#################################################################
+#
+#    A technique names the CASE/UCO terms it consumes and produces.
+#    Usually these are classes, but a technique can consume or produce a
+#    single value rather than an object, and then the term is a property:
+#    case-investigation:exhibitNumber, uco-core:name, uco-observable:filePath.
+#
+#    hasCASEInputClass and hasCASEOutputClass therefore assert no rdfs:range.
+#    owl:Class excluded the properties, and there is no single range that
+#    admits both without also admitting everything else. The constraint is
+#    stated here instead, where the alternatives can be enumerated.
+#
+#    This requires each referenced term to carry its type in the graph being
+#    validated. The knowledge base generator asserts it for every term it
+#    references, so the knowledge base satisfies this on its own.
+
+:TechniqueIOTermShape a sh:NodeShape ;
+    sh:targetClass solveit-core:Technique ;
+    rdfs:label "SOLVE-IT Technique Input and Output Term Shape"@en ;
+    rdfs:comment "Checks that every term a technique names as an input or an output is declared as a class, a datatype property or an object property, and not as something else."@en ;
+    sh:property [
+        sh:path solveit-core:hasCASEInputClass ;
+        sh:nodeKind sh:IRI ;
+        sh:or (
+            [ sh:class owl:Class ]
+            [ sh:class owl:DatatypeProperty ]
+            [ sh:class owl:ObjectProperty ]
+        ) ;
+        sh:message "A technique input must be a CASE/UCO class, datatype property or object property, and must be declared as one in the graph."@en ;
+    ] ;
+    sh:property [
+        sh:path solveit-core:hasCASEOutputClass ;
+        sh:nodeKind sh:IRI ;
+        sh:or (
+            [ sh:class owl:Class ]
+            [ sh:class owl:DatatypeProperty ]
+            [ sh:class owl:ObjectProperty ]
+        ) ;
+        sh:message "A technique output must be a CASE/UCO class, datatype property or object property, and must be declared as one in the graph."@en ;
+    ] .
+
+#################################################################
+#    Technique input and output term consistency Shape
+#################################################################
+#
+#    The shape above checks that a term is declared as one of the three
+#    kinds. It cannot tell whether that declaration is true, because the
+#    knowledge base's own declaration is what satisfies it: declaring
+#    uco-observable:fileName an owl:Class passes, even though UCO declares it
+#    a datatype property.
+#
+#    This shape catches that, by looking for a term declared as more than one
+#    kind. It only bites when CASE and UCO are loaded alongside the data, so
+#    that the upstream declaration and the SOLVE-IT one are both in the graph
+#    and can disagree. Validating the knowledge base on its own will not
+#    trigger it.
+
+:TechniqueIOTermConsistencyShape a sh:NodeShape ;
+    sh:targetClass solveit-core:Technique ;
+    rdfs:label "SOLVE-IT Technique Input and Output Term Consistency Shape"@en ;
+    rdfs:comment "Checks that a term named as a technique input or output is not declared as more than one kind of thing, which happens when SOLVE-IT states a type that contradicts the one CASE or UCO gives it."@en ;
+    sh:sparql [
+        sh:message "A term named as a technique input or output is declared as more than one kind of thing. SOLVE-IT and CASE/UCO disagree about what it is."@en ;
+        sh:prefixes solveit-core: ;
+        sh:select """
+            SELECT $this ?value
+            WHERE {
+                $this ?path ?value .
+                FILTER(?path IN (<https://ontology.solveit-df.org/solveit/core/hasCASEInputClass>,
+                                 <https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass>))
+                ?value a ?kindA, ?kindB .
+                FILTER(?kindA != ?kindB)
+                FILTER(?kindA IN (<http://www.w3.org/2002/07/owl#Class>,
+                                  <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+                                  <http://www.w3.org/2002/07/owl#ObjectProperty>))
+                FILTER(?kindB IN (<http://www.w3.org/2002/07/owl#Class>,
+                                  <http://www.w3.org/2002/07/owl#DatatypeProperty>,
+                                  <http://www.w3.org/2002/07/owl#ObjectProperty>))
+            }
+        """ ;
+    ] .
