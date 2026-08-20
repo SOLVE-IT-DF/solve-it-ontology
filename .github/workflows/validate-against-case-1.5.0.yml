@@ -1,15 +1,24 @@
 name: Validate against CASE 1.5.0
 
-# Manual only for now (workflow_dispatch). Run it from the Actions tab when the
-# ontology or the generated knowledge base changes in a way worth checking.
+# Validates the generated knowledge base against the SHACL shapes of CASE, UCO
+# and SOLVE-IT together. The three are merged into one graph and passed to
+# case_validate as --ontology-graph, so a violation of a SOLVE-IT shape fails
+# this job exactly as a CASE one does.
 #
 # The CASE/UCO version is pinned deliberately. When that pin moves, update BOTH
 # the `case_version` default below AND the workflow name above, so the name in
 # the Actions list never lies about what is being validated.
 #
-# If this is ever put on a schedule, add an actions/cache step for the merged
-# ontology graph, keyed on the CASE tag plus a hash of the local solve_it_*.ttl
-# files. It is not worth the moving parts while the workflow is manual.
+# On what triggers it: the graph only changes when the ontology changes or the
+# knowledge base is rebuilt, so it is checked on those events and not on a
+# timer.
+#
+# The knowledge base is rebuilt hourly by generate-knowledge-base.yml, which
+# commits with GITHUB_TOKEN. Pushes made with that token do not trigger further
+# workflow runs, so the `push` trigger below never fires for a regenerated
+# knowledge base — it only catches hand edits. That job therefore calls this one
+# directly (workflow_call), and only on the runs where it actually committed a
+# change. Most hourly runs regenerate an identical file and call nothing.
 
 on:
   workflow_dispatch:
@@ -19,6 +28,37 @@ on:
         default: '1.5.0'
         required: true
         type: string
+  workflow_call:
+    inputs:
+      case_version:
+        description: 'CASE release tag to validate against'
+        default: '1.5.0'
+        required: false
+        type: string
+  push:
+    branches: [main]
+    paths:
+      - '**.ttl'
+      - 'docs/data/**'
+      - '.github/workflows/validate-against-case-1.5.0.yml'
+  # So a change to this workflow, or to the shapes it applies, is proved before
+  # it reaches main rather than after. Without it the only way to find out
+  # whether an edit here works is to merge it.
+  pull_request:
+    paths:
+      - '**.ttl'
+      - 'docs/data/**'
+      - '.github/workflows/validate-against-case-1.5.0.yml'
+
+concurrency:
+  # Per ref, not global: a pull request run must not cancel the run on main.
+  group: case-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # inputs.case_version is unset on push and pull_request, so it needs a
+  # default here as well as on the dispatch and call inputs.
+  CASE_VERSION: ${{ inputs.case_version || '1.5.0' }}
 
 jobs:
   validate:
@@ -28,11 +68,23 @@ jobs:
       - name: Checkout ontology repository
         uses: actions/checkout@v4
 
+      # The merged graph is expensive to build: it needs CASE checked out with
+      # the UCO submodule, then ~32 files parsed and reserialised. It changes
+      # only when the CASE pin moves or a local ontology file changes, so key
+      # the cache on exactly those two things.
+      - name: Restore merged ontology graph
+        id: graph-cache
+        uses: actions/cache@v4
+        with:
+          path: combined_ontology.ttl
+          key: merged-ontology-${{ env.CASE_VERSION }}-${{ hashFiles('solve_it_*.ttl') }}
+
       - name: Checkout CASE (with the UCO submodule)
+        if: steps.graph-cache.outputs.cache-hit != 'true'
         uses: actions/checkout@v4
         with:
           repository: casework/CASE
-          ref: ${{ inputs.case_version }}
+          ref: ${{ env.CASE_VERSION }}
           submodules: recursive
           path: case-src
 
@@ -50,6 +102,7 @@ jobs:
           pip show case-utils | head -2
 
       - name: Build merged ontology graph
+        if: steps.graph-cache.outputs.cache-hit != 'true'
         run: |
           python - <<'PY'
           import glob
@@ -76,6 +129,37 @@ jobs:
           print(f'{len(files)} files, {len(g)} triples')
           g.serialize('combined_ontology.ttl', format='turtle')
           PY
+
+      # A pass only means something if a failure were possible. The SOLVE-IT
+      # shapes reach case_validate incidentally, by being caught in the
+      # solve_it_*.ttl glob above, so a rename or a moved file would drop them
+      # silently and every run would still report success. This step feeds
+      # case_validate a technique that breaks TechniqueIOTermShape and requires
+      # it to be rejected. If it is accepted, the SOLVE-IT shapes are not in
+      # force and the job fails here rather than reporting a hollow pass.
+      - name: Confirm the SOLVE-IT shapes are in force
+        run: |
+          cat > canary.ttl <<'TTL'
+          @prefix owl: <http://www.w3.org/2002/07/owl#> .
+          @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+          @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+          @prefix ex: <http://example.org/canary/> .
+
+          ex:techniqueDFT-0000 a owl:Class , solveit-core:Technique ;
+              rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+              solveit-core:techniqueID "DFT-0000" ;
+              solveit-core:techniqueName "Canary" ;
+              solveit-core:hasCASEInputClass ex:undeclared-term .
+          TTL
+          if case_validate --built-version none --allow-info \
+               --ontology-graph combined_ontology.ttl canary.ttl > canary-report.txt 2>&1; then
+            echo "::error::The canary was accepted. The SOLVE-IT shapes are not being applied,"
+            echo "::error::so a pass from the validation step below would prove nothing."
+            head -40 canary-report.txt
+            exit 1
+          fi
+          echo "Canary correctly rejected — the SOLVE-IT shapes are in force."
+          grep -m2 "Source Shape\|Message" canary-report.txt || true
 
       - name: Validate the generated knowledge base
         run: |
@@ -111,5 +195,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: case-validation-reports
-          path: validation-reports/
+          path: |
+            validation-reports/
+            canary-report.txt
           if-no-files-found: warn
