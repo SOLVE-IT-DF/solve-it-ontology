@@ -10,6 +10,22 @@ changes (0.0.8, 0.1.1) are omitted.
 
 ## [Unreleased]
 
+- CI: `validate-against-case-1.5.0.yml` now runs on a daily schedule and on
+  pushes to `main` that touch a TTL file or `docs/data/`, rather than only by
+  hand. The schedule is what covers the hourly knowledge base rebuild:
+  `generate-knowledge-base.yml` commits with `GITHUB_TOKEN`, and pushes made
+  with that token do not trigger further workflow runs, so the push trigger
+  never fires for a regenerated knowledge base.
+- CI: the workflow now proves the SOLVE-IT shapes are being applied before
+  trusting a pass. They reach `case_validate` by being caught in the
+  `solve_it_*.ttl` glob, so a rename or a moved file would drop them silently
+  and every run would still report success. A canary technique that breaks
+  `TechniqueIOTermShape` is validated first and must be rejected; if it is
+  accepted the job fails there instead of reporting a hollow pass.
+- CI: the merged CASE, UCO and SOLVE-IT graph is cached, keyed on the CASE tag
+  and a hash of the local ontology files, so a scheduled run does not check out
+  CASE with its UCO submodule and reparse 32 files each time.
+
 - `hasCASEInputClass` and `hasCASEOutputClass` no longer assert
   `rdfs:range owl:Class`. A technique can consume or produce a single value
   rather than an object, and then the term it names is a property:
