@@ -9,11 +9,16 @@ name: Validate against CASE 1.5.0
 # the `case_version` default below AND the workflow name above, so the name in
 # the Actions list never lies about what is being validated.
 #
-# On the schedule: the knowledge base is rebuilt hourly by
-# generate-knowledge-base.yml, which commits with GITHUB_TOKEN. Pushes made
-# with that token do not trigger further workflow runs, so the `push` trigger
-# below never fires for a regenerated knowledge base — it only catches hand
-# edits. The schedule is what actually covers the hourly rebuild.
+# On what triggers it: the graph only changes when the ontology changes or the
+# knowledge base is rebuilt, so it is checked on those events and not on a
+# timer.
+#
+# The knowledge base is rebuilt hourly by generate-knowledge-base.yml, which
+# commits with GITHUB_TOKEN. Pushes made with that token do not trigger further
+# workflow runs, so the `push` trigger below never fires for a regenerated
+# knowledge base — it only catches hand edits. That job therefore calls this one
+# directly (workflow_call), and only on the runs where it actually committed a
+# change. Most hourly runs regenerate an identical file and call nothing.
 
 on:
   workflow_dispatch:
@@ -23,8 +28,13 @@ on:
         default: '1.5.0'
         required: true
         type: string
-  schedule:
-    - cron: '30 6 * * *'   # daily, after the knowledge base has been rebuilt
+  workflow_call:
+    inputs:
+      case_version:
+        description: 'CASE release tag to validate against'
+        default: '1.5.0'
+        required: false
+        type: string
   push:
     branches: [main]
     paths:
@@ -37,8 +47,8 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  # inputs.case_version is unset on schedule and push, so it needs a default
-  # here as well as on the dispatch input.
+  # inputs.case_version is unset on push, so it needs a default here as well
+  # as on the dispatch and call inputs.
   CASE_VERSION: ${{ inputs.case_version || '1.5.0' }}
 
 jobs:

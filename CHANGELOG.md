@@ -10,12 +10,14 @@ changes (0.0.8, 0.1.1) are omitted.
 
 ## [Unreleased]
 
-- CI: `validate-against-case-1.5.0.yml` now runs on a daily schedule and on
-  pushes to `main` that touch a TTL file or `docs/data/`, rather than only by
-  hand. The schedule is what covers the hourly knowledge base rebuild:
-  `generate-knowledge-base.yml` commits with `GITHUB_TOKEN`, and pushes made
-  with that token do not trigger further workflow runs, so the push trigger
-  never fires for a regenerated knowledge base.
+- CI: `validate-against-case-1.5.0.yml` now runs on the two events that can
+  invalidate its result, rather than only by hand. Pushes to `main` touching a
+  TTL file cover ontology changes. Knowledge base rebuilds are covered by
+  `generate-knowledge-base.yml` calling it directly, and only on the runs where
+  it actually committed a change — most hourly runs regenerate a byte-identical
+  file. A direct call is needed because that job commits with `GITHUB_TOKEN`,
+  and pushes made with that token do not trigger further workflow runs, so the
+  push trigger never sees a regenerated knowledge base.
 - CI: the workflow now proves the SOLVE-IT shapes are being applied before
   trusting a pass. They reach `case_validate` by being caught in the
   `solve_it_*.ttl` glob, so a rename or a moved file would drop them silently
