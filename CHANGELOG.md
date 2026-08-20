@@ -8,7 +8,42 @@ Versions up to 0.1.9 were reconstructed retrospectively from git history on
 stamped it. Patch versions containing only automated rebuilds and no ontology
 changes (0.0.8, 0.1.1) are omitted.
 
-## [Unreleased]
+## [0.2.3] — 2026-08-20
+
+- `validate-against-case-1.5.0.yml` now runs automatically. It previously ran
+  only when started by hand from the Actions tab, and had not been run since it
+  was written on 5 August. It is now triggered by pushes to `main` that touch a
+  TTL file, by pull requests touching the same paths, and by
+  `generate-knowledge-base.yml` calling it directly.
+- The call from `generate-knowledge-base.yml` is made only on the runs where
+  that job committed a rebuilt knowledge base, which is a small proportion of
+  its hourly runs. A direct call is used in place of the push trigger because
+  that job commits using `GITHUB_TOKEN`, and GitHub does not start further
+  workflow runs for pushes made with that token.
+- `validate-against-case-1.5.0.yml` now confirms that the SOLVE-IT shapes are
+  in the graph it validates against before reporting a pass. The shapes reach
+  `case_validate` because the two shapes files are matched by the
+  `solve_it_*.ttl` pattern used to build the merged ontology graph. Renaming a
+  shapes file, or narrowing that pattern, would remove all 13 SOLVE-IT shapes
+  from the graph, and every run would continue to report success. A technique
+  that breaks `TechniqueIOTermShape` is now validated first, and the job fails
+  if it is accepted.
+- The merged CASE, UCO and SOLVE-IT graph used by
+  `validate-against-case-1.5.0.yml` is cached, keyed on the CASE release tag
+  and a hash of the local ontology files, so that a run does not check out CASE
+  with its UCO submodule and reparse 32 files each time.
+- `validate-and-build-docs.yml` checks out with `fetch-depth: 2`. The step that
+  decides whether to bump the patch version tests whether `VERSION` changed by
+  running `git diff HEAD~1`, and `actions/checkout` defaults to
+  `fetch-depth: 1`, so `HEAD~1` was not present in the runner's clone. The
+  command failed, and the step reported "not changed" whatever the commit
+  contained, so a version set by hand was always overwritten by the automatic
+  patch bump.
+- The 0.2.1 section is titled 0.2.1 rather than the 0.2.0 that was set in
+  `VERSION` for the UCO 1.5.0 metaclass change, because the fault above meant
+  0.2.0 was never stamped into the ontology files and never published.
+
+## [0.2.2] — 2026-08-20
 
 - `hasCASEInputClass` and `hasCASEOutputClass` no longer declare
   `rdfs:range owl:Class`. A technique's declared input or output is usually a
@@ -57,39 +92,6 @@ changes (0.0.8, 0.1.1) are omitted.
   `Timeline` as its input is satisfied by a `SortedTimeline`, which is a
   subclass of it. The previous check compared the two sets of types directly
   and reported a mismatch in that case.
-
-- `validate-against-case-1.5.0.yml` now runs automatically. It previously ran
-  only when started by hand from the Actions tab, and had not been run since it
-  was written on 5 August. It is now triggered by pushes to `main` that touch a
-  TTL file, by pull requests touching the same paths, and by
-  `generate-knowledge-base.yml` calling it directly.
-- The call from `generate-knowledge-base.yml` is made only on the runs where
-  that job committed a rebuilt knowledge base, which is a small proportion of
-  its hourly runs. A direct call is used in place of the push trigger because
-  that job commits using `GITHUB_TOKEN`, and GitHub does not start further
-  workflow runs for pushes made with that token.
-- `validate-against-case-1.5.0.yml` now confirms that the SOLVE-IT shapes are
-  in the graph it validates against before reporting a pass. The shapes reach
-  `case_validate` because the two shapes files are matched by the
-  `solve_it_*.ttl` pattern used to build the merged ontology graph. Renaming a
-  shapes file, or narrowing that pattern, would remove all 13 SOLVE-IT shapes
-  from the graph, and every run would continue to report success. A technique
-  that breaks `TechniqueIOTermShape` is now validated first, and the job fails
-  if it is accepted.
-- The merged CASE, UCO and SOLVE-IT graph used by
-  `validate-against-case-1.5.0.yml` is cached, keyed on the CASE release tag
-  and a hash of the local ontology files, so that a run does not check out CASE
-  with its UCO submodule and reparse 32 files each time.
-- `validate-and-build-docs.yml` checks out with `fetch-depth: 2`. The step that
-  decides whether to bump the patch version tests whether `VERSION` changed by
-  running `git diff HEAD~1`, and `actions/checkout` defaults to
-  `fetch-depth: 1`, so `HEAD~1` was not present in the runner's clone. The
-  command failed, and the step reported "not changed" whatever the commit
-  contained, so a version set by hand was always overwritten by the automatic
-  patch bump.
-- The version section below is titled 0.2.1 rather than the 0.2.0 that was set
-  in `VERSION` for the UCO 1.5.0 metaclass change, because the fault above
-  meant 0.2.0 was never stamped into the ontology files and never published.
 
 ## [0.2.1] — 2026-08-19
 
