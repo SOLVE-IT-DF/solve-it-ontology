@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.1</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.2</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -276,7 +276,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.1</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.2</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -1018,7 +1018,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            default1:SortedTimelineEntryShape
+            default1:TechniqueIOTermShape
         </li>
   </ol>
 
@@ -1031,7 +1031,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        default1:SortedTimelineEntryShape
+        default1:TechniqueIOTermShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -1046,7 +1046,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Sorted Timeline Entry Shape' - Validates that each SortedTimelineEntry has exactly one referencesTimelineEntry and exactly one sortPosition.">default1:SortedTimelineEntryShape</a>
+                <li><a style="font-weight: bold;" title="'SOLVE-IT Technique Input and Output Term Shape' - Checks that every term a technique names as an input or an output is declared as a class, a datatype..">default1:TechniqueIOTermShape</a>
                   
                 </li>
               </ul>
@@ -1066,7 +1066,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/observable/shapes/SortedTimelineEntryShape</code>
+            <code>https://ontology.solveit-df.org/solveit/core/shapes/TechniqueIOTermShape</code>
           </div>
         </div>
       </div>
@@ -1082,7 +1082,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            Sorted Timeline Entry Shape
+            SOLVE-IT Technique Input and Output Term Shape
           </div>
           </div>
         </div>
@@ -1099,7 +1099,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that each SortedTimelineEntry has exactly one referencesTimelineEntry and exactly one sortPosition.</p>
+              <p>Checks that every term a technique names as an input or an output is declared as a class, a datatype property or an object property, and not as something else.</p>
             </div>
           </div>
         </div>
@@ -1121,7 +1121,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
               
-                <li><a href="class-solveit-observablesortedtimelineentry.html">solveit-observable:SortedTimelineEntry</a></li>
+                <li><a href="class-solveit-coretechnique.html">solveit-core:Technique</a></li>
                 
             </div>
           </div>
@@ -1142,7 +1142,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 <h3 class="panel-title">Shape Properties</h3>
               </div>
               <div class="panel-body" style="overflow: auto;">
-                <p>Instances of solveit-observable:SortedTimelineEntry can have the following properties:</p>
+                <p>Instances of solveit-core:Technique can have the following properties:</p>
               </div>
               <table class="table table-bordered" style="overflow: auto;">
                 <tr class="table-classproperties">   
@@ -1155,7 +1155,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                   <tr>
                      
                       <td colspan="5">
-                        <small class="label label-info label-xs">solveit-observable:SortedTimelineEntry</small>
+                        <small class="label label-info label-xs">solveit-core:Technique</small>
                       </td>
                         
                     
@@ -1165,25 +1165,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                        
                       <td>   
                         
-                          <a class="propcolor" title="solveit-observable:referencesTimelineEntry" href="prop-solveit-observablereferencestimelineentry.html">solveit-observable:referencesTimelineEntry</a>
+                          <a class="propcolor" title="" href=".html"></a>
                         
                       </td>
  
                       <td>     
-                        1
+                        
                       </td>
  
                       <td>     
-                        1
+                        
                       </td>
                         
                       <td>     
                         
-                        
-                          
-                            <a title="solveit-observable:TimelineEntry" href="class-solveit-observabletimelineentry.html" class="rdfclass">solveit-observable:TimelineEntry</a>
-                           
-                          <br>
                         
                       </td>
                     
@@ -1193,7 +1188,76 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                        
                       <td>   
                         
-                          <a class="propcolor" title="solveit-observable:sortPosition" href="prop-solveit-observablesortposition.html">solveit-observable:sortPosition</a>
+                          <a class="propcolor" title="" href=".html"></a>
+                        
+                      </td>
+ 
+                      <td>     
+                        1
+                      </td>
+ 
+                      <td>     
+                        
+                      </td>
+                        
+                      <td>     
+                        
+                        
+                      </td>
+                    
+                  </tr>
+                   
+                  <tr>
+                       
+                      <td>   
+                        
+                          <a class="propcolor" title="solveit-core:hasCASEInputClass" href="prop-solveit-corehascaseinputclass.html">solveit-core:hasCASEInputClass</a>
+                        
+                      </td>
+ 
+                      <td>     
+                        
+                      </td>
+ 
+                      <td>     
+                        
+                      </td>
+                        
+                      <td>     
+                        
+                        
+                      </td>
+                    
+                  </tr>
+                   
+                  <tr>
+                       
+                      <td>   
+                        
+                          <a class="propcolor" title="solveit-core:hasCASEOutputClass" href="prop-solveit-corehascaseoutputclass.html">solveit-core:hasCASEOutputClass</a>
+                        
+                      </td>
+ 
+                      <td>     
+                        
+                      </td>
+ 
+                      <td>     
+                        
+                      </td>
+                        
+                      <td>     
+                        
+                        
+                      </td>
+                    
+                  </tr>
+                   
+                  <tr>
+                       
+                      <td>   
+                        
+                          <a class="propcolor" title="solveit-core:techniqueID" href="prop-solveit-coretechniqueid.html">solveit-core:techniqueID</a>
                         
                       </td>
  
@@ -1206,11 +1270,6 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                       </td>
                         
                       <td>     
-                        
-                          
-                            <i>xsd:nonNegativeInteger</i>
-                           
-                            <br>
                         
                         
                       </td>
@@ -1235,26 +1294,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default1:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default1:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/core/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-core:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/core/&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">default1</span><span class="p">:</span><span class="nt">SortedTimelineEntryShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Sorted Timeline Entry Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that each SortedTimelineEntry has exactly one referencesTimelineEntry and exactly one sortPosition."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">TimelineEntry</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"referencesTimelineEntry must reference exactly one TimelineEntry"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">referencesTimelineEntry</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">nonNegativeInteger</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"sortPosition must be exactly one xsd:nonNegativeInteger"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">sortPosition</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">SortedTimelineEntry</span> <span class="p">.</span>
+<span class="nn">default1</span><span class="p">:</span><span class="nt">TechniqueIOTermShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"SOLVE-IT Technique Input and Output Term Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Checks that every term a technique names as an input or an output is declared as a class, a datatype property or an object property, and not as something else."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"A technique output must be a CASE/UCO class, datatype property or object property, and must be declared as one in the graph."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">or</span> <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">DatatypeProperty</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">]</span> <span class="p">)</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">hasCASEOutputClass</span> <span class="p">],</span>
+        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"A technique input must be a CASE/UCO class, datatype property or object property, and must be declared as one in the graph."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">or</span> <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">DatatypeProperty</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">]</span> <span class="p">)</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">hasCASEInputClass</span> <span class="p">]</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">Technique</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -1284,7 +1342,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Wed, 19 Aug 2026 15:22:54 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 20 Aug 2026 07:24:36 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>
@@ -1345,7 +1403,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_400").offset().top - 100
+          scrollTop: $("#sd_397").offset().top - 100
       }, 100);
     });
 

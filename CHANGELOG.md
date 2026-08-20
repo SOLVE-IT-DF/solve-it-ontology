@@ -10,12 +10,38 @@ changes (0.0.8, 0.1.1) are omitted.
 
 ## [Unreleased]
 
-- CI: the version check in `validate-and-build-docs.yml` diffed against `HEAD~1`
-  while `actions/checkout` was left at its default `fetch-depth: 1`, so `HEAD~1`
-  did not exist and the check reported "not changed" whatever the commit did.
-  Every hand-set version was patch-bumped past as a result. The section below is
-  titled 0.2.1 rather than the 0.2.0 that was set deliberately, because 0.2.0
-  was never stamped and never published.
+- `hasCASEInputClass` and `hasCASEOutputClass` no longer assert
+  `rdfs:range owl:Class`. A technique can consume or produce a single value
+  rather than an object, and then the term it names is a property:
+  `case-investigation:exhibitNumber`, `uco-core:name`,
+  `uco-observable:filePath`. Of the 173 terms the knowledge base references,
+  42 are properties. The range was satisfied for those only because the
+  generator declared every term an `owl:Class`, which stated something false
+  about them. No single range is true of both classes and properties, so the
+  constraint moves to SHACL where the alternatives can be enumerated.
+- Added `TechniqueIOTermShape`: every term named as a technique input or
+  output must be declared an `owl:Class`, `owl:DatatypeProperty` or
+  `owl:ObjectProperty`.
+- Added `TechniqueIOTermConsistencyShape`: a term must not be declared as more
+  than one of those kinds. This is what catches a SOLVE-IT declaration that
+  contradicts CASE or UCO, which the shape above cannot, since the knowledge
+  base's own declaration is what satisfies it. It bites only when CASE and UCO
+  are loaded alongside the data. Against the knowledge base published before
+  this change it reports 56 violations across the 42 property terms; against
+  the output of the corrected generator, none.
+- The property names still say "Class" while now admitting properties. They
+  are expected to become `hasInput` and `hasOutput` alongside a knowledge base
+  change, and are left alone here so the rename happens once.
+- `validate-and-build-docs.yml` checks out with `fetch-depth: 2`. The step that
+  decides whether to bump the patch version tests whether `VERSION` changed by
+  running `git diff HEAD~1`, and `actions/checkout` defaults to
+  `fetch-depth: 1`, so `HEAD~1` was not present in the runner's clone. The
+  command failed, and the step reported "not changed" whatever the commit
+  contained, so a version set by hand was always overwritten by the automatic
+  patch bump.
+- The changelog section below is titled 0.2.1 rather than the 0.2.0 that was
+  set in `VERSION` for the UCO 1.5.0 metaclass change, because the fault above
+  meant 0.2.0 was never stamped into the ontology files and never published.
 
 - `validate_examples.py`: knowledge base entities must be named in the
   `solveit-data:` namespace. An example writing `:techniqueDFT-1002` against its

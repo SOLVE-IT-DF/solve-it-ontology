@@ -36616,25 +36616,25 @@
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/accountIdentifier",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/accountType",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/callType",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
@@ -36646,97 +36646,97 @@
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/classificationConfidence",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/core/confidence",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/configuration/dependencies",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/core/description",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/driveLetter",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/emailAddress",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/core/eventType",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/execProgramHashes",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/execProgramPath",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.caseontology.org/case/investigation/exhibitNumber",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/exifData",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/fileName",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/filePath",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/hasChanged",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/hash",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/httpRequestHeader",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
@@ -36748,133 +36748,133 @@
   {
     "@id": "https://ontology.solveit-df.org/solveit/analysis/hypothesisedDateTime",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/installDate",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/isPrivileged",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/keywordSearchTerm",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/location",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/messageType",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/mimeType",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/modifiedTime",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/mountPoint",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/core/name",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/password",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/path",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/phoneNumber",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/rangeOffset",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/rangeOffsetType",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/receivedTime",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/sentTime",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/systemTime",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/tableSchema",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/timesExecuted",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/urlHistoryEntry",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/version",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   }
 ]

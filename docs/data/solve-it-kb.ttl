@@ -10107,133 +10107,133 @@ solveit-observable:WriteProtectedDeviceInterface
     a owl:Class .
 
 uco-observable:accessedTime
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:accountIdentifier
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:accountType
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:callType
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 <https://cacontology.projectvic.org/case-management#ExpertReport>
     a owl:Class .
 
 <https://ontology.unifiedcyberontology.org/uco/analysis/classificationConfidence>
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-core:confidence
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 <https://ontology.unifiedcyberontology.org/uco/configuration/dependencies>
-    a owl:Class .
+    a owl:ObjectProperty .
 
 uco-core:description
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:driveLetter
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:emailAddress
-    a owl:Class .
+    a owl:ObjectProperty .
 
 uco-core:eventType
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:execProgramHashes
-    a owl:Class .
+    a owl:ObjectProperty .
 
 uco-observable:execProgramPath
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 case-investigation:exhibitNumber
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:exifData
-    a owl:Class .
+    a owl:ObjectProperty .
 
 uco-observable:fileName
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:filePath
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:hasChanged
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:hash
-    a owl:Class .
+    a owl:ObjectProperty .
 
 uco-observable:httpRequestHeader
-    a owl:Class .
+    a owl:ObjectProperty .
 
 solveit-observable:httpResponseHeader
     a owl:Class .
 
 solveit-analysis:hypothesisedDateTime
-    a owl:Class .
+    a owl:ObjectProperty .
 
 uco-observable:installDate
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:isPrivileged
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:keywordSearchTerm
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:location
-    a owl:Class .
+    a owl:ObjectProperty .
 
 uco-observable:messageType
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:mimeType
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:modifiedTime
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:mountPoint
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-core:name
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:password
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:path
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:phoneNumber
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:rangeOffset
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:rangeOffsetType
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:receivedTime
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:sentTime
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:systemTime
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:tableSchema
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:timesExecuted
-    a owl:Class .
+    a owl:DatatypeProperty .
 
 uco-observable:urlHistoryEntry
-    a owl:Class .
+    a owl:ObjectProperty .
 
 uco-observable:version
-    a owl:Class .
+    a owl:DatatypeProperty .

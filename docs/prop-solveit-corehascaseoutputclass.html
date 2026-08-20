@@ -13,7 +13,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.1</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.2</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -271,7 +271,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.1</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.2</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -1053,7 +1053,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                         <li><a href="entities-tree-properties.html">rdf:Property</a>
 
                           <ul>
-                            <li><a style="font-weight: bold;" title="'has CASE output class' - A CASE/UCO class that represents an output of this technique. Multiple output classes can be specified (e.g., uco-observable:Image).">solveit-core:hasCASEOutputClass</a>
+                            <li><a style="font-weight: bold;" title="'has CASE output class' - A CASE/UCO term that represents an output of this technique. Usually a class (e.g., uco-observable:Image), but a property where the..">solveit-core:hasCASEOutputClass</a>
 
                             
                               </li>
@@ -1107,7 +1107,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
 
-                <p>A CASE/UCO class that represents an output of this technique. Multiple output classes can be specified (e.g., uco-observable:Image).</p>
+                <p>A CASE/UCO term that represents an output of this technique. Usually a class (e.g., uco-observable:Image), but a property where the technique produces a single value rather than an object (e.g., case-investigation:exhibitNumber). No rdfs:range is asserted, because no single one is true of both; :TechniqueIOTermShape carries the constraint instead.</p>
             </div>
           </div>
            </div></div>
@@ -1151,12 +1151,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
                     <td>
                       
-                          
-                          
-                               <a href="http://www.w3.org/2002/07/owl#Class" target="_blank" title="http://www.w3.org/2002/07/owl#Class">owl:Class</a>
-                             
-                            
-                          
+                          <a>owl:Thing</a> (inferred)
                       
                     </td>
             </table>
@@ -1181,9 +1176,8 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">hasCASEOutputClass</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">ObjectProperty</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"has CASE output class"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"A CASE/UCO class that represents an output of this technique. Multiple output classes can be specified (e.g., uco-observable:Image)."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">Technique</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">range</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">.</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"A CASE/UCO term that represents an output of this technique. Usually a class (e.g., uco-observable:Image), but a property where the technique produces a single value rather than an object (e.g., case-investigation:exhibitNumber). No rdfs:range is asserted, because no single one is true of both; :TechniqueIOTermShape carries the constraint instead."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">domain</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">Technique</span> <span class="p">.</span>
 </pre></div>
 
 
@@ -1222,7 +1216,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Wed, 19 Aug 2026 15:22:54 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 20 Aug 2026 07:24:36 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
 
     
     </div>

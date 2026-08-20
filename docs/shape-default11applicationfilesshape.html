@@ -1018,7 +1018,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            solveit-wa:WeaknessEvaluationShape
+            default11:ApplicationFilesShape
         </li>
   </ol>
 
@@ -1031,7 +1031,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        solveit-wa:WeaknessEvaluationShape
+        default11:ApplicationFilesShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -1046,7 +1046,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Weakness Evaluation Shape'">solveit-wa:WeaknessEvaluationShape</a>
+                <li><a style="font-weight: bold;" title="'Application Files Shape' - Validates that ApplicationFiles has at most one sourceApplication and zero or more files.">default11:ApplicationFilesShape</a>
                   
                 </li>
               </ul>
@@ -1066,7 +1066,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/weakness-assessment/WeaknessEvaluationShape</code>
+            <code>https://ontology.solveit-df.org/solveit/observable/shapes/ApplicationFilesShape</code>
           </div>
         </div>
       </div>
@@ -1082,7 +1082,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            Weakness Evaluation Shape
+            Application Files Shape
           </div>
           </div>
         </div>
@@ -1091,6 +1091,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 
     
+    
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Description</h3>
+            </div>
+            <div class="panel-body">
+              <p>Validates that ApplicationFiles has at most one sourceApplication and zero or more files.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     
 
 
@@ -1108,7 +1121,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
               
-                <li><a href="class-solveit-waweaknessevaluation.html">solveit-wa:WeaknessEvaluation</a></li>
+                <li><a href="class-solveit-observableapplicationfiles.html">solveit-observable:ApplicationFiles</a></li>
                 
             </div>
           </div>
@@ -1129,7 +1142,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 <h3 class="panel-title">Shape Properties</h3>
               </div>
               <div class="panel-body" style="overflow: auto;">
-                <p>Instances of solveit-wa:WeaknessEvaluation can have the following properties:</p>
+                <p>Instances of solveit-observable:ApplicationFiles can have the following properties:</p>
               </div>
               <table class="table table-bordered" style="overflow: auto;">
                 <tr class="table-classproperties">   
@@ -1142,7 +1155,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                   <tr>
                      
                       <td colspan="5">
-                        <small class="label label-info label-xs">solveit-wa:WeaknessEvaluation</small>
+                        <small class="label label-info label-xs">solveit-observable:ApplicationFiles</small>
                       </td>
                         
                     
@@ -1152,7 +1165,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                        
                       <td>   
                         
-                          <a class="propcolor" title="solveit-wa:detectDifficultyRating" href="prop-solveit-wadetectdifficultyrating.html">solveit-wa:detectDifficultyRating</a>
+                          <a class="propcolor" title="solveit-observable:hasFile" href="prop-solveit-observablehasfile.html">solveit-observable:hasFile</a>
                         
                       </td>
  
@@ -1161,42 +1174,14 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                       </td>
  
                       <td>     
-                        1
-                      </td>
                         
-                      <td>     
-                        
-                          
-                            <i>xsd:integer</i>
-                           
-                            <br>
-                        
-                        
-                      </td>
-                    
-                  </tr>
-                   
-                  <tr>
-                       
-                      <td>   
-                        
-                          <a class="propcolor" title="solveit-wa:evaluatesWeakness" href="prop-solveit-waevaluatesweakness.html">solveit-wa:evaluatesWeakness</a>
-                        
-                      </td>
- 
-                      <td>     
-                        1
-                      </td>
- 
-                      <td>     
-                        1
                       </td>
                         
                       <td>     
                         
                         
                           
-                            <a title="solveit-core:Weakness" href="class-solveit-coreweakness.html" class="rdfclass">solveit-core:Weakness</a>
+                            <a title="uco-observable:File" href="https://ontology.unifiedcyberontology.org/uco/observable/File" target="_blank" class="rdfclass">uco-observable:File</a>
                            
                           <br>
                         
@@ -1208,109 +1193,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                        
                       <td>   
                         
-                          <a class="propcolor" title="solveit-wa:impactRating" href="prop-solveit-waimpactrating.html">solveit-wa:impactRating</a>
+                          <a class="propcolor" title="solveit-observable:sourceApplication" href="prop-solveit-observablesourceapplication.html">solveit-observable:sourceApplication</a>
+                        
+                      </td>
+ 
+                      <td>     
                         
                       </td>
  
                       <td>     
                         1
                       </td>
- 
-                      <td>     
-                        1
-                      </td>
                         
                       <td>     
+                        
                         
                           
-                            <i>xsd:integer</i>
+                            <a title="uco-observable:Application" href="https://ontology.unifiedcyberontology.org/uco/observable/Application" target="_blank" class="rdfclass">uco-observable:Application</a>
                            
-                            <br>
-                        
-                        
-                      </td>
-                    
-                  </tr>
-                   
-                  <tr>
-                       
-                      <td>   
-                        
-                          <a class="propcolor" title="solveit-wa:liImpactScore" href="prop-solveit-waliimpactscore.html">solveit-wa:liImpactScore</a>
-                        
-                      </td>
- 
-                      <td>     
-                        1
-                      </td>
- 
-                      <td>     
-                        1
-                      </td>
-                        
-                      <td>     
-                        
-                          
-                            <i>xsd:integer</i>
-                           
-                            <br>
-                        
-                        
-                      </td>
-                    
-                  </tr>
-                   
-                  <tr>
-                       
-                      <td>   
-                        
-                          <a class="propcolor" title="solveit-wa:likelihoodRating" href="prop-solveit-walikelihoodrating.html">solveit-wa:likelihoodRating</a>
-                        
-                      </td>
- 
-                      <td>     
-                        1
-                      </td>
- 
-                      <td>     
-                        1
-                      </td>
-                        
-                      <td>     
-                        
-                          
-                            <i>xsd:integer</i>
-                           
-                            <br>
-                        
-                        
-                      </td>
-                    
-                  </tr>
-                   
-                  <tr>
-                       
-                      <td>   
-                        
-                          <a class="propcolor" title="solveit-wa:rpnScore" href="prop-solveit-warpnscore.html">solveit-wa:rpnScore</a>
-                        
-                      </td>
- 
-                      <td>     
-                        
-                      </td>
- 
-                      <td>     
-                        1
-                      </td>
-                        
-                      <td>     
-                        
-                          
-                            <i>xsd:integer</i>
-                           
-                            <br>
-                        
+                          <br>
                         
                       </td>
                     
@@ -1334,53 +1235,24 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default11:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-core:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/core/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-wa:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/weakness-assessment/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">uco-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.unifiedcyberontology.org/uco/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">solveit-wa</span><span class="p">:</span><span class="nt">WeaknessEvaluationShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Weakness Evaluation Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">Weakness</span> <span class="p">;</span>
+<span class="nn">default11</span><span class="p">:</span><span class="nt">ApplicationFilesShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Application Files Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that ApplicationFiles has at most one sourceApplication and zero or more files."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">Application</span> <span class="p">;</span>
             <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">"evaluates weakness"</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-wa</span><span class="p">:</span><span class="nt">evaluatesWeakness</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxInclusive</span> <span class="mi">3</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minInclusive</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">"likelihood rating"</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-wa</span><span class="p">:</span><span class="nt">likelihoodRating</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxInclusive</span> <span class="mi">3</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minInclusive</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">"impact rating"</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-wa</span><span class="p">:</span><span class="nt">impactRating</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxInclusive</span> <span class="mi">3</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minInclusive</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">"detection difficulty rating"</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-wa</span><span class="p">:</span><span class="nt">detectDifficultyRating</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxInclusive</span> <span class="mi">9</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minInclusive</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">"likelihood x impact score"</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-wa</span><span class="p">:</span><span class="nt">liImpactScore</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">integer</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxInclusive</span> <span class="mi">27</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minInclusive</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">name</span> <span class="s">"RPN score"</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-wa</span><span class="p">:</span><span class="nt">rpnScore</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-wa</span><span class="p">:</span><span class="nt">WeaknessEvaluation</span> <span class="p">.</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"sourceApplication must reference at most one uco-observable:Application"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">sourceApplication</span> <span class="p">],</span>
+        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">File</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"hasFile must reference uco-observable:File instances"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">hasFile</span> <span class="p">]</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ApplicationFiles</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -1471,7 +1343,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_389").offset().top - 100
+          scrollTop: $("#sd_400").offset().top - 100
       }, 100);
     });
 
