@@ -10,65 +10,76 @@ changes (0.0.8, 0.1.1) are omitted.
 
 ## [Unreleased]
 
-- CI: `validate-against-case-1.5.0.yml` now runs on the two events that can
-  invalidate its result, rather than only by hand. Pushes to `main` touching a
-  TTL file cover ontology changes. Knowledge base rebuilds are covered by
-  `generate-knowledge-base.yml` calling it directly, and only on the runs where
-  it actually committed a change — most hourly runs regenerate a byte-identical
-  file. A direct call is needed because that job commits with `GITHUB_TOKEN`,
-  and pushes made with that token do not trigger further workflow runs, so the
-  push trigger never sees a regenerated knowledge base. It also runs on pull
-  requests touching those paths, so a change to the workflow or to the shapes
-  it applies is proved before it reaches `main` rather than after.
-- CI: the workflow now proves the SOLVE-IT shapes are being applied before
-  trusting a pass. They reach `case_validate` by being caught in the
-  `solve_it_*.ttl` glob, so a rename or a moved file would drop them silently
-  and every run would still report success. A canary technique that breaks
-  `TechniqueIOTermShape` is validated first and must be rejected; if it is
-  accepted the job fails there instead of reporting a hollow pass.
-- CI: the merged CASE, UCO and SOLVE-IT graph is cached, keyed on the CASE tag
-  and a hash of the local ontology files, so a scheduled run does not check out
-  CASE with its UCO submodule and reparse 32 files each time.
+- `hasCASEInputClass` and `hasCASEOutputClass` no longer declare
+  `rdfs:range owl:Class`. A technique's declared input or output is usually a
+  class, but where the technique consumes or produces a single value rather
+  than an object it is a property, for example `case-investigation:exhibitNumber`
+  or `uco-observable:filePath`. 42 of the 173 terms the knowledge base
+  references are properties. No single `rdfs:range` admits both classes and
+  properties without also admitting everything else, so the restriction is now
+  stated in SHACL rather than in OWL.
+- Added `TechniqueIOTermShape` to `solve_it_core_shapes.ttl`. Every term named
+  as a technique input or output must be declared an `owl:Class`,
+  `owl:DatatypeProperty` or `owl:ObjectProperty`. This replaces the
+  `rdfs:range` removed above.
+- Added `TechniqueIOTermConsistencyShape` to `solve_it_core_shapes.ttl`. A term
+  must not be declared as more than one of those three kinds. This detects a
+  SOLVE-IT declaration that contradicts the one CASE or UCO gives the same
+  term, which `TechniqueIOTermShape` cannot do, because that shape is satisfied
+  by whatever declaration the knowledge base itself supplies. It only reports a
+  violation when CASE and UCO are loaded alongside the data being validated.
+  Run against the knowledge base as published before this change it reports 56
+  violations across the 42 property terms, and none against the output of the
+  corrected generator.
+- The two property names still contain the word "Class" although they now
+  accept properties. They are expected to become `hasInput` and `hasOutput`
+  shortly, alongside the corresponding change in the knowledge base, so they
+  are left unchanged here in order that the rename happens once.
 
-- `hasCASEInputClass` and `hasCASEOutputClass` no longer assert
-  `rdfs:range owl:Class`. A technique can consume or produce a single value
-  rather than an object, and then the term it names is a property:
-  `case-investigation:exhibitNumber`, `uco-core:name`,
-  `uco-observable:filePath`. Of the 173 terms the knowledge base references,
-  42 are properties. The range was satisfied for those only because the
-  generator declared every term an `owl:Class`, which stated something false
-  about them. No single range is true of both classes and properties, so the
-  constraint moves to SHACL where the alternatives can be enumerated.
-- Added `TechniqueIOTermShape`: every term named as a technique input or
-  output must be declared an `owl:Class`, `owl:DatatypeProperty` or
-  `owl:ObjectProperty`.
-- Added `TechniqueIOTermConsistencyShape`: a term must not be declared as more
-  than one of those kinds. This is what catches a SOLVE-IT declaration that
-  contradicts CASE or UCO, which the shape above cannot, since the knowledge
-  base's own declaration is what satisfies it. It bites only when CASE and UCO
-  are loaded alongside the data. Against the knowledge base published before
-  this change it reports 56 violations across the 42 property terms; against
-  the output of the corrected generator, none.
-- The property names still say "Class" while now admitting properties. They
-  are expected to become `hasInput` and `hasOutput` alongside a knowledge base
-  change, and are left alone here so the rename happens once.
+- `scripts/validate_examples.py` now requires knowledge base entities
+  referenced in the examples to be written in the `solveit-data:` namespace. An
+  example that writes `:techniqueDFT-1002` against its own default prefix
+  defines a separate entity in the examples namespace rather than referring to
+  the catalogue entry of that name. Such a file is internally consistent and
+  validates cleanly while describing entities that exist nowhere else, which is
+  how the three mis-namespaced references in
+  `solve_it_examples/weakness_assessment_examples.ttl` went unnoticed.
+- `scripts/validate_examples.py` now compares the inline copies of catalogue
+  entries held in the examples against the knowledge base. Examples restate
+  techniques, weaknesses and mitigations so that a file can be read without
+  opening the knowledge base, and those restatements can fall out of step with
+  it. A value the example leaves out is accepted, because stating two of a
+  technique's five input classes is a partial restatement rather than a
+  contradiction. A value the example asserts that the knowledge base does not
+  hold is reported as an error.
+- `scripts/validate_examples.py` now follows `rdfs:subClassOf` when checking
+  the input and output types of a performed action. A technique that declares
+  `Timeline` as its input is satisfied by a `SortedTimeline`, which is a
+  subclass of it. The previous check compared the two sets of types directly
+  and reported a mismatch in that case.
 
-- `validate_examples.py`: knowledge base entities must be named in the
-  `solveit-data:` namespace. An example writing `:techniqueDFT-1002` against its
-  own default prefix creates a look-alike in the examples namespace instead of
-  referring to the catalogue entry. Such a file is internally consistent, so it
-  parses and validates cleanly while describing entities that exist nowhere
-  else.
-- `validate_examples.py`: inline copies of catalogue entries are checked against
-  the knowledge base. Examples restate techniques, weaknesses and mitigations so
-  a reader can follow a file without opening the knowledge base, and those
-  copies can drift. A value the example omits is accepted — stating two of a
-  technique's five input classes is a shortened quotation, not a contradiction —
-  but a value it asserts that the knowledge base does not have is reported.
-- `validate_examples.py`: input and output type checking now follows
-  `rdfs:subClassOf`. A technique declaring `Timeline` as its input is satisfied
-  by a `SortedTimeline`; the previous set intersection missed that and reported
-  a mismatch on correct data.
+- `validate-against-case-1.5.0.yml` now runs automatically. It previously ran
+  only when started by hand from the Actions tab, and had not been run since it
+  was written on 5 August. It is now triggered by pushes to `main` that touch a
+  TTL file, by pull requests touching the same paths, and by
+  `generate-knowledge-base.yml` calling it directly.
+- The call from `generate-knowledge-base.yml` is made only on the runs where
+  that job committed a rebuilt knowledge base, which is a small proportion of
+  its hourly runs. A direct call is used in place of the push trigger because
+  that job commits using `GITHUB_TOKEN`, and GitHub does not start further
+  workflow runs for pushes made with that token.
+- `validate-against-case-1.5.0.yml` now confirms that the SOLVE-IT shapes are
+  in the graph it validates against before reporting a pass. The shapes reach
+  `case_validate` because the two shapes files are matched by the
+  `solve_it_*.ttl` pattern used to build the merged ontology graph. Renaming a
+  shapes file, or narrowing that pattern, would remove all 13 SOLVE-IT shapes
+  from the graph, and every run would continue to report success. A technique
+  that breaks `TechniqueIOTermShape` is now validated first, and the job fails
+  if it is accepted.
+- The merged CASE, UCO and SOLVE-IT graph used by
+  `validate-against-case-1.5.0.yml` is cached, keyed on the CASE release tag
+  and a hash of the local ontology files, so that a run does not check out CASE
+  with its UCO submodule and reparse 32 files each time.
 
 ## [0.2.0] — 2026-08-19
 
