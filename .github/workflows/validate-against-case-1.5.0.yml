@@ -41,14 +41,23 @@ on:
       - '**.ttl'
       - 'docs/data/**'
       - '.github/workflows/validate-against-case-1.5.0.yml'
+  # So a change to this workflow, or to the shapes it applies, is proved before
+  # it reaches main rather than after. Without it the only way to find out
+  # whether an edit here works is to merge it.
+  pull_request:
+    paths:
+      - '**.ttl'
+      - 'docs/data/**'
+      - '.github/workflows/validate-against-case-1.5.0.yml'
 
 concurrency:
-  group: case-validation
+  # Per ref, not global: a pull request run must not cancel the run on main.
+  group: case-validation-${{ github.ref }}
   cancel-in-progress: true
 
 env:
-  # inputs.case_version is unset on push, so it needs a default here as well
-  # as on the dispatch and call inputs.
+  # inputs.case_version is unset on push and pull_request, so it needs a
+  # default here as well as on the dispatch and call inputs.
   CASE_VERSION: ${{ inputs.case_version || '1.5.0' }}
 
 jobs:

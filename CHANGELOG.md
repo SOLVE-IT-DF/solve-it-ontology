@@ -17,7 +17,9 @@ changes (0.0.8, 0.1.1) are omitted.
   it actually committed a change — most hourly runs regenerate a byte-identical
   file. A direct call is needed because that job commits with `GITHUB_TOKEN`,
   and pushes made with that token do not trigger further workflow runs, so the
-  push trigger never sees a regenerated knowledge base.
+  push trigger never sees a regenerated knowledge base. It also runs on pull
+  requests touching those paths, so a change to the workflow or to the shapes
+  it applies is proved before it reaches `main` rather than after.
 - CI: the workflow now proves the SOLVE-IT shapes are being applied before
   trusting a pass. They reach `case_validate` by being caught in the
   `solve_it_*.ttl` glob, so a rename or a moved file would drop them silently
