@@ -80,8 +80,18 @@ changes (0.0.8, 0.1.1) are omitted.
   `validate-against-case-1.5.0.yml` is cached, keyed on the CASE release tag
   and a hash of the local ontology files, so that a run does not check out CASE
   with its UCO submodule and reparse 32 files each time.
+- `validate-and-build-docs.yml` checks out with `fetch-depth: 2`. The step that
+  decides whether to bump the patch version tests whether `VERSION` changed by
+  running `git diff HEAD~1`, and `actions/checkout` defaults to
+  `fetch-depth: 1`, so `HEAD~1` was not present in the runner's clone. The
+  command failed, and the step reported "not changed" whatever the commit
+  contained, so a version set by hand was always overwritten by the automatic
+  patch bump.
+- The version section below is titled 0.2.1 rather than the 0.2.0 that was set
+  in `VERSION` for the UCO 1.5.0 metaclass change, because the fault above
+  meant 0.2.0 was never stamped into the ontology files and never published.
 
-## [0.2.0] — 2026-08-19
+## [0.2.1] — 2026-08-19
 
 - `Technique` now subclasses `uco-action:Technique` rather than
   `case-investigation:InvestigativeAction`, following the metaclass model
