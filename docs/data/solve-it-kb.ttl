@@ -9712,7 +9712,7 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:citationPlaintext "Chung, H., Park, J. and Lee, S. (2017) 'Digital forensic approaches for Amazon Alexa ecosystem', Digital Investigation, 22, pp. S15-S25." .
 
 #################################################################
-#    Referenced CASE/UCO classes (173)
+#    Referenced CASE/UCO classes (165)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -9881,9 +9881,6 @@ solveit-observable:FilteredFileSet
 solveit-observable:ForensicImageContainer
     a owl:Class .
 
-solveit-analysis:ForensicToolTagBasedReport
-    a owl:Class .
-
 solveit-observable:GamingAppFiles
     a owl:Class .
 
@@ -9897,24 +9894,6 @@ solveit-observable:HashVerificationResult
     a owl:Class .
 
 solveit-observable:HealthAppFiles
-    a owl:Class .
-
-solveit-analysis:Hypothesis
-    a owl:Class .
-
-solveit-analysis:HypothesisSet
-    a owl:Class .
-
-solveit-analysis:HypothesisedCommunication
-    a owl:Class .
-
-solveit-analysis:HypothesisedEvent
-    a owl:Class .
-
-solveit-analysis:HypothesisedRelationship
-    a owl:Class .
-
-solveit-analysis:HypothesisedWebSearch
     a owl:Class .
 
 uco-observable:IPAddress
@@ -10171,9 +10150,6 @@ uco-observable:httpRequestHeader
 
 solveit-observable:httpResponseHeader
     a owl:Class .
-
-solveit-analysis:hypothesisedDateTime
-    a owl:ObjectProperty .
 
 uco-observable:installDate
     a owl:DatatypeProperty .
