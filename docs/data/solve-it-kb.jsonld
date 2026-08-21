@@ -36164,6 +36164,12 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/ForensicToolTagBasedReport",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/observable/GamingAppFiles",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -36189,6 +36195,42 @@
   },
   {
     "@id": "https://ontology.solveit-df.org/solveit/observable/HealthAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/Hypothesis",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedCommunication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedWebSearch",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -36701,6 +36743,12 @@
     "@id": "https://ontology.solveit-df.org/solveit/observable/httpResponseHeader",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/hypothesisedDateTime",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
   },
   {
