@@ -1,0 +1,69 @@
+@prefix : <https://ontology.solveit-df.org/solveit/examples/> .
+@prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-data: <https://ontology.solveit-df.org/solveit/data/> .
+@prefix solveit-tool-profile: <https://ontology.solveit-df.org/solveit/tool-profile/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix uco-tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@base <https://ontology.solveit-df.org/solveit/examples/> .
+
+#################################################################
+#    SOLVE-IT Tool Profile Examples
+#    Demonstrates ToolCapabilityProfile, SolveitAwareInstrument,
+#    and consultedProfile.
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/examples/tool-profile> rdf:type owl:Ontology ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/examples/tool-profile/0.1.0> ;
+    owl:imports <https://ontology.solveit-df.org/solveit/tool-profile> ,
+                <https://ontology.solveit-df.org/solveit/core> ;
+    rdfs:label "SOLVE-IT Tool Profile Examples"@en ;
+    rdfs:comment "Example instances demonstrating tool capability profiles and SOLVE-IT-aware instruments."@en .
+
+#################################################################
+#    ToolCapabilityProfile
+#    A published profile for one tool version: supported
+#    technique plus a claimed mitigation.
+#################################################################
+
+:tool-acme-imager rdf:type uco-tool:Tool ;
+    rdfs:label "ACME disk imager"@en ;
+    uco-core:name "ACME disk imager" ;
+    uco-tool:version "3.2.1" .
+
+:mitigation-capability-hash rdf:type solveit-tool-profile:MitigationCapability ;
+    rdfs:label "Hash verification capability"@en ;
+    solveit-tool-profile:implementsMitigation solveit-data:mitigationDFM-1004 .
+
+:profile-acme-imager-3-2-1 rdf:type solveit-tool-profile:ToolCapabilityProfile ;
+    rdfs:label "ACME disk imager 3.2.1 capability profile"@en ;
+    solveit-tool-profile:profileFor :tool-acme-imager ;
+    solveit-tool-profile:supportsTechnique solveit-data:techniqueDFT-1002 ;
+    solveit-tool-profile:hasMitigationCapability :mitigation-capability-hash ;
+    solveit-tool-profile:publishedBy "ACME Forensics" ;
+    solveit-tool-profile:publishedDate "2026-01-15T00:00:00Z"^^xsd:dateTime .
+
+#################################################################
+#    SolveitAwareInstrument
+#    An instrument in a performed action, matched against that profile.
+#################################################################
+
+:instrument-acme-imager rdf:type solveit-tool-profile:SolveitAwareInstrument ;
+    rdfs:label "ACME disk imager used on the case"@en ;
+    uco-core:name "ACME disk imager" ;
+    uco-tool:version "3.2.1" ;
+    solveit-tool-profile:consultedProfile :profile-acme-imager-3-2-1 .
+
+:examiner-tool-profile rdf:type uco-core:UcoObject ;
+    rdfs:label "Examiner"@en .
+
+:disk-imaging-action rdf:type solveit-core:SolveitInvestigativeAction ;
+    uco-core:name "disk-imaging" ;
+    uco-core:description "Sector copy performed with a SOLVE-IT-aware imager" ;
+    uco-action:performer :examiner-tool-profile ;
+    uco-action:instrument :instrument-acme-imager ;
+    rdfs:comment "The instrument was matched against the published ACME 3.2.1 profile (consultedProfile)."@en .
