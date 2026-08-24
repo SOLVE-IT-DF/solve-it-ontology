@@ -347,6 +347,14 @@ solveit-observable:sourceApplication rdf:type owl:ObjectProperty ;
     rdfs:label "source application"@en ;
     rdfs:comment "The application associated with these files."@en .
 
+solveit-observable:writeProtectedBy rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:WriteProtectedDeviceInterface ;
+    rdfs:range [ a owl:Class ;
+                 owl:unionOf ( uco-observable:Device
+                               uco-core:UcoObject ) ] ;
+    rdfs:label "write protected by"@en ;
+    rdfs:comment "The hardware device or configured software that applies write protection to this interface."@en .
+
 solveit-observable:hasFile rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:FileSet ;
     rdfs:range uco-observable:File ;
