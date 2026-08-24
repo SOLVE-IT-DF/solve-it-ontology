@@ -509,6 +509,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1193"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1199"
       }
     ]
   },
@@ -1793,7 +1796,19 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
       {
+        "@value": "Digi-dogs"
+      },
+      {
         "@value": "Digital Storage Device Dogs"
+      },
+      {
+        "@value": "Digital detection dogs"
+      },
+      {
+        "@value": "Electronic Storage Detection (ESD) sniffing dog"
+      },
+      {
+        "@value": "Storage Detection Police Dogs"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -4047,7 +4062,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"
+        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -8140,7 +8155,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"
+        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -8196,7 +8211,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"
+        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -8313,7 +8328,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"
+        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -8375,7 +8390,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"
+        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -8445,7 +8460,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult"
+        "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -12650,6 +12665,62 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1400"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1199",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1199: Compute hash of stored bitstream data"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1199"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Compute hash of stored bitstream data"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Cryptographically hashing either data exposed directly from a raw image or a decompressed physical image from a container format."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This is usually then compared with a hash stored internally in the disk image, or externally in a text file or another external source."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/types/Hash"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1401"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1402"
       }
     ]
   },
@@ -26695,6 +26766,81 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1401",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1401: Calculating an incorrect hash of data stored within a forensic image because internally stored data was not decompressed correctly"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1401"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Calculating an incorrect hash of data stored within a forensic image because internally stored data was not decompressed correctly"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1315"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1402",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1402: Calculating an incorrect hash of data stored within a forensic image because it is split over multiple files and not all were included"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1402"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Calculating an incorrect hash of data stored within a forensic image because it is split over multiple files and not all were included"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "For example hashing data only in an E01 file when there was also an E02."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1316"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Mitigation"
@@ -33843,6 +33989,50 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1315",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1315: Test that cryptographic hashes are calculated correctly over all compression settings used for forensic images"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1315"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Test that cryptographic hashes are calculated correctly over all compression settings used for forensic images"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1316",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1316: Test that cryptographic hashing of split forensic images includes the data from all files that make up that image"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1316"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Test that cryptographic hashing of split forensic images includes the data from all files that make up that image"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Citation"
@@ -37225,6 +37415,32 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1162",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1162"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1162"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Christlein, V., Riess, C., Jordan, J., Riess, C., & Angelopoulou, E. (2012). An evaluation of popular copy-move forgery detection approaches. IEEE Transactions on information forensics and security, 7(6), 1841-1854.\nhttps://ieeexplore.ieee.org/iel5/10206/6342844/06301704.pdf?casa_token=iX_DE0LfjeYAAAAA:S1s10l4R5xSxCQqV1KIQLwKvexFhWdYuhQmHeYPi6-Sy07cD5iojhglfqgvUoY0Cfg0L-RPb"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@article{christlein2012evaluation,\n  title={An evaluation of popular copy-move forgery detection approaches},\n  author={Christlein, Vincent and Riess, Christian and Jordan, Johannes and Riess, Corinna and Angelopoulou, Elli},\n  journal={IEEE Transactions on information forensics and security},\n  volume={7},\n  number={6},\n  pages={1841--1854},\n  year={2012},\n  publisher={IEEE}\n}"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/observable/ADBPullData",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -37640,12 +37856,6 @@
   },
   {
     "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordIndexingConfiguration",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResult",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]

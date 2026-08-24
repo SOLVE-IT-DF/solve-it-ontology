@@ -17,10 +17,10 @@
 #    reporting_scripts/generate_rdf_from_kb.py. Do not edit by hand.
 #
 #      Objectives:     24
-#      Techniques:     192
-#      Weaknesses:     384
-#      Mitigations:    303
-#      Citations:      157
+#      Techniques:     193
+#      Weaknesses:     386
+#      Mitigations:    305
+#      Citations:      158
 #################################################################
 
 #################################################################
@@ -167,7 +167,8 @@
                                    :techniqueDFT-1172,
                                    :techniqueDFT-1173,
                                    :techniqueDFT-1174,
-                                   :techniqueDFT-1193 .
+                                   :techniqueDFT-1193,
+                                   :techniqueDFT-1199 .
 
 :objectiveDFO-1007
     a solveit-core:Objective ;
@@ -385,7 +386,7 @@
                                    :techniqueDFT-1094 .
 
 #################################################################
-#    Techniques (192)
+#    Techniques (193)
 #
 #    Each technique is an instance of the solveit-core:Technique metaclass AND
 #    an owl:Class in its own right, following uco-action:Technique (UCO 1.5.0).
@@ -519,7 +520,11 @@ The techqniue does not restrict to searching for digital devices as other physic
     solveit-core:techniqueID "DFT-1006" ;
     solveit-core:techniqueName "Search a crime scene using digital sniffer dogs" ;
     solveit-core:techniqueDescription "The use of canines to locate obscured digital storage devices." ;
-    solveit-core:hasSynonym "Digital Storage Device Dogs" ;
+    solveit-core:hasSynonym "Digi-dogs",
+                            "Digital Storage Device Dogs",
+                            "Digital detection dogs",
+                            "Electronic Storage Detection (ESD) sniffing dog",
+                            "Storage Detection Police Dogs" ;
     solveit-core:hasCASEOutputClass uco-observable:Device,
                                     uco-observable:location ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1005 ;
@@ -1114,7 +1119,7 @@ The techqniue does not restrict to searching for digital devices as other physic
     solveit-core:techniqueDescription "This technique involves searching data in the case for specific strings" ;
     solveit-core:techniqueDetails "This search may be conducted live, directly over the data, or from a generated index of strings extracted from the data. The words searched for may be either case-specific, or sometimes case-type specific." ;
     solveit-core:hasSynonym "string search" ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1053,
                                       :weaknessDFW-1058,
                                       :weaknessDFW-1059,
@@ -2202,7 +2207,7 @@ Facebook Messenger
     solveit-core:techniqueDescription "Searching for case-type specific keywords" ;
     solveit-core:techniqueDetails "This complements case-specific wordlists (T1123) created for the individual case." ;
     solveit-core:hasExample "Example word lists https://www.dfir.training/downloads/search-terms" ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1057,
                                       :weaknessDFW-1059 ;
     solveit-core:hasReference :citationDFCite-1074 .
@@ -2216,7 +2221,7 @@ Facebook Messenger
     solveit-core:techniqueName "Keyword search (case-specific wordlists)" ;
     solveit-core:techniqueDescription "Searching for case-specific keywords, e.g. people's names, places etc." ;
     solveit-core:techniqueDetails "This complements case-type wordlists (T1122) using words typical to specific offenses." ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1192,
                                       :weaknessDFW-1199 .
 
@@ -2245,7 +2250,7 @@ Facebook Messenger
     solveit-core:techniqueDescription "Searching for keywords over the raw data in a case without using an index of text content" ;
     solveit-core:techniqueDetails "This may be done on a physical sector basis, or on a logical (file) basis." ;
     solveit-core:hasSynonym "live search" ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1200,
                                       :weaknessDFW-1378 ;
     solveit-core:hasReference :citationDFCite-1103,
@@ -2261,7 +2266,7 @@ Facebook Messenger
     solveit-core:techniqueName "Keyword search (live) (physical)" ;
     solveit-core:techniqueDescription "Searching for keywords over the raw data on a sector by sector basis" ;
     solveit-core:hasSynonym "live search" ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1193,
                                       :weaknessDFW-1194,
                                       :weaknessDFW-1195,
@@ -2279,7 +2284,7 @@ Facebook Messenger
     solveit-core:techniqueDescription "Searching for keywords over the raw data, without an index of text content, but on a file by file basis" ;
     solveit-core:techniqueDetails "This approach can include decoding the individual file formats and content. It can also overcome limitations associated with compressed data or data split due to file fragmentation." ;
     solveit-core:hasSynonym "live search" ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1195,
                                       :weaknessDFW-1378 ;
     solveit-core:hasReference :citationDFCite-1103,
@@ -3415,8 +3420,22 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
                                       :weaknessDFW-1399,
                                       :weaknessDFW-1400 .
 
+:techniqueDFT-1199
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1199: Compute hash of stored bitstream data"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1199" ;
+    solveit-core:techniqueName "Compute hash of stored bitstream data" ;
+    solveit-core:techniqueDescription "Cryptographically hashing either data exposed directly from a raw image or a decompressed physical image from a container format." ;
+    solveit-core:techniqueDetails "This is usually then compared with a hash stored internally in the disk image, or externally in a text file or another external source." ;
+    solveit-core:hasCASEInputClass solveit-observable:BitstreamRandomAccessed ;
+    solveit-core:hasCASEOutputClass <https://ontology.unifiedcyberontology.org/uco/types/Hash> ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1401,
+                                      :weaknessDFW-1402 .
+
 #################################################################
-#    Weaknesses (384)
+#    Weaknesses (386)
 #
 #    Potential problems arising from a technique, classified against the
 #    ASTM E3016-18 error categories.
@@ -7063,8 +7082,27 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT,
                                   solveit-core:ASTM_INCOMP .
 
+:weaknessDFW-1401
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1401: Calculating an incorrect hash of data stored within a forensic image because internally stored data was not decompressed correctly"@en ;
+    solveit-core:weaknessID "DFW-1401" ;
+    solveit-core:weaknessName "Calculating an incorrect hash of data stored within a forensic image because internally stored data was not decompressed correctly" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+                                  solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1315 .
+
+:weaknessDFW-1402
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1402: Calculating an incorrect hash of data stored within a forensic image because it is split over multiple files and not all were included"@en ;
+    solveit-core:weaknessID "DFW-1402" ;
+    solveit-core:weaknessName "Calculating an incorrect hash of data stored within a forensic image because it is split over multiple files and not all were included" ;
+    solveit-core:weaknessDescription "For example hashing data only in an E01 file when there was also an E02." ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+                                  solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1316 .
+
 #################################################################
-#    Mitigations (303)
+#    Mitigations (305)
 #
 #    Actions that prevent a weakness or reduce its impact.
 #################################################################
@@ -8987,8 +9025,20 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:mitigationName "Test that cryptographically hashing data on a connected drive/media performs correctly" ;
     solveit-core:mitigationDescription "This differs from testing hashing data within forensic images as it replicates conditions of hashing external media attached for imaging" .
 
+:mitigationDFM-1315
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1315: Test that cryptographic hashes are calculated correctly over all compression settings used for forensic images"@en ;
+    solveit-core:mitigationID "DFM-1315" ;
+    solveit-core:mitigationName "Test that cryptographic hashes are calculated correctly over all compression settings used for forensic images" .
+
+:mitigationDFM-1316
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1316: Test that cryptographic hashing of split forensic images includes the data from all files that make up that image"@en ;
+    solveit-core:mitigationID "DFM-1316" ;
+    solveit-core:mitigationName "Test that cryptographic hashing of split forensic images includes the data from all files that make up that image" .
+
 #################################################################
-#    Citations (157)
+#    Citations (158)
 #
 #    Reference sources, cited by DFCite id from techniques, weaknesses
 #    and mitigations.
@@ -10076,8 +10126,25 @@ author = {Céline Vanini and Christopher J. Hargreaves and Harm {van Beek} and F
     solveit-core:citationID "DFCite-1161" ;
     solveit-core:citationPlaintext "Chung, H., Park, J. and Lee, S. (2017) 'Digital forensic approaches for Amazon Alexa ecosystem', Digital Investigation, 22, pp. S15-S25." .
 
+:citationDFCite-1162
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1162" ;
+    solveit-core:citationID "DFCite-1162" ;
+    solveit-core:citationPlaintext """Christlein, V., Riess, C., Jordan, J., Riess, C., & Angelopoulou, E. (2012). An evaluation of popular copy-move forgery detection approaches. IEEE Transactions on information forensics and security, 7(6), 1841-1854.
+https://ieeexplore.ieee.org/iel5/10206/6342844/06301704.pdf?casa_token=iX_DE0LfjeYAAAAA:S1s10l4R5xSxCQqV1KIQLwKvexFhWdYuhQmHeYPi6-Sy07cD5iojhglfqgvUoY0Cfg0L-RPb""" ;
+    solveit-core:citationBibtex """@article{christlein2012evaluation,
+  title={An evaluation of popular copy-move forgery detection approaches},
+  author={Christlein, Vincent and Riess, Christian and Jordan, Johannes and Riess, Corinna and Angelopoulou, Elli},
+  journal={IEEE Transactions on information forensics and security},
+  volume={7},
+  number={6},
+  pages={1841--1854},
+  year={2012},
+  publisher={IEEE}
+}""" .
+
 #################################################################
-#    Referenced CASE/UCO classes (173)
+#    Referenced CASE/UCO classes (172)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -10292,9 +10359,6 @@ solveit-observable:KeywordIndex
     a owl:Class .
 
 solveit-observable:KeywordIndexingConfiguration
-    a owl:Class .
-
-solveit-observable:KeywordSearchResult
     a owl:Class .
 
 solveit-observable:KeywordSearchResultSet
