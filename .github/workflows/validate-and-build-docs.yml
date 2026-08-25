@@ -59,6 +59,9 @@ jobs:
       - name: Validate examples against ontology
         run: python scripts/validate_examples.py
 
+      - name: Validate knowledge base conformance against the ontology
+        run: python scripts/validate_kb_conformance.py
+
       - name: Check if VERSION was manually changed
         id: version-check
         if: github.event_name == 'push'

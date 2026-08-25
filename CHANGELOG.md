@@ -25,6 +25,27 @@ Notable changes to the SOLVE-IT ontology.
   `solveit-core:hasReference solveit-data:citationDFCite-1107`, in place of the
   string `"DFCite-1107"`. All 18 are in `core_classes_examples.ttl` and every
   identifier already agreed with the knowledge base, so only the form changed.
+- `scripts/validate_kb_conformance.py` checks the generated knowledge base
+  against the ontology, and fails if the knowledge base uses a SOLVE-IT
+  ontology term that no ontology file defines, or gives a datatype property an
+  IRI or an object property a literal. Run against the ontology as it stood
+  before this release it reports all seven faults above; nothing in the
+  repository reported any of them.
+- The conformance check runs in `validate-ontology.yml` and
+  `validate-and-build-docs.yml`, and in `generate-knowledge-base.yml` before
+  that job commits, so a knowledge base using an undefined term is not
+  published. The last of those is the one that matters: that job commits with
+  `GITHUB_TOKEN`, and GitHub does not start workflow runs for pushes made with
+  that token, so a push trigger would never have seen a knowledge base update.
+- The gap these checks close is that
+  `reporting_scripts/generate_rdf_from_kb.py` in the solve-it repository mints
+  terms through rdflib `Namespace` objects, which build an IRI by string
+  concatenation and cannot fail, and it never reads the ontology.
+  `validate_ontology.py` does not load the knowledge base, and
+  `validate_examples.py` and `validate_example_io.py` load it only as the
+  reference to check the examples against, so the knowledge base itself was
+  never checked by anything.
+
 ## [0.2.4] — 2026-08-25
 
 - `validate-and-build-docs.yml` now runs `ontospy gendocs` against a staging
