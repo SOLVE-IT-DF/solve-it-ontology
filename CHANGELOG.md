@@ -52,6 +52,15 @@ Notable changes to the SOLVE-IT ontology.
   built from the wrong one of those is a 404 that appears only when someone
   dereferences the IRI.
 - The 226 redirects that already existed are byte-identical after the change.
+- The keyword search examples in `core_classes_examples.ttl` declare
+  `hasCASEOutputClass solveit-observable:KeywordSearchResultSet` for DFT-1049,
+  DFT-1122, DFT-1123 and DFT-1125, in place of
+  `solveit-observable:KeywordSearchResult`. The knowledge base had been updated
+  to the set-valued class, so `check_kb_drift` in `validate_examples.py`
+  reported the four as drifted and the validation step failed ahead of the
+  documentation build. DFT-1124 already declared the set. The example actions
+  for these techniques already produce a `KeywordSearchResultSet`, so the
+  declarations were the part that was behind.
 
 ## [0.2.3] — 2026-08-20
 

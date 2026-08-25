@@ -128,7 +128,7 @@ solveit-data:techniqueDFT-1049 a owl:Class , solveit-core:Technique ;
     solveit-core:techniqueID "DFT-1049" ;
     solveit-core:techniqueName "Keyword search" ;
     solveit-core:techniqueDescription "This technique involves searching data in the case for specific strings" ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasReference "DFCite-1014" ;
     solveit-core:hasReference "DFCite-1013" ;
     solveit-core:hasReference "DFCite-1103" .
@@ -140,7 +140,7 @@ solveit-data:techniqueDFT-1122 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
     solveit-core:techniqueName "Keyword search (case-type wordlists)" ;
     solveit-core:techniqueDescription "Searching for case-type specific keywords" ;
     solveit-core:hasExample "Example word lists https://www.dfir.training/downloads/search-terms" ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasReference "DFCite-1074" .
 
 solveit-data:techniqueDFT-1123 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
@@ -148,7 +148,7 @@ solveit-data:techniqueDFT-1123 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
     solveit-core:techniqueID "DFT-1123" ;
     solveit-core:techniqueName "Keyword search (case-specific wordlists)" ;
     solveit-core:techniqueDescription "Searching for case-specific keywords, e.g. people's names, places etc." ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult .
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet .
 
 # HOW · execution mode
 solveit-data:techniqueDFT-1124 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
@@ -166,7 +166,7 @@ solveit-data:techniqueDFT-1125 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
     solveit-core:techniqueID "DFT-1125" ;
     solveit-core:techniqueName "Keyword search (live)" ;
     solveit-core:techniqueDescription "Searching for keywords over the raw data in a case without using an index of text content" ;
-    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResult ;
+    solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
     solveit-core:hasReference "DFCite-1103" ;
     solveit-core:hasReference "DFCite-1134" ;
     solveit-core:hasReference "DFCite-1133" .
