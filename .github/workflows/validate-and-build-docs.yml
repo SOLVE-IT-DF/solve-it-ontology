@@ -88,9 +88,29 @@ jobs:
           rm -rf docs
           mkdir -p docs
 
-          # Generate documentation from all TTL files
+          # Generate documentation from the ontology TTL files only.
+          #
+          # ontospy recurses, so pointing it at the repository root also swept
+          # up solve_it_examples/. Since the UCO 1.5.0 metaclass change the
+          # examples declare techniques as classes ("a owl:Class ,
+          # solveit-core:Technique"), so ontospy rendered a class page for each
+          # one and listed it in the class index. The result was ten arbitrary
+          # solveit-data:techniqueDFT-* entries — whichever techniques the
+          # examples happened to use — presented as part of the ontology's own
+          # vocabulary. Technique entries are knowledge base data and belong to
+          # data.solveit-df.org; the ontology defines solveit-core:Technique.
+          #
+          # Staging the root-level solve_it_*.ttl files keeps the examples out.
+          # The examples are still documented, by generate_examples_page.py.
+          #
+          # Keep this in step with scripts/build_docs_local.sh, which mirrors
+          # this build.
+          #
           # Note: --individuals flag causes template errors in ontospy 2.1.1
-          ontospy gendocs . -o docs --type 2
+          ONTOLOGY_SRC="$(mktemp -d)"
+          cp solve_it_*.ttl "$ONTOLOGY_SRC"/
+          ontospy gendocs "$ONTOLOGY_SRC" -o docs --type 2
+          rm -rf "$ONTOLOGY_SRC"
 
           # Restore docs/data AFTER ontospy (which may clean the output dir)
           if [ -d /tmp/docs-data-backup ]; then

@@ -2,6 +2,66 @@
 
 Notable changes to the SOLVE-IT ontology.
 
+## [Unreleased]
+
+- `validate-and-build-docs.yml` now runs `ontospy gendocs` against a staging
+  directory holding only the root-level `solve_it_*.ttl` files, in place of the
+  repository root. `scripts/build_docs_local.sh` is changed to match.
+- ontospy recurses into subdirectories, so pointing it at the repository root
+  also read `solve_it_examples/`. Since the UCO 1.5.0 metaclass change the
+  examples declare techniques as classes, with `a owl:Class ,
+  solveit-core:Technique`, so ontospy rendered a class page for each one and
+  listed it in the class index. Ten `solveit-data:techniqueDFT-*` entries were
+  published as part of the ontology's own vocabulary, all ten declared in
+  `solve_it_examples/core_classes_examples.ttl`: DFT-1002, 1005, 1042, 1049,
+  1052, 1060, and 1122 to 1125. Which ten appeared depended only on which
+  techniques that file declares. A technique the examples use without declaring
+  it, naming it only as the `rdf:type` of an action instance, produced no page:
+  DFT-1121, DFT-1182 and DFT-1183 are used that way and did not appear.
+- Technique entries are knowledge base data, published at
+  `data.solveit-df.org`. The ontology defines `solveit-core:Technique`, and the
+  individual entries are instances of it. The examples themselves remain
+  documented, by `generate_examples_page.py`.
+- The two shapes files are still read by the documentation build, so
+  `sh:NodeShape` continues to appear in the class index.
+- `generate_iri_redirects.py` now reads the ontology with rdflib in place of
+  regular expressions, takes each module name from the entity's IRI rather than
+  by splitting its prefix, and keys entities on module and local name together
+  rather than on local name alone. It generates 260 redirect folders, up from
+  226.
+- The 34 IRIs that gained a redirect were returning 404 on the published site.
+  Thirteen are `tool-profile` terms and nineteen are `weakness-assessment`
+  terms: the parser tested for the three prefixes `solveit-core:`,
+  `solveit-analysis:` and `solveit-observable:`, so the two modules added since
+  it was written were skipped in full, and neither module had any resolvable
+  IRI. The remaining two are `solveit-observable:hasArtifact` and
+  `solveit-observable:hasFile`, which collided with the `solveit-analysis:`
+  properties of the same local name. Both pairs are distinct properties with
+  different domains, `ForensicToolTagBasedReport` against `ArtifactSet` and
+  `FileSet`, and the redirect path already separates them by module, but keying
+  on the local name discarded one of each pair. Which one survived depended on
+  the order `Path.glob` returned the files in, so it could change between runs
+  with no edit to the ontology.
+- `generate_iri_redirects.py` fails, and writes nothing, if an entity's
+  namespace has no declared `solveit-` prefix or if a redirect would point at a
+  page that does not exist. The module name and the documentation filename come
+  from different places: the folder path comes from the IRI, so
+  `solveit-wa:hasEvaluation` is served at
+  `/solveit/weakness-assessment/hasEvaluation`, while Ontospy names the page
+  after the declared prefix, `prop-solveit-wahasevaluation.html`. A redirect
+  built from the wrong one of those is a 404 that appears only when someone
+  dereferences the IRI.
+- The 226 redirects that already existed are byte-identical after the change.
+- The keyword search examples in `core_classes_examples.ttl` declare
+  `hasCASEOutputClass solveit-observable:KeywordSearchResultSet` for DFT-1049,
+  DFT-1122, DFT-1123 and DFT-1125, in place of
+  `solveit-observable:KeywordSearchResult`. The knowledge base had been updated
+  to the set-valued class, so `check_kb_drift` in `validate_examples.py`
+  reported the four as drifted and the validation step failed ahead of the
+  documentation build. DFT-1124 already declared the set. The example actions
+  for these techniques already produce a `KeywordSearchResultSet`, so the
+  declarations were the part that was behind.
+
 ## [0.2.3] — 2026-08-20
 
 - `validate-against-case-1.5.0.yml` now runs automatically. It previously ran
