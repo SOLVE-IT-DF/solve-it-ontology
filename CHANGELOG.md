@@ -2,6 +2,28 @@
 
 Notable changes to the SOLVE-IT ontology.
 
+## [Unreleased]
+
+- `validate-and-build-docs.yml` now runs `ontospy gendocs` against a staging
+  directory holding only the root-level `solve_it_*.ttl` files, in place of the
+  repository root. `scripts/build_docs_local.sh` is changed to match.
+- ontospy recurses into subdirectories, so pointing it at the repository root
+  also read `solve_it_examples/`. Since the UCO 1.5.0 metaclass change the
+  examples declare techniques as classes, with `a owl:Class ,
+  solveit-core:Technique`, so ontospy rendered a class page for each one and
+  listed it in the class index. Ten `solveit-data:techniqueDFT-*` entries were
+  published as part of the ontology's own vocabulary, all ten declared in
+  `solve_it_examples/core_classes_examples.ttl`: DFT-1002, 1005, 1042, 1049,
+  1052, 1060, and 1122 to 1125. Which ten appeared depended only on which
+  techniques that file declares. A technique the examples use without declaring
+  it, naming it only as the `rdf:type` of an action instance, produced no page:
+  DFT-1121, DFT-1182 and DFT-1183 are used that way and did not appear.
+- Technique entries are knowledge base data, published at
+  `data.solveit-df.org`. The ontology defines `solveit-core:Technique`, and the
+  individual entries are instances of it. The examples themselves remain
+  documented, by `generate_examples_page.py`.
+- The two shapes files are still read by the documentation build, so
+  `sh:NodeShape` continues to appear in the class index.
 ## [0.2.3] — 2026-08-20
 
 - `validate-against-case-1.5.0.yml` now runs automatically. It previously ran

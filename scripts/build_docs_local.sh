@@ -53,7 +53,18 @@ if [ "$SKIP_ONTOSPY" = false ]; then
     rm -rf "$DOCS_DIR"
     mkdir -p "$DOCS_DIR"
 
-    ontospy gendocs . -o "$DOCS_DIR" --type 2
+    # Ontology TTL files only. ontospy recurses, so pointing it at the
+    # repository root also swept up solve_it_examples/, whose technique
+    # declarations ("a owl:Class , solveit-core:Technique") were then rendered
+    # as ontology classes. Technique entries are knowledge base data.
+    # Keep this in step with .github/workflows/validate-and-build-docs.yml.
+    ONTOLOGY_SRC="$(mktemp -d)"
+    # Extends the existing EXIT trap so the staging directory is removed even
+    # if ontospy fails, which set -e would otherwise skip. CLEANUP is empty in
+    # in-place mode, and rm -rf tolerates that.
+    trap 'rm -rf "$CLEANUP" "$ONTOLOGY_SRC"' EXIT
+    cp solve_it_*.ttl "$ONTOLOGY_SRC"/
+    ontospy gendocs "$ONTOLOGY_SRC" -o "$DOCS_DIR" --type 2
 
     if [ "$IN_PLACE" = true ] && [ -d /tmp/docs-data-backup-local ]; then
         mv /tmp/docs-data-backup-local docs/data
