@@ -2,7 +2,7 @@
 
 Notable changes to the SOLVE-IT ontology.
 
-## [Unreleased]
+## [0.2.4] — 2026-08-25
 
 - `validate-and-build-docs.yml` now runs `ontospy gendocs` against a staging
   directory holding only the root-level `solve_it_*.ttl` files, in place of the
