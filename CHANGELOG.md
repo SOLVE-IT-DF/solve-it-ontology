@@ -2,7 +2,7 @@
 
 Notable changes to the SOLVE-IT ontology.
 
-## [Unreleased]
+## [0.2.5] — 2026-08-25
 
 - `solve_it_core.ttl` defines `solveit-core:Citation`, with `citationID`,
   `citationPlaintext` and `citationBibtex`. The knowledge base has published
