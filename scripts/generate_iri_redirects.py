@@ -1,139 +1,150 @@
 #!/usr/bin/env python3
 """
 Generate IRI redirect folders for all classes and properties in the SOLVE-IT ontology.
-This script parses TTL files to extract classes and properties, then creates folder
-structures with index.html redirects so that IRIs resolve properly.
+This script reads the ontology TTL files, then creates folder structures with
+index.html redirects so that IRIs resolve properly.
+
+Two different names are involved, and they are not always the same string:
+
+  * The redirect folder comes from the IRI itself, which has the form
+    https://ontology.solveit-df.org/solveit/{module}/{name}. That is the path a
+    reader dereferences, so it is what the folder has to match.
+  * The redirect target comes from the prefix declared in the TTL file, because
+    Ontospy names its pages after the prefix rather than the IRI.
+
+For the weakness assessment module those differ: the namespace segment is
+"weakness-assessment" while the declared prefix is "solveit-wa:", so the IRI
+/solveit/weakness-assessment/hasEvaluation has to redirect to
+prop-solveit-wahasevaluation.html. Deriving both from the source, rather than
+reconstructing either by splitting a prefix string, is what keeps the two in
+step as modules are added.
 """
 
 import html
 import re
+import sys
 from pathlib import Path
-from typing import Set, Tuple, Dict
+from typing import Dict, List, NamedTuple, Tuple
+
+from rdflib import Graph, OWL, RDF
+
+ONTOLOGY_BASE = "https://ontology.solveit-df.org/solveit/"
 
 
-def extract_local_name(uri: str) -> str:
-    """Extract the local name from a URI."""
-    if '#' in uri:
-        return uri.split('#')[-1]
-    elif '/' in uri:
-        return uri.split('/')[-1]
-    return uri
+class Entity(NamedTuple):
+    """One documented ontology term."""
+
+    kind: str         # "class" or "property"
+    module: str       # namespace segment from the IRI, e.g. "weakness-assessment"
+    doc_prefix: str   # declared prefix without "solveit-", e.g. "wa"
+    local_name: str   # e.g. "hasEvaluation"
+    iri: str
 
 
-def extract_module_from_prefix(prefix: str) -> str:
-    """
-    Extract the module name from a namespace prefix.
-    E.g., 'solveit-core:' -> 'core', 'solveit-analysis:' -> 'analysis'
-    """
-    if prefix.startswith('solveit-'):
-        return prefix.split('-')[1].rstrip(':')
-    return ''
-
-
-def normalize_filename(local_name: str, module: str = '') -> str:
+def normalize_filename(local_name: str, doc_prefix: str = '') -> str:
     """
     Normalize a local name to match Ontospy's filename convention.
     Converts to lowercase and removes special characters.
-    Includes the module prefix if provided.
-    """
-    # Convert to lowercase and remove special characters
-    normalized = local_name.lower()
-    # Remove any remaining special characters that aren't alphanumeric
-    normalized = re.sub(r'[^a-z0-9]', '', normalized)
+    Includes the documentation prefix if provided.
 
-    # Add module prefix if provided
-    if module:
-        return f"{module}{normalized}"
+    The prefix is used verbatim, because Ontospy keeps its hyphen:
+    solveit-tool-profile:supportsTechnique becomes
+    prop-solveit-tool-profilesupportstechnique.html.
+    """
+    normalized = re.sub(r'[^a-z0-9]', '', local_name.lower())
+
+    if doc_prefix:
+        return f"{doc_prefix}{normalized}"
     return normalized
 
 
-def parse_ttl_for_entities(ttl_file: Path) -> Tuple[Dict[str, str], Dict[str, str]]:
+def target_filename(entity: Entity) -> str:
+    """Return the Ontospy page filename an entity's redirect should point at."""
+    prefix = "class" if entity.kind == "class" else "prop"
+    return f"{prefix}-solveit-{normalize_filename(entity.local_name, entity.doc_prefix)}.html"
+
+
+def collect_entities(ttl_files: List[Path]) -> Tuple[List[Entity], List[str]]:
     """
-    Parse a TTL file to extract classes and properties in the solveit namespace.
-    Returns (classes, properties) as dictionaries mapping local names to module names.
+    Read the ontology files and return every class and property in the SOLVE-IT
+    namespace, together with any whose namespace has no declared solveit- prefix.
+
+    Entities are keyed on (module, local name) rather than on the local name
+    alone. Two modules may legitimately define the same local name, for example
+    solveit-analysis:hasArtifact on a ForensicToolTagBasedReport and
+    solveit-observable:hasArtifact on an ArtifactSet, and keying on the name
+    alone silently discarded one of them.
     """
-    classes = {}  # local_name -> module
-    properties = {}  # local_name -> module
+    graph = Graph()
+    for ttl_file in ttl_files:
+        print(f"  Processing {ttl_file.name}...")
+        graph.parse(ttl_file, format="turtle")
 
-    with open(ttl_file, 'r', encoding='utf-8') as f:
-        content = f.read()
+    # Declared prefix for each SOLVE-IT namespace, e.g.
+    # "https://ontology.solveit-df.org/solveit/weakness-assessment/" -> "wa"
+    doc_prefixes: Dict[str, str] = {}
+    for prefix, namespace in graph.namespaces():
+        namespace = str(namespace)
+        if namespace.startswith(ONTOLOGY_BASE) and prefix.startswith("solveit-"):
+            doc_prefixes[namespace] = prefix[len("solveit-"):]
 
-    # Find classes: lines like "solveit-core:Technique rdf:type owl:Class"
-    class_pattern = rf'(\S+)\s+rdf:type\s+owl:Class'
-    for match in re.finditer(class_pattern, content):
-        entity = match.group(1)
-        # Check if it's in our namespace (solveit-core:, solveit-analysis:, solveit-observable:, or :)
-        if entity.startswith(('solveit-core:', 'solveit-analysis:', 'solveit-observable:')):
-            prefix = entity.split(':')[0] + ':'
-            local_name = entity.split(':')[-1]
-            module = extract_module_from_prefix(prefix)
-            classes[local_name] = module
-        elif entity.startswith(':'):
-            local_name = entity.split(':')[-1]
-            # For default namespace, try to infer module from filename
-            classes[local_name] = ''
+    entities: Dict[Tuple[str, str], Entity] = {}
+    unprefixed: List[str] = []
 
-    # Find object properties: lines like "solveit-core:hasWeakness rdf:type owl:ObjectProperty"
-    obj_prop_pattern = rf'(\S+)\s+rdf:type\s+owl:ObjectProperty'
-    for match in re.finditer(obj_prop_pattern, content):
-        entity = match.group(1)
-        if entity.startswith(('solveit-core:', 'solveit-analysis:', 'solveit-observable:')):
-            prefix = entity.split(':')[0] + ':'
-            local_name = entity.split(':')[-1]
-            module = extract_module_from_prefix(prefix)
-            properties[local_name] = module
-        elif entity.startswith(':'):
-            local_name = entity.split(':')[-1]
-            properties[local_name] = ''
+    kinds = (
+        ("class", OWL.Class),
+        ("property", OWL.ObjectProperty),
+        ("property", OWL.DatatypeProperty),
+    )
+    for kind, rdf_type in kinds:
+        for subject in graph.subjects(RDF.type, rdf_type):
+            iri = str(subject)
+            if not iri.startswith(ONTOLOGY_BASE):
+                continue
 
-    # Find datatype properties: lines like "solveit-core:techniqueID rdf:type owl:DatatypeProperty"
-    data_prop_pattern = rf'(\S+)\s+rdf:type\s+owl:DatatypeProperty'
-    for match in re.finditer(data_prop_pattern, content):
-        entity = match.group(1)
-        if entity.startswith(('solveit-core:', 'solveit-analysis:', 'solveit-observable:')):
-            prefix = entity.split(':')[0] + ':'
-            local_name = entity.split(':')[-1]
-            module = extract_module_from_prefix(prefix)
-            properties[local_name] = module
-        elif entity.startswith(':'):
-            local_name = entity.split(':')[-1]
-            properties[local_name] = ''
+            remainder = iri[len(ONTOLOGY_BASE):]
+            if remainder.count("/") != 1:
+                continue
+            module, local_name = remainder.split("/")
+            if not module or not local_name:
+                continue
 
-    return classes, properties
+            namespace = iri[:len(iri) - len(local_name)]
+            doc_prefix = doc_prefixes.get(namespace)
+            if doc_prefix is None:
+                unprefixed.append(iri)
+                continue
+
+            entities[(module, local_name)] = Entity(
+                kind=kind,
+                module=module,
+                doc_prefix=doc_prefix,
+                local_name=local_name,
+                iri=iri,
+            )
+
+    return sorted(entities.values()), sorted(set(unprefixed))
 
 
-def create_redirect_html(local_name: str, entity_type: str, base_domain: str, module: str = '') -> str:
+def create_redirect_html(entity: Entity, base_domain: str) -> str:
     """
     Create an HTML redirect file content.
 
     Args:
-        local_name: The local name of the entity (e.g., "Technique")
-        entity_type: Either "class" or "property"
+        entity: The ontology term the redirect is for
         base_domain: The base domain for canonical URLs
-        module: The module name (e.g., "core", "observable", "analysis")
     """
-    # Normalize the local name for the filename with module prefix
-    normalized = normalize_filename(local_name, module)
+    target_file = target_filename(entity)
 
-    # Determine the prefix based on entity type
-    prefix = "class" if entity_type == "class" else "prop"
-
-    # The target filename follows Ontospy's convention
-    target_file = f"{prefix}-solveit-{normalized}.html"
-
-    # Determine the relative path from the nested folder structure
-    # Redirects are at docs/solveit/{module}/{name}/index.html
-    # Target is at docs/{prefix}-solveit-{normalized}.html
-    # So we need to go up 3 levels: ../../../
+    # Redirects are at docs/solveit/{module}/{name}/index.html and the target is
+    # at docs/{prefix}-solveit-{normalized}.html, so go up three levels.
     relative_path = f"../../../{target_file}"
 
-    # Escape HTML
-    escaped_name = html.escape(local_name)
+    escaped_name = html.escape(entity.local_name)
     escaped_domain = html.escape(base_domain)
     escaped_file = html.escape(target_file)
     escaped_relative = html.escape(relative_path)
 
-    # Create the HTML content
     html_content = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,82 +162,65 @@ def create_redirect_html(local_name: str, entity_type: str, base_domain: str, mo
     return html_content
 
 
-def generate_redirects(docs_dir: Path, base_domain: str = "https://ontology.solveit-df.org"):
+def generate_redirects(docs_dir: Path, base_domain: str = "https://ontology.solveit-df.org") -> bool:
     """
     Generate redirect folders and index.html files for all ontology entities.
+
+    Returns True on success. Nothing is written if any redirect would point at a
+    page that does not exist, because a redirect to a missing page is a 404 that
+    only shows up when someone dereferences the IRI.
 
     Args:
         docs_dir: Path to the docs directory
         base_domain: Base domain for canonical URLs
     """
-    # Find all TTL files in the project root (parent of scripts directory)
+    # The ontology files in the project root (parent of the scripts directory).
+    # This is the same set that the documentation is built from, so that every
+    # redirect has a page to point at.
     project_root = Path(__file__).parent.parent
-    ttl_files = list(project_root.glob("*.ttl"))
+    ttl_files = sorted(project_root.glob("solve_it_*.ttl"))
 
     if not ttl_files:
-        print("No TTL files found in project root")
-        return
+        print("No ontology TTL files found in project root")
+        return False
 
-    all_classes = {}  # local_name -> module
-    all_properties = {}  # local_name -> module
-
-    # Parse all TTL files
     print("Parsing TTL files...")
-    for ttl_file in ttl_files:
-        print(f"  Processing {ttl_file.name}...")
-        classes, properties = parse_ttl_for_entities(ttl_file)
-        all_classes.update(classes)
-        all_properties.update(properties)
+    entities, unprefixed = collect_entities(ttl_files)
 
-    print(f"\nFound {len(all_classes)} classes and {len(all_properties)} properties")
+    if unprefixed:
+        print(f"\nERROR: {len(unprefixed)} entities are in the SOLVE-IT namespace "
+              f"but their namespace has no declared solveit- prefix, so the "
+              f"documentation filename cannot be determined:")
+        for iri in unprefixed:
+            print(f"  {iri}")
+        return False
 
-    # Create redirect folders for classes
-    print("\nCreating redirect folders for classes...")
-    for class_name in sorted(all_classes.keys()):
-        module = all_classes[class_name]
+    classes = [e for e in entities if e.kind == "class"]
+    properties = [e for e in entities if e.kind == "property"]
+    modules = sorted({e.module for e in entities})
+    print(f"\nFound {len(classes)} classes and {len(properties)} properties "
+          f"across {len(modules)} modules: {', '.join(modules)}")
 
-        # Create the nested folder structure: docs/solveit/{module}/{ClassName}
-        if module:
-            folder = docs_dir / "solveit" / module / class_name
-        else:
-            # Fallback for entities without module (shouldn't happen)
-            folder = docs_dir / class_name
+    missing = [(e, target_filename(e)) for e in entities
+               if not (docs_dir / target_filename(e)).exists()]
+    if missing:
+        print(f"\nERROR: {len(missing)} redirects would point at a page that "
+              f"does not exist. No redirects written.")
+        for entity, target in missing:
+            print(f"  {entity.iri} -> {target}")
+        return False
 
+    print("\nCreating redirect folders...")
+    for entity in entities:
+        folder = docs_dir / "solveit" / entity.module / entity.local_name
         folder.mkdir(parents=True, exist_ok=True)
 
-        html_content = create_redirect_html(class_name, "class", base_domain, module)
         index_file = folder / "index.html"
-        index_file.write_text(html_content, encoding='utf-8')
+        index_file.write_text(create_redirect_html(entity, base_domain), encoding='utf-8')
+        print(f"  Created solveit/{entity.module}/{entity.local_name}/index.html")
 
-        if module:
-            print(f"  Created solveit/{module}/{class_name}/index.html")
-        else:
-            print(f"  Created {class_name}/index.html")
-
-    # Create redirect folders for properties
-    print("\nCreating redirect folders for properties...")
-    for prop_name in sorted(all_properties.keys()):
-        module = all_properties[prop_name]
-
-        # Create the nested folder structure: docs/solveit/{module}/{propertyName}
-        if module:
-            folder = docs_dir / "solveit" / module / prop_name
-        else:
-            # Fallback for entities without module (shouldn't happen)
-            folder = docs_dir / prop_name
-
-        folder.mkdir(parents=True, exist_ok=True)
-
-        html_content = create_redirect_html(prop_name, "property", base_domain, module)
-        index_file = folder / "index.html"
-        index_file.write_text(html_content, encoding='utf-8')
-
-        if module:
-            print(f"  Created solveit/{module}/{prop_name}/index.html")
-        else:
-            print(f"  Created {prop_name}/index.html")
-
-    print(f"\n✓ Successfully created {len(all_classes) + len(all_properties)} redirect folders")
+    print(f"\n✓ Successfully created {len(entities)} redirect folders")
+    return True
 
 
 if __name__ == "__main__":
@@ -236,6 +230,7 @@ if __name__ == "__main__":
 
     if not docs_dir.exists():
         print(f"Error: docs directory not found at {docs_dir}")
-        exit(1)
+        sys.exit(1)
 
-    generate_redirects(docs_dir)
+    if not generate_redirects(docs_dir):
+        sys.exit(1)

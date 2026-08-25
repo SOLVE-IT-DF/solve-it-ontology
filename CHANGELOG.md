@@ -24,6 +24,35 @@ Notable changes to the SOLVE-IT ontology.
   documented, by `generate_examples_page.py`.
 - The two shapes files are still read by the documentation build, so
   `sh:NodeShape` continues to appear in the class index.
+- `generate_iri_redirects.py` now reads the ontology with rdflib in place of
+  regular expressions, takes each module name from the entity's IRI rather than
+  by splitting its prefix, and keys entities on module and local name together
+  rather than on local name alone. It generates 260 redirect folders, up from
+  226.
+- The 34 IRIs that gained a redirect were returning 404 on the published site.
+  Thirteen are `tool-profile` terms and nineteen are `weakness-assessment`
+  terms: the parser tested for the three prefixes `solveit-core:`,
+  `solveit-analysis:` and `solveit-observable:`, so the two modules added since
+  it was written were skipped in full, and neither module had any resolvable
+  IRI. The remaining two are `solveit-observable:hasArtifact` and
+  `solveit-observable:hasFile`, which collided with the `solveit-analysis:`
+  properties of the same local name. Both pairs are distinct properties with
+  different domains, `ForensicToolTagBasedReport` against `ArtifactSet` and
+  `FileSet`, and the redirect path already separates them by module, but keying
+  on the local name discarded one of each pair. Which one survived depended on
+  the order `Path.glob` returned the files in, so it could change between runs
+  with no edit to the ontology.
+- `generate_iri_redirects.py` fails, and writes nothing, if an entity's
+  namespace has no declared `solveit-` prefix or if a redirect would point at a
+  page that does not exist. The module name and the documentation filename come
+  from different places: the folder path comes from the IRI, so
+  `solveit-wa:hasEvaluation` is served at
+  `/solveit/weakness-assessment/hasEvaluation`, while Ontospy names the page
+  after the declared prefix, `prop-solveit-wahasevaluation.html`. A redirect
+  built from the wrong one of those is a 404 that appears only when someone
+  dereferences the IRI.
+- The 226 redirects that already existed are byte-identical after the change.
+
 ## [0.2.3] — 2026-08-20
 
 - `validate-against-case-1.5.0.yml` now runs automatically. It previously ran
