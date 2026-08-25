@@ -72,6 +72,12 @@ solveit-core:Objective rdf:type owl:Class ;
     rdfs:label "SOLVE-IT Objective"@en ;
     rdfs:comment "A goal or objective in a digital forensic investigation that can be achieved through one or more techniques."@en .
 
+###  SOLVE-IT Citation
+solveit-core:Citation rdf:type owl:Class ;
+    rdfs:subClassOf uco-core:UcoObject ;
+    rdfs:label "SOLVE-IT Citation"@en ;
+    rdfs:comment "An academic or professional reference cited by a Technique, Weakness or Mitigation. Each citation carries an identifier (DFCite-NNNN), a plain text form, and where available a BibTeX form."@en .
+
 ###  SOLVE-IT Investigative Action
 ###
 ###  The parent class of every SOLVE-IT technique class. A performed action is
@@ -90,6 +96,15 @@ solveit-core:SolveitInvestigativeAction rdf:type owl:Class ;
 #################################################################
 #    Object Properties
 #################################################################
+
+solveit-core:hasReference rdf:type owl:ObjectProperty ;
+    rdfs:domain [ a owl:Class ;
+                  owl:unionOf ( solveit-core:Technique
+                               solveit-core:Weakness
+                               solveit-core:Mitigation ) ] ;
+    rdfs:range solveit-core:Citation ;
+    rdfs:label "has reference"@en ;
+    rdfs:comment "Links a Technique, Weakness or Mitigation to a Citation. This was a datatype property carrying the citation identifier as a string; citations became resources in their own right so that the plain text and BibTeX forms have somewhere to live."@en .
 
 solveit-core:hasPotentialWeakness rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-core:Technique ;
@@ -272,24 +287,49 @@ solveit-core:objectiveName rdf:type owl:DatatypeProperty ;
     rdfs:label "objective name"@en ;
     rdfs:comment "The name of the objective."@en .
 
+solveit-core:objectiveID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Objective ;
+    rdfs:range xsd:string ;
+    rdfs:label "objective ID"@en ;
+    rdfs:comment "The unique identifier for a SOLVE-IT objective."@en .
+
 solveit-core:objectiveDescription rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Objective ;
     rdfs:range xsd:string ;
     rdfs:label "objective description"@en ;
     rdfs:comment "A detailed description of what this objective seeks to achieve."@en .
 
+solveit-core:sortOrder rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Objective ;
+    rdfs:range xsd:integer ;
+    rdfs:label "sort order"@en ;
+    rdfs:comment "The position of an objective in investigation order, which is the order the knowledge base presents them in rather than alphabetical order."@en .
+
+#################################################################
+#    Data Properties - Citation
+#################################################################
+
+solveit-core:citationID rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Citation ;
+    rdfs:range xsd:string ;
+    rdfs:label "citation ID"@en ;
+    rdfs:comment "The unique identifier for a SOLVE-IT citation (e.g., DFCite-1107)."@en .
+
+solveit-core:citationPlaintext rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Citation ;
+    rdfs:range xsd:string ;
+    rdfs:label "citation plain text"@en ;
+    rdfs:comment "The reference written out as plain text."@en .
+
+solveit-core:citationBibtex rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-core:Citation ;
+    rdfs:range xsd:string ;
+    rdfs:label "citation BibTeX"@en ;
+    rdfs:comment "The reference as a BibTeX entry, where one is available."@en .
+
 #################################################################
 #    Shared Data Properties
 #################################################################
-
-solveit-core:hasReference rdf:type owl:DatatypeProperty ;
-    rdfs:domain [ a owl:Class ;
-                  owl:unionOf ( solveit-core:Technique
-                               solveit-core:Weakness
-                               solveit-core:Mitigation ) ] ;
-    rdfs:range xsd:string ;
-    rdfs:label "has reference"@en ;
-    rdfs:comment "Academic or professional reference citation for Technique, Weakness, or Mitigation."@en .
 
 solveit-core:hasSynonym rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-core:Technique ;

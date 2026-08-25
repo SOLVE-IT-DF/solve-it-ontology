@@ -2,6 +2,29 @@
 
 Notable changes to the SOLVE-IT ontology.
 
+## [Unreleased]
+
+- `solve_it_core.ttl` defines `solveit-core:Citation`, with `citationID`,
+  `citationPlaintext` and `citationBibtex`. The knowledge base has published
+  158 citations as resources typed `solveit-core:Citation` for some time, but
+  the ontology defined no citation term at all, so all four were being asserted
+  into the ontology's namespace without being defined in it.
+- `solve_it_core.ttl` defines `solveit-core:objectiveID` and
+  `solveit-core:sortOrder`, both on `Objective`, and both used by the knowledge
+  base on all 24 objectives. `techniqueID`, `weaknessID` and `mitigationID`
+  were already declared, so `objectiveID` was the one identifier property
+  missing. `sortOrder` is an `xsd:integer` giving the position of an objective
+  in investigation order.
+- `solveit-core:hasReference` is an `owl:ObjectProperty` with range
+  `solveit-core:Citation`, in place of an `owl:DatatypeProperty` with range
+  `xsd:string`. The knowledge base gives it an IRI on all 241 statements, which
+  a datatype property cannot take, so the published data was not valid OWL DL.
+  The domain is unchanged: the union of Technique, Weakness and Mitigation
+  still matches the knowledge base exactly, at 126, 62 and 53 statements.
+- The examples reference citations by IRI, as
+  `solveit-core:hasReference solveit-data:citationDFCite-1107`, in place of the
+  string `"DFCite-1107"`. All 18 are in `core_classes_examples.ttl` and every
+  identifier already agreed with the knowledge base, so only the form changed.
 ## [0.2.4] — 2026-08-25
 
 - `validate-and-build-docs.yml` now runs `ontospy gendocs` against a staging
