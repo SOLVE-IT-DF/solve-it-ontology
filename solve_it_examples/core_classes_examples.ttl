@@ -64,7 +64,7 @@ solveit-data:techniqueDFT-1002 a owl:Class , solveit-core:Technique ;
     solveit-core:hasCASEInputClass solveit-observable:WriteProtectedDeviceInterface ;
     solveit-core:hasCASEInputClass solveit-observable:ReadWriteDeviceInterface ;
     solveit-core:hasCASEOutputClass solveit-observable:Bitstream ;
-    solveit-core:hasReference "DFCite-1107" .
+    solveit-core:hasReference solveit-data:citationDFCite-1107 .
 
 solveit-data:techniqueDFT-1042 a owl:Class , solveit-core:Technique ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
@@ -73,9 +73,9 @@ solveit-data:techniqueDFT-1042 a owl:Class , solveit-core:Technique ;
     solveit-core:techniqueName "Verify hash of imaged data matches the hash of the source device" ;
     solveit-core:hasCASEInputClass uco-observable:hash ;
     solveit-core:hasCASEOutputClass solveit-observable:HashVerificationResult ;
-    solveit-core:hasReference "DFCite-1083" ;
-    solveit-core:hasReference "DFCite-1081" ;
-    solveit-core:hasReference "DFCite-1088" .
+    solveit-core:hasReference solveit-data:citationDFCite-1083 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1081 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1088 .
 
 solveit-data:techniqueDFT-1005 a owl:Class , solveit-core:Technique ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
@@ -86,8 +86,8 @@ solveit-data:techniqueDFT-1005 a owl:Class , solveit-core:Technique ;
     solveit-core:hasCASEOutputClass solveit-observable:DeviceSet ;
     solveit-core:hasCASEOutputClass uco-observable:Device ;
     solveit-core:hasCASEOutputClass uco-observable:location ;
-    solveit-core:hasReference "DFCite-1018" ;
-    solveit-core:hasReference "DFCite-1044" .
+    solveit-core:hasReference solveit-data:citationDFCite-1018 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1044 .
 
 solveit-data:techniqueDFT-1052 a owl:Class , solveit-core:Technique ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
@@ -99,8 +99,8 @@ solveit-data:techniqueDFT-1052 a owl:Class , solveit-core:Technique ;
     solveit-core:hasCASEInputClass solveit-observable:FileSet ;
     solveit-core:hasCASEInputClass solveit-observable:ArtifactSet ;
     solveit-core:hasCASEOutputClass solveit-observable:Timeline ;
-    solveit-core:hasReference "DFCite-1058" ;
-    solveit-core:hasReference "DFCite-1039" .
+    solveit-core:hasReference solveit-data:citationDFCite-1058 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1039 .
 
 solveit-data:techniqueDFT-1060 a owl:Class , solveit-core:Technique ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
@@ -112,8 +112,8 @@ solveit-data:techniqueDFT-1060 a owl:Class , solveit-core:Technique ;
     solveit-core:hasExample "X-Ways Forensics - allows parsing of file system structures" ;
     solveit-core:hasCASEInputClass uco-observable:FileSystem ;
     solveit-core:hasCASEOutputClass solveit-observable:FileSet ;
-    solveit-core:hasReference "DFCite-1030" ;
-    solveit-core:hasReference "DFCite-1024" .
+    solveit-core:hasReference solveit-data:citationDFCite-1030 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1024 .
 
 #################################################################
 # Keyword-search Technique hierarchy (sub-techniques = subclasses)
@@ -129,9 +129,9 @@ solveit-data:techniqueDFT-1049 a owl:Class , solveit-core:Technique ;
     solveit-core:techniqueName "Keyword search" ;
     solveit-core:techniqueDescription "This technique involves searching data in the case for specific strings" ;
     solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
-    solveit-core:hasReference "DFCite-1014" ;
-    solveit-core:hasReference "DFCite-1013" ;
-    solveit-core:hasReference "DFCite-1103" .
+    solveit-core:hasReference solveit-data:citationDFCite-1014 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1013 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1103 .
 
 # WHAT · wordlist source
 solveit-data:techniqueDFT-1122 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
@@ -141,7 +141,7 @@ solveit-data:techniqueDFT-1122 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
     solveit-core:techniqueDescription "Searching for case-type specific keywords" ;
     solveit-core:hasExample "Example word lists https://www.dfir.training/downloads/search-terms" ;
     solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
-    solveit-core:hasReference "DFCite-1074" .
+    solveit-core:hasReference solveit-data:citationDFCite-1074 .
 
 solveit-data:techniqueDFT-1123 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
     a owl:Class, solveit-core:Technique ;
@@ -159,7 +159,7 @@ solveit-data:techniqueDFT-1124 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
     solveit-core:hasCASEInputClass solveit-observable:KeywordIndex ;
     solveit-core:hasCASEInputClass solveit-observable:Wordlist ;
     solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
-    solveit-core:hasReference "DFCite-1103" .
+    solveit-core:hasReference solveit-data:citationDFCite-1103 .
 
 solveit-data:techniqueDFT-1125 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
     a owl:Class, solveit-core:Technique ;
@@ -167,9 +167,9 @@ solveit-data:techniqueDFT-1125 rdfs:subClassOf solveit-data:techniqueDFT-1049 ;
     solveit-core:techniqueName "Keyword search (live)" ;
     solveit-core:techniqueDescription "Searching for keywords over the raw data in a case without using an index of text content" ;
     solveit-core:hasCASEOutputClass solveit-observable:KeywordSearchResultSet ;
-    solveit-core:hasReference "DFCite-1103" ;
-    solveit-core:hasReference "DFCite-1134" ;
-    solveit-core:hasReference "DFCite-1133" .
+    solveit-core:hasReference solveit-data:citationDFCite-1103 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1134 ;
+    solveit-core:hasReference solveit-data:citationDFCite-1133 .
 
 #################################################################
 # ASTM Error Category (defined in core ontology, referenced here)
