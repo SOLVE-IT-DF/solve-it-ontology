@@ -2,6 +2,21 @@
 
 Notable changes to the SOLVE-IT ontology.
 
+## [Unreleased]
+
+- `solve_it_analysis.ttl` no longer defines `solveit-analysis:supportedBy` or
+  `solveit-analysis:contradictedBy`. Both were object properties on
+  `Hypothesis` with range `uco-observable:ObservableObject`, linking a
+  hypothesis to the artifacts that supported or contradicted it. No replacement
+  term is defined in their place.
+- The `rdfs:comment` on `solveit-analysis:HypothesisedUserAccount` no longer
+  points at `supportedBy`.
+- The `rdfs:comment` on `solveit-analysis:Hypothesis` reads "A statement that
+  is either true or false, the truth of which is uncertain." The previous
+  wording described a hypothesis as something that may be supported or
+  contradicted by observable artifacts, which the ontology no longer provides
+  any way to state.
+
 ## [0.2.5] — 2026-08-25
 
 - `solve_it_core.ttl` defines `solveit-core:Citation`, with `citationID`,
