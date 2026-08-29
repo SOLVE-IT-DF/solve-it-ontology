@@ -160,6 +160,12 @@ solveit-wa:evaluationDate rdf:type owl:DatatypeProperty ;
     rdfs:label "evaluation date"@en ;
     rdfs:comment "Date when the assessment was performed."@en .
 
+solveit-wa:scoringScheme rdf:type owl:DatatypeProperty ;
+    rdfs:domain solveit-wa:WeaknessEvaluationSet ;
+    rdfs:range xsd:string ;
+    rdfs:label "scoring scheme"@en ;
+    rdfs:comment "The rating scheme the evaluations in this set were authored under: 'fi' (Frequency x Impact, ratings 1-3), 'fmea' (FMEA 3-point, ratings 1-3 with detection difficulty) or 'fmea6' (FMEA 6-point, ratings 1-6 with detection difficulty). Without it a consumer cannot tell a 3 that means 'high' on a three-point scale from a 3 that means 'moderate' on a six-point one, so the same integer describes two different risks."@en .
+
 #################################################################
 #    SHACL Shapes
 #################################################################
@@ -181,7 +187,7 @@ solveit-wa:WeaknessEvaluationShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:datatype xsd:integer ;
         sh:minInclusive 1 ;
-        sh:maxInclusive 3 ;
+        sh:maxInclusive 6 ;
         sh:name "likelihood rating" ;
     ] ;
     sh:property [
@@ -190,7 +196,7 @@ solveit-wa:WeaknessEvaluationShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:datatype xsd:integer ;
         sh:minInclusive 1 ;
-        sh:maxInclusive 3 ;
+        sh:maxInclusive 6 ;
         sh:name "impact rating" ;
     ] ;
     sh:property [
@@ -198,7 +204,7 @@ solveit-wa:WeaknessEvaluationShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:datatype xsd:integer ;
         sh:minInclusive 1 ;
-        sh:maxInclusive 3 ;
+        sh:maxInclusive 6 ;
         sh:name "detection difficulty rating" ;
     ] ;
     sh:property [
@@ -207,7 +213,7 @@ solveit-wa:WeaknessEvaluationShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:datatype xsd:integer ;
         sh:minInclusive 1 ;
-        sh:maxInclusive 9 ;
+        sh:maxInclusive 36 ;
         sh:name "likelihood x impact score" ;
     ] ;
     sh:property [
@@ -215,7 +221,78 @@ solveit-wa:WeaknessEvaluationShape a sh:NodeShape ;
         sh:maxCount 1 ;
         sh:datatype xsd:integer ;
         sh:minInclusive 1 ;
+        sh:maxInclusive 216 ;
+        sh:name "RPN score" ;
+    ] .
+
+### Scheme-specific rating ranges
+###
+### WeaknessEvaluationShape above admits the widest legitimate value, so it
+### cannot by itself reject a 5 in a set declaring a three-point scheme. The
+### range an evaluation should satisfy depends on the scoringScheme its set
+### declares, and SHACL Core has no way to make one node's constraint depend on
+### a value held by another.
+###
+### These two shapes carry no sh:targetClass and so never fire on their own. A
+### consumer that knows the scheme applies the matching one explicitly - for
+### example with pyshacl's --shape-node, or by asserting sh:targetNode over the
+### evaluations of a set whose scheme it has read.
+
+solveit-wa:ThreePointRatingShape a sh:NodeShape ;
+    rdfs:label "Three-point Rating Shape"@en ;
+    rdfs:comment "Ratings as bounded by the 'fi' and 'fmea' schemes: each factor 1-3, likelihood x impact at most 9, RPN at most 27. Not targeted automatically; apply it when the set declares one of those schemes."@en ;
+    sh:property [
+        sh:path solveit-wa:likelihoodRating ;
+        sh:maxInclusive 3 ;
+        sh:name "likelihood rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:impactRating ;
+        sh:maxInclusive 3 ;
+        sh:name "impact rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:detectDifficultyRating ;
+        sh:maxInclusive 3 ;
+        sh:name "detection difficulty rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:liImpactScore ;
+        sh:maxInclusive 9 ;
+        sh:name "likelihood x impact score" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:rpnScore ;
         sh:maxInclusive 27 ;
+        sh:name "RPN score" ;
+    ] .
+
+solveit-wa:SixPointRatingShape a sh:NodeShape ;
+    rdfs:label "Six-point Rating Shape"@en ;
+    rdfs:comment "Ratings as bounded by the 'fmea6' scheme: each factor 1-6, likelihood x impact at most 36, RPN at most 216. Identical to the bounds WeaknessEvaluationShape already applies; named so that a consumer selecting a shape by scheme has one to select for every scheme."@en ;
+    sh:property [
+        sh:path solveit-wa:likelihoodRating ;
+        sh:maxInclusive 6 ;
+        sh:name "likelihood rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:impactRating ;
+        sh:maxInclusive 6 ;
+        sh:name "impact rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:detectDifficultyRating ;
+        sh:maxInclusive 6 ;
+        sh:name "detection difficulty rating" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:liImpactScore ;
+        sh:maxInclusive 36 ;
+        sh:name "likelihood x impact score" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:rpnScore ;
+        sh:maxInclusive 216 ;
         sh:name "RPN score" ;
     ] .
 
@@ -234,4 +311,11 @@ solveit-wa:WeaknessEvaluationSetShape a sh:NodeShape ;
         sh:minCount 1 ;
         sh:class uco-identity:Identity ;
         sh:name "evaluated by" ;
+    ] ;
+    sh:property [
+        sh:path solveit-wa:scoringScheme ;
+        sh:maxCount 1 ;
+        sh:datatype xsd:string ;
+        sh:in ( "fi" "fmea" "fmea6" ) ;
+        sh:name "scoring scheme" ;
     ] .

@@ -4,6 +4,29 @@ Notable changes to the SOLVE-IT ontology.
 
 ## [Unreleased]
 
+- `solve_it_weakness_assessment.ttl` defines `solveit-wa:scoringScheme`, a
+  datatype property on `WeaknessEvaluationSet` with range `xsd:string` and the
+  values `fi`, `fmea` and `fmea6`. The term was already being read and written
+  by SOLVE-IT tooling but was defined nowhere, so it was being asserted into
+  this namespace without the namespace defining it. Without it a consumer
+  cannot tell a 3 meaning "high" on a three-point scale from a 3 meaning
+  "moderate" on a six-point one, so the same integer describes two different
+  risks. `WeaknessEvaluationSetShape` constrains it to those three values.
+- `WeaknessEvaluationShape` admits the ratings the six-point FMEA scheme
+  produces. It previously bounded every factor at 3, `liImpactScore` at 9 and
+  `rpnScore` at 27, which are the three-point maxima; a six-point assessment
+  reaches 6, 36 and 216 and could not validate at all. The bounds are now 6, 36
+  and 216. Existing three-point data is unaffected, since its range is a subset
+  of the new one.
+- `solve_it_weakness_assessment.ttl` defines `solveit-wa:ThreePointRatingShape`
+  and `solveit-wa:SixPointRatingShape`, which carry the per-scheme bounds. The
+  widened `WeaknessEvaluationShape` can no longer reject a 5 in a set declaring
+  a three-point scheme, and SHACL Core cannot make one node's constraint depend
+  on a value held by another — the scheme is declared on the set, the ratings
+  sit on the evaluations. Neither shape carries `sh:targetClass`, so neither
+  fires on its own; a consumer that has read the scheme applies the matching
+  one explicitly.
+
 - `solve_it_analysis.ttl` no longer defines `solveit-analysis:supportedBy` or
   `solveit-analysis:contradictedBy`. Both were object properties on
   `Hypothesis` with range `uco-observable:ObservableObject`, linking a
