@@ -10144,14 +10144,26 @@ https://ieeexplore.ieee.org/iel5/10206/6342844/06301704.pdf?casa_token=iX_DE0Lfj
 }""" .
 
 #################################################################
-#    Referenced CASE/UCO classes (104)
+#    Referenced CASE/UCO classes (172)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
 #    input and output classes. No definition is asserted here.
 #################################################################
 
+solveit-observable:ADBPullData
+    a owl:Class .
+
+solveit-observable:AFCExtractionData
+    a owl:Class .
+
 uco-observable:Account
+    a owl:Class .
+
+solveit-observable:AcquiredData
+    a owl:Class .
+
+solveit-observable:AiChatAppFiles
     a owl:Class .
 
 uco-observable:AndroidPhone
@@ -10163,6 +10175,9 @@ uco-core:Annotation
 uco-observable:Application
     a owl:Class .
 
+solveit-observable:ApplicationFiles
+    a owl:Class .
+
 uco-observable:ApplicationVersion
     a owl:Class .
 
@@ -10172,7 +10187,25 @@ uco-observable:ArchiveFile
 <https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification>
     a owl:Class .
 
+solveit-observable:ArtifactSet
+    a owl:Class .
+
+solveit-observable:AudioFile
+    a owl:Class .
+
+solveit-observable:Bitstream
+    a owl:Class .
+
+solveit-observable:BitstreamRandomAccessed
+    a owl:Class .
+
+solveit-observable:BrowserAppFiles
+    a owl:Class .
+
 uco-observable:BrowserBookmark
+    a owl:Class .
+
+solveit-observable:BrowserCacheData
     a owl:Class .
 
 uco-observable:BrowserCookie
@@ -10181,10 +10214,19 @@ uco-observable:BrowserCookie
 uco-observable:Calendar
     a owl:Class .
 
+solveit-observable:CalendarAppFiles
+    a owl:Class .
+
 uco-observable:CalendarEntry
     a owl:Class .
 
 uco-observable:Call
+    a owl:Class .
+
+solveit-observable:ChatAppFiles
+    a owl:Class .
+
+solveit-observable:ClockOffsetCapture
     a owl:Class .
 
 uco-observable:Code
@@ -10211,7 +10253,22 @@ uco-observable:CookieHistory
 uco-observable:Credential
     a owl:Class .
 
+solveit-observable:DateTimeStamp
+    a owl:Class .
+
+solveit-observable:DecryptionKey
+    a owl:Class .
+
 uco-observable:Device
+    a owl:Class .
+
+solveit-observable:DeviceGeneratedBackup
+    a owl:Class .
+
+solveit-observable:DeviceScreenshotCapture
+    a owl:Class .
+
+solveit-observable:DeviceSet
     a owl:Class .
 
 uco-observable:Directory
@@ -10226,6 +10283,9 @@ uco-observable:DiskPartition
 uco-observable:EmailAccount
     a owl:Class .
 
+solveit-observable:EmailAppFiles
+    a owl:Class .
+
 uco-observable:EmailMessage
     a owl:Class .
 
@@ -10238,10 +10298,55 @@ uco-observable:EventRecord
 uco-observable:File
     a owl:Class .
 
+solveit-observable:FileSet
+    a owl:Class .
+
 uco-observable:FileSystem
     a owl:Class .
 
+solveit-observable:FileSystemExtraction
+    a owl:Class .
+
+solveit-observable:FilteredFileSet
+    a owl:Class .
+
+solveit-observable:ForensicImageContainer
+    a owl:Class .
+
+solveit-analysis:ForensicToolTagBasedReport
+    a owl:Class .
+
+solveit-observable:GamingAppFiles
+    a owl:Class .
+
 <https://ontology.unifiedcyberontology.org/uco/types/Hash>
+    a owl:Class .
+
+solveit-observable:HashSet
+    a owl:Class .
+
+solveit-observable:HashVerificationResult
+    a owl:Class .
+
+solveit-observable:HealthAppFiles
+    a owl:Class .
+
+solveit-analysis:Hypothesis
+    a owl:Class .
+
+solveit-analysis:HypothesisSet
+    a owl:Class .
+
+solveit-analysis:HypothesisedCommunication
+    a owl:Class .
+
+solveit-analysis:HypothesisedEvent
+    a owl:Class .
+
+solveit-analysis:HypothesisedRelationship
+    a owl:Class .
+
+solveit-analysis:HypothesisedWebSearch
     a owl:Class .
 
 uco-observable:IPAddress
@@ -10250,10 +10355,25 @@ uco-observable:IPAddress
 uco-observable:Image
     a owl:Class .
 
+solveit-observable:KeywordIndex
+    a owl:Class .
+
+solveit-observable:KeywordIndexingConfiguration
+    a owl:Class .
+
+solveit-observable:KeywordSearchResultSet
+    a owl:Class .
+
 <https://ontology.unifiedcyberontology.org/uco/location/Location>
     a owl:Class .
 
+solveit-observable:LogicalImageContainer
+    a owl:Class .
+
 uco-observable:MACAddress
+    a owl:Class .
+
+solveit-observable:MapsAppFiles
     a owl:Class .
 
 uco-observable:Memory
@@ -10265,10 +10385,16 @@ uco-observable:Message
 uco-observable:MobileDevice
     a owl:Class .
 
+solveit-observable:NavigationAppFiles
+    a owl:Class .
+
 uco-observable:NetworkConnection
     a owl:Class .
 
 uco-observable:NetworkInterface
+    a owl:Class .
+
+solveit-observable:NetworkPacketCapture
     a owl:Class .
 
 uco-observable:Note
@@ -10286,10 +10412,22 @@ uco-observable:ObservableRelationship
 uco-observable:OnlineService
     a owl:Class .
 
+solveit-observable:PaymentAppFiles
+    a owl:Class .
+
 <https://ontology.unifiedcyberontology.org/uco/identity/Person>
     a owl:Class .
 
+solveit-observable:PhotosAppFiles
+    a owl:Class .
+
+solveit-observable:PhysicalImageContainer
+    a owl:Class .
+
 uco-observable:Post
+    a owl:Class .
+
+solveit-observable:PrioritizedDeviceSet
     a owl:Class .
 
 uco-observable:Process
@@ -10301,16 +10439,58 @@ case-investigation:ProvenanceRecord
 uco-observable:RasterPicture
     a owl:Class .
 
+solveit-observable:RawImage
+    a owl:Class .
+
+solveit-observable:ReadWriteDeviceInterface
+    a owl:Class .
+
+solveit-observable:RedactedArtifactSet
+    a owl:Class .
+
+solveit-observable:RedactedFileSet
+    a owl:Class .
+
+solveit-observable:RemindersAppFiles
+    a owl:Class .
+
 uco-observable:SMSMessage
     a owl:Class .
 
+solveit-observable:SQLiteDatabase
+    a owl:Class .
+
+solveit-observable:SQLiteTable
+    a owl:Class .
+
+solveit-observable:ServiceBasedExtractionData
+    a owl:Class .
+
 uco-observable:SmartDevice
+    a owl:Class .
+
+solveit-observable:SmartHomeAppFiles
+    a owl:Class .
+
+solveit-observable:SocialMediaAppFiles
+    a owl:Class .
+
+solveit-observable:SortedTimeline
     a owl:Class .
 
 uco-observable:StorageMedium
     a owl:Class .
 
 uco-observable:TableField
+    a owl:Class .
+
+solveit-observable:Timeline
+    a owl:Class .
+
+solveit-observable:TimelineEntry
+    a owl:Class .
+
+solveit-observable:TimestampOffset
     a owl:Class .
 
 uco-observable:URL
@@ -10325,7 +10505,16 @@ uco-observable:URLHistoryEntry
 uco-observable:URLVisit
     a owl:Class .
 
+solveit-observable:UnlockPattern
+    a owl:Class .
+
 uco-observable:UserAccount
+    a owl:Class .
+
+solveit-observable:VideoFile
+    a owl:Class .
+
+solveit-observable:VirtualizedComputer
     a owl:Class .
 
 uco-observable:Volume
@@ -10340,6 +10529,12 @@ uco-observable:WindowsRegistryKey
 uco-observable:WindowsRegistryValue
     a owl:Class .
 
+solveit-observable:Wordlist
+    a owl:Class .
+
+solveit-observable:WriteProtectedDeviceInterface
+    a owl:Class .
+
 uco-observable:accessedTime
     a owl:DatatypeProperty .
 
@@ -10351,6 +10546,9 @@ uco-observable:accountType
 
 uco-observable:callType
     a owl:DatatypeProperty .
+
+<https://cacontology.projectvic.org/case-management#ExpertReport>
+    a owl:Class .
 
 <https://ontology.unifiedcyberontology.org/uco/analysis/classificationConfidence>
     a owl:DatatypeProperty .
@@ -10398,6 +10596,12 @@ uco-observable:hash
     a owl:ObjectProperty .
 
 uco-observable:httpRequestHeader
+    a owl:ObjectProperty .
+
+solveit-observable:httpResponseHeader
+    a owl:Class .
+
+solveit-analysis:hypothesisedDateTime
     a owl:ObjectProperty .
 
 uco-observable:installDate
