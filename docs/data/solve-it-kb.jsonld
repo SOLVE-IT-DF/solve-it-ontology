@@ -1272,6 +1272,9 @@
     "https://ontology.solveit-df.org/solveit/core/includesTechnique": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1195"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1200"
       }
     ]
   },
@@ -6339,7 +6342,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1088: Reconstruct an relations between events properties of events"
+        "@value": "DFT-1088: Reconstruct relations between events or properties of events"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -6354,7 +6357,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Reconstruct an relations between events properties of events"
+        "@value": "Reconstruct relations between events or properties of events"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
@@ -12721,6 +12724,99 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1402"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1200",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1200: Evaluate observations in light of hypotheses"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1200"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Evaluate observations in light of hypotheses"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of assessing the probability or strength of the observations under each of two or more competing hypotheses, and expressing the strength of support for one over another."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "In evaluative mode the hypotheses are fixed before evaluation begins and are taken as given, typically from DFT-1195; this technique does not formulate or revise them. The examiner assesses how probable or strong the observations are under each hypothesis in turn, assuming each to be true. Assigning a probability or strength to the observations under a hypothesis requires knowledge of how the system behaves under that hypothesis, drawn from DFT-1090 or from published data. The technique concludes with the strength of support expressed as a likelihood ratio, its verbal equivalent, or other method. Conveying that opinion is DFT-1093."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "Evaluative interpretation"
+      },
+      {
+        "@value": "Evidence evaluation"
+      },
+      {
+        "@value": "Likelihood ratio assessment"
+      },
+      {
+        "@value": "Scientific interpretation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisSet"
+      },
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Observable"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1403"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1404"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1405"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1406"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1407"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1163"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1164"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1165"
       }
     ]
   },
@@ -26841,6 +26937,176 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1403",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1403: Failure to evaluate observations in light of the hypotheses because the examination was scoped to extracting and reporting artifacts, with no evaluative question posed"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1403"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to evaluate observations in light of the hypotheses because the examination was scoped to extracting and reporting artifacts, with no evaluative question posed"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1317"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1404",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1404: Failure to evaluate observations in light of the hypotheses because the meaning of the observations was treated as self-evident"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1404"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to evaluate observations in light of the hypotheses because the meaning of the observations was treated as self-evident"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1318"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1165"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1405",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1405: Failure to evaluate observations in light of the hypotheses because analytic output is delivered as fact"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1405"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to evaluate observations in light of the hypotheses because analytic output is delivered as fact"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1208"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1406",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1406: Failure to consider alternative hypotheses because the examination was framed by the instructing party's proposition alone"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1406"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to consider alternative hypotheses because the examination was framed by the instructing party's proposition alone"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1319"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1407",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1407: Failure to consider alternative hypotheses because the observations were assessed for how well they fitted the proposed hypothesis, a one-conditional judgment that never requires an alternative to be stated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1407"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Failure to consider alternative hypotheses because the observations were assessed for how well they fitted the proposed hypothesis, a one-conditional judgment that never requires an alternative to be stated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1318"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1165"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Mitigation"
@@ -33793,7 +34059,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFM-1306: Generate hypotheses as declarative statements written in the present tense."
+        "@value": "DFM-1306: Generate hypotheses as declarative statements written either in the present tense or specifying a past time period."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationID": [
@@ -33803,7 +34069,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
-        "@value": "Generate hypotheses as declarative statements written in the present tense."
+        "@value": "Generate hypotheses as declarative statements written either in the present tense or specifying a past time period."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Digital forensics deals with the remnant results of an event, not the event itself. In digital forensics, we make observations in the present that \"may support only approximations about the past event.\" Any reconstruction or simulation of a past situation is \"incomplete, imperfect and degraded by time passing.\" Even when we boot a disk image in a virtual environment, it is on different hardware with a different network configuration/connection. Effective evaluative practice captures this fact by stating hypotheses in present tense or in terms of current observations relating to a specified time period in the past. For example, \"The defendant is the primary user of the mobile device,\" or \"When the offense occurred, the defendant was the primary user of the mobile device.\" As another example, \"The computer system can render and play the video frames fully\" or \"During the relevant time period, the computer system could render and play the video frames fully.\" Specifying the time period helps avoid mistakenly thinking that it is possible to recreate a past state perfectly, may be different from the latest state of a system, and reminds that there is inherent uncertainty requiring evaluation."
       }
     ]
   },
@@ -34029,6 +34300,72 @@
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
         "@value": "Test that cryptographic hashing of split forensic images includes the data from all files that make up that image"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1317",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1317: State the hypotheses to be evaluated before the examination begins"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1317"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "State the hypotheses to be evaluated before the examination begins"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1318",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1318: Assign the probability or strength of the observations under each competing hypothesis"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1318"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Assign the probability or strength of the observations under each competing hypothesis"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1319",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1319: Evaluate the observations under each party's claims, not only the instructing party's"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1319"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Evaluate the observations under each party's claims, not only the instructing party's"
       }
     ]
   },
@@ -37441,6 +37778,110 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1163",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1163"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1163"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "None"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "Organization of Scientific Area Committees for Forensic Science (2019) A Framework for Harmonizing Forensic Science Practices and Digital/Multimedia Evidence (OSAC Technical Series 0002R1). NIST. Available at: https://www.nist.gov/system/files/documents/2018/01/10/osac_ts_0002.pdf"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1164",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1164"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1164"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "None"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "Forensic Science Regulator (2026) Forensic science activities: interpretation and communication (FSR-GUI-0004), Version 2, Annex B. GOV.UK. Available at: https://www.gov.uk/government/publications/forensic-science-activities-interpretation-and-communication-fsr-gui-0004/forensic-science-activities-interpretation-and-communication-accessible#annex-b"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1165",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1165"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1165"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "None"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "Casey, E., 2020. Standardization of forming and expressing preliminary evaluative opinions on digital evidence. Forensic Science International: Digital Investigation 32, 200888. https://doi.org/10.1016/j.fsidi.2019.200888"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1166",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1166"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1166"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Park, S., Jeong, B., Kim, J. and Park, J., 2026. REPDF: Repairing corrupted PDF files through font mapping and object relationship reconstruction. Forensic Science International: Digital Investigation, 56, 302061. https://doi.org/10.1016/j.fsidi.2026.302061"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@article{PARK2026302061,\ntitle = {REPDF: Repairing corrupted PDF files through font mapping and object relationship reconstruction},\njournal = {Forensic Science International: Digital Investigation},\nvolume = {56},\npages = {302061},\nyear = {2026},\nnote = {DFRWS EU 2026 - Selected Papers from the 13th Annual Digital Forensics Research Conference Europe},\nissn = {2666-2817},\ndoi = {https://doi.org/10.1016/j.fsidi.2026.302061},\nurl = {https://www.sciencedirect.com/science/article/pii/S2666281726000181},\nauthor = {Seungeun Park and Byeongchan Jeong and Jieon Kim and Jungheum Park},\nkeywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, Reference data}\n}"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/observable/ADBPullData",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -37466,6 +37907,12 @@
   },
   {
     "@id": "https://ontology.solveit-df.org/solveit/observable/AiChatAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]

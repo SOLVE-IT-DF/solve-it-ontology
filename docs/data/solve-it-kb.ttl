@@ -17,10 +17,10 @@
 #    reporting_scripts/generate_rdf_from_kb.py. Do not edit by hand.
 #
 #      Objectives:     24
-#      Techniques:     193
-#      Weaknesses:     386
-#      Mitigations:    305
-#      Citations:      158
+#      Techniques:     194
+#      Weaknesses:     391
+#      Mitigations:    308
+#      Citations:      162
 #################################################################
 
 #################################################################
@@ -370,7 +370,8 @@
     solveit-core:objectiveName "Evaluate evidence" ;
     solveit-core:objectiveDescription "Evaluate evidence " ;
     solveit-core:sortOrder "22"^^xsd:integer ;
-    solveit-core:includesTechnique :techniqueDFT-1195 .
+    solveit-core:includesTechnique :techniqueDFT-1195,
+                                   :techniqueDFT-1200 .
 
 :objectiveDFO-1020
     a solveit-core:Objective ;
@@ -386,7 +387,7 @@
                                    :techniqueDFT-1094 .
 
 #################################################################
-#    Techniques (193)
+#    Techniques (194)
 #
 #    Each technique is an instance of the solveit-core:Technique metaclass AND
 #    an owl:Class in its own right, following uco-action:Technique (UCO 1.5.0).
@@ -1737,10 +1738,10 @@ Facebook Messenger
 :techniqueDFT-1088
     a owl:Class,
       solveit-core:Technique ;
-    rdfs:label "DFT-1088: Reconstruct an relations between events properties of events"@en ;
+    rdfs:label "DFT-1088: Reconstruct relations between events or properties of events"@en ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
     solveit-core:techniqueID "DFT-1088" ;
-    solveit-core:techniqueName "Reconstruct an relations between events properties of events" ;
+    solveit-core:techniqueName "Reconstruct relations between events or properties of events" ;
     solveit-core:techniqueDescription "The process of determining the existence and nature of relationships between entities during event reconstruction" ;
     solveit-core:hasSynonym "Connection-based event reconstruction",
                             "Relation-based event reconstruction",
@@ -3434,8 +3435,33 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:hasPotentialWeakness :weaknessDFW-1401,
                                       :weaknessDFW-1402 .
 
+:techniqueDFT-1200
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1200: Evaluate observations in light of hypotheses"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1200" ;
+    solveit-core:techniqueName "Evaluate observations in light of hypotheses" ;
+    solveit-core:techniqueDescription "The process of assessing the probability or strength of the observations under each of two or more competing hypotheses, and expressing the strength of support for one over another." ;
+    solveit-core:techniqueDetails "In evaluative mode the hypotheses are fixed before evaluation begins and are taken as given, typically from DFT-1195; this technique does not formulate or revise them. The examiner assesses how probable or strong the observations are under each hypothesis in turn, assuming each to be true. Assigning a probability or strength to the observations under a hypothesis requires knowledge of how the system behaves under that hypothesis, drawn from DFT-1090 or from published data. The technique concludes with the strength of support expressed as a likelihood ratio, its verbal equivalent, or other method. Conveying that opinion is DFT-1093." ;
+    solveit-core:hasSynonym "Evaluative interpretation",
+                            "Evidence evaluation",
+                            "Likelihood ratio assessment",
+                            "Scientific interpretation" ;
+    solveit-core:hasCASEInputClass solveit-analysis:HypothesisSet,
+                                   uco-observable:Observable ;
+    solveit-core:hasCASEOutputClass <https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult> ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1403,
+                                      :weaknessDFW-1404,
+                                      :weaknessDFW-1405,
+                                      :weaknessDFW-1406,
+                                      :weaknessDFW-1407 ;
+    solveit-core:hasReference :citationDFCite-1163,
+                              :citationDFCite-1164,
+                              :citationDFCite-1165 .
+
 #################################################################
-#    Weaknesses (386)
+#    Weaknesses (391)
 #
 #    Potential problems arising from a technique, classified against the
 #    ASTM E3016-18 error categories.
@@ -7101,8 +7127,50 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
                                   solveit-core:ASTM_INAC_EX ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1316 .
 
+:weaknessDFW-1403
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1403: Failure to evaluate observations in light of the hypotheses because the examination was scoped to extracting and reporting artifacts, with no evaluative question posed"@en ;
+    solveit-core:weaknessID "DFW-1403" ;
+    solveit-core:weaknessName "Failure to evaluate observations in light of the hypotheses because the examination was scoped to extracting and reporting artifacts, with no evaluative question posed" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1317 .
+
+:weaknessDFW-1404
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1404: Failure to evaluate observations in light of the hypotheses because the meaning of the observations was treated as self-evident"@en ;
+    solveit-core:weaknessID "DFW-1404" ;
+    solveit-core:weaknessName "Failure to evaluate observations in light of the hypotheses because the meaning of the observations was treated as self-evident" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1318 ;
+    solveit-core:hasReference :citationDFCite-1165 .
+
+:weaknessDFW-1405
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1405: Failure to evaluate observations in light of the hypotheses because analytic output is delivered as fact"@en ;
+    solveit-core:weaknessID "DFW-1405" ;
+    solveit-core:weaknessName "Failure to evaluate observations in light of the hypotheses because analytic output is delivered as fact" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1208 .
+
+:weaknessDFW-1406
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1406: Failure to consider alternative hypotheses because the examination was framed by the instructing party's proposition alone"@en ;
+    solveit-core:weaknessID "DFW-1406" ;
+    solveit-core:weaknessName "Failure to consider alternative hypotheses because the examination was framed by the instructing party's proposition alone" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1319 .
+
+:weaknessDFW-1407
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1407: Failure to consider alternative hypotheses because the observations were assessed for how well they fitted the proposed hypothesis, a one-conditional judgment that never requires an alternative to be stated"@en ;
+    solveit-core:weaknessID "DFW-1407" ;
+    solveit-core:weaknessName "Failure to consider alternative hypotheses because the observations were assessed for how well they fitted the proposed hypothesis, a one-conditional judgment that never requires an alternative to be stated" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1318 ;
+    solveit-core:hasReference :citationDFCite-1165 .
+
 #################################################################
-#    Mitigations (305)
+#    Mitigations (308)
 #
 #    Actions that prevent a weakness or reduce its impact.
 #################################################################
@@ -8972,9 +9040,10 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
 
 :mitigationDFM-1306
     a solveit-core:Mitigation ;
-    rdfs:label "DFM-1306: Generate hypotheses as declarative statements written in the present tense."@en ;
+    rdfs:label "DFM-1306: Generate hypotheses as declarative statements written either in the present tense or specifying a past time period."@en ;
     solveit-core:mitigationID "DFM-1306" ;
-    solveit-core:mitigationName "Generate hypotheses as declarative statements written in the present tense." .
+    solveit-core:mitigationName "Generate hypotheses as declarative statements written either in the present tense or specifying a past time period." ;
+    solveit-core:mitigationDescription "Digital forensics deals with the remnant results of an event, not the event itself. In digital forensics, we make observations in the present that \"may support only approximations about the past event.\" Any reconstruction or simulation of a past situation is \"incomplete, imperfect and degraded by time passing.\" Even when we boot a disk image in a virtual environment, it is on different hardware with a different network configuration/connection. Effective evaluative practice captures this fact by stating hypotheses in present tense or in terms of current observations relating to a specified time period in the past. For example, \"The defendant is the primary user of the mobile device,\" or \"When the offense occurred, the defendant was the primary user of the mobile device.\" As another example, \"The computer system can render and play the video frames fully\" or \"During the relevant time period, the computer system could render and play the video frames fully.\" Specifying the time period helps avoid mistakenly thinking that it is possible to recreate a past state perfectly, may be different from the latest state of a system, and reminds that there is inherent uncertainty requiring evaluation." .
 
 :mitigationDFM-1307
     a solveit-core:Mitigation ;
@@ -9037,8 +9106,26 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:mitigationID "DFM-1316" ;
     solveit-core:mitigationName "Test that cryptographic hashing of split forensic images includes the data from all files that make up that image" .
 
+:mitigationDFM-1317
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1317: State the hypotheses to be evaluated before the examination begins"@en ;
+    solveit-core:mitigationID "DFM-1317" ;
+    solveit-core:mitigationName "State the hypotheses to be evaluated before the examination begins" .
+
+:mitigationDFM-1318
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1318: Assign the probability or strength of the observations under each competing hypothesis"@en ;
+    solveit-core:mitigationID "DFM-1318" ;
+    solveit-core:mitigationName "Assign the probability or strength of the observations under each competing hypothesis" .
+
+:mitigationDFM-1319
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1319: Evaluate the observations under each party's claims, not only the instructing party's"@en ;
+    solveit-core:mitigationID "DFM-1319" ;
+    solveit-core:mitigationName "Evaluate the observations under each party's claims, not only the instructing party's" .
+
 #################################################################
-#    Citations (158)
+#    Citations (162)
 #
 #    Reference sources, cited by DFCite id from techniques, weaknesses
 #    and mitigations.
@@ -10143,8 +10230,48 @@ https://ieeexplore.ieee.org/iel5/10206/6342844/06301704.pdf?casa_token=iX_DE0Lfj
   publisher={IEEE}
 }""" .
 
+:citationDFCite-1163
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1163" ;
+    solveit-core:citationID "DFCite-1163" ;
+    solveit-core:citationPlaintext "None" ;
+    solveit-core:citationBibtex "Organization of Scientific Area Committees for Forensic Science (2019) A Framework for Harmonizing Forensic Science Practices and Digital/Multimedia Evidence (OSAC Technical Series 0002R1). NIST. Available at: https://www.nist.gov/system/files/documents/2018/01/10/osac_ts_0002.pdf" .
+
+:citationDFCite-1164
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1164" ;
+    solveit-core:citationID "DFCite-1164" ;
+    solveit-core:citationPlaintext "None" ;
+    solveit-core:citationBibtex "Forensic Science Regulator (2026) Forensic science activities: interpretation and communication (FSR-GUI-0004), Version 2, Annex B. GOV.UK. Available at: https://www.gov.uk/government/publications/forensic-science-activities-interpretation-and-communication-fsr-gui-0004/forensic-science-activities-interpretation-and-communication-accessible#annex-b" .
+
+:citationDFCite-1165
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1165" ;
+    solveit-core:citationID "DFCite-1165" ;
+    solveit-core:citationPlaintext "None" ;
+    solveit-core:citationBibtex "Casey, E., 2020. Standardization of forming and expressing preliminary evaluative opinions on digital evidence. Forensic Science International: Digital Investigation 32, 200888. https://doi.org/10.1016/j.fsidi.2019.200888" .
+
+:citationDFCite-1166
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1166" ;
+    solveit-core:citationID "DFCite-1166" ;
+    solveit-core:citationPlaintext "Park, S., Jeong, B., Kim, J. and Park, J., 2026. REPDF: Repairing corrupted PDF files through font mapping and object relationship reconstruction. Forensic Science International: Digital Investigation, 56, 302061. https://doi.org/10.1016/j.fsidi.2026.302061" ;
+    solveit-core:citationBibtex """@article{PARK2026302061,
+title = {REPDF: Repairing corrupted PDF files through font mapping and object relationship reconstruction},
+journal = {Forensic Science International: Digital Investigation},
+volume = {56},
+pages = {302061},
+year = {2026},
+note = {DFRWS EU 2026 - Selected Papers from the 13th Annual Digital Forensics Research Conference Europe},
+issn = {2666-2817},
+doi = {https://doi.org/10.1016/j.fsidi.2026.302061},
+url = {https://www.sciencedirect.com/science/article/pii/S2666281726000181},
+author = {Seungeun Park and Byeongchan Jeong and Jieon Kim and Jungheum Park},
+keywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, Reference data}
+}""" .
+
 #################################################################
-#    Referenced CASE/UCO classes (172)
+#    Referenced CASE/UCO classes (173)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -10164,6 +10291,9 @@ solveit-observable:AcquiredData
     a owl:Class .
 
 solveit-observable:AiChatAppFiles
+    a owl:Class .
+
+<https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult>
     a owl:Class .
 
 uco-observable:AndroidPhone
