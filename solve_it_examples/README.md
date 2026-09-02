@@ -12,6 +12,13 @@ Examples of the core SOLVE-IT classes, including use of the CASE/UCO Technique m
 - **Mitigation** - Ways to address weaknesses (e.g., hash verification)
 - **SolveitInvestigativeAction** - A SOLVE-IT aware InvestigativeAction that records which technique(s) were used (1..n) and which mitigations were applied (0..n) during an investigation, extending CASE/UCO InvestigativeAction (provides extended version of Bifrost example from here: https://caseontology.org/examples/asgard/)
 
+### [tool_profile_examples.ttl](tool_profile_examples.ttl)
+Examples of the tool profile module, showing what a capability profile asserts and who asserted it:
+- **ToolCapabilityProfile** - A publisher's statement about what one version of one tool provides (e.g. a testing programme's profile for ACME Chat Parser 1.0)
+- **MitigationCapability** - A claim that the tool provides a SOLVE-IT mitigation, optionally scoped by `appliesWhen` to a SHACL shape describing where it was established (e.g. WhatsApp 13.8-14.0 only)
+- **SolveitAwareInstrument** - A tool recorded as having been assessed against profiles, via `consultedProfile`, without restating the claims those profiles make
+- Two publishers making the **same claim at different scopes**, kept separate rather than merged, so a reader can see who asserted what and how narrowly
+
 ### [observable_examples.ttl](observable_examples.ttl)
 Examples of SOLVE-IT observable classes:
 - **VideoFrame** - Individual frames extracted from video evidence

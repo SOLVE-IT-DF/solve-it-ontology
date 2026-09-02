@@ -2,6 +2,103 @@
 
 Notable changes to the SOLVE-IT ontology.
 
+## [Unreleased]
+
+- `solveit-tool-profile:publishedBy` is an object property with range
+  `uco-identity:Identity`, not a datatype property holding the publisher's
+  name. The reasoning is the one that made `hasCASEInputClass` an object
+  property in 0.2.1: a party held in a string literal cannot be followed,
+  cannot be shown to be the same body as one named on another profile, and
+  cannot be checked for a typo. "National Testing Programme" and "National
+  Testing Programme " are two strings and one organisation. It also removes an
+  inconsistency — `solveit-wa:evaluatedBy` has always modelled the assessing
+  party as an Identity, so the same question was answered two ways in one
+  ontology.
+- `solve_it_tool_profile.ttl` gains `ToolCapabilityProfileShape`, its first
+  SHACL shape, scoped to `publishedBy`. A profile written against the earlier
+  form carries a literal, and the shape reports it rather than letting it pass
+  as an untyped value. The rest of the profile is not constrained; a full set
+  of shapes for this module is separate work.
+- `solve_it_tool_profile.ttl` imports `uco-identity` 1.5.0.
+- **Breaking.** Profiles published under 0.2.5 or earlier carry the string form
+  and no longer conform. The SOLVE-IT Workflow Builder still reads them, on the
+  ground that dropping a publisher's attribution is worse than reading an
+  outdated shape, and re-emits them in the new form. SICL's profile loader
+  takes whatever object `publishedBy` has and stringifies it, so it reads the
+  Identity's IRI rather than the name until its SPARQL follows
+  `uco-core:name`.
+
+- `solve_it_tool_profile.ttl` defines
+  `solveit-tool-profile:establishedForWeakness`, an object property on
+  `MitigationCapability` with range `solveit-core:Weakness`. A mitigation
+  usually addresses many weaknesses — DFM-1054 addresses eighteen — so a
+  capability that names only its mitigation is read as covering all of them,
+  including the ones the publisher never tested. Naming weaknesses records what
+  a test campaign actually established rather than what the mitigation could in
+  principle address.
+- `solve_it_tool_profile.ttl` defines
+  `solveit-tool-profile:supportingCitation`, an object property on
+  `MitigationCapability` with range `solveit-core:Citation`, for the report or
+  study a capability rests on. The profile mints its own Citation carrying
+  `citationPlaintext` or `citationBibtex` and omitting `citationID`, so citing
+  a test report does not require it to be registered in the DFCite series. That
+  idiom differs from the comment on `solveit-core:Citation`, which describes a
+  registry reference reached from a Technique, Weakness or Mitigation, and it
+  is documented on `supportingCitation` where it is introduced.
+  `solveit-core:hasReference` was not widened to carry this, because widening a
+  core term to serve one module puts the change in the module that did not need
+  it.
+- `solve_it_tool_profile.ttl` gains `MitigationCapabilityShape`, its second
+  SHACL shape, constraining node kind and class on both new properties.
+  `establishedForWeakness` carries no minimum at violation severity: every
+  profile published before the term existed declares no weakness scope, and a
+  required minimum would report all of them as invalid. A capability declaring
+  no scope produces one `sh:Info` result instead — a statement of what the
+  profile does not say, not a fault in it. pySHACL counts `sh:Info` results
+  towards non-conformance unless it is run with `--allow-info`, so that flag is
+  part of running these shapes rather than a convenience.
+- `solve_it_examples/tool_profile_examples.ttl` declares DFW-1086 and DFW-1087
+  alongside DFW-1085, and the testing programme's capability now establishes
+  DFM-1054 for two of the three and cites the test report that established it.
+  The vendor's capability still declares no scope, so the file also carries the
+  form every profile published to date takes.
+
+- `solve_it_weakness_assessment.ttl` defines `solveit-wa:scoringScheme`, a
+  datatype property on `WeaknessEvaluationSet` with range `xsd:string` and the
+  values `fi`, `fmea` and `fmea6`. The term was already being read and written
+  by SOLVE-IT tooling but was defined nowhere, so it was being asserted into
+  this namespace without the namespace defining it. Without it a consumer
+  cannot tell a 3 meaning "high" on a three-point scale from a 3 meaning
+  "moderate" on a six-point one, so the same integer describes two different
+  risks. `WeaknessEvaluationSetShape` constrains it to those three values.
+- `WeaknessEvaluationShape` admits the ratings the six-point FMEA scheme
+  produces. It previously bounded every factor at 3, `liImpactScore` at 9 and
+  `rpnScore` at 27, which are the three-point maxima; a six-point assessment
+  reaches 6, 36 and 216 and could not validate at all. The bounds are now 6, 36
+  and 216. Existing three-point data is unaffected, since its range is a subset
+  of the new one.
+- `solve_it_weakness_assessment.ttl` defines `solveit-wa:ThreePointRatingShape`
+  and `solveit-wa:SixPointRatingShape`, which carry the per-scheme bounds. The
+  widened `WeaknessEvaluationShape` can no longer reject a 5 in a set declaring
+  a three-point scheme, and SHACL Core cannot make one node's constraint depend
+  on a value held by another — the scheme is declared on the set, the ratings
+  sit on the evaluations. Neither shape carries `sh:targetClass`, so neither
+  fires on its own; a consumer that has read the scheme applies the matching
+  one explicitly.
+
+- `solve_it_analysis.ttl` no longer defines `solveit-analysis:supportedBy` or
+  `solveit-analysis:contradictedBy`. Both were object properties on
+  `Hypothesis` with range `uco-observable:ObservableObject`, linking a
+  hypothesis to the artifacts that supported or contradicted it. No replacement
+  term is defined in their place.
+- The `rdfs:comment` on `solveit-analysis:HypothesisedUserAccount` no longer
+  points at `supportedBy`.
+- The `rdfs:comment` on `solveit-analysis:Hypothesis` reads "A statement that
+  is either true or false, the truth of which is uncertain." The previous
+  wording described a hypothesis as something that may be supported or
+  contradicted by observable artifacts, which the ontology no longer provides
+  any way to state.
+
 ## [0.2.5] — 2026-08-25
 
 - `solve_it_core.ttl` defines `solveit-core:Citation`, with `citationID`,
