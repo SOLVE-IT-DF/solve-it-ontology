@@ -9,6 +9,7 @@
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-tool: <https://ontology.unifiedcyberontology.org/uco/tool/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix sh: <http://www.w3.org/ns/shacl#> .
 @base <https://ontology.solveit-df.org/solveit/tool-profile/> .
 
@@ -19,15 +20,16 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/tool-profile> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/tool-profile/0.2.5> ;
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/tool-profile/0.2.6> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.5.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/tool/1.5.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/observable/1.5.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/identity/1.5.0> ,
                 <https://ontology.solveit-df.org/solveit/core> ;
     dcterms:title "SOLVE-IT Tool Profile Module"@en ;
     dcterms:description "Capability profiles for forensic tools, enabling conditional mitigation declarations that are version-specific and attributable."@en ;
     dcterms:creator "SOLVE-IT Project" ;
-    owl:versionInfo "0.2.5" ;
+    owl:versionInfo "0.2.6" ;
     rdfs:label "SOLVE-IT Tool Profile Module"@en .
 
 #################################################################
@@ -123,15 +125,27 @@ solveit-tool-profile:conditionTarget rdf:type owl:ObjectProperty ;
     rdfs:label "condition target"@en ;
     rdfs:comment "Specifies which component of the action the condition evaluates against. Required if appliesWhen is set."@en .
 
+solveit-tool-profile:establishedForWeakness rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-tool-profile:MitigationCapability ;
+    rdfs:range solveit-core:Weakness ;
+    rdfs:label "established for weakness"@en ;
+    rdfs:comment "The weaknesses this capability was established against. One mitigation typically addresses many weaknesses, and a capability that names only its mitigation is read as covering all of them, including the ones the publisher never tested. Naming weaknesses here records what was actually established rather than what the mitigation could in principle address. There is no minimum: a capability naming no weakness declares no weakness scope and keeps the meaning it was published with, because every profile published before this term existed carries none."@en .
+
+solveit-tool-profile:supportingCitation rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-tool-profile:MitigationCapability ;
+    rdfs:range solveit-core:Citation ;
+    rdfs:label "supporting citation"@en ;
+    rdfs:comment "Evidence for this capability - a test report, a validation study, a published paper. The idiom here is that the profile mints its own Citation, carrying solveit-core:citationPlaintext or solveit-core:citationBibtex and omitting solveit-core:citationID, so a publisher can cite their own test report without it being registered in the DFCite series and the profile depends on nothing outside itself. This departs from the comment on solveit-core:Citation, which describes a registry reference reached from a Technique, Weakness or Mitigation. The departure is recorded here rather than reconciled there, because widening a core term to serve one module would put the change in the module that did not need it."@en .
+
 #################################################################
 #    Data Properties
 #################################################################
 
-solveit-tool-profile:publishedBy rdf:type owl:DatatypeProperty ;
+solveit-tool-profile:publishedBy rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-tool-profile:ToolCapabilityProfile ;
-    rdfs:range xsd:string ;
+    rdfs:range uco-identity:Identity ;
     rdfs:label "published by"@en ;
-    rdfs:comment "The name of the party that published this profile."@en .
+    rdfs:comment "The party that published this profile - a vendor, a testing programme, or a lab. An Identity rather than a name, for the reason hasCASEInputClass became an object property in 0.2.1: a party held in a string literal cannot be followed, cannot be shown to be the same party as one named elsewhere, and cannot be checked for a typo. Two profiles from one testing programme should be recognisable as such, and 'National Testing Programme' and 'National Testing Programme ' are two strings and one body. Matches solveit-wa:evaluatedBy, which already models the assessing party this way."@en .
 
 solveit-tool-profile:publishedDate rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-tool-profile:ToolCapabilityProfile ;
@@ -139,3 +153,65 @@ solveit-tool-profile:publishedDate rdf:type owl:DatatypeProperty ;
     rdfs:label "published date"@en ;
     rdfs:comment "When this profile was published."@en .
 
+
+#################################################################
+#    SHACL Shapes
+#################################################################
+
+### ToolCapabilityProfileShape
+###
+### Scoped to publishedBy, which changed from a string to an Identity. A
+### profile written against the earlier form carries a literal here, and
+### sh:class reports it rather than letting it pass unnoticed as an untyped
+### value. The rest of the profile is not constrained here; this module has
+### carried no shapes until now and adding a full set is separate work.
+solveit-tool-profile:ToolCapabilityProfileShape a sh:NodeShape ;
+    sh:targetClass solveit-tool-profile:ToolCapabilityProfile ;
+    rdfs:label "Tool Capability Profile Shape"@en ;
+    sh:property [
+        sh:path solveit-tool-profile:publishedBy ;
+        sh:maxCount 1 ;
+        sh:nodeKind sh:IRI ;
+        sh:class uco-identity:Identity ;
+        sh:message "publishedBy must reference a uco-identity:Identity. A profile carrying a publisher's name as a string literal predates SOLVE-IT 0.2.6; give the party an Identity node named with uco-core:name." ;
+        sh:name "published by" ;
+    ] .
+
+### MitigationCapabilityShape
+###
+### Scoped to establishedForWeakness and supportingCitation, the two
+### properties minted in 0.2.6, and following ToolCapabilityProfileShape
+### above in constraining only what is new rather than the whole class.
+###
+### establishedForWeakness carries no minimum at violation severity, and
+### that is deliberate. Every profile published before the term existed
+### declares no weakness scope, so a required minimum would report all of
+### them as invalid. The absence is reported at sh:Info instead: a
+### statement of what the profile does not say, not a fault in it. pySHACL
+### counts sh:Info results towards non-conformance unless it is run with
+### --allow-info, so that flag is part of running this shape rather than a
+### convenience.
+solveit-tool-profile:MitigationCapabilityShape a sh:NodeShape ;
+    sh:targetClass solveit-tool-profile:MitigationCapability ;
+    rdfs:label "Mitigation Capability Shape"@en ;
+    sh:property [
+        sh:path solveit-tool-profile:establishedForWeakness ;
+        sh:nodeKind sh:IRI ;
+        sh:class solveit-core:Weakness ;
+        sh:message "establishedForWeakness must reference a solveit-core:Weakness. A weakness given as a literal, or as a node with no type, cannot be matched against the knowledge base." ;
+        sh:name "established for weakness" ;
+    ] ;
+    sh:property [
+        sh:path solveit-tool-profile:establishedForWeakness ;
+        sh:minCount 1 ;
+        sh:severity sh:Info ;
+        sh:message "This capability declares no weakness scope, so it is read as covering every weakness its mitigation addresses. If it was established for fewer than that, name those weaknesses with establishedForWeakness." ;
+        sh:name "established for weakness" ;
+    ] ;
+    sh:property [
+        sh:path solveit-tool-profile:supportingCitation ;
+        sh:nodeKind sh:IRI ;
+        sh:class solveit-core:Citation ;
+        sh:message "supportingCitation must reference a solveit-core:Citation. A profile may mint its own Citation carrying citationPlaintext or citationBibtex; it need not be a registered DFCite entry." ;
+        sh:name "supporting citation" ;
+    ] .
