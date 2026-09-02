@@ -105,7 +105,7 @@ solveit-data:mitigationDFM-1054 rdf:type solveit-core:Mitigation ;
 
 :acme-chat-parser-v1-0-national-testing-programme rdf:type solveit-tool-profile:ToolCapabilityProfile ;
     rdfs:label "ACME Chat Parser v1.0 (National Testing Programme)"@en ;
-    uco-core:description "Independently validated capability profile for ACME Chat Parser 1.0."@en ;
+    uco-core:description "Independently validated capability profile for ACME Chat Parser 1.0." ;
     solveit-tool-profile:profileFor :acme-chat-parser-v1-0-national-testing-programme-tool ;
     solveit-tool-profile:publishedBy :acme-chat-parser-v1-0-national-testing-programme-publisher ;
     solveit-tool-profile:publishedDate "2026-01-15T00:00:00Z"^^xsd:dateTime ;
@@ -122,7 +122,7 @@ solveit-data:mitigationDFM-1054 rdf:type solveit-core:Mitigation ;
 
 :acme-chat-parser-v1-0-national-testing-programme-cap-1-dfm-1054 rdf:type solveit-tool-profile:MitigationCapability ;
     rdfs:label "Message extraction and parsing tested for WhatsApp 13.8-14.0"@en ;
-    uco-core:description "Independently tested against WhatsApp 13.8, 13.9 and 14.0 only."@en ;
+    uco-core:description "Independently tested against WhatsApp 13.8, 13.9 and 14.0 only." ;
     solveit-tool-profile:implementsMitigation solveit-data:mitigationDFM-1054 ;
     solveit-tool-profile:establishedForWeakness solveit-data:weaknessDFW-1085 ,
                                                 solveit-data:weaknessDFW-1086 ;
@@ -165,7 +165,7 @@ solveit-data:mitigationDFM-1054 rdf:type solveit-core:Mitigation ;
 
 :acme-chat-parser-v1-0-acme-forensics rdf:type solveit-tool-profile:ToolCapabilityProfile ;
     rdfs:label "ACME Chat Parser v1.0 (ACME Forensics)"@en ;
-    uco-core:description "Vendor capability profile for ACME Chat Parser 1.0."@en ;
+    uco-core:description "Vendor capability profile for ACME Chat Parser 1.0." ;
     solveit-tool-profile:profileFor :acme-chat-parser-v1-0-acme-forensics-tool ;
     solveit-tool-profile:publishedBy :acme-chat-parser-v1-0-acme-forensics-publisher ;
     solveit-tool-profile:publishedDate "2025-11-02T00:00:00Z"^^xsd:dateTime ;
@@ -182,7 +182,7 @@ solveit-data:mitigationDFM-1054 rdf:type solveit-core:Mitigation ;
 
 :acme-chat-parser-v1-0-acme-forensics-cap-1-dfm-1054 rdf:type solveit-tool-profile:MitigationCapability ;
     rdfs:label "Message extraction and parsing tested in-house"@en ;
-    uco-core:description "Declared for all supported chat applications; no scope stated."@en ;
+    uco-core:description "Declared for all supported chat applications; no scope stated." ;
     solveit-tool-profile:implementsMitigation solveit-data:mitigationDFM-1054 .
 
 #################################################################
