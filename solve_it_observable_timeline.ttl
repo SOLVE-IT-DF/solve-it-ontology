@@ -92,15 +92,15 @@ solveit-observable:measuredClock rdf:type owl:ObjectProperty ;
     rdfs:label "measured clock"@en ;
     rdfs:comment "The device or system whose clock was measured."@en .
 
+solveit-observable:referenceTimeSource rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:ClockOffsetMeasurement ;
+    rdfs:range uco-observable:ObservableObject ;
+    rdfs:label "reference time source"@en ;
+    rdfs:comment "The reference time source used for comparison (e.g., NTP server, GPS time, examiner's calibrated watch)."@en .
+
 #################################################################
 #    Data Properties
 #################################################################
-
-solveit-observable:referenceTimeSource rdf:type owl:DatatypeProperty ;
-    rdfs:domain solveit-observable:ClockOffsetMeasurement ;
-    rdfs:range xsd:string ;
-    rdfs:label "reference time source"@en ;
-    rdfs:comment "The reference time source used for comparison (e.g., NTP server, GPS time, examiner's calibrated watch)."@en .
 
 solveit-observable:clockOffsetValue rdf:type owl:DatatypeProperty ;
     rdfs:domain solveit-observable:ClockOffsetMeasurement ;
