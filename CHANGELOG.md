@@ -4,6 +4,16 @@ Notable changes to the SOLVE-IT ontology.
 
 ## [Unreleased]
 
+### Added
+
+- **`solveit-observable:hasOperatingSystem`** — links a `uco-observable:Device`
+  to a `uco-observable:OperatingSystem` installed on it, so a tool capability
+  profile can scope a claim to the operating systems it was tested against.
+  Nothing in UCO connected the two: `uco-observable:operatingSystem` declares
+  no domain and is used on `ApplicationFacet` for the system an application
+  runs on. Installed rather than running, and more than one is expected. How a
+  condition should treat a device with several is open, and tracked in #53.
+
 - `solveit-tool-profile:publishedBy` is an object property with range
   `uco-identity:Identity`, not a datatype property holding the publisher's
   name. The reasoning is the one that made `hasCASEInputClass` an object
