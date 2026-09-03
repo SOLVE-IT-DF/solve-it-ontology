@@ -365,6 +365,19 @@ solveit-observable:hasClusterRun rdf:type owl:ObjectProperty ;
     rdfs:label "has cluster run"@en ;
     rdfs:comment "Links a file to its cluster allocation runs. A contiguous file has one run; a fragmented file has multiple runs."@en .
 
+solveit-observable:hasOperatingSystem rdf:type owl:ObjectProperty ;
+    rdfs:domain uco-observable:Device ;
+    rdfs:range uco-observable:OperatingSystem ;
+    rdfs:label "has operating system"@en ;
+    rdfs:comment """An operating system installed on this device.
+
+Installed rather than running: a powered-off device still has its operating
+systems, and that is the state most forensic targets are examined in. More than
+one is expected, as a dual-boot machine has two.
+
+Not uco-observable:operatingSystem, which declares no domain and is used on
+ApplicationFacet for the system an application runs on."""@en .
+
 solveit-observable:containsHashSetEntry rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:HashSet ;
     rdfs:range solveit-observable:HashSetEntry ;
