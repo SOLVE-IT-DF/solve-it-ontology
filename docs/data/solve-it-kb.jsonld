@@ -37882,7 +37882,31 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/ADBPullData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/AFCExtractionData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Account",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/AcquiredData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/AiChatAppFiles",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -37912,6 +37936,12 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/ApplicationFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/ApplicationVersion",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -37930,7 +37960,43 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/AudioFile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/Bitstream",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/BitstreamRandomAccessed",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/BrowserAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/BrowserBookmark",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/BrowserCacheData",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -37948,6 +38014,12 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/CalendarAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/CalendarEntry",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -37955,6 +38027,18 @@
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Call",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/ChatAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/ClockOffsetCapture",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38008,7 +38092,37 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/DateTimeStamp",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/DecryptionKey",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Device",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/DeviceGeneratedBackup",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/DeviceScreenshotCapture",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/DeviceSet",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38038,6 +38152,12 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/EmailAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/EmailMessage",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -38062,13 +38182,103 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/FileSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/FileSystem",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/FileSystemExtraction",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/FilteredFileSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/ForensicImageContainer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/ForensicToolTagBasedReport",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/GamingAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/types/Hash",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/HashSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/HashVerificationResult",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/HealthAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/Hypothesis",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedCommunication",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedWebSearch",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38086,13 +38296,43 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordIndex",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordIndexingConfiguration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/KeywordSearchResultSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/location/Location",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/LogicalImageContainer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/MACAddress",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/MapsAppFiles",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38116,6 +38356,12 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/NavigationAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/NetworkConnection",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -38123,6 +38369,12 @@
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/NetworkInterface",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/NetworkPacketCapture",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38158,13 +38410,37 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/PaymentAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/identity/Person",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/PhotosAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Post",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/PrioritizedDeviceSet",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38188,13 +38464,79 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/RawImage",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/ReadWriteDeviceInterface",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/RedactedArtifactSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/RedactedFileSet",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/RemindersAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/SMSMessage",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/SQLiteDatabase",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/SQLiteTable",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/ServiceBasedExtractionData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/SmartDevice",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/SmartHomeAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/SocialMediaAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/SortedTimeline",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38207,6 +38549,24 @@
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/TableField",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/Timeline",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/TimelineEntry",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/TimestampOffset",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38236,7 +38596,25 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/UnlockPattern",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/UserAccount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/VideoFile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/VirtualizedComputer",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -38266,6 +38644,18 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/Wordlist",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/WriteProtectedDeviceInterface",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/accessedTime",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -38287,6 +38677,12 @@
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/callType",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ]
+  },
+  {
+    "@id": "https://cacontology.projectvic.org/case-management#ExpertReport",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
     ]
   },
   {
@@ -38381,6 +38777,18 @@
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/httpRequestHeader",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/observable/httpResponseHeader",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/analysis/hypothesisedDateTime",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ]
