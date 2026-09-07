@@ -52,15 +52,22 @@ def load_ontology(project_root):
 
 
 def load_shapes(project_root):
-    """Load the SHACL shapes file."""
-    shapes_file = project_root / "solve_it_observable_shapes.ttl"
-    if not shapes_file.exists():
-        print(f"  No shapes file found at {shapes_file}")
+    """Load every SHACL shapes file.
+
+    Discovered by glob rather than named one by one. Naming a single file meant
+    solve_it_core_shapes.ttl was never cross-referenced, and any shapes file
+    added later would have been skipped in the same silent way — a shape that is
+    never loaded is not a weaker check, it is no check at all.
+    """
+    shapes_files = sorted(project_root.glob("solve_it_*shapes*.ttl"))
+    if not shapes_files:
+        print(f"  No shapes files found in {project_root}")
         return None
 
     g = Graph()
-    print(f"  Loading {shapes_file.name}...")
-    g.parse(shapes_file, format="turtle")
+    for shapes_file in shapes_files:
+        print(f"  Loading {shapes_file.name}...")
+        g.parse(shapes_file, format="turtle")
     return g
 
 

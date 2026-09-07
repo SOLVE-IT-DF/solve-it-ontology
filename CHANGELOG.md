@@ -109,6 +109,15 @@ Notable changes to the SOLVE-IT ontology.
   contradicted by observable artifacts, which the ontology no longer provides
   any way to state.
 
+### Fixed
+
+- **`scripts/validate_ontology.py` only ever loaded one shapes file.**
+  `load_shapes` named `solve_it_observable_shapes.ttl` directly, so
+  `solve_it_core_shapes.ttl` had never been cross-referenced and any shapes
+  file added later would have been skipped the same silent way. A shape that is
+  never loaded is not a weaker check but no check at all. Shapes files are now
+  discovered by glob.
+
 ## [0.2.5] — 2026-08-25
 
 - `solve_it_core.ttl` defines `solveit-core:Citation`, with `citationID`,
