@@ -1,0 +1,102 @@
+@prefix : <https://ontology.solveit-df.org/solveit/analysis/shapes/> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
+@prefix solveit-analysis: <https://ontology.solveit-df.org/solveit/analysis/> .
+@base <https://ontology.solveit-df.org/solveit/analysis/shapes/> .
+
+#################################################################
+#    SOLVE-IT Analysis SHACL Shapes
+#    Validation constraints for the SOLVE-IT analysis vocabulary.
+#    Companion to solve_it_core_shapes.ttl and
+#    solve_it_observable_shapes.ttl; load alongside the ontology (as a
+#    supplemental graph) when validating data.
+#################################################################
+
+#################################################################
+#    HypothesisedRelationship Shape
+#################################################################
+#
+#    solveit-analysis:HypothesisedRelationship reuses uco-core:source,
+#    uco-core:target, uco-core:kindOfRelationship and uco-core:isDirectional
+#    without being a uco-core:Relationship — the module's standing rule that a
+#    hypothesised X is not an X, so an inferred association never joins the set
+#    of stated ones.
+#
+#    The reuse is sound because those four properties declare rdfs:range but no
+#    rdfs:domain; UCO constrains them through SHACL on uco-core:Relationship
+#    rather than through RDFS, so stating them here entails nothing about class
+#    membership.
+#
+#    The consequence is that UCO's own RelationshipShape does not target this
+#    class: sh:targetClass follows rdf:type then rdfs:subClassOf*, and this
+#    class sits outside that hierarchy. Nothing would check the properties were
+#    used correctly. Hence this shape, which mirrors UCO's cardinalities exactly
+#    — one target, at least one source, isDirectional required, at most one
+#    kindOfRelationship — so that data satisfying one shape satisfies the other,
+#    and someone who knows uco-core:Relationship already knows this.
+
+:HypothesisedRelationshipShape a sh:NodeShape ;
+    sh:targetClass solveit-analysis:HypothesisedRelationship ;
+    rdfs:label "SOLVE-IT Hypothesised Relationship Shape"@en ;
+    rdfs:comment "Checks that a hypothesised relationship says what it relates, in which direction, and of what kind — mirroring the constraints UCO places on uco-core:Relationship, which does not target this class."@en ;
+
+    sh:property [
+        sh:path uco-core:source ;
+        sh:class uco-core:UcoObject ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:message "A hypothesised relationship needs at least one uco-core:source, and each must be an IRI naming a uco-core:UcoObject."@en ;
+    ] ;
+
+    sh:property [
+        sh:path uco-core:target ;
+        sh:class uco-core:UcoObject ;
+        sh:nodeKind sh:IRI ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "A hypothesised relationship needs exactly one uco-core:target, an IRI naming a uco-core:UcoObject."@en ;
+    ] ;
+
+    # Required, as on uco-core:Relationship. A hypothesis that does not say
+    # whether it runs one way or both is ambiguous in a way the reader cannot
+    # resolve from the rest of the statement.
+    sh:property [
+        sh:path uco-core:isDirectional ;
+        sh:datatype xsd:boolean ;
+        sh:nodeKind sh:Literal ;
+        sh:minCount 1 ;
+        sh:maxCount 1 ;
+        sh:message "uco-core:isDirectional must be exactly one xsd:boolean."@en ;
+    ] ;
+
+    # Optional and single-valued, as on uco-core:Relationship. Two kinds on one
+    # node would be two hypotheses wearing one identifier.
+    sh:property [
+        sh:path uco-core:kindOfRelationship ;
+        sh:datatype xsd:string ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+        sh:message "uco-core:kindOfRelationship must be at most one xsd:string."@en ;
+    ] ;
+
+    # The period the hypothesised association is claimed to hold over, where it
+    # is bounded. Optional, as on uco-core:Relationship.
+    sh:property [
+        sh:path uco-core:startTime ;
+        sh:datatype xsd:dateTime ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+        sh:message "uco-core:startTime must be at most one xsd:dateTime."@en ;
+    ] ;
+
+    sh:property [
+        sh:path uco-core:endTime ;
+        sh:datatype xsd:dateTime ;
+        sh:nodeKind sh:Literal ;
+        sh:maxCount 1 ;
+        sh:message "uco-core:endTime must be at most one xsd:dateTime."@en ;
+    ] .

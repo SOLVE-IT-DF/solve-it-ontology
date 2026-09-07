@@ -111,7 +111,7 @@ jobs:
           patterns = [
               'case-src/ontology/**/*.ttl',
               'case-src/dependencies/UCO/ontology/**/*.ttl',
-              'solve_it_*.ttl',          # includes the two SHACL shapes files
+              'solve_it_*.ttl',          # includes the SHACL shapes files
           ]
           files = sorted({f for p in patterns for f in glob.glob(p, recursive=True)})
 

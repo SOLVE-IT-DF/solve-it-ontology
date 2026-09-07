@@ -56,10 +56,27 @@ solveit-analysis:HypothesisedCommunication rdf:type owl:Class ;
     rdfs:comment "A communication that is hypothesised to have occurred between parties, potentially inferred from partial message records, contact patterns, or metadata fragments. Use uco-observable:from and uco-observable:to for the parties involved."@en .
 
 ###  HypothesisedRelationship
+###
+###  Deliberately NOT a subclass of uco-core:Relationship, following the rule
+###  the rest of this module already keeps: a hypothesised X is not an X
+###  (HypothesisedDevice is not a uco-observable:Device, HypothesisedUserAccount
+###  is not a UserAccount). Subclassing would put inferred associations into the
+###  same set as stated ones, so anything walking uco-core:Relationship would
+###  draw a hypothesis as a fact unless it checked the type. Failing to surface
+###  a hypothesis is the safer failure.
+###
+###  The properties are reused rather than redeclared, as HypothesisedCommunication
+###  reuses uco-observable:from/to. This is sound because uco-core:source,
+###  uco-core:target, uco-core:kindOfRelationship and uco-core:isDirectional
+###  declare rdfs:range but no rdfs:domain — UCO constrains them through SHACL on
+###  uco-core:Relationship instead — so stating them here entails nothing about
+###  class membership. The cost is that UCO's own RelationshipShape does not
+###  apply, which is why this module carries a shape of its own (see
+###  solve_it_analysis_shapes.ttl).
 solveit-analysis:HypothesisedRelationship rdf:type owl:Class ;
     rdfs:subClassOf solveit-analysis:Hypothesis ;
     rdfs:label "Hypothesised Relationship"@en ;
-    rdfs:comment "A relationship between entities that is hypothesised to exist, such as an inferred association between persons, accounts, devices, or locations based on co-occurrence patterns, shared identifiers, or behavioural analysis."@en .
+    rdfs:comment "A relationship between entities that is hypothesised to exist, such as an inferred association between persons, accounts, devices, or locations based on co-occurrence patterns, shared identifiers, or behavioural analysis. Use uco-core:source and uco-core:target for the entities related, uco-core:kindOfRelationship for the nature of the association, and uco-core:isDirectional to state whether it runs one way. This class is not a uco-core:Relationship: a stated relationship and a hypothesised one must not fall into the same set."@en .
 
 ###  HypothesisedDevice
 solveit-analysis:HypothesisedDevice rdf:type owl:Class ;

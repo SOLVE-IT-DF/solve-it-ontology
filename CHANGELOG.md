@@ -6,6 +6,40 @@ Notable changes to the SOLVE-IT ontology.
 
 ### Added
 
+- **`solveit-analysis:HypothesisedRelationship` can now say what it relates.**
+  The class existed but appeared in no property domain or range and in no
+  SHACL shape, so it could state *that* an association was hypothesised and
+  nothing about between what — while DFT-1088 already declares it as a CASE
+  output class. It now reuses `uco-core:source`, `uco-core:target`,
+  `uco-core:kindOfRelationship` and `uco-core:isDirectional`, documented on the
+  class in the same idiom `HypothesisedCommunication` uses for
+  `uco-observable:from`/`to`.
+
+  It is deliberately **not** made a subclass of `uco-core:Relationship`. That
+  is the rule the rest of the module already keeps — `HypothesisedDevice` is
+  not a `Device`, `HypothesisedUserAccount` is not a `UserAccount` — and here
+  it also matters practically: subclassing would put inferred associations into
+  the same set as stated ones, so anything walking `uco-core:Relationship`
+  would render a hypothesis as a fact unless it checked the type. Failing to
+  surface a hypothesis is the safer failure.
+
+  The reuse is sound because those four properties declare `rdfs:range` but no
+  `rdfs:domain`; UCO constrains them through SHACL on `uco-core:Relationship`
+  instead. Stating them therefore entails nothing about class membership, which
+  is checked: under a full RDFS closure an instance is inferred to be a
+  `Hypothesis` and a `uco-analysis:AnalyticResult`, and not a
+  `uco-core:Relationship`.
+
+- **`solve_it_analysis_shapes.ttl`** — the analysis module's first SHACL shapes
+  file, carrying `HypothesisedRelationshipShape`. It is needed because
+  `sh:targetClass` follows `rdf:type` then `rdfs:subClassOf*`, so UCO's own
+  `RelationshipShape` does not reach a class outside that hierarchy and nothing
+  would otherwise check the borrowed properties were used correctly. The shape
+  mirrors UCO's cardinalities exactly — at least one `source`, exactly one
+  `target`, `isDirectional` required, at most one `kindOfRelationship`,
+  optional `startTime`/`endTime` — so data satisfying one shape satisfies the
+  other and the vocabulary behaves as a reader of UCO expects.
+
 - **`solveit-observable:hasOperatingSystem`** — links a `uco-observable:Device`
   to a `uco-observable:OperatingSystem` installed on it, so a tool capability
   profile can scope a claim to the operating systems it was tested against.
