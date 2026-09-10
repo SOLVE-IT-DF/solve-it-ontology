@@ -19,7 +19,7 @@
 #      Objectives:     24
 #      Techniques:     194
 #      Weaknesses:     391
-#      Mitigations:    308
+#      Mitigations:    309
 #      Citations:      162
 #################################################################
 
@@ -3500,7 +3500,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:weaknessName "Data copied does not include all sectors from LBA0 to LBA max due to the data copying process stopping prematurely" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1003,
-                                        :mitigationDFM-1004 .
+                                        :mitigationDFM-1004,
+                                        :mitigationDFM-1331 .
 
 :weaknessDFW-1005
     a solveit-core:Weakness ;
@@ -3612,7 +3613,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:weaknessDescription "This describes some data transformation that happens inside the imaging tool that results in a mismatch between the source and destination data" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_COR,
                                   solveit-core:ASTM_INAC_EX ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1004 .
+    solveit-core:hasPotentialMitigation :mitigationDFM-1004,
+                                        :mitigationDFM-1331 .
 
 :weaknessDFW-1017
     a solveit-core:Weakness ;
@@ -3758,9 +3760,10 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
 
 :weaknessDFW-1034
     a solveit-core:Weakness ;
-    rdfs:label "DFW-1034: Missing data from the live system due to compromised machine (e.g. rootkit)"@en ;
+    rdfs:label "DFW-1034: Missing data from the running system due to the device being compromised (e.g. rootkit)"@en ;
     solveit-core:weaknessID "DFW-1034" ;
-    solveit-core:weaknessName "Missing data from the live system due to compromised machine (e.g. rootkit)" ;
+    solveit-core:weaknessName "Missing data from the running system due to the device being compromised (e.g. rootkit)" ;
+    solveit-core:weaknessDescription "Malicious software on a device may limit the data reported via queries made to a running device." ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1013 .
 
@@ -6110,7 +6113,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:weaknessName "Data copied does not include all sectors from LBA0 to LBA max due to the data copying process skipping some sectors or bytes" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1003,
-                                        :mitigationDFM-1004 .
+                                        :mitigationDFM-1004,
+                                        :mitigationDFM-1331 .
 
 :weaknessDFW-1279
     a solveit-core:Weakness ;
@@ -7170,7 +7174,7 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:hasReference :citationDFCite-1165 .
 
 #################################################################
-#    Mitigations (308)
+#    Mitigations (309)
 #
 #    Actions that prevent a weakness or reduce its impact.
 #################################################################
@@ -9123,6 +9127,13 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     rdfs:label "DFM-1319: Evaluate the observations under each party's claims, not only the instructing party's"@en ;
     solveit-core:mitigationID "DFM-1319" ;
     solveit-core:mitigationName "Evaluate the observations under each party's claims, not only the instructing party's" .
+
+:mitigationDFM-1331
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1331: Create a persistent log of any errors during data copying process"@en ;
+    solveit-core:mitigationID "DFM-1331" ;
+    solveit-core:mitigationName "Create a persistent log of any errors during data copying process" ;
+    solveit-core:mitigationDescription "During any data copying process e.g. sectors, bytes, files ensure that any errors encountered are logged with clear details as to the scope of the error." .
 
 #################################################################
 #    Citations (162)

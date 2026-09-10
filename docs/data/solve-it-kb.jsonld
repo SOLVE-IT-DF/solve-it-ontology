@@ -12952,6 +12952,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1004"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1331"
       }
     ]
   },
@@ -13394,6 +13397,9 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1004"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1331"
       }
     ]
   },
@@ -13955,7 +13961,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1034: Missing data from the live system due to compromised machine (e.g. rootkit)"
+        "@value": "DFW-1034: Missing data from the running system due to the device being compromised (e.g. rootkit)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -13965,7 +13971,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Missing data from the live system due to compromised machine (e.g. rootkit)"
+        "@value": "Missing data from the running system due to the device being compromised (e.g. rootkit)"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Malicious software on a device may limit the data reported via queries made to a running device."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
@@ -22936,6 +22947,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1004"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1331"
       }
     ]
   },
@@ -34366,6 +34380,33 @@
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
         "@value": "Evaluate the observations under each party's claims, not only the instructing party's"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1331",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1331: Create a persistent log of any errors during data copying process"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1331"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Create a persistent log of any errors during data copying process"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "During any data copying process e.g. sectors, bytes, files ensure that any errors encountered are logged with clear details as to the scope of the error."
       }
     ]
   },
