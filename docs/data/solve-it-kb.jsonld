@@ -2658,9 +2658,22 @@
         "@value": "Examination of a file that was designed for storing configuration information for a piece of software (e.g. an application or operating system feature)"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "configuration file examination"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasExample": [
       {
         "@value": "prefs.js from Firefox"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      },
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/File"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
@@ -3599,7 +3612,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFT-1042: Verify hash of imaged data matches the hash of the source device"
+        "@value": "DFT-1042: Verify hash of copied data matches the hash of the data read from source device"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -3614,7 +3627,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
-        "@value": "Verify hash of imaged data matches the hash of the source device"
+        "@value": "Verify hash of copied data matches the hash of the data read from source device"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "This technique is part of the imaging process and specifically compares the hash of data read from a source device and data stored within a raw image or a forensic image container. Other techniques allow comparison of hashes of data read within a container against stored hashes (either inside the image file, a sidecar file, or externally)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -3629,9 +3647,6 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1042"
-      },
-      {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1124"
       },
       {
@@ -3639,12 +3654,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1126"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1127"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1128"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -6476,6 +6485,16 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
         "@value": "The equivalent of `dynamic analysis` of malware, but applied to software in general. This can involve running the software in a controlled environment and observing its behavior, inputs, and outputs to gain insights into its functionality and potential for event reconstruction."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Software"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"
       }
     ]
   },
@@ -13998,7 +14017,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1035: Collecting incorrect information from live system due to compromised machine (e.g. rootkit)"
+        "@value": "DFW-1035: Collecting incorrect data from a running system due to the device being compromised (e.g. rootkit)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -14008,7 +14027,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Collecting incorrect information from live system due to compromised machine (e.g. rootkit)"
+        "@value": "Collecting incorrect data from a running system due to the device being compromised (e.g. rootkit)"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
@@ -38572,6 +38591,12 @@
   },
   {
     "@id": "https://ontology.solveit-df.org/solveit/observable/SocialMediaAppFiles",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Software",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]

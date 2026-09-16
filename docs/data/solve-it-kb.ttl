@@ -751,7 +751,10 @@ The techqniue does not restrict to searching for digital devices as other physic
     solveit-core:techniqueID "DFT-1021" ;
     solveit-core:techniqueName "Extract artifacts from a configuration file" ;
     solveit-core:techniqueDescription "Examination of a file that was designed for storing configuration information for a piece of software (e.g. an application or operating system feature)" ;
+    solveit-core:hasSynonym "configuration file examination" ;
     solveit-core:hasExample "prefs.js from Firefox" ;
+    solveit-core:hasCASEInputClass solveit-observable:FileSet,
+                                   uco-observable:File ;
     solveit-core:hasCASEOutputClass <https://ontology.unifiedcyberontology.org/uco/configuration/Configuration>,
                                     <https://ontology.unifiedcyberontology.org/uco/configuration/ConfigurationEntry> .
 
@@ -1000,18 +1003,16 @@ The techqniue does not restrict to searching for digital devices as other physic
 :techniqueDFT-1042
     a owl:Class,
       solveit-core:Technique ;
-    rdfs:label "DFT-1042: Verify hash of imaged data matches the hash of the source device"@en ;
+    rdfs:label "DFT-1042: Verify hash of copied data matches the hash of the data read from source device"@en ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
     solveit-core:techniqueID "DFT-1042" ;
-    solveit-core:techniqueName "Verify hash of imaged data matches the hash of the source device" ;
+    solveit-core:techniqueName "Verify hash of copied data matches the hash of the data read from source device" ;
+    solveit-core:techniqueDescription "This technique is part of the imaging process and specifically compares the hash of data read from a source device and data stored within a raw image or a forensic image container. Other techniques allow comparison of hashes of data read within a container against stored hashes (either inside the image file, a sidecar file, or externally)" ;
     solveit-core:hasCASEInputClass uco-observable:hash ;
     solveit-core:hasCASEOutputClass solveit-observable:HashVerificationResult ;
-    solveit-core:hasPotentialWeakness :weaknessDFW-1042,
-                                      :weaknessDFW-1124,
+    solveit-core:hasPotentialWeakness :weaknessDFW-1124,
                                       :weaknessDFW-1125,
-                                      :weaknessDFW-1126,
-                                      :weaknessDFW-1127,
-                                      :weaknessDFW-1128 ;
+                                      :weaknessDFW-1126 ;
     solveit-core:hasReference :citationDFCite-1081,
                               :citationDFCite-1083,
                               :citationDFCite-1088 .
@@ -1771,7 +1772,9 @@ Facebook Messenger
     solveit-core:techniqueID "DFT-1090" ;
     solveit-core:techniqueName "Experiment with software to ascertain forensic artifacts" ;
     solveit-core:techniqueDescription "The process of running software in a controlled environment to observe its behavior and identify potential forensic artifacts." ;
-    solveit-core:techniqueDetails "The equivalent of `dynamic analysis` of malware, but applied to software in general. This can involve running the software in a controlled environment and observing its behavior, inputs, and outputs to gain insights into its functionality and potential for event reconstruction." .
+    solveit-core:techniqueDetails "The equivalent of `dynamic analysis` of malware, but applied to software in general. This can involve running the software in a controlled environment and observing its behavior, inputs, and outputs to gain insights into its functionality and potential for event reconstruction." ;
+    solveit-core:hasCASEInputClass uco-observable:Software ;
+    solveit-core:hasCASEOutputClass solveit-analysis:HypothesisedRelationship .
 
 :techniqueDFT-1091
     a owl:Class,
@@ -3769,9 +3772,9 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
 
 :weaknessDFW-1035
     a solveit-core:Weakness ;
-    rdfs:label "DFW-1035: Collecting incorrect information from live system due to compromised machine (e.g. rootkit)"@en ;
+    rdfs:label "DFW-1035: Collecting incorrect data from a running system due to the device being compromised (e.g. rootkit)"@en ;
     solveit-core:weaknessID "DFW-1035" ;
-    solveit-core:weaknessName "Collecting incorrect information from live system due to compromised machine (e.g. rootkit)" ;
+    solveit-core:weaknessName "Collecting incorrect data from a running system due to the device being compromised (e.g. rootkit)" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
                                   solveit-core:ASTM_INAC_COR,
                                   solveit-core:ASTM_INAC_EX,
@@ -10282,7 +10285,7 @@ keywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, 
 }""" .
 
 #################################################################
-#    Referenced CASE/UCO classes (173)
+#    Referenced CASE/UCO classes (174)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -10614,6 +10617,9 @@ solveit-observable:SmartHomeAppFiles
     a owl:Class .
 
 solveit-observable:SocialMediaAppFiles
+    a owl:Class .
+
+uco-observable:Software
     a owl:Class .
 
 solveit-observable:SortedTimeline
