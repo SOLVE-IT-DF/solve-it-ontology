@@ -1207,9 +1207,19 @@ The techqniue does not restrict to searching for digital devices as other physic
     solveit-core:techniqueID "DFT-1054" ;
     solveit-core:techniqueName "Review artifacts or content manually for relevant material" ;
     solveit-core:techniqueDescription "Manual examination of files or artifacts to determine their relevance to the investigation." ;
-    solveit-core:techniqueDetails "The result of this process is a classification, which may be 'relevant', or could be more specific, e.g. 'contains reference to x'. This technique is likely paired with T1091 (Bookmark artifacts) but they could be recorded in other ways. This manual review could be of the content of files (DFT-1058), or of content extracted from within files e.g. images (DFT-1081), video (DFT-1080), or audio (DFT-1079)." ;
+    solveit-core:techniqueDetails """The result of this process is a classification, which may be 'relevant', or could be more specific, e.g. 'contains reference to x'. This technique is likely paired with T1091 (Bookmark artifacts) but they could be recorded in other ways. 
+
+This manual review could be for:
+- images (DFT-1081) 
+- video (DFT-1080)
+- audio (DFT-1079)
+- the general content of files (DFT-1058)
+- artefacts in general.""" ;
+    solveit-core:hasCASEInputClass solveit-observable:ArtifactSet,
+                                   solveit-observable:FileSet ;
     solveit-core:hasCASEOutputClass <https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification>,
-                                    solveit-observable:ArtifactSet ;
+                                    solveit-observable:ArtifactSet,
+                                    solveit-observable:FileSet ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1060,
                                       :weaknessDFW-1061,
                                       :weaknessDFW-1062 .
@@ -1617,6 +1627,12 @@ Facebook Messenger
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
     solveit-core:techniqueID "DFT-1077" ;
     solveit-core:techniqueName "Extract artifacts from photo management app(s)" ;
+    solveit-core:hasExample "Apple Photos app",
+                            "Darktable",
+                            "Lightroom",
+                            "Windows Photos app",
+                            "XnView MP",
+                            "digiKam" ;
     solveit-core:hasCASEInputClass solveit-observable:PhotosAppFiles .
 
 :techniqueDFT-1078
@@ -1696,7 +1712,9 @@ Facebook Messenger
     rdfs:label "DFT-1085: Conflate specific account identifiers to a single user identity"@en ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
     solveit-core:techniqueID "DFT-1085" ;
-    solveit-core:techniqueName "Conflate specific account identifiers to a single user identity" .
+    solveit-core:techniqueName "Conflate specific account identifiers to a single user identity" ;
+    solveit-core:hasCASEInputClass uco-observable:Account ;
+    solveit-core:hasCASEOutputClass solveit-analysis:HypothesisedRelationship .
 
 :techniqueDFT-1086
     a owl:Class,
@@ -2682,9 +2700,10 @@ e.g. Was this file opened? How many times was this file opened? What data has be
     solveit-core:hasSynonym "Action-based event reconstruction",
                             "Activity-based event reconstruction",
                             "Operation-based event reconstruction" ;
-    solveit-core:hasCASEInputClass uco-observable:keywordSearchTerm ;
-    solveit-core:hasCASEOutputClass solveit-analysis:HypothesisedEvent,
-                                    solveit-analysis:HypothesisedWebSearch ;
+    solveit-core:hasCASEInputClass solveit-observable:ArtifactSet,
+                                   solveit-observable:FileSet,
+                                   solveit-observable:Timeline ;
+    solveit-core:hasCASEOutputClass solveit-analysis:HypothesisedEvent ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1150 .
 
 :techniqueDFT-1156
@@ -5143,10 +5162,11 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
 
 :weaknessDFW-1173
     a solveit-core:Weakness ;
-    rdfs:label "DFW-1173: Trusted time source is incorrect"@en ;
+    rdfs:label "DFW-1173: The recorded time offset is incorrect because the trusted time source used for reference was incorrect"@en ;
     solveit-core:weaknessID "DFW-1173" ;
-    solveit-core:weaknessName "Trusted time source is incorrect" ;
-    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT .
+    solveit-core:weaknessName "The recorded time offset is incorrect because the trusted time source used for reference was incorrect" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+                                  solveit-core:ASTM_INAC_EX .
 
 :weaknessDFW-1174
     a solveit-core:Weakness ;
@@ -10285,7 +10305,7 @@ keywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, 
 }""" .
 
 #################################################################
-#    Referenced CASE/UCO classes (174)
+#    Referenced CASE/UCO classes (173)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -10488,9 +10508,6 @@ solveit-analysis:HypothesisedEvent
     a owl:Class .
 
 solveit-analysis:HypothesisedRelationship
-    a owl:Class .
-
-solveit-analysis:HypothesisedWebSearch
     a owl:Class .
 
 uco-observable:IPAddress

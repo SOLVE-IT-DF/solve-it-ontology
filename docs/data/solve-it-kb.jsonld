@@ -4400,12 +4400,23 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
       {
-        "@value": "The result of this process is a classification, which may be 'relevant', or could be more specific, e.g. 'contains reference to x'. This technique is likely paired with T1091 (Bookmark artifacts) but they could be recorded in other ways. This manual review could be of the content of files (DFT-1058), or of content extracted from within files e.g. images (DFT-1081), video (DFT-1080), or audio (DFT-1079)."
+        "@value": "The result of this process is a classification, which may be 'relevant', or could be more specific, e.g. 'contains reference to x'. This technique is likely paired with T1091 (Bookmark artifacts) but they could be recorded in other ways. \n\nThis manual review could be for:\n- images (DFT-1081) \n- video (DFT-1080)\n- audio (DFT-1079)\n- the general content of files (DFT-1058)\n- artefacts in general."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/FileSet"
       },
       {
         "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification"
@@ -5901,6 +5912,26 @@
         "@value": "Extract artifacts from photo management app(s)"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Apple Photos app"
+      },
+      {
+        "@value": "Darktable"
+      },
+      {
+        "@value": "Lightroom"
+      },
+      {
+        "@value": "Windows Photos app"
+      },
+      {
+        "@value": "XnView MP"
+      },
+      {
+        "@value": "digiKam"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/observable/PhotosAppFiles"
@@ -6195,6 +6226,16 @@
     "https://ontology.solveit-df.org/solveit/core/techniqueName": [
       {
         "@value": "Conflate specific account identifiers to a single user identity"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Account"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship"
       }
     ]
   },
@@ -9957,15 +9998,18 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
-        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/keywordSearchTerm"
+        "@id": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/FileSet"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/Timeline"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedEvent"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedWebSearch"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
@@ -19248,7 +19292,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1173: Trusted time source is incorrect"
+        "@value": "DFW-1173: The recorded time offset is incorrect because the trusted time source used for reference was incorrect"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -19258,12 +19302,15 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Trusted time source is incorrect"
+        "@value": "The recorded time offset is incorrect because the trusted time source used for reference was incorrect"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_ALT"
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
       }
     ]
   },
@@ -38333,12 +38380,6 @@
   },
   {
     "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedRelationship",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ]
-  },
-  {
-    "@id": "https://ontology.solveit-df.org/solveit/analysis/HypothesisedWebSearch",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
