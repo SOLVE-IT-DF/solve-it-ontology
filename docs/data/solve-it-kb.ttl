@@ -17,7 +17,7 @@
 #    reporting_scripts/generate_rdf_from_kb.py. Do not edit by hand.
 #
 #      Objectives:     24
-#      Techniques:     194
+#      Techniques:     195
 #      Weaknesses:     391
 #      Mitigations:    309
 #      Citations:      162
@@ -371,7 +371,8 @@
     solveit-core:objectiveDescription "Evaluate evidence " ;
     solveit-core:sortOrder "22"^^xsd:integer ;
     solveit-core:includesTechnique :techniqueDFT-1195,
-                                   :techniqueDFT-1200 .
+                                   :techniqueDFT-1200,
+                                   :techniqueDFT-1202 .
 
 :objectiveDFO-1020
     a solveit-core:Objective ;
@@ -387,7 +388,7 @@
                                    :techniqueDFT-1094 .
 
 #################################################################
-#    Techniques (194)
+#    Techniques (195)
 #
 #    Each technique is an instance of the solveit-core:Technique metaclass AND
 #    an owl:Class in its own right, following uco-action:Technique (UCO 1.5.0).
@@ -3481,6 +3482,21 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:hasReference :citationDFCite-1163,
                               :citationDFCite-1164,
                               :citationDFCite-1165 .
+
+:techniqueDFT-1202
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1202: Verify automated results manually"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1202" ;
+    solveit-core:techniqueName "Verify automated results manually" ;
+    solveit-core:techniqueDescription "The process of manually reviewing the results from an automated process and checking the results are correct." ;
+    solveit-core:hasSynonym "manual verification" ;
+    solveit-core:hasExample "Checking that a recovered record exists",
+                            "Checking the decoding of a timestamp" ;
+    solveit-core:hasCASEInputClass <https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult>,
+                                   uco-observable:ObservableObject ;
+    solveit-core:hasCASEOutputClass <https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult> .
 
 #################################################################
 #    Weaknesses (391)

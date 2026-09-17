@@ -1275,6 +1275,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1200"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1202"
       }
     ]
   },
@@ -12880,6 +12883,65 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1165"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1202",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1202: Verify automated results manually"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1202"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Verify automated results manually"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of manually reviewing the results from an automated process and checking the results are correct."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "manual verification"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "Checking that a recovered record exists"
+      },
+      {
+        "@value": "Checking the decoding of a timestamp"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult"
+      },
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult"
       }
     ]
   },
