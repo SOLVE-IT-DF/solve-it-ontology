@@ -17,9 +17,9 @@
 #    reporting_scripts/generate_rdf_from_kb.py. Do not edit by hand.
 #
 #      Objectives:     24
-#      Techniques:     195
-#      Weaknesses:     391
-#      Mitigations:    309
+#      Techniques:     196
+#      Weaknesses:     425
+#      Mitigations:    328
 #      Citations:      162
 #################################################################
 
@@ -285,7 +285,8 @@
                                    :techniqueDFT-1050,
                                    :techniqueDFT-1051,
                                    :techniqueDFT-1086,
-                                   :techniqueDFT-1118 .
+                                   :techniqueDFT-1118,
+                                   :techniqueDFT-1203 .
 
 :objectiveDFO-1003
     a solveit-core:Objective ;
@@ -388,7 +389,7 @@
                                    :techniqueDFT-1094 .
 
 #################################################################
-#    Techniques (195)
+#    Techniques (196)
 #
 #    Each technique is an instance of the solveit-core:Technique metaclass AND
 #    an owl:Class in its own right, following uco-action:Technique (UCO 1.5.0).
@@ -3498,8 +3499,58 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
                                    uco-observable:ObservableObject ;
     solveit-core:hasCASEOutputClass <https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult> .
 
+:techniqueDFT-1203
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1203: Use an AI-based prompt for interrogating case data"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1203" ;
+    solveit-core:techniqueName "Use an AI-based prompt for interrogating case data" ;
+    solveit-core:techniqueDescription "Using an AI-based chat interface to query the data within a case." ;
+    solveit-core:techniqueDetails "Behind this interface this could include querying artefacts extracted into a database and/or running tools dynamically." ;
+    solveit-core:hasCASEInputClass solveit-observable:ArtifactSet,
+                                   solveit-observable:FileSet ;
+    solveit-core:hasCASEOutputClass solveit-analysis:HypothesisedEvent,
+                                    solveit-analysis:HypothesisedRelationship,
+                                    solveit-observable:ArtifactSet,
+                                    uco-core:Annotation ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1422,
+                                      :weaknessDFW-1423,
+                                      :weaknessDFW-1424,
+                                      :weaknessDFW-1425,
+                                      :weaknessDFW-1426,
+                                      :weaknessDFW-1427,
+                                      :weaknessDFW-1428,
+                                      :weaknessDFW-1429,
+                                      :weaknessDFW-1430,
+                                      :weaknessDFW-1431,
+                                      :weaknessDFW-1432,
+                                      :weaknessDFW-1433,
+                                      :weaknessDFW-1434,
+                                      :weaknessDFW-1435,
+                                      :weaknessDFW-1436,
+                                      :weaknessDFW-1437,
+                                      :weaknessDFW-1438,
+                                      :weaknessDFW-1439,
+                                      :weaknessDFW-1440,
+                                      :weaknessDFW-1441,
+                                      :weaknessDFW-1442,
+                                      :weaknessDFW-1443,
+                                      :weaknessDFW-1444,
+                                      :weaknessDFW-1445,
+                                      :weaknessDFW-1446,
+                                      :weaknessDFW-1447,
+                                      :weaknessDFW-1448,
+                                      :weaknessDFW-1449,
+                                      :weaknessDFW-1450,
+                                      :weaknessDFW-1451,
+                                      :weaknessDFW-1452,
+                                      :weaknessDFW-1453,
+                                      :weaknessDFW-1454,
+                                      :weaknessDFW-1455 .
+
 #################################################################
-#    Weaknesses (391)
+#    Weaknesses (425)
 #
 #    Potential problems arising from a technique, classified against the
 #    ASTM E3016-18 error categories.
@@ -7212,8 +7263,272 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:hasPotentialMitigation :mitigationDFM-1318 ;
     solveit-core:hasReference :citationDFCite-1165 .
 
+:weaknessDFW-1422
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1422: An AI response to a question does not return a relevant event because it found something else relevant and stopped searching"@en ;
+    solveit-core:weaknessID "DFW-1422" ;
+    solveit-core:weaknessName "An AI response to a question does not return a relevant event because it found something else relevant and stopped searching" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP .
+
+:weaknessDFW-1423
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1423: An AI response to a question returns an event with one or more incorrect details because the supporting data was unreliable, but that was not recognised"@en ;
+    solveit-core:weaknessID "DFW-1423" ;
+    solveit-core:weaknessName "An AI response to a question returns an event with one or more incorrect details because the supporting data was unreliable, but that was not recognised" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1350 .
+
+:weaknessDFW-1424
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1424: An AI response returns a sequence of events that do not reflect the true ordering of events that occurred because of failure to consider clock inaccuracies"@en ;
+    solveit-core:weaknessID "DFW-1424" ;
+    solveit-core:weaknessName "An AI response returns a sequence of events that do not reflect the true ordering of events that occurred because of failure to consider clock inaccuracies" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1225,
+                                        :mitigationDFM-1227 .
+
+:weaknessDFW-1425
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1425: An AI response to a question presents an assertion that an event occurred as a fact not a hypothesis"@en ;
+    solveit-core:weaknessID "DFW-1425" ;
+    solveit-core:weaknessName "An AI response to a question presents an assertion that an event occurred as a fact not a hypothesis" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT .
+
+:weaknessDFW-1426
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1426: An AI response to a query takes a biased tone because of the phrasing of the user's prompting"@en ;
+    solveit-core:weaknessID "DFW-1426" ;
+    solveit-core:weaknessName "An AI response to a query takes a biased tone because of the phrasing of the user's prompting" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT .
+
+:weaknessDFW-1427
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1427: An AI response to a query takes a biased tone because of inherent bias in the data the model was trained on"@en ;
+    solveit-core:weaknessID "DFW-1427" ;
+    solveit-core:weaknessName "An AI response to a query takes a biased tone because of inherent bias in the data the model was trained on" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT .
+
+:weaknessDFW-1428
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1428: An AI response to a query takes a biased tone because of phrasing in an embedded system prompt"@en ;
+    solveit-core:weaknessID "DFW-1428" ;
+    solveit-core:weaknessName "An AI response to a query takes a biased tone because of phrasing in an embedded system prompt" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT .
+
+:weaknessDFW-1429
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1429: An AI response to a query for relevant artifacts is missing one or more relevant artifacts because it found something else relevant and stopped searching"@en ;
+    solveit-core:weaknessID "DFW-1429" ;
+    solveit-core:weaknessName "An AI response to a query for relevant artifacts is missing one or more relevant artifacts because it found something else relevant and stopped searching" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP .
+
+:weaknessDFW-1430
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1430: An AI response to a query for relevant artifacts is missing one or more relevant artifacts because the results exceed a context window"@en ;
+    solveit-core:weaknessID "DFW-1430" ;
+    solveit-core:weaknessName "An AI response to a query for relevant artifacts is missing one or more relevant artifacts because the results exceed a context window" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1332 .
+
+:weaknessDFW-1431
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1431: An AI response to a query for relevant artifacts is missing one or more relevant artifacts because some were not recognised as relevant"@en ;
+    solveit-core:weaknessID "DFW-1431" ;
+    solveit-core:weaknessName "An AI response to a query for relevant artifacts is missing one or more relevant artifacts because some were not recognised as relevant" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1333,
+                                        :mitigationDFM-1334,
+                                        :mitigationDFM-1335 .
+
+:weaknessDFW-1432
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1432: An AI response to a query for relevant artifacts includes reporting artifacts that are not relevant because the model could not successfully differentiate relevance"@en ;
+    solveit-core:weaknessID "DFW-1432" ;
+    solveit-core:weaknessName "An AI response to a query for relevant artifacts includes reporting artifacts that are not relevant because the model could not successfully differentiate relevance" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+                                  solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1336 .
+
+:weaknessDFW-1433
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1433: An AI response to a question does not return a relevant event because the data needed to reconstruct the event was lost due to context window overflow"@en ;
+    solveit-core:weaknessID "DFW-1433" ;
+    solveit-core:weaknessName "An AI response to a question does not return a relevant event because the data needed to reconstruct the event was lost due to context window overflow" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1332 .
+
+:weaknessDFW-1434
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1434: An AI response to a query for relevant artifacts includes reporting artifacts that do not exist because of model hallucinations"@en ;
+    solveit-core:weaknessID "DFW-1434" ;
+    solveit-core:weaknessName "An AI response to a query for relevant artifacts includes reporting artifacts that do not exist because of model hallucinations" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1337,
+                                        :mitigationDFM-1338 .
+
+:weaknessDFW-1435
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1435: An AI response to a query does not provide the reasoning behind the results generated because the system is not capable of producing it"@en ;
+    solveit-core:weaknessID "DFW-1435" ;
+    solveit-core:weaknessName "An AI response to a query does not provide the reasoning behind the results generated because the system is not capable of producing it" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1339,
+                                        :mitigationDFM-1340 .
+
+:weaknessDFW-1436
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1436: An AI response to a query does not provide the reasoning behind the results generated because it was not requested"@en ;
+    solveit-core:weaknessID "DFW-1436" ;
+    solveit-core:weaknessName "An AI response to a query does not provide the reasoning behind the results generated because it was not requested" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP .
+
+:weaknessDFW-1437
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1437: An AI response to a query does not provide a measure of confidence in the reasoning provided because the system is not capable of producing it"@en ;
+    solveit-core:weaknessID "DFW-1437" ;
+    solveit-core:weaknessName "An AI response to a query does not provide a measure of confidence in the reasoning provided because the system is not capable of producing it" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP .
+
+:weaknessDFW-1438
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1438: An AI response to a query does not provide a measure of confidence in the reasoning provided because it was not requested"@en ;
+    solveit-core:weaknessID "DFW-1438" ;
+    solveit-core:weaknessName "An AI response to a query does not provide a measure of confidence in the reasoning provided because it was not requested" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP .
+
+:weaknessDFW-1439
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1439: An AI response to a query provides an inaccurate reasoning behind the results generated"@en ;
+    solveit-core:weaknessID "DFW-1439" ;
+    solveit-core:weaknessName "An AI response to a query provides an inaccurate reasoning behind the results generated" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX .
+
+:weaknessDFW-1440
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1440: An observation referred to in the reasoning provided by an AI system does not exist because of model hallucinations"@en ;
+    solveit-core:weaknessID "DFW-1440" ;
+    solveit-core:weaknessName "An observation referred to in the reasoning provided by an AI system does not exist because of model hallucinations" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1341 .
+
+:weaknessDFW-1441
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1441: An observation that contradicts the conclusions drawn by an AI system are not presented when presenting reasoning because contradictory observations were not requested"@en ;
+    solveit-core:weaknessID "DFW-1441" ;
+    solveit-core:weaknessName "An observation that contradicts the conclusions drawn by an AI system are not presented when presenting reasoning because contradictory observations were not requested" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX .
+
+:weaknessDFW-1442
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1442: An observation that contradicts the conclusions drawn by an AI system are not included when presenting reasoning because the system stopped searching for relevant data once it found sufficient supporting information"@en ;
+    solveit-core:weaknessID "DFW-1442" ;
+    solveit-core:weaknessName "An observation that contradicts the conclusions drawn by an AI system are not included when presenting reasoning because the system stopped searching for relevant data once it found sufficient supporting information" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX .
+
+:weaknessDFW-1443
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1443: An AI response to a query does not provide an accurate confidence in the reasoning provided because the confidence value is fabricated"@en ;
+    solveit-core:weaknessID "DFW-1443" ;
+    solveit-core:weaknessName "An AI response to a query does not provide an accurate confidence in the reasoning provided because the confidence value is fabricated" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX .
+
+:weaknessDFW-1444
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1444: An AI response to a question does not return a relevant event because it was not recognised as relevant"@en ;
+    solveit-core:weaknessID "DFW-1444" ;
+    solveit-core:weaknessName "An AI response to a question does not return a relevant event because it was not recognised as relevant" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1343 .
+
+:weaknessDFW-1445
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1445: An observation referred to in the reasoning provided by and AI system does not support the conclusions drawn because the system is unable to accurately reason with the observable data that is available but does so anyway"@en ;
+    solveit-core:weaknessID "DFW-1445" ;
+    solveit-core:weaknessName "An observation referred to in the reasoning provided by and AI system does not support the conclusions drawn because the system is unable to accurately reason with the observable data that is available but does so anyway" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS .
+
+:weaknessDFW-1446
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1446: An AI response to a question does not return a relevant link because it found something else relevant and stopped searching"@en ;
+    solveit-core:weaknessID "DFW-1446" ;
+    solveit-core:weaknessName "An AI response to a question does not return a relevant link because it found something else relevant and stopped searching" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP .
+
+:weaknessDFW-1447
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1447: An AI response to a question does not return a relevant link because it could not correctly interpret the data needed to make the link"@en ;
+    solveit-core:weaknessID "DFW-1447" ;
+    solveit-core:weaknessName "An AI response to a question does not return a relevant link because it could not correctly interpret the data needed to make the link" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP .
+
+:weaknessDFW-1448
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1448: An AI response to a question asserts a link that does not exist because because of model hallucinations"@en ;
+    solveit-core:weaknessID "DFW-1448" ;
+    solveit-core:weaknessName "An AI response to a question asserts a link that does not exist because because of model hallucinations" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+                                  solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1342 .
+
+:weaknessDFW-1449
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1449: An AI response to a question asserts a link that does not exist because the supporting data was unreliable but that was not recognised"@en ;
+    solveit-core:weaknessID "DFW-1449" ;
+    solveit-core:weaknessName "An AI response to a question asserts a link that does not exist because the supporting data was unreliable but that was not recognised" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+                                  solveit-core:ASTM_INAC_EX .
+
+:weaknessDFW-1450
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1450: An AI response to a question does not return a relevant event because data needed to reconstruct the event was lost due to compression of the context"@en ;
+    solveit-core:weaknessID "DFW-1450" ;
+    solveit-core:weaknessName "An AI response to a question does not return a relevant event because data needed to reconstruct the event was lost due to compression of the context" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1344 .
+
+:weaknessDFW-1451
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1451: An AI response to a question returns an event that did not occur because of model hallucinations"@en ;
+    solveit-core:weaknessID "DFW-1451" ;
+    solveit-core:weaknessName "An AI response to a question returns an event that did not occur because of model hallucinations" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1345 .
+
+:weaknessDFW-1452
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1452: An AI response to a question returns an event that did not occur because of an incorrect 'interpretation' of the meaning of some artifacts"@en ;
+    solveit-core:weaknessID "DFW-1452" ;
+    solveit-core:weaknessName "An AI response to a question returns an event that did not occur because of an incorrect 'interpretation' of the meaning of some artifacts" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1346,
+                                        :mitigationDFM-1347 .
+
+:weaknessDFW-1453
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1453: An AI response to a question returns an event that did not occur because the supporting data was unreliable, but that was not recognised"@en ;
+    solveit-core:weaknessID "DFW-1453" ;
+    solveit-core:weaknessName "An AI response to a question returns an event that did not occur because the supporting data was unreliable, but that was not recognised" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX .
+
+:weaknessDFW-1454
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1454: An AI response to a question returns an event with one or more incorrect details because of model hallucinations"@en ;
+    solveit-core:weaknessID "DFW-1454" ;
+    solveit-core:weaknessName "An AI response to a question returns an event with one or more incorrect details because of model hallucinations" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1348 .
+
+:weaknessDFW-1455
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1455: An AI response to a question returns an event with one or more incorrect details because of an incorrect 'interpretation' of the meaning of some artifacts"@en ;
+    solveit-core:weaknessID "DFW-1455" ;
+    solveit-core:weaknessName "An AI response to a question returns an event with one or more incorrect details because of an incorrect 'interpretation' of the meaning of some artifacts" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1347,
+                                        :mitigationDFM-1349 .
+
 #################################################################
-#    Mitigations (309)
+#    Mitigations (328)
 #
 #    Actions that prevent a weakness or reduce its impact.
 #################################################################
@@ -9173,6 +9488,125 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:mitigationID "DFM-1331" ;
     solveit-core:mitigationName "Create a persistent log of any errors during data copying process" ;
     solveit-core:mitigationDescription "During any data copying process e.g. sectors, bytes, files ensure that any errors encountered are logged with clear details as to the scope of the error." .
+
+:mitigationDFM-1332
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1332: Flag when an AI context window has reached a limit and prevent further processing within that session"@en ;
+    solveit-core:mitigationID "DFM-1332" ;
+    solveit-core:mitigationName "Flag when an AI context window has reached a limit and prevent further processing within that session" .
+
+:mitigationDFM-1333
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1333: Use keyword searching to complement AI-based queries for relevant artifacts"@en ;
+    solveit-core:mitigationID "DFM-1333" ;
+    solveit-core:mitigationName "Use keyword searching to complement AI-based queries for relevant artifacts" ;
+    solveit-core:linksToTechnique :techniqueDFT-1049 .
+
+:mitigationDFM-1334
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1334: Use timeline analysis to complement AI-based queries for relevant artifacts"@en ;
+    solveit-core:mitigationID "DFM-1334" ;
+    solveit-core:mitigationName "Use timeline analysis to complement AI-based queries for relevant artifacts" ;
+    solveit-core:linksToTechnique :techniqueDFT-1086 .
+
+:mitigationDFM-1335
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1335: Use hash matching to complement AI-based queries for relevant artifacts"@en ;
+    solveit-core:mitigationID "DFM-1335" ;
+    solveit-core:mitigationName "Use hash matching to complement AI-based queries for relevant artifacts" ;
+    solveit-core:linksToTechnique :techniqueDFT-1050 .
+
+:mitigationDFM-1336
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1336: Manually verify artifacts reported as relevant by an AI system"@en ;
+    solveit-core:mitigationID "DFM-1336" ;
+    solveit-core:mitigationName "Manually verify artifacts reported as relevant by an AI system" ;
+    solveit-core:linksToTechnique :techniqueDFT-1054 .
+
+:mitigationDFM-1337
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1337: Manual verification of the existence of artifacts reported by an AI system"@en ;
+    solveit-core:mitigationID "DFM-1337" ;
+    solveit-core:mitigationName "Manual verification of the existence of artifacts reported by an AI system" .
+
+:mitigationDFM-1338
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1338: Ensure AI-based tooling provides IDs that link to the artefacts to facilitate manual verification"@en ;
+    solveit-core:mitigationID "DFM-1338" ;
+    solveit-core:mitigationName "Ensure AI-based tooling provides IDs that link to the artefacts to facilitate manual verification" .
+
+:mitigationDFM-1339
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1339: Ensure that the AI-based system is capable of providing reasoning behind the selection of results that are relevant"@en ;
+    solveit-core:mitigationID "DFM-1339" ;
+    solveit-core:mitigationName "Ensure that the AI-based system is capable of providing reasoning behind the selection of results that are relevant" .
+
+:mitigationDFM-1340
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1340: Ensure that the AI-based system is capable of providing an audit trail of artifacts considered but excluded as relevant, along with the exclusion criteria"@en ;
+    solveit-core:mitigationID "DFM-1340" ;
+    solveit-core:mitigationName "Ensure that the AI-based system is capable of providing an audit trail of artifacts considered but excluded as relevant, along with the exclusion criteria" .
+
+:mitigationDFM-1341
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1341: Manually verify an observation used as part of an AI system's reasoning explanation"@en ;
+    solveit-core:mitigationID "DFM-1341" ;
+    solveit-core:mitigationName "Manually verify an observation used as part of an AI system's reasoning explanation" .
+
+:mitigationDFM-1342
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1342: Manually verify the link between entities that is asserted by and AI-based system"@en ;
+    solveit-core:mitigationID "DFM-1342" ;
+    solveit-core:mitigationName "Manually verify the link between entities that is asserted by and AI-based system" .
+
+:mitigationDFM-1343
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1343: Use deterministic event reconstruction approaches to complement AI-based event reconstruction"@en ;
+    solveit-core:mitigationID "DFM-1343" ;
+    solveit-core:mitigationName "Use deterministic event reconstruction approaches to complement AI-based event reconstruction" ;
+    solveit-core:linksToTechnique :techniqueDFT-1086 .
+
+:mitigationDFM-1344
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1344: Do not allow context compression during AI-based investigative sessions"@en ;
+    solveit-core:mitigationID "DFM-1344" ;
+    solveit-core:mitigationName "Do not allow context compression during AI-based investigative sessions" .
+
+:mitigationDFM-1345
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1345: Manually verify a reconstructed event's existence"@en ;
+    solveit-core:mitigationID "DFM-1345" ;
+    solveit-core:mitigationName "Manually verify a reconstructed event's existence" .
+
+:mitigationDFM-1346
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1346: Manually verify the interpretation of artifacts used for an event reconstruction"@en ;
+    solveit-core:mitigationID "DFM-1346" ;
+    solveit-core:mitigationName "Manually verify the interpretation of artifacts used for an event reconstruction" .
+
+:mitigationDFM-1347
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1347: Look up in artifact catalogs how the identified artifacts should be interpreted"@en ;
+    solveit-core:mitigationID "DFM-1347" ;
+    solveit-core:mitigationName "Look up in artifact catalogs how the identified artifacts should be interpreted" .
+
+:mitigationDFM-1348
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1348: Manually verify the properties of a reconstructed event"@en ;
+    solveit-core:mitigationID "DFM-1348" ;
+    solveit-core:mitigationName "Manually verify the properties of a reconstructed event" .
+
+:mitigationDFM-1349
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1349: Manually verify the artifacts used for an event reconstruction"@en ;
+    solveit-core:mitigationID "DFM-1349" ;
+    solveit-core:mitigationName "Manually verify the artifacts used for an event reconstruction" .
+
+:mitigationDFM-1350
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1350: Ensure that tools producing data supporting event reconstruction report any potential uncertainty in their results"@en ;
+    solveit-core:mitigationID "DFM-1350" ;
+    solveit-core:mitigationName "Ensure that tools producing data supporting event reconstruction report any potential uncertainty in their results" .
 
 #################################################################
 #    Citations (162)
