@@ -39719,6 +39719,12 @@
     ]
   },
   {
+    "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/AndroidPhone",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -39750,6 +39756,12 @@
   },
   {
     "@id": "https://ontology.unifiedcyberontology.org/uco/observable/ArchiveFile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]
@@ -40478,6 +40490,12 @@
     "@id": "https://cacontology.projectvic.org/case-management#ExpertReport",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/classificationConfidence",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ]
   },
   {

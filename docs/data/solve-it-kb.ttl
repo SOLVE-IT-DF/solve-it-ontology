@@ -10755,7 +10755,7 @@ keywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, 
 }""" .
 
 #################################################################
-#    Referenced CASE/UCO classes (170)
+#    Referenced CASE/UCO classes (173)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -10777,6 +10777,9 @@ solveit-observable:AcquiredData
 solveit-observable:AiChatAppFiles
     a owl:Class .
 
+<https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult>
+    a owl:Class .
+
 uco-observable:AndroidPhone
     a owl:Class .
 
@@ -10793,6 +10796,9 @@ uco-observable:ApplicationVersion
     a owl:Class .
 
 uco-observable:ArchiveFile
+    a owl:Class .
+
+<https://ontology.unifiedcyberontology.org/uco/analysis/ArtifactClassification>
     a owl:Class .
 
 solveit-observable:ArtifactSet
@@ -11157,6 +11163,9 @@ uco-observable:callType
 
 <https://cacontology.projectvic.org/case-management#ExpertReport>
     a owl:Class .
+
+<https://ontology.unifiedcyberontology.org/uco/analysis/classificationConfidence>
+    a owl:DatatypeProperty .
 
 uco-core:confidence
     a owl:DatatypeProperty .
