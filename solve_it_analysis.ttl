@@ -8,6 +8,7 @@
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
+@prefix uco-configuration: <https://ontology.unifiedcyberontology.org/uco/configuration/> .
 @prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
 @base <https://ontology.solveit-df.org/solveit/analysis/> .
 
@@ -20,7 +21,8 @@
     owl:versionIRI <https://ontology.solveit-df.org/solveit/analysis/0.2.10> ;
     owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.5.0> ,
                 <https://ontology.unifiedcyberontology.org/uco/observable/1.5.0> ,
-                <https://ontology.unifiedcyberontology.org/uco/analysis/1.5.0> ;
+                <https://ontology.unifiedcyberontology.org/uco/analysis/1.5.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/configuration/1.5.0> ;
     dcterms:title "SOLVE-IT Analysis Module"@en ;
     dcterms:description "Analytic results for SOLVE-IT digital forensics, including hypothesised events and forensic tool reports."@en ;
     dcterms:creator "SOLVE-IT Project" ;
@@ -85,6 +87,13 @@ solveit-analysis:HypothesisedTableAttribution rdf:type owl:Class ;
     rdfs:subClassOf solveit-analysis:HypothesisedRelationship ;
     rdfs:label "Hypothesised Table Attribution"@en ;
     rdfs:comment "The claim that a recovered record belonged to a particular table. The record is the uco-core:source and the table the uco-core:target; neither is itself in doubt, only the link between them. Attribution rests on different grounds in different cases - a record recovered from a freeblock sits on a page owned by a known table, whereas one recovered from a freelist page has lost that context and can only be matched by column shape. Where several tables are possible, one HypothesisedTableAttribution is made per candidate and they are collected in a solveit-analysis:HypothesisSet as mutually exclusive alternatives."@en .
+
+###  HypothesisedConfiguration
+solveit-analysis:HypothesisedConfiguration rdf:type owl:Class ;
+    rdfs:subClassOf solveit-analysis:Hypothesis ,
+                    uco-configuration:Configuration ;
+    rdfs:label "Hypothesised Configuration"@en ;
+    rdfs:comment "A configuration proposed from the artefacts it left behind, where the configuration itself was never observed - as distinct from one read directly from a settings file or a live system. Settings are given with uco-configuration:configurationEntry and what was configured with uco-configuration:isConfigurationOf."@en .
 
 ###  HypothesisSet Analytic Result
 solveit-analysis:HypothesisSet rdf:type owl:Class ;
