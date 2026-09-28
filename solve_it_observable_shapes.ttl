@@ -173,6 +173,16 @@
 #    ApplicationFiles Shape
 #################################################################
 
+:DeviceInterfaceShape a sh:NodeShape ;
+    sh:targetClass solveit-observable:DeviceInterface ;
+    rdfs:label "Device Interface Shape"@en ;
+    rdfs:comment "Validates that what a DeviceInterface gives access to is a StorageMedium. The number is not limited: whether a multi-bay write blocker is one interface or one per bay is not yet settled."@en ;
+    sh:property [
+        sh:path solveit-observable:providesAccessTo ;
+        sh:class uco-observable:StorageMedium ;
+        sh:message "providesAccessTo must reference uco-observable:StorageMedium instances"@en ;
+    ] .
+
 :ApplicationFilesShape a sh:NodeShape ;
     sh:targetClass solveit-observable:ApplicationFiles ;
     rdfs:label "Application Files Shape"@en ;

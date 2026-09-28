@@ -378,6 +378,24 @@ one is expected, as a dual-boot machine has two.
 Not uco-observable:operatingSystem, which declares no domain and is used on
 ApplicationFacet for the system an application runs on."""@en .
 
+solveit-observable:providesAccessTo rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:DeviceInterface ;
+    rdfs:range uco-observable:StorageMedium ;
+    rdfs:label "provides access to"@en ;
+    rdfs:comment """The storage medium that this device interface gives access to.
+
+The interface is a way of reaching the medium, not the medium itself, so the
+medium's characteristics (model, serial number, capacity) are stated on the
+StorageMedium through its DeviceFacet and StorageMediumFacet, not on the
+interface. The same medium can be reached through a write-protected interface
+on one occasion and a read-write one on another. A hardware write blocker used
+to create the interface is a separate uco-observable:WriteBlocker, which is
+itself a Device, and is never the value of this property.
+
+A uco-observable:Disk is not a Device in UCO 1.5.0. UCO asks for a Disk node to
+carry the additional type uco-observable:StorageMedium in preparation for UCO
+2.0.0, and a Disk typed that way is a valid value here."""@en .
+
 solveit-observable:containsHashSetEntry rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:HashSet ;
     rdfs:range solveit-observable:HashSetEntry ;
