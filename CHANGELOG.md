@@ -6,6 +6,25 @@ Notable changes to the SOLVE-IT ontology.
 
 ### Added
 
+- **`solveit-observable:providesAccessTo`** — links a
+  `solveit-observable:DeviceInterface` to the `uco-observable:StorageMedium` it
+  gives access to. The interface classes had no facet and no object property,
+  so nothing connected "a write-protected interface" to the disk behind it: a
+  tool capability profile for DFT-1002 could not scope a claim to the model,
+  serial number or capacity of the media it was tested on. The interface
+  stays a sibling of `Device` rather than a subclass, because it is a way of
+  reaching the medium and not the medium: the same disk can be reached
+  write-protected on one occasion and read-write on another, and with a
+  hardware write blocker there are two devices, which a Device-typed interface
+  would leave ambiguous. The range is `StorageMedium` rather than `Device`,
+  matching the knowledge base, where DFT-1012 and DFT-1166 take a
+  StorageMedium and produce the interface, and keeping a write blocker out of
+  the range. `uco-observable:Disk` is not a Device in UCO 1.5.0; a Disk node
+  also typed `StorageMedium`, as UCO already asks, is a valid value.
+  `DeviceInterfaceShape` checks the type of the value and not the number:
+  whether a multi-bay write blocker is one interface or one per bay is not
+  settled.
+
 - **`solveit-observable:hasOperatingSystem`** — links a `uco-observable:Device`
   to a `uco-observable:OperatingSystem` installed on it, so a tool capability
   profile can scope a claim to the operating systems it was tested against.
