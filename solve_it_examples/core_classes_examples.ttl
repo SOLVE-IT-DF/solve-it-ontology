@@ -68,9 +68,9 @@ solveit-data:techniqueDFT-1002 a owl:Class , solveit-core:Technique ;
 
 solveit-data:techniqueDFT-1042 a owl:Class , solveit-core:Technique ;
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
-    rdfs:label "DFT-1042: Verify hash of imaged data matches the hash of the source device"@en ;
+    rdfs:label "DFT-1042: Verify hash of copied data matches the hash of the data read from source device"@en ;
     solveit-core:techniqueID "DFT-1042" ;
-    solveit-core:techniqueName "Verify hash of imaged data matches the hash of the source device" ;
+    solveit-core:techniqueName "Verify hash of copied data matches the hash of the data read from source device" ;
     solveit-core:hasCASEInputClass uco-observable:hash ;
     solveit-core:hasCASEOutputClass solveit-observable:HashVerificationResult ;
     solveit-core:hasReference solveit-data:citationDFCite-1083 ;
