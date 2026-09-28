@@ -130,6 +130,15 @@ Notable changes to the SOLVE-IT ontology.
 
 ### Fixed
 
+- `solve_it_examples/sqlite_examples.ttl` no longer uses
+  `solveit-analysis:supportedBy`, which was removed. The HypothesisedRecord
+  example (#34) was written before the removal and merged after it, so the
+  example validation failed on `main` and stopped the documentation build.
+  The two triples naming page 2 as the grounds are gone; the comment above the
+  example still explains why each hypothesis is reasonable. The `rdfs:comment`
+  on `HypothesisedRelationship`, `HypothesisedRecord` and
+  `HypothesisedTableAttribution` no longer tells a reader to use the removed
+  terms.
 - The DFT-1042 example in `solve_it_examples/core_classes_examples.ttl`
   carries the technique's current name, "Verify hash of copied data matches
   the hash of the data read from source device". The knowledge base renamed
