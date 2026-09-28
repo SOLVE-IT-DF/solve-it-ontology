@@ -109,6 +109,15 @@ Notable changes to the SOLVE-IT ontology.
   contradicted by observable artifacts, which the ontology no longer provides
   any way to state.
 
+### Fixed
+
+- The DFT-1042 example in `solve_it_examples/core_classes_examples.ttl`
+  carries the technique's current name, "Verify hash of copied data matches
+  the hash of the data read from source device". The knowledge base renamed
+  it, and `validate_examples.py` checks example labels against the live
+  knowledge base, so the old name failed the docs workflow for every change.
+  The same name in `solve_it_examples/README.md` is updated to match.
+
 ## [0.2.5] — 2026-08-25
 
 - `solve_it_core.ttl` defines `solveit-core:Citation`, with `citationID`,
