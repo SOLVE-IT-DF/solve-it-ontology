@@ -11,6 +11,8 @@ permissions:
 jobs:
   generate-kb:
     runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
 
     steps:
       - name: Checkout ontology repository
@@ -46,19 +48,42 @@ jobs:
           if [ -f solveit_kb.ttl ]; then mv solveit_kb.ttl solveit-kb.ttl; fi
           if [ -f solveit_kb.jsonld ]; then mv solveit_kb.jsonld solveit-kb.jsonld; fi
 
+      # Run before the commit, so a knowledge base that uses a term the
+      # ontology does not define is never published. The generator mints terms
+      # through rdflib Namespace objects and never reads the ontology, so
+      # nothing else stops an invented term reaching data.solveit-df.org. This
+      # job commits with GITHUB_TOKEN, and GitHub does not start workflow runs
+      # for pushes made with that token, so the check cannot be left to the
+      # push trigger on validate-ontology.yml.
+      - name: Validate knowledge base conformance against the ontology
+        run: python scripts/validate_kb_conformance.py
+
       - name: Configure Git
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
 
       - name: Commit knowledge base files
+        id: commit
         run: |
           git add docs/data/
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "changed=false" >> "$GITHUB_OUTPUT"
           else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
             git commit -m "Update knowledge base RDF files" \
               -m "Generated solveit-kb.ttl and solveit-kb.jsonld from solve-it knowledge base" \
               -m "Co-Authored-By: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
             git push
           fi
+
+  # A rebuilt knowledge base is one of the two things that can invalidate the
+  # CASE/UCO/SOLVE-IT validation, and this job commits it with GITHUB_TOKEN, so
+  # the validation workflow's own push trigger will not see it. Call it here
+  # instead, and only when something actually changed: most hourly runs
+  # regenerate a byte-identical file and need no validation.
+  validate-against-case:
+    needs: generate-kb
+    if: needs.generate-kb.outputs.changed == 'true'
+    uses: ./.github/workflows/validate-against-case-1.5.0.yml

@@ -1,5 +1,6 @@
 @prefix : <https://ontology.solveit-df.org/solveit/examples/> .
 @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
+@prefix solveit-data: <https://ontology.solveit-df.org/solveit/data/> .
 @prefix solveit-wa: <https://ontology.solveit-df.org/solveit/weakness-assessment/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -26,19 +27,20 @@
 #    Referenced Technique and Weaknesses
 #################################################################
 
-:techniqueDFT-1002 rdf:type solveit-core:Technique ;
-    rdfs:label "DFT-1002: Disk imaging"@en ;
+solveit-data:techniqueDFT-1002 a owl:Class , solveit-core:Technique ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    rdfs:label "DFT-1002: Copy sectors from storage media"@en ;
     solveit-core:techniqueID "DFT-1002" ;
-    solveit-core:techniqueName "Disk imaging" ;
-    solveit-core:hasPotentialWeakness :weaknessDFW-1014 ,
-                                     :weaknessDFW-1015 .
+    solveit-core:techniqueName "Copy sectors from storage media" ;
+    solveit-core:hasPotentialWeakness solveit-data:weaknessDFW-1014 ,
+                                     solveit-data:weaknessDFW-1015 .
 
-:weaknessDFW-1014 rdf:type solveit-core:Weakness ;
-    rdfs:label "DFW-1014: Imaging process changes original data"@en ;
+solveit-data:weaknessDFW-1014 rdf:type solveit-core:Weakness ;
+    rdfs:label "DFW-1014: Accessing the drive to copy data changes original data"@en ;
     solveit-core:weaknessID "DFW-1014" ;
-    solveit-core:weaknessName "Imaging process changes original data" .
+    solveit-core:weaknessName "Accessing the drive to copy data changes original data" .
 
-:weaknessDFW-1015 rdf:type solveit-core:Weakness ;
+solveit-data:weaknessDFW-1015 rdf:type solveit-core:Weakness ;
     rdfs:label "DFW-1015: Powering on SSD results in sectors being wiped by TRIM operation"@en ;
     solveit-core:weaknessID "DFW-1015" ;
     solveit-core:weaknessName "Powering on SSD results in sectors being wiped by TRIM operation" .
@@ -53,14 +55,14 @@
 
 #################################################################
 #    Example WeaknessEvaluation — Likelihood x Impact only
-#    Assessing DFW-1014 (Imaging process changes original data)
+#    Assessing DFW-1014 (Copy process changes original data)
 #################################################################
 
-:evaluation-DFW-1014-diskimaging rdf:type solveit-wa:WeaknessEvaluation ;
-    rdfs:label "Evaluation of DFW-1014 for disk imaging"@en ;
-    solveit-wa:evaluatesWeakness :weaknessDFW-1014 ;
+:evaluation-DFW-1014-diskcopy rdf:type solveit-wa:WeaknessEvaluation ;
+    rdfs:label "Evaluation of DFW-1014 for disk acquisition"@en ;
+    solveit-wa:evaluatesWeakness solveit-data:weaknessDFW-1014 ;
     solveit-wa:likelihoodRating 3 ;
-    solveit-wa:likelihoodRationale "Without mitigation, connecting a device for imaging is very likely to cause writes to source media through OS auto-mounting, filesystem journaling, or tool behaviour." ;
+    solveit-wa:likelihoodRationale "Without mitigation, connecting a device for acquisition is very likely to cause writes to source media through OS auto-mounting, filesystem journaling, or tool behaviour." ;
     solveit-wa:impactRating 3 ;
     solveit-wa:impactRationale "Effects of modifications to data is hard to quantify but will raise serious questions about evidential completeness, integrity and also quality and processes used." ;
     solveit-wa:liImpactScore 9 ;
@@ -72,9 +74,9 @@
 #    Assessing DFW-1015 (SSD TRIM wipes sectors on power-on)
 #################################################################
 
-:evaluation-DFW-1015-diskimaging rdf:type solveit-wa:WeaknessEvaluation ;
-    rdfs:label "Evaluation of DFW-1015 for disk imaging"@en ;
-    solveit-wa:evaluatesWeakness :weaknessDFW-1015 ;
+:evaluation-DFW-1015-diskcopy rdf:type solveit-wa:WeaknessEvaluation ;
+    rdfs:label "Evaluation of DFW-1015 for disk acquisition"@en ;
+    solveit-wa:evaluatesWeakness solveit-data:weaknessDFW-1015 ;
     solveit-wa:likelihoodRating 3 ;
     solveit-wa:likelihoodRationale "TRIM is enabled by default on most modern SSDs and operating systems. Powering on the device will trigger garbage collection." ;
     solveit-wa:impactRating 2 ;
@@ -83,23 +85,23 @@
     solveit-wa:detectDifficultyRationale "TRIM operations are silent and leave no log. It is difficult to determine whether data loss has occurred without a prior reference image." ;
     solveit-wa:liImpactScore 6 ;
     solveit-wa:rpnScore 18 ;
-    solveit-wa:evaluationContext "SSD acquisition without prior imaging" ;
-    solveit-wa:evaluationNotes "Risk can be mitigated by imaging via a write-blocker or by removing the SSD and connecting it through an interface that does not pass TRIM commands." ;
+    solveit-wa:evaluationContext "SSD acquisition without prior copying" ;
+    solveit-wa:evaluationNotes "Risk can be mitigated by copying via a write-blocker or by removing the SSD and connecting it through an interface that does not pass TRIM commands." ;
     rdfs:comment "Full RPN assessment. Likelihood(3) x Impact(2) x DetectionDifficulty(3) = RPN 18."@en .
 
 #################################################################
 #    Example WeaknessEvaluationSet
 #    Groups the above evaluations into an assessment session
-#    scoped to DFT-1002 (Disk imaging)
+#    scoped to DFT-1002 (Copy sectors from storage media)
 #################################################################
 
-:evaluationset-diskimaging-2025 rdf:type solveit-wa:WeaknessEvaluationSet ;
-    rdfs:label "Disk imaging weakness assessment 2025"@en ;
-    solveit-wa:evaluationSetName "Disk Imaging Risk Assessment" ;
-    solveit-wa:evaluationSetDescription "Assessment of weaknesses associated with disk imaging (DFT-1002) in a traditional HDD acquisition context." ;
+:evaluationset-diskcopy-2025 rdf:type solveit-wa:WeaknessEvaluationSet ;
+    rdfs:label "Disk acquisition weakness assessment 2025"@en ;
+    solveit-wa:evaluationSetName "Disk Acquisition Risk Assessment" ;
+    solveit-wa:evaluationSetDescription "Assessment of weaknesses associated with disk acquisition (DFT-1002) in a traditional HDD acquisition context." ;
     solveit-wa:evaluationDate "2025-03-01"^^xsd:date ;
     solveit-wa:evaluatedBy :evaluator-jane-doe ;
-    solveit-wa:scopedToTechnique :techniqueDFT-1002 ;
-    solveit-wa:hasEvaluation :evaluation-DFW-1014-diskimaging ,
-                             :evaluation-DFW-1015-diskimaging ;
-    rdfs:comment "An evaluation set grouping two weakness assessments for disk imaging. Demonstrates both LI-only and full RPN scoring within a single set."@en .
+    solveit-wa:scopedToTechnique solveit-data:techniqueDFT-1002 ;
+    solveit-wa:hasEvaluation :evaluation-DFW-1014-diskcopy ,
+                             :evaluation-DFW-1015-diskcopy ;
+    rdfs:comment "An evaluation set grouping two weakness assessments for disk acquisition. Demonstrates both LI-only and full RPN scoring within a single set."@en .

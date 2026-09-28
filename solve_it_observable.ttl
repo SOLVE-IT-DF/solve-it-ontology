@@ -17,16 +17,16 @@
 #################################################################
 
 <https://ontology.solveit-df.org/solveit/observable> rdf:type owl:Ontology ;
-    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/0.1.10> ;
-    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.4.0> ,
-                <https://ontology.unifiedcyberontology.org/uco/observable/1.4.0> ,
+    owl:versionIRI <https://ontology.solveit-df.org/solveit/observable/0.2.9> ;
+    owl:imports <https://ontology.unifiedcyberontology.org/uco/core/1.5.0> ,
+                <https://ontology.unifiedcyberontology.org/uco/observable/1.5.0> ,
                 <https://ontology.solveit-df.org/solveit/observable/acquisition> ,
                 <https://ontology.solveit-df.org/solveit/observable/timeline> ,
                 <https://ontology.solveit-df.org/solveit/observable/search> ;
     dcterms:title "SOLVE-IT Observable Module"@en ;
     dcterms:description "Observable objects for SOLVE-IT digital forensics, including video frames and other forensic artifacts. This module imports sub-modules for acquisition, timeline, and search observables."@en ;
     dcterms:creator "SOLVE-IT Project" ;
-    owl:versionInfo "0.1.10" ;
+    owl:versionInfo "0.2.9" ;
     rdfs:label "SOLVE-IT Observable Module"@en .
 
 #################################################################
@@ -364,6 +364,37 @@ solveit-observable:hasClusterRun rdf:type owl:ObjectProperty ;
     rdfs:range solveit-observable:ClusterRun ;
     rdfs:label "has cluster run"@en ;
     rdfs:comment "Links a file to its cluster allocation runs. A contiguous file has one run; a fragmented file has multiple runs."@en .
+
+solveit-observable:hasOperatingSystem rdf:type owl:ObjectProperty ;
+    rdfs:domain uco-observable:Device ;
+    rdfs:range uco-observable:OperatingSystem ;
+    rdfs:label "has operating system"@en ;
+    rdfs:comment """An operating system installed on this device.
+
+Installed rather than running: a powered-off device still has its operating
+systems, and that is the state most forensic targets are examined in. More than
+one is expected, as a dual-boot machine has two.
+
+Not uco-observable:operatingSystem, which declares no domain and is used on
+ApplicationFacet for the system an application runs on."""@en .
+
+solveit-observable:providesAccessTo rdf:type owl:ObjectProperty ;
+    rdfs:domain solveit-observable:DeviceInterface ;
+    rdfs:range uco-observable:StorageMedium ;
+    rdfs:label "provides access to"@en ;
+    rdfs:comment """The storage medium that this device interface gives access to.
+
+The interface is a way of reaching the medium, not the medium itself, so the
+medium's characteristics (model, serial number, capacity) are stated on the
+StorageMedium through its DeviceFacet and StorageMediumFacet, not on the
+interface. The same medium can be reached through a write-protected interface
+on one occasion and a read-write one on another. A hardware write blocker used
+to create the interface is a separate uco-observable:WriteBlocker, which is
+itself a Device, and is never the value of this property.
+
+A uco-observable:Disk is not a Device in UCO 1.5.0. UCO asks for a Disk node to
+carry the additional type uco-observable:StorageMedium in preparation for UCO
+2.0.0, and a Disk typed that way is a valid value here."""@en .
 
 solveit-observable:containsHashSetEntry rdf:type owl:ObjectProperty ;
     rdfs:domain solveit-observable:HashSet ;
