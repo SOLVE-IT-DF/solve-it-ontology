@@ -35883,6 +35883,11 @@
       {
         "@value": "Manual verification of the existence of artifacts reported by an AI system"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1202"
+      }
     ]
   },
   {
@@ -35970,6 +35975,11 @@
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
         "@value": "Manually verify an observation used as part of an AI system's reasoning explanation"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1202"
       }
     ]
   },
@@ -36086,6 +36096,11 @@
       {
         "@value": "Manually verify the interpretation of artifacts used for an event reconstruction"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1202"
+      }
     ]
   },
   {
@@ -36151,6 +36166,11 @@
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
         "@value": "Manually verify the artifacts used for an event reconstruction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1202"
       }
     ]
   },

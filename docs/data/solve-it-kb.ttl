@@ -9527,7 +9527,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     a solveit-core:Mitigation ;
     rdfs:label "DFM-1337: Manual verification of the existence of artifacts reported by an AI system"@en ;
     solveit-core:mitigationID "DFM-1337" ;
-    solveit-core:mitigationName "Manual verification of the existence of artifacts reported by an AI system" .
+    solveit-core:mitigationName "Manual verification of the existence of artifacts reported by an AI system" ;
+    solveit-core:linksToTechnique :techniqueDFT-1202 .
 
 :mitigationDFM-1338
     a solveit-core:Mitigation ;
@@ -9551,7 +9552,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     a solveit-core:Mitigation ;
     rdfs:label "DFM-1341: Manually verify an observation used as part of an AI system's reasoning explanation"@en ;
     solveit-core:mitigationID "DFM-1341" ;
-    solveit-core:mitigationName "Manually verify an observation used as part of an AI system's reasoning explanation" .
+    solveit-core:mitigationName "Manually verify an observation used as part of an AI system's reasoning explanation" ;
+    solveit-core:linksToTechnique :techniqueDFT-1202 .
 
 :mitigationDFM-1342
     a solveit-core:Mitigation ;
@@ -9582,7 +9584,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     a solveit-core:Mitigation ;
     rdfs:label "DFM-1346: Manually verify the interpretation of artifacts used for an event reconstruction"@en ;
     solveit-core:mitigationID "DFM-1346" ;
-    solveit-core:mitigationName "Manually verify the interpretation of artifacts used for an event reconstruction" .
+    solveit-core:mitigationName "Manually verify the interpretation of artifacts used for an event reconstruction" ;
+    solveit-core:linksToTechnique :techniqueDFT-1202 .
 
 :mitigationDFM-1347
     a solveit-core:Mitigation ;
@@ -9600,7 +9603,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     a solveit-core:Mitigation ;
     rdfs:label "DFM-1349: Manually verify the artifacts used for an event reconstruction"@en ;
     solveit-core:mitigationID "DFM-1349" ;
-    solveit-core:mitigationName "Manually verify the artifacts used for an event reconstruction" .
+    solveit-core:mitigationName "Manually verify the artifacts used for an event reconstruction" ;
+    solveit-core:linksToTechnique :techniqueDFT-1202 .
 
 :mitigationDFM-1350
     a solveit-core:Mitigation ;
