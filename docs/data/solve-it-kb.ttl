@@ -20,7 +20,7 @@
 #      Techniques:     196
 #      Weaknesses:     425
 #      Mitigations:    328
-#      Citations:      162
+#      Citations:      163
 #################################################################
 
 #################################################################
@@ -3547,7 +3547,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
                                       :weaknessDFW-1452,
                                       :weaknessDFW-1453,
                                       :weaknessDFW-1454,
-                                      :weaknessDFW-1455 .
+                                      :weaknessDFW-1455 ;
+    solveit-core:hasReference :citationDFCite-1169 .
 
 #################################################################
 #    Weaknesses (425)
@@ -9500,7 +9501,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     rdfs:label "DFM-1333: Use keyword searching to complement AI-based queries for relevant artifacts"@en ;
     solveit-core:mitigationID "DFM-1333" ;
     solveit-core:mitigationName "Use keyword searching to complement AI-based queries for relevant artifacts" ;
-    solveit-core:linksToTechnique :techniqueDFT-1049 .
+    solveit-core:linksToTechnique :techniqueDFT-1049 ;
+    solveit-core:hasReference :citationDFCite-1169 .
 
 :mitigationDFM-1334
     a solveit-core:Mitigation ;
@@ -9566,7 +9568,8 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     rdfs:label "DFM-1343: Use deterministic event reconstruction approaches to complement AI-based event reconstruction"@en ;
     solveit-core:mitigationID "DFM-1343" ;
     solveit-core:mitigationName "Use deterministic event reconstruction approaches to complement AI-based event reconstruction" ;
-    solveit-core:linksToTechnique :techniqueDFT-1086 .
+    solveit-core:linksToTechnique :techniqueDFT-1086 ;
+    solveit-core:hasReference :citationDFCite-1169 .
 
 :mitigationDFM-1344
     a solveit-core:Mitigation ;
@@ -9613,7 +9616,7 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:mitigationName "Ensure that tools producing data supporting event reconstruction report any potential uncertainty in their results" .
 
 #################################################################
-#    Citations (162)
+#    Citations (163)
 #
 #    Reference sources, cited by DFCite id from techniques, weaknesses
 #    and mitigations.
@@ -10756,6 +10759,26 @@ doi = {https://doi.org/10.1016/j.fsidi.2026.302061},
 url = {https://www.sciencedirect.com/science/article/pii/S2666281726000181},
 author = {Seungeun Park and Byeongchan Jeong and Jieon Kim and Jungheum Park},
 keywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, Reference data}
+}""" .
+
+:citationDFCite-1169
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1169" ;
+    solveit-core:citationID "DFCite-1169" ;
+    solveit-core:citationPlaintext "Studiawan, H., Breitinger, F. and Scanlon, M., 2025. Towards a standardized methodology and dataset for evaluating LLM-based digital forensic timeline analysis. Forensic Science International: Digital Investigation, 54, p.301982." ;
+    solveit-core:citationBibtex """@article{STUDIAWAN2025301982,
+title = {Towards a standardized methodology and dataset for evaluating LLM-based digital forensic timeline analysis},
+journal = {Forensic Science International: Digital Investigation},
+volume = {54},
+pages = {301982},
+year = {2025},
+note = {DFRWS APAC 2025 - Selected Papers from the 5th Annual Digital Forensics Research Conference APAC},
+issn = {2666-2817},
+doi = {https://doi.org/10.1016/j.fsidi.2025.301982},
+url = {https://www.sciencedirect.com/science/article/pii/S2666281725001222},
+author = {Hudan Studiawan and Frank Breitinger and Mark Scanlon},
+keywords = {LLM evaluation, Forensic timeline analysis, Large language models, ChatGPT, log2timeline/plaso},
+abstract = {Large language models (LLMs) have widespread adoption in many domains, including digital forensics. While prior research has largely centered on case studies and examples demonstrating how LLMs can assist forensic investigations, deeper explorations remain limited, i.e., a standardized approach for precise performance evaluations is lacking. Inspired by the NIST Computer Forensic Tool Testing Program, this paper proposes a standardized methodology to quantitatively evaluate the application of LLMs for digital forensic tasks, specifically in timeline analysis. The paper describes the components of the methodology, including the dataset, timeline generation, and ground truth development. In addition, the paper recommends the use of BLEU and ROUGE metrics for the quantitative evaluation of LLMs through case studies or tasks involving timeline analysis. Experimental results using ChatGPT demonstrate that the proposed methodology can effectively evaluate LLM-based forensic timeline analysis. Finally, we discuss the limitations of applying LLMs to forensic timeline analysis.}
 }""" .
 
 #################################################################

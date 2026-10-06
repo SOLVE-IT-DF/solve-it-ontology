@@ -13110,6 +13110,11 @@
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1455"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1169"
+      }
     ]
   },
   {
@@ -35780,6 +35785,11 @@
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1049"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1169"
+      }
     ]
   },
   {
@@ -36029,6 +36039,11 @@
     "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1086"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1169"
       }
     ]
   },
@@ -39705,6 +39720,32 @@
     "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
       {
         "@value": "@article{PARK2026302061,\ntitle = {REPDF: Repairing corrupted PDF files through font mapping and object relationship reconstruction},\njournal = {Forensic Science International: Digital Investigation},\nvolume = {56},\npages = {302061},\nyear = {2026},\nnote = {DFRWS EU 2026 - Selected Papers from the 13th Annual Digital Forensics Research Conference Europe},\nissn = {2666-2817},\ndoi = {https://doi.org/10.1016/j.fsidi.2026.302061},\nurl = {https://www.sciencedirect.com/science/article/pii/S2666281726000181},\nauthor = {Seungeun Park and Byeongchan Jeong and Jieon Kim and Jungheum Park},\nkeywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, Reference data}\n}"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1169",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1169"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1169"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Studiawan, H., Breitinger, F. and Scanlon, M., 2025. Towards a standardized methodology and dataset for evaluating LLM-based digital forensic timeline analysis. Forensic Science International: Digital Investigation, 54, p.301982."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@article{STUDIAWAN2025301982,\ntitle = {Towards a standardized methodology and dataset for evaluating LLM-based digital forensic timeline analysis},\njournal = {Forensic Science International: Digital Investigation},\nvolume = {54},\npages = {301982},\nyear = {2025},\nnote = {DFRWS APAC 2025 - Selected Papers from the 5th Annual Digital Forensics Research Conference APAC},\nissn = {2666-2817},\ndoi = {https://doi.org/10.1016/j.fsidi.2025.301982},\nurl = {https://www.sciencedirect.com/science/article/pii/S2666281725001222},\nauthor = {Hudan Studiawan and Frank Breitinger and Mark Scanlon},\nkeywords = {LLM evaluation, Forensic timeline analysis, Large language models, ChatGPT, log2timeline/plaso},\nabstract = {Large language models (LLMs) have widespread adoption in many domains, including digital forensics. While prior research has largely centered on case studies and examples demonstrating how LLMs can assist forensic investigations, deeper explorations remain limited, i.e., a standardized approach for precise performance evaluations is lacking. Inspired by the NIST Computer Forensic Tool Testing Program, this paper proposes a standardized methodology to quantitatively evaluate the application of LLMs for digital forensic tasks, specifically in timeline analysis. The paper describes the components of the methodology, including the dataset, timeline generation, and ground truth development. In addition, the paper recommends the use of BLEU and ROUGE metrics for the quantitative evaluation of LLMs through case studies or tasks involving timeline analysis. Experimental results using ChatGPT demonstrate that the proposed methodology can effectively evaluate LLM-based forensic timeline analysis. Finally, we discuss the limitations of applying LLMs to forensic timeline analysis.}\n}"
       }
     ]
   },
