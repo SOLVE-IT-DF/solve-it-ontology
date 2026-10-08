@@ -444,6 +444,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1178"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1208"
       }
     ]
   },
@@ -512,6 +515,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1199"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1204"
       }
     ]
   },
@@ -825,6 +831,12 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1191"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1205"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1206"
       }
     ]
   },
@@ -3638,7 +3650,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
       {
-        "@value": "This technique is part of the imaging process and specifically compares the hash of data read from a source device and data stored within a raw image or a forensic image container. Other techniques allow comparison of hashes of data read within a container against stored hashes (either inside the image file, a sidecar file, or externally)"
+        "@value": "Compares a hash of data read from a source device with a hash computed by reading back the copy of that data stored in a raw image or a forensic image container. \n\nThe source hash may be computed as the data is read during imaging, or by reading the source device again at a later point. \n\nWhat distinguishes this technique is that the reference hash comes from reading the source device, rather than from a stored record of that hash. Comparison against a stored hash, whether inside the image file, in a separate file, or held externally, is covered by DFT-1204."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
@@ -3752,9 +3764,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1122"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1123"
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1259"
@@ -13118,6 +13127,289 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1204",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1204: Verify hash of stored bitstream data matches a stored hash"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1204"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Verify hash of stored bitstream data matches a stored hash"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Compares a hash computed over stored bitstream data against a recorded hash, to assess whether the stored data has changed since it was written."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "The stored hash may be held inside the forensic image container, in an associated text file, or in a separate trusted location. \n\nThe same comparison applies in each case. The hash over the stored data is produced by DFT-1199 (Compute hash of stored bitstream data), and a hash held inside a container is read using DFT-1193 (Read metadata from within a forensic image container). \n\nThis technique covers verification carried out after imaging has finished, whereas DFT-1042 (Verify hash of copied data matches the hash of the data read from source device) covers the comparison made *during imaging* against a hash of data read from the source device."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "ewfverify"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/types/Hash"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/HashVerificationResult"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1042"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1127"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1128"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1168"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1205",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1205: Decode raw data into data value(s)"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1205"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Decode raw data into data value(s)"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of interpreting a sequence of bytes as a typed value, such as a number, a string, or a date, under an assumed encoding."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Decoding is performed inside many other techniques rather than as a separate examination step, which is why its failures are currently recorded against whichever technique consumed the value. This provides a generic version of the technique. \n\nRelated techniques that depend on it include DFT-1191 (Parse allocated structures in Windows HIVE files), DFT-1071 (Extract data from SQLite database(s)) and DFT-1121 (Index a data source for keyword searching). DFT-1044 and DFT-1102 decode specific container formats rather than typed values. "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1456"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1206",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1206: Decode a number from raw data"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1206"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Decode a number from raw data"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of interpreting a sequence of bytes as a numeric value under an assumed width, signedness, and byte order."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "Numeric decoding underlies most structured parsing, for example DFT-1191 (Parse allocated structures in Windows HIVE files), where values such as REG_DWORD and REG_QWORD are stored as raw integers. \n\nThis technique groups numbers together to include signed and unsigned, integers and floats, different endianness, and number of bytes considered in the decoding.\n\nNote that strings and timestamps are considered in separate techniques. \n"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/ContentData"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1457"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1458"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1459"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1460"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1461"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1462"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1463"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1464"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1465"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1208",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1208: Store acquisition metadata along with a forensic image format"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1208"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Store acquisition metadata along with a forensic image format"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Records details such as case and examiner details, and the acquisition hash, with a forensic image container alongside the bitstream data or logical files. "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "This is the counterpart of DFT-1193, which reads these same values back. \n\nContainer formats such as EWF and AFF4 carry a case number, evidence number, examiner name, notes and description, together with the cryptographic hash computed during acquisition. \n\nDFT-1025 stores the bitstream itself, whereas this technique records the metadata that accompanies it. The hash written here is the value later verified against by DFT-1204. \n\nMetadata accompanying a raw image is held in a separate file rather than within a container, and is not covered by this technique."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "ewfacquire"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.caseontology.org/case/investigation/exhibitNumber"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/LogicalImageContainer"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"
+      },
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/core/description"
+      },
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/core/name"
+      },
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Note"
+      },
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/types/Hash"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/LogicalImageContainer"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/PhysicalImageContainer"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1473"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1474"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1475"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1476"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1477"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1478"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Weakness"
@@ -14379,7 +14671,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1037: Presenting data as complete, that is in reality a partial set"
+        "@value": "DFW-1037: Presenting data from a mobile backup as complete, when it is in reality a partial set of files from the device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -14389,7 +14681,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Presenting data as complete, that is in reality a partial set"
+        "@value": "Presenting data from a mobile backup as complete, when it is in reality a partial set of files from the device"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
@@ -28449,6 +28741,544 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1456",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1456: The decoded value is incorrect because the incorrect data type was applied for decoding"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1456"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The decoded value is incorrect because the incorrect data type was applied for decoding"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "For example a string was decoded as an integer - e.g. \"61 3A\" was decoded as integer 14945 rather than \"a:\" "
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1351"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1457",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1457: The integer decoded from some data is incorrect because the incorrect number of bytes was examined"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1457"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The integer decoded from some data is incorrect because the incorrect number of bytes was examined"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1352"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1458",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1458: The integer decoded from some data is incorrect because the endianness used was incorrect"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1458"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The integer decoded from some data is incorrect because the endianness used was incorrect"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1353"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1459",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1459: The integer decoded from some data is incorrect because the decoding was signed not unsigned or vice versa"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1459"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The integer decoded from some data is incorrect because the decoding was signed not unsigned or vice versa"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1354"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1460",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1460: The integer decoded from some data is incorrect because it should have been decoded as a floating point number"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1460"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The integer decoded from some data is incorrect because it should have been decoded as a floating point number"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1461",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1461: The floating point number decoded from some data is incorrect because the incorrect number of bytes was examined"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1461"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The floating point number decoded from some data is incorrect because the incorrect number of bytes was examined"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1352"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1462",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1462: The floating point number decoded from some data is incorrect because the endianness used was incorrect"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1462"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The floating point number decoded from some data is incorrect because the endianness used was incorrect"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1355"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1463",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1463: The floating point number decoded from some data is incorrect because the decoding was signed not unsigned or vice versa"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1463"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The floating point number decoded from some data is incorrect because the decoding was signed not unsigned or vice versa"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1354"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1464",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1464: The floating point number decoded from some data is incorrect because it should have been decoded as an integer"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1464"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The floating point number decoded from some data is incorrect because it should have been decoded as an integer"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1465",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1465: The floating point number decoded from some data is incorrect because the original value could not be fully represented within the bytes available"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1465"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The floating point number decoded from some data is incorrect because the original value could not be fully represented within the bytes available"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "For example some fraction that could not be represented exactly within 4 bytes"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1356"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1473",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1473: The examiner-entered metadata was not stored along with the forensic container because of a software error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1473"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The examiner-entered metadata was not stored along with the forensic container because of a software error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1363"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1474",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1474: The examiner-entered metadata was not stored along with the forensic container because the examiner did not enter the details"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1474"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The examiner-entered metadata was not stored along with the forensic container because the examiner did not enter the details"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1475",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1475: The computed hash(s) were not stored along with the forensic container because of a software error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1475"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The computed hash(s) were not stored along with the forensic container because of a software error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1364"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1476",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1476: The examiner-entered metadata stored along with the forensic container is incorrect because of a software error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1476"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The examiner-entered metadata stored along with the forensic container is incorrect because of a software error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1363"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1477",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1477: The examiner-entered metadata stored along with the forensic container is incorrect because the examiner entered the wrong details"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1477"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The examiner-entered metadata stored along with the forensic container is incorrect because the examiner entered the wrong details"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1478",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1478: The computed hash(s) stored along with the forensic container is incorrect because of a software error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1478"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "The computed hash(s) stored along with the forensic container is incorrect because of a software error in the tool used"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1364"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Mitigation"
@@ -28538,6 +29368,11 @@
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
         "@value": "Check hash of image matches hash of source device"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "This mitigation refers to checking the hash of a source *device* and differs from M1009 which refers to source *material*. This differs based on whether data on a device needs to be hashed for verification, or a piece of data needs to be hashed (e.g. imaging a raw dd to a forensic container format)."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/linksToTechnique": [
@@ -28668,6 +29503,11 @@
     "https://ontology.solveit-df.org/solveit/core/mitigationName": [
       {
         "@value": "Check hash of image matches hash of source material"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "This mitigation refers to checking the hash of a source *material* and differs from M1004 which refers to source *device*. \n\nThis differs based on whether data on a device needs to be hashed for verification, or a piece of data needs to be hashed (e.g. imaging a raw dd to a forensic container format)."
       }
     ]
   },
@@ -36212,6 +37052,182 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1351",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1351: Ensure that raw data is decoded as the correct data type"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1351"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure that raw data is decoded as the correct data type"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1352",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1352: Ensure the correct number of bytes are used when decoding raw data into values"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1352"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure the correct number of bytes are used when decoding raw data into values"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1353",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1353: Ensure the correct endianness was used when decoding raw data into values"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1353"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure the correct endianness was used when decoding raw data into values"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1354",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1354: Ensure the correct signed/unsigned property is applied when decoding raw data into values"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1354"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure the correct signed/unsigned property is applied when decoding raw data into values"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1355",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1355: Ensure the correct endianness was used for value decoding"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1355"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure the correct endianness was used for value decoding"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1356",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1356: Ensure that any potential imprecision in decoding is also included when decoded values are presented"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1356"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure that any potential imprecision in decoding is also included when decoded values are presented"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1363",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1363: Test that examiner-entered metadata is correctly written by the acquisition software along with the forensic container"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1363"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Test that examiner-entered metadata is correctly written by the acquisition software along with the forensic container"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1364",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1364: Test that hashes computed of data stored within a container are written correctly by the acquisition software along with the forensic container"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1364"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Test that hashes computed of data stored within a container are written correctly by the acquisition software along with the forensic container"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Citation"
@@ -39720,6 +40736,32 @@
     "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
       {
         "@value": "@article{PARK2026302061,\ntitle = {REPDF: Repairing corrupted PDF files through font mapping and object relationship reconstruction},\njournal = {Forensic Science International: Digital Investigation},\nvolume = {56},\npages = {302061},\nyear = {2026},\nnote = {DFRWS EU 2026 - Selected Papers from the 13th Annual Digital Forensics Research Conference Europe},\nissn = {2666-2817},\ndoi = {https://doi.org/10.1016/j.fsidi.2026.302061},\nurl = {https://www.sciencedirect.com/science/article/pii/S2666281726000181},\nauthor = {Seungeun Park and Byeongchan Jeong and Jieon Kim and Jungheum Park},\nkeywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, Reference data}\n}"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1168",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1168"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1168"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "None"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@misc{metz_libewf,\n  author = {Metz, Joachim},\n  title = {libewf},\n  year = {2024},\n  version = {20240506},\n  url = {https://github.com/libyal/libewf}\n}"
       }
     ]
   },

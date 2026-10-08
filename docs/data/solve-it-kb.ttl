@@ -17,10 +17,10 @@
 #    reporting_scripts/generate_rdf_from_kb.py. Do not edit by hand.
 #
 #      Objectives:     24
-#      Techniques:     196
-#      Weaknesses:     425
-#      Mitigations:    328
-#      Citations:      163
+#      Techniques:     200
+#      Weaknesses:     441
+#      Mitigations:    336
+#      Citations:      164
 #################################################################
 
 #################################################################
@@ -149,7 +149,8 @@
     solveit-core:sortOrder "7"^^xsd:integer ;
     solveit-core:includesTechnique :techniqueDFT-1025,
                                    :techniqueDFT-1026,
-                                   :techniqueDFT-1178 .
+                                   :techniqueDFT-1178,
+                                   :techniqueDFT-1208 .
 
 :objectiveDFO-1018
     a solveit-core:Objective ;
@@ -168,7 +169,8 @@
                                    :techniqueDFT-1173,
                                    :techniqueDFT-1174,
                                    :techniqueDFT-1193,
-                                   :techniqueDFT-1199 .
+                                   :techniqueDFT-1199,
+                                   :techniqueDFT-1204 .
 
 :objectiveDFO-1007
     a solveit-core:Objective ;
@@ -254,7 +256,9 @@
                                    :techniqueDFT-1100,
                                    :techniqueDFT-1167,
                                    :techniqueDFT-1187,
-                                   :techniqueDFT-1191 .
+                                   :techniqueDFT-1191,
+                                   :techniqueDFT-1205,
+                                   :techniqueDFT-1206 .
 
 :objectiveDFO-1023
     a solveit-core:Objective ;
@@ -389,7 +393,7 @@
                                    :techniqueDFT-1094 .
 
 #################################################################
-#    Techniques (196)
+#    Techniques (200)
 #
 #    Each technique is an instance of the solveit-core:Technique metaclass AND
 #    an owl:Class in its own right, following uco-action:Technique (UCO 1.5.0).
@@ -1009,7 +1013,11 @@ The techqniue does not restrict to searching for digital devices as other physic
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
     solveit-core:techniqueID "DFT-1042" ;
     solveit-core:techniqueName "Verify hash of copied data matches the hash of the data read from source device" ;
-    solveit-core:techniqueDescription "This technique is part of the imaging process and specifically compares the hash of data read from a source device and data stored within a raw image or a forensic image container. Other techniques allow comparison of hashes of data read within a container against stored hashes (either inside the image file, a sidecar file, or externally)" ;
+    solveit-core:techniqueDescription """Compares a hash of data read from a source device with a hash computed by reading back the copy of that data stored in a raw image or a forensic image container. 
+
+The source hash may be computed as the data is read during imaging, or by reading the source device again at a later point. 
+
+What distinguishes this technique is that the reference hash comes from reading the source device, rather than from a stored record of that hash. Comparison against a stored hash, whether inside the image file, in a separate file, or held externally, is covered by DFT-1204.""" ;
     solveit-core:hasCASEInputClass uco-observable:hash ;
     solveit-core:hasCASEOutputClass solveit-observable:HashVerificationResult ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1124,
@@ -1039,7 +1047,6 @@ The techqniue does not restrict to searching for digital devices as other physic
     solveit-core:hasCASEOutputClass solveit-observable:BitstreamRandomAccessed ;
     solveit-core:hasPotentialWeakness :weaknessDFW-1121,
                                       :weaknessDFW-1122,
-                                      :weaknessDFW-1123,
                                       :weaknessDFW-1259 .
 
 :techniqueDFT-1044
@@ -3550,8 +3557,100 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
                                       :weaknessDFW-1455 ;
     solveit-core:hasReference :citationDFCite-1169 .
 
+:techniqueDFT-1204
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1204: Verify hash of stored bitstream data matches a stored hash"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1204" ;
+    solveit-core:techniqueName "Verify hash of stored bitstream data matches a stored hash" ;
+    solveit-core:techniqueDescription "Compares a hash computed over stored bitstream data against a recorded hash, to assess whether the stored data has changed since it was written." ;
+    solveit-core:techniqueDetails """The stored hash may be held inside the forensic image container, in an associated text file, or in a separate trusted location. 
+
+The same comparison applies in each case. The hash over the stored data is produced by DFT-1199 (Compute hash of stored bitstream data), and a hash held inside a container is read using DFT-1193 (Read metadata from within a forensic image container). 
+
+This technique covers verification carried out after imaging has finished, whereas DFT-1042 (Verify hash of copied data matches the hash of the data read from source device) covers the comparison made *during imaging* against a hash of data read from the source device.""" ;
+    solveit-core:hasExample "ewfverify" ;
+    solveit-core:hasCASEInputClass <https://ontology.unifiedcyberontology.org/uco/types/Hash> ;
+    solveit-core:hasCASEOutputClass solveit-observable:HashVerificationResult ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1042,
+                                      :weaknessDFW-1127,
+                                      :weaknessDFW-1128 ;
+    solveit-core:hasReference :citationDFCite-1168 .
+
+:techniqueDFT-1205
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1205: Decode raw data into data value(s)"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1205" ;
+    solveit-core:techniqueName "Decode raw data into data value(s)" ;
+    solveit-core:techniqueDescription "The process of interpreting a sequence of bytes as a typed value, such as a number, a string, or a date, under an assumed encoding." ;
+    solveit-core:techniqueDetails """Decoding is performed inside many other techniques rather than as a separate examination step, which is why its failures are currently recorded against whichever technique consumed the value. This provides a generic version of the technique. 
+
+Related techniques that depend on it include DFT-1191 (Parse allocated structures in Windows HIVE files), DFT-1071 (Extract data from SQLite database(s)) and DFT-1121 (Index a data source for keyword searching). DFT-1044 and DFT-1102 decode specific container formats rather than typed values. """ ;
+    solveit-core:hasCASEInputClass uco-observable:ContentData ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1456 .
+
+:techniqueDFT-1206
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1206: Decode a number from raw data"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1206" ;
+    solveit-core:techniqueName "Decode a number from raw data" ;
+    solveit-core:techniqueDescription "The process of interpreting a sequence of bytes as a numeric value under an assumed width, signedness, and byte order." ;
+    solveit-core:techniqueDetails """Numeric decoding underlies most structured parsing, for example DFT-1191 (Parse allocated structures in Windows HIVE files), where values such as REG_DWORD and REG_QWORD are stored as raw integers. 
+
+This technique groups numbers together to include signed and unsigned, integers and floats, different endianness, and number of bytes considered in the decoding.
+
+Note that strings and timestamps are considered in separate techniques. 
+""" ;
+    solveit-core:hasCASEInputClass uco-observable:ContentData ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1457,
+                                      :weaknessDFW-1458,
+                                      :weaknessDFW-1459,
+                                      :weaknessDFW-1460,
+                                      :weaknessDFW-1461,
+                                      :weaknessDFW-1462,
+                                      :weaknessDFW-1463,
+                                      :weaknessDFW-1464,
+                                      :weaknessDFW-1465 .
+
+:techniqueDFT-1208
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1208: Store acquisition metadata along with a forensic image format"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1208" ;
+    solveit-core:techniqueName "Store acquisition metadata along with a forensic image format" ;
+    solveit-core:techniqueDescription "Records details such as case and examiner details, and the acquisition hash, with a forensic image container alongside the bitstream data or logical files. " ;
+    solveit-core:techniqueDetails """This is the counterpart of DFT-1193, which reads these same values back. 
+
+Container formats such as EWF and AFF4 carry a case number, evidence number, examiner name, notes and description, together with the cryptographic hash computed during acquisition. 
+
+DFT-1025 stores the bitstream itself, whereas this technique records the metadata that accompanies it. The hash written here is the value later verified against by DFT-1204. 
+
+Metadata accompanying a raw image is held in a separate file rather than within a container, and is not covered by this technique.""" ;
+    solveit-core:hasExample "ewfacquire" ;
+    solveit-core:hasCASEInputClass <https://ontology.unifiedcyberontology.org/uco/types/Hash>,
+                                   case-investigation:exhibitNumber,
+                                   solveit-observable:LogicalImageContainer,
+                                   solveit-observable:PhysicalImageContainer,
+                                   uco-core:description,
+                                   uco-core:name,
+                                   uco-observable:Note ;
+    solveit-core:hasCASEOutputClass solveit-observable:LogicalImageContainer,
+                                    solveit-observable:PhysicalImageContainer ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1473,
+                                      :weaknessDFW-1474,
+                                      :weaknessDFW-1475,
+                                      :weaknessDFW-1476,
+                                      :weaknessDFW-1477,
+                                      :weaknessDFW-1478 .
+
 #################################################################
-#    Weaknesses (425)
+#    Weaknesses (441)
 #
 #    Potential problems arising from a technique, classified against the
 #    ASTM E3016-18 error categories.
@@ -3881,9 +3980,9 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
 
 :weaknessDFW-1037
     a solveit-core:Weakness ;
-    rdfs:label "DFW-1037: Presenting data as complete, that is in reality a partial set"@en ;
+    rdfs:label "DFW-1037: Presenting data from a mobile backup as complete, when it is in reality a partial set of files from the device"@en ;
     solveit-core:weaknessID "DFW-1037" ;
-    solveit-core:weaknessName "Presenting data as complete, that is in reality a partial set" ;
+    solveit-core:weaknessName "Presenting data from a mobile backup as complete, when it is in reality a partial set of files from the device" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_MISINT ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1016,
                                         :mitigationDFM-1020 .
@@ -7528,8 +7627,146 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:hasPotentialMitigation :mitigationDFM-1347,
                                         :mitigationDFM-1349 .
 
+:weaknessDFW-1456
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1456: The decoded value is incorrect because the incorrect data type was applied for decoding"@en ;
+    solveit-core:weaknessID "DFW-1456" ;
+    solveit-core:weaknessName "The decoded value is incorrect because the incorrect data type was applied for decoding" ;
+    solveit-core:weaknessDescription "For example a string was decoded as an integer - e.g. \"61 3A\" was decoded as integer 14945 rather than \"a:\" " ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1351 .
+
+:weaknessDFW-1457
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1457: The integer decoded from some data is incorrect because the incorrect number of bytes was examined"@en ;
+    solveit-core:weaknessID "DFW-1457" ;
+    solveit-core:weaknessName "The integer decoded from some data is incorrect because the incorrect number of bytes was examined" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1352 .
+
+:weaknessDFW-1458
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1458: The integer decoded from some data is incorrect because the endianness used was incorrect"@en ;
+    solveit-core:weaknessID "DFW-1458" ;
+    solveit-core:weaknessName "The integer decoded from some data is incorrect because the endianness used was incorrect" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1353 .
+
+:weaknessDFW-1459
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1459: The integer decoded from some data is incorrect because the decoding was signed not unsigned or vice versa"@en ;
+    solveit-core:weaknessID "DFW-1459" ;
+    solveit-core:weaknessName "The integer decoded from some data is incorrect because the decoding was signed not unsigned or vice versa" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1354 .
+
+:weaknessDFW-1460
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1460: The integer decoded from some data is incorrect because it should have been decoded as a floating point number"@en ;
+    solveit-core:weaknessID "DFW-1460" ;
+    solveit-core:weaknessName "The integer decoded from some data is incorrect because it should have been decoded as a floating point number" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT .
+
+:weaknessDFW-1461
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1461: The floating point number decoded from some data is incorrect because the incorrect number of bytes was examined"@en ;
+    solveit-core:weaknessID "DFW-1461" ;
+    solveit-core:weaknessName "The floating point number decoded from some data is incorrect because the incorrect number of bytes was examined" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1352 .
+
+:weaknessDFW-1462
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1462: The floating point number decoded from some data is incorrect because the endianness used was incorrect"@en ;
+    solveit-core:weaknessID "DFW-1462" ;
+    solveit-core:weaknessName "The floating point number decoded from some data is incorrect because the endianness used was incorrect" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1355 .
+
+:weaknessDFW-1463
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1463: The floating point number decoded from some data is incorrect because the decoding was signed not unsigned or vice versa"@en ;
+    solveit-core:weaknessID "DFW-1463" ;
+    solveit-core:weaknessName "The floating point number decoded from some data is incorrect because the decoding was signed not unsigned or vice versa" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1354 .
+
+:weaknessDFW-1464
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1464: The floating point number decoded from some data is incorrect because it should have been decoded as an integer"@en ;
+    solveit-core:weaknessID "DFW-1464" ;
+    solveit-core:weaknessName "The floating point number decoded from some data is incorrect because it should have been decoded as an integer" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT .
+
+:weaknessDFW-1465
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1465: The floating point number decoded from some data is incorrect because the original value could not be fully represented within the bytes available"@en ;
+    solveit-core:weaknessID "DFW-1465" ;
+    solveit-core:weaknessName "The floating point number decoded from some data is incorrect because the original value could not be fully represented within the bytes available" ;
+    solveit-core:weaknessDescription "For example some fraction that could not be represented exactly within 4 bytes" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX,
+                                  solveit-core:ASTM_MISINT ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1356 .
+
+:weaknessDFW-1473
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1473: The examiner-entered metadata was not stored along with the forensic container because of a software error in the tool used"@en ;
+    solveit-core:weaknessID "DFW-1473" ;
+    solveit-core:weaknessName "The examiner-entered metadata was not stored along with the forensic container because of a software error in the tool used" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1363 .
+
+:weaknessDFW-1474
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1474: The examiner-entered metadata was not stored along with the forensic container because the examiner did not enter the details"@en ;
+    solveit-core:weaknessID "DFW-1474" ;
+    solveit-core:weaknessName "The examiner-entered metadata was not stored along with the forensic container because the examiner did not enter the details" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP .
+
+:weaknessDFW-1475
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1475: The computed hash(s) were not stored along with the forensic container because of a software error in the tool used"@en ;
+    solveit-core:weaknessID "DFW-1475" ;
+    solveit-core:weaknessName "The computed hash(s) were not stored along with the forensic container because of a software error in the tool used" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1364 .
+
+:weaknessDFW-1476
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1476: The examiner-entered metadata stored along with the forensic container is incorrect because of a software error in the tool used"@en ;
+    solveit-core:weaknessID "DFW-1476" ;
+    solveit-core:weaknessName "The examiner-entered metadata stored along with the forensic container is incorrect because of a software error in the tool used" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+                                  solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1363 .
+
+:weaknessDFW-1477
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1477: The examiner-entered metadata stored along with the forensic container is incorrect because the examiner entered the wrong details"@en ;
+    solveit-core:weaknessID "DFW-1477" ;
+    solveit-core:weaknessName "The examiner-entered metadata stored along with the forensic container is incorrect because the examiner entered the wrong details" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
+                                  solveit-core:ASTM_INAC_EX .
+
+:weaknessDFW-1478
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1478: The computed hash(s) stored along with the forensic container is incorrect because of a software error in the tool used"@en ;
+    solveit-core:weaknessID "DFW-1478" ;
+    solveit-core:weaknessName "The computed hash(s) stored along with the forensic container is incorrect because of a software error in the tool used" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1364 .
+
 #################################################################
-#    Mitigations (328)
+#    Mitigations (336)
 #
 #    Actions that prevent a weakness or reduce its impact.
 #################################################################
@@ -7558,6 +7795,7 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     rdfs:label "DFM-1004: Check hash of image matches hash of source device"@en ;
     solveit-core:mitigationID "DFM-1004" ;
     solveit-core:mitigationName "Check hash of image matches hash of source device" ;
+    solveit-core:mitigationDescription "This mitigation refers to checking the hash of a source *device* and differs from M1009 which refers to source *material*. This differs based on whether data on a device needs to be hashed for verification, or a piece of data needs to be hashed (e.g. imaging a raw dd to a forensic container format)." ;
     solveit-core:linksToTechnique :techniqueDFT-1042 .
 
 :mitigationDFM-1005
@@ -7591,7 +7829,10 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     a solveit-core:Mitigation ;
     rdfs:label "DFM-1009: Check hash of image matches hash of source material"@en ;
     solveit-core:mitigationID "DFM-1009" ;
-    solveit-core:mitigationName "Check hash of image matches hash of source material" .
+    solveit-core:mitigationName "Check hash of image matches hash of source material" ;
+    solveit-core:mitigationDescription """This mitigation refers to checking the hash of a source *material* and differs from M1004 which refers to source *device*. 
+
+This differs based on whether data on a device needs to be hashed for verification, or a piece of data needs to be hashed (e.g. imaging a raw dd to a forensic container format).""" .
 
 :mitigationDFM-1010
     a solveit-core:Mitigation ;
@@ -9615,8 +9856,56 @@ The term 'mount point mapping' is used here to include drive letters on Windows 
     solveit-core:mitigationID "DFM-1350" ;
     solveit-core:mitigationName "Ensure that tools producing data supporting event reconstruction report any potential uncertainty in their results" .
 
+:mitigationDFM-1351
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1351: Ensure that raw data is decoded as the correct data type"@en ;
+    solveit-core:mitigationID "DFM-1351" ;
+    solveit-core:mitigationName "Ensure that raw data is decoded as the correct data type" .
+
+:mitigationDFM-1352
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1352: Ensure the correct number of bytes are used when decoding raw data into values"@en ;
+    solveit-core:mitigationID "DFM-1352" ;
+    solveit-core:mitigationName "Ensure the correct number of bytes are used when decoding raw data into values" .
+
+:mitigationDFM-1353
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1353: Ensure the correct endianness was used when decoding raw data into values"@en ;
+    solveit-core:mitigationID "DFM-1353" ;
+    solveit-core:mitigationName "Ensure the correct endianness was used when decoding raw data into values" .
+
+:mitigationDFM-1354
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1354: Ensure the correct signed/unsigned property is applied when decoding raw data into values"@en ;
+    solveit-core:mitigationID "DFM-1354" ;
+    solveit-core:mitigationName "Ensure the correct signed/unsigned property is applied when decoding raw data into values" .
+
+:mitigationDFM-1355
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1355: Ensure the correct endianness was used for value decoding"@en ;
+    solveit-core:mitigationID "DFM-1355" ;
+    solveit-core:mitigationName "Ensure the correct endianness was used for value decoding" .
+
+:mitigationDFM-1356
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1356: Ensure that any potential imprecision in decoding is also included when decoded values are presented"@en ;
+    solveit-core:mitigationID "DFM-1356" ;
+    solveit-core:mitigationName "Ensure that any potential imprecision in decoding is also included when decoded values are presented" .
+
+:mitigationDFM-1363
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1363: Test that examiner-entered metadata is correctly written by the acquisition software along with the forensic container"@en ;
+    solveit-core:mitigationID "DFM-1363" ;
+    solveit-core:mitigationName "Test that examiner-entered metadata is correctly written by the acquisition software along with the forensic container" .
+
+:mitigationDFM-1364
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1364: Test that hashes computed of data stored within a container are written correctly by the acquisition software along with the forensic container"@en ;
+    solveit-core:mitigationID "DFM-1364" ;
+    solveit-core:mitigationName "Test that hashes computed of data stored within a container are written correctly by the acquisition software along with the forensic container" .
+
 #################################################################
-#    Citations (163)
+#    Citations (164)
 #
 #    Reference sources, cited by DFCite id from techniques, weaknesses
 #    and mitigations.
@@ -10759,6 +11048,19 @@ doi = {https://doi.org/10.1016/j.fsidi.2026.302061},
 url = {https://www.sciencedirect.com/science/article/pii/S2666281726000181},
 author = {Seungeun Park and Byeongchan Jeong and Jieon Kim and Jungheum Park},
 keywords = {Digital forensics, Corrupted file repair, Electronic document, PDF, Reference data}
+}""" .
+
+:citationDFCite-1168
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1168" ;
+    solveit-core:citationID "DFCite-1168" ;
+    solveit-core:citationPlaintext "None" ;
+    solveit-core:citationBibtex """@misc{metz_libewf,
+  author = {Metz, Joachim},
+  title = {libewf},
+  year = {2024},
+  version = {20240506},
+  url = {https://github.com/libyal/libewf}
 }""" .
 
 :citationDFCite-1169
