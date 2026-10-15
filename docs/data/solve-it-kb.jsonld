@@ -27357,11 +27357,6 @@
       {
         "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
       }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1003"
-      }
     ]
   },
   {

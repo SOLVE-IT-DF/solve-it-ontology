@@ -7272,8 +7272,7 @@ Metadata accompanying a raw image is held in a separate file rather than within 
     solveit-core:weaknessID "DFW-1397" ;
     solveit-core:weaknessName "Cryptographic hash of the source data is incorrect because not all data was read from the device" ;
     solveit-core:weaknessDescription "A failure in reading the data part way through would result in a hash of only some of the data." ;
-    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1003 .
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX .
 
 :weaknessDFW-1398
     a solveit-core:Weakness ;
