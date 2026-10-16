@@ -6,6 +6,17 @@ Notable changes to the SOLVE-IT ontology.
 
 ### Added
 
+- `solve_it_core_shapes.ttl` gains `SolveitInvestigativeActionShape`,
+  constraining `solveit-core:appliedMitigation` to IRIs. The property was
+  declared only with `rdfs:domain`, so tools that build classes from SHACL
+  shapes (the CASE-UCO SDK among them) gave a SOLVE-IT action no way to state
+  the mitigations it applied. The values are not constrained with
+  `sh:class solveit-core:Mitigation`: an action names a mitigation by its
+  knowledge base IRI, and the data being validated does not usually contain
+  the knowledge base, so a class constraint would reject those actions. An
+  `sh:or` of `sh:class solveit-core:Mitigation` and `sh:nodeKind sh:IRI` names
+  the expected class for generators without changing what validates.
+
 - **`solveit-observable:providesAccessTo`** — links a
   `solveit-observable:DeviceInterface` to the `uco-observable:StorageMedium` it
   gives access to. The interface classes had no facet and no object property,
