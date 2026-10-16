@@ -84,7 +84,12 @@
     rdfs:label "FAT32 filesystem on suspect USB drive"@en .
 
 :fileset-a3c71d90-4e8b-4a1f-b2d6-9f0e3c5a7b12 rdf:type solveit-observable:FileSet ;
-    rdfs:label "Enumerated files from FAT32 suspect USB drive"@en .
+    rdfs:label "Enumerated files from FAT32 suspect USB drive"@en ;
+    solveit-observable:hasFile :fatSortFile001 ,
+                              :fatSortFile002 ,
+                              :fatSortFile003 ,
+                              :fatSortFile004 ,
+                              :fatSortFile005 .
 
 #################################################################
 #    Four-step provenance chain
@@ -115,11 +120,7 @@
     uco-action:instrument :tool-plaso ;
     uco-action:startTime "2026-02-10T09:02:00Z"^^xsd:dateTime ;
     uco-action:endTime "2026-02-10T09:03:00Z"^^xsd:dateTime ;
-    uco-action:object :fatSortFile001 ,
-                      :fatSortFile002 ,
-                      :fatSortFile003 ,
-                      :fatSortFile004 ,
-                      :fatSortFile005 ;
+    uco-action:object :fileset-a3c71d90-4e8b-4a1f-b2d6-9f0e3c5a7b12 ;
     uco-action:result :te-file001-created ,
                       :te-file001-modified ,
                       :te-file001-accessed ,
