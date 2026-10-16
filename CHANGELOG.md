@@ -25,6 +25,13 @@ Notable changes to the SOLVE-IT ontology.
   whether a multi-bay write blocker is one interface or one per bay is not
   settled.
 
+- `solve_it_observable_shapes.ttl` gains `FileSetShape` and `ArtifactSetShape`,
+  constraining `solveit-observable:hasFile` to `uco-observable:File` and
+  `solveit-observable:hasArtifact` to `uco-observable:ObservableObject`. Both
+  properties were declared only with `rdfs:domain`, so tools that build classes
+  from SHACL shapes (the CASE-UCO SDK among them) offered no way to name a
+  set's members except the inherited `uco-core:object`. `ApplicationFiles`
+  already constrained `hasFile`; `FileSet` and its other subclasses now do too.
 - **`solveit-observable:hasOperatingSystem`** — links a `uco-observable:Device`
   to a `uco-observable:OperatingSystem` installed on it, so a tool capability
   profile can scope a claim to the operating systems it was tested against.
