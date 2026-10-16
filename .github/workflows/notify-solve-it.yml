@@ -5,8 +5,11 @@
 # here could be missing from the Explorer for weeks.
 #
 # GITHUB_TOKEN cannot start a workflow in another repository, so this needs a
-# fine-grained token, stored as the SOLVE_IT_DISPATCH_TOKEN secret, with
-# Contents: read and write on SOLVE-IT-DF/solve-it and nothing else.
+# fine-grained token with Contents: read and write on SOLVE-IT-DF/solve-it and
+# nothing else. It is stored as the SOLVE_IT_DISPATCH_TOKEN secret in the
+# solve-it-dispatch environment, whose deployment branches are limited to main,
+# so a workflow pushed on any other branch cannot read it. That token can push
+# to solve-it, so it should not be a repository-level secret.
 name: Notify solve-it of ontology changes
 
 on:
@@ -23,6 +26,7 @@ permissions: {}
 jobs:
   notify:
     runs-on: ubuntu-latest
+    environment: solve-it-dispatch
 
     steps:
       # The pushed commit, rather than "main": raw.githubusercontent.com caches
