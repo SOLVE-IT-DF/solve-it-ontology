@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.11</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.12</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -276,7 +276,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.11</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.12</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -1034,7 +1034,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            default11:HypothesisSetShape
+            default2:DeviceInterfaceShape
         </li>
   </ol>
 
@@ -1047,7 +1047,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        default11:HypothesisSetShape
+        default2:DeviceInterfaceShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -1062,7 +1062,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Hypothesis Set Shape' - Validates that a hypothesis set offers two or more alternatives to choose between.">default11:HypothesisSetShape</a>
+                <li><a style="font-weight: bold;" title="'Device Interface Shape' - Validates that what a DeviceInterface gives access to is a StorageMedium. The number is not limited: whether a multi-bay write..">default2:DeviceInterfaceShape</a>
                   
                 </li>
               </ul>
@@ -1082,7 +1082,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/analysis/shapes/HypothesisSetShape</code>
+            <code>https://ontology.solveit-df.org/solveit/observable/shapes/DeviceInterfaceShape</code>
           </div>
         </div>
       </div>
@@ -1098,7 +1098,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            Hypothesis Set Shape
+            Device Interface Shape
           </div>
           </div>
         </div>
@@ -1115,7 +1115,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that a hypothesis set offers two or more alternatives to choose between.</p>
+              <p>Validates that what a DeviceInterface gives access to is a StorageMedium. The number is not limited: whether a multi-bay write blocker is one interface or one per bay is not yet settled.</p>
             </div>
           </div>
         </div>
@@ -1137,7 +1137,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body">
               
-                <li><a href="class-solveit-analysishypothesisset.html">solveit-analysis:HypothesisSet</a></li>
+                <li><a href="class-solveit-observabledeviceinterface.html">solveit-observable:DeviceInterface</a></li>
                 
             </div>
           </div>
@@ -1158,7 +1158,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                 <h3 class="panel-title">Shape Properties</h3>
               </div>
               <div class="panel-body" style="overflow: auto;">
-                <p>Instances of solveit-analysis:HypothesisSet can have the following properties:</p>
+                <p>Instances of solveit-observable:DeviceInterface can have the following properties:</p>
               </div>
               <table class="table table-bordered" style="overflow: auto;">
                 <tr class="table-classproperties">   
@@ -1171,7 +1171,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                   <tr>
                      
                       <td colspan="5">
-                        <small class="label label-info label-xs">solveit-analysis:HypothesisSet</small>
+                        <small class="label label-info label-xs">solveit-observable:DeviceInterface</small>
                       </td>
                         
                     
@@ -1181,12 +1181,12 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                        
                       <td>   
                         
-                          <a class="propcolor" title="solveit-analysis:hasHypothesis" href="prop-solveit-analysishashypothesis.html">solveit-analysis:hasHypothesis</a>
+                          <a class="propcolor" title="solveit-observable:providesAccessTo" href="prop-solveit-observableprovidesaccessto.html">solveit-observable:providesAccessTo</a>
                         
                       </td>
  
                       <td>     
-                        2
+                        
                       </td>
  
                       <td>     
@@ -1197,7 +1197,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
                         
                         
                           
-                            <a title="solveit-analysis:Hypothesis" href="class-solveit-analysishypothesis.html" class="rdfclass">solveit-analysis:Hypothesis</a>
+                            <a title="uco-observable:StorageMedium" href="https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium" target="_blank" class="rdfclass">uco-observable:StorageMedium</a>
                            
                           <br>
                         
@@ -1223,21 +1223,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default11:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/analysis/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default2:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-analysis:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/analysis/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">uco-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.unifiedcyberontology.org/uco/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">default11</span><span class="p">:</span><span class="nt">HypothesisSetShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Hypothesis Set Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that a hypothesis set offers two or more alternatives to choose between."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-analysis</span><span class="p">:</span><span class="nt">Hypothesis</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"A hypothesis set groups alternatives, so it must hold at least two, each a Hypothesis and each referenceable. A single hypothesis needs no set."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">2</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-analysis</span><span class="p">:</span><span class="nt">hasHypothesis</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-analysis</span><span class="p">:</span><span class="nt">HypothesisSet</span> <span class="p">.</span>
+<span class="nn">default2</span><span class="p">:</span><span class="nt">DeviceInterfaceShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Device Interface Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that what a DeviceInterface gives access to is a StorageMedium. The number is not limited: whether a multi-bay write blocker is one interface or one per bay is not yet settled."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">StorageMedium</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"providesAccessTo must reference uco-observable:StorageMedium instances"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">providesAccessTo</span> <span class="p">]</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">DeviceInterface</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -1267,7 +1265,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Mon, 28 Sep 2026 22:07:06 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.1.1)</p>
+      <p class="text-muted">Documentation automatically generated on Fri, 16 Oct 2026 07:33:28 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.5)</p>
 
     
     </div>
@@ -1328,7 +1326,7 @@ $('#search-input-sidebar').keyup(function() {
 
     $(document).ready(function (){
       $('#sidebar-wrapper').animate({
-          scrollTop: $("#sd_392").offset().top - 100
+          scrollTop: $("#sd_400").offset().top - 100
       }, 100);
     });
 
