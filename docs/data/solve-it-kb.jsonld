@@ -2826,6 +2826,9 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
       {
+        "@id": "https://ontology.caseontology.org/case/investigation/Authorization"
+      },
+      {
         "@id": "https://ontology.unifiedcyberontology.org/uco/observable/OnlineService"
       },
       {
@@ -40872,6 +40875,12 @@
   },
   {
     "@id": "https://ontology.solveit-df.org/solveit/observable/AudioFile",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.caseontology.org/case/investigation/Authorization",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]

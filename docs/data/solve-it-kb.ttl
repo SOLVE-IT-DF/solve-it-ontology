@@ -795,7 +795,8 @@ The techqniue does not restrict to searching for digital devices as other physic
     rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
     solveit-core:techniqueID "DFT-1024" ;
     solveit-core:techniqueName "Collect data from cloud service via submission of request to service provider" ;
-    solveit-core:hasCASEInputClass uco-observable:OnlineService,
+    solveit-core:hasCASEInputClass case-investigation:Authorization,
+                                   uco-observable:OnlineService,
                                    uco-observable:accountIdentifier ;
     solveit-core:hasCASEOutputClass uco-observable:ArchiveFile .
 
@@ -11083,7 +11084,7 @@ abstract = {Large language models (LLMs) have widespread adoption in many domain
 }""" .
 
 #################################################################
-#    Referenced CASE/UCO classes (173)
+#    Referenced CASE/UCO classes (174)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -11133,6 +11134,9 @@ solveit-observable:ArtifactSet
     a owl:Class .
 
 solveit-observable:AudioFile
+    a owl:Class .
+
+case-investigation:Authorization
     a owl:Class .
 
 solveit-observable:Bitstream
