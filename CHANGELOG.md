@@ -146,6 +146,18 @@ Notable changes to the SOLVE-IT ontology.
   contradicted by observable artifacts, which the ontology no longer provides
   any way to state.
 
+### Changed
+
+- **A SOLVE-IT technique's instances may be planned as well as performed.**
+  The comments on `solveit-core:SolveitInvestigativeAction` and
+  `solveit-core:Technique` said their instances are *performed* actions,
+  narrower than CASE, whose `InvestigativeAction` is "something that may be
+  done or performed" (as `uco-action:Action` is). They now say "may be done or
+  performed" and "planned or performed". A planned step can then be typed with
+  the technique it implements, e.g. `a uco-action:ActionPattern,
+  solveit-data:techniqueDFT-1213`, and is told from a performed action by being
+  an ActionPattern. Comments only: no term or shape changes.
+
 ### Fixed
 
 - `solve_it_examples/sqlite_examples.ttl` no longer uses
