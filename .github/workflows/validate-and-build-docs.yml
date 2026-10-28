@@ -152,6 +152,11 @@ jobs:
           # Generate HTML page documenting example instances
           python scripts/generate_examples_page.py
 
+      - name: Publish ontology as JSON-LD
+        run: |
+          # Machine-readable copy for consumers without a Turtle parser
+          python scripts/build_ontology_jsonld.py docs/solve-it-ontology.jsonld
+
       - name: Configure Git
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

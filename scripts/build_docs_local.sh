@@ -106,6 +106,10 @@ if [ "$IN_PLACE" = true ]; then
     echo "--- Generating examples page ---"
     python3 scripts/generate_examples_page.py
     echo ""
+
+    echo "--- Publishing ontology as JSON-LD ---"
+    python3 scripts/build_ontology_jsonld.py docs/solve-it-ontology.jsonld
+    echo ""
 fi
 
 echo "=== All steps passed ==="
