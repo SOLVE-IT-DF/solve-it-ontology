@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.16</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.17</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -278,7 +278,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.16</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.17</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -324,7 +324,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
-    <ul class="sidebar-nav" id="sidebar-list" data-thispage="default1:TimelineEntryShape">
+    <ul class="sidebar-nav" id="sidebar-list" data-thispage="solveit-observable:shapes/DateTimeRangeShape">
 
         <li>
           <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
@@ -467,7 +467,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            default1:TimelineEntryShape
+            solveit-observable:shapes/DateTimeRangeShape
         </li>
   </ol>
 
@@ -480,7 +480,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        default1:TimelineEntryShape
+        solveit-observable:shapes/DateTimeRangeShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -495,7 +495,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Timeline Entry Shape' - Validates that TimelineEntry has exactly one value of the correct type.">default1:TimelineEntryShape</a>
+                <li><a style="font-weight: bold;" title="'Date Time Range Shape' - Validates DateTimeRange instances have exactly one start and one end boundary.">solveit-observable:shapes/DateTimeRangeShape</a>
                   
                 </li>
               </ul>
@@ -515,7 +515,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/observable/shapes/TimelineEntryShape</code>
+            <code>https://ontology.solveit-df.org/solveit/observable/shapes/DateTimeRangeShape</code>
           </div>
         </div>
       </div>
@@ -531,7 +531,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            Timeline Entry Shape
+            Date Time Range Shape
           </div>
           </div>
         </div>
@@ -548,7 +548,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that TimelineEntry has exactly one value of the correct type.</p>
+              <p>Validates DateTimeRange instances have exactly one start and one end boundary.</p>
             </div>
           </div>
         </div>
@@ -571,7 +571,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <div class="panel-body">
               <ul class="entity-list">
               
-                <li><a title="https://ontology.solveit-df.org/solveit/observable/TimelineEntry" href="class-solveit-observabletimelineentry.html" class="rdfclass">solveit-observable:TimelineEntry</a> <small class="text-muted">sh:targetClass</small></li>
+                <li><a title="https://ontology.solveit-df.org/solveit/observable/DateTimeRange" href="class-solveit-observabledatetimerange.html" class="rdfclass">solveit-observable:DateTimeRange</a> <small class="text-muted">sh:targetClass</small></li>
               
               </ul>
             </div>
@@ -587,55 +587,28 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     
-
-
-    
-    
       <div class="row">
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Property Constraints (1)</h3>
+              <h3 class="panel-title">Node Constraints</h3>
             </div>
-            <div class="panel-body" style="overflow: auto;">
+            <div class="panel-body">
               
-                <p>Focus nodes of this shape (<a title="https://ontology.solveit-df.org/solveit/observable/TimelineEntry" href="class-solveit-observabletimelineentry.html" class="rdfclass">solveit-observable:TimelineEntry</a>) can have the following properties:</p>
-              
+    <div class="shacl-constraint"><small><b>sh:xone</b></small>
+    ( <code>sh:property [sh:datatype xsd:dateTime, sh:maxCount 1, sh:minCount 1, sh:path solveit-observable:endTimeInclusive]</code> xor <code>sh:property [sh:datatype xsd:dateTime, sh:maxCount 1, sh:minCount 1, sh:path solveit-observable:endTimeExclusive]</code> )
+    </div>
+    <div class="shacl-constraint"><small><b>sh:xone</b></small>
+    ( <code>sh:property [sh:datatype xsd:dateTime, sh:maxCount 1, sh:minCount 1, sh:path solveit-observable:startTimeInclusive]</code> xor <code>sh:property [sh:datatype xsd:dateTime, sh:maxCount 1, sh:minCount 1, sh:path solveit-observable:startTimeExclusive]</code> )
+    </div>
             </div>
-            <div style="overflow-x: auto;">
-  <table class="table table-bordered shacl-constraints">
-    <tr class="table-classproperties">
-      <th>PROPERTY</th>
-      
-      <th>DESCRIPTION</th>
-      <th>MIN</th>
-      <th>MAX</th>
-      <th>VALUE TYPE</th>
-      <th>OTHER CONSTRAINTS</th>
-      
-    </tr>
-    
-      <tr>
-        
-          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/observable/timelineEntryValue" href="prop-solveit-observabletimelineentryvalue.html">solveit-observable:timelineEntryValue</a></td>
-          
-          <td>The temporal value of this timeline entry - an absolute timestamp (DateTimeStamp), a time interval (DateTimeRange), or relative ordering (ImplicitTimingInformation).<div><small><b>sh:message</b> timelineEntryValue must be exactly one DateTimeStamp, DateTimeRange, or ImplicitTimingInformation</small></div></td>
-          <td>1</td>
-          <td>1</td>
-          <td></td>
-          <td>
-    <div class="shacl-constraint"><small><b>sh:or</b></small>
-    ( <code>solveit-observable:DateTimeStamp</code> | <code>solveit-observable:DateTimeRange</code> | <code>solveit-observable:ImplicitTimingInformation</code> )
-    </div></td>
-          
-        
-      </tr>
-    
-  </table>
-  </div>
           </div>
         </div>
       </div>
+    
+
+
+    
     
 
 
@@ -648,22 +621,30 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default1:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">default1</span><span class="p">:</span><span class="nt">TimelineEntryShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Timeline Entry Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that TimelineEntry has exactly one value of the correct type."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"timelineEntryValue must be exactly one DateTimeStamp, DateTimeRange, or ImplicitTimingInformation"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">or</span> <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">DateTimeStamp</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">DateTimeRange</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ImplicitTimingInformation</span> <span class="p">]</span> <span class="p">)</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">timelineEntryValue</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">TimelineEntry</span> <span class="p">.</span>
+<span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/DateTimeRangeShape&gt;</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Date Time Range Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates DateTimeRange instances have exactly one start and one end boundary."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">DateTimeRange</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">xone</span> <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">startTimeInclusive</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">startTimeExclusive</span> <span class="p">]</span> <span class="p">]</span> <span class="p">),</span>
+        <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">endTimeInclusive</span> <span class="p">]</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">dateTime</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
+                        <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">endTimeExclusive</span> <span class="p">]</span> <span class="p">]</span> <span class="p">)</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -693,7 +674,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 20 Oct 2026 21:07:44 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 29 Oct 2026 16:31:31 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
 
     
     </div>

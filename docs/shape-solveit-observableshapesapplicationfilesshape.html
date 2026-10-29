@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.16</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.17</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -278,7 +278,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.16</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.17</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -324,7 +324,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
-    <ul class="sidebar-nav" id="sidebar-list" data-thispage="default1:ArtifactSetShape">
+    <ul class="sidebar-nav" id="sidebar-list" data-thispage="solveit-observable:shapes/ApplicationFilesShape">
 
         <li>
           <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
@@ -467,7 +467,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            default1:ArtifactSetShape
+            solveit-observable:shapes/ApplicationFilesShape
         </li>
   </ol>
 
@@ -480,7 +480,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        default1:ArtifactSetShape
+        solveit-observable:shapes/ApplicationFilesShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -495,7 +495,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Artifact Set Shape' - Validates that the members of an ArtifactSet, named with hasArtifact, are observable objects.">default1:ArtifactSetShape</a>
+                <li><a style="font-weight: bold;" title="'Application Files Shape' - Validates that ApplicationFiles has at most one sourceApplication and zero or more files.">solveit-observable:shapes/ApplicationFilesShape</a>
                   
                 </li>
               </ul>
@@ -515,7 +515,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/observable/shapes/ArtifactSetShape</code>
+            <code>https://ontology.solveit-df.org/solveit/observable/shapes/ApplicationFilesShape</code>
           </div>
         </div>
       </div>
@@ -531,7 +531,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            Artifact Set Shape
+            Application Files Shape
           </div>
           </div>
         </div>
@@ -548,7 +548,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that the members of an ArtifactSet, named with hasArtifact, are observable objects.</p>
+              <p>Validates that ApplicationFiles has at most one sourceApplication and zero or more files.</p>
             </div>
           </div>
         </div>
@@ -571,7 +571,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <div class="panel-body">
               <ul class="entity-list">
               
-                <li><a title="https://ontology.solveit-df.org/solveit/observable/ArtifactSet" href="class-solveit-observableartifactset.html" class="rdfclass">solveit-observable:ArtifactSet</a> <small class="text-muted">sh:targetClass</small></li>
+                <li><a title="https://ontology.solveit-df.org/solveit/observable/ApplicationFiles" href="class-solveit-observableapplicationfiles.html" class="rdfclass">solveit-observable:ApplicationFiles</a> <small class="text-muted">sh:targetClass</small></li>
               
               </ul>
             </div>
@@ -595,11 +595,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Property Constraints (1)</h3>
+              <h3 class="panel-title">Property Constraints (2)</h3>
             </div>
             <div class="panel-body" style="overflow: auto;">
               
-                <p>Focus nodes of this shape (<a title="https://ontology.solveit-df.org/solveit/observable/ArtifactSet" href="class-solveit-observableartifactset.html" class="rdfclass">solveit-observable:ArtifactSet</a>) can have the following properties:</p>
+                <p>Focus nodes of this shape (<a title="https://ontology.solveit-df.org/solveit/observable/ApplicationFiles" href="class-solveit-observableapplicationfiles.html" class="rdfclass">solveit-observable:ApplicationFiles</a>) can have the following properties:</p>
               
             </div>
             <div style="overflow-x: auto;">
@@ -617,12 +617,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     
       <tr>
         
-          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/observable/hasArtifact" href="prop-solveit-observablehasartifact.html">solveit-observable:hasArtifact</a></td>
+          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/observable/hasFile" href="prop-solveit-observablehasfile.html">solveit-observable:hasFile</a></td>
           
-          <td>An artifact belonging to this artifact set.<div><small><b>sh:message</b> hasArtifact must reference uco-observable:ObservableObject instances</small></div></td>
+          <td>A file belonging to this file set.<div><small><b>sh:message</b> hasFile must reference uco-observable:File instances</small></div></td>
           <td>0</td>
           <td>*</td>
-          <td><a title="https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject" href="https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject" target="_blank" class="rdfclass">uco-observable:ObservableObject</a><br><i title="http://www.w3.org/ns/shacl#IRI">sh:IRI</i></td>
+          <td><a title="https://ontology.unifiedcyberontology.org/uco/observable/File" href="https://ontology.unifiedcyberontology.org/uco/observable/File" target="_blank" class="rdfclass">uco-observable:File</a></td>
+          <td></td>
+          
+        
+      </tr>
+    
+      <tr>
+        
+          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/observable/sourceApplication" href="prop-solveit-observablesourceapplication.html">solveit-observable:sourceApplication</a></td>
+          
+          <td>The application associated with these files.<div><small><b>sh:message</b> sourceApplication must reference at most one uco-observable:Application</small></div></td>
+          <td>0</td>
+          <td>1</td>
+          <td><a title="https://ontology.unifiedcyberontology.org/uco/observable/Application" href="https://ontology.unifiedcyberontology.org/uco/observable/Application" target="_blank" class="rdfclass">uco-observable:Application</a></td>
           <td></td>
           
         
@@ -645,20 +658,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default1:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">uco-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.unifiedcyberontology.org/uco/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">default1</span><span class="p">:</span><span class="nt">ArtifactSetShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Artifact Set Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that the members of an ArtifactSet, named with hasArtifact, are observable objects."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">ObservableObject</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"hasArtifact must reference uco-observable:ObservableObject instances"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">hasArtifact</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ArtifactSet</span> <span class="p">.</span>
+<span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/ApplicationFilesShape&gt;</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Application Files Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that ApplicationFiles has at most one sourceApplication and zero or more files."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">Application</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"sourceApplication must reference at most one uco-observable:Application"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">sourceApplication</span> <span class="p">],</span>
+        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">File</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"hasFile must reference uco-observable:File instances"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">hasFile</span> <span class="p">]</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">ApplicationFiles</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -688,7 +704,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 20 Oct 2026 21:07:44 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 29 Oct 2026 16:31:31 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
 
     
     </div>

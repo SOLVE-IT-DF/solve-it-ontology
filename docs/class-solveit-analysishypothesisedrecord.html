@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.16</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.17</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -278,7 +278,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.16</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.17</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -589,6 +589,23 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Shapes (1)</h3>
+            </div>
+            <div class="panel-body">
+              <ul class="entity-list">
+              
+                <li><a href="shape-solveit-analysishypothesisedrecord.html" title="https://ontology.solveit-df.org/solveit/analysis/HypothesisedRecord">solveit-analysis:HypothesisedRecord</a></li>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    
 
 
     
@@ -607,7 +624,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <p>Instances of solveit-analysis:HypothesisedRecord can have the following properties:</p>
               <noscript><p><i>The list of properties needs JavaScript.</i></p></noscript>
             </div>
-            <table class="table table-bordered" style="overflow: auto;" id="usage-table" data-groups="19 0">
+            <table class="table table-bordered" style="overflow: auto;" id="usage-table" data-groups="19">
               <tr class="table-classproperties">
                 <th>PROPERTY</th><th>TYPE</th><th>DESCRIPTION</th><th>RANGE</th>
               </tr>
@@ -622,6 +639,59 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     
+      <div class="row">
+        <div class="col-md-12">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Property Shapes</h3>
+            </div>
+            <div class="panel-body" style="overflow: auto;">
+              <p>By the associated SHACL property shapes, instances of solveit-analysis:HypothesisedRecord can have the following properties:</p>
+            </div>
+            <div style="overflow-x: auto;">
+  <table class="table table-bordered shacl-constraints">
+    <tr class="table-classproperties">
+      <th>PROPERTY</th>
+      <th>PROPERTY TYPE</th>
+      <th>DESCRIPTION</th>
+      <th>MIN</th>
+      <th>MAX</th>
+      <th>VALUE TYPE</th>
+      <th>OTHER CONSTRAINTS</th>
+      <th>GLOBAL RANGE</th>
+    </tr>
+    
+      <tr>
+        
+          <td colspan="8">
+            <small class="label label-info label-xs">solveit-analysis:HypothesisedRecord</small>
+          </td>
+        
+      </tr>
+    
+      <tr>
+        
+          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/observable/recoveredFromPage" href="prop-solveit-observablerecoveredfrompage.html">solveit-observable:recoveredFromPage</a></td>
+          
+            <td>owl:ObjectProperty</td>
+          
+          <td>The page from which this record was physically recovered. Where bytes were found is a fact about them, true whether or not the reconstruction they support turns out to be correct, so the property is used of a solveit-analysis:HypothesisedRecord. A live record is in a page rather than recovered from one. The property deliberately has no rdfs:domain: rdfs:domain is an entailment rule, not a constraint, so a domain of SQLiteRecord would not stop a hypothesis using the property but would infer it to be an observed record. Its use is checked instead by the SHACL constraint on solveit-analysis:HypothesisedRecord in solve_it_analysis_shapes.ttl. The page is optional, because a record carved from unallocated disk space may not be traceable to any page.<div><small><b>sh:message</b> The page a hypothesised record was recovered from must be a SQLitePage, typed as such in the data.</small></div></td>
+          <td>0</td>
+          <td>*</td>
+          <td><a title="https://ontology.solveit-df.org/solveit/observable/SQLitePage" href="class-solveit-observablesqlitepage.html" class="rdfclass">solveit-observable:SQLitePage</a><br><i title="http://www.w3.org/ns/shacl#IRI">sh:IRI</i></td>
+          <td></td>
+          
+            <td><a title="https://ontology.solveit-df.org/solveit/observable/SQLitePage" href="class-solveit-observablesqlitepage.html" class="rdfclass">solveit-observable:SQLitePage</a></td>
+          
+        
+      </tr>
+    
+  </table>
+  </div>
+          </div>
+        </div>
+      </div>
+    
 
 
     
@@ -635,12 +705,19 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             
               <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">owl:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2002/07/owl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-analysis:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/analysis/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">solveit-analysis</span><span class="p">:</span><span class="nt">HypothesisedRecord</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span> <span class="p">;</span>
+<span class="nn">solveit-analysis</span><span class="p">:</span><span class="nt">HypothesisedRecord</span> <span class="kt">a</span> <span class="nn">owl</span><span class="p">:</span><span class="nt">Class</span><span class="p">,</span>
+        <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Hypothesised Record"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
     <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"A database record hypothesised to have existed, typically reconstructed from deallocated or partially overwritten storage such as freeblocks, unallocated page space, or freelist pages. The claim it makes is one of extent: that these bytes constituted one record, beginning and ending where the reconstruction says. That claim can fail - a sequence of ordinary integers can decode as a plausible record header, adjacent deletions can merge into one freeblock, and a later write can overwrite the leading bytes - so a HypothesisedRecord is deliberately not a solveit-observable:SQLiteRecord. Decoded values are linked with solveit-analysis:hasField, and the page the bytes came from with solveit-observable:recoveredFromPage. Which table the record belonged to is a separate claim, and is not asserted here: it is made by a solveit-analysis:HypothesisedTableAttribution, so that one reconstruction can carry several competing attributions without being duplicated."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">solveit-analysis</span><span class="p">:</span><span class="nt">Hypothesis</span> <span class="p">.</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">subClassOf</span> <span class="nn">solveit-analysis</span><span class="p">:</span><span class="nt">Hypothesis</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">SQLitePage</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"The page a hypothesised record was recovered from must be a SQLitePage, typed as such in the data."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">recoveredFromPage</span> <span class="p">]</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -670,7 +747,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 20 Oct 2026 21:07:44 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 29 Oct 2026 16:31:30 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
 
     
     </div>

@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.16</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.17</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -278,7 +278,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.16</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.17</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -324,7 +324,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
-    <ul class="sidebar-nav" id="sidebar-list" data-thispage="default1:SortedTimelineEntryShape">
+    <ul class="sidebar-nav" id="sidebar-list" data-thispage=":SolveitInvestigativeActionShape">
 
         <li>
           <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
@@ -467,7 +467,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            default1:SortedTimelineEntryShape
+            :SolveitInvestigativeActionShape
         </li>
   </ol>
 
@@ -480,7 +480,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        default1:SortedTimelineEntryShape
+        :SolveitInvestigativeActionShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -495,7 +495,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'Sorted Timeline Entry Shape' - Validates that each SortedTimelineEntry has exactly one referencesTimelineEntry and exactly one sortPosition.">default1:SortedTimelineEntryShape</a>
+                <li><a style="font-weight: bold;" title="'SOLVE-IT Investigative Action Shape' - Validates that the mitigations an action applied, named with appliedMitigation, are IRIs.">:SolveitInvestigativeActionShape</a>
                   
                 </li>
               </ul>
@@ -515,7 +515,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/observable/shapes/SortedTimelineEntryShape</code>
+            <code>https://ontology.solveit-df.org/solveit/core/shapes/SolveitInvestigativeActionShape</code>
           </div>
         </div>
       </div>
@@ -531,7 +531,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            Sorted Timeline Entry Shape
+            SOLVE-IT Investigative Action Shape
           </div>
           </div>
         </div>
@@ -548,7 +548,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that each SortedTimelineEntry has exactly one referencesTimelineEntry and exactly one sortPosition.</p>
+              <p>Validates that the mitigations an action applied, named with appliedMitigation, are IRIs.</p>
             </div>
           </div>
         </div>
@@ -571,7 +571,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <div class="panel-body">
               <ul class="entity-list">
               
-                <li><a title="https://ontology.solveit-df.org/solveit/observable/SortedTimelineEntry" href="class-solveit-observablesortedtimelineentry.html" class="rdfclass">solveit-observable:SortedTimelineEntry</a> <small class="text-muted">sh:targetClass</small></li>
+                <li><a title="https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction" href="class-solveit-coresolveitinvestigativeaction.html" class="rdfclass">solveit-core:SolveitInvestigativeAction</a> <small class="text-muted">sh:targetClass</small></li>
               
               </ul>
             </div>
@@ -595,11 +595,11 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
         <div class="col-md-12">
           <div class="panel panel-default">
             <div class="panel-heading">
-              <h3 class="panel-title">Property Constraints (2)</h3>
+              <h3 class="panel-title">Property Constraints (1)</h3>
             </div>
             <div class="panel-body" style="overflow: auto;">
               
-                <p>Focus nodes of this shape (<a title="https://ontology.solveit-df.org/solveit/observable/SortedTimelineEntry" href="class-solveit-observablesortedtimelineentry.html" class="rdfclass">solveit-observable:SortedTimelineEntry</a>) can have the following properties:</p>
+                <p>Focus nodes of this shape (<a title="https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction" href="class-solveit-coresolveitinvestigativeaction.html" class="rdfclass">solveit-core:SolveitInvestigativeAction</a>) can have the following properties:</p>
               
             </div>
             <div style="overflow-x: auto;">
@@ -617,26 +617,16 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     
       <tr>
         
-          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/observable/referencesTimelineEntry" href="prop-solveit-observablereferencestimelineentry.html">solveit-observable:referencesTimelineEntry</a></td>
+          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/core/appliedMitigation" href="prop-solveit-coreappliedmitigation.html">solveit-core:appliedMitigation</a></td>
           
-          <td>Links a sorted timeline entry to the original timeline entry it references.<div><small><b>sh:message</b> referencesTimelineEntry must reference exactly one TimelineEntry</small></div></td>
-          <td>1</td>
-          <td>1</td>
-          <td><a title="https://ontology.solveit-df.org/solveit/observable/TimelineEntry" href="class-solveit-observabletimelineentry.html" class="rdfclass">solveit-observable:TimelineEntry</a></td>
-          <td></td>
-          
-        
-      </tr>
-    
-      <tr>
-        
-          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/observable/sortPosition" href="prop-solveit-observablesortposition.html">solveit-observable:sortPosition</a></td>
-          
-          <td>The ordinal position of this entry within its sorted timeline. Multiple entries may share the same position to indicate they are tied (indistinguishable in order).<div><small><b>sh:message</b> sortPosition must be exactly one xsd:nonNegativeInteger</small></div></td>
-          <td>1</td>
-          <td>1</td>
-          <td><i title="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">xsd:nonNegativeInteger</i></td>
-          <td></td>
+          <td>Links a SolveitInvestigativeAction to Mitigation(s) that were actively applied during the execution to prevent or minimize potential weaknesses (0..n).<div><small><b>sh:message</b> appliedMitigation must reference a mitigation by IRI, such as a knowledge base mitigation solveit-data:mitigationDFM-NNNN</small></div></td>
+          <td>0</td>
+          <td>*</td>
+          <td><i title="http://www.w3.org/ns/shacl#IRI">sh:IRI</i></td>
+          <td>
+    <div class="shacl-constraint"><small><b>sh:or</b></small>
+    ( <code>solveit-core:Mitigation</code> | <code>sh:IRI</code> )
+    </div></td>
           
         
       </tr>
@@ -658,26 +648,20 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default1:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/core/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">xsd:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2001/XMLSchema#&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-core:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/core/&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">default1</span><span class="p">:</span><span class="nt">SortedTimelineEntryShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Sorted Timeline Entry Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that each SortedTimelineEntry has exactly one referencesTimelineEntry and exactly one sortPosition."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">TimelineEntry</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"referencesTimelineEntry must reference exactly one TimelineEntry"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">referencesTimelineEntry</span> <span class="p">],</span>
-        <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">datatype</span> <span class="nn">xsd</span><span class="p">:</span><span class="nt">nonNegativeInteger</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">maxCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"sortPosition must be exactly one xsd:nonNegativeInteger"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">minCount</span> <span class="mi">1</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">sortPosition</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">SortedTimelineEntry</span> <span class="p">.</span>
+<span class="p">:</span><span class="nt">SolveitInvestigativeActionShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"SOLVE-IT Investigative Action Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that the mitigations an action applied, named with appliedMitigation, are IRIs."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"appliedMitigation must reference a mitigation by IRI, such as a knowledge base mitigation solveit-data:mitigationDFM-NNNN"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">or</span> <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">Mitigation</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">]</span> <span class="p">)</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">appliedMitigation</span> <span class="p">]</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">SolveitInvestigativeAction</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -707,7 +691,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 20 Oct 2026 21:07:44 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 29 Oct 2026 16:31:31 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
 
     
     </div>

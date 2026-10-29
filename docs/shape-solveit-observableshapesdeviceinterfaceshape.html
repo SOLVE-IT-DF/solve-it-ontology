@@ -19,7 +19,7 @@
     <link rel="icon" href="static/custom/favicon.ico">
 
 	
-		<title>Ontospy > SOLVE-IT Ontology 0.2.16</title>
+		<title>Ontospy > SOLVE-IT Ontology 0.2.17</title>
 	
 
     <!-- Bootstrap core CSS -->
@@ -278,7 +278,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     </div>
     <div id="navbar" class="collapse navbar-collapse">
       <ul class="nav navbar-nav">
-        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.16</code></a></li>
+        <li ><a href="index.html"><code style="font-size: 115%;">SOLVE-IT Ontology 0.2.17</code></a></li>
 
         <li  ><a href="entities-az.html">Entities A-Z</a></li>
         
@@ -324,7 +324,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
 <!-- Sidebar -->
 <div id="sidebar-wrapper">
-    <ul class="sidebar-nav" id="sidebar-list" data-thispage="default2:SolveitInvestigativeActionShape">
+    <ul class="sidebar-nav" id="sidebar-list" data-thispage="solveit-observable:shapes/DeviceInterfaceShape">
 
         <li>
           <input style="margin-top: 30px;  margin-bottom: 20px;" type="text" id="search-input-sidebar" name="" value="" placeholder="Type to search">
@@ -467,7 +467,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           <a href="entities-tree-shapes.html">Shapes</a>
     </li>
       <li class="active">
-            default2:SolveitInvestigativeActionShape
+            solveit-observable:shapes/DeviceInterfaceShape
         </li>
   </ol>
 
@@ -480,7 +480,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
 
     
     <h1>
-        default2:SolveitInvestigativeActionShape
+        solveit-observable:shapes/DeviceInterfaceShape
         
           <small class="label label-info label-xs">leaf node</small>
         
@@ -495,7 +495,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           
             <li><a href="entities-tree-classes.html">sh:Shape</a>
               <ul>
-                <li><a style="font-weight: bold;" title="'SOLVE-IT Investigative Action Shape' - Validates that the mitigations an action applied, named with appliedMitigation, are IRIs.">default2:SolveitInvestigativeActionShape</a>
+                <li><a style="font-weight: bold;" title="'Device Interface Shape' - Validates that what a DeviceInterface gives access to is a StorageMedium. The number is not limited: whether a multi-bay write..">solveit-observable:shapes/DeviceInterfaceShape</a>
                   
                 </li>
               </ul>
@@ -515,7 +515,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">URI</h3>
           </div>
           <div class="panel-body">
-            <code>https://ontology.solveit-df.org/solveit/core/shapes/SolveitInvestigativeActionShape</code>
+            <code>https://ontology.solveit-df.org/solveit/observable/shapes/DeviceInterfaceShape</code>
           </div>
         </div>
       </div>
@@ -531,7 +531,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <h3 class="panel-title">Label</h3>
           </div>
           <div class="panel-body">
-            SOLVE-IT Investigative Action Shape
+            Device Interface Shape
           </div>
           </div>
         </div>
@@ -548,7 +548,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
               <h3 class="panel-title">Description</h3>
             </div>
             <div class="panel-body">
-              <p>Validates that the mitigations an action applied, named with appliedMitigation, are IRIs.</p>
+              <p>Validates that what a DeviceInterface gives access to is a StorageMedium. The number is not limited: whether a multi-bay write blocker is one interface or one per bay is not yet settled.</p>
             </div>
           </div>
         </div>
@@ -571,7 +571,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             <div class="panel-body">
               <ul class="entity-list">
               
-                <li><a title="https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction" href="class-solveit-coresolveitinvestigativeaction.html" class="rdfclass">solveit-core:SolveitInvestigativeAction</a> <small class="text-muted">sh:targetClass</small></li>
+                <li><a title="https://ontology.solveit-df.org/solveit/observable/DeviceInterface" href="class-solveit-observabledeviceinterface.html" class="rdfclass">solveit-observable:DeviceInterface</a> <small class="text-muted">sh:targetClass</small></li>
               
               </ul>
             </div>
@@ -599,7 +599,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
             </div>
             <div class="panel-body" style="overflow: auto;">
               
-                <p>Focus nodes of this shape (<a title="https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction" href="class-solveit-coresolveitinvestigativeaction.html" class="rdfclass">solveit-core:SolveitInvestigativeAction</a>) can have the following properties:</p>
+                <p>Focus nodes of this shape (<a title="https://ontology.solveit-df.org/solveit/observable/DeviceInterface" href="class-solveit-observabledeviceinterface.html" class="rdfclass">solveit-observable:DeviceInterface</a>) can have the following properties:</p>
               
             </div>
             <div style="overflow-x: auto;">
@@ -617,16 +617,25 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
     
       <tr>
         
-          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/core/appliedMitigation" href="prop-solveit-coreappliedmitigation.html">solveit-core:appliedMitigation</a></td>
+          <td><a class="propcolor" title="https://ontology.solveit-df.org/solveit/observable/providesAccessTo" href="prop-solveit-observableprovidesaccessto.html">solveit-observable:providesAccessTo</a></td>
           
-          <td>Links a SolveitInvestigativeAction to Mitigation(s) that were actively applied during the execution to prevent or minimize potential weaknesses (0..n).<div><small><b>sh:message</b> appliedMitigation must reference a mitigation by IRI, such as a knowledge base mitigation solveit-data:mitigationDFM-NNNN</small></div></td>
+          <td>The storage medium that this device interface gives access to.
+
+The interface is a way of reaching the medium, not the medium itself, so the
+medium&#39;s characteristics (model, serial number, capacity) are stated on the
+StorageMedium through its DeviceFacet and StorageMediumFacet, not on the
+interface. The same medium can be reached through a write-protected interface
+on one occasion and a read-write one on another. A hardware write blocker used
+to create the interface is a separate uco-observable:WriteBlocker, which is
+itself a Device, and is never the value of this property.
+
+A uco-observable:Disk is not a Device in UCO 1.5.0. UCO asks for a Disk node to
+carry the additional type uco-observable:StorageMedium in preparation for UCO
+2.0.0, and a Disk typed that way is a valid value here.<div><small><b>sh:message</b> providesAccessTo must reference uco-observable:StorageMedium instances</small></div></td>
           <td>0</td>
           <td>*</td>
-          <td><i title="http://www.w3.org/ns/shacl#IRI">sh:IRI</i></td>
-          <td>
-    <div class="shacl-constraint"><small><b>sh:or</b></small>
-    ( <code>solveit-core:Mitigation</code> | <code>sh:IRI</code> )
-    </div></td>
+          <td><a title="https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium" href="https://ontology.unifiedcyberontology.org/uco/observable/StorageMedium" target="_blank" class="rdfclass">uco-observable:StorageMedium</a></td>
+          <td></td>
           
         
       </tr>
@@ -648,20 +657,18 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
           </div>
           <div class="panel-body implementation-panel">
             
-              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">default2:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/core/shapes/&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdf:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/1999/02/22-rdf-syntax-ns#&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
+              <div class="highlight"><pre><span></span><span class="k">@prefix</span><span class="w"> </span><span class="nn">rdfs:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/2000/01/rdf-schema#&gt;</span><span class="w"> </span><span class="p">.</span>
 <span class="k">@prefix</span><span class="w"> </span><span class="nn">sh:</span><span class="w"> </span><span class="nv">&lt;http://www.w3.org/ns/shacl#&gt;</span><span class="w"> </span><span class="p">.</span>
-<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-core:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/core/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">solveit-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
+<span class="k">@prefix</span><span class="w"> </span><span class="nn">uco-observable:</span><span class="w"> </span><span class="nv">&lt;https://ontology.unifiedcyberontology.org/uco/observable/&gt;</span><span class="w"> </span><span class="p">.</span>
 
-<span class="nn">default2</span><span class="p">:</span><span class="nt">SolveitInvestigativeActionShape</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"SOLVE-IT Investigative Action Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that the mitigations an action applied, named with appliedMitigation, are IRIs."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"appliedMitigation must reference a mitigation by IRI, such as a knowledge base mitigation solveit-data:mitigationDFM-NNNN"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">or</span> <span class="p">(</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">Mitigation</span> <span class="p">]</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">nodeKind</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">IRI</span> <span class="p">]</span> <span class="p">)</span> <span class="p">;</span>
-            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">appliedMitigation</span> <span class="p">]</span> <span class="p">;</span>
-    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-core</span><span class="p">:</span><span class="nt">SolveitInvestigativeAction</span> <span class="p">.</span>
+<span class="nv">&lt;https://ontology.solveit-df.org/solveit/observable/shapes/DeviceInterfaceShape&gt;</span> <span class="kt">a</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">NodeShape</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">label</span> <span class="s">"Device Interface Shape"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">rdfs</span><span class="p">:</span><span class="nt">comment</span> <span class="s">"Validates that what a DeviceInterface gives access to is a StorageMedium. The number is not limited: whether a multi-bay write blocker is one interface or one per bay is not yet settled."</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">property</span> <span class="p">[</span> <span class="nn">sh</span><span class="p">:</span><span class="nt">class</span> <span class="nn">uco-observable</span><span class="p">:</span><span class="nt">StorageMedium</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">message</span> <span class="s">"providesAccessTo must reference uco-observable:StorageMedium instances"</span><span class="o">@</span><span class="ge">en</span> <span class="p">;</span>
+            <span class="nn">sh</span><span class="p">:</span><span class="nt">path</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">providesAccessTo</span> <span class="p">]</span> <span class="p">;</span>
+    <span class="nn">sh</span><span class="p">:</span><span class="nt">targetClass</span> <span class="nn">solveit-observable</span><span class="p">:</span><span class="nt">DeviceInterface</span> <span class="p">.</span>
 </pre></div>
 
             
@@ -691,7 +698,7 @@ span.linenos.special { color: #000000; background-color: #ffffc0; padding-left: 
   <footer class="footer">
     <div class="container">
     
-      <p class="text-muted">Documentation automatically generated on Tue, 20 Oct 2026 21:07:44 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
+      <p class="text-muted">Documentation automatically generated on Thu, 29 Oct 2026 16:31:31 with <a href="http://lambdamusic.github.io/Ontospy/">Ontospy</a> (v2.7)</p>
 
     
     </div>
