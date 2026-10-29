@@ -6,6 +6,19 @@ Notable changes to the SOLVE-IT ontology.
 
 ### Added
 
+- `solve_it_analysis_shapes.ttl` constrains
+  `solveit-observable:recoveredFromPage` on a
+  `solveit-analysis:HypothesisedRecord`: the value must be an IRI typed
+  `solveit-observable:SQLitePage`. The property's `rdfs:domain` was removed
+  on 2026-08-11 so that a hypothesis using it would not be inferred to be an
+  observed record, but no shape replaced it, so nothing checked its use. The
+  page is optional, because a record carved from unallocated disk space may
+  not be traceable to any page. The constraint is written on the class itself,
+  as UCO writes its shapes, rather than as a separate shape with
+  `sh:targetClass`. Ontospy only connects a property without a domain to a
+  class through `sh:property` on the class node. Without that, it listed
+  recoveredFromPage under owl:Thing on every class page of the documentation.
+
 - `solve_it_core_shapes.ttl` gains `SolveitInvestigativeActionShape`,
   constraining `solveit-core:appliedMitigation` to IRIs. The property was
   declared only with `rdfs:domain`, so tools that build classes from SHACL
