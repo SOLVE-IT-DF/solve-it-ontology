@@ -6,6 +6,7 @@
 @prefix solveit-analysis: <https://ontology.solveit-df.org/solveit/analysis/> .
 @prefix solveit-core: <https://ontology.solveit-df.org/solveit/core/> .
 @prefix solveit-observable: <https://ontology.solveit-df.org/solveit/observable/> .
+@prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -17,9 +18,9 @@
 #    reporting_scripts/generate_rdf_from_kb.py. Do not edit by hand.
 #
 #      Objectives:     24
-#      Techniques:     204
-#      Weaknesses:     451
-#      Mitigations:    345
+#      Techniques:     207
+#      Weaknesses:     454
+#      Mitigations:    348
 #      Citations:      164
 #################################################################
 
@@ -39,7 +40,8 @@
     solveit-core:objectiveDescription "Conduct activities in preparation of conducting a digital investigation" ;
     solveit-core:sortOrder "0"^^xsd:integer ;
     solveit-core:includesTechnique :techniqueDFT-1110,
-                                   :techniqueDFT-1211 .
+                                   :techniqueDFT-1211,
+                                   :techniqueDFT-1213 .
 
 :objectiveDFO-1014
     a solveit-core:Objective ;
@@ -151,7 +153,8 @@
     solveit-core:includesTechnique :techniqueDFT-1025,
                                    :techniqueDFT-1026,
                                    :techniqueDFT-1178,
-                                   :techniqueDFT-1208 .
+                                   :techniqueDFT-1208,
+                                   :techniqueDFT-1215 .
 
 :objectiveDFO-1018
     a solveit-core:Objective ;
@@ -293,7 +296,8 @@
                                    :techniqueDFT-1051,
                                    :techniqueDFT-1086,
                                    :techniqueDFT-1118,
-                                   :techniqueDFT-1203 .
+                                   :techniqueDFT-1203,
+                                   :techniqueDFT-1212 .
 
 :objectiveDFO-1003
     a solveit-core:Objective ;
@@ -397,7 +401,7 @@
                                    :techniqueDFT-1210 .
 
 #################################################################
-#    Techniques (204)
+#    Techniques (207)
 #
 #    Each technique is an instance of the solveit-core:Technique metaclass AND
 #    an owl:Class in its own right, following uco-action:Technique (UCO 1.5.0).
@@ -3742,8 +3746,71 @@ Metadata accompanying a raw image is held in a separate file rather than within 
                                       :weaknessDFW-1481 ;
     solveit-core:hasReference :citationDFCite-1074 .
 
+:techniqueDFT-1212
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1212: Create a case-specific keyword list"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1212" ;
+    solveit-core:techniqueName "Create a case-specific keyword list" ;
+    solveit-core:techniqueDescription "The process of compiling a list of keywords derived from the details of a specific case, such as names, places, usernames, and other identifiers, for use in keyword searches." ;
+    solveit-core:techniqueDetails "Case-specific keyword lists are usually derived from the case brief, witness statements, and other case material, and may be extended as new identifiers emerge during the examination. Typical entries include names of people and organizations, nicknames, addresses, telephone numbers, email addresses, account names, and transaction references. The output is consumed by keyword searching using case-specific wordlists (DFT-1123). This complements case-type keyword lists. Case-specific information may also be used as input when creating a password dictionary." ;
+    solveit-core:hasSynonym "case-specific wordlist" ;
+    solveit-core:hasCASEOutputClass solveit-observable:Wordlist ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1482,
+                                      :weaknessDFW-1483,
+                                      :weaknessDFW-1484 ;
+    solveit-core:hasReference :citationDFCite-1074 .
+
+:techniqueDFT-1213
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1213: Generate reference data by performing and recording actions"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1213" ;
+    solveit-core:techniqueName "Generate reference data by performing and recording actions" ;
+    solveit-core:techniqueDescription "The process of deliberately performing known actions on a system and recording exactly what was done, how and when, so that the record is ground truth for the traces those actions leave." ;
+    solveit-core:techniqueDetails "Each recorded action is one piece of ground truth, for example \"file A copied to B by byte copy, between 10:02:03.120 and 10:02:03.141 on the recording host's clock\". Record the exact method used (system call, command or user-interface gesture), since different methods leave different traces, and the environment (operating system, version, drivers, hardware) and clock. The technique is commonly the first part of DFT-1090, followed by preserving the resulting data (DFT-1110, e.g. imaging the system) and analysing the traces; it is also used to build test data for tool testing and datasets, where the behaviour is already known. Its output is the record of the actions, not a conclusion about what traces they leave: working out which traces came from which action is part of DFT-1090." ;
+    solveit-core:hasSynonym "Create ground truth data",
+                            "Generate activity-based reference data" ;
+    solveit-core:hasExample "Automatically exercising an app after each update to generate reference data [DFCite-1034]",
+                            "Building a labelled dataset by performing scripted user-interface actions on an app in a virtual machine, each action recorded as it is performed",
+                            "Building a test image for tool testing by performing a planned sequence of file system operations on a test volume, recording each with its method, start and end times" ;
+    solveit-core:hasCASEInputClass uco-action:ActionPattern ;
+    solveit-core:hasCASEOutputClass uco-action:ActionLifecycle ;
+    solveit-core:hasPotentialWeakness :weaknessDFW-1148 ;
+    solveit-core:hasReference :citationDFCite-1034 .
+
+:techniqueDFT-1215
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1215: Store content in logical forensic container file(s)"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1215" ;
+    solveit-core:techniqueName "Store content in logical forensic container file(s)" ;
+    solveit-core:techniqueDescription "Storage of a set of files and their metadata within a logical forensic container format such as L01, AD1, CTR or AFF4-L." ;
+    solveit-core:techniqueDetails """Logical container formats store a selected set of files together with file system metadata such as paths, timestamps, sizes and other attributes. Depending on the format, they may also store hashes of individual files and case information. 
+
+This technique represents storage of files in a logical container, whereas DFT-1025 represents storage of bitstream data in a physical image format. The contents of the container are read back using DFT-1170.
+
+This differs from a simple archive format e.g. DFT-1026 in that forensic specific additions are made e.g. storage of metadata, hashes or provenance, but it does not preclude an archive format being used for the container. 
+
+Formats differ in which metadata they are able to record, so some metadata present on the source may not be retained in the container.""" ;
+    solveit-core:hasSynonym "Create logical evidence file",
+                            "Create logical image",
+                            "Store files in a logical container",
+                            "Write files to a logical image format" ;
+    solveit-core:hasExample "AFF4-L: logical extension to AFF4 for storing files and their metadata (Cohen, Garfinkel and Schatz, 2009)",
+                            "EnCase: can create logical evidence files (L01/Lx01) from selected files",
+                            "FTK Imager: can create AD1 custom content images from selected files and folders",
+                            "X-Ways Forensics: can create evidence file containers (.ctr)" ;
+    solveit-core:hasCASEInputClass solveit-observable:FileSet ;
+    solveit-core:hasCASEOutputClass solveit-observable:LogicalImageContainer ;
+    solveit-core:hasReference :citationDFCite-1035,
+                              :citationDFCite-1069 .
+
 #################################################################
-#    Weaknesses (451)
+#    Weaknesses (454)
 #
 #    Potential problems arising from a technique, classified against the
 #    ASTM E3016-18 error categories.
@@ -7366,7 +7433,8 @@ Metadata accompanying a raw image is held in a separate file rather than within 
     solveit-core:weaknessName "Cryptographic hash of the source data is incorrect because not all data was read from the device" ;
     solveit-core:weaknessDescription "A failure in reading the data part way through would result in a hash of only some of the data." ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1365 .
+    solveit-core:hasPotentialMitigation :mitigationDFM-1365,
+                                        :mitigationDFM-1366 .
 
 :weaknessDFW-1398
     a solveit-core:Weakness ;
@@ -7948,8 +8016,35 @@ Metadata accompanying a raw image is held in a separate file rather than within 
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1032 .
 
+:weaknessDFW-1482
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1482: Relevant identifiers from the case material are not included in the case-specific keyword list"@en ;
+    solveit-core:weaknessID "DFW-1482" ;
+    solveit-core:weaknessName "Relevant identifiers from the case material are not included in the case-specific keyword list" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1141,
+                                        :mitigationDFM-1142,
+                                        :mitigationDFM-1152 .
+
+:weaknessDFW-1483
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1483: Variants of identifiers, such as nicknames, usernames, alternative spellings, or transliterations, are not included in the case-specific keyword list"@en ;
+    solveit-core:weaknessID "DFW-1483" ;
+    solveit-core:weaknessName "Variants of identifiers, such as nicknames, usernames, alternative spellings, or transliterations, are not included in the case-specific keyword list" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1031,
+                                        :mitigationDFM-1369 .
+
+:weaknessDFW-1484
+    a solveit-core:Weakness ;
+    rdfs:label "DFW-1484: Case-specific keyword list is not updated when new identifiers emerge during the investigation"@en ;
+    solveit-core:weaknessID "DFW-1484" ;
+    solveit-core:weaknessName "Case-specific keyword list is not updated when new identifiers emerge during the investigation" ;
+    solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1370 .
+
 #################################################################
-#    Mitigations (345)
+#    Mitigations (348)
 #
 #    Actions that prevent a weakness or reduce its impact.
 #################################################################
@@ -10130,6 +10225,13 @@ This differs based on whether data on a device needs to be hashed for verificati
     solveit-core:mitigationName "Check the number of bytes hashed from a source device matches the device's capacity" ;
     solveit-core:mitigationDescription "Compare the number of bytes (or sectors) read and hashed against the capacity on the drive label or reported by the device. A shortfall indicates that the hash covers only part of the data on the device." .
 
+:mitigationDFM-1366
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1366: Check the output of a tool hashing a source device for any read errors"@en ;
+    solveit-core:mitigationID "DFM-1366" ;
+    solveit-core:mitigationName "Check the output of a tool hashing a source device for any read errors" ;
+    solveit-core:mitigationDescription "Review the output or log from the hashing tool for any read errors or skipped sectors on the source device. Any errors mean the hash may not cover all the data on the device." .
+
 :mitigationDFM-1367
     a solveit-core:Mitigation ;
     rdfs:label "DFM-1367: Periodically review and update case-type keyword lists using recent casework and current terminology"@en ;
@@ -10141,6 +10243,18 @@ This differs based on whether data on a device needs to be hashed for verificati
     rdfs:label "DFM-1368: Include spelling, language, and regional variants of each term in the keyword list"@en ;
     solveit-core:mitigationID "DFM-1368" ;
     solveit-core:mitigationName "Include spelling, language, and regional variants of each term in the keyword list" .
+
+:mitigationDFM-1369
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1369: Generate variants of each case-specific identifier, such as nicknames, usernames, alternative spellings, and transliterations"@en ;
+    solveit-core:mitigationID "DFM-1369" ;
+    solveit-core:mitigationName "Generate variants of each case-specific identifier, such as nicknames, usernames, alternative spellings, and transliterations" .
+
+:mitigationDFM-1370
+    a solveit-core:Mitigation ;
+    rdfs:label "DFM-1370: Revise the case-specific keyword list and repeat searches as new identifiers are found during the examination"@en ;
+    solveit-core:mitigationID "DFM-1370" ;
+    solveit-core:mitigationName "Revise the case-specific keyword list and repeat searches as new identifiers are found during the examination" .
 
 #################################################################
 #    Citations (164)
