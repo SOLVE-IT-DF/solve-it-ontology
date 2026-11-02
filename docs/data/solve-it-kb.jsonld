@@ -28561,6 +28561,11 @@
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1335"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1171"
+      }
     ]
   },
   {
@@ -28595,6 +28600,11 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1336"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1171"
       }
     ]
   },
@@ -28838,6 +28848,11 @@
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1341"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1171"
+      }
     ]
   },
   {
@@ -28950,6 +28965,11 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1343"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1171"
       }
     ]
   },
@@ -42073,6 +42093,32 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1171",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1171"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1171"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Scanlon, M., Breitinger, F., Hargreaves, C., Hilgert, J.-N. and Sheppard, J., 2023. ChatGPT for digital forensic investigation: The good, the bad, and the unknown. Forensic Science International: Digital Investigation, 46, p.301609. https://doi.org/10.1016/j.fsidi.2023.301609"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@article{SCANLON2023301609,\n  title   = {{ChatGPT} for digital forensic investigation: The good, the bad, and the unknown},\n  author  = {Scanlon, Mark and Breitinger, Frank and Hargreaves, Christopher and Hilgert, Jan-Niclas and Sheppard, John},\n  journal = {Forensic Science International: Digital Investigation},\n  volume  = {46},\n  pages   = {301609},\n  year    = {2023},\n  issn    = {2666-2817},\n  doi     = {10.1016/j.fsidi.2023.301609},\n  url     = {https://www.sciencedirect.com/science/article/pii/S266628172300121X}\n}"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/observable/ADBPullData",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
@@ -42092,6 +42138,18 @@
   },
   {
     "@id": "https://ontology.solveit-df.org/solveit/observable/AcquiredData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.unifiedcyberontology.org/uco/action/ActionLifecycle",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.unifiedcyberontology.org/uco/action/ActionPattern",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]

@@ -21,7 +21,7 @@
 #      Techniques:     207
 #      Weaknesses:     454
 #      Mitigations:    348
-#      Citations:      164
+#      Citations:      165
 #################################################################
 
 #################################################################
@@ -7599,7 +7599,8 @@ Formats differ in which metadata they are able to record, so some metadata prese
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1333,
                                         :mitigationDFM-1334,
-                                        :mitigationDFM-1335 .
+                                        :mitigationDFM-1335 ;
+    solveit-core:hasReference :citationDFCite-1171 .
 
 :weaknessDFW-1432
     a solveit-core:Weakness ;
@@ -7608,7 +7609,8 @@ Formats differ in which metadata they are able to record, so some metadata prese
     solveit-core:weaknessName "An AI response to a query for relevant artifacts includes reporting artifacts that are not relevant because the model could not successfully differentiate relevance" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_AS,
                                   solveit-core:ASTM_INAC_EX ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1336 .
+    solveit-core:hasPotentialMitigation :mitigationDFM-1336 ;
+    solveit-core:hasReference :citationDFCite-1171 .
 
 :weaknessDFW-1433
     a solveit-core:Weakness ;
@@ -7670,7 +7672,8 @@ Formats differ in which metadata they are able to record, so some metadata prese
     solveit-core:weaknessID "DFW-1440" ;
     solveit-core:weaknessName "An observation referred to in the reasoning provided by an AI system does not exist because of model hallucinations" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1341 .
+    solveit-core:hasPotentialMitigation :mitigationDFM-1341 ;
+    solveit-core:hasReference :citationDFCite-1171 .
 
 :weaknessDFW-1441
     a solveit-core:Weakness ;
@@ -7699,7 +7702,8 @@ Formats differ in which metadata they are able to record, so some metadata prese
     solveit-core:weaknessID "DFW-1444" ;
     solveit-core:weaknessName "An AI response to a question does not return a relevant event because it was not recognised as relevant" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INCOMP ;
-    solveit-core:hasPotentialMitigation :mitigationDFM-1343 .
+    solveit-core:hasPotentialMitigation :mitigationDFM-1343 ;
+    solveit-core:hasReference :citationDFCite-1171 .
 
 :weaknessDFW-1445
     a solveit-core:Weakness ;
@@ -10257,7 +10261,7 @@ This differs based on whether data on a device needs to be hashed for verificati
     solveit-core:mitigationName "Revise the case-specific keyword list and repeat searches as new identifiers are found during the examination" .
 
 #################################################################
-#    Citations (164)
+#    Citations (165)
 #
 #    Reference sources, cited by DFCite id from techniques, weaknesses
 #    and mitigations.
@@ -11435,8 +11439,25 @@ keywords = {LLM evaluation, Forensic timeline analysis, Large language models, C
 abstract = {Large language models (LLMs) have widespread adoption in many domains, including digital forensics. While prior research has largely centered on case studies and examples demonstrating how LLMs can assist forensic investigations, deeper explorations remain limited, i.e., a standardized approach for precise performance evaluations is lacking. Inspired by the NIST Computer Forensic Tool Testing Program, this paper proposes a standardized methodology to quantitatively evaluate the application of LLMs for digital forensic tasks, specifically in timeline analysis. The paper describes the components of the methodology, including the dataset, timeline generation, and ground truth development. In addition, the paper recommends the use of BLEU and ROUGE metrics for the quantitative evaluation of LLMs through case studies or tasks involving timeline analysis. Experimental results using ChatGPT demonstrate that the proposed methodology can effectively evaluate LLM-based forensic timeline analysis. Finally, we discuss the limitations of applying LLMs to forensic timeline analysis.}
 }""" .
 
+:citationDFCite-1171
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1171" ;
+    solveit-core:citationID "DFCite-1171" ;
+    solveit-core:citationPlaintext "Scanlon, M., Breitinger, F., Hargreaves, C., Hilgert, J.-N. and Sheppard, J., 2023. ChatGPT for digital forensic investigation: The good, the bad, and the unknown. Forensic Science International: Digital Investigation, 46, p.301609. https://doi.org/10.1016/j.fsidi.2023.301609" ;
+    solveit-core:citationBibtex """@article{SCANLON2023301609,
+  title   = {{ChatGPT} for digital forensic investigation: The good, the bad, and the unknown},
+  author  = {Scanlon, Mark and Breitinger, Frank and Hargreaves, Christopher and Hilgert, Jan-Niclas and Sheppard, John},
+  journal = {Forensic Science International: Digital Investigation},
+  volume  = {46},
+  pages   = {301609},
+  year    = {2023},
+  issn    = {2666-2817},
+  doi     = {10.1016/j.fsidi.2023.301609},
+  url     = {https://www.sciencedirect.com/science/article/pii/S266628172300121X}
+}""" .
+
 #################################################################
-#    Referenced CASE/UCO classes (175)
+#    Referenced CASE/UCO classes (177)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -11453,6 +11474,12 @@ uco-observable:Account
     a owl:Class .
 
 solveit-observable:AcquiredData
+    a owl:Class .
+
+uco-action:ActionLifecycle
+    a owl:Class .
+
+uco-action:ActionPattern
     a owl:Class .
 
 solveit-observable:AiChatAppFiles
