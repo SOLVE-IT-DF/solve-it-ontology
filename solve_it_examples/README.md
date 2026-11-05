@@ -17,6 +17,7 @@ Examples of the tool profile module, showing what a capability profile asserts a
 - **ToolCapabilityProfile** - A publisher's statement about what one version of one tool provides (e.g. a testing programme's profile for ACME Chat Parser 1.0)
 - **MitigationCapability** - A claim that the tool provides a SOLVE-IT mitigation, optionally scoped by `appliesWhen` to a SHACL shape describing where it was established (e.g. WhatsApp 13.8-14.0 only)
 - **SolveitAwareInstrument** - A tool recorded as having been assessed against profiles, via `consultedProfile`, without restating the claims those profiles make
+- An investigative action typed with **DFT-1072**, using the consulted instrument to extract a message from WhatsApp 13.9 `ChatAppFiles`
 - Two publishers making the **same claim at different scopes**, kept separate rather than merged, so a reader can see who asserted what and how narrowly
 
 ### [observable_examples.ttl](observable_examples.ttl)

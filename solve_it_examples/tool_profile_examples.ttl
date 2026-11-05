@@ -202,3 +202,32 @@ solveit-data:mitigationDFM-1054 rdf:type solveit-core:Mitigation ;
     uco-tool:version "1.0" ;
     solveit-tool-profile:consultedProfile :acme-chat-parser-v1-0-national-testing-programme ,
                                          :acme-chat-parser-v1-0-acme-forensics .
+
+#################################################################
+#    Using the consulted instrument in an investigative action
+#
+#    DFT-1072 is a subclass of SolveitInvestigativeAction, so
+#    typing the action with that technique also makes it an
+#    investigative action. Its input and output match the
+#    technique's ChatAppFiles and Message classes. WhatsApp 13.9
+#    falls within the testing programme's declared scope.
+#    Consulting a profile alone does not assert appliedMitigation.
+#################################################################
+
+:chat-extraction-action rdf:type solveit-data:techniqueDFT-1072 ;
+    uco-core:name "Extract chat messages" ;
+    uco-action:instrument :acme-chat-parser-as-consulted ;
+    uco-action:object :chat-files-for-profile-example ;
+    uco-action:result :extracted-message-for-profile-example .
+
+:chat-files-for-profile-example rdf:type solveit-observable:ChatAppFiles ;
+    solveit-observable:sourceApplication :whatsapp-for-profile-example .
+
+:whatsapp-for-profile-example rdf:type uco-observable:Application ;
+    uco-core:hasFacet :whatsapp-facet-for-profile-example .
+
+:whatsapp-facet-for-profile-example rdf:type uco-observable:ApplicationFacet ;
+    uco-observable:applicationIdentifier "com.whatsapp" ;
+    uco-observable:version "13.9" .
+
+:extracted-message-for-profile-example rdf:type uco-observable:Message .
