@@ -42,3 +42,6 @@ jobs:
 
       - name: Validate example I/O types against KB
         run: python scripts/validate_example_io.py
+
+      - name: Validate knowledge base conformance against the ontology
+        run: python scripts/validate_kb_conformance.py

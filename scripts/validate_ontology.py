@@ -52,15 +52,20 @@ def load_ontology(project_root):
 
 
 def load_shapes(project_root):
-    """Load the SHACL shapes file."""
-    shapes_file = project_root / "solve_it_observable_shapes.ttl"
-    if not shapes_file.exists():
-        print(f"  No shapes file found at {shapes_file}")
+    """Load every SHACL shapes file into one graph.
+
+    Globbed rather than named, so a new module's shapes are picked up by
+    adding the file rather than by remembering to edit this list.
+    """
+    shape_files = sorted(project_root.glob("*_shapes.ttl"))
+    if not shape_files:
+        print(f"  No *_shapes.ttl files found in {project_root}")
         return None
 
     g = Graph()
-    print(f"  Loading {shapes_file.name}...")
-    g.parse(shapes_file, format="turtle")
+    for shapes_file in shape_files:
+        print(f"  Loading {shapes_file.name}...")
+        g.parse(shapes_file, format="turtle")
     return g
 
 

@@ -48,6 +48,16 @@ jobs:
           if [ -f solveit_kb.ttl ]; then mv solveit_kb.ttl solveit-kb.ttl; fi
           if [ -f solveit_kb.jsonld ]; then mv solveit_kb.jsonld solveit-kb.jsonld; fi
 
+      # Run before the commit, so a knowledge base that uses a term the
+      # ontology does not define is never published. The generator mints terms
+      # through rdflib Namespace objects and never reads the ontology, so
+      # nothing else stops an invented term reaching data.solveit-df.org. This
+      # job commits with GITHUB_TOKEN, and GitHub does not start workflow runs
+      # for pushes made with that token, so the check cannot be left to the
+      # push trigger on validate-ontology.yml.
+      - name: Validate knowledge base conformance against the ontology
+        run: python scripts/validate_kb_conformance.py
+
       - name: Configure Git
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"

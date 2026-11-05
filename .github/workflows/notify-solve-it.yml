@@ -1,0 +1,41 @@
+# Tell the solve-it repository that an ontology module has changed, so it
+# rebuilds the term list its Explorer edit form offers
+# (solve-it/.github/workflows/refresh-ontology-classes.yml). Without this the
+# list only changed when someone remembered to rebuild it, and classes merged
+# here could be missing from the Explorer for weeks.
+#
+# GITHUB_TOKEN cannot start a workflow in another repository, so this needs a
+# fine-grained token with Contents: read and write on SOLVE-IT-DF/solve-it and
+# nothing else. It is stored as the SOLVE_IT_DISPATCH_TOKEN secret in the
+# solve-it-dispatch environment, whose deployment branches are limited to main,
+# so a workflow pushed on any other branch cannot read it. That token can push
+# to solve-it, so it should not be a repository-level secret.
+name: Notify solve-it of ontology changes
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'solve_it_*.ttl'
+# No workflow_dispatch: run by hand from another branch, it would send that
+# branch's commit and solve-it would publish a term list built from it. To
+# rebuild by hand, run the refresh workflow in solve-it instead.
+
+permissions: {}
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    environment: solve-it-dispatch
+
+    steps:
+      # The pushed commit, rather than "main": raw.githubusercontent.com caches
+      # a branch for a few minutes, and the rebuild would read the old version.
+      - name: Send repository_dispatch to solve-it
+        env:
+          GH_TOKEN: ${{ secrets.SOLVE_IT_DISPATCH_TOKEN }}
+          SHA: ${{ github.sha }}
+        run: |
+          gh api repos/SOLVE-IT-DF/solve-it/dispatches \
+            -f event_type=ontology-updated \
+            -f "client_payload[sha]=$SHA"

@@ -21,6 +21,23 @@ EXPECTED_BASES = [
     'https://ontology.caseontology.org/case/',
 ]
 
+# Class names that are genuinely one long word, and so cannot be told
+# apart from a fallback-capitalised multi-word name by counting capitals.
+#
+# Derived by scanning the UCO 1.5.0 and CASE 1.5.0 ontologies for every
+# owl:Class whose local name is 12 characters or more with a single
+# capital: these six are the complete set, so the list is exhaustive for
+# those releases rather than a guess. Re-derive it when the pinned UCO or
+# CASE version changes.
+KNOWN_SINGLE_WORD_CLASSES = {
+    'Authorization',
+    'Configuration',
+    'Investigation',
+    'Investigator',
+    'Organization',
+    'Relationship',
+}
+
 
 def extract_external_links(docs_dir: str) -> list[tuple[str, str]]:
     """
@@ -86,8 +103,10 @@ def check_camelcase(links: list[tuple[str, str]]) -> list[str]:
                     f"(no uppercase in {len(name)} chars)"
                 )
         else:
-            # Classes: flag if long PascalCase name has only one uppercase
-            if len(name) >= 12 and upper_count <= 1:
+            # Classes: flag if long PascalCase name has only one uppercase,
+            # unless it is a class that really is one long word.
+            if (len(name) >= 12 and upper_count <= 1
+                    and name not in KNOWN_SINGLE_WORD_CLASSES):
                 errors.append(
                     f"  {filename}: {url}\n"
                     f"    '{name}' looks like broken PascalCase "
