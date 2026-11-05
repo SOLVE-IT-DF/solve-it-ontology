@@ -261,9 +261,7 @@
                                    :techniqueDFT-1167,
                                    :techniqueDFT-1187,
                                    :techniqueDFT-1191,
-                                   :techniqueDFT-1205,
-                                   :techniqueDFT-1206,
-                                   :techniqueDFT-1207 .
+                                   :techniqueDFT-1205 .
 
 :objectiveDFO-1023
     a solveit-core:Objective ;
@@ -3618,13 +3616,15 @@ This technique covers verification carried out after imaging has finished, where
 
 Related techniques that depend on it include DFT-1191 (Parse allocated structures in Windows HIVE files), DFT-1071 (Extract data from SQLite database(s)) and DFT-1121 (Index a data source for keyword searching). DFT-1044 and DFT-1102 decode specific container formats rather than typed values. """ ;
     solveit-core:hasCASEInputClass uco-observable:ContentData ;
-    solveit-core:hasPotentialWeakness :weaknessDFW-1456 .
+    solveit-core:hasPotentialWeakness :weaknessDFW-1456 ;
+    solveit-core:hasSubtechnique :techniqueDFT-1206,
+                                 :techniqueDFT-1207 .
 
 :techniqueDFT-1206
     a owl:Class,
       solveit-core:Technique ;
     rdfs:label "DFT-1206: Decode a number from raw data"@en ;
-    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    rdfs:subClassOf :techniqueDFT-1205 ;
     solveit-core:techniqueID "DFT-1206" ;
     solveit-core:techniqueName "Decode a number from raw data" ;
     solveit-core:techniqueDescription "The process of interpreting a sequence of bytes as a numeric value under an assumed width, signedness, and byte order." ;
@@ -3649,7 +3649,7 @@ Note that strings and timestamps are considered in separate techniques.
     a owl:Class,
       solveit-core:Technique ;
     rdfs:label "DFT-1207: Decode a string from raw data"@en ;
-    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    rdfs:subClassOf :techniqueDFT-1205 ;
     solveit-core:techniqueID "DFT-1207" ;
     solveit-core:techniqueName "Decode a string from raw data" ;
     solveit-core:techniqueDescription "The process of decoding a sequence of bytes as text under an assumed character encoding." ;

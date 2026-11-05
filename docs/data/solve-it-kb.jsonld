@@ -843,12 +843,6 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1205"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1206"
-      },
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1207"
       }
     ]
   },
@@ -13308,6 +13302,14 @@
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1456"
       }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSubtechnique": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1206"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1207"
+      }
     ]
   },
   {
@@ -13324,7 +13326,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1205"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
@@ -13396,7 +13398,7 @@
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1205"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/techniqueID": [
