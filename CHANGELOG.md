@@ -4,6 +4,8 @@ Notable changes to the SOLVE-IT ontology.
 
 ## [Unreleased]
 
+## [0.2.17] — 2026-10-29
+
 ### Added
 
 - `solve_it_analysis_shapes.ttl` constrains
@@ -19,6 +21,24 @@ Notable changes to the SOLVE-IT ontology.
   class through `sh:property` on the class node. Without that, it listed
   recoveredFromPage under owl:Thing on every class page of the documentation.
 
+## [0.2.16] — 2026-10-20
+
+### Changed
+
+- **A SOLVE-IT technique's instances may be planned as well as performed.**
+  The comments on `solveit-core:SolveitInvestigativeAction` and
+  `solveit-core:Technique` said their instances are *performed* actions,
+  narrower than CASE, whose `InvestigativeAction` is "something that may be
+  done or performed" (as `uco-action:Action` is). They now say "may be done or
+  performed" and "planned or performed". A planned step can then be typed with
+  the technique it implements, e.g. `a uco-action:ActionPattern,
+  solveit-data:techniqueDFT-1213`, and is told from a performed action by being
+  an ActionPattern. Comments only: no term or shape changes.
+
+## [0.2.14] — 2026-10-16
+
+### Added
+
 - `solve_it_core_shapes.ttl` gains `SolveitInvestigativeActionShape`,
   constraining `solveit-core:appliedMitigation` to IRIs. The property was
   declared only with `rdfs:domain`, so tools that build classes from SHACL
@@ -29,6 +49,36 @@ Notable changes to the SOLVE-IT ontology.
   the knowledge base, so a class constraint would reject those actions. An
   `sh:or` of `sh:class solveit-core:Mitigation` and `sh:nodeKind sh:IRI` names
   the expected class for generators without changing what validates.
+
+## [0.2.12] — 2026-10-16
+
+### Added
+
+- `solve_it_observable_shapes.ttl` gains `FileSetShape` and `ArtifactSetShape`,
+  constraining `solveit-observable:hasFile` to `uco-observable:File` and
+  `solveit-observable:hasArtifact` to `uco-observable:ObservableObject`. Both
+  properties were declared only with `rdfs:domain`, so tools that build classes
+  from SHACL shapes (the CASE-UCO SDK among them) offered no way to name a
+  set's members except the inherited `uco-core:object`. `ApplicationFiles`
+  already constrained `hasFile`; `FileSet` and its other subclasses now do too.
+
+## [0.2.10] — 2026-09-28
+
+### Fixed
+
+- `solve_it_examples/sqlite_examples.ttl` no longer uses
+  `solveit-analysis:supportedBy`, which was removed. The HypothesisedRecord
+  example (#34) was written before the removal and merged after it, so the
+  example validation failed on `main` and stopped the documentation build.
+  The two triples naming page 2 as the grounds are gone; the comment above the
+  example still explains why each hypothesis is reasonable. The `rdfs:comment`
+  on `HypothesisedRelationship`, `HypothesisedRecord` and
+  `HypothesisedTableAttribution` no longer tells a reader to use the removed
+  terms.
+
+## [0.2.9] — 2026-09-28
+
+### Added
 
 - **`solveit-observable:providesAccessTo`** — links a
   `solveit-observable:DeviceInterface` to the `uco-observable:StorageMedium` it
@@ -49,13 +99,21 @@ Notable changes to the SOLVE-IT ontology.
   whether a multi-bay write blocker is one interface or one per bay is not
   settled.
 
-- `solve_it_observable_shapes.ttl` gains `FileSetShape` and `ArtifactSetShape`,
-  constraining `solveit-observable:hasFile` to `uco-observable:File` and
-  `solveit-observable:hasArtifact` to `uco-observable:ObservableObject`. Both
-  properties were declared only with `rdfs:domain`, so tools that build classes
-  from SHACL shapes (the CASE-UCO SDK among them) offered no way to name a
-  set's members except the inherited `uco-core:object`. `ApplicationFiles`
-  already constrained `hasFile`; `FileSet` and its other subclasses now do too.
+## [0.2.8] — 2026-09-28
+
+### Fixed
+
+- The DFT-1042 example in `solve_it_examples/core_classes_examples.ttl`
+  carries the technique's current name, "Verify hash of copied data matches
+  the hash of the data read from source device". The knowledge base renamed
+  it, and `validate_examples.py` checks example labels against the live
+  knowledge base, so the old name failed the docs workflow for every change.
+  The same name in `solve_it_examples/README.md` is updated to match.
+
+## [0.2.7] — 2026-09-03
+
+### Added
+
 - **`solveit-observable:hasOperatingSystem`** — links a `uco-observable:Device`
   to a `uco-observable:OperatingSystem` installed on it, so a tool capability
   profile can scope a claim to the operating systems it was tested against.
@@ -63,6 +121,10 @@ Notable changes to the SOLVE-IT ontology.
   no domain and is used on `ApplicationFacet` for the system an application
   runs on. Installed rather than running, and more than one is expected. How a
   condition should treat a device with several is open, and tracked in #53.
+
+## [0.2.6] — 2026-09-02
+
+### Added
 
 - `solveit-tool-profile:publishedBy` is an object property with range
   `uco-identity:Identity`, not a datatype property holding the publisher's
@@ -74,12 +136,15 @@ Notable changes to the SOLVE-IT ontology.
   inconsistency — `solveit-wa:evaluatedBy` has always modelled the assessing
   party as an Identity, so the same question was answered two ways in one
   ontology.
+
 - `solve_it_tool_profile.ttl` gains `ToolCapabilityProfileShape`, its first
   SHACL shape, scoped to `publishedBy`. A profile written against the earlier
   form carries a literal, and the shape reports it rather than letting it pass
   as an untyped value. The rest of the profile is not constrained; a full set
   of shapes for this module is separate work.
+
 - `solve_it_tool_profile.ttl` imports `uco-identity` 1.5.0.
+
 - **Breaking.** Profiles published under 0.2.5 or earlier carry the string form
   and no longer conform. The SOLVE-IT Workflow Builder still reads them, on the
   ground that dropping a publisher's attribution is worse than reading an
@@ -96,6 +161,7 @@ Notable changes to the SOLVE-IT ontology.
   including the ones the publisher never tested. Naming weaknesses records what
   a test campaign actually established rather than what the mitigation could in
   principle address.
+
 - `solve_it_tool_profile.ttl` defines
   `solveit-tool-profile:supportingCitation`, an object property on
   `MitigationCapability` with range `solveit-core:Citation`, for the report or
@@ -108,6 +174,7 @@ Notable changes to the SOLVE-IT ontology.
   `solveit-core:hasReference` was not widened to carry this, because widening a
   core term to serve one module puts the change in the module that did not need
   it.
+
 - `solve_it_tool_profile.ttl` gains `MitigationCapabilityShape`, its second
   SHACL shape, constraining node kind and class on both new properties.
   `establishedForWeakness` carries no minimum at violation severity: every
@@ -117,6 +184,7 @@ Notable changes to the SOLVE-IT ontology.
   profile does not say, not a fault in it. pySHACL counts `sh:Info` results
   towards non-conformance unless it is run with `--allow-info`, so that flag is
   part of running these shapes rather than a convenience.
+
 - `solve_it_examples/tool_profile_examples.ttl` declares DFW-1086 and DFW-1087
   alongside DFW-1085, and the testing programme's capability now establishes
   DFM-1054 for two of the three and cites the test report that established it.
@@ -131,12 +199,14 @@ Notable changes to the SOLVE-IT ontology.
   cannot tell a 3 meaning "high" on a three-point scale from a 3 meaning
   "moderate" on a six-point one, so the same integer describes two different
   risks. `WeaknessEvaluationSetShape` constrains it to those three values.
+
 - `WeaknessEvaluationShape` admits the ratings the six-point FMEA scheme
   produces. It previously bounded every factor at 3, `liImpactScore` at 9 and
   `rpnScore` at 27, which are the three-point maxima; a six-point assessment
   reaches 6, 36 and 216 and could not validate at all. The bounds are now 6, 36
   and 216. Existing three-point data is unaffected, since its range is a subset
   of the new one.
+
 - `solve_it_weakness_assessment.ttl` defines `solveit-wa:ThreePointRatingShape`
   and `solveit-wa:SixPointRatingShape`, which carry the per-scheme bounds. The
   widened `WeaknessEvaluationShape` can no longer reject a 5 in a set declaring
@@ -151,43 +221,15 @@ Notable changes to the SOLVE-IT ontology.
   `Hypothesis` with range `uco-observable:ObservableObject`, linking a
   hypothesis to the artifacts that supported or contradicted it. No replacement
   term is defined in their place.
+
 - The `rdfs:comment` on `solveit-analysis:HypothesisedUserAccount` no longer
   points at `supportedBy`.
+
 - The `rdfs:comment` on `solveit-analysis:Hypothesis` reads "A statement that
   is either true or false, the truth of which is uncertain." The previous
   wording described a hypothesis as something that may be supported or
   contradicted by observable artifacts, which the ontology no longer provides
   any way to state.
-
-### Changed
-
-- **A SOLVE-IT technique's instances may be planned as well as performed.**
-  The comments on `solveit-core:SolveitInvestigativeAction` and
-  `solveit-core:Technique` said their instances are *performed* actions,
-  narrower than CASE, whose `InvestigativeAction` is "something that may be
-  done or performed" (as `uco-action:Action` is). They now say "may be done or
-  performed" and "planned or performed". A planned step can then be typed with
-  the technique it implements, e.g. `a uco-action:ActionPattern,
-  solveit-data:techniqueDFT-1213`, and is told from a performed action by being
-  an ActionPattern. Comments only: no term or shape changes.
-
-### Fixed
-
-- `solve_it_examples/sqlite_examples.ttl` no longer uses
-  `solveit-analysis:supportedBy`, which was removed. The HypothesisedRecord
-  example (#34) was written before the removal and merged after it, so the
-  example validation failed on `main` and stopped the documentation build.
-  The two triples naming page 2 as the grounds are gone; the comment above the
-  example still explains why each hypothesis is reasonable. The `rdfs:comment`
-  on `HypothesisedRelationship`, `HypothesisedRecord` and
-  `HypothesisedTableAttribution` no longer tells a reader to use the removed
-  terms.
-- The DFT-1042 example in `solve_it_examples/core_classes_examples.ttl`
-  carries the technique's current name, "Verify hash of copied data matches
-  the hash of the data read from source device". The knowledge base renamed
-  it, and `validate_examples.py` checks example labels against the live
-  knowledge base, so the old name failed the docs workflow for every change.
-  The same name in `solve_it_examples/README.md` is updated to match.
 
 ## [0.2.5] — 2026-08-25
 
