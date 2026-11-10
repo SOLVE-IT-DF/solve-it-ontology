@@ -181,6 +181,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1192"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1216"
       }
     ]
   },
@@ -305,6 +308,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1158"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1218"
       }
     ]
   },
@@ -1305,6 +1311,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1202"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1214"
       }
     ]
   },
@@ -3374,6 +3383,11 @@
         "@value": "dictionary attack"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/Wordlist"
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@id": "https://ontology.unifiedcyberontology.org/uco/observable/password"
@@ -5040,6 +5054,12 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1131"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1491"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1492"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -6732,9 +6752,25 @@
         "@value": "Write expert report"
       }
     ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of writing a report that sets out the findings of a digital forensic examination and the basis for them."
+      }
+    ],
     "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
       {
         "@id": "https://cacontology.projectvic.org/case-management#ExpertReport"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1485"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1486"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1487"
       }
     ]
   },
@@ -13877,6 +13913,60 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1214",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1214: Verify results by checking output of multiple tools"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1214"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Verify results by checking output of multiple tools"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Compare the results from multiple tools (often referred to a dual tool) to check the output is the same."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "dual tool verification"
+      },
+      {
+        "@value": "multi-tool verification"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult"
+      },
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/ObservableObject"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/analysis/AnalyticResult"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1215",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class",
@@ -13957,6 +14047,127 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1069"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1216",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1216: Prevent a device from screen-locking"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1216"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Prevent a device from screen-locking"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "A live device may lock it's screen behind a password or pincode if not interacted with. This could mean loosing access to data. This technique involves applying some measure to stop the device from locking."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasExample": [
+      {
+        "@value": "\"mouse jigglers\": http://www.cru-inc.com/products/wiebetech/mouse_jiggler/"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/observable/Device"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1218",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1218: Create a password dictionary for a credential attack"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1218"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Create a password dictionary for a credential attack"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "The process of compiling a list of candidate passwords or passcodes to be used in a dictionary-based attack against a stored credential or device."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDetails": [
+      {
+        "@value": "A password dictionary may combine generic sources, such as common or previously leaked passwords, with contextual candidates derived from the case, such as names, dates, and words recovered from seized devices or other data associated with the user. Candidates may be expanded using mangling rules and ordered by estimated likelihood. The output is consumed by dictionary-based attacks (DFT-1035). The quality criteria differ from those for keyword lists: the aim is to include the correct password within the number of attempts or the time available, rather than to locate relevant content."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "build a password dictionary"
+      },
+      {
+        "@value": "create a password cracking wordlist"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/Wordlist"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialWeakness": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1488"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1489"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1075"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1076"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1077"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1094"
       }
     ]
   },
@@ -16143,7 +16354,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1063: Incorrectly parsing the partitions table(s)"
+        "@value": "DFW-1063: Missing partitions because of incorrect decoding of data in the partition table"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -16153,13 +16364,15 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Incorrectly parsing the partitions table(s)"
+        "@value": "Missing partitions because of incorrect decoding of data in the partition table"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "The tool converts the bytes of a partition table entry to the wrong value, such as by using the wrong field width or byte order, so a partition that exists is not listed. This covers errors in decoding bytes into values only; errors in using a correctly decoded value are separate weaknesses."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
-      },
       {
         "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
       }
@@ -16184,7 +16397,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1064: Making incorrect assumptions about sector size e.g. 512 rather than 4096"
+        "@value": "DFW-1064: Missing partitions because of incorrect assumptions about sector size"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -16194,7 +16407,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Making incorrect assumptions about sector size e.g. 512 rather than 4096"
+        "@value": "Missing partitions because of incorrect assumptions about sector size"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "The tool decodes a start sector value correctly but multiplies it by the wrong sector size, such as 512 bytes instead of 4096 bytes, so it reads from the wrong byte offset and misses the partition."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
@@ -16224,7 +16442,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1065: Failing to correctly parse start sector pointers from partition tables"
+        "@value": "DFW-1065: Missing partitions because of a failure to correctly follow start sector pointers"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -16234,13 +16452,15 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Failing to correctly parse start sector pointers from partition tables"
+        "@value": "Missing partitions because of a failure to correctly follow start sector pointers"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "The tool decodes a start sector value correctly but calculates the wrong location from it, for example by applying a relative offset in an extended partition chain from the wrong base, so it misses the partition."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
-      {
-        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
-      },
       {
         "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
       }
@@ -16259,7 +16479,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1066: Missing deleted but recoverable partitions from unpartitioned space"
+        "@value": "DFW-1066: Missing deleted but recoverable partitions because of a failure to search for recoverable data"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -16269,7 +16489,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Missing deleted but recoverable partitions from unpartitioned space"
+        "@value": "Missing deleted but recoverable partitions because of a failure to search for recoverable data"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "The tool lists only the partitions that a table still records and does not search unpartitioned space for file system signatures or orphaned partition structures, so a deleted but recoverable partition is missed."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
@@ -16302,7 +16527,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1067: Failure to check the integrity of partition table (where possible e.g. GPT)"
+        "@value": "DFW-1067: Missing partitions because of a failure to check the integrity of the partition table"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -16312,12 +16537,20 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Failure to check the integrity of partition table (where possible e.g. GPT)"
+        "@value": "Missing partitions because of a failure to check the integrity of the partition table"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "The tool does not verify built-in checksums or compare the primary and backup tables, so it accepts a corrupt table and does not list partitions that exist."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_COR"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
@@ -18762,6 +18995,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1112"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1382"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -18778,7 +19014,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1130: Missing assignment of a file type: reporting a file as unknown when it has a known type within the digital forensic science body of knowledge "
+        "@value": "DFW-1130: Missing assignment of a file type: reporting a file as unknown when it has a known type within the digital forensic science body of knowledge"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -18788,7 +19024,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Missing assignment of a file type: reporting a file as unknown when it has a known type within the digital forensic science body of knowledge "
+        "@value": "Missing assignment of a file type: reporting a file as unknown when it has a known type within the digital forensic science body of knowledge"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
@@ -18824,7 +19060,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1131: Missing recognition of multiple file types: reporting a file as a limited set of types, or a single type, when it can be interpreted as having more than one, such as a GIF and Java Jar"
+        "@value": "DFW-1131: Missing recognition of multiple file types: reporting a file as a limited set of types, or a single type, when it can be interpreted as having more than one"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -18834,7 +19070,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Missing recognition of multiple file types: reporting a file as a limited set of types, or a single type, when it can be interpreted as having more than one, such as a GIF and Java Jar"
+        "@value": "Missing recognition of multiple file types: reporting a file as a limited set of types, or a single type, when it can be interpreted as having more than one"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "For example a GIF and Java Jar"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
@@ -18854,6 +19095,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1112"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1378"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -19119,7 +19363,7 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1205"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1231"
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1239"
       }
     ]
   },
@@ -19166,7 +19410,7 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1205"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1231"
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1239"
       }
     ]
   },
@@ -19210,7 +19454,7 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1097"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1231"
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1239"
       }
     ]
   },
@@ -19251,7 +19495,7 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1099"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1231"
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1239"
       }
     ]
   },
@@ -19295,7 +19539,7 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1100"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1231"
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1239"
       }
     ]
   },
@@ -19339,7 +19583,7 @@
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1099"
       },
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1231"
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1239"
       }
     ]
   },
@@ -23823,7 +24067,7 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
       {
-        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1232"
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1238"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasReference": [
@@ -30304,6 +30548,303 @@
     "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1370"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1485",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1485: A reported value is interpreted incorrectly because its number base is not stated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1485"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A reported value is interpreted incorrectly because its number base is not stated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "Values such as offsets, sector numbers and identifiers may be expressed in decimal or hexadecimal. A value containing only the digits 0-9 is valid in both bases, so a reader who assumes the wrong base derives a different number and may examine the wrong location or fail to match two references to the same item. Interpretation here means determining what a reported number denotes, not evaluative interpretation of findings."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1371"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1372"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1170"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1486",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1486: A reported value is interpreted incorrectly because its unit of measurement is not stated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1486"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A reported value is interpreted incorrectly because its unit of measurement is not stated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "A position or size may be expressed in bytes, sectors, clusters or blocks, and the size of a sector or cluster varies between devices and file systems. A reader who assumes the wrong unit derives a different location or size. Interpretation here means determining what a reported number denotes, not evaluative interpretation of findings."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1373"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1374"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1170"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1487",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1487: A reported value is interpreted incorrectly because the reference point it is measured from is not stated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1487"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "A reported value is interpreted incorrectly because the reference point it is measured from is not stated"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "An offset may be measured from the start of a disk image, the start of a partition, or the start of a file, and a file may not be stored contiguously. A reader who assumes the wrong reference point looks in the wrong place for the reported data. Interpretation here means determining what a reported number denotes, not evaluative interpretation of findings."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_MISINT"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1375"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1376"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1170"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1488",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1488: Correct password is not included in the dictionary because contextual information about the user was not used to generate candidates"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1488"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Correct password is not included in the dictionary because contextual information about the user was not used to generate candidates"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1094"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1205"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1489",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1489: Dictionary contains candidates that cannot be valid passwords for the target because known password constraints, such as length, character set, or format, were not considered"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1489"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Dictionary contains candidates that cannot be valid passwords for the target because known password constraints, such as length, character set, or format, were not considered"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_EX"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1377"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1491",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1491: Specific file format is not reported because the identification method returns only a coarse categorization"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1491"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Specific file format is not reported because the identification method returns only a coarse categorization"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "The method itself distinguishes only broad types, for example a MIME type that covers every version of a format, or a type for a container rather than the format built on it, so the specific format or version is never determined."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1111"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1379"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/weaknessDFW-1492",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Weakness"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFW-1492: Specific file format is not reported because a more specific result is recorded using a coarse categorization"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessID": [
+      {
+        "@value": "DFW-1492"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessName": [
+      {
+        "@value": "Specific file format is not reported because a more specific result is recorded using a coarse categorization"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "The method determines a specific format or version, but the result is recorded or reported only as a broader category, such as a MIME type, a type family or a vendor-defined group, so distinctions the method made are unavailable to later analysis, filtering and reporting."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_AS"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INCOMP"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1380"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1381"
       }
     ]
   },
@@ -38531,6 +39072,340 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1371",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1371: State the number base of each reported numeric value"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1371"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "State the number base of each reported numeric value"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Mark each value that is not in decimal, for example with a 0x prefix or a subscript 16. A value containing only the digits 0-9 is ambiguous unless its base is marked."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1170"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1372",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1372: State the number base generally used in reporting, and note exceptions"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1372"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "State the number base generally used in reporting, and note exceptions"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "State near the start of the report which number base values are given in unless marked otherwise, and mark each value that departs from it. This makes unmarked values unambiguous without annotating every one."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1373",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1373: State the unit of measurement of each reported position or size"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1373"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "State the unit of measurement of each reported position or size"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Give the unit (for example bytes or sectors) with every position or size, and where sectors or clusters are used, state their size in bytes."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1170"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1374",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1374: State the unit of measurement generally used in reporting, and note exceptions"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1374"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "State the unit of measurement generally used in reporting, and note exceptions"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "State near the start of the report which unit positions and sizes are given in unless marked otherwise, including the sector or cluster size in bytes where those units are used, and mark each value that departs from it."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1375",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1375: State the reference point from which each reported offset is measured"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1375"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "State the reference point from which each reported offset is measured"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "State whether each offset is measured from the start of the disk image, the start of a named partition, or the start of a named file, so the reader can locate the reported data."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1170"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1376",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1376: State the reference point generally used in reporting offsets, and note exceptions"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1376"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "State the reference point generally used in reporting offsets, and note exceptions"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "State near the start of the report which point offsets are measured from unless marked otherwise, for example the start of the disk image, and identify the reference point for each offset that departs from it."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1377",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1377: Filter dictionary candidates to match the known password length, character set, or format constraints of the target"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1377"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Filter dictionary candidates to match the known password length, character set, or format constraints of the target"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1378",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1378: Ensure that all file type checks run, rather than stopping on first match"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1378"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Ensure that all file type checks run, rather than stopping on first match"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1379",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1379: Use a file type identification method that reports the specific format, and its version where relevant"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1379"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Use a file type identification method that reports the specific format, and its version where relevant"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "For example, a PRONOM PUID distinguishes PDF 1.4 (fmt/18) from PDF 2.0 (fmt/1129), where the MIME type application/pdf does not."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1380",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1380: Record the specific format, and its version where relevant, alongside any category"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1380"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Record the specific format, and its version where relevant, alongside any category"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Keep the identifier the method produced, for example a PRONOM PUID, in addition to any MIME type or category, so that later filtering and reporting can use it."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1381",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1381: Check whether the type a tool reports is its identification result or a category mapped from it"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1381"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Check whether the type a tool reports is its identification result or a category mapped from it"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Some tools derive a category or MIME type from a more specific internal result; establish which one the tool reports before relying on it."
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1382",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Mitigation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFM-1382: Avoid using signatures that are too weak to identify a file type on their own, except to confirm the type suggested by the extension"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationID": [
+      {
+        "@value": "DFM-1382"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationName": [
+      {
+        "@value": "Avoid using signatures that are too weak to identify a file type on their own, except to confirm the type suggested by the extension"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/mitigationDescription": [
+      {
+        "@value": "Short or generic header signatures, such as one or two bytes or common text, match many unrelated files. Using them alone to assign a type produces false identifications; restricting them to confirming the type suggested by the extension, or reporting them as weak, keeps the signature's evidential weight visible."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1133"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1001",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Citation"
@@ -41955,11 +42830,6 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
       {
-        "@value": "None"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
-      {
         "@value": "Organization of Scientific Area Committees for Forensic Science (2019) A Framework for Harmonizing Forensic Science Practices and Digital/Multimedia Evidence (OSAC Technical Series 0002R1). NIST. Available at: https://www.nist.gov/system/files/documents/2018/01/10/osac_ts_0002.pdf"
       }
     ]
@@ -41981,11 +42851,6 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
       {
-        "@value": "None"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
-      {
         "@value": "Forensic Science Regulator (2026) Forensic science activities: interpretation and communication (FSR-GUI-0004), Version 2, Annex B. GOV.UK. Available at: https://www.gov.uk/government/publications/forensic-science-activities-interpretation-and-communication-fsr-gui-0004/forensic-science-activities-interpretation-and-communication-accessible#annex-b"
       }
     ]
@@ -42006,11 +42871,6 @@
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
-      {
-        "@value": "None"
-      }
-    ],
-    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
       {
         "@value": "Casey, E., 2020. Standardization of forming and expressing preliminary evaluative opinions on digital evidence. Forensic Science International: Digital Investigation 32, 200888. https://doi.org/10.1016/j.fsidi.2019.200888"
       }
@@ -42091,6 +42951,32 @@
     "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
       {
         "@value": "@article{STUDIAWAN2025301982,\ntitle = {Towards a standardized methodology and dataset for evaluating LLM-based digital forensic timeline analysis},\njournal = {Forensic Science International: Digital Investigation},\nvolume = {54},\npages = {301982},\nyear = {2025},\nnote = {DFRWS APAC 2025 - Selected Papers from the 5th Annual Digital Forensics Research Conference APAC},\nissn = {2666-2817},\ndoi = {https://doi.org/10.1016/j.fsidi.2025.301982},\nurl = {https://www.sciencedirect.com/science/article/pii/S2666281725001222},\nauthor = {Hudan Studiawan and Frank Breitinger and Mark Scanlon},\nkeywords = {LLM evaluation, Forensic timeline analysis, Large language models, ChatGPT, log2timeline/plaso},\nabstract = {Large language models (LLMs) have widespread adoption in many domains, including digital forensics. While prior research has largely centered on case studies and examples demonstrating how LLMs can assist forensic investigations, deeper explorations remain limited, i.e., a standardized approach for precise performance evaluations is lacking. Inspired by the NIST Computer Forensic Tool Testing Program, this paper proposes a standardized methodology to quantitatively evaluate the application of LLMs for digital forensic tasks, specifically in timeline analysis. The paper describes the components of the methodology, including the dataset, timeline generation, and ground truth development. In addition, the paper recommends the use of BLEU and ROUGE metrics for the quantitative evaluation of LLMs through case studies or tasks involving timeline analysis. Experimental results using ChatGPT demonstrate that the proposed methodology can effectively evaluate LLM-based forensic timeline analysis. Finally, we discuss the limitations of applying LLMs to forensic timeline analysis.}\n}"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1170",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1170"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1170"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "None"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "Hargreaves, C. (2011), Standard Units in Digital Forensics, Forensic Focus, https://www.forensicfocus.com/articles/standard-units-in-digital-forensics/"
       }
     ]
   },
