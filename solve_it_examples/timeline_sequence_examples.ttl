@@ -54,7 +54,10 @@
     rdfs:label "FAT32 filesystem on USB drive"@en .
 
 :fileset-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 rdf:type solveit-observable:FileSet ;
-    rdfs:label "Enumerated files from FAT32 USB drive"@en .
+    rdfs:label "Enumerated files from FAT32 USB drive"@en ;
+    solveit-observable:hasFile :implicit_example_file001 ,
+                              :implicit_example_file002 ,
+                              :implicit_example_file003 .
 
 #################################################################
 #    Two-step provenance chain for cluster allocation timeline
@@ -82,9 +85,7 @@
     uco-action:instrument :tool-acme-timeline-generator ;
     uco-action:startTime "2026-01-28T11:03:00Z"^^xsd:dateTime ;
     uco-action:endTime "2026-01-28T11:04:00Z"^^xsd:dateTime ;
-    uco-action:object :implicit_example_file001 ,
-                      :implicit_example_file002 ,
-                      :implicit_example_file003 ;
+    uco-action:object :fileset-68b52e60-1f7f-4f22-8c5e-dd0492d3ee07 ;
     uco-action:result :timelineEntry001-implicit_example_file001 ,
                       :timelineEntry002-implicit_example_file002 ,
                       :timelineEntry003-implicit_example_file003 ,
