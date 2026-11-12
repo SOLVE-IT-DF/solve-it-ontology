@@ -7,22 +7,22 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-11-10T21:35:42Z"
+        "@value": "2026-11-12T20:06:02Z"
       }
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://github.com/SOLVE-IT-DF/solve-it/commit/eac86fbf8b960e5ca1e2eddf501fe2937110be1f"
+        "@id": "https://github.com/SOLVE-IT-DF/solve-it/commit/f455acb1e3d502020146b83bd7b5bbe4924f6577"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "SOLVE-IT knowledge base data version 0.97.0, schema version 5.1, built from commit eac86fbf8b960e5ca1e2eddf501fe2937110be1f."
+        "@value": "SOLVE-IT knowledge base data version 0.98.2, schema version 5.1, built from commit f455acb1e3d502020146b83bd7b5bbe4924f6577."
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
       {
-        "@value": "0.97.0"
+        "@value": "0.98.2"
       }
     ]
   },
@@ -67,6 +67,9 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1213"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1217"
       }
     ]
   },
@@ -14126,6 +14129,59 @@
     ]
   },
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1217",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class",
+      "https://ontology.solveit-df.org/solveit/core/Technique"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DFT-1217: Test forensic tools that are to be used on a running machine for intrusiveness"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/core/SolveitInvestigativeAction"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueID": [
+      {
+        "@value": "DFT-1217"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueName": [
+      {
+        "@value": "Test forensic tools that are to be used on a running machine for intrusiveness"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/techniqueDescription": [
+      {
+        "@value": "Deploying tools on a live system will make changes to the target system potentially overwriting data. Knowing what those changes are likely to be in advance allows risk-based decisions to be made, and later justification as to whether any relevant data was likely to have been overwritten."
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasSynonym": [
+      {
+        "@value": "testing live tools"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEInputClass": [
+      {
+        "@id": "https://ontology.unifiedcyberontology.org/uco/tool/Tool"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasCASEOutputClass": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/observable/ArtifactSet"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasReference": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1062"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/techniqueDFT-1218",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class",
@@ -23394,7 +23450,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "DFW-1254: Recovered (non-allocated) file content is incorrect due to an incorrect assumption that the file was contiguous e.g. some residual file metadata exists, but not the full reassembly information"
+        "@value": "DFW-1254: Recovered (non-allocated) file content is incorrect due to an incorrect assumption that the file was contiguous"
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessID": [
@@ -23404,7 +23460,12 @@
     ],
     "https://ontology.solveit-df.org/solveit/core/weaknessName": [
       {
-        "@value": "Recovered (non-allocated) file content is incorrect due to an incorrect assumption that the file was contiguous e.g. some residual file metadata exists, but not the full reassembly information"
+        "@value": "Recovered (non-allocated) file content is incorrect due to an incorrect assumption that the file was contiguous"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/weaknessDescription": [
+      {
+        "@value": "For example, some residual file metadata exists, but not the full reassembly information. This could result in other fragments of files being considered to be part of the recovered file."
       }
     ],
     "https://ontology.solveit-df.org/solveit/core/hasWeaknessClass": [
@@ -43030,6 +43091,32 @@
     "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
       {
         "@value": "@article{SCANLON2023301609,\n  title   = {{ChatGPT} for digital forensic investigation: The good, the bad, and the unknown},\n  author  = {Scanlon, Mark and Breitinger, Frank and Hargreaves, Christopher and Hilgert, Jan-Niclas and Sheppard, John},\n  journal = {Forensic Science International: Digital Investigation},\n  volume  = {46},\n  pages   = {301609},\n  year    = {2023},\n  issn    = {2666-2817},\n  doi     = {10.1016/j.fsidi.2023.301609},\n  url     = {https://www.sciencedirect.com/science/article/pii/S266628172300121X}\n}"
+      }
+    ]
+  },
+  {
+    "@id": "https://ontology.solveit-df.org/solveit/data/citationDFCite-1172",
+    "@type": [
+      "https://ontology.solveit-df.org/solveit/core/Citation"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@value": "DFCite-1172"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationID": [
+      {
+        "@value": "DFCite-1172"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationPlaintext": [
+      {
+        "@value": "Qin, J., Schmotz, D., Prinzhorn, D., Beurer-Kellner, L., Prabhu, A. and Andriushchenko, M., 2026. LLM agents can easily tamper with their own traces. arXiv preprint arXiv:2609.30266. https://arxiv.org/abs/2609.30266"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/citationBibtex": [
+      {
+        "@value": "@misc{qin2026tamper,\n  title         = {LLM Agents Can Easily Tamper With Their Own Traces},\n  author        = {Qin, Jeremy and Schmotz, David and Prinzhorn, Derck and Beurer-Kellner, Luca and Prabhu, Ameya and Andriushchenko, Maksym},\n  year          = {2026},\n  eprint        = {2609.30266},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.CR},\n  url           = {https://arxiv.org/abs/2609.30266}\n}"
       }
     ]
   },

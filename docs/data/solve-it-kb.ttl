@@ -19,10 +19,10 @@
 #    reporting_scripts/generate_rdf_from_kb.py. Do not edit by hand.
 #
 #      Objectives:     24
-#      Techniques:     210
+#      Techniques:     211
 #      Weaknesses:     461
 #      Mitigations:    360
-#      Citations:      166
+#      Citations:      167
 #################################################################
 
 #################################################################
@@ -33,10 +33,10 @@
 
 <https://ontology.solveit-df.org/solveit/data/>
     a owl:Ontology ;
-    dcterms:modified "2026-11-10T21:35:42Z"^^xsd:dateTime ;
-    dcterms:source <https://github.com/SOLVE-IT-DF/solve-it/commit/eac86fbf8b960e5ca1e2eddf501fe2937110be1f> ;
-    rdfs:comment "SOLVE-IT knowledge base data version 0.97.0, schema version 5.1, built from commit eac86fbf8b960e5ca1e2eddf501fe2937110be1f." ;
-    owl:versionInfo "0.97.0" .
+    dcterms:modified "2026-11-12T20:06:02Z"^^xsd:dateTime ;
+    dcterms:source <https://github.com/SOLVE-IT-DF/solve-it/commit/f455acb1e3d502020146b83bd7b5bbe4924f6577> ;
+    rdfs:comment "SOLVE-IT knowledge base data version 0.98.2, schema version 5.1, built from commit f455acb1e3d502020146b83bd7b5bbe4924f6577." ;
+    owl:versionInfo "0.98.2" .
 
 #################################################################
 #    Objectives (24)
@@ -55,7 +55,8 @@
     solveit-core:sortOrder "0"^^xsd:integer ;
     solveit-core:includesTechnique :techniqueDFT-1110,
                                    :techniqueDFT-1211,
-                                   :techniqueDFT-1213 .
+                                   :techniqueDFT-1213,
+                                   :techniqueDFT-1217 .
 
 :objectiveDFO-1014
     a solveit-core:Objective ;
@@ -416,7 +417,7 @@
                                    :techniqueDFT-1210 .
 
 #################################################################
-#    Techniques (210)
+#    Techniques (211)
 #
 #    Each technique is an instance of the solveit-core:Technique metaclass AND
 #    an owl:Class in its own right, following uco-action:Technique (UCO 1.5.0).
@@ -3859,6 +3860,19 @@ Formats differ in which metadata they are able to record, so some metadata prese
     solveit-core:hasCASEInputClass uco-observable:Device ;
     solveit-core:hasCASEOutputClass uco-observable:Device .
 
+:techniqueDFT-1217
+    a owl:Class,
+      solveit-core:Technique ;
+    rdfs:label "DFT-1217: Test forensic tools that are to be used on a running machine for intrusiveness"@en ;
+    rdfs:subClassOf solveit-core:SolveitInvestigativeAction ;
+    solveit-core:techniqueID "DFT-1217" ;
+    solveit-core:techniqueName "Test forensic tools that are to be used on a running machine for intrusiveness" ;
+    solveit-core:techniqueDescription "Deploying tools on a live system will make changes to the target system potentially overwriting data. Knowing what those changes are likely to be in advance allows risk-based decisions to be made, and later justification as to whether any relevant data was likely to have been overwritten." ;
+    solveit-core:hasSynonym "testing live tools" ;
+    solveit-core:hasCASEInputClass <https://ontology.unifiedcyberontology.org/uco/tool/Tool> ;
+    solveit-core:hasCASEOutputClass solveit-observable:ArtifactSet ;
+    solveit-core:hasReference :citationDFCite-1062 .
+
 :techniqueDFT-1218
     a owl:Class,
       solveit-core:Technique ;
@@ -6287,9 +6301,10 @@ Formats differ in which metadata they are able to record, so some metadata prese
 
 :weaknessDFW-1254
     a solveit-core:Weakness ;
-    rdfs:label "DFW-1254: Recovered (non-allocated) file content is incorrect due to an incorrect assumption that the file was contiguous e.g. some residual file metadata exists, but not the full reassembly information"@en ;
+    rdfs:label "DFW-1254: Recovered (non-allocated) file content is incorrect due to an incorrect assumption that the file was contiguous"@en ;
     solveit-core:weaknessID "DFW-1254" ;
-    solveit-core:weaknessName "Recovered (non-allocated) file content is incorrect due to an incorrect assumption that the file was contiguous e.g. some residual file metadata exists, but not the full reassembly information" ;
+    solveit-core:weaknessName "Recovered (non-allocated) file content is incorrect due to an incorrect assumption that the file was contiguous" ;
+    solveit-core:weaknessDescription "For example, some residual file metadata exists, but not the full reassembly information. This could result in other fragments of files being considered to be part of the recovered file." ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_EX ;
     solveit-core:hasPotentialMitigation :mitigationDFM-1079,
                                         :mitigationDFM-1080,
@@ -10498,7 +10513,7 @@ This differs based on whether data on a device needs to be hashed for verificati
     solveit-core:hasReference :citationDFCite-1133 .
 
 #################################################################
-#    Citations (166)
+#    Citations (167)
 #
 #    Reference sources, cited by DFCite id from techniques, weaknesses
 #    and mitigations.
@@ -11695,6 +11710,21 @@ abstract = {Large language models (LLMs) have widespread adoption in many domain
   issn    = {2666-2817},
   doi     = {10.1016/j.fsidi.2023.301609},
   url     = {https://www.sciencedirect.com/science/article/pii/S266628172300121X}
+}""" .
+
+:citationDFCite-1172
+    a solveit-core:Citation ;
+    rdfs:label "DFCite-1172" ;
+    solveit-core:citationID "DFCite-1172" ;
+    solveit-core:citationPlaintext "Qin, J., Schmotz, D., Prinzhorn, D., Beurer-Kellner, L., Prabhu, A. and Andriushchenko, M., 2026. LLM agents can easily tamper with their own traces. arXiv preprint arXiv:2609.30266. https://arxiv.org/abs/2609.30266" ;
+    solveit-core:citationBibtex """@misc{qin2026tamper,
+  title         = {LLM Agents Can Easily Tamper With Their Own Traces},
+  author        = {Qin, Jeremy and Schmotz, David and Prinzhorn, Derck and Beurer-Kellner, Luca and Prabhu, Ameya and Andriushchenko, Maksym},
+  year          = {2026},
+  eprint        = {2609.30266},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CR},
+  url           = {https://arxiv.org/abs/2609.30266}
 }""" .
 
 #################################################################
