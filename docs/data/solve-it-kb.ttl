@@ -1,5 +1,6 @@
 @prefix : <https://ontology.solveit-df.org/solveit/data/> .
 @prefix case-investigation: <https://ontology.caseontology.org/case/investigation/> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
@@ -23,6 +24,19 @@
 #      Mitigations:    360
 #      Citations:      166
 #################################################################
+
+#################################################################
+#    Knowledge base version
+#
+#    Data version, schema version and the commit this file was built from.
+#################################################################
+
+<https://ontology.solveit-df.org/solveit/data/>
+    a owl:Ontology ;
+    dcterms:modified "2026-11-10T21:35:42Z"^^xsd:dateTime ;
+    dcterms:source <https://github.com/SOLVE-IT-DF/solve-it/commit/eac86fbf8b960e5ca1e2eddf501fe2937110be1f> ;
+    rdfs:comment "SOLVE-IT knowledge base data version 0.97.0, schema version 5.1, built from commit eac86fbf8b960e5ca1e2eddf501fe2937110be1f." ;
+    owl:versionInfo "0.97.0" .
 
 #################################################################
 #    Objectives (24)

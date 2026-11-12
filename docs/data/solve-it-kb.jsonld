@@ -1,5 +1,32 @@
 [
   {
+    "@id": "https://ontology.solveit-df.org/solveit/data/",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+        "@value": "2026-11-10T21:35:42Z"
+      }
+    ],
+    "http://purl.org/dc/terms/source": [
+      {
+        "@id": "https://github.com/SOLVE-IT-DF/solve-it/commit/eac86fbf8b960e5ca1e2eddf501fe2937110be1f"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+      {
+        "@value": "SOLVE-IT knowledge base data version 0.97.0, schema version 5.1, built from commit eac86fbf8b960e5ca1e2eddf501fe2937110be1f."
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.97.0"
+      }
+    ]
+  },
+  {
     "@id": "https://ontology.solveit-df.org/solveit/data/objectiveDFO-1015",
     "@type": [
       "https://ontology.solveit-df.org/solveit/core/Objective"
