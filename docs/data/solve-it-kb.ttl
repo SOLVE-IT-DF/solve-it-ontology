@@ -8216,66 +8216,87 @@ Formats differ in which metadata they are able to record, so some metadata prese
 #################################################################
 #    Mitigations (360)
 #
-#    Actions that prevent a weakness or reduce its impact.
+#    Actions that prevent a weakness or reduce its impact. Each mitigation is
+#    an instance of the solveit-core:Mitigation metaclass AND an owl:Class
+#    in its own right, rdfs:subClassOf solveit-core:SolveitMitigation, built
+#    the same way as a technique.
 #################################################################
 
 :mitigationDFM-1001
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1001: Review of all triage results that are relied on during the full digital forensic examination"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1001" ;
     solveit-core:mitigationName "Review of all triage results that are relied on during the full digital forensic examination" .
 
 :mitigationDFM-1002
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1002: Testing of the faraday environment to be used"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1002" ;
     solveit-core:mitigationName "Testing of the faraday environment to be used" ;
     solveit-core:hasReference :citationDFCite-1086 .
 
 :mitigationDFM-1003
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1003: Check image size corresponds with drive label"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1003" ;
     solveit-core:mitigationName "Check image size corresponds with drive label" .
 
 :mitigationDFM-1004
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1004: Check hash of image matches hash of source device"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1004" ;
     solveit-core:mitigationName "Check hash of image matches hash of source device" ;
     solveit-core:mitigationDescription "This mitigation refers to checking the hash of a source *device* and differs from M1009 which refers to source *material*. This differs based on whether data on a device needs to be hashed for verification, or a piece of data needs to be hashed (e.g. imaging a raw dd to a forensic container format)." ;
     solveit-core:linksToTechnique :techniqueDFT-1042 .
 
 :mitigationDFM-1005
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1005: Testing to ensure that the software and hardware disk imaging setup can detect HPAs"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1005" ;
     solveit-core:mitigationName "Testing to ensure that the software and hardware disk imaging setup can detect HPAs" ;
     solveit-core:mitigationDescription "Tests have been performed that the combination of hardware and software used can detect when HPAs are present." .
 
 :mitigationDFM-1006
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1006: Testing to ensure software and hardware setup detects DCOs"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1006" ;
     solveit-core:mitigationName "Testing to ensure software and hardware setup detects DCOs" .
 
 :mitigationDFM-1007
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1007: Use hardware write blocker"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1007" ;
     solveit-core:mitigationName "Use hardware write blocker" ;
     solveit-core:linksToTechnique :techniqueDFT-1012 .
 
 :mitigationDFM-1008
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1008: Use software write blocker"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1008" ;
     solveit-core:mitigationName "Use software write blocker" ;
     solveit-core:linksToTechnique :techniqueDFT-1013 .
 
 :mitigationDFM-1009
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1009: Check hash of image matches hash of source material"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1009" ;
     solveit-core:mitigationName "Check hash of image matches hash of source material" ;
     solveit-core:mitigationDescription """This mitigation refers to checking the hash of a source *material* and differs from M1004 which refers to source *device*. 
@@ -8283,652 +8304,858 @@ Formats differ in which metadata they are able to record, so some metadata prese
 This differs based on whether data on a device needs to be hashed for verification, or a piece of data needs to be hashed (e.g. imaging a raw dd to a forensic container format).""" .
 
 :mitigationDFM-1010
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1010: Perform full extraction instead of selective"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1010" ;
     solveit-core:mitigationName "Perform full extraction instead of selective" .
 
 :mitigationDFM-1011
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1011: Perform full extraction instead of selective, followed by partial processing"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1011" ;
     solveit-core:mitigationName "Perform full extraction instead of selective, followed by partial processing" .
 
 :mitigationDFM-1012
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1012: Clear presentation of the backup and deletion process"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1012" ;
     solveit-core:mitigationName "Clear presentation of the backup and deletion process" .
 
 :mitigationDFM-1013
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1013: Consider memory acquisition and offline analysis instead"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1013" ;
     solveit-core:mitigationName "Consider memory acquisition and offline analysis instead" ;
     solveit-core:hasReference :citationDFCite-1063 .
 
 :mitigationDFM-1014
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1014: Test and document changes made by the tools used"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1014" ;
     solveit-core:mitigationName "Test and document changes made by the tools used" ;
     solveit-core:hasReference :citationDFCite-1062 .
 
 :mitigationDFM-1015
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1015: Use tools only if changes made are to locations where relevant evidence is unlikely to be located."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1015" ;
     solveit-core:mitigationName "Use tools only if changes made are to locations where relevant evidence is unlikely to be located." ;
     solveit-core:hasReference :citationDFCite-1062 .
 
 :mitigationDFM-1016
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1016: Alert user that the data collected is a partial set of data stored on the device"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1016" ;
     solveit-core:mitigationName "Alert user that the data collected is a partial set of data stored on the device" .
 
 :mitigationDFM-1017
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1017: Check for physical presence of SD card"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1017" ;
     solveit-core:mitigationName "Check for physical presence of SD card" .
 
 :mitigationDFM-1018
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1018: Check if presence of SD card is expected"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1018" ;
     solveit-core:mitigationName "Check if presence of SD card is expected" .
 
 :mitigationDFM-1019
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1019: Consider if file system acquisition is possible/permitted"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1019" ;
     solveit-core:mitigationName "Consider if file system acquisition is possible/permitted" ;
     solveit-core:linksToTechnique :techniqueDFT-1020 .
 
 :mitigationDFM-1020
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1020: Compare data extracted with full list of installed apps"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1020" ;
     solveit-core:mitigationName "Compare data extracted with full list of installed apps" .
 
 :mitigationDFM-1021
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1021: Verify the disk image integrity with multiple hash algorithms e.g. MD5 and SHA1 (Kessler 2016)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1021" ;
     solveit-core:mitigationName "Verify the disk image integrity with multiple hash algorithms e.g. MD5 and SHA1 (Kessler 2016)" .
 
 :mitigationDFM-1022
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1022: Restrict access to stored disk images"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1022" ;
     solveit-core:mitigationName "Restrict access to stored disk images" .
 
 :mitigationDFM-1023
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1023: Ensure and check logs of access to stored disk images"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1023" ;
     solveit-core:mitigationName "Ensure and check logs of access to stored disk images" .
 
 :mitigationDFM-1024
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1024: Validate extracted key against the encrypted material before powering off the machine from which the key was extracted (e.g. Hargreaves & Chivers 2008b)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1024" ;
     solveit-core:mitigationName "Validate extracted key against the encrypted material before powering off the machine from which the key was extracted (e.g. Hargreaves & Chivers 2008b)" .
 
 :mitigationDFM-1025
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1025: Validation & testing against the encryption system under consideration"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1025" ;
     solveit-core:mitigationName "Validation & testing against the encryption system under consideration" .
 
 :mitigationDFM-1026
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1026: Testing of backup parsing method"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1026" ;
     solveit-core:mitigationName "Testing of backup parsing method" .
 
 :mitigationDFM-1027
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1027: Use dual tool verification"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1027" ;
     solveit-core:mitigationName "Use dual tool verification" .
 
 :mitigationDFM-1028
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1028: Parse app lists if available and highlight missing data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1028" ;
     solveit-core:mitigationName "Parse app lists if available and highlight missing data" .
 
 :mitigationDFM-1029
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1029: Testing of keyword indexing component of tool"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1029" ;
     solveit-core:mitigationName "Testing of keyword indexing component of tool" .
 
 :mitigationDFM-1030
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1030: Testing of retrieval of indexed content"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1030" ;
     solveit-core:mitigationName "Testing of retrieval of indexed content" .
 
 :mitigationDFM-1031
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1031: Also using synonyms for terms used"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1031" ;
     solveit-core:mitigationName "Also using synonyms for terms used" .
 
 :mitigationDFM-1032
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1032: Evaluation of the effectiveness of wordlist used for case-type searching"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1032" ;
     solveit-core:mitigationName "Evaluation of the effectiveness of wordlist used for case-type searching" ;
     solveit-core:hasReference :citationDFCite-1074 .
 
 :mitigationDFM-1033
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1033: Prioritization of search results based on context"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1033" ;
     solveit-core:mitigationName "Prioritization of search results based on context" ;
     solveit-core:hasReference :citationDFCite-1014 .
 
 :mitigationDFM-1034
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1034: Comparison of index results with live search results"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1034" ;
     solveit-core:mitigationName "Comparison of index results with live search results" ;
     solveit-core:linksToTechnique :techniqueDFT-1125 .
 
 :mitigationDFM-1035
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1035: Verification against second tool with known different regex implementation"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1035" ;
     solveit-core:mitigationName "Verification against second tool with known different regex implementation" .
 
 :mitigationDFM-1036
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1036: Testing of regular expression component of tool"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1036" ;
     solveit-core:mitigationName "Testing of regular expression component of tool" .
 
 :mitigationDFM-1037
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1037: The context of relevant keyword results are manually checked"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1037" ;
     solveit-core:mitigationName "The context of relevant keyword results are manually checked" .
 
 :mitigationDFM-1038
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1038: Word list selected such that a practically reviewable number of results are returned"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1038" ;
     solveit-core:mitigationName "Word list selected such that a practically reviewable number of results are returned" .
 
 :mitigationDFM-1039
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1039: Hash matching to reduce need for manual review"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1039" ;
     solveit-core:mitigationName "Hash matching to reduce need for manual review" .
 
 :mitigationDFM-1040
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1040: Use of AI to flag potentially relevant content to reduce need for manual review"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1040" ;
     solveit-core:mitigationName "Use of AI to flag potentially relevant content to reduce need for manual review" .
 
 :mitigationDFM-1041
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1041: Regular breaks to minimise investigator fatigue"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1041" ;
     solveit-core:mitigationName "Regular breaks to minimise investigator fatigue" .
 
 :mitigationDFM-1042
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1042: Secondary review of flagged items to ensure relevance"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1042" ;
     solveit-core:mitigationName "Secondary review of flagged items to ensure relevance" .
 
 :mitigationDFM-1043
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1043: Scan for orphaned EPTs"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1043" ;
     solveit-core:mitigationName "Scan for orphaned EPTs" ;
     solveit-core:hasReference :citationDFCite-1135 .
 
 :mitigationDFM-1044
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1044: Scan for Volume Boot Records in unpartitioned space"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1044" ;
     solveit-core:mitigationName "Scan for Volume Boot Records in unpartitioned space" ;
     solveit-core:hasReference :citationDFCite-1135 .
 
 :mitigationDFM-1045
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1045: Explicitly detect sector size in use"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1045" ;
     solveit-core:mitigationName "Explicitly detect sector size in use" .
 
 :mitigationDFM-1046
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1046: Check pointer offsets for both 512 and 4096 sectors sizes"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1046" ;
     solveit-core:mitigationName "Check pointer offsets for both 512 and 4096 sectors sizes" .
 
 :mitigationDFM-1047
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1047: Testing partition table parsing on standard and non-standard configurations"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1047" ;
     solveit-core:mitigationName "Testing partition table parsing on standard and non-standard configurations" .
 
 :mitigationDFM-1048
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1048: Check built-in integrity checks of partition tables where possible"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1048" ;
     solveit-core:mitigationName "Check built-in integrity checks of partition tables where possible" .
 
 :mitigationDFM-1049
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1049: Check consistency between primary and backup partition tables (where possible)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1049" ;
     solveit-core:mitigationName "Check consistency between primary and backup partition tables (where possible)" .
 
 :mitigationDFM-1050
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1050: Manually verify relevant data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1050" ;
     solveit-core:mitigationName "Manually verify relevant data" .
 
 :mitigationDFM-1051
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1051: Validation of specific file system parsing operation for the file system under consideration"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1051" ;
     solveit-core:mitigationName "Validation of specific file system parsing operation for the file system under consideration" .
 
 :mitigationDFM-1052
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1052: Use of a second independent tool to compare live file system listing"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1052" ;
     solveit-core:mitigationName "Use of a second independent tool to compare live file system listing" .
 
 :mitigationDFM-1053
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1053: Verification of the file system specification used as the basis for the tool development"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1053" ;
     solveit-core:mitigationName "Verification of the file system specification used as the basis for the tool development" .
 
 :mitigationDFM-1054
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1054: Testing of message extraction and parsing features"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1054" ;
     solveit-core:mitigationName "Testing of message extraction and parsing features" .
 
 :mitigationDFM-1055
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1055: Correlation of data extracted with data from service provider"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1055" ;
     solveit-core:mitigationName "Correlation of data extracted with data from service provider" .
 
 :mitigationDFM-1056
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1056: Correlation of message data from third party data (another participant in message thread)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1056" ;
     solveit-core:mitigationName "Correlation of message data from third party data (another participant in message thread)" .
 
 :mitigationDFM-1057
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1057: Testing of parsing of syncronisation artefacts"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1057" ;
     solveit-core:mitigationName "Testing of parsing of syncronisation artefacts" .
 
 :mitigationDFM-1058
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1058: Checking for other confirmatory indicators of the inferred device's existence."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1058" ;
     solveit-core:mitigationName "Checking for other confirmatory indicators of the inferred device's existence." .
 
 :mitigationDFM-1059
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1059: Ongoing research and documentation of syncronisation artefacts"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1059" ;
     solveit-core:mitigationName "Ongoing research and documentation of syncronisation artefacts" .
 
 :mitigationDFM-1060
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1060: Repair salvaged content by grafting different reference data onto fragment(s)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1060" ;
     solveit-core:mitigationName "Repair salvaged content by grafting different reference data onto fragment(s)" ;
     solveit-core:linksToTechnique :techniqueDFT-1099 .
 
 :mitigationDFM-1061
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1061: Use digital stratigraphy to attempt to attribute data within a specific file system"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1061" ;
     solveit-core:mitigationName "Use digital stratigraphy to attempt to attribute data within a specific file system" ;
     solveit-core:hasReference :citationDFCite-1117 .
 
 :mitigationDFM-1062
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1062: Verify semantic integrity of carved content using manual inspection of relevant data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1062" ;
     solveit-core:mitigationName "Verify semantic integrity of carved content using manual inspection of relevant data" .
 
 :mitigationDFM-1063
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1063: Verify semantic integrity of carved content using an automated tool"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1063" ;
     solveit-core:mitigationName "Verify semantic integrity of carved content using an automated tool" .
 
 :mitigationDFM-1064
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1064: Verify that salvaged content is renderable using visual inspection of displayed/rendered content "@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1064" ;
     solveit-core:mitigationName "Verify that salvaged content is renderable using visual inspection of displayed/rendered content " .
 
 :mitigationDFM-1065
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1065: Render salvaged content by reconstructing a container around fragment(s) based on detected video frame and audio sample locations and (if available) a reference video file with similar parameters."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1065" ;
     solveit-core:mitigationName "Render salvaged content by reconstructing a container around fragment(s) based on detected video frame and audio sample locations and (if available) a reference video file with similar parameters." .
 
 :mitigationDFM-1066
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1066: Attempt to reconstruct browser activity from other areas of disk"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1066" ;
     solveit-core:mitigationName "Attempt to reconstruct browser activity from other areas of disk" ;
     solveit-core:hasReference :citationDFCite-1032 .
 
 :mitigationDFM-1067
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1067: Analyze web browser memory for web browsing activity"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1067" ;
     solveit-core:mitigationName "Analyze web browser memory for web browsing activity" ;
     solveit-core:linksToTechnique :techniqueDFT-1105 ;
     solveit-core:hasReference :citationDFCite-1032 .
 
 :mitigationDFM-1068
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1068: Use digital sniffer dogs to assist in locating evidence"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1068" ;
     solveit-core:mitigationName "Use digital sniffer dogs to assist in locating evidence" ;
     solveit-core:linksToTechnique :techniqueDFT-1006 ;
     solveit-core:hasReference :citationDFCite-1114 .
 
 :mitigationDFM-1069
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1069: Use a SyncTriage style approach to determine existence other synchronized devices"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1069" ;
     solveit-core:mitigationName "Use a SyncTriage style approach to determine existence other synchronized devices" ;
     solveit-core:linksToTechnique :techniqueDFT-1007 ;
     solveit-core:hasReference :citationDFCite-1057 .
 
 :mitigationDFM-1070
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1070: Ensure hash algorithm(s) used are resistant to collisions through data manipulation"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1070" ;
     solveit-core:mitigationName "Ensure hash algorithm(s) used are resistant to collisions through data manipulation" .
 
 :mitigationDFM-1071
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1071: Thorough testing of write blocker against multiple targets to ensure that writes are not possible."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1071" ;
     solveit-core:mitigationName "Thorough testing of write blocker against multiple targets to ensure that writes are not possible." ;
     solveit-core:hasReference :citationDFCite-1089 .
 
 :mitigationDFM-1072
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1072: Regular checks for hardware write blocker firmware updates."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1072" ;
     solveit-core:mitigationName "Regular checks for hardware write blocker firmware updates." .
 
 :mitigationDFM-1073
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1073: Subscription to notifications from write blocker vendor for firmware updates or identified problems."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1073" ;
     solveit-core:mitigationName "Subscription to notifications from write blocker vendor for firmware updates or identified problems." .
 
 :mitigationDFM-1074
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1074: Validate image hash against one stored externally to the image in a trusted location."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1074" ;
     solveit-core:mitigationName "Validate image hash against one stored externally to the image in a trusted location." ;
     solveit-core:hasReference :citationDFCite-1060 .
 
 :mitigationDFM-1075
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1075: Testing programme to validate hashes of data in images is calculated correctly"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1075" ;
     solveit-core:mitigationName "Testing programme to validate hashes of data in images is calculated correctly" .
 
 :mitigationDFM-1076
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1076: Testing programme to validate hashes of metadata in images is calculated correctly"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1076" ;
     solveit-core:mitigationName "Testing programme to validate hashes of metadata in images is calculated correctly" .
 
 :mitigationDFM-1077
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1077: Ensure potential secondary locations for stored message content are reviewed."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1077" ;
     solveit-core:mitigationName "Ensure potential secondary locations for stored message content are reviewed." ;
     solveit-core:hasReference :citationDFCite-1097 .
 
 :mitigationDFM-1078
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1078: Use of multiple carving tools and comparing results"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1078" ;
     solveit-core:mitigationName "Use of multiple carving tools and comparing results" .
 
 :mitigationDFM-1079
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1079: Analyse file content to detect incompatibility between the content and the recovered file system metadata"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1079" ;
     solveit-core:mitigationName "Analyse file content to detect incompatibility between the content and the recovered file system metadata" .
 
 :mitigationDFM-1080
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1080: Use a hashset of known files to detect that recovered content does not match the expected file content"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1080" ;
     solveit-core:mitigationName "Use a hashset of known files to detect that recovered content does not match the expected file content" .
 
 :mitigationDFM-1081
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1081: Check if recovered content matches with size in metadata e.g. file footer at expected location."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1081" ;
     solveit-core:mitigationName "Check if recovered content matches with size in metadata e.g. file footer at expected location." .
 
 :mitigationDFM-1082
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1082: Analyse file system to find any duplicate references to blocks that are referenced by the non-allocated file"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1082" ;
     solveit-core:mitigationName "Analyse file system to find any duplicate references to blocks that are referenced by the non-allocated file" .
 
 :mitigationDFM-1083
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1083: Analyse content for embedded timestamps to find that content is a newer file than indicated by metadata (beware of file tunneling)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1083" ;
     solveit-core:mitigationName "Analyse content for embedded timestamps to find that content is a newer file than indicated by metadata (beware of file tunneling)" .
 
 :mitigationDFM-1084
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1084: Test that the tool used expresses uncertainty in the classification of file recovery results"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1084" ;
     solveit-core:mitigationName "Test that the tool used expresses uncertainty in the classification of file recovery results" .
 
 :mitigationDFM-1085
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1085: Use of multiple tools to verify disk image hash"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1085" ;
     solveit-core:mitigationName "Use of multiple tools to verify disk image hash" .
 
 :mitigationDFM-1086
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1086: Acquire the parts of memory with interconnected data first, before proceeding with a sequential acquisition."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1086" ;
     solveit-core:mitigationName "Acquire the parts of memory with interconnected data first, before proceeding with a sequential acquisition." ;
     solveit-core:hasReference :citationDFCite-1111 .
 
 :mitigationDFM-1087
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1087: Acquire memory from outside of the target system for example using direct memory access (DMA) devices"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1087" ;
     solveit-core:mitigationName "Acquire memory from outside of the target system for example using direct memory access (DMA) devices" ;
     solveit-core:hasReference :citationDFCite-1085 .
 
 :mitigationDFM-1088
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1088: If applicable, leverage hardware virtualization utilities to add a hypervisor to the system, i.e., virtualize the original system. This allows to either freeze the system before the acquisition or, if the system should not be completely frozen, to copy pages before they are modified."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1088" ;
     solveit-core:mitigationName "If applicable, leverage hardware virtualization utilities to add a hypervisor to the system, i.e., virtualize the original system. This allows to either freeze the system before the acquisition or, if the system should not be completely frozen, to copy pages before they are modified." ;
     solveit-core:hasReference :citationDFCite-1025,
                               :citationDFCite-1096 .
 
 :mitigationDFM-1089
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1089: Attempt physical disk repair"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1089" ;
     solveit-core:mitigationName "Attempt physical disk repair" .
 
 :mitigationDFM-1090
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1090: Compare carved results against known files (e.g. from another source)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1090" ;
     solveit-core:mitigationName "Compare carved results against known files (e.g. from another source)" .
 
 :mitigationDFM-1091
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1091: Use a brute force attack instead"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1091" ;
     solveit-core:mitigationName "Use a brute force attack instead" ;
     solveit-core:linksToTechnique :techniqueDFT-1034 .
 
 :mitigationDFM-1092
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1092: Optimise dictionary"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1092" ;
     solveit-core:mitigationName "Optimise dictionary" ;
     solveit-core:hasReference :citationDFCite-1076 .
 
 :mitigationDFM-1093
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1093: Use mangling rules to generate variants of candidate passwords"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1093" ;
     solveit-core:mitigationName "Use mangling rules to generate variants of candidate passwords" .
 
 :mitigationDFM-1094
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1094: Include contextual information when assembling the dictionary"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1094" ;
     solveit-core:mitigationName "Include contextual information when assembling the dictionary" ;
     solveit-core:hasReference :citationDFCite-1076 .
 
 :mitigationDFM-1095
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1095: Order dictionary to test the most likely candidates first"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1095" ;
     solveit-core:mitigationName "Order dictionary to test the most likely candidates first" .
 
 :mitigationDFM-1096
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1096: Apply additional resources to dictionary attack"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1096" ;
     solveit-core:mitigationName "Apply additional resources to dictionary attack" .
 
 :mitigationDFM-1097
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1097: Attempt to obtain password/passcode from the device owner"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1097" ;
     solveit-core:mitigationName "Attempt to obtain password/passcode from the device owner" ;
     solveit-core:linksToTechnique :techniqueDFT-1037 .
 
 :mitigationDFM-1098
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1098: Optimise the brute force search space"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1098" ;
     solveit-core:mitigationName "Optimise the brute force search space" .
 
 :mitigationDFM-1099
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1099: Use a dictionary attack instead"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1099" ;
     solveit-core:mitigationName "Use a dictionary attack instead" ;
     solveit-core:linksToTechnique :techniqueDFT-1035 .
 
 :mitigationDFM-1100
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1100: Apply additional resources to brute force attack"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1100" ;
     solveit-core:mitigationName "Apply additional resources to brute force attack" .
 
 :mitigationDFM-1101
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1101: Apply time offset to timestamp"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1101" ;
     solveit-core:mitigationName "Apply time offset to timestamp" ;
     solveit-core:linksToTechnique :techniqueDFT-1153 .
 
 :mitigationDFM-1102
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1102: Apply techniques to read remapped sectors"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1102" ;
     solveit-core:mitigationName "Apply techniques to read remapped sectors" ;
     solveit-core:hasReference :citationDFCite-1124 .
 
 :mitigationDFM-1103
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1103: Check that analysis of timestamp accuracy on which event reconstruction is based has been performed"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1103" ;
     solveit-core:mitigationName "Check that analysis of timestamp accuracy on which event reconstruction is based has been performed" .
 
 :mitigationDFM-1104
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1104: Testing of report generation functionality that all intended bookmarks are included"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1104" ;
     solveit-core:mitigationName "Testing of report generation functionality that all intended bookmarks are included" .
 
 :mitigationDFM-1105
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1105: Manual verification that all intended bookmarks are included in the generated report."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1105" ;
     solveit-core:mitigationName "Manual verification that all intended bookmarks are included in the generated report." .
 
 :mitigationDFM-1106
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1106: Testing that generated reports correctly represent/render all expected file types"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1106" ;
     solveit-core:mitigationName "Testing that generated reports correctly represent/render all expected file types" .
 
 :mitigationDFM-1107
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1107: Manual verification that all bookmarked items in the report are correctly rendered/represented."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1107" ;
     solveit-core:mitigationName "Manual verification that all bookmarked items in the report are correctly rendered/represented." .
 
 :mitigationDFM-1108
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1108: Preserve hash in secure location of the generated report so intentional or unintentional modifications can be detected."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1108" ;
     solveit-core:mitigationName "Preserve hash in secure location of the generated report so intentional or unintentional modifications can be detected." .
 
 :mitigationDFM-1109
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1109: Testing that tool(s) identify file types correctly"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1109" ;
     solveit-core:mitigationName "Testing that tool(s) identify file types correctly" .
 
 :mitigationDFM-1110
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1110: Manual review of files classified as unknown"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1110" ;
     solveit-core:mitigationName "Manual review of files classified as unknown" .
 
 :mitigationDFM-1111
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1111: Use of multiple tools to classify file types"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1111" ;
     solveit-core:mitigationName "Use of multiple tools to classify file types" .
 
 :mitigationDFM-1112
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1112: Use of AI to classify files in addition to standard programmatic methods"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1112" ;
     solveit-core:mitigationName "Use of AI to classify files in addition to standard programmatic methods" ;
     solveit-core:hasReference :citationDFCite-1002,
@@ -8936,772 +9163,1012 @@ This differs based on whether data on a device needs to be hashed for verificati
                               :citationDFCite-1141 .
 
 :mitigationDFM-1113
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1113: Use mobile exploit to gain privileged access"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1113" ;
     solveit-core:mitigationName "Use mobile exploit to gain privileged access" ;
     solveit-core:linksToTechnique :techniqueDFT-1040 .
 
 :mitigationDFM-1114
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1114: Clear use of language around mobile file system extractions, making the limitations clear and differentiating from a full disk image"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1114" ;
     solveit-core:mitigationName "Clear use of language around mobile file system extractions, making the limitations clear and differentiating from a full disk image" .
 
 :mitigationDFM-1115
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1115: Attempt to brute force user PIN (potentially on device)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1115" ;
     solveit-core:mitigationName "Attempt to brute force user PIN (potentially on device)" ;
     solveit-core:linksToTechnique :techniqueDFT-1034 .
 
 :mitigationDFM-1116
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1116: Attempt to dictionary attack user PIN (potentially on device)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1116" ;
     solveit-core:mitigationName "Attempt to dictionary attack user PIN (potentially on device)" ;
     solveit-core:linksToTechnique :techniqueDFT-1035 .
 
 :mitigationDFM-1117
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1117: Attempt to obtain user PIN from user"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1117" ;
     solveit-core:mitigationName "Attempt to obtain user PIN from user" ;
     solveit-core:linksToTechnique :techniqueDFT-1037 .
 
 :mitigationDFM-1118
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1118: Recover appropriate database table joins from source application source code"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1118" ;
     solveit-core:mitigationName "Recover appropriate database table joins from source application source code" .
 
 :mitigationDFM-1119
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1119: Recover appropriate database table joins from source application reverse engineering"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1119" ;
     solveit-core:mitigationName "Recover appropriate database table joins from source application reverse engineering" .
 
 :mitigationDFM-1120
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1120: Recover appropriate database table joins from source application developer documentation"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1120" ;
     solveit-core:mitigationName "Recover appropriate database table joins from source application developer documentation" .
 
 :mitigationDFM-1121
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1121: Infer appropriate table joins from extensive experimentation with known ground-truth data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1121" ;
     solveit-core:mitigationName "Infer appropriate table joins from extensive experimentation with known ground-truth data" ;
     solveit-core:linksToTechnique :techniqueDFT-1090 .
 
 :mitigationDFM-1122
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1122: Apply non-allocated record recovery to database file(s)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1122" ;
     solveit-core:mitigationName "Apply non-allocated record recovery to database file(s)" ;
     solveit-core:hasReference :citationDFCite-1113 .
 
 :mitigationDFM-1123
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1123: Apply system-wide record recovery for non-allocated database record data structures"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1123" ;
     solveit-core:mitigationName "Apply system-wide record recovery for non-allocated database record data structures" ;
     solveit-core:hasReference :citationDFCite-1113 .
 
 :mitigationDFM-1124
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1124: Examine database contents with and without Write Ahead Log (WAL) files applied"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1124" ;
     solveit-core:mitigationName "Examine database contents with and without Write Ahead Log (WAL) files applied" ;
     solveit-core:hasReference :citationDFCite-1021,
                               :citationDFCite-1022 .
 
 :mitigationDFM-1125
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1125: Examine database journal files"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1125" ;
     solveit-core:mitigationName "Examine database journal files" ;
     solveit-core:hasReference :citationDFCite-1022 .
 
 :mitigationDFM-1126
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1126: Use forensic bootable environment to gain access to internal media"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1126" ;
     solveit-core:mitigationName "Use forensic bootable environment to gain access to internal media" ;
     solveit-core:linksToTechnique :techniqueDFT-1113 .
 
 :mitigationDFM-1127
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1127: Use a similar system to test steps required to interrupt the normal boot process and boot from Trusted Bootable Environment"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1127" ;
     solveit-core:mitigationName "Use a similar system to test steps required to interrupt the normal boot process and boot from Trusted Bootable Environment" .
 
 :mitigationDFM-1128
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1128: Use a Trusted Bootable Environment that is permitted to boot"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1128" ;
     solveit-core:mitigationName "Use a Trusted Bootable Environment that is permitted to boot" .
 
 :mitigationDFM-1129
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1129: Use USB flashdrive version if a CD version is not permitted to boot"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1129" ;
     solveit-core:mitigationName "Use USB flashdrive version if a CD version is not permitted to boot" .
 
 :mitigationDFM-1130
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1130: Disable Secureboot in BIOS to permit bootable environment to load (risks wiping FDE key, requiring ADK)."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1130" ;
     solveit-core:mitigationName "Disable Secureboot in BIOS to permit bootable environment to load (risks wiping FDE key, requiring ADK)." .
 
 :mitigationDFM-1131
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1131: Use a Trusted Bootable Environment that supports accessing the internal disk"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1131" ;
     solveit-core:mitigationName "Use a Trusted Bootable Environment that supports accessing the internal disk" .
 
 :mitigationDFM-1132
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1132: Use a Trusted Bootable Environment that supports decryption of the internal disk"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1132" ;
     solveit-core:mitigationName "Use a Trusted Bootable Environment that supports decryption of the internal disk" ;
     solveit-core:hasReference :citationDFCite-1026 .
 
 :mitigationDFM-1133
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1133: Acquire the encrypted contents of the internal disk and decrypt the copy within a virtualized environment"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1133" ;
     solveit-core:mitigationName "Acquire the encrypted contents of the internal disk and decrypt the copy within a virtualized environment" ;
     solveit-core:hasReference :citationDFCite-1026 .
 
 :mitigationDFM-1134
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1134: Testing that connected devices are detected."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1134" ;
     solveit-core:mitigationName "Testing that connected devices are detected." .
 
 :mitigationDFM-1135
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1135: Testing that correct metadata/status of connected devices is extracted"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1135" ;
     solveit-core:mitigationName "Testing that correct metadata/status of connected devices is extracted" .
 
 :mitigationDFM-1136
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1136: Testing of archive format parsing"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1136" ;
     solveit-core:mitigationName "Testing of archive format parsing" .
 
 :mitigationDFM-1137
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1137: Review of logs for any file extraction errors"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1137" ;
     solveit-core:mitigationName "Review of logs for any file extraction errors" .
 
 :mitigationDFM-1138
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1138: Testing file name/path pattern matching engine"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1138" ;
     solveit-core:mitigationName "Testing file name/path pattern matching engine" .
 
 :mitigationDFM-1139
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1139: Use automated software monitoring to detect app artefact changes"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1139" ;
     solveit-core:mitigationName "Use automated software monitoring to detect app artefact changes" ;
     solveit-core:linksToTechnique :techniqueDFT-1119 .
 
 :mitigationDFM-1140
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1140: Use automation framework to emulate user actions to generate test data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1140" ;
     solveit-core:mitigationName "Use automation framework to emulate user actions to generate test data" .
 
 :mitigationDFM-1141
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1141: Careful review of case brief for case-specific keyword list generation"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1141" ;
     solveit-core:mitigationName "Careful review of case brief for case-specific keyword list generation" .
 
 :mitigationDFM-1142
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1142: Review of case-specific keyword list by case officer"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1142" ;
     solveit-core:mitigationName "Review of case-specific keyword list by case officer" .
 
 :mitigationDFM-1143
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1143: Use live logical keyword search"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1143" ;
     solveit-core:mitigationName "Use live logical keyword search" ;
     solveit-core:linksToTechnique :techniqueDFT-1127 .
 
 :mitigationDFM-1144
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1144: Use indexed keyword search"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1144" ;
     solveit-core:mitigationName "Use indexed keyword search" ;
     solveit-core:linksToTechnique :techniqueDFT-1124 .
 
 :mitigationDFM-1145
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1145: Apply OCR to files and search or index resulting text"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1145" ;
     solveit-core:mitigationName "Apply OCR to files and search or index resulting text" .
 
 :mitigationDFM-1146
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1146: Ensure keyword indexing settings capture text encodings required during indexing"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1146" ;
     solveit-core:mitigationName "Ensure keyword indexing settings capture text encodings required during indexing" .
 
 :mitigationDFM-1147
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1147: Ensure keyword indexing settings configure text substring handling as required during indexing"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1147" ;
     solveit-core:mitigationName "Ensure keyword indexing settings configure text substring handling as required during indexing" .
 
 :mitigationDFM-1148
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1148: Ensure keyword indexing settings configure case sensitivity for indexing as required"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1148" ;
     solveit-core:mitigationName "Ensure keyword indexing settings configure case sensitivity for indexing as required" .
 
 :mitigationDFM-1149
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1149: Ensure keyword indexing settings mean that decompression will be applied as required during indexing"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1149" ;
     solveit-core:mitigationName "Ensure keyword indexing settings mean that decompression will be applied as required during indexing" .
 
 :mitigationDFM-1150
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1150: Ensure keyword indexing settings mean that file formats will be decoded as required during indexing"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1150" ;
     solveit-core:mitigationName "Ensure keyword indexing settings mean that file formats will be decoded as required during indexing" .
 
 :mitigationDFM-1151
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1151: Check keyword results are part of allocated file, or if not perform detailed analysis to determine if the association between keyword results and file is valid"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1151" ;
     solveit-core:mitigationName "Check keyword results are part of allocated file, or if not perform detailed analysis to determine if the association between keyword results and file is valid" .
 
 :mitigationDFM-1152
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1152: Peer review of case-specific keyword list created"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1152" ;
     solveit-core:mitigationName "Peer review of case-specific keyword list created" .
 
 :mitigationDFM-1153
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1153: Index data in the case and perform iterative keyword searching using the index"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1153" ;
     solveit-core:mitigationName "Index data in the case and perform iterative keyword searching using the index" ;
     solveit-core:linksToTechnique :techniqueDFT-1124 .
 
 :mitigationDFM-1154
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1154: Testing for live message recovery from AI companion app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1154" ;
     solveit-core:mitigationName "Testing for live message recovery from AI companion app" .
 
 :mitigationDFM-1155
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1155: Testing for deleted message recovery from AI companion app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1155" ;
     solveit-core:mitigationName "Testing for deleted message recovery from AI companion app" .
 
 :mitigationDFM-1156
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1156: Testing that message sender and recipient extraction are correct"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1156" ;
     solveit-core:mitigationName "Testing that message sender and recipient extraction are correct" .
 
 :mitigationDFM-1157
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1157: Ensure messages are viewed in the context of the message thread"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1157" ;
     solveit-core:mitigationName "Ensure messages are viewed in the context of the message thread" .
 
 :mitigationDFM-1158
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1158: Testing for live picture message recovery from AI companion app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1158" ;
     solveit-core:mitigationName "Testing for live picture message recovery from AI companion app" .
 
 :mitigationDFM-1159
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1159: Testing for deleted picture message recovery from AI companion app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1159" ;
     solveit-core:mitigationName "Testing for deleted picture message recovery from AI companion app" .
 
 :mitigationDFM-1160
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1160: Testing that picture message sender and recipient extraction are correct"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1160" ;
     solveit-core:mitigationName "Testing that picture message sender and recipient extraction are correct" .
 
 :mitigationDFM-1161
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1161: Testing of live call record recovery from AI companion app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1161" ;
     solveit-core:mitigationName "Testing of live call record recovery from AI companion app" .
 
 :mitigationDFM-1162
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1162: Testing of deleted call record recovery from AI companion app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1162" ;
     solveit-core:mitigationName "Testing of deleted call record recovery from AI companion app" .
 
 :mitigationDFM-1163
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1163: Testing that call record caller and recipient extraction are correct"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1163" ;
     solveit-core:mitigationName "Testing that call record caller and recipient extraction are correct" .
 
 :mitigationDFM-1164
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1164: Testing of account details recovery from AI companion app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1164" ;
     solveit-core:mitigationName "Testing of account details recovery from AI companion app" .
 
 :mitigationDFM-1165
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1165: Ensure data collection prior to any interaction with app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1165" ;
     solveit-core:mitigationName "Ensure data collection prior to any interaction with app" .
 
 :mitigationDFM-1166
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1166: Remove all network connectivity from device"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1166" ;
     solveit-core:mitigationName "Remove all network connectivity from device" .
 
 :mitigationDFM-1167
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1167: Check time of account access is prior to device seizure time"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1167" ;
     solveit-core:mitigationName "Check time of account access is prior to device seizure time" .
 
 :mitigationDFM-1168
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1168: Request logs of access times from service provider"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1168" ;
     solveit-core:mitigationName "Request logs of access times from service provider" .
 
 :mitigationDFM-1169
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1169: Testing of app settings recovery from AI companion app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1169" ;
     solveit-core:mitigationName "Testing of app settings recovery from AI companion app" .
 
 :mitigationDFM-1170
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1170: Experiments with test device to view possible settings of forensic value"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1170" ;
     solveit-core:mitigationName "Experiments with test device to view possible settings of forensic value" .
 
 :mitigationDFM-1171
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1171: Testing of the recovery of companion AI bot settings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1171" ;
     solveit-core:mitigationName "Testing of the recovery of companion AI bot settings" .
 
 :mitigationDFM-1172
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1172: Also examine any older versions of the logs from backups"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1172" ;
     solveit-core:mitigationName "Also examine any older versions of the logs from backups" .
 
 :mitigationDFM-1173
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1173: Check logging settings so the bounds of logging are known"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1173" ;
     solveit-core:mitigationName "Check logging settings so the bounds of logging are known" ;
     solveit-core:hasReference :citationDFCite-1140 .
 
 :mitigationDFM-1174
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1174: Check logging settings to determine expected behaviour"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1174" ;
     solveit-core:mitigationName "Check logging settings to determine expected behaviour" .
 
 :mitigationDFM-1175
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1175: Ensure any available archive logs are also examined"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1175" ;
     solveit-core:mitigationName "Ensure any available archive logs are also examined" .
 
 :mitigationDFM-1176
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1176: Ensure log entry type interpretation applies for the software version being examined"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1176" ;
     solveit-core:mitigationName "Ensure log entry type interpretation applies for the software version being examined" .
 
 :mitigationDFM-1177
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1177: Ensure resolution or limitations of logfile timestamps are understood"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1177" ;
     solveit-core:mitigationName "Ensure resolution or limitations of logfile timestamps are understood" .
 
 :mitigationDFM-1178
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1178: Ensure timezone handling method for logfile timestamps is understood"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1178" ;
     solveit-core:mitigationName "Ensure timezone handling method for logfile timestamps is understood" .
 
 :mitigationDFM-1179
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1179: If timestamp is local time, ensure that the system timezone was applicable at time of log entry generation"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1179" ;
     solveit-core:mitigationName "If timestamp is local time, ensure that the system timezone was applicable at time of log entry generation" .
 
 :mitigationDFM-1180
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1180: Testing correct extraction of logfile entry timestamps"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1180" ;
     solveit-core:mitigationName "Testing correct extraction of logfile entry timestamps" .
 
 :mitigationDFM-1181
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1181: Testing logfile parsing capability"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1181" ;
     solveit-core:mitigationName "Testing logfile parsing capability" .
 
 :mitigationDFM-1182
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1182: Testing of correct log entry type extraction"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1182" ;
     solveit-core:mitigationName "Testing of correct log entry type extraction" .
 
 :mitigationDFM-1187
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1187: Ensure browser cache data is also considered "@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1187" ;
     solveit-core:mitigationName "Ensure browser cache data is also considered " ;
     solveit-core:linksToTechnique :techniqueDFT-1138 .
 
 :mitigationDFM-1188
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1188: Ensure all profiles of the web browser are considered"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1188" ;
     solveit-core:mitigationName "Ensure all profiles of the web browser are considered" ;
     solveit-core:linksToTechnique :techniqueDFT-1144 .
 
 :mitigationDFM-1189
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1189: Conduct experiments to determine if content from the page in question is cached only when viewed in the browser"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1189" ;
     solveit-core:mitigationName "Conduct experiments to determine if content from the page in question is cached only when viewed in the browser" ;
     solveit-core:hasReference :citationDFCite-1064 .
 
 :mitigationDFM-1190
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1190: Ensure that the context of recovered URLs is considered during event reconstruction"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1190" ;
     solveit-core:mitigationName "Ensure that the context of recovered URLs is considered during event reconstruction" .
 
 :mitigationDFM-1191
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1191: Ensure that profile configuration is examined rather than just folders within the standard profile folder"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1191" ;
     solveit-core:mitigationName "Ensure that profile configuration is examined rather than just folders within the standard profile folder" ;
     solveit-core:linksToTechnique :techniqueDFT-1143 ;
     solveit-core:hasReference :citationDFCite-1101 .
 
 :mitigationDFM-1192
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1192: Examine browser configuration to determine history retention settings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1192" ;
     solveit-core:mitigationName "Examine browser configuration to determine history retention settings" ;
     solveit-core:linksToTechnique :techniqueDFT-1143 .
 
 :mitigationDFM-1193
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1193: Obtain older versions of browser history files from backups or from file system versioning features"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1193" ;
     solveit-core:mitigationName "Obtain older versions of browser history files from backups or from file system versioning features" .
 
 :mitigationDFM-1194
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1194: Consider carefully page titles and other details associated with older web history visits when details are recovered using SQL join queries."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1194" ;
     solveit-core:mitigationName "Consider carefully page titles and other details associated with older web history visits when details are recovered using SQL join queries." .
 
 :mitigationDFM-1195
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1195: Also examine browser cache to confirm details about an older web visit when details are recovered using SQL join queries."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1195" ;
     solveit-core:mitigationName "Also examine browser cache to confirm details about an older web visit when details are recovered using SQL join queries." ;
     solveit-core:linksToTechnique :techniqueDFT-1138 .
 
 :mitigationDFM-1196
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1196: Check if file being recovered is smaller than a block"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1196" ;
     solveit-core:mitigationName "Check if file being recovered is smaller than a block" .
 
 :mitigationDFM-1197
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1197: Check if file being recovered is resident (applicable on some file systems)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1197" ;
     solveit-core:mitigationName "Check if file being recovered is resident (applicable on some file systems)" .
 
 :mitigationDFM-1198
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1198: Check if file system and operating system make use of an 'allocated but unwritten' value e.g. VDL."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1198" ;
     solveit-core:mitigationName "Check if file system and operating system make use of an 'allocated but unwritten' value e.g. VDL." .
 
 :mitigationDFM-1199
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1199: Check all relevant file size metadata values when recovering file content"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1199" ;
     solveit-core:mitigationName "Check all relevant file size metadata values when recovering file content" .
 
 :mitigationDFM-1200
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1200: Ensure that inconsistencies between allocated data size and data written size are clearly flagged."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1200" ;
     solveit-core:mitigationName "Ensure that inconsistencies between allocated data size and data written size are clearly flagged." .
 
 :mitigationDFM-1203
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1203: Use indexed keyword search over broader content of the data source"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1203" ;
     solveit-core:mitigationName "Use indexed keyword search over broader content of the data source" ;
     solveit-core:linksToTechnique :techniqueDFT-1124 .
 
 :mitigationDFM-1204
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1204: Use live keyword search over broader content of the data source"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1204" ;
     solveit-core:mitigationName "Use live keyword search over broader content of the data source" ;
     solveit-core:linksToTechnique :techniqueDFT-1125 .
 
 :mitigationDFM-1205
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1205: Use wordlist generator with case data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1205" ;
     solveit-core:mitigationName "Use wordlist generator with case data" ;
     solveit-core:hasReference :citationDFCite-1094,
                               :citationDFCite-1095 .
 
 :mitigationDFM-1206
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1206: Ensure that tools used clearly separate fact from interpretation"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1206" ;
     solveit-core:mitigationName "Ensure that tools used clearly separate fact from interpretation" ;
     solveit-core:hasReference :citationDFCite-1070 .
 
 :mitigationDFM-1207
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1207: Ensure training is in place for tool operators to separate fact from interpretation within the tool used"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1207" ;
     solveit-core:mitigationName "Ensure training is in place for tool operators to separate fact from interpretation within the tool used" ;
     solveit-core:hasReference :citationDFCite-1068,
                               :citationDFCite-1070 .
 
 :mitigationDFM-1208
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1208: Review critical findings from tools to ensure they are facts, or if they are an automated interpretation, ensure that any uncertainty is considered"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1208" ;
     solveit-core:mitigationName "Review critical findings from tools to ensure they are facts, or if they are an automated interpretation, ensure that any uncertainty is considered" ;
     solveit-core:hasReference :citationDFCite-1068,
                               :citationDFCite-1070 .
 
 :mitigationDFM-1209
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1209: Ensure that tools used present the uncertainty associated with automated interpretation of data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1209" ;
     solveit-core:mitigationName "Ensure that tools used present the uncertainty associated with automated interpretation of data" ;
     solveit-core:hasReference :citationDFCite-1068,
                               :citationDFCite-1070 .
 
 :mitigationDFM-1210
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1210: Use a forensic image format with internal integrity and continuity metadata"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1210" ;
     solveit-core:mitigationName "Use a forensic image format with internal integrity and continuity metadata" ;
     solveit-core:hasReference :citationDFCite-1035 .
 
 :mitigationDFM-1211
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1211: Test the parsing of split forensic images"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1211" ;
     solveit-core:mitigationName "Test the parsing of split forensic images" .
 
 :mitigationDFM-1212
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1212: Test the parsing of split forensic images with the maximum number of segments possible"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1212" ;
     solveit-core:mitigationName "Test the parsing of split forensic images with the maximum number of segments possible" .
 
 :mitigationDFM-1213
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1213: Test the parsing of split forensic images with missing segments"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1213" ;
     solveit-core:mitigationName "Test the parsing of split forensic images with missing segments" .
 
 :mitigationDFM-1214
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1214: Ensure forensic tool UI clearly warns that there are problems while parsing a split forensic image file"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1214" ;
     solveit-core:mitigationName "Ensure forensic tool UI clearly warns that there are problems while parsing a split forensic image file" .
 
 :mitigationDFM-1215
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1215: Test the parsing of split forensic images with a corrupt segment"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1215" ;
     solveit-core:mitigationName "Test the parsing of split forensic images with a corrupt segment" .
 
 :mitigationDFM-1216
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1216: Check that the assumption is valid that the specific local/external timestamp pair should be correlated"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1216" ;
     solveit-core:mitigationName "Check that the assumption is valid that the specific local/external timestamp pair should be correlated" .
 
 :mitigationDFM-1217
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1217: Consider multiple time anchors and check if timestamps from multiple external time sources agree"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1217" ;
     solveit-core:mitigationName "Consider multiple time anchors and check if timestamps from multiple external time sources agree" .
 
 :mitigationDFM-1218
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1218: Ensure that tools and processes take into account all current knowledge on sources of local/external timestamp pairs (time anchors)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1218" ;
     solveit-core:mitigationName "Ensure that tools and processes take into account all current knowledge on sources of local/external timestamp pairs (time anchors)" .
 
 :mitigationDFM-1219
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1219: Manual verification of timestamp decoding within a time anchor"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1219" ;
     solveit-core:mitigationName "Manual verification of timestamp decoding within a time anchor" .
 
 :mitigationDFM-1220
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1220: Periodically keep records of time offsets of significant external servers"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1220" ;
     solveit-core:mitigationName "Periodically keep records of time offsets of significant external servers" ;
     solveit-core:linksToTechnique :techniqueDFT-1110 .
 
 :mitigationDFM-1221
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1221: Testing of timestamp decoding within a time anchor"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1221" ;
     solveit-core:mitigationName "Testing of timestamp decoding within a time anchor" .
 
 :mitigationDFM-1222
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1222: Testing to ensure that tooling is able to extract local/external timestamp pairs (time anchors)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1222" ;
     solveit-core:mitigationName "Testing to ensure that tooling is able to extract local/external timestamp pairs (time anchors)" .
 
 :mitigationDFM-1223
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1223: Apply time zone based offsets only to UTC stored timestamps"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1223" ;
     solveit-core:mitigationName "Apply time zone based offsets only to UTC stored timestamps" .
 
 :mitigationDFM-1224
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1224: Check for location artifacts to infer the time zone at a specific moment"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1224" ;
     solveit-core:mitigationName "Check for location artifacts to infer the time zone at a specific moment" .
 
 :mitigationDFM-1225
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1225: Estimate clock offset at a specific point in time using time anchoring"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1225" ;
     solveit-core:mitigationName "Estimate clock offset at a specific point in time using time anchoring" ;
     solveit-core:linksToTechnique :techniqueDFT-1134 ;
     solveit-core:hasReference :citationDFCite-1020 .
 
 :mitigationDFM-1226
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1226: Testing to determine whether a timestamp is in UTC or local time"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1226" ;
     solveit-core:mitigationName "Testing to determine whether a timestamp is in UTC or local time" .
 
 :mitigationDFM-1227
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1227: Search for indicators of clock tampering"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1227" ;
     solveit-core:mitigationName "Search for indicators of clock tampering" ;
     solveit-core:linksToTechnique :techniqueDFT-1129 .
 
 :mitigationDFM-1228
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1228: Record system clock offset"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1228" ;
     solveit-core:mitigationName "Record system clock offset" ;
     solveit-core:linksToTechnique :techniqueDFT-1111 .
 
 :mitigationDFM-1229
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1229: Determine last timezone used on system"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1229" ;
     solveit-core:mitigationName "Determine last timezone used on system" .
 
 :mitigationDFM-1230
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1230: Ensure that daylight savings offsets that are applied to timestamps are correct"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1230" ;
     solveit-core:mitigationName "Ensure that daylight savings offsets that are applied to timestamps are correct" .
 
 :mitigationDFM-1231
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1231: Make use of 'paired searching'"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1231" ;
     solveit-core:mitigationName "Make use of 'paired searching'" ;
     solveit-core:mitigationDescription "According to Fisher & Fisher (2012): \"Indoor crime scene searches are best done with two persons. One easy way of accomplishing a search in a room is to divide it in half. Each investigator searches one half. After they have done a thorough search, they switch halves.\" " ;
     solveit-core:hasReference :citationDFCite-1043 .
 
 :mitigationDFM-1232
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1232: Adopt a systematic search pattern"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1232" ;
     solveit-core:mitigationName "Adopt a systematic search pattern" ;
     solveit-core:mitigationDescription "According to Fisher & Fisher (2012): \"Criminal investigation texts recommend a variety of search patterns: the strip or lane search, grid search, spiral search, and quadrant search. \" " ;
     solveit-core:hasReference :citationDFCite-1043 .
 
 :mitigationDFM-1233
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1233: Test data extraction methods against reference data with known timestamps"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1233" ;
     solveit-core:mitigationName "Test data extraction methods against reference data with known timestamps" .
 
 :mitigationDFM-1234
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1234: Exploit device to facilitate password/pincode attacks"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1234" ;
     solveit-core:mitigationName "Exploit device to facilitate password/pincode attacks" ;
     solveit-core:linksToTechnique :techniqueDFT-1040 .
 
 :mitigationDFM-1235
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1235: Attempt to obtain password/pincode with brute force attacks"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1235" ;
     solveit-core:mitigationName "Attempt to obtain password/pincode with brute force attacks" ;
     solveit-core:linksToTechnique :techniqueDFT-1034 .
 
 :mitigationDFM-1236
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1236: Attempt to obtain password/pincode with dictionary attacks"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1236" ;
     solveit-core:mitigationName "Attempt to obtain password/pincode with dictionary attacks" ;
     solveit-core:linksToTechnique :techniqueDFT-1035 .
 
 :mitigationDFM-1237
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1237: Ensure that archive format used can handle sufficiently large files"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1237" ;
     solveit-core:mitigationName "Ensure that archive format used can handle sufficiently large files" ;
     solveit-core:hasReference :citationDFCite-1130 .
 
 :mitigationDFM-1238
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1238: Configure device to enable required service"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1238" ;
     solveit-core:mitigationName "Configure device to enable required service" ;
     solveit-core:mitigationDescription "For example turning on Developer Mode on Android to enable ADB" ;
@@ -9710,803 +10177,1059 @@ This differs based on whether data on a device needs to be hashed for verificati
                               :citationDFCite-1004 .
 
 :mitigationDFM-1239
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1239: Obtain possible passwords/PIN codes from other devices with limited security"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1239" ;
     solveit-core:mitigationName "Obtain possible passwords/PIN codes from other devices with limited security" ;
     solveit-core:linksToTechnique :techniqueDFT-1033 .
 
 :mitigationDFM-1240
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1240: Check for indications of disk backed memory pages"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1240" ;
     solveit-core:mitigationName "Check for indications of disk backed memory pages" ;
     solveit-core:hasReference :citationDFCite-1143 .
 
 :mitigationDFM-1241
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1241: Avoid direct connection to media and use hardware write blocker instead"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1241" ;
     solveit-core:mitigationName "Avoid direct connection to media and use hardware write blocker instead" ;
     solveit-core:linksToTechnique :techniqueDFT-1012 .
 
 :mitigationDFM-1242
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1242: Testing live message recovery from multiplayer gaming app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1242" ;
     solveit-core:mitigationName "Testing live message recovery from multiplayer gaming app" .
 
 :mitigationDFM-1243
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1243: Request user data from multiplayer gaming platform and compare"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1243" ;
     solveit-core:mitigationName "Request user data from multiplayer gaming platform and compare" .
 
 :mitigationDFM-1244
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1244: Testing deleted message recovery from multiplayer gaming app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1244" ;
     solveit-core:mitigationName "Testing deleted message recovery from multiplayer gaming app" .
 
 :mitigationDFM-1245
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1245: Testing live contact recovery from a multiplayer gaming app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1245" ;
     solveit-core:mitigationName "Testing live contact recovery from a multiplayer gaming app" .
 
 :mitigationDFM-1246
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1246: Testing deleted contact recovery from a multiplayer gaming app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1246" ;
     solveit-core:mitigationName "Testing deleted contact recovery from a multiplayer gaming app" .
 
 :mitigationDFM-1247
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1247: Testing that gaming app configuration information is recovered correctly"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1247" ;
     solveit-core:mitigationName "Testing that gaming app configuration information is recovered correctly" .
 
 :mitigationDFM-1248
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1248: Testing to ensure that live accounts are recovered correctly from a gaming app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1248" ;
     solveit-core:mitigationName "Testing to ensure that live accounts are recovered correctly from a gaming app" .
 
 :mitigationDFM-1249
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1249: Testing to ensure that deleted accounts are recovered correctly from a gaming app"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1249" ;
     solveit-core:mitigationName "Testing to ensure that deleted accounts are recovered correctly from a gaming app" .
 
 :mitigationDFM-1250
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1250: Test that timeline analysis tool returns correct results when filter criteria are provided"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1250" ;
     solveit-core:mitigationName "Test that timeline analysis tool returns correct results when filter criteria are provided" .
 
 :mitigationDFM-1251
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1251: Manually review timeline entries for relevance"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1251" ;
     solveit-core:mitigationName "Manually review timeline entries for relevance" .
 
 :mitigationDFM-1252
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1252: Refine timeline filtering criteria to reduce set of entries to a manageable set for review"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1252" ;
     solveit-core:mitigationName "Refine timeline filtering criteria to reduce set of entries to a manageable set for review" .
 
 :mitigationDFM-1253
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1253: Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1253" ;
     solveit-core:mitigationName "Ensure that timeline analysis tool highlights that a filtered timeline is presented e.g. x/y entries shown" .
 
 :mitigationDFM-1259
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1259: Test that a timeline tool correctly sorts entries"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1259" ;
     solveit-core:mitigationName "Test that a timeline tool correctly sorts entries" .
 
 :mitigationDFM-1260
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1260: Check that sorted timeline contains same number of entries as unsorted timeline"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1260" ;
     solveit-core:mitigationName "Check that sorted timeline contains same number of entries as unsorted timeline" .
 
 :mitigationDFM-1261
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1261: Test that timeline sorting correctly represents entries with low resolution timestamps"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1261" ;
     solveit-core:mitigationName "Test that timeline sorting correctly represents entries with low resolution timestamps" .
 
 :mitigationDFM-1262
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1262: Test that timeline tools represent timeline entries with the same value at the same point in time, not in an artificial order"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1262" ;
     solveit-core:mitigationName "Test that timeline tools represent timeline entries with the same value at the same point in time, not in an artificial order" .
 
 :mitigationDFM-1263
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1263: Check timeline entry to ensure that a timezone has not already been applied and shifted the timestamp value"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1263" ;
     solveit-core:mitigationName "Check timeline entry to ensure that a timezone has not already been applied and shifted the timestamp value" .
 
 :mitigationDFM-1264
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1264: Ensure that tools used extract data from any operating system notification databases or relevant files"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1264" ;
     solveit-core:mitigationName "Ensure that tools used extract data from any operating system notification databases or relevant files" .
 
 :mitigationDFM-1265
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1265: Test that the tool used correctly recovers operating system notifications from the data structures examined"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1265" ;
     solveit-core:mitigationName "Test that the tool used correctly recovers operating system notifications from the data structures examined" .
 
 :mitigationDFM-1266
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1266: Examine longer lasting operating system notification storage locations if possible"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1266" ;
     solveit-core:mitigationName "Examine longer lasting operating system notification storage locations if possible" .
 
 :mitigationDFM-1267
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1267: Test that the tool used correctly recovers operating system notification timestamps from the data structures examined"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1267" ;
     solveit-core:mitigationName "Test that the tool used correctly recovers operating system notification timestamps from the data structures examined" .
 
 :mitigationDFM-1268
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1268: Count timeline entries before and after sorting a timeline and check they are the same"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1268" ;
     solveit-core:mitigationName "Count timeline entries before and after sorting a timeline and check they are the same" .
 
 :mitigationDFM-1269
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1269: Generate UUIDs of all timeline entries prior to a sort and ensure that all are present post-sort"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1269" ;
     solveit-core:mitigationName "Generate UUIDs of all timeline entries prior to a sort and ensure that all are present post-sort" .
 
 :mitigationDFM-1270
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1270: Systematically analyse all fields and timestamps in API responses to recover evidence that would otherwise be missed"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1270" ;
     solveit-core:mitigationName "Systematically analyse all fields and timestamps in API responses to recover evidence that would otherwise be missed" .
 
 :mitigationDFM-1271
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1271: Cross-validate API-derived artefacts against independent sources to improve reliability"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1271" ;
     solveit-core:mitigationName "Cross-validate API-derived artefacts against independent sources to improve reliability" .
 
 :mitigationDFM-1272
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1272: Test that the tool extracts the correct operating system"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1272" ;
     solveit-core:mitigationName "Test that the tool extracts the correct operating system" .
 
 :mitigationDFM-1273
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1273: Ensure that older operating system versions are also displayed along with current version"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1273" ;
     solveit-core:mitigationName "Ensure that older operating system versions are also displayed along with current version" .
 
 :mitigationDFM-1274
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1274: Testing of Windows HIVE file parsing"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1274" ;
     solveit-core:mitigationName "Testing of Windows HIVE file parsing" .
 
 :mitigationDFM-1275
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1275: Ensure tool presents Registry key modification times as applicable to a key only, not any individual value"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1275" ;
     solveit-core:mitigationName "Ensure tool presents Registry key modification times as applicable to a key only, not any individual value" .
 
 :mitigationDFM-1276
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1276: Collect from all available API endpoints, including undocumented ones identified via client reverse engineering"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1276" ;
     solveit-core:mitigationName "Collect from all available API endpoints, including undocumented ones identified via client reverse engineering" .
 
 :mitigationDFM-1277
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1277: Monitor structural changes to the target API and update parsing logic to prevent silent data loss"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1277" ;
     solveit-core:mitigationName "Monitor structural changes to the target API and update parsing logic to prevent silent data loss" .
 
 :mitigationDFM-1278
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1278: Place device in faraday bag to block connectivity"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1278" ;
     solveit-core:mitigationName "Place device in faraday bag to block connectivity" ;
     solveit-core:linksToTechnique :techniqueDFT-1010 .
 
 :mitigationDFM-1279
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1279: Ensure all relevant connectivity settings for this particular device have been disabled"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1279" ;
     solveit-core:mitigationName "Ensure all relevant connectivity settings for this particular device have been disabled" .
 
 :mitigationDFM-1280
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1280: Compare the metadata stored in a forensic container with that recorded in accompanying documentation"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1280" ;
     solveit-core:mitigationName "Compare the metadata stored in a forensic container with that recorded in accompanying documentation" .
 
 :mitigationDFM-1281
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1281: Compare the cryptographic hash stored in a forensic container with one recorded externally"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1281" ;
     solveit-core:mitigationName "Compare the cryptographic hash stored in a forensic container with one recorded externally" .
 
 :mitigationDFM-1282
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1282: Use up-to-date API"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1282" ;
     solveit-core:mitigationName "Use up-to-date API" .
 
 :mitigationDFM-1283
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1283: Use an alternative method that does not truncate data during format conversion"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1283" ;
     solveit-core:mitigationName "Use an alternative method that does not truncate data during format conversion" .
 
 :mitigationDFM-1284
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1284: Ensure tool configuration is correct"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1284" ;
     solveit-core:mitigationName "Ensure tool configuration is correct" .
 
 :mitigationDFM-1285
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1285: Testing that a tool acquires complete and accurate data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1285" ;
     solveit-core:mitigationName "Testing that a tool acquires complete and accurate data" .
 
 :mitigationDFM-1286
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1286: Acquire data from production environment"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1286" ;
     solveit-core:mitigationName "Acquire data from production environment" .
 
 :mitigationDFM-1287
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1287: Update non-production environment with latest production data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1287" ;
     solveit-core:mitigationName "Update non-production environment with latest production data" .
 
 :mitigationDFM-1288
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1288: Ensure that tools preserve metadata and relationships"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1288" ;
     solveit-core:mitigationName "Ensure that tools preserve metadata and relationships" .
 
 :mitigationDFM-1289
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1289: Acquire cloud service logs separately"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1289" ;
     solveit-core:mitigationName "Acquire cloud service logs separately" .
 
 :mitigationDFM-1290
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1290: Request cloud service logs from provider"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1290" ;
     solveit-core:mitigationName "Request cloud service logs from provider" .
 
 :mitigationDFM-1291
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1291: Obtain an up-to-date schema"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1291" ;
     solveit-core:mitigationName "Obtain an up-to-date schema" .
 
 :mitigationDFM-1292
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1292: Rate limit API calls to stay within limits"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1292" ;
     solveit-core:mitigationName "Rate limit API calls to stay within limits" .
 
 :mitigationDFM-1293
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1293: Contact cloud service provider to lift API limits"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1293" ;
     solveit-core:mitigationName "Contact cloud service provider to lift API limits" .
 
 :mitigationDFM-1294
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1294: Ensure credentials have sufficient permissions"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1294" ;
     solveit-core:mitigationName "Ensure credentials have sufficient permissions" .
 
 :mitigationDFM-1295
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1295: Ensure credentials have not expired or been revoked"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1295" ;
     solveit-core:mitigationName "Ensure credentials have not expired or been revoked" .
 
 :mitigationDFM-1296
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1296: Determine cause of failure and retry acquiring data when resolved"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1296" ;
     solveit-core:mitigationName "Determine cause of failure and retry acquiring data when resolved" .
 
 :mitigationDFM-1297
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1297: Use an alternative method that preserves historical data"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1297" ;
     solveit-core:mitigationName "Use an alternative method that preserves historical data" .
 
 :mitigationDFM-1298
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1298: Acquire raw data without conversion"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1298" ;
     solveit-core:mitigationName "Acquire raw data without conversion" .
 
 :mitigationDFM-1299
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1299: Cryptographically sign generated forensic analysis reports with an asymmetric key"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1299" ;
     solveit-core:mitigationName "Cryptographically sign generated forensic analysis reports with an asymmetric key" ;
     solveit-core:mitigationDescription "Sign analysis reports and export bundles with an asymmetric key (e.g., Ed25519, ECDSA) and embed signatures in a manifest so subsequent tampering is detectable without relying solely on storing a hash in a separate location (DFM-1108)." .
 
 :mitigationDFM-1300
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1300: Ensure that hypotheses are mutually exclusive"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1300" ;
     solveit-core:mitigationName "Ensure that hypotheses are mutually exclusive" .
 
 :mitigationDFM-1301
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1301: Avoid hypotheses that rely on untestable assertions"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1301" ;
     solveit-core:mitigationName "Avoid hypotheses that rely on untestable assertions" .
 
 :mitigationDFM-1302
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1302: Frame the hypothesis as a relational prediction"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1302" ;
     solveit-core:mitigationName "Frame the hypothesis as a relational prediction" .
 
 :mitigationDFM-1303
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1303: Refer to the to the \"suspect\" rather than \"device user\" when generating a hypothesis related to the accused individual"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1303" ;
     solveit-core:mitigationName "Refer to the to the \"suspect\" rather than \"device user\" when generating a hypothesis related to the accused individual" .
 
 :mitigationDFM-1304
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1304: Avoid judgmental or loaded terminology in generated hypotheses"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1304" ;
     solveit-core:mitigationName "Avoid judgmental or loaded terminology in generated hypotheses" .
 
 :mitigationDFM-1305
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1305: Ensure that hypotheses address the correct level of hierarchy (source, activity, or offense level)"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1305" ;
     solveit-core:mitigationName "Ensure that hypotheses address the correct level of hierarchy (source, activity, or offense level)" .
 
 :mitigationDFM-1306
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1306: Generate hypotheses as declarative statements written either in the present tense or specifying a past time period."@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1306" ;
     solveit-core:mitigationName "Generate hypotheses as declarative statements written either in the present tense or specifying a past time period." ;
     solveit-core:mitigationDescription "Digital forensics deals with the remnant results of an event, not the event itself. In digital forensics, we make observations in the present that \"may support only approximations about the past event.\" Any reconstruction or simulation of a past situation is \"incomplete, imperfect and degraded by time passing.\" Even when we boot a disk image in a virtual environment, it is on different hardware with a different network configuration/connection. Effective evaluative practice captures this fact by stating hypotheses in present tense or in terms of current observations relating to a specified time period in the past. For example, \"The defendant is the primary user of the mobile device,\" or \"When the offense occurred, the defendant was the primary user of the mobile device.\" As another example, \"The computer system can render and play the video frames fully\" or \"During the relevant time period, the computer system could render and play the video frames fully.\" Specifying the time period helps avoid mistakenly thinking that it is possible to recreate a past state perfectly, may be different from the latest state of a system, and reminds that there is inherent uncertainty requiring evaluation." .
 
 :mitigationDFM-1307
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1307: Do not generate hypotheses that are overly narrow and may increase the risk of over-specificity or confirmation bias. For instance, refer to a class (wiping tool, Trojan horse program) rather than a member of class (e.g., Eraser.exe, Backdoor.exe) to avoid narrowly focusing on a specific detail"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1307" ;
     solveit-core:mitigationName "Do not generate hypotheses that are overly narrow and may increase the risk of over-specificity or confirmation bias. For instance, refer to a class (wiping tool, Trojan horse program) rather than a member of class (e.g., Eraser.exe, Backdoor.exe) to avoid narrowly focusing on a specific detail" .
 
 :mitigationDFM-1308
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1308: Test that the tool recovers the date of operating system installation correctly"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1308" ;
     solveit-core:mitigationName "Test that the tool recovers the date of operating system installation correctly" .
 
 :mitigationDFM-1309
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1309: Ensure that the tool examines artifacts of previous operating system installation and presents them clearly"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1309" ;
     solveit-core:mitigationName "Ensure that the tool examines artifacts of previous operating system installation and presents them clearly" .
 
 :mitigationDFM-1310
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1310: Recover older copies of data that contains mount point mappings from backups"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1310" ;
     solveit-core:mitigationName "Recover older copies of data that contains mount point mappings from backups" .
 
 :mitigationDFM-1311
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1311: Recover older copies of data that contains mount point mappings from file versioning artifacts"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1311" ;
     solveit-core:mitigationName "Recover older copies of data that contains mount point mappings from file versioning artifacts" .
 
 :mitigationDFM-1312
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1312: Test that tool can correctly recover mount point mappings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1312" ;
     solveit-core:mitigationName "Test that tool can correctly recover mount point mappings" .
 
 :mitigationDFM-1313
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1313: Check for the presence of multiple operating systems and process mount point mappings for all of them"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1313" ;
     solveit-core:mitigationName "Check for the presence of multiple operating systems and process mount point mappings for all of them" .
 
 :mitigationDFM-1314
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1314: Test that cryptographically hashing data on a connected drive/media performs correctly"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1314" ;
     solveit-core:mitigationName "Test that cryptographically hashing data on a connected drive/media performs correctly" ;
     solveit-core:mitigationDescription "This differs from testing hashing data within forensic images as it replicates conditions of hashing external media attached for imaging" .
 
 :mitigationDFM-1315
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1315: Test that cryptographic hashes are calculated correctly over all compression settings used for forensic images"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1315" ;
     solveit-core:mitigationName "Test that cryptographic hashes are calculated correctly over all compression settings used for forensic images" .
 
 :mitigationDFM-1316
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1316: Test that cryptographic hashing of split forensic images includes the data from all files that make up that image"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1316" ;
     solveit-core:mitigationName "Test that cryptographic hashing of split forensic images includes the data from all files that make up that image" .
 
 :mitigationDFM-1317
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1317: State the hypotheses to be evaluated before the examination begins"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1317" ;
     solveit-core:mitigationName "State the hypotheses to be evaluated before the examination begins" .
 
 :mitigationDFM-1318
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1318: Assign the probability or strength of the observations under each competing hypothesis"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1318" ;
     solveit-core:mitigationName "Assign the probability or strength of the observations under each competing hypothesis" .
 
 :mitigationDFM-1319
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1319: Evaluate the observations under each party's claims, not only the instructing party's"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1319" ;
     solveit-core:mitigationName "Evaluate the observations under each party's claims, not only the instructing party's" .
 
 :mitigationDFM-1331
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1331: Create a persistent log of any errors during data copying process"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1331" ;
     solveit-core:mitigationName "Create a persistent log of any errors during data copying process" ;
     solveit-core:mitigationDescription "During any data copying process e.g. sectors, bytes, files ensure that any errors encountered are logged with clear details as to the scope of the error." .
 
 :mitigationDFM-1332
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1332: Flag when an AI context window has reached a limit and prevent further processing within that session"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1332" ;
     solveit-core:mitigationName "Flag when an AI context window has reached a limit and prevent further processing within that session" .
 
 :mitigationDFM-1333
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1333: Use keyword searching to complement AI-based queries for relevant artifacts"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1333" ;
     solveit-core:mitigationName "Use keyword searching to complement AI-based queries for relevant artifacts" ;
     solveit-core:linksToTechnique :techniqueDFT-1049 ;
     solveit-core:hasReference :citationDFCite-1169 .
 
 :mitigationDFM-1334
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1334: Use timeline analysis to complement AI-based queries for relevant artifacts"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1334" ;
     solveit-core:mitigationName "Use timeline analysis to complement AI-based queries for relevant artifacts" ;
     solveit-core:linksToTechnique :techniqueDFT-1086 .
 
 :mitigationDFM-1335
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1335: Use hash matching to complement AI-based queries for relevant artifacts"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1335" ;
     solveit-core:mitigationName "Use hash matching to complement AI-based queries for relevant artifacts" ;
     solveit-core:linksToTechnique :techniqueDFT-1050 .
 
 :mitigationDFM-1336
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1336: Manually verify artifacts reported as relevant by an AI system"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1336" ;
     solveit-core:mitigationName "Manually verify artifacts reported as relevant by an AI system" ;
     solveit-core:linksToTechnique :techniqueDFT-1054 .
 
 :mitigationDFM-1337
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1337: Manual verification of the existence of artifacts reported by an AI system"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1337" ;
     solveit-core:mitigationName "Manual verification of the existence of artifacts reported by an AI system" ;
     solveit-core:linksToTechnique :techniqueDFT-1202 .
 
 :mitigationDFM-1338
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1338: Ensure AI-based tooling provides IDs that link to the artefacts to facilitate manual verification"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1338" ;
     solveit-core:mitigationName "Ensure AI-based tooling provides IDs that link to the artefacts to facilitate manual verification" .
 
 :mitigationDFM-1339
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1339: Ensure that the AI-based system is capable of providing reasoning behind the selection of results that are relevant"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1339" ;
     solveit-core:mitigationName "Ensure that the AI-based system is capable of providing reasoning behind the selection of results that are relevant" .
 
 :mitigationDFM-1340
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1340: Ensure that the AI-based system is capable of providing an audit trail of artifacts considered but excluded as relevant, along with the exclusion criteria"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1340" ;
     solveit-core:mitigationName "Ensure that the AI-based system is capable of providing an audit trail of artifacts considered but excluded as relevant, along with the exclusion criteria" .
 
 :mitigationDFM-1341
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1341: Manually verify an observation used as part of an AI system's reasoning explanation"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1341" ;
     solveit-core:mitigationName "Manually verify an observation used as part of an AI system's reasoning explanation" ;
     solveit-core:linksToTechnique :techniqueDFT-1202 .
 
 :mitigationDFM-1342
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1342: Manually verify the link between entities that is asserted by and AI-based system"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1342" ;
     solveit-core:mitigationName "Manually verify the link between entities that is asserted by and AI-based system" .
 
 :mitigationDFM-1343
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1343: Use deterministic event reconstruction approaches to complement AI-based event reconstruction"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1343" ;
     solveit-core:mitigationName "Use deterministic event reconstruction approaches to complement AI-based event reconstruction" ;
     solveit-core:linksToTechnique :techniqueDFT-1086 ;
     solveit-core:hasReference :citationDFCite-1169 .
 
 :mitigationDFM-1344
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1344: Do not allow context compression during AI-based investigative sessions"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1344" ;
     solveit-core:mitigationName "Do not allow context compression during AI-based investigative sessions" .
 
 :mitigationDFM-1345
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1345: Manually verify a reconstructed event's existence"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1345" ;
     solveit-core:mitigationName "Manually verify a reconstructed event's existence" .
 
 :mitigationDFM-1346
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1346: Manually verify the interpretation of artifacts used for an event reconstruction"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1346" ;
     solveit-core:mitigationName "Manually verify the interpretation of artifacts used for an event reconstruction" ;
     solveit-core:linksToTechnique :techniqueDFT-1202 .
 
 :mitigationDFM-1347
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1347: Look up in artifact catalogs how the identified artifacts should be interpreted"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1347" ;
     solveit-core:mitigationName "Look up in artifact catalogs how the identified artifacts should be interpreted" .
 
 :mitigationDFM-1348
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1348: Manually verify the properties of a reconstructed event"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1348" ;
     solveit-core:mitigationName "Manually verify the properties of a reconstructed event" .
 
 :mitigationDFM-1349
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1349: Manually verify the artifacts used for an event reconstruction"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1349" ;
     solveit-core:mitigationName "Manually verify the artifacts used for an event reconstruction" ;
     solveit-core:linksToTechnique :techniqueDFT-1202 .
 
 :mitigationDFM-1350
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1350: Ensure that tools producing data supporting event reconstruction report any potential uncertainty in their results"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1350" ;
     solveit-core:mitigationName "Ensure that tools producing data supporting event reconstruction report any potential uncertainty in their results" .
 
 :mitigationDFM-1351
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1351: Ensure that raw data is decoded as the correct data type"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1351" ;
     solveit-core:mitigationName "Ensure that raw data is decoded as the correct data type" .
 
 :mitigationDFM-1352
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1352: Ensure the correct number of bytes are used when decoding raw data into values"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1352" ;
     solveit-core:mitigationName "Ensure the correct number of bytes are used when decoding raw data into values" .
 
 :mitigationDFM-1353
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1353: Ensure the correct endianness was used when decoding raw data into values"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1353" ;
     solveit-core:mitigationName "Ensure the correct endianness was used when decoding raw data into values" .
 
 :mitigationDFM-1354
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1354: Ensure the correct signed/unsigned property is applied when decoding raw data into values"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1354" ;
     solveit-core:mitigationName "Ensure the correct signed/unsigned property is applied when decoding raw data into values" .
 
 :mitigationDFM-1355
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1355: Ensure the correct endianness was used for value decoding"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1355" ;
     solveit-core:mitigationName "Ensure the correct endianness was used for value decoding" .
 
 :mitigationDFM-1356
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1356: Ensure that any potential imprecision in decoding is also included when decoded values are presented"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1356" ;
     solveit-core:mitigationName "Ensure that any potential imprecision in decoding is also included when decoded values are presented" .
 
 :mitigationDFM-1357
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1357: Log values that encountered errors when decoding raw data to strings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1357" ;
     solveit-core:mitigationName "Log values that encountered errors when decoding raw data to strings" .
 
 :mitigationDFM-1358
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1358: Ensure that the correct byte size per character is used when decoding raw data into strings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1358" ;
     solveit-core:mitigationName "Ensure that the correct byte size per character is used when decoding raw data into strings" .
 
 :mitigationDFM-1359
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1359: Ensure the correct decoding scheme is used when decoding raw data into strings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1359" ;
     solveit-core:mitigationName "Ensure the correct decoding scheme is used when decoding raw data into strings" .
 
 :mitigationDFM-1360
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1360: Ensure that multi-byte characters are handled correctly when decoding raw data into strings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1360" ;
     solveit-core:mitigationName "Ensure that multi-byte characters are handled correctly when decoding raw data into strings" .
 
 :mitigationDFM-1361
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1361: Log any character substitutions made when decoding raw data to strings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1361" ;
     solveit-core:mitigationName "Log any character substitutions made when decoding raw data to strings" .
 
 :mitigationDFM-1362
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1362: Ensure correct endianness is used when decoding raw data into strings"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1362" ;
     solveit-core:mitigationName "Ensure correct endianness is used when decoding raw data into strings" .
 
 :mitigationDFM-1363
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1363: Test that examiner-entered metadata is correctly written by the acquisition software along with the forensic container"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1363" ;
     solveit-core:mitigationName "Test that examiner-entered metadata is correctly written by the acquisition software along with the forensic container" .
 
 :mitigationDFM-1364
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1364: Test that hashes computed of data stored within a container are written correctly by the acquisition software along with the forensic container"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1364" ;
     solveit-core:mitigationName "Test that hashes computed of data stored within a container are written correctly by the acquisition software along with the forensic container" .
 
 :mitigationDFM-1365
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1365: Check the number of bytes hashed from a source device matches the device's capacity"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1365" ;
     solveit-core:mitigationName "Check the number of bytes hashed from a source device matches the device's capacity" ;
     solveit-core:mitigationDescription "Compare the number of bytes (or sectors) read and hashed against the capacity on the drive label or reported by the device. A shortfall indicates that the hash covers only part of the data on the device." .
 
 :mitigationDFM-1366
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1366: Check the output of a tool hashing a source device for any read errors"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1366" ;
     solveit-core:mitigationName "Check the output of a tool hashing a source device for any read errors" ;
     solveit-core:mitigationDescription "Review the output or log from the hashing tool for any read errors or skipped sectors on the source device. Any errors mean the hash may not cover all the data on the device." .
 
 :mitigationDFM-1367
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1367: Periodically review and update case-type keyword lists using recent casework and current terminology"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1367" ;
     solveit-core:mitigationName "Periodically review and update case-type keyword lists using recent casework and current terminology" .
 
 :mitigationDFM-1368
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1368: Include spelling, language, and regional variants of each term in the keyword list"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1368" ;
     solveit-core:mitigationName "Include spelling, language, and regional variants of each term in the keyword list" .
 
 :mitigationDFM-1369
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1369: Generate variants of each case-specific identifier, such as nicknames, usernames, alternative spellings, and transliterations"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1369" ;
     solveit-core:mitigationName "Generate variants of each case-specific identifier, such as nicknames, usernames, alternative spellings, and transliterations" .
 
 :mitigationDFM-1370
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1370: Revise the case-specific keyword list and repeat searches as new identifiers are found during the examination"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1370" ;
     solveit-core:mitigationName "Revise the case-specific keyword list and repeat searches as new identifiers are found during the examination" .
 
 :mitigationDFM-1371
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1371: State the number base of each reported numeric value"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1371" ;
     solveit-core:mitigationName "State the number base of each reported numeric value" ;
     solveit-core:mitigationDescription "Mark each value that is not in decimal, for example with a 0x prefix or a subscript 16. A value containing only the digits 0-9 is ambiguous unless its base is marked." ;
     solveit-core:hasReference :citationDFCite-1170 .
 
 :mitigationDFM-1372
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1372: State the number base generally used in reporting, and note exceptions"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1372" ;
     solveit-core:mitigationName "State the number base generally used in reporting, and note exceptions" ;
     solveit-core:mitigationDescription "State near the start of the report which number base values are given in unless marked otherwise, and mark each value that departs from it. This makes unmarked values unambiguous without annotating every one." .
 
 :mitigationDFM-1373
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1373: State the unit of measurement of each reported position or size"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1373" ;
     solveit-core:mitigationName "State the unit of measurement of each reported position or size" ;
     solveit-core:mitigationDescription "Give the unit (for example bytes or sectors) with every position or size, and where sectors or clusters are used, state their size in bytes." ;
     solveit-core:hasReference :citationDFCite-1170 .
 
 :mitigationDFM-1374
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1374: State the unit of measurement generally used in reporting, and note exceptions"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1374" ;
     solveit-core:mitigationName "State the unit of measurement generally used in reporting, and note exceptions" ;
     solveit-core:mitigationDescription "State near the start of the report which unit positions and sizes are given in unless marked otherwise, including the sector or cluster size in bytes where those units are used, and mark each value that departs from it." .
 
 :mitigationDFM-1375
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1375: State the reference point from which each reported offset is measured"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1375" ;
     solveit-core:mitigationName "State the reference point from which each reported offset is measured" ;
     solveit-core:mitigationDescription "State whether each offset is measured from the start of the disk image, the start of a named partition, or the start of a named file, so the reader can locate the reported data." ;
     solveit-core:hasReference :citationDFCite-1170 .
 
 :mitigationDFM-1376
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1376: State the reference point generally used in reporting offsets, and note exceptions"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1376" ;
     solveit-core:mitigationName "State the reference point generally used in reporting offsets, and note exceptions" ;
     solveit-core:mitigationDescription "State near the start of the report which point offsets are measured from unless marked otherwise, for example the start of the disk image, and identify the reference point for each offset that departs from it." .
 
 :mitigationDFM-1377
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1377: Filter dictionary candidates to match the known password length, character set, or format constraints of the target"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1377" ;
     solveit-core:mitigationName "Filter dictionary candidates to match the known password length, character set, or format constraints of the target" .
 
 :mitigationDFM-1378
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1378: Ensure that all file type checks run, rather than stopping on first match"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1378" ;
     solveit-core:mitigationName "Ensure that all file type checks run, rather than stopping on first match" .
 
 :mitigationDFM-1379
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1379: Use a file type identification method that reports the specific format, and its version where relevant"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1379" ;
     solveit-core:mitigationName "Use a file type identification method that reports the specific format, and its version where relevant" ;
     solveit-core:mitigationDescription "For example, a PRONOM PUID distinguishes PDF 1.4 (fmt/18) from PDF 2.0 (fmt/1129), where the MIME type application/pdf does not." .
 
 :mitigationDFM-1380
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1380: Record the specific format, and its version where relevant, alongside any category"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1380" ;
     solveit-core:mitigationName "Record the specific format, and its version where relevant, alongside any category" ;
     solveit-core:mitigationDescription "Keep the identifier the method produced, for example a PRONOM PUID, in addition to any MIME type or category, so that later filtering and reporting can use it." .
 
 :mitigationDFM-1381
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1381: Check whether the type a tool reports is its identification result or a category mapped from it"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1381" ;
     solveit-core:mitigationName "Check whether the type a tool reports is its identification result or a category mapped from it" ;
     solveit-core:mitigationDescription "Some tools derive a category or MIME type from a more specific internal result; establish which one the tool reports before relying on it." .
 
 :mitigationDFM-1382
-    a solveit-core:Mitigation ;
+    a owl:Class,
+      solveit-core:Mitigation ;
     rdfs:label "DFM-1382: Avoid using signatures that are too weak to identify a file type on their own, except to confirm the type suggested by the extension"@en ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     solveit-core:mitigationID "DFM-1382" ;
     solveit-core:mitigationName "Avoid using signatures that are too weak to identify a file type on their own, except to confirm the type suggested by the extension" ;
     solveit-core:mitigationDescription "Short or generic header signatures, such as one or two bytes or common text, match many unrelated files. Using them alone to assign a type produces false identifications; restricting them to confirming the type suggested by the extension, or reporting them as weak, keeps the signature's evidential weight visible." ;

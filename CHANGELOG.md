@@ -161,6 +161,36 @@ Notable changes to the SOLVE-IT ontology.
 
 ### Changed
 
+- **`solveit-core:Mitigation` is now a metaclass, built the same way as
+  `solveit-core:Technique`.** It was a subclass of
+  `case-investigation:InvestigativeAction`, and each knowledge base mitigation
+  was a plain instance of it, which made every catalogue entry a performed
+  investigative action. Mitigation is now `rdfs:subClassOf uco-action:Technique`
+  and `owl:disjointWith solveit-core:Technique`: a mitigation is a UCO
+  technique, but not a SOLVE-IT technique. Each mitigation (DFM-NNNN) is now
+  `a owl:Class, solveit-core:Mitigation` and `rdfs:subClassOf` the new
+  `solveit-core:SolveitMitigation`, itself a subclass of
+  `case-investigation:InvestigativeAction`. An action that carries out a
+  mitigation, by an investigator or by a tool, may be typed with the
+  mitigation class. Mitigation IRIs are unchanged, and `appliedMitigation`,
+  `hasPotentialMitigation`, `linksToTechnique` and
+  `solveit-tool-profile:implementsMitigation` still point at them.
+
+  **Order of release.** The ontology and the knowledge base must change
+  together. UCO 1.5.0 requires every instance of `uco-action:Technique` to be
+  an `owl:Class` descending from `uco-action:Action`, so this ontology with a
+  knowledge base generated the old way fails CASE validation on every
+  mitigation. A knowledge base generated the new way validates against both
+  the old and the new ontology. The generator change in
+  `SOLVE-IT-DF/solve-it` (`reporting_scripts/generate_rdf_from_kb.py`) must be
+  merged first; until this change is merged, `validate_kb_conformance.py`
+  stops the hourly job publishing a knowledge base that uses the undefined
+  `SolveitMitigation`.
+
+  **Consumers.** Code that reads only the first `@type` of a knowledge base
+  entry will no longer recognise mitigations, as it already fails to
+  recognise techniques: match any of the listed types.
+
 - **A SOLVE-IT technique's instances may be planned as well as performed.**
   The comments on `solveit-core:SolveitInvestigativeAction` and
   `solveit-core:Technique` said their instances are *performed* actions,

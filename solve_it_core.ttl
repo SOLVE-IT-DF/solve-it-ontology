@@ -64,10 +64,24 @@ solveit-core:Weakness rdf:type owl:Class ;
     rdfs:comment "A potential problem resulting from using a technique, classified according to ASTM E3016-18 error categories."@en .
 
 ###  SOLVE-IT Mitigation
+###
+###  Mitigation is a METACLASS, built the same way as solveit-core:Technique.
+###  Each SOLVE-IT mitigation (DFM-NNNN) is an *instance* of this class and is
+###  itself an owl:Class, declaring rdfs:subClassOf solveit-core:SolveitMitigation.
+###  An action that carries out a mitigation, whether by an investigator or by
+###  a tool, is typed with the mitigation class.
+###
+###  Mitigation was formerly a subclass of case-investigation:InvestigativeAction,
+###  which made every catalogue entry a performed action. It is the *instances*
+###  of each mitigation class that are actions, planned or performed.
+###
+###  A mitigation is a uco-action:Technique (a way of carrying out an action),
+###  but not a SOLVE-IT Technique: the two are disjoint.
 solveit-core:Mitigation rdf:type owl:Class ;
-    rdfs:subClassOf case-investigation:InvestigativeAction ;
+    rdfs:subClassOf uco-action:Technique ;
+    owl:disjointWith solveit-core:Technique ;
     rdfs:label "SOLVE-IT Mitigation"@en ;
-    rdfs:comment "An action that can be performed to prevent a weakness from occurring or to minimize its impact."@en .
+    rdfs:comment "An action that can be performed, by an investigator or by a tool, to prevent a weakness from occurring or to minimize its impact. This class is a metaclass: its instances are owl:Class entities whose own instances are mitigation actions, which may be done or performed."@en .
 
 ###  SOLVE-IT Objective
 solveit-core:Objective rdf:type owl:Class ;
@@ -95,6 +109,21 @@ solveit-core:SolveitInvestigativeAction rdf:type owl:Class ;
     rdfs:subClassOf case-investigation:InvestigativeAction ;
     rdfs:label "SOLVE-IT Investigative Action"@en ;
     rdfs:comment "An investigative action, which may be done or performed, as an instance of one or more SOLVE-IT techniques, recording any mitigations applied on that occasion (0..n via appliedMitigation). The technique(s) used are expressed by rdf:type against the technique class(es), not by a separate property."@en .
+
+###  SOLVE-IT Mitigation Action
+###
+###  The parent class of every SOLVE-IT mitigation class, as
+###  SolveitInvestigativeAction is for techniques. Not to be confused with
+###  solveit-core:Mitigation, the metaclass whose instances are the catalogue
+###  entries.
+###
+###  Recording a mitigation as an action of its own is optional. The usual way
+###  to say a mitigation was applied is appliedMitigation on the investigative
+###  action, pointing at the catalogue entry.
+solveit-core:SolveitMitigation rdf:type owl:Class ;
+    rdfs:subClassOf case-investigation:InvestigativeAction ;
+    rdfs:label "SOLVE-IT Mitigation Action"@en ;
+    rdfs:comment "An action, which may be done or performed, that carries out one or more SOLVE-IT mitigations, by an investigator or by a tool. The mitigation(s) carried out are expressed by rdf:type against the mitigation class(es). Like any uco-action:Action it may have a start and end time, so a long-running mitigation can be recorded."@en .
 
 #################################################################
 #    Object Properties

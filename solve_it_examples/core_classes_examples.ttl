@@ -193,12 +193,14 @@ solveit-data:weaknessDFW-1004 rdf:type solveit-core:Weakness ;
 # Example SOLVE-IT Mitigation Instances
 #################################################################
 
-solveit-data:mitigationDFM-1003 rdf:type solveit-core:Mitigation ;
+solveit-data:mitigationDFM-1003 a owl:Class , solveit-core:Mitigation ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     rdfs:label "DFM-1003: Check image size corresponds with drive label"@en ;
     solveit-core:mitigationID "DFM-1003" ;
     solveit-core:mitigationName "Check image size corresponds with drive label" .
 
-solveit-data:mitigationDFM-1004 rdf:type solveit-core:Mitigation ;
+solveit-data:mitigationDFM-1004 a owl:Class , solveit-core:Mitigation ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     rdfs:label "DFM-1004: Check hash of image matches hash of source device"@en ;
     solveit-core:mitigationID "DFM-1004" ;
     solveit-core:mitigationName "Check hash of image matches hash of source device" ;
