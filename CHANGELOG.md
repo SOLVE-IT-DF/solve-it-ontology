@@ -171,8 +171,8 @@ Notable changes to the SOLVE-IT ontology.
   `a owl:Class, solveit-core:Mitigation` and `rdfs:subClassOf` the new
   `solveit-core:SolveitMitigation`, itself a subclass of
   `case-investigation:InvestigativeAction`. An action that carries out a
-  mitigation, by an investigator or by a tool, may be typed with the
-  mitigation class. Mitigation IRIs are unchanged, and `appliedMitigation`,
+  mitigation, by an investigator, tool or other part of the process, may be
+  typed with the mitigation class. Mitigation IRIs are unchanged, and `appliedMitigation`,
   `hasPotentialMitigation`, `linksToTechnique` and
   `solveit-tool-profile:implementsMitigation` still point at them.
 
