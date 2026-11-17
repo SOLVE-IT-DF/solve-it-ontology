@@ -7,22 +7,22 @@
     "http://purl.org/dc/terms/modified": [
       {
         "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
-        "@value": "2026-11-12T20:06:02Z"
+        "@value": "2026-11-17T13:48:39Z"
       }
     ],
     "http://purl.org/dc/terms/source": [
       {
-        "@id": "https://github.com/SOLVE-IT-DF/solve-it/commit/f455acb1e3d502020146b83bd7b5bbe4924f6577"
+        "@id": "https://github.com/SOLVE-IT-DF/solve-it/commit/3053af404cbd2cbafbbedf5d114909801a1b8204"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#comment": [
       {
-        "@value": "SOLVE-IT knowledge base data version 0.98.2, schema version 5.1, built from commit f455acb1e3d502020146b83bd7b5bbe4924f6577."
+        "@value": "SOLVE-IT knowledge base data version 0.98.3, schema version 5.1, built from commit 3053af404cbd2cbafbbedf5d114909801a1b8204."
       }
     ],
     "http://www.w3.org/2002/07/owl#versionInfo": [
       {
-        "@value": "0.98.2"
+        "@value": "0.98.3"
       }
     ]
   },
@@ -15064,6 +15064,14 @@
       },
       {
         "@id": "https://ontology.solveit-df.org/solveit/core/ASTM_INAC_COR"
+      }
+    ],
+    "https://ontology.solveit-df.org/solveit/core/hasPotentialMitigation": [
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1007"
+      },
+      {
+        "@id": "https://ontology.solveit-df.org/solveit/data/mitigationDFM-1008"
       }
     ]
   },
@@ -43830,6 +43838,12 @@
   },
   {
     "@id": "https://ontology.solveit-df.org/solveit/observable/TimestampOffset",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ]
+  },
+  {
+    "@id": "https://ontology.unifiedcyberontology.org/uco/tool/Tool",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ]

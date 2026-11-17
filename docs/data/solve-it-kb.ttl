@@ -33,10 +33,10 @@
 
 <https://ontology.solveit-df.org/solveit/data/>
     a owl:Ontology ;
-    dcterms:modified "2026-11-12T20:06:02Z"^^xsd:dateTime ;
-    dcterms:source <https://github.com/SOLVE-IT-DF/solve-it/commit/f455acb1e3d502020146b83bd7b5bbe4924f6577> ;
-    rdfs:comment "SOLVE-IT knowledge base data version 0.98.2, schema version 5.1, built from commit f455acb1e3d502020146b83bd7b5bbe4924f6577." ;
-    owl:versionInfo "0.98.2" .
+    dcterms:modified "2026-11-17T13:48:39Z"^^xsd:dateTime ;
+    dcterms:source <https://github.com/SOLVE-IT-DF/solve-it/commit/3053af404cbd2cbafbbedf5d114909801a1b8204> ;
+    rdfs:comment "SOLVE-IT knowledge base data version 0.98.3, schema version 5.1, built from commit 3053af404cbd2cbafbbedf5d114909801a1b8204." ;
+    owl:versionInfo "0.98.3" .
 
 #################################################################
 #    Objectives (24)
@@ -4106,7 +4106,9 @@ Formats differ in which metadata they are able to record, so some metadata prese
     solveit-core:weaknessID "DFW-1024" ;
     solveit-core:weaknessName "Collection process changes metadata of data on target" ;
     solveit-core:hasWeaknessClass solveit-core:ASTM_INAC_ALT,
-                                  solveit-core:ASTM_INAC_COR .
+                                  solveit-core:ASTM_INAC_COR ;
+    solveit-core:hasPotentialMitigation :mitigationDFM-1007,
+                                        :mitigationDFM-1008 .
 
 :weaknessDFW-1025
     a solveit-core:Weakness ;
@@ -11728,7 +11730,7 @@ abstract = {Large language models (LLMs) have widespread adoption in many domain
 }""" .
 
 #################################################################
-#    Referenced CASE/UCO classes (177)
+#    Referenced CASE/UCO classes (178)
 #
 #    Declaration only. These name classes defined in CASE/UCO or in
 #    the SOLVE-IT observable modules, referenced above as technique
@@ -12090,6 +12092,9 @@ solveit-observable:TimelineEntry
     a owl:Class .
 
 solveit-observable:TimestampOffset
+    a owl:Class .
+
+<https://ontology.unifiedcyberontology.org/uco/tool/Tool>
     a owl:Class .
 
 uco-observable:URL
