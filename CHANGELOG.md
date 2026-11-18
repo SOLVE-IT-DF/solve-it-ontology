@@ -161,6 +161,23 @@ Notable changes to the SOLVE-IT ontology.
 
 ### Changed
 
+- **`solveit-core:Mitigation` is now a metaclass, built the same way as
+  `solveit-core:Technique`.** Previously every knowledge base mitigation was a
+  plain instance of a subclass of `InvestigativeAction`, which made each
+  catalogue entry a performed action. Mitigation is now a subclass of
+  `uco-action:Technique`, disjoint from `solveit-core:Technique`. Each
+  mitigation (DFM-NNNN) is an `owl:Class` and a subclass of the new
+  `solveit-core:SolveitMitigation`, so an action carrying out a mitigation can
+  be typed with it. Mitigation IRIs are unchanged, and the properties that
+  point at them are unaffected.
+
+  **Consumers.** Data that includes its own copy of a mitigation entry, typed
+  only `solveit-core:Mitigation`, now fails CASE validation: add
+  `owl:Class` and `rdfs:subClassOf solveit-core:SolveitMitigation`, as the
+  knowledge base does. Code that reads only the first `@type` of a knowledge
+  base entry will no longer recognise mitigations, as it already fails to
+  recognise techniques: match any of the listed types.
+
 - **A SOLVE-IT technique's instances may be planned as well as performed.**
   The comments on `solveit-core:SolveitInvestigativeAction` and
   `solveit-core:Technique` said their instances are *performed* actions,

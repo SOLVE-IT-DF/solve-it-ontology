@@ -79,7 +79,8 @@ solveit-data:weaknessDFW-1087 rdf:type solveit-core:Weakness ;
     solveit-core:weaknessName "Presenting a live message that did not exist" ;
     solveit-core:hasPotentialMitigation solveit-data:mitigationDFM-1054 .
 
-solveit-data:mitigationDFM-1054 rdf:type solveit-core:Mitigation ;
+solveit-data:mitigationDFM-1054 a owl:Class , solveit-core:Mitigation ;
+    rdfs:subClassOf solveit-core:SolveitMitigation ;
     rdfs:label "DFM-1054: Testing of message extraction and parsing features"@en ;
     solveit-core:mitigationID "DFM-1054" ;
     solveit-core:mitigationName "Testing of message extraction and parsing features" .
