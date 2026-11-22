@@ -13,6 +13,10 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       changed: ${{ steps.commit.outputs.changed }}
+      # The commit this run pushed. The validation job must check out this
+      # commit: a called workflow's own checkout otherwise defaults to the
+      # commit the run started from, which is the previous knowledge base.
+      sha: ${{ steps.commit.outputs.sha }}
 
     steps:
       - name: Checkout ontology repository
@@ -40,9 +44,14 @@ jobs:
           # Generate machine-readable knowledge base in TTL and JSON-LD formats
           mkdir -p docs/data
           cd solve-it
+          # --require-term-types makes a failed download of an ontology module
+          # (CASE/UCO, SOLVE-IT or projectvic) fail this step. Without it the
+          # generator logs a warning and writes the knowledge base without the
+          # type declarations for the terms it could not resolve.
           PYTHONPATH=. python reporting_scripts/generate_rdf_from_kb.py \
             --output-dir ../docs/data \
-            --format both
+            --format both \
+            --require-term-types
           # Rename output files to expected names if needed
           cd ../docs/data
           if [ -f solveit_kb.ttl ]; then mv solveit_kb.ttl solveit-kb.ttl; fi
@@ -76,6 +85,7 @@ jobs:
               -m "Generated solveit-kb.ttl and solveit-kb.jsonld from solve-it knowledge base" \
               -m "Co-Authored-By: github-actions[bot] <github-actions[bot]@users.noreply.github.com>"
             git push
+            echo "sha=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
           fi
 
   # A rebuilt knowledge base is one of the two things that can invalidate the
@@ -87,3 +97,5 @@ jobs:
     needs: generate-kb
     if: needs.generate-kb.outputs.changed == 'true'
     uses: ./.github/workflows/validate-against-case-1.5.0.yml
+    with:
+      ref: ${{ needs.generate-kb.outputs.sha }}

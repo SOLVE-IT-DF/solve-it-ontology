@@ -173,6 +173,22 @@ Notable changes to the SOLVE-IT ontology.
 
 ### Fixed
 
+- The hourly knowledge base build no longer publishes output that is missing
+  type declarations, and its CASE validation now checks the commit the run
+  pushed. On 2026-11-21 a download of the SOLVE-IT and projectvic ontology
+  modules failed during the 18:52 UTC run. The generator logged a warning for
+  each of the 67 input/output terms it could not type and still published, so
+  `solve-it-kb.ttl` lacked their `owl:Class` declarations (for example
+  `case-management#ExpertReport`). The next changed run (23:40 UTC) then failed
+  `validate-against-case` for that missing declaration. It had checked out the
+  commit the run started from, which was the 18:52 output, instead of the
+  regenerated output the run had just committed, so it reported on the previous
+  knowledge base. `generate-knowledge-base.yml` now passes the generator
+  `--require-term-types`, which fails the run when a term cannot be typed, and
+  passes the commit it pushed to `validate-against-case-1.5.0.yml` through a
+  new `ref` input. Needs the matching `--require-term-types` option in the
+  solve-it repository's `generate_rdf_from_kb.py`.
+
 - `solve_it_examples/sqlite_examples.ttl` no longer uses
   `solveit-analysis:supportedBy`, which was removed. The HypothesisedRecord
   example (#34) was written before the removal and merged after it, so the
