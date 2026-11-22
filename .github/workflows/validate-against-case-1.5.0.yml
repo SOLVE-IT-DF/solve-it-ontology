@@ -35,6 +35,11 @@ on:
         default: '1.5.0'
         required: false
         type: string
+      ref:
+        description: 'Commit of this repository to validate. Empty means the commit that triggered the caller.'
+        default: ''
+        required: false
+        type: string
   push:
     branches: [main]
     paths:
@@ -65,8 +70,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # A called workflow's checkout defaults to the commit that started the
+      # caller. generate-knowledge-base.yml commits a regenerated knowledge base
+      # during its own run, so without `ref` this job validated the knowledge
+      # base from before that commit and reported on the wrong file.
       - name: Checkout ontology repository
         uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.ref || github.sha }}
 
       # The merged graph is expensive to build: it needs CASE checked out with
       # the UCO submodule, then ~32 files parsed and reserialised. It changes
